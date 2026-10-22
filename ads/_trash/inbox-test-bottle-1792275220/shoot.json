@@ -1,0 +1,1368 @@
+{
+ "version": 1,
+ "rev": 5,
+ "title": "Inbox test bottle",
+ "created": 1792275188.654293,
+ "product": {
+  "name": "",
+  "link": "",
+  "description": "",
+  "hashtags": "#tiktokshop #tiktokmademebuyit"
+ },
+ "reference": {
+  "url": "",
+  "file": "",
+  "notes": ""
+ },
+ "sources": [
+  {
+   "id": "966772",
+   "file": "C:\\Users\\thecc\\MemeSupercutData\\ads\\uploads\\inbox-test-bottle\\Inbox test bottle.mp4",
+   "name": "Inbox test bottle.mp4",
+   "status": "ready",
+   "error": null,
+   "looks": [],
+   "key": "13a1d605e99e4e",
+   "duration": 92.466667,
+   "width": 1080,
+   "height": 1920
+  }
+ ],
+ "script": [
+  {
+   "id": "e3c20c",
+   "text": "Stop scrolling, this is the best water bottle I have ever owned.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "cut_offset": null
+  },
+  {
+   "id": "30664e",
+   "text": "It keeps ice frozen for 24 hours, even in a hot car.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "cut_offset": null
+  },
+  {
+   "id": "cd79fa",
+   "text": "Tap the orange cart below to grab yours before it sells out.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "cut_offset": null
+  }
+ ],
+ "script_guessed": true,
+ "takes": [
+  {
+   "id": "e53f85",
+   "line": "e3c20c",
+   "src": "966772",
+   "in": 3.66,
+   "out": 7.64,
+   "look": null,
+   "alt": 0,
+   "text": "Stop scrolling, this is the best water bottle I have ever owned.",
+   "for_text": "Stop scrolling, this is the best water bottle I have ever owned.",
+   "words": [
+    [
+     "Stop",
+     3.74,
+     4.16
+    ],
+    [
+     "scrolling,",
+     4.16,
+     4.6
+    ],
+    [
+     "this",
+     5.02,
+     5.38
+    ],
+    [
+     "is",
+     5.38,
+     5.54
+    ],
+    [
+     "the",
+     5.54,
+     5.68
+    ],
+    [
+     "best",
+     5.68,
+     5.94
+    ],
+    [
+     "water",
+     5.94,
+     6.26
+    ],
+    [
+     "bottle",
+     6.26,
+     6.6
+    ],
+    [
+     "I",
+     6.6,
+     6.82
+    ],
+    [
+     "have",
+     6.82,
+     7.0
+    ],
+    [
+     "ever",
+     7.0,
+     7.2
+    ],
+    [
+     "owned.",
+     7.2,
+     7.46
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "user": {}
+  },
+  {
+   "id": "bbac4e",
+   "line": "e3c20c",
+   "src": "966772",
+   "in": 9.8,
+   "out": 13.8,
+   "look": null,
+   "alt": 0,
+   "text": "Stop scrolling, this is the best water bottle I have ever owned.",
+   "for_text": "Stop scrolling, this is the best water bottle I have ever owned.",
+   "words": [
+    [
+     "Stop",
+     9.88,
+     10.32
+    ],
+    [
+     "scrolling,",
+     10.32,
+     10.76
+    ],
+    [
+     "this",
+     11.16,
+     11.54
+    ],
+    [
+     "is",
+     11.54,
+     11.7
+    ],
+    [
+     "the",
+     11.7,
+     11.84
+    ],
+    [
+     "best",
+     11.84,
+     12.1
+    ],
+    [
+     "water",
+     12.1,
+     12.42
+    ],
+    [
+     "bottle",
+     12.42,
+     12.76
+    ],
+    [
+     "I",
+     12.76,
+     12.98
+    ],
+    [
+     "have",
+     12.98,
+     13.16
+    ],
+    [
+     "ever",
+     13.16,
+     13.36
+    ],
+    [
+     "owned.",
+     13.36,
+     13.62
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "user": {}
+  },
+  {
+   "id": "f9a1f1",
+   "line": "e3c20c",
+   "src": "966772",
+   "in": 15.98,
+   "out": 22.62,
+   "look": null,
+   "alt": 0,
+   "text": "Stop scrolling, this is the best, uh, sorry, wait. Let me start over.",
+   "for_text": "Stop scrolling, this is the best water bottle I have ever owned.",
+   "words": [
+    [
+     "Stop",
+     16.06,
+     16.5
+    ],
+    [
+     "scrolling,",
+     16.5,
+     16.94
+    ],
+    [
+     "this",
+     17.32,
+     17.7
+    ],
+    [
+     "is",
+     17.7,
+     17.86
+    ],
+    [
+     "the",
+     17.86,
+     18.0
+    ],
+    [
+     "best",
+     18.0,
+     18.36
+    ],
+    [
+     "uh,",
+     18.64,
+     19.02
+    ],
+    [
+     "sorry,",
+     19.28,
+     19.74
+    ],
+    [
+     "wait.",
+     20.1,
+     20.5
+    ],
+    [
+     "Let",
+     21.3,
+     21.66
+    ],
+    [
+     "me",
+     21.66,
+     21.82
+    ],
+    [
+     "start",
+     21.82,
+     22.1
+    ],
+    [
+     "over.",
+     22.1,
+     22.44
+    ]
+   ],
+   "score": 0.48,
+   "status": "flub",
+   "flags": [
+    "restarted: “sorry”, “wait”, “start over”, “let me start”"
+   ],
+   "missing": [
+    "water",
+    "bottle",
+    "i",
+    "have",
+    "ever",
+    "owned"
+   ],
+   "extra": [
+    "uh",
+    "sorry",
+    "wait",
+    "let",
+    "me",
+    "start",
+    "over"
+   ],
+   "usable": false,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "user": {}
+  },
+  {
+   "id": "bf3751",
+   "line": "e3c20c",
+   "src": "966772",
+   "in": 24.84,
+   "out": 28.8,
+   "look": null,
+   "alt": 0,
+   "text": "Stop scrolling, this is the best water bottle I have ever owned.",
+   "for_text": "Stop scrolling, this is the best water bottle I have ever owned.",
+   "words": [
+    [
+     "Stop",
+     24.92,
+     25.34
+    ],
+    [
+     "scrolling,",
+     25.34,
+     25.8
+    ],
+    [
+     "this",
+     26.18,
+     26.56
+    ],
+    [
+     "is",
+     26.56,
+     26.72
+    ],
+    [
+     "the",
+     26.72,
+     26.86
+    ],
+    [
+     "best",
+     26.86,
+     27.12
+    ],
+    [
+     "water",
+     27.12,
+     27.44
+    ],
+    [
+     "bottle",
+     27.44,
+     27.78
+    ],
+    [
+     "I",
+     27.78,
+     28.0
+    ],
+    [
+     "have",
+     28.0,
+     28.16
+    ],
+    [
+     "ever",
+     28.16,
+     28.38
+    ],
+    [
+     "owned.",
+     28.38,
+     28.62
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 2,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "user": {}
+  },
+  {
+   "id": "88e728",
+   "line": "e3c20c",
+   "src": "966772",
+   "in": 30.98,
+   "out": 34.96,
+   "look": null,
+   "alt": 0,
+   "text": "Stop scrolling, this is the best water bottle I have ever owned.",
+   "for_text": "Stop scrolling, this is the best water bottle I have ever owned.",
+   "words": [
+    [
+     "Stop",
+     31.06,
+     31.5
+    ],
+    [
+     "scrolling,",
+     31.5,
+     31.94
+    ],
+    [
+     "this",
+     32.34,
+     32.72
+    ],
+    [
+     "is",
+     32.72,
+     32.88
+    ],
+    [
+     "the",
+     32.88,
+     33.02
+    ],
+    [
+     "best",
+     33.02,
+     33.28
+    ],
+    [
+     "water",
+     33.28,
+     33.6
+    ],
+    [
+     "bottle",
+     33.6,
+     33.94
+    ],
+    [
+     "I",
+     33.94,
+     34.16
+    ],
+    [
+     "have",
+     34.16,
+     34.32
+    ],
+    [
+     "ever",
+     34.32,
+     34.54
+    ],
+    [
+     "owned.",
+     34.54,
+     34.78
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 3,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "user": {}
+  },
+  {
+   "id": "d3d065",
+   "line": "30664e",
+   "src": "966772",
+   "in": 37.1,
+   "out": 41.32,
+   "look": null,
+   "alt": 0,
+   "text": "It keeps ice frozen for 24 hours, even in a hot car.",
+   "for_text": "It keeps ice frozen for 24 hours, even in a hot car.",
+   "words": [
+    [
+     "It",
+     37.18,
+     37.5
+    ],
+    [
+     "keeps",
+     37.5,
+     37.76
+    ],
+    [
+     "ice",
+     37.76,
+     38.0
+    ],
+    [
+     "frozen",
+     38.0,
+     38.38
+    ],
+    [
+     "for",
+     38.38,
+     38.62
+    ],
+    [
+     "24",
+     38.62,
+     39.2
+    ],
+    [
+     "hours,",
+     39.2,
+     39.7
+    ],
+    [
+     "even",
+     40.02,
+     40.44
+    ],
+    [
+     "in",
+     40.44,
+     40.6
+    ],
+    [
+     "a",
+     40.6,
+     40.7
+    ],
+    [
+     "hot",
+     40.7,
+     40.86
+    ],
+    [
+     "car.",
+     40.86,
+     41.14
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "user": {}
+  },
+  {
+   "id": "ca4c90",
+   "line": "30664e",
+   "src": "966772",
+   "in": 43.46,
+   "out": 45.24,
+   "look": null,
+   "alt": 0,
+   "text": "It keeps ice frozen for.",
+   "for_text": "It keeps ice frozen for 24 hours, even in a hot car.",
+   "words": [
+    [
+     "It",
+     43.54,
+     43.84
+    ],
+    [
+     "keeps",
+     43.84,
+     44.08
+    ],
+    [
+     "ice",
+     44.08,
+     44.34
+    ],
+    [
+     "frozen",
+     44.34,
+     44.78
+    ],
+    [
+     "for",
+     44.78,
+     45.06
+    ]
+   ],
+   "score": 0.556,
+   "status": "incomplete",
+   "flags": [
+    "stopped before the end of the line"
+   ],
+   "missing": [
+    "twenty",
+    "four",
+    "hours",
+    "even",
+    "in",
+    "a",
+    "hot",
+    "car"
+   ],
+   "extra": [],
+   "usable": false,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "user": {}
+  },
+  {
+   "id": "fb58c6",
+   "line": "30664e",
+   "src": "966772",
+   "in": 47.4,
+   "out": 51.64,
+   "look": null,
+   "alt": 0,
+   "text": "It keeps ice frozen for 24 hours, even in a hot car.",
+   "for_text": "It keeps ice frozen for 24 hours, even in a hot car.",
+   "words": [
+    [
+     "It",
+     47.48,
+     47.8
+    ],
+    [
+     "keeps",
+     47.8,
+     48.06
+    ],
+    [
+     "ice",
+     48.06,
+     48.32
+    ],
+    [
+     "frozen",
+     48.32,
+     48.68
+    ],
+    [
+     "for",
+     48.68,
+     48.94
+    ],
+    [
+     "24",
+     48.94,
+     49.5
+    ],
+    [
+     "hours,",
+     49.5,
+     50.0
+    ],
+    [
+     "even",
+     50.34,
+     50.76
+    ],
+    [
+     "in",
+     50.76,
+     50.9
+    ],
+    [
+     "a",
+     50.9,
+     50.98
+    ],
+    [
+     "hot",
+     50.98,
+     51.16
+    ],
+    [
+     "car.",
+     51.16,
+     51.46
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "user": {}
+  },
+  {
+   "id": "143b7c",
+   "line": "30664e",
+   "src": "966772",
+   "in": 53.77,
+   "out": 57.99,
+   "look": null,
+   "alt": 0,
+   "text": "It keeps ice frozen for 24 hours, even in a hot car.",
+   "for_text": "It keeps ice frozen for 24 hours, even in a hot car.",
+   "words": [
+    [
+     "It",
+     53.85,
+     54.17
+    ],
+    [
+     "keeps",
+     54.17,
+     54.41
+    ],
+    [
+     "ice",
+     54.41,
+     54.67
+    ],
+    [
+     "frozen",
+     54.67,
+     55.05
+    ],
+    [
+     "for",
+     55.05,
+     55.29
+    ],
+    [
+     "24",
+     55.29,
+     55.85
+    ],
+    [
+     "hours,",
+     55.85,
+     56.33
+    ],
+    [
+     "even",
+     56.69,
+     57.11
+    ],
+    [
+     "in",
+     57.11,
+     57.25
+    ],
+    [
+     "a",
+     57.25,
+     57.35
+    ],
+    [
+     "hot",
+     57.35,
+     57.53
+    ],
+    [
+     "car.",
+     57.53,
+     57.81
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 2,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "user": {}
+  },
+  {
+   "id": "d32fc0",
+   "line": "30664e",
+   "src": "966772",
+   "in": 60.1,
+   "out": 64.34,
+   "look": null,
+   "alt": 0,
+   "text": "It keeps ice frozen for 24 hours, even in a hot car.",
+   "for_text": "It keeps ice frozen for 24 hours, even in a hot car.",
+   "words": [
+    [
+     "It",
+     60.18,
+     60.52
+    ],
+    [
+     "keeps",
+     60.52,
+     60.76
+    ],
+    [
+     "ice",
+     60.76,
+     61.02
+    ],
+    [
+     "frozen",
+     61.02,
+     61.38
+    ],
+    [
+     "for",
+     61.38,
+     61.64
+    ],
+    [
+     "24",
+     61.64,
+     62.18
+    ],
+    [
+     "hours,",
+     62.18,
+     62.68
+    ],
+    [
+     "even",
+     63.04,
+     63.46
+    ],
+    [
+     "in",
+     63.46,
+     63.6
+    ],
+    [
+     "a",
+     63.6,
+     63.68
+    ],
+    [
+     "hot",
+     63.68,
+     63.88
+    ],
+    [
+     "car.",
+     63.88,
+     64.16
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 3,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "user": {}
+  },
+  {
+   "id": "0492a7",
+   "line": "cd79fa",
+   "src": "966772",
+   "in": 66.5,
+   "out": 70.06,
+   "look": null,
+   "alt": 0,
+   "text": "Tap the orange cart below to grab yours before it sells out.",
+   "for_text": "Tap the orange cart below to grab yours before it sells out.",
+   "words": [
+    [
+     "Tap",
+     66.58,
+     66.94
+    ],
+    [
+     "the",
+     66.94,
+     67.1
+    ],
+    [
+     "orange",
+     67.1,
+     67.42
+    ],
+    [
+     "cart",
+     67.42,
+     67.74
+    ],
+    [
+     "below",
+     67.74,
+     68.0
+    ],
+    [
+     "to",
+     68.0,
+     68.22
+    ],
+    [
+     "grab",
+     68.22,
+     68.46
+    ],
+    [
+     "yours",
+     68.46,
+     68.72
+    ],
+    [
+     "before",
+     68.72,
+     69.04
+    ],
+    [
+     "it",
+     69.04,
+     69.3
+    ],
+    [
+     "sells",
+     69.3,
+     69.54
+    ],
+    [
+     "out.",
+     69.54,
+     69.88
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "user": {}
+  },
+  {
+   "id": "2f9521",
+   "line": "cd79fa",
+   "src": "966772",
+   "in": 72.23,
+   "out": 75.77,
+   "look": null,
+   "alt": 0,
+   "text": "Tap the orange cart below to grab yours before it sells out.",
+   "for_text": "Tap the orange cart below to grab yours before it sells out.",
+   "words": [
+    [
+     "Tap",
+     72.31,
+     72.67
+    ],
+    [
+     "the",
+     72.67,
+     72.83
+    ],
+    [
+     "orange",
+     72.83,
+     73.13
+    ],
+    [
+     "cart",
+     73.13,
+     73.47
+    ],
+    [
+     "below",
+     73.47,
+     73.73
+    ],
+    [
+     "to",
+     73.73,
+     73.95
+    ],
+    [
+     "grab",
+     73.95,
+     74.19
+    ],
+    [
+     "yours",
+     74.19,
+     74.45
+    ],
+    [
+     "before",
+     74.45,
+     74.77
+    ],
+    [
+     "it",
+     74.77,
+     75.03
+    ],
+    [
+     "sells",
+     75.03,
+     75.29
+    ],
+    [
+     "out.",
+     75.29,
+     75.59
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "user": {}
+  },
+  {
+   "id": "f7b9a1",
+   "line": "cd79fa",
+   "src": "966772",
+   "in": 77.96,
+   "out": 82.66,
+   "look": null,
+   "alt": 0,
+   "text": "Tap the orange cart below to, um, what is it, grab yours.",
+   "for_text": "Tap the orange cart below to grab yours before it sells out.",
+   "words": [
+    [
+     "Tap",
+     78.04,
+     78.4
+    ],
+    [
+     "the",
+     78.4,
+     78.56
+    ],
+    [
+     "orange",
+     78.56,
+     78.88
+    ],
+    [
+     "cart",
+     78.88,
+     79.2
+    ],
+    [
+     "below",
+     79.2,
+     79.48
+    ],
+    [
+     "to",
+     79.48,
+     79.74
+    ],
+    [
+     "um,",
+     79.92,
+     80.46
+    ],
+    [
+     "what",
+     80.86,
+     81.12
+    ],
+    [
+     "is",
+     81.12,
+     81.26
+    ],
+    [
+     "it,",
+     81.26,
+     81.44
+    ],
+    [
+     "grab",
+     81.76,
+     82.16
+    ],
+    [
+     "yours",
+     82.16,
+     82.48
+    ]
+   ],
+   "score": 0.667,
+   "status": "flub",
+   "flags": [
+    "restarted: “what is it”"
+   ],
+   "missing": [
+    "before",
+    "it",
+    "sells",
+    "out"
+   ],
+   "extra": [
+    "um",
+    "what",
+    "is",
+    "it"
+   ],
+   "usable": false,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "user": {}
+  },
+  {
+   "id": "d96771",
+   "line": "cd79fa",
+   "src": "966772",
+   "in": 84.9,
+   "out": 88.44,
+   "look": null,
+   "alt": 0,
+   "text": "Tap the orange cart below to grab yours before it sells out.",
+   "for_text": "Tap the orange cart below to grab yours before it sells out.",
+   "words": [
+    [
+     "Tap",
+     84.98,
+     85.34
+    ],
+    [
+     "the",
+     85.34,
+     85.5
+    ],
+    [
+     "orange",
+     85.5,
+     85.8
+    ],
+    [
+     "cart",
+     85.8,
+     86.14
+    ],
+    [
+     "below",
+     86.14,
+     86.4
+    ],
+    [
+     "to",
+     86.4,
+     86.62
+    ],
+    [
+     "grab",
+     86.62,
+     86.86
+    ],
+    [
+     "yours",
+     86.86,
+     87.12
+    ],
+    [
+     "before",
+     87.12,
+     87.44
+    ],
+    [
+     "it",
+     87.44,
+     87.7
+    ],
+    [
+     "sells",
+     87.7,
+     87.96
+    ],
+    [
+     "out.",
+     87.96,
+     88.26
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 2,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "user": {}
+  }
+ ],
+ "hooks": [],
+ "cta": "",
+ "style": {
+  "subs": {
+   "on": true,
+   "font": "Arial Black",
+   "size": 84,
+   "color": "#FFFFFF",
+   "highlight": "#FFE14D",
+   "outline": "#000000",
+   "outline_w": 6,
+   "uppercase": false,
+   "y": 0.66,
+   "words_per_line": 3,
+   "karaoke": true,
+   "pop": true
+  },
+  "hook": {
+   "on": true,
+   "seconds": 3.0,
+   "y": 0.2,
+   "preset": "box",
+   "font": "Arial Black",
+   "size": 58,
+   "color": "#000000",
+   "box_color": "#FFFFFF",
+   "accent": "#FE2C55",
+   "outline_w": 0,
+   "uppercase": false,
+   "rotate": 0,
+   "pop": true
+  },
+  "cta": {
+   "on": false,
+   "y": 0.8,
+   "preset": "sticker",
+   "font": "Arial Black",
+   "size": 52,
+   "color": "#FFFFFF",
+   "box_color": "#FE2C55",
+   "accent": "#FFE14D",
+   "outline_w": 0,
+   "uppercase": false,
+   "rotate": -2,
+   "pop": true
+  },
+  "product_box": null,
+  "cart_pointer": {
+   "on": true,
+   "words": "orange cart, cart, basket",
+   "seconds": 2.2,
+   "color": "#FF8A00"
+  },
+  "punch_in": 1.12,
+  "pad_before": 0.08,
+  "pad_after": 0.18,
+  "voice_cleanup": false,
+  "loudness": -14
+ },
+ "skip": [],
+ "from_inbox": true,
+ "assets": [],
+ "overlays": [],
+ "renders": {},
+ "saved": {}
+}

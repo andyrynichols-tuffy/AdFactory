@@ -1,0 +1,571 @@
+{
+ "version": 1,
+ "rev": 5,
+ "title": "OneDrive test",
+ "created": 1792339870.3404434,
+ "product": {
+  "name": "",
+  "link": "",
+  "description": "",
+  "hashtags": "#tiktokshop #tiktokmademebuyit"
+ },
+ "reference": {
+  "url": "",
+  "file": "",
+  "notes": ""
+ },
+ "sources": [
+  {
+   "id": "82512e",
+   "file": "C:\\Users\\thecc\\MemeSupercutData\\ads\\uploads\\onedrive-test\\OneDrive test.mp4",
+   "name": "OneDrive test.mp4",
+   "status": "ready",
+   "error": null,
+   "looks": [],
+   "key": "53dc0f017b5340",
+   "duration": 36.0,
+   "width": 540,
+   "height": 960
+  }
+ ],
+ "script": [
+  {
+   "id": "584ae2",
+   "text": "Stop scrolling, this is the best water bottle I have ever owned.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "cut_offset": null
+  }
+ ],
+ "script_guessed": true,
+ "takes": [
+  {
+   "id": "776a25",
+   "line": "584ae2",
+   "src": "82512e",
+   "in": 3.66,
+   "out": 7.64,
+   "look": null,
+   "alt": 0,
+   "text": "Stop scrolling, this is the best water bottle I have ever owned.",
+   "for_text": "Stop scrolling, this is the best water bottle I have ever owned.",
+   "words": [
+    [
+     "Stop",
+     3.74,
+     4.16
+    ],
+    [
+     "scrolling,",
+     4.16,
+     4.6
+    ],
+    [
+     "this",
+     5.0,
+     5.38
+    ],
+    [
+     "is",
+     5.38,
+     5.54
+    ],
+    [
+     "the",
+     5.54,
+     5.68
+    ],
+    [
+     "best",
+     5.68,
+     5.94
+    ],
+    [
+     "water",
+     5.94,
+     6.26
+    ],
+    [
+     "bottle",
+     6.26,
+     6.6
+    ],
+    [
+     "I",
+     6.6,
+     6.82
+    ],
+    [
+     "have",
+     6.82,
+     7.0
+    ],
+    [
+     "ever",
+     7.0,
+     7.2
+    ],
+    [
+     "owned.",
+     7.2,
+     7.46
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "user": {}
+  },
+  {
+   "id": "8be1b9",
+   "line": "584ae2",
+   "src": "82512e",
+   "in": 9.8,
+   "out": 13.8,
+   "look": null,
+   "alt": 0,
+   "text": "Stop scrolling, this is the best water bottle I have ever owned.",
+   "for_text": "Stop scrolling, this is the best water bottle I have ever owned.",
+   "words": [
+    [
+     "Stop",
+     9.88,
+     10.32
+    ],
+    [
+     "scrolling,",
+     10.32,
+     10.76
+    ],
+    [
+     "this",
+     11.16,
+     11.54
+    ],
+    [
+     "is",
+     11.54,
+     11.7
+    ],
+    [
+     "the",
+     11.7,
+     11.84
+    ],
+    [
+     "best",
+     11.84,
+     12.1
+    ],
+    [
+     "water",
+     12.1,
+     12.42
+    ],
+    [
+     "bottle",
+     12.42,
+     12.76
+    ],
+    [
+     "I",
+     12.76,
+     12.98
+    ],
+    [
+     "have",
+     12.98,
+     13.16
+    ],
+    [
+     "ever",
+     13.16,
+     13.36
+    ],
+    [
+     "owned.",
+     13.36,
+     13.62
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "user": {}
+  },
+  {
+   "id": "e3e231",
+   "line": "584ae2",
+   "src": "82512e",
+   "in": 16.07,
+   "out": 22.62,
+   "look": null,
+   "alt": 0,
+   "text": "Stop scrolling, this is the best, uh, sorry, wait. Let me start over.",
+   "for_text": "Stop scrolling, this is the best water bottle I have ever owned.",
+   "words": [
+    [
+     "Stop",
+     16.15,
+     16.49
+    ],
+    [
+     "scrolling,",
+     16.49,
+     16.93
+    ],
+    [
+     "this",
+     17.31,
+     17.69
+    ],
+    [
+     "is",
+     17.69,
+     17.85
+    ],
+    [
+     "the",
+     17.85,
+     17.99
+    ],
+    [
+     "best",
+     17.99,
+     18.35
+    ],
+    [
+     "uh,",
+     18.63,
+     18.99
+    ],
+    [
+     "sorry,",
+     19.25,
+     19.75
+    ],
+    [
+     "wait.",
+     20.11,
+     20.51
+    ],
+    [
+     "Let",
+     21.3,
+     21.64
+    ],
+    [
+     "me",
+     21.64,
+     21.82
+    ],
+    [
+     "start",
+     21.82,
+     22.1
+    ],
+    [
+     "over.",
+     22.1,
+     22.44
+    ]
+   ],
+   "score": 0.48,
+   "status": "flub",
+   "flags": [
+    "restarted: “sorry”, “wait”, “start over”, “let me start”"
+   ],
+   "missing": [
+    "water",
+    "bottle",
+    "i",
+    "have",
+    "ever",
+    "owned"
+   ],
+   "extra": [
+    "uh",
+    "sorry",
+    "wait",
+    "let",
+    "me",
+    "start",
+    "over"
+   ],
+   "usable": false,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "user": {}
+  },
+  {
+   "id": "e62474",
+   "line": "584ae2",
+   "src": "82512e",
+   "in": 24.84,
+   "out": 28.8,
+   "look": null,
+   "alt": 0,
+   "text": "Stop scrolling, this is the best water bottle I have ever owned.",
+   "for_text": "Stop scrolling, this is the best water bottle I have ever owned.",
+   "words": [
+    [
+     "Stop",
+     24.92,
+     25.34
+    ],
+    [
+     "scrolling,",
+     25.34,
+     25.78
+    ],
+    [
+     "this",
+     26.18,
+     26.56
+    ],
+    [
+     "is",
+     26.56,
+     26.72
+    ],
+    [
+     "the",
+     26.72,
+     26.86
+    ],
+    [
+     "best",
+     26.86,
+     27.12
+    ],
+    [
+     "water",
+     27.12,
+     27.44
+    ],
+    [
+     "bottle",
+     27.44,
+     27.78
+    ],
+    [
+     "I",
+     27.78,
+     28.0
+    ],
+    [
+     "have",
+     28.0,
+     28.16
+    ],
+    [
+     "ever",
+     28.16,
+     28.4
+    ],
+    [
+     "owned.",
+     28.4,
+     28.62
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 2,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "user": {}
+  },
+  {
+   "id": "61a8ab",
+   "line": "584ae2",
+   "src": "82512e",
+   "in": 30.98,
+   "out": 34.96,
+   "look": null,
+   "alt": 0,
+   "text": "Stop scrolling, this is the best water bottle I have ever owned.",
+   "for_text": "Stop scrolling, this is the best water bottle I have ever owned.",
+   "words": [
+    [
+     "Stop",
+     31.06,
+     31.5
+    ],
+    [
+     "scrolling,",
+     31.5,
+     31.96
+    ],
+    [
+     "this",
+     32.34,
+     32.72
+    ],
+    [
+     "is",
+     32.72,
+     32.88
+    ],
+    [
+     "the",
+     32.88,
+     33.02
+    ],
+    [
+     "best",
+     33.02,
+     33.28
+    ],
+    [
+     "water",
+     33.28,
+     33.6
+    ],
+    [
+     "bottle",
+     33.6,
+     33.94
+    ],
+    [
+     "I",
+     33.94,
+     34.16
+    ],
+    [
+     "have",
+     34.16,
+     34.32
+    ],
+    [
+     "ever",
+     34.32,
+     34.54
+    ],
+    [
+     "owned.",
+     34.54,
+     34.78
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 3,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "user": {}
+  }
+ ],
+ "hooks": [],
+ "cta": "",
+ "style": {
+  "subs": {
+   "on": true,
+   "font": "Arial Black",
+   "size": 84,
+   "color": "#FFFFFF",
+   "highlight": "#FFE14D",
+   "outline": "#000000",
+   "outline_w": 6,
+   "uppercase": false,
+   "y": 0.66,
+   "words_per_line": 3,
+   "karaoke": true,
+   "pop": true
+  },
+  "hook": {
+   "on": true,
+   "seconds": 3.0,
+   "y": 0.2,
+   "preset": "box",
+   "font": "Arial Black",
+   "size": 58,
+   "color": "#000000",
+   "box_color": "#FFFFFF",
+   "accent": "#FE2C55",
+   "outline_w": 0,
+   "uppercase": false,
+   "rotate": 0,
+   "pop": true
+  },
+  "cta": {
+   "on": false,
+   "y": 0.8,
+   "preset": "sticker",
+   "font": "Arial Black",
+   "size": 52,
+   "color": "#FFFFFF",
+   "box_color": "#FE2C55",
+   "accent": "#FFE14D",
+   "outline_w": 0,
+   "uppercase": false,
+   "rotate": -2,
+   "pop": true
+  },
+  "product_box": null,
+  "cart_pointer": {
+   "on": true,
+   "words": "orange cart, cart, basket",
+   "seconds": 2.2,
+   "color": "#FF8A00"
+  },
+  "punch_in": 1.12,
+  "pad_before": 0.08,
+  "pad_after": 0.18,
+  "voice_cleanup": false,
+  "loudness": -14
+ },
+ "skip": [],
+ "from_inbox": true,
+ "assets": [],
+ "overlays": [],
+ "renders": {},
+ "saved": {}
+}

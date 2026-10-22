@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Ad Factory">
+<meta name="theme-color" content="#0f0f12">
+<title>Ad Factory</title>
+<link rel="stylesheet" href="styles.css?v=42">
+</head>
+<body>
+<header id="topbar">
+  <div class="brand">🛒 Ad Factory</div>
+  <button id="backBtn" class="ghostbtn" hidden title="All shoots">← Shoots</button>
+  <span class="seg modeSeg" id="modeSeg" hidden role="group" aria-label="Mode">
+    <button data-mode="review" title="Watch, download, save and post the finished videos">👁 Review</button>
+    <button data-mode="edit" title="The full editor: takes, trims, captions, sounds">✏️ Edit</button></span>
+  <div id="crumbs" hidden><span class="crumbRoot">Shoots ›</span>
+    <input id="titleIn" placeholder="Shoot name" title="Shoot name (also the output folder name)">
+    <span id="crumbMeta" class="crumbMeta"></span></div>
+  <span class="spacer"></span>
+  <div id="jobBox" hidden><div class="bar"><i></i></div><span id="jobMsg"></span></div>
+  <span id="saveState" class="muted" title="Changes save automatically"></span>
+  <span class="seg" id="histBtns" hidden role="group" aria-label="History">
+    <button id="undo" class="icon" title="Undo (Ctrl+Z)">↶</button>
+    <button id="redo" class="icon" title="Redo (Ctrl+Y)">↷</button>
+  </span>
+  <button id="folderBtn" hidden title="Open the Outbox in OneDrive (where downloaded videos go)">📂 Outbox</button>
+</header>
+
+<main id="home">
+  <div class="homeBox">
+    <div class="homeHead">
+      <span class="seg homeTabs" role="group" aria-label="Home">
+        <button data-home="shoots" class="on">Shoots</button>
+        <button data-home="saved">☆ Saved <span id="savedCount" class="cnt"></span></button></span>
+      <span id="shootsHead" class="homeHeadRest">
+        <input id="newTitle" placeholder="New shoot, e.g. “40oz bottle · Oct 17”">
+        <button id="newShoot" class="primary">＋ New shoot</button></span>
+      <span id="savedHead" class="homeHeadRest" hidden>
+        <span class="seg savedfilter" role="group" aria-label="Filter">
+          <button data-f="todo" class="on">To post <span id="cntTodo"></span></button>
+          <button data-f="done">Posted <span id="cntDone"></span></button>
+          <button data-f="all">All</button></span>
+        <span class="spacer"></span>
+        <button id="dlAllSaved" class="primary" hidden>⬇ Download all</button>
+        <button id="openPosting" title="Open the Outbox in OneDrive (where downloaded videos go)">📂 Outbox</button></span>
+    </div>
+    <div id="homeShoots">
+      <div id="homeDrop" class="homeDrop">
+        <div class="hdIdle"><b class="hdTitle">⬆ Drop raw videos here</b> <span class="muted hdOr">or</span> <button id="hdPick">choose files</button>
+          <span class="muted hdSub">· they go into the OneDrive inbox and get pre-cut automatically</span>
+          <div class="hdPhoneTip muted">Or in the <b>OneDrive app</b>: open <b>Ad Factory Inbox</b> → <b>＋</b> → <b>Upload</b> (a folder of videos = one shoot).</div>
+          <input id="hdFiles" type="file" accept="video/*,.mov,.mp4,.m4v" multiple hidden></div>
+        <div class="hdAsk" hidden><span>Shoot name</span>
+          <input id="hdFolder" list="hdFolders" placeholder="e.g. Game Night, or a product name"><datalist id="hdFolders"></datalist>
+          <button id="hdGo" class="primary">Upload</button><button id="hdCancel">Cancel</button>
+          <span class="muted hdHint">Same name as an existing shoot = more videos for it</span></div>
+        <div class="hdProg" hidden><span id="hdMsg"></span><div class="hdBar"><i id="hdFill"></i></div>
+          <div class="muted hdKeep">Keep this page open (and the screen on) until it says done. If it stops, pick the same video again with the same shoot name and it carries on.</div></div>
+      </div>
+      <div id="inboxBar"></div>
+      <p class="muted">One shoot = one product filmed in one session. Drop in the raw footage and the script; every usable take of each line goes into a stack, and take 1 of every line makes video 1, take 2 makes video 2, and so on.</p>
+      <div id="shootGrid"></div>
+    </div>
+    <div id="homeSaved" hidden>
+      <p class="muted">Your posting queue: save videos with ☆ in a shoot. Tick <b>Posted</b> once it's up on TikTok.</p>
+      <ol id="savedList"></ol>
+    </div>
+  </div>
+</main>
+
+<main id="review" hidden>
+  <div class="rvBox">
+    <div class="rvHead"><h2 id="rvTitle"></h2><div id="rvMeta" class="muted"></div>
+      <div class="rvActs"><button id="rvMakeAll" class="primary" hidden>▶ Get all videos ready</button>
+        <button id="rvCopyCap" hidden title="Copy the description + hashtags to paste into TikTok">📋 Copy caption</button>
+        <span class="seg rvZoom" title="Card size (or pinch / Ctrl+scroll)"><button id="rvSmaller">−</button><button id="rvBigger">＋</button></span>
+        <span id="rvJob" class="muted"></span></div></div>
+    <div id="rvGrid"></div>
+  </div>
+</main>
+
+<main id="work" hidden>
+  <aside id="left">
+    <div class="resizer" data-pane="left" title="Drag to resize"></div>
+    <div class="paneHead"><span class="paneTitle">Shoot setup</span>
+      <button class="paneToggle icon" data-pane="left" title="Collapse this panel">«</button></div>
+
+    <details class="sec" id="secRef" open>
+      <summary>① Video to copy <span class="sum" id="refSum"></span></summary>
+      <div class="row"><input id="refUrl" placeholder="Paste a TikTok link"><button id="refOpen" class="icon" title="Open the link in your browser">↗</button></div>
+      <div id="refDrop" class="drop small"><span id="refDropMsg">Drop the reference video here</span>, or <button id="refPathBtn" class="linkish">paste a file path</button></div>
+      <video id="refVideo" controls playsinline hidden></video>
+      <textarea id="refNotes" rows="2" placeholder="What to copy from it: the hook, pacing, text style…"></textarea>
+    </details>
+
+    <details class="sec" id="secAssets" open>
+      <summary>② Assets <span class="sum" id="assetSum"></span></summary>
+      <p class="hint">Screenshots, product photos or clips to show on top of the video, like the price screenshot he points at. Place one on a line and pick the word it pops in on.</p>
+      <div id="assetDrop" class="drop small" tabindex="0">Drop images or clips here, or click and <b>Ctrl+V</b> to paste a screenshot</div>
+      <div class="row"><button id="grabRef" title="Save the frame showing in the reference video above as an image, then crop it">📸 Grab frame from the video to copy</button></div>
+      <ol id="assetList"></ol>
+    </details>
+
+    <details class="sec" id="secScript" open>
+      <summary>③ Script <span class="sum" id="scriptSum"></span></summary>
+      <p class="hint">One line per row, in order. It doesn't have to be word-perfect: a take counts if he got through the whole line and it makes sense. Leave it empty and the lines he repeated become the script.</p>
+      <ol id="scriptList"></ol>
+      <div class="row">
+        <button id="addLine">＋ Line</button>
+        <button id="pasteScript" title="Paste a whole script; each line or sentence becomes a row">Paste script…</button>
+        <span class="spacer"></span>
+        <button id="rematch" title="Find the takes again using this script (keeps your manual changes)">↻ Re-match</button>
+      </div>
+      <div id="pasteBox" hidden>
+        <textarea id="pasteText" rows="6" placeholder="Paste the script. Each line (or sentence) becomes a script line."></textarea>
+        <div class="row"><label class="chk"><input type="checkbox" id="pasteSentences" checked> Split long lines into sentences</label>
+          <span class="spacer"></span><button id="pasteCancel">Cancel</button><button id="pasteOk" class="primary">Use this script</button></div>
+      </div>
+    </details>
+
+    <details class="sec" id="secRaw" open>
+      <summary>④ Raw footage <span class="sum" id="rawSum"></span></summary>
+      <div id="rawDrop" class="drop">Drop raw video files here<br><span class="muted">or</span> <button id="rawPathBtn" class="linkish">add a file or folder path</button></div>
+      <ol id="srcList"></ol>
+      <button id="process" class="primary wide">Find takes</button>
+    </details>
+
+    <details class="sec" id="secPost">
+      <summary>⑤ Product &amp; post text <span class="sum" id="postSum"></span></summary>
+      <label class="fld">Product name<input id="pName" placeholder="what to search when tagging it in TikTok"></label>
+      <label class="fld">TikTok Shop link<input id="pLink" placeholder="https://…"></label>
+      <label class="fld">Description<textarea id="pDesc" rows="3" placeholder="caption to paste into TikTok"></textarea></label>
+      <label class="fld">Hashtags<input id="pTags"></label>
+      <div class="row"><button id="copyPost">⧉ Copy description</button><button id="copyLink">⧉ Copy link</button></div>
+      <p class="hint">TikTok attaches the product when you post (Add link → Products). The link and text are also saved as post.txt next to the videos.</p>
+    </details>
+
+    <details class="sec" id="secText">
+      <summary>⑥ Text on the video</summary>
+      <label class="fld">Hooks <span class="muted">(one per line; video 1 gets the first, video 2 the next…)</span>
+        <textarea id="hooks" rows="4" placeholder="POV: your ice is still ice 24 hours later"></textarea></label>
+      <div class="row"><label class="chk"><input type="checkbox" data-path="style.hook.on"> Show hook for</label>
+        <input type="number" data-path="style.hook.seconds" step="0.5" min="0.5" style="width:64px"> s
+        <select data-path="style.hook.preset" class="presetSel"></select></div>
+      <h4>Orange cart</h4>
+      <div class="row"><label class="chk"><input type="checkbox" data-path="style.cart_pointer.on"> Point at the cart when he says:</label></div>
+      <div class="row"><input data-path="style.cart_pointer.words" title="Words or phrases, comma separated">
+        <input type="number" data-path="style.cart_pointer.seconds" step="0.2" min="0.6" style="width:62px" title="seconds"> s
+        <input type="color" data-path="style.cart_pointer.color" title="Arrow + ring color"></div>
+      <p class="hint">An arrow and ring where TikTok shows the product tag, while he says it. No extra text: his line is the call to action.</p>
+      <h4>Product</h4>
+      <p class="hint">Mark where the product is (📦 under the preview). Subtitles and the hook move off it, and stay clear of TikTok's buttons and captions.</p>
+      <div class="row"><label class="chk"><input type="checkbox" data-path="style.subs.on"> Subtitles</label>
+        <select data-path="style.subs.font" class="fontSel"></select>
+        <input type="color" data-path="style.subs.highlight" title="Highlighted word color"></div>
+      <div class="row"><label class="lbl">Sub size</label><input type="range" data-path="style.subs.size" min="50" max="130" step="2"><span class="val"></span></div>
+      <div class="row"><label class="lbl">Sub height</label><input type="range" data-path="style.subs.y" min="0.3" max="0.85" step="0.01"><span class="val"></span></div>
+      <div class="row"><label class="lbl">Words/line</label><input type="range" data-path="style.subs.words_per_line" min="1" max="6" step="1"><span class="val"></span></div>
+      <div class="row"><label class="chk"><input type="checkbox" data-path="style.subs.uppercase"> ALL CAPS</label>
+        <label class="chk"><input type="checkbox" data-path="style.subs.karaoke"> Word highlight</label></div>
+      <h4>Cuts &amp; sound</h4>
+      <div class="row"><label class="lbl">Punch-in</label><input type="range" data-path="style.punch_in" min="1" max="1.4" step="0.02"><span class="val"></span></div>
+      <p class="hint">Every other line zooms in a little: the classic jump cut. 1.00 = off.</p>
+      <div class="row"><label class="lbl">Room before</label><input type="range" data-path="style.pad_before" min="0" max="0.5" step="0.02"><span class="val"></span></div>
+      <div class="row"><label class="lbl">Room after</label><input type="range" data-path="style.pad_after" min="0" max="0.8" step="0.02"><span class="val"></span></div>
+      <p class="hint">Silence kept around each line. Takes effect on ↻ Re-match.</p>
+      <div class="row"><label class="chk"><input type="checkbox" data-path="style.voice_cleanup"> Clean up voice (cut rumble + hiss)</label></div>
+    </details>
+  </aside>
+
+  <section id="board">
+    <!-- player: right above the clips it plays -->
+    <div id="player">
+      <div id="transport">
+        <span id="countBox" title=""><b id="vidCount">0</b> <span id="vidWord">videos</span><span id="limitMsg" hidden></span></span>
+        <span class="seg" role="group" aria-label="Videos"><button id="prevVid" class="icon" title="Previous video ([)">‹</button>
+          <span id="vidPos" class="segLabel mono"></span>
+          <button id="nextVid" class="icon" title="Next video (])">›</button></span>
+        <span class="seg" role="group" aria-label="Video">
+          <button id="restartVid" class="icon" title="Start the video over and play (Home)">⏮︎</button>
+          <button id="playVid" class="icon play" title="Play the video from where it is (Space)">▶︎</button></span>
+        <span class="seg" role="group" aria-label="Clip"><span class="segLabel">Clip</span>
+          <button id="clipOnce" class="icon" title="Play the selected clip once">▶︎</button>
+          <button id="clipLoop" class="icon" title="Play the selected clip on a loop">🔁</button>
+          <button id="clipOn" title="Play the selected clip, then keep playing the rest of the video">▶︎▶︎</button></span>
+        <button id="rejTake" class="dangerish" title="Reject the selected take, or put a rejected one back (U)">✕ Reject</button>
+        <span id="timeDisp" class="mono"></span>
+        <span class="spacer"></span>
+        <label class="chk" title="Show takes that were rejected (flubs, cut-off lines, pauses)"><input type="checkbox" id="showRejects" checked> Rejects</label>
+        <label class="chk" title="Speech that isn't a script line (“okay rolling”, chit-chat)"><input type="checkbox" id="showOther"> Other speech</label>
+      </div>
+      <div id="rendered"></div>
+      <div id="vbar" title="The whole video: click or drag to jump anywhere (J / L = 2s back / ahead)"></div>
+    </div>
+    <div id="boardMain">
+      <div id="grid"></div>
+      <aside id="inspWrap">
+        <div class="paneHead"><span class="paneTitle">Selected take</span>
+          <button id="inspToggle" class="icon" title="Hide the take details">»</button></div>
+        <div id="inspector"></div>
+      </aside>
+    </div>
+    <p class="hint" id="boardHint">Drag takes to reorder a stack, onto another line to move them, or into the rejects to drop them. Take <i>k</i> of every line makes video <i>k</i>. Keys: U usable/reject · ← → ↑ ↓ move · Space play · Home start over · J / L ∓2s.</p>
+  </section>
+
+  <aside id="right">
+    <div class="resizer" data-pane="right" title="Drag to resize"></div>
+    <div class="paneHead"><span class="paneTitle">Preview</span>
+      <span id="stageTools">
+        <button id="guidesBtn" title="Show where TikTok's buttons, captions and product tag will sit">📱 TikTok UI</button>
+        <button id="markProd" title="Drag a box around the product on the preview; text moves off it">📦 Product area</button>
+        <button id="allProd" title="Use this line's product area for every line" hidden>Same for all lines</button>
+        <button id="clearProd" class="icon" title="Forget this line's product area" hidden>✕</button>
+      </span>
+      <button class="paneToggle icon" data-pane="right" title="Collapse this panel">»</button></div>
+    <div id="stageWrap"><div id="stage">
+      <video id="video" playsinline preload="auto"></video>
+      <div id="uiGuides" hidden></div>
+      <div id="assetLayer"></div>
+      <div id="cartPtr" hidden><div class="ring"></div><div class="arrow"></div></div>
+      <div id="fxLayer"></div>
+      <img id="hookImg" class="ov" alt="">
+      <img id="ctaImg" class="ov" alt="">
+      <div id="subs"></div>
+      <div id="prodBox" hidden><span>product</span></div>
+      <div id="markLayer" hidden></div>
+      <div id="stageEmpty">No video yet</div>
+    </div></div>
+  </aside>
+</main>
+
+<footer id="bottom" hidden>
+  <div id="trimHead"><span class="secLabel">Trim</span><span id="trimLabel" class="muted">Select a take</span>
+    <span class="seg" role="group" aria-label="Cut out pauses">
+      <button id="splitBtn" title="Split the take at the playhead (S). Two splits make a piece you can click to cut out">✂ Split</button>
+      <button id="cutMode" title="Cut mode (C): drag across the strip to cut that bit out. Shift+drag works any time">✂ Cut mode</button>
+      <button id="tightenOne" title="Cut every pause longer than 0.3s in this take (keeps a short breath)">⚡ Tighten pauses</button>
+      <button id="tightenAll" title="Tighten the pauses in every usable take of the shoot">⚡ all takes</button></span>
+    <span class="seg" id="trimZoom" role="group" aria-label="Zoom">
+      <button data-z="out" class="icon" title="Zoom out (Ctrl+wheel)">−</button>
+      <span id="trimZoomLbl" class="segLabel mono"></span>
+      <button data-z="in" class="icon" title="Zoom in (Ctrl+wheel)">＋</button>
+      <button data-z="fit" title="Fit the selected take">Fit</button></span>
+    <button id="snapBtn" title="Snap trim edges to the start/end of words (hold Alt to flip it for one drag)">🧲 Snap to words</button>
+    <button id="sfxBtn" title="Soundboard: browse sound effects and drag one onto the strip">🔊 Sounds</button>
+    <button id="fxBtn" title="Effects board: point at the TikTok Shop tag, flashes, caption styles">✨ Effects</button>
+    <span class="spacer"></span><span class="hint">Hover to preview · drag the edges to trim · click to set the playhead · Space plays just this take · wheel scrolls, Ctrl+wheel zooms · Shift+drag cuts a bit out, click a red block to put it back · Alt flips snapping</span></div>
+  <div id="trim"></div>
+  <div id="trimScroll" hidden><div class="thumb"></div><div class="clipmark"></div></div>
+  <div id="sfxPanel" hidden></div>
+  <div id="fxPanel" hidden></div>
+  <div id="sfxPop" hidden></div>
+</footer>
+
+<div id="cropWin" hidden>
+  <div class="nwBox">
+    <div class="nwHead"><h2>✂ Crop</h2><span class="muted" id="cropHint">Drag a box around the part to show. Double-click to use the whole image.</span><span class="spacer"></span>
+      <button id="cropReset">Whole image</button><button id="cropCancel">Cancel</button><button id="cropOk" class="primary">Use crop</button></div>
+    <div id="cropArea"><img id="cropImg" alt=""><div id="cropBox" hidden></div></div>
+  </div>
+</div>
+<div id="toast" hidden></div>
+<script src="app.js?v=50"></script>
+</body>
+</html>

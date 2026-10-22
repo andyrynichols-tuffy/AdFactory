@@ -1,0 +1,3059 @@
+{
+ "version": 1,
+ "rev": 61,
+ "title": "MenPen 1",
+ "created": 1792372407.2218602,
+ "product": {
+  "name": "MenPen",
+  "link": "",
+  "description": "",
+  "hashtags": "#tiktokshop #tiktokmademebuyit"
+ },
+ "reference": {
+  "url": "https://www.tiktok.com/t/ZTfFswNQo/",
+  "file": "",
+  "notes": "Voiceover video: the sound is the voice recording (20261019_011114000), the picture is 5 silent shots from the one-take (20261019_010330000), cut where the reference cuts.\nVoiceover script:\n• This is every celebrity's grooming secret.\n• They are all darkening their eyebrows to give their face a more defined look.\n• Dark eyebrows frame your face and make your eyes pop out more.\n• If you want that celebrity look, try the MenPen today."
+ },
+ "sources": [
+  {
+   "id": "6db7d8",
+   "file": "C:\\Users\\thecc\\MemeSupercutData\\ads\\uploads\\menpen-1\\20261019_011114000_iOS.MOV",
+   "name": "20261019_011114000_iOS.MOV",
+   "status": "ready",
+   "error": null,
+   "batch": 1,
+   "looks": [],
+   "key": "8b585e2a16c625",
+   "duration": 16.19,
+   "width": 1080,
+   "height": 1920
+  },
+  {
+   "id": "6478c1",
+   "file": "C:\\Users\\thecc\\MemeSupercutData\\ads\\uploads\\menpen-1\\20261019_010330000_iOS.MOV",
+   "name": "20261019_010330000_iOS.MOV",
+   "status": "ready",
+   "error": null,
+   "batch": 1,
+   "looks": [],
+   "key": "f41549290cd3a4",
+   "duration": 172.903333,
+   "width": 1920,
+   "height": 1080
+  },
+  {
+   "id": "233729",
+   "file": "C:\\Users\\thecc\\MemeSupercutData\\ads\\uploads\\menpen-1\\alt audio 1.MOV",
+   "name": "alt audio 1.MOV",
+   "status": "ready",
+   "error": null,
+   "batch": 2,
+   "looks": [],
+   "key": "f4c3c5bc6dc4f4",
+   "duration": 15.803333,
+   "width": 1080,
+   "height": 1920
+  },
+  {
+   "id": "4d32a8",
+   "file": "C:\\Users\\thecc\\MemeSupercutData\\ads\\uploads\\menpen-1\\20261019_014639000_iOS.MOV",
+   "name": "20261019_014639000_iOS.MOV",
+   "status": "ready",
+   "error": null,
+   "batch": 3,
+   "looks": [],
+   "key": "8c371055fb36cf",
+   "duration": 97.535,
+   "width": 1920,
+   "height": 1080
+  }
+ ],
+ "script": [
+  {
+   "id": "592c21",
+   "text": "Shot 1: Pen across the brows",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "750c95",
+   "text": "Shot 2: Close-up: filling in the brow",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "acf9da",
+   "text": "Shot 3: Pointing the pen at the unfilled brow",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "128395",
+   "text": "Shot 4: The filled-in brow",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "14d148",
+   "text": "Shot 5: Filling in, hand-held",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  }
+ ],
+ "script_guessed": false,
+ "takes": [
+  {
+   "id": "bee52b",
+   "line": null,
+   "src": "233729",
+   "in": 1.16,
+   "out": 3.44,
+   "look": null,
+   "alt": 0,
+   "text": "This is every celebrity's grooming secret.",
+   "for_text": null,
+   "words": [
+    [
+     "This",
+     1.24,
+     1.54
+    ],
+    [
+     "is",
+     1.54,
+     1.68
+    ],
+    [
+     "every",
+     1.68,
+     1.9
+    ],
+    [
+     "celebrity's",
+     1.9,
+     2.48
+    ],
+    [
+     "grooming",
+     2.48,
+     2.78
+    ],
+    [
+     "secret.",
+     2.78,
+     3.26
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 5,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "f5f3ee",
+   "line": null,
+   "src": "233729",
+   "in": 3.78,
+   "out": 7.38,
+   "look": null,
+   "alt": 0,
+   "text": "They're all darkening their eyebrows to give their face a more defined look.",
+   "for_text": null,
+   "words": [
+    [
+     "They're",
+     3.86,
+     4.2
+    ],
+    [
+     "all",
+     4.2,
+     4.34
+    ],
+    [
+     "darkening",
+     4.34,
+     4.84
+    ],
+    [
+     "their",
+     4.84,
+     5.0
+    ],
+    [
+     "eyebrows",
+     5.0,
+     5.42
+    ],
+    [
+     "to",
+     5.42,
+     5.68
+    ],
+    [
+     "give",
+     5.68,
+     5.82
+    ],
+    [
+     "their",
+     5.82,
+     5.96
+    ],
+    [
+     "face",
+     5.96,
+     6.24
+    ],
+    [
+     "a",
+     6.24,
+     6.4
+    ],
+    [
+     "more",
+     6.4,
+     6.54
+    ],
+    [
+     "defined",
+     6.54,
+     6.82
+    ],
+    [
+     "look.",
+     6.82,
+     7.2
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 6,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "7542ce",
+   "line": null,
+   "src": "233729",
+   "in": 7.98,
+   "out": 11.24,
+   "look": null,
+   "alt": 0,
+   "text": "Dark eyebrows frame your face and make your eyes pop out more.",
+   "for_text": null,
+   "words": [
+    [
+     "Dark",
+     8.06,
+     8.46
+    ],
+    [
+     "eyebrows",
+     8.46,
+     8.88
+    ],
+    [
+     "frame",
+     8.88,
+     9.28
+    ],
+    [
+     "your",
+     9.28,
+     9.4
+    ],
+    [
+     "face",
+     9.4,
+     9.74
+    ],
+    [
+     "and",
+     9.74,
+     9.92
+    ],
+    [
+     "make",
+     9.92,
+     10.1
+    ],
+    [
+     "your",
+     10.1,
+     10.2
+    ],
+    [
+     "eyes",
+     10.2,
+     10.4
+    ],
+    [
+     "pop",
+     10.4,
+     10.64
+    ],
+    [
+     "out",
+     10.64,
+     10.8
+    ],
+    [
+     "more.",
+     10.8,
+     11.06
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 7,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "70b950",
+   "line": null,
+   "src": "233729",
+   "in": 11.62,
+   "out": 14.7,
+   "look": null,
+   "alt": 0,
+   "text": "If you want that celebrity look, try the Men Pen today.",
+   "for_text": null,
+   "words": [
+    [
+     "If",
+     11.7,
+     11.98
+    ],
+    [
+     "you",
+     11.98,
+     12.06
+    ],
+    [
+     "want",
+     12.06,
+     12.2
+    ],
+    [
+     "that",
+     12.2,
+     12.38
+    ],
+    [
+     "celebrity",
+     12.38,
+     12.88
+    ],
+    [
+     "look,",
+     12.88,
+     13.2
+    ],
+    [
+     "try",
+     13.34,
+     13.72
+    ],
+    [
+     "the",
+     13.72,
+     13.88
+    ],
+    [
+     "Men",
+     13.88,
+     14.04
+    ],
+    [
+     "Pen",
+     14.04,
+     14.28
+    ],
+    [
+     "today.",
+     14.28,
+     14.52
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 8,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "1f8e0e",
+   "line": "77b69d",
+   "src": "6478c1",
+   "in": 167.56,
+   "out": 168.96,
+   "look": null,
+   "alt": 0,
+   "text": "Ready to look, try the Men Pen.",
+   "for_text": "Shot 4: Front look with the pen",
+   "words": [
+    [
+     "Ready",
+     167.64,
+     167.78
+    ],
+    [
+     "to",
+     167.78,
+     167.86
+    ],
+    [
+     "look",
+     167.86,
+     168.02
+    ],
+    [
+     "with",
+     168.16,
+     168.34
+    ],
+    [
+     "the",
+     168.34,
+     168.48
+    ],
+    [
+     "Men",
+     168.48,
+     168.66
+    ],
+    [
+     "pen",
+     168.66,
+     168.78
+    ]
+   ],
+   "score": 0.429,
+   "status": "incomplete",
+   "flags": [
+    "only 43% of the line"
+   ],
+   "missing": [
+    "shot",
+    "four",
+    "front",
+    "with"
+   ],
+   "extra": [
+    "ready",
+    "to",
+    "try",
+    "men"
+   ],
+   "usable": false,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "f611e2",
+   "line": null,
+   "src": "6478c1",
+   "in": 170.22,
+   "out": 172.64,
+   "look": null,
+   "alt": 0,
+   "text": "This is every celebrity's grooming secret.",
+   "for_text": null,
+   "words": [
+    [
+     "This",
+     170.3,
+     170.54
+    ],
+    [
+     "is",
+     170.54,
+     170.72
+    ],
+    [
+     "every",
+     170.72,
+     171.0
+    ],
+    [
+     "celebrity's",
+     171.0,
+     171.72
+    ],
+    [
+     "grooming",
+     171.72,
+     172.02
+    ],
+    [
+     "secret.",
+     172.02,
+     172.46
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 4,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "3cc451",
+   "line": null,
+   "src": "6db7d8",
+   "in": 0.02,
+   "out": 2.58,
+   "look": null,
+   "alt": 0,
+   "text": "This is every celebrity's grooming secret.",
+   "for_text": null,
+   "words": [
+    [
+     "This",
+     0.0,
+     0.44
+    ],
+    [
+     "is",
+     0.44,
+     0.64
+    ],
+    [
+     "every",
+     0.64,
+     0.9
+    ],
+    [
+     "celebrity's",
+     0.9,
+     1.56
+    ],
+    [
+     "grooming",
+     1.56,
+     1.86
+    ],
+    [
+     "secret.",
+     1.86,
+     2.4
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "a7a4ea",
+   "line": null,
+   "src": "6db7d8",
+   "in": 2.54,
+   "out": 6.64,
+   "look": null,
+   "alt": 0,
+   "text": "They are all darkening their eyebrows to give their face a more defined look.",
+   "for_text": null,
+   "words": [
+    [
+     "They",
+     2.62,
+     3.0
+    ],
+    [
+     "are",
+     3.0,
+     3.12
+    ],
+    [
+     "all",
+     3.12,
+     3.36
+    ],
+    [
+     "darkening",
+     3.36,
+     3.88
+    ],
+    [
+     "their",
+     3.88,
+     4.06
+    ],
+    [
+     "eyebrows",
+     4.06,
+     4.48
+    ],
+    [
+     "to",
+     4.48,
+     4.7
+    ],
+    [
+     "give",
+     4.7,
+     4.84
+    ],
+    [
+     "their",
+     4.84,
+     5.0
+    ],
+    [
+     "face",
+     5.0,
+     5.36
+    ],
+    [
+     "a",
+     5.36,
+     5.54
+    ],
+    [
+     "more",
+     5.54,
+     5.68
+    ],
+    [
+     "defined",
+     5.68,
+     6.04
+    ],
+    [
+     "look.",
+     6.04,
+     6.46
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "2177c7",
+   "line": null,
+   "src": "6db7d8",
+   "in": 7.56,
+   "out": 11.16,
+   "look": null,
+   "alt": 0,
+   "text": "Dark eyebrows frame your face and make your eyes pop out more.",
+   "for_text": null,
+   "words": [
+    [
+     "Dark",
+     7.64,
+     8.06
+    ],
+    [
+     "eyebrows",
+     8.06,
+     8.46
+    ],
+    [
+     "frame",
+     8.46,
+     8.9
+    ],
+    [
+     "your",
+     8.9,
+     9.04
+    ],
+    [
+     "face",
+     9.04,
+     9.46
+    ],
+    [
+     "and",
+     9.46,
+     9.72
+    ],
+    [
+     "make",
+     9.72,
+     9.9
+    ],
+    [
+     "your",
+     9.9,
+     10.0
+    ],
+    [
+     "eyes",
+     10.0,
+     10.26
+    ],
+    [
+     "pop",
+     10.26,
+     10.54
+    ],
+    [
+     "out",
+     10.54,
+     10.7
+    ],
+    [
+     "more.",
+     10.7,
+     10.98
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 2,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "24420a",
+   "line": null,
+   "src": "6db7d8",
+   "in": 11.66,
+   "out": 14.9,
+   "look": null,
+   "alt": 0,
+   "text": "If you want that celebrity look, try the Men Pen today.",
+   "for_text": null,
+   "words": [
+    [
+     "If",
+     11.74,
+     12.06
+    ],
+    [
+     "you",
+     12.06,
+     12.14
+    ],
+    [
+     "want",
+     12.14,
+     12.3
+    ],
+    [
+     "that",
+     12.3,
+     12.46
+    ],
+    [
+     "celebrity",
+     12.46,
+     12.92
+    ],
+    [
+     "look,",
+     12.92,
+     13.32
+    ],
+    [
+     "try",
+     13.5,
+     13.74
+    ],
+    [
+     "the",
+     13.74,
+     13.9
+    ],
+    [
+     "Men",
+     13.9,
+     14.14
+    ],
+    [
+     "Pen",
+     14.14,
+     14.44
+    ],
+    [
+     "today.",
+     14.44,
+     14.72
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 3,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "4a8f77",
+   "line": "592c21",
+   "src": "6478c1",
+   "in": 13.0,
+   "out": 14.248,
+   "look": null,
+   "alt": 0,
+   "text": "This is every celebrity's",
+   "for_text": null,
+   "words": [
+    [
+     "This",
+     13.0,
+     13.44
+    ],
+    [
+     "is",
+     13.44,
+     13.64
+    ],
+    [
+     "every",
+     13.64,
+     13.9
+    ],
+    [
+     "celebrity's",
+     13.9,
+     14.248
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [
+    "Visuals A + Voiceover 1: Pen across the brows"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 0.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": 1.0,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "manual": true,
+    "in": true,
+    "out": true,
+    "cuts": true,
+    "order": true,
+    "words": true,
+    "text": true,
+    "volume": true,
+    "speed": true
+   }
+  },
+  {
+   "id": "ec53fc",
+   "line": "750c95",
+   "src": "6478c1",
+   "in": 56.875,
+   "out": 59.937,
+   "look": null,
+   "alt": 0,
+   "text": "grooming secret. They are all darkening their eyebrows",
+   "for_text": null,
+   "words": [
+    [
+     "grooming",
+     57.187,
+     57.487
+    ],
+    [
+     "secret.",
+     57.487,
+     58.027
+    ],
+    [
+     "They",
+     58.247,
+     58.627
+    ],
+    [
+     "are",
+     58.627,
+     58.747
+    ],
+    [
+     "all",
+     58.747,
+     58.987
+    ],
+    [
+     "darkening",
+     58.987,
+     59.507
+    ],
+    [
+     "their",
+     59.507,
+     59.687
+    ],
+    [
+     "eyebrows",
+     59.687,
+     59.937
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [
+    "Visuals A + Voiceover 1: Close-up: filling in the brow"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 0.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": 1.0,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "manual": true,
+    "in": true,
+    "out": true,
+    "cuts": true,
+    "order": true,
+    "words": true,
+    "text": true,
+    "volume": true,
+    "speed": true
+   }
+  },
+  {
+   "id": "662c78",
+   "line": "acf9da",
+   "src": "6478c1",
+   "in": 48.0,
+   "out": 49.075,
+   "look": null,
+   "alt": 0,
+   "text": "to give their face a",
+   "for_text": null,
+   "words": [
+    [
+     "to",
+     48.17,
+     48.39
+    ],
+    [
+     "give",
+     48.39,
+     48.53
+    ],
+    [
+     "their",
+     48.53,
+     48.69
+    ],
+    [
+     "face",
+     48.69,
+     49.05
+    ],
+    [
+     "a",
+     49.05,
+     49.075
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [
+    "Visuals A + Voiceover 1: Pointing the pen at the unfilled brow"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 0.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": 1.0,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "manual": true,
+    "in": true,
+    "out": true,
+    "cuts": true,
+    "order": true,
+    "words": true,
+    "text": true,
+    "volume": true,
+    "speed": true
+   }
+  },
+  {
+   "id": "1f87db",
+   "line": "128395",
+   "src": "6478c1",
+   "in": 109.875,
+   "out": 111.831,
+   "look": null,
+   "alt": 0,
+   "text": "more defined look. Dark eyebrows",
+   "for_text": null,
+   "words": [
+    [
+     "more",
+     110.03,
+     110.17
+    ],
+    [
+     "defined",
+     110.17,
+     110.53
+    ],
+    [
+     "look.",
+     110.53,
+     110.95
+    ],
+    [
+     "Dark",
+     111.33,
+     111.75
+    ],
+    [
+     "eyebrows",
+     111.75,
+     111.831
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [
+    "Visuals A + Voiceover 1: The filled-in brow"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 0.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": 1.0,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "manual": true,
+    "in": true,
+    "out": true,
+    "cuts": true,
+    "order": true,
+    "words": true,
+    "text": true,
+    "volume": true,
+    "speed": true
+   }
+  },
+  {
+   "id": "6a1003",
+   "line": "14d148",
+   "src": "6478c1",
+   "in": 76.0,
+   "out": 82.449,
+   "look": null,
+   "alt": 0,
+   "text": "frame your face and make your eyes pop out more. If you want that celebrity look, try the MenPen today.",
+   "for_text": null,
+   "words": [
+    [
+     "frame",
+     76.319,
+     76.759
+    ],
+    [
+     "your",
+     76.759,
+     76.899
+    ],
+    [
+     "face",
+     76.899,
+     77.319
+    ],
+    [
+     "and",
+     77.319,
+     77.579
+    ],
+    [
+     "make",
+     77.579,
+     77.759
+    ],
+    [
+     "your",
+     77.759,
+     77.859
+    ],
+    [
+     "eyes",
+     77.859,
+     78.119
+    ],
+    [
+     "pop",
+     78.119,
+     78.399
+    ],
+    [
+     "out",
+     78.399,
+     78.559
+    ],
+    [
+     "more.",
+     78.559,
+     78.839
+    ],
+    [
+     "If",
+     79.219,
+     79.539
+    ],
+    [
+     "you",
+     79.539,
+     79.619
+    ],
+    [
+     "want",
+     79.619,
+     79.779
+    ],
+    [
+     "that",
+     79.779,
+     79.939
+    ],
+    [
+     "celebrity",
+     79.939,
+     80.399
+    ],
+    [
+     "look,",
+     80.399,
+     80.799
+    ],
+    [
+     "try",
+     80.979,
+     81.219
+    ],
+    [
+     "the",
+     81.219,
+     81.379
+    ],
+    [
+     "MenPen",
+     81.379,
+     81.919
+    ],
+    [
+     "today.",
+     81.919,
+     82.199
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [
+    "Visuals A + Voiceover 1: Filling in, hand-held"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 0.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": 1.0,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "manual": true,
+    "in": true,
+    "out": true,
+    "cuts": true,
+    "order": true,
+    "words": true,
+    "text": true,
+    "volume": true,
+    "speed": true
+   }
+  },
+  {
+   "id": "e6d1ed",
+   "line": "592c21",
+   "src": "6478c1",
+   "in": 13.0,
+   "out": 14.13,
+   "look": null,
+   "alt": 0,
+   "text": "This is every celebrity's",
+   "for_text": null,
+   "words": [
+    [
+     "This",
+     13.08,
+     13.38
+    ],
+    [
+     "is",
+     13.38,
+     13.52
+    ],
+    [
+     "every",
+     13.52,
+     13.74
+    ],
+    [
+     "celebrity's",
+     13.74,
+     14.13
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [
+    "Visuals A + Voiceover 2 (alt audio 1): Pen across the brows"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 0.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": 1.0,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "manual": true,
+    "in": true,
+    "out": true,
+    "cuts": true,
+    "order": true,
+    "words": true,
+    "text": true,
+    "volume": true,
+    "speed": true
+   }
+  },
+  {
+   "id": "e42559",
+   "line": "750c95",
+   "src": "6478c1",
+   "in": 56.875,
+   "out": 59.694,
+   "look": null,
+   "alt": 0,
+   "text": "grooming secret. They're all darkening their eyebrows",
+   "for_text": null,
+   "words": [
+    [
+     "grooming",
+     57.065,
+     57.365
+    ],
+    [
+     "secret.",
+     57.365,
+     57.845
+    ],
+    [
+     "They're",
+     58.225,
+     58.565
+    ],
+    [
+     "all",
+     58.565,
+     58.705
+    ],
+    [
+     "darkening",
+     58.705,
+     59.205
+    ],
+    [
+     "their",
+     59.205,
+     59.365
+    ],
+    [
+     "eyebrows",
+     59.365,
+     59.694
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [
+    "Visuals A + Voiceover 2 (alt audio 1): Close-up: filling in the brow"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 0.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": 1.0,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "manual": true,
+    "in": true,
+    "out": true,
+    "cuts": true,
+    "order": true,
+    "words": true,
+    "text": true,
+    "volume": true,
+    "speed": true
+   }
+  },
+  {
+   "id": "0ac3ba",
+   "line": "acf9da",
+   "src": "6478c1",
+   "in": 48.0,
+   "out": 48.935,
+   "look": null,
+   "alt": 0,
+   "text": "to give their face a",
+   "for_text": null,
+   "words": [
+    [
+     "to",
+     48.09,
+     48.35
+    ],
+    [
+     "give",
+     48.35,
+     48.49
+    ],
+    [
+     "their",
+     48.49,
+     48.63
+    ],
+    [
+     "face",
+     48.63,
+     48.91
+    ],
+    [
+     "a",
+     48.91,
+     48.935
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [
+    "Visuals A + Voiceover 2 (alt audio 1): Pointing the pen at the unfilled brow"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 0.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": 1.0,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "manual": true,
+    "in": true,
+    "out": true,
+    "cuts": true,
+    "order": true,
+    "words": true,
+    "text": true,
+    "volume": true,
+    "speed": true
+   }
+  },
+  {
+   "id": "08a9f3",
+   "line": "128395",
+   "src": "6478c1",
+   "in": 109.875,
+   "out": 111.64,
+   "look": null,
+   "alt": 0,
+   "text": "more defined look. Dark eyebrows",
+   "for_text": null,
+   "words": [
+    [
+     "more",
+     110.01,
+     110.15
+    ],
+    [
+     "defined",
+     110.15,
+     110.43
+    ],
+    [
+     "look.",
+     110.43,
+     110.81
+    ],
+    [
+     "Dark",
+     111.19,
+     111.59
+    ],
+    [
+     "eyebrows",
+     111.59,
+     111.64
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [
+    "Visuals A + Voiceover 2 (alt audio 1): The filled-in brow"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 0.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": 1.0,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "manual": true,
+    "in": true,
+    "out": true,
+    "cuts": true,
+    "order": true,
+    "words": true,
+    "text": true,
+    "volume": true,
+    "speed": true
+   }
+  },
+  {
+   "id": "efbdc8",
+   "line": "14d148",
+   "src": "6478c1",
+   "in": 76.0,
+   "out": 82.0,
+   "look": null,
+   "alt": 0,
+   "text": "frame your face and make your eyes pop out more. If you want that celebrity look, try the MenPen today.",
+   "for_text": null,
+   "words": [
+    [
+     "frame",
+     76.37,
+     76.77
+    ],
+    [
+     "your",
+     76.77,
+     76.89
+    ],
+    [
+     "face",
+     76.89,
+     77.23
+    ],
+    [
+     "and",
+     77.23,
+     77.41
+    ],
+    [
+     "make",
+     77.41,
+     77.59
+    ],
+    [
+     "your",
+     77.59,
+     77.69
+    ],
+    [
+     "eyes",
+     77.69,
+     77.89
+    ],
+    [
+     "pop",
+     77.89,
+     78.13
+    ],
+    [
+     "out",
+     78.13,
+     78.29
+    ],
+    [
+     "more.",
+     78.29,
+     78.55
+    ],
+    [
+     "If",
+     78.93,
+     79.21
+    ],
+    [
+     "you",
+     79.21,
+     79.29
+    ],
+    [
+     "want",
+     79.29,
+     79.43
+    ],
+    [
+     "that",
+     79.43,
+     79.61
+    ],
+    [
+     "celebrity",
+     79.61,
+     80.11
+    ],
+    [
+     "look,",
+     80.11,
+     80.43
+    ],
+    [
+     "try",
+     80.57,
+     80.95
+    ],
+    [
+     "the",
+     80.95,
+     81.11
+    ],
+    [
+     "MenPen",
+     81.11,
+     81.51
+    ],
+    [
+     "today.",
+     81.51,
+     81.75
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [
+    "Visuals A + Voiceover 2 (alt audio 1): Filling in, hand-held"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 0.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": 1.0,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "manual": true,
+    "in": true,
+    "out": true,
+    "cuts": true,
+    "order": true,
+    "words": true,
+    "text": true,
+    "volume": true,
+    "speed": true
+   }
+  },
+  {
+   "id": "17d5a2",
+   "line": "592c21",
+   "src": "4d32a8",
+   "in": 11.75,
+   "out": 12.998,
+   "look": null,
+   "alt": 0,
+   "text": "This is every celebrity's",
+   "for_text": null,
+   "words": [
+    [
+     "This",
+     11.75,
+     12.19
+    ],
+    [
+     "is",
+     12.19,
+     12.39
+    ],
+    [
+     "every",
+     12.39,
+     12.65
+    ],
+    [
+     "celebrity's",
+     12.65,
+     12.998
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [
+    "Visuals B + Voiceover 1: Pen across the brows"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 2,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 0.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": 1.0,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "manual": true,
+    "in": true,
+    "out": true,
+    "cuts": true,
+    "order": true,
+    "words": true,
+    "text": true,
+    "volume": true,
+    "speed": true
+   }
+  },
+  {
+   "id": "096621",
+   "line": "750c95",
+   "src": "4d32a8",
+   "in": 36.0,
+   "out": 39.062,
+   "look": null,
+   "alt": 0,
+   "text": "grooming secret. They are all darkening their eyebrows",
+   "for_text": null,
+   "words": [
+    [
+     "grooming",
+     36.312,
+     36.612
+    ],
+    [
+     "secret.",
+     36.612,
+     37.152
+    ],
+    [
+     "They",
+     37.372,
+     37.752
+    ],
+    [
+     "are",
+     37.752,
+     37.872
+    ],
+    [
+     "all",
+     37.872,
+     38.112
+    ],
+    [
+     "darkening",
+     38.112,
+     38.632
+    ],
+    [
+     "their",
+     38.632,
+     38.812
+    ],
+    [
+     "eyebrows",
+     38.812,
+     39.062
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [
+    "Visuals B + Voiceover 1: Close-up: filling in the brow"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 2,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 0.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": 1.0,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "manual": true,
+    "in": true,
+    "out": true,
+    "cuts": true,
+    "order": true,
+    "words": true,
+    "text": true,
+    "volume": true,
+    "speed": true
+   }
+  },
+  {
+   "id": "1911ac",
+   "line": "acf9da",
+   "src": "4d32a8",
+   "in": 24.8,
+   "out": 25.875,
+   "look": null,
+   "alt": 0,
+   "text": "to give their face a",
+   "for_text": null,
+   "words": [
+    [
+     "to",
+     24.97,
+     25.19
+    ],
+    [
+     "give",
+     25.19,
+     25.33
+    ],
+    [
+     "their",
+     25.33,
+     25.49
+    ],
+    [
+     "face",
+     25.49,
+     25.85
+    ],
+    [
+     "a",
+     25.85,
+     25.875
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [
+    "Visuals B + Voiceover 1: Pointing the pen at the unfilled brow"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 2,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 0.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": 1.0,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "manual": true,
+    "in": true,
+    "out": true,
+    "cuts": true,
+    "order": true,
+    "words": true,
+    "text": true,
+    "volume": true,
+    "speed": true
+   }
+  },
+  {
+   "id": "7a12a3",
+   "line": "128395",
+   "src": "4d32a8",
+   "in": 79.25,
+   "out": 81.206,
+   "look": null,
+   "alt": 0,
+   "text": "more defined look. Dark eyebrows",
+   "for_text": null,
+   "words": [
+    [
+     "more",
+     79.405,
+     79.545
+    ],
+    [
+     "defined",
+     79.545,
+     79.905
+    ],
+    [
+     "look.",
+     79.905,
+     80.325
+    ],
+    [
+     "Dark",
+     80.705,
+     81.125
+    ],
+    [
+     "eyebrows",
+     81.125,
+     81.206
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [
+    "Visuals B + Voiceover 1: The filled-in brow"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 2,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 0.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": 1.0,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "manual": true,
+    "in": true,
+    "out": true,
+    "cuts": true,
+    "order": true,
+    "words": true,
+    "text": true,
+    "volume": true,
+    "speed": true
+   }
+  },
+  {
+   "id": "c4274d",
+   "line": "14d148",
+   "src": "4d32a8",
+   "in": 58.0,
+   "out": 64.449,
+   "look": null,
+   "alt": 0,
+   "text": "frame your face and make your eyes pop out more. If you want that celebrity look, try the MenPen today.",
+   "for_text": null,
+   "words": [
+    [
+     "frame",
+     58.319,
+     58.759
+    ],
+    [
+     "your",
+     58.759,
+     58.899
+    ],
+    [
+     "face",
+     58.899,
+     59.319
+    ],
+    [
+     "and",
+     59.319,
+     59.579
+    ],
+    [
+     "make",
+     59.579,
+     59.759
+    ],
+    [
+     "your",
+     59.759,
+     59.859
+    ],
+    [
+     "eyes",
+     59.859,
+     60.119
+    ],
+    [
+     "pop",
+     60.119,
+     60.399
+    ],
+    [
+     "out",
+     60.399,
+     60.559
+    ],
+    [
+     "more.",
+     60.559,
+     60.839
+    ],
+    [
+     "If",
+     61.219,
+     61.539
+    ],
+    [
+     "you",
+     61.539,
+     61.619
+    ],
+    [
+     "want",
+     61.619,
+     61.779
+    ],
+    [
+     "that",
+     61.779,
+     61.939
+    ],
+    [
+     "celebrity",
+     61.939,
+     62.399
+    ],
+    [
+     "look,",
+     62.399,
+     62.799
+    ],
+    [
+     "try",
+     62.979,
+     63.219
+    ],
+    [
+     "the",
+     63.219,
+     63.379
+    ],
+    [
+     "MenPen",
+     63.379,
+     63.919
+    ],
+    [
+     "today.",
+     63.919,
+     64.199
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [
+    "Visuals B + Voiceover 1: Filling in, hand-held"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 2,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 0.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": 1.0,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "manual": true,
+    "in": true,
+    "out": true,
+    "cuts": true,
+    "order": true,
+    "words": true,
+    "text": true,
+    "volume": true,
+    "speed": true
+   }
+  },
+  {
+   "id": "7d163b",
+   "line": "592c21",
+   "src": "4d32a8",
+   "in": 11.75,
+   "out": 12.88,
+   "look": null,
+   "alt": 0,
+   "text": "This is every celebrity's",
+   "for_text": null,
+   "words": [
+    [
+     "This",
+     11.83,
+     12.13
+    ],
+    [
+     "is",
+     12.13,
+     12.27
+    ],
+    [
+     "every",
+     12.27,
+     12.49
+    ],
+    [
+     "celebrity's",
+     12.49,
+     12.88
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [
+    "Visuals B + Voiceover 2 (alt audio 1): Pen across the brows"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 3,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 0.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": 1.0,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "manual": true,
+    "in": true,
+    "out": true,
+    "cuts": true,
+    "order": true,
+    "words": true,
+    "text": true,
+    "volume": true,
+    "speed": true
+   }
+  },
+  {
+   "id": "4a5d0d",
+   "line": "750c95",
+   "src": "4d32a8",
+   "in": 36.0,
+   "out": 38.819,
+   "look": null,
+   "alt": 0,
+   "text": "grooming secret. They're all darkening their eyebrows",
+   "for_text": null,
+   "words": [
+    [
+     "grooming",
+     36.19,
+     36.49
+    ],
+    [
+     "secret.",
+     36.49,
+     36.97
+    ],
+    [
+     "They're",
+     37.35,
+     37.69
+    ],
+    [
+     "all",
+     37.69,
+     37.83
+    ],
+    [
+     "darkening",
+     37.83,
+     38.33
+    ],
+    [
+     "their",
+     38.33,
+     38.49
+    ],
+    [
+     "eyebrows",
+     38.49,
+     38.819
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [
+    "Visuals B + Voiceover 2 (alt audio 1): Close-up: filling in the brow"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 3,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 0.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": 1.0,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "manual": true,
+    "in": true,
+    "out": true,
+    "cuts": true,
+    "order": true,
+    "words": true,
+    "text": true,
+    "volume": true,
+    "speed": true
+   }
+  },
+  {
+   "id": "e29d4b",
+   "line": "acf9da",
+   "src": "4d32a8",
+   "in": 24.8,
+   "out": 25.735,
+   "look": null,
+   "alt": 0,
+   "text": "to give their face a",
+   "for_text": null,
+   "words": [
+    [
+     "to",
+     24.89,
+     25.15
+    ],
+    [
+     "give",
+     25.15,
+     25.29
+    ],
+    [
+     "their",
+     25.29,
+     25.43
+    ],
+    [
+     "face",
+     25.43,
+     25.71
+    ],
+    [
+     "a",
+     25.71,
+     25.735
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [
+    "Visuals B + Voiceover 2 (alt audio 1): Pointing the pen at the unfilled brow"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 3,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 0.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": 1.0,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "manual": true,
+    "in": true,
+    "out": true,
+    "cuts": true,
+    "order": true,
+    "words": true,
+    "text": true,
+    "volume": true,
+    "speed": true
+   }
+  },
+  {
+   "id": "2833e8",
+   "line": "128395",
+   "src": "4d32a8",
+   "in": 79.375,
+   "out": 81.14,
+   "look": null,
+   "alt": 0,
+   "text": "more defined look. Dark eyebrows",
+   "for_text": null,
+   "words": [
+    [
+     "more",
+     79.51,
+     79.65
+    ],
+    [
+     "defined",
+     79.65,
+     79.93
+    ],
+    [
+     "look.",
+     79.93,
+     80.31
+    ],
+    [
+     "Dark",
+     80.69,
+     81.09
+    ],
+    [
+     "eyebrows",
+     81.09,
+     81.14
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [
+    "Visuals B + Voiceover 2 (alt audio 1): The filled-in brow"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 3,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 0.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": 1.0,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "manual": true,
+    "in": true,
+    "out": true,
+    "cuts": true,
+    "order": true,
+    "words": true,
+    "text": true,
+    "volume": true,
+    "speed": true
+   }
+  },
+  {
+   "id": "d27635",
+   "line": "14d148",
+   "src": "4d32a8",
+   "in": 57.75,
+   "out": 63.75,
+   "look": null,
+   "alt": 0,
+   "text": "frame your face and make your eyes pop out more. If you want that celebrity look, try the MenPen today.",
+   "for_text": null,
+   "words": [
+    [
+     "frame",
+     58.12,
+     58.52
+    ],
+    [
+     "your",
+     58.52,
+     58.64
+    ],
+    [
+     "face",
+     58.64,
+     58.98
+    ],
+    [
+     "and",
+     58.98,
+     59.16
+    ],
+    [
+     "make",
+     59.16,
+     59.34
+    ],
+    [
+     "your",
+     59.34,
+     59.44
+    ],
+    [
+     "eyes",
+     59.44,
+     59.64
+    ],
+    [
+     "pop",
+     59.64,
+     59.88
+    ],
+    [
+     "out",
+     59.88,
+     60.04
+    ],
+    [
+     "more.",
+     60.04,
+     60.3
+    ],
+    [
+     "If",
+     60.68,
+     60.96
+    ],
+    [
+     "you",
+     60.96,
+     61.04
+    ],
+    [
+     "want",
+     61.04,
+     61.18
+    ],
+    [
+     "that",
+     61.18,
+     61.36
+    ],
+    [
+     "celebrity",
+     61.36,
+     61.86
+    ],
+    [
+     "look,",
+     61.86,
+     62.18
+    ],
+    [
+     "try",
+     62.32,
+     62.7
+    ],
+    [
+     "the",
+     62.7,
+     62.86
+    ],
+    [
+     "MenPen",
+     62.86,
+     63.26
+    ],
+    [
+     "today.",
+     63.26,
+     63.5
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [
+    "Visuals B + Voiceover 2 (alt audio 1): Filling in, hand-held"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 3,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 0.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": 1.0,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "manual": true,
+    "in": true,
+    "out": true,
+    "cuts": true,
+    "order": true,
+    "words": true,
+    "text": true,
+    "volume": true,
+    "speed": true
+   }
+  }
+ ],
+ "hooks": [
+  "Every Actor Uses This"
+ ],
+ "cta": "",
+ "style": {
+  "subs": {
+   "on": true,
+   "font": "Arial Black",
+   "size": 56,
+   "color": "#FFFFFF",
+   "highlight": "#FFE14D",
+   "outline": "#000000",
+   "outline_w": 4,
+   "uppercase": false,
+   "y": 0.73,
+   "words_per_line": 4,
+   "karaoke": true,
+   "pop": true
+  },
+  "look": {
+   "brightness": -0.15,
+   "smooth": 0.4
+  },
+  "speed": 1,
+  "pace": {
+   "auto": false,
+   "wps": 4.8,
+   "max": 1.1,
+   "pauses": true
+  },
+  "title": {
+   "on": true,
+   "y": 0.42,
+   "preset": "meme",
+   "font": "Impact",
+   "size": 150,
+   "color": "#FFFFFF",
+   "box_color": "#000000",
+   "accent": "#FFE14D",
+   "outline_w": 10,
+   "uppercase": true,
+   "rotate": -4,
+   "pop": true
+  },
+  "hook": {
+   "on": true,
+   "seconds": 3.5,
+   "y": 0.66,
+   "preset": "box",
+   "font": "Arial Black",
+   "size": 44,
+   "color": "#111111",
+   "box_color": "#FFF3A6",
+   "accent": "#111111",
+   "outline_w": 0,
+   "uppercase": false,
+   "rotate": 0,
+   "pop": false
+  },
+  "cta": {
+   "on": false,
+   "y": 0.8,
+   "preset": "sticker",
+   "font": "Arial Black",
+   "size": 52,
+   "color": "#FFFFFF",
+   "box_color": "#FE2C55",
+   "accent": "#FFE14D",
+   "outline_w": 0,
+   "uppercase": false,
+   "rotate": -2,
+   "pop": true
+  },
+  "product_box": null,
+  "cart_pointer": {
+   "on": true,
+   "words": "orange cart, cart, basket",
+   "seconds": 2.2,
+   "color": "#FF8A00"
+  },
+  "punch_in": 1.12,
+  "pad_before": 0.08,
+  "pad_after": 0.18,
+  "voice_cleanup": false,
+  "loudness": -14
+ },
+ "skip": [],
+ "mix": null,
+ "mix_auto": true,
+ "batch_note": "New footage can't make a whole video on its own, so it's mixed in with the earlier takes.",
+ "voiceover": {
+  "src": "6db7d8",
+  "in": 0.0,
+  "out": 14.97,
+  "cuts": [
+   [
+    6.7,
+    7.5
+   ],
+   [
+    11.22,
+    11.6
+   ]
+  ],
+  "volume": 1.0,
+  "label": "Voiceover 1"
+ },
+ "voiceovers": [
+  {
+   "src": "6db7d8",
+   "in": 0.0,
+   "out": 14.97,
+   "cuts": [
+    [
+     6.7,
+     7.5
+    ],
+    [
+     11.22,
+     11.6
+    ]
+   ],
+   "volume": 1.0,
+   "label": "Voiceover 1"
+  },
+  {
+   "src": "233729",
+   "in": 1.16,
+   "out": 14.77,
+   "cuts": [
+    [
+     3.5,
+     3.72
+    ],
+    [
+     7.44,
+     7.92
+    ],
+    [
+     11.3,
+     11.56
+    ]
+   ],
+   "volume": 1.0,
+   "label": "Voiceover 2 (alt audio 1)"
+  }
+ ],
+ "from_inbox": true,
+ "assets": [],
+ "overlays": [],
+ "renders": {
+  "1": {
+   "file": "C:\\Users\\thecc\\Videos\\TikTok Shop\\MenPen 1\\menpen-1-v01.mp4",
+   "at": 1792383795.1208024,
+   "sig": "68989fbcc214"
+  },
+  "2": {
+   "file": "C:\\Users\\thecc\\Videos\\TikTok Shop\\MenPen 1\\menpen-1-v02.mp4",
+   "at": 1792383824.5957482,
+   "sig": "228b4fcdd47b"
+  },
+  "3": {
+   "file": "C:\\Users\\thecc\\Videos\\TikTok Shop\\MenPen 1\\menpen-1-v03.mp4",
+   "at": 1792383845.4480166,
+   "sig": "37cdae2eab37"
+  },
+  "4": {
+   "file": "C:\\Users\\thecc\\Videos\\TikTok Shop\\MenPen 1\\menpen-1-v04.mp4",
+   "at": 1792383857.69413,
+   "sig": "f9eebcbb785d"
+  }
+ },
+ "saved": {},
+ "sheet": {
+  "sig": "585902906b31",
+  "lines": [
+   "This is every celebrity's grooming secret.",
+   "They are all darkening their eyebrows to give their face a more defined look.",
+   "Dark eyebrows frame your face and make your eyes pop out more.",
+   "If you want that celebrity look, try the MenPen today."
+  ],
+  "row": "Manpen 1"
+ }
+}

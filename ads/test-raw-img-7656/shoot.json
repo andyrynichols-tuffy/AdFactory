@@ -1,0 +1,5027 @@
+{
+ "version": 1,
+ "rev": 22,
+ "title": "Test raw IMG_7656",
+ "created": 1792263965.1675298,
+ "product": {
+  "name": "",
+  "link": "",
+  "description": "",
+  "hashtags": "#tiktokshop #tiktokmademebuyit"
+ },
+ "reference": {
+  "url": "https://www.tiktok.com/@shamsontv/video/7694716085098040589?is_from_webapp=1&sender_device=pc&web_id=7697306256638035470",
+  "file": "",
+  "notes": ""
+ },
+ "sources": [
+  {
+   "id": "b835e1",
+   "file": "C:\\Users\\thecc\\Videos\\TikTok Shop\\Raw\\IMG_7656.MOV",
+   "name": "IMG_7656.MOV",
+   "status": "ready",
+   "error": null,
+   "key": "a93d593e2741b3",
+   "duration": 338.716667,
+   "width": 1920,
+   "height": 1080,
+   "looks": [
+    {
+     "t": 0,
+     "name": "white"
+    },
+    {
+     "t": 212.5,
+     "name": "olive"
+    }
+   ]
+  }
+ ],
+ "script": [
+  {
+   "id": "b29a45",
+   "text": "Stop spending designer prices on just one of the name brand ones.",
+   "look": "white",
+   "optional": false,
+   "cut_next": false,
+   "cut_offset": null
+  },
+  {
+   "id": "b5ed65",
+   "text": "This is what one of the name brand ones costs.",
+   "look": "white",
+   "optional": true,
+   "cut_next": false,
+   "cut_offset": null
+  },
+  {
+   "id": "34de79",
+   "text": "Because Old Navy",
+   "look": "white",
+   "optional": false,
+   "cut_next": false,
+   "cut_offset": null
+  },
+  {
+   "id": "7a0583",
+   "text": "just dropped their Waffle Knit thermals.",
+   "look": "white",
+   "optional": false,
+   "cut_next": false,
+   "cut_offset": null
+  },
+  {
+   "id": "171ac7",
+   "text": "And the fact that you can get not one, but",
+   "look": "white",
+   "cut_next": true,
+   "optional": false,
+   "cut_offset": null,
+   "cut_offset_auto": 0.35
+  },
+  {
+   "id": "6efaa5",
+   "text": "three of these?",
+   "look": "olive",
+   "optional": false,
+   "cut_next": false,
+   "cut_offset": null
+  }
+ ],
+ "script_guessed": false,
+ "takes": [
+  {
+   "id": "7e51df",
+   "line": "b29a45",
+   "src": "b835e1",
+   "in": 0.71,
+   "out": 3.79,
+   "look": "white",
+   "text": "Stop spending designer prices on just one of the name brand ones,",
+   "words": [
+    [
+     "Stop",
+     0.79,
+     1.11
+    ],
+    [
+     "spending",
+     1.11,
+     1.43
+    ],
+    [
+     "designer",
+     1.43,
+     1.71
+    ],
+    [
+     "prices",
+     1.71,
+     2.13
+    ],
+    [
+     "on",
+     2.13,
+     2.37
+    ],
+    [
+     "just",
+     2.37,
+     2.53
+    ],
+    [
+     "one",
+     2.53,
+     2.79
+    ],
+    [
+     "of",
+     2.79,
+     2.91
+    ],
+    [
+     "the",
+     2.91,
+     3.01
+    ],
+    [
+     "name",
+     3.01,
+     3.19
+    ],
+    [
+     "brand",
+     3.19,
+     3.37
+    ],
+    [
+     "ones.",
+     3.37,
+     3.75
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "35f21e",
+   "line": "b29a45",
+   "src": "b835e1",
+   "in": 3.77,
+   "out": 7.95,
+   "look": "white",
+   "text": "stop spending designer prices on just one of the name brand ones.",
+   "words": [
+    [
+     "Stop",
+     3.81,
+     4.93
+    ],
+    [
+     "spending",
+     4.93,
+     5.33
+    ],
+    [
+     "designer",
+     5.33,
+     5.69
+    ],
+    [
+     "prices",
+     5.69,
+     6.05
+    ],
+    [
+     "on",
+     6.05,
+     6.29
+    ],
+    [
+     "just",
+     6.29,
+     6.47
+    ],
+    [
+     "one",
+     6.47,
+     6.87
+    ],
+    [
+     "of",
+     6.87,
+     7.05
+    ],
+    [
+     "the",
+     7.05,
+     7.17
+    ],
+    [
+     "name",
+     7.17,
+     7.35
+    ],
+    [
+     "brand",
+     7.35,
+     7.51
+    ],
+    [
+     "ones.",
+     7.51,
+     7.77
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 1,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "8edff5",
+   "line": "b29a45",
+   "src": "b835e1",
+   "in": 8.9,
+   "out": 12.36,
+   "look": "white",
+   "text": "Stop spending designer prices on just one of the name brand ones.",
+   "words": [
+    [
+     "Stop",
+     8.98,
+     9.38
+    ],
+    [
+     "spending",
+     9.38,
+     9.78
+    ],
+    [
+     "designer",
+     9.78,
+     10.14
+    ],
+    [
+     "prices",
+     10.14,
+     10.56
+    ],
+    [
+     "on",
+     10.56,
+     10.86
+    ],
+    [
+     "just",
+     10.86,
+     11.02
+    ],
+    [
+     "one",
+     11.02,
+     11.26
+    ],
+    [
+     "of",
+     11.26,
+     11.38
+    ],
+    [
+     "the",
+     11.38,
+     11.48
+    ],
+    [
+     "name",
+     11.48,
+     11.66
+    ],
+    [
+     "brand",
+     11.66,
+     11.88
+    ],
+    [
+     "ones.",
+     11.88,
+     12.18
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 2,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "0f47ef",
+   "line": "b29a45",
+   "src": "b835e1",
+   "in": 13.54,
+   "out": 16.78,
+   "look": "white",
+   "text": "Stop spending designer prices on just one of the name brand ones.",
+   "words": [
+    [
+     "Stop",
+     13.62,
+     14.06
+    ],
+    [
+     "spending",
+     14.06,
+     14.44
+    ],
+    [
+     "designer",
+     14.44,
+     14.76
+    ],
+    [
+     "prices",
+     14.76,
+     15.18
+    ],
+    [
+     "on",
+     15.18,
+     15.4
+    ],
+    [
+     "just",
+     15.4,
+     15.54
+    ],
+    [
+     "one",
+     15.54,
+     15.78
+    ],
+    [
+     "of",
+     15.78,
+     15.88
+    ],
+    [
+     "the",
+     15.88,
+     15.98
+    ],
+    [
+     "name",
+     15.98,
+     16.18
+    ],
+    [
+     "brand",
+     16.18,
+     16.34
+    ],
+    [
+     "ones.",
+     16.34,
+     16.6
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 3,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "e5b890",
+   "line": "b29a45",
+   "src": "b835e1",
+   "in": 17.64,
+   "out": 21.12,
+   "look": "white",
+   "text": "Stop spending designer prices on just one of the name brand ones.",
+   "words": [
+    [
+     "Stop",
+     17.72,
+     18.2
+    ],
+    [
+     "spending",
+     18.2,
+     18.64
+    ],
+    [
+     "designer",
+     18.64,
+     18.98
+    ],
+    [
+     "prices",
+     18.98,
+     19.38
+    ],
+    [
+     "on",
+     19.38,
+     19.62
+    ],
+    [
+     "just",
+     19.62,
+     19.78
+    ],
+    [
+     "one",
+     19.78,
+     20.04
+    ],
+    [
+     "of",
+     20.04,
+     20.16
+    ],
+    [
+     "the",
+     20.16,
+     20.28
+    ],
+    [
+     "name",
+     20.28,
+     20.46
+    ],
+    [
+     "brand",
+     20.46,
+     20.64
+    ],
+    [
+     "ones.",
+     20.64,
+     20.94
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 4,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "55cd24",
+   "line": "b29a45",
+   "src": "b835e1",
+   "in": 22.54,
+   "out": 25.94,
+   "look": "white",
+   "text": "Stop spending designer prices on just one of the name brand ones.",
+   "words": [
+    [
+     "Stop",
+     22.62,
+     23.08
+    ],
+    [
+     "spending",
+     23.08,
+     23.46
+    ],
+    [
+     "designer",
+     23.46,
+     23.78
+    ],
+    [
+     "prices",
+     23.78,
+     24.18
+    ],
+    [
+     "on",
+     24.18,
+     24.48
+    ],
+    [
+     "just",
+     24.48,
+     24.62
+    ],
+    [
+     "one",
+     24.62,
+     24.84
+    ],
+    [
+     "of",
+     24.84,
+     24.96
+    ],
+    [
+     "the",
+     24.96,
+     25.08
+    ],
+    [
+     "name",
+     25.08,
+     25.28
+    ],
+    [
+     "brand",
+     25.28,
+     25.5
+    ],
+    [
+     "ones.",
+     25.5,
+     25.76
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 5,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "31e476",
+   "line": "b29a45",
+   "src": "b835e1",
+   "in": 27.21,
+   "out": 30.73,
+   "look": "white",
+   "text": "Stop spending designer prices on just one of the name brand ones.",
+   "words": [
+    [
+     "Stop",
+     27.29,
+     27.69
+    ],
+    [
+     "spending",
+     27.69,
+     28.05
+    ],
+    [
+     "designer",
+     28.05,
+     28.41
+    ],
+    [
+     "prices",
+     28.41,
+     28.89
+    ],
+    [
+     "on",
+     28.89,
+     29.23
+    ],
+    [
+     "just",
+     29.23,
+     29.39
+    ],
+    [
+     "one",
+     29.39,
+     29.67
+    ],
+    [
+     "of",
+     29.67,
+     29.79
+    ],
+    [
+     "the",
+     29.79,
+     29.91
+    ],
+    [
+     "name",
+     29.91,
+     30.13
+    ],
+    [
+     "brand",
+     30.13,
+     30.29
+    ],
+    [
+     "ones.",
+     30.29,
+     30.55
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 6,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "285a7f",
+   "line": "b5ed65",
+   "src": "b835e1",
+   "in": 32.71,
+   "out": 35.25,
+   "look": "white",
+   "text": "This is what one of the name brand once costs.",
+   "words": [
+    [
+     "This",
+     32.79,
+     33.27
+    ],
+    [
+     "is",
+     33.27,
+     33.57
+    ],
+    [
+     "what",
+     33.57,
+     33.79
+    ],
+    [
+     "one",
+     33.79,
+     33.95
+    ],
+    [
+     "of",
+     33.95,
+     34.05
+    ],
+    [
+     "the",
+     34.05,
+     34.11
+    ],
+    [
+     "name",
+     34.11,
+     34.29
+    ],
+    [
+     "brand",
+     34.29,
+     34.45
+    ],
+    [
+     "ones",
+     34.45,
+     34.69
+    ],
+    [
+     "costs.",
+     34.69,
+     35.07
+    ]
+   ],
+   "score": 0.9,
+   "status": "close",
+   "flags": [
+    "reworded (1 skipped, 1 added)"
+   ],
+   "missing": [
+    "ones"
+   ],
+   "extra": [
+    "once"
+   ],
+   "usable": true,
+   "order": 0,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "663740",
+   "line": null,
+   "src": "b835e1",
+   "in": 36.34,
+   "out": 36.96,
+   "look": "white",
+   "text": "That's not good.",
+   "words": [
+    [
+     "That's",
+     36.42,
+     36.6
+    ],
+    [
+     "not",
+     36.6,
+     36.68
+    ],
+    [
+     "good.",
+     36.68,
+     36.78
+    ]
+   ],
+   "score": 0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 0,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "0ecb4d",
+   "line": "b29a45",
+   "src": "b835e1",
+   "in": 37.16,
+   "out": 40.48,
+   "look": "white",
+   "text": "Stop spending designer prices on just one of the name brand ones.",
+   "words": [
+    [
+     "Stop",
+     37.24,
+     37.68
+    ],
+    [
+     "spending",
+     37.68,
+     38.04
+    ],
+    [
+     "designer",
+     38.04,
+     38.36
+    ],
+    [
+     "prices",
+     38.36,
+     38.76
+    ],
+    [
+     "on",
+     38.76,
+     39.04
+    ],
+    [
+     "just",
+     39.04,
+     39.18
+    ],
+    [
+     "one",
+     39.18,
+     39.42
+    ],
+    [
+     "of",
+     39.42,
+     39.56
+    ],
+    [
+     "the",
+     39.56,
+     39.66
+    ],
+    [
+     "name",
+     39.66,
+     39.84
+    ],
+    [
+     "brand",
+     39.84,
+     40.06
+    ],
+    [
+     "ones.",
+     40.06,
+     40.3
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 7,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "152179",
+   "line": "b29a45",
+   "src": "b835e1",
+   "in": 41.74,
+   "out": 45.5,
+   "look": "white",
+   "text": "Guys, stop spending designer prices on just one of the name brand ones.",
+   "words": [
+    [
+     "Guys,",
+     41.82,
+     42.18
+    ],
+    [
+     "Stop",
+     42.4,
+     42.6
+    ],
+    [
+     "spending",
+     42.6,
+     42.9
+    ],
+    [
+     "designer",
+     42.9,
+     43.22
+    ],
+    [
+     "prices",
+     43.22,
+     43.66
+    ],
+    [
+     "on",
+     43.66,
+     43.9
+    ],
+    [
+     "just",
+     43.9,
+     44.06
+    ],
+    [
+     "one",
+     44.06,
+     44.38
+    ],
+    [
+     "of",
+     44.38,
+     44.52
+    ],
+    [
+     "the",
+     44.52,
+     44.62
+    ],
+    [
+     "name",
+     44.62,
+     44.82
+    ],
+    [
+     "brand",
+     44.82,
+     45.06
+    ],
+    [
+     "ones.",
+     45.06,
+     45.32
+    ]
+   ],
+   "score": 0.96,
+   "status": "close",
+   "flags": [
+    "reworded (0 skipped, 1 added)"
+   ],
+   "missing": [],
+   "extra": [
+    "guys"
+   ],
+   "usable": true,
+   "order": 8,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "3a3ade",
+   "line": "34de79",
+   "src": "b835e1",
+   "in": 47.75,
+   "out": 48.97,
+   "look": "white",
+   "text": "Because Old Navy?",
+   "words": [
+    [
+     "Because",
+     47.83,
+     48.23
+    ],
+    [
+     "Old",
+     48.23,
+     48.41
+    ],
+    [
+     "Navy",
+     48.41,
+     48.79
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "b86b6e",
+   "line": "34de79",
+   "src": "b835e1",
+   "in": 49.67,
+   "out": 50.91,
+   "look": "white",
+   "text": "Because Old Navy,",
+   "words": [
+    [
+     "Because",
+     49.75,
+     50.15
+    ],
+    [
+     "Old",
+     50.15,
+     50.33
+    ],
+    [
+     "Navy",
+     50.33,
+     50.73
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 1,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "10397d",
+   "line": "34de79",
+   "src": "b835e1",
+   "in": 53.16,
+   "out": 54.38,
+   "look": "white",
+   "text": "Because Old Navy?",
+   "words": [
+    [
+     "Because",
+     53.24,
+     53.64
+    ],
+    [
+     "Old",
+     53.64,
+     53.86
+    ],
+    [
+     "Navy",
+     53.86,
+     54.2
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 2,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "82591c",
+   "line": "34de79",
+   "src": "b835e1",
+   "in": 57.64,
+   "out": 58.88,
+   "look": "white",
+   "text": "Because Old Navy?",
+   "words": [
+    [
+     "Because",
+     57.72,
+     58.1
+    ],
+    [
+     "Old",
+     58.1,
+     58.32
+    ],
+    [
+     "Navy",
+     58.32,
+     58.7
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 3,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "464c95",
+   "line": "34de79",
+   "src": "b835e1",
+   "in": 60.2,
+   "out": 61.52,
+   "look": "white",
+   "text": "Because Old Navy?",
+   "words": [
+    [
+     "Because",
+     60.28,
+     60.72
+    ],
+    [
+     "Old",
+     60.72,
+     60.96
+    ],
+    [
+     "Navy",
+     60.96,
+     61.34
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 4,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "c1928f",
+   "line": "34de79",
+   "src": "b835e1",
+   "in": 62.5,
+   "out": 63.74,
+   "look": "white",
+   "text": "Because Old Navy?",
+   "words": [
+    [
+     "Because",
+     62.58,
+     62.98
+    ],
+    [
+     "Old",
+     62.98,
+     63.2
+    ],
+    [
+     "Navy",
+     63.2,
+     63.56
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 5,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "a6d7ce",
+   "line": "34de79",
+   "src": "b835e1",
+   "in": 64.55,
+   "out": 65.79,
+   "look": "white",
+   "text": "Because Old Navy?",
+   "words": [
+    [
+     "Because",
+     64.63,
+     65.03
+    ],
+    [
+     "Old",
+     65.03,
+     65.27
+    ],
+    [
+     "Navy",
+     65.27,
+     65.61
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 6,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "0d52a6",
+   "line": "34de79",
+   "src": "b835e1",
+   "in": 67.66,
+   "out": 68.92,
+   "look": "white",
+   "text": "Because Old Navy?",
+   "words": [
+    [
+     "Because",
+     67.74,
+     68.16
+    ],
+    [
+     "Old",
+     68.16,
+     68.36
+    ],
+    [
+     "Navy",
+     68.36,
+     68.74
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 7,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "9884c3",
+   "line": "34de79",
+   "src": "b835e1",
+   "in": 70.28,
+   "out": 71.54,
+   "look": "white",
+   "text": "Because Old Navy?",
+   "words": [
+    [
+     "Because",
+     70.36,
+     70.78
+    ],
+    [
+     "Old",
+     70.78,
+     71
+    ],
+    [
+     "Navy",
+     71,
+     71.36
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 8,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "fae3ff",
+   "line": "34de79",
+   "src": "b835e1",
+   "in": 72.94,
+   "out": 74.12,
+   "look": "white",
+   "text": "Because Old Navy.",
+   "words": [
+    [
+     "Because",
+     73.02,
+     73.4
+    ],
+    [
+     "Old",
+     73.4,
+     73.62
+    ],
+    [
+     "Navy",
+     73.62,
+     73.94
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 9,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "2615f8",
+   "line": "34de79",
+   "src": "b835e1",
+   "in": 75.3,
+   "out": 76.5,
+   "look": "white",
+   "text": "Because Old Navy?",
+   "words": [
+    [
+     "Because",
+     75.38,
+     75.78
+    ],
+    [
+     "Old",
+     75.78,
+     75.96
+    ],
+    [
+     "Navy",
+     75.96,
+     76.32
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 10,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "903b44",
+   "line": "34de79",
+   "src": "b835e1",
+   "in": 78.92,
+   "out": 80.12,
+   "look": "white",
+   "text": "Because Old Navy?",
+   "words": [
+    [
+     "Because",
+     79,
+     79.4
+    ],
+    [
+     "Old",
+     79.4,
+     79.6
+    ],
+    [
+     "Navy",
+     79.6,
+     79.94
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 11,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "119a4e",
+   "line": "34de79",
+   "src": "b835e1",
+   "in": 81.38,
+   "out": 82.66,
+   "look": "white",
+   "text": "Because Old Navy?",
+   "words": [
+    [
+     "Because",
+     81.46,
+     81.86
+    ],
+    [
+     "Old",
+     81.86,
+     82.1
+    ],
+    [
+     "Navy",
+     82.1,
+     82.48
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 12,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "002973",
+   "line": "34de79",
+   "src": "b835e1",
+   "in": 84.14,
+   "out": 85.36,
+   "look": "white",
+   "text": "Because Old Navy,",
+   "words": [
+    [
+     "Because",
+     84.22,
+     84.48
+    ],
+    [
+     "Old",
+     84.48,
+     84.78
+    ],
+    [
+     "Navy",
+     84.78,
+     85.18
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 13,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "2640f1",
+   "line": "34de79",
+   "src": "b835e1",
+   "in": 85.3,
+   "out": 86.66,
+   "look": "white",
+   "text": "because Old Navy.",
+   "words": [
+    [
+     "Because",
+     85.38,
+     85.94
+    ],
+    [
+     "Old",
+     85.94,
+     86.18
+    ],
+    [
+     "Navy",
+     86.18,
+     86.48
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 14,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "51811f",
+   "line": "7a0583",
+   "src": "b835e1",
+   "in": 88.55,
+   "out": 90.83,
+   "look": "white",
+   "text": "Just drop their WaffleNet thermals.",
+   "words": [
+    [
+     "just",
+     88.63,
+     89.01
+    ],
+    [
+     "dropped",
+     89.01,
+     89.23
+    ],
+    [
+     "their",
+     89.23,
+     89.39
+    ],
+    [
+     "WaffleNet",
+     89.39,
+     90.05
+    ],
+    [
+     "thermals.",
+     90.05,
+     90.65
+    ]
+   ],
+   "score": 0.833,
+   "status": "close",
+   "flags": [
+    "reworded (1 skipped, 1 added)"
+   ],
+   "missing": [
+    "dropped"
+   ],
+   "extra": [
+    "drop"
+   ],
+   "usable": true,
+   "order": 0,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "2d63d7",
+   "line": "7a0583",
+   "src": "b835e1",
+   "in": 91.56,
+   "out": 94.24,
+   "look": "white",
+   "text": "Old Navy just dropped their Waffle Knit Thermals.",
+   "words": [
+    [
+     "Old",
+     91.64,
+     91.96
+    ],
+    [
+     "Navy",
+     91.96,
+     92.24
+    ],
+    [
+     "just",
+     92.24,
+     92.6
+    ],
+    [
+     "dropped",
+     92.6,
+     92.82
+    ],
+    [
+     "their",
+     92.82,
+     92.98
+    ],
+    [
+     "Waffle",
+     92.98,
+     93.32
+    ],
+    [
+     "Knit",
+     93.32,
+     93.58
+    ],
+    [
+     "thermals.",
+     93.58,
+     94.06
+    ]
+   ],
+   "score": 0.857,
+   "status": "close",
+   "flags": [
+    "reworded (0 skipped, 2 added)"
+   ],
+   "missing": [],
+   "extra": [
+    "old",
+    "navy"
+   ],
+   "usable": true,
+   "order": 1,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "e91b5f",
+   "line": "34de79",
+   "src": "b835e1",
+   "in": 94.92,
+   "out": 95.78,
+   "look": "white",
+   "text": "Because Old Navy",
+   "words": [
+    [
+     "Because",
+     95,
+     95.38
+    ],
+    [
+     "Old",
+     95.38,
+     95.56
+    ],
+    [
+     "Navy",
+     95.56,
+     95.8
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 15,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "3ccfac",
+   "line": "7a0583",
+   "src": "b835e1",
+   "in": 95.82,
+   "out": 97.92,
+   "look": "white",
+   "text": "just dropped their waffle knit thermals.",
+   "words": [
+    [
+     "just",
+     95.8,
+     96.2
+    ],
+    [
+     "dropped",
+     96.2,
+     96.46
+    ],
+    [
+     "their",
+     96.46,
+     96.64
+    ],
+    [
+     "Waffle",
+     96.64,
+     96.96
+    ],
+    [
+     "Knit",
+     96.96,
+     97.18
+    ],
+    [
+     "thermals.",
+     97.18,
+     97.74
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 2,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "e99488",
+   "line": "34de79",
+   "src": "b835e1",
+   "in": 98.6,
+   "out": 99.38,
+   "look": "white",
+   "text": "Because Old Navy",
+   "words": [
+    [
+     "Because",
+     98.68,
+     99.02
+    ],
+    [
+     "Old",
+     99.02,
+     99.16
+    ],
+    [
+     "Navy",
+     99.16,
+     99.4
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 16,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "0374c1",
+   "line": "7a0583",
+   "src": "b835e1",
+   "in": 99.42,
+   "out": 101.44,
+   "look": "white",
+   "text": "just dropped their WaffleNet thermals.",
+   "words": [
+    [
+     "just",
+     99.4,
+     99.8
+    ],
+    [
+     "dropped",
+     99.8,
+     100.08
+    ],
+    [
+     "their",
+     100.08,
+     100.24
+    ],
+    [
+     "WaffleNet",
+     100.24,
+     100.76
+    ],
+    [
+     "thermals.",
+     100.76,
+     101.26
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 3,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "e00c39",
+   "line": "7a0583",
+   "src": "b835e1",
+   "in": 102.06,
+   "out": 104.52,
+   "look": "white",
+   "text": "Just dropped their WaffleNet thermals.",
+   "words": [
+    [
+     "just",
+     102.14,
+     102.62
+    ],
+    [
+     "dropped",
+     102.62,
+     102.88
+    ],
+    [
+     "their",
+     102.88,
+     103.08
+    ],
+    [
+     "WaffleNet",
+     103.08,
+     103.68
+    ],
+    [
+     "thermals.",
+     103.68,
+     104.34
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 4,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "556ccb",
+   "line": "7a0583",
+   "src": "b835e1",
+   "in": 104.97,
+   "out": 107.61,
+   "look": "white",
+   "text": "Just drop their WaffleNet thermals.",
+   "words": [
+    [
+     "just",
+     105.05,
+     105.71
+    ],
+    [
+     "dropped",
+     105.71,
+     105.99
+    ],
+    [
+     "their",
+     105.99,
+     106.21
+    ],
+    [
+     "WaffleNet",
+     106.21,
+     106.83
+    ],
+    [
+     "thermals.",
+     106.83,
+     107.43
+    ]
+   ],
+   "score": 0.833,
+   "status": "close",
+   "flags": [
+    "reworded (1 skipped, 1 added)"
+   ],
+   "missing": [
+    "dropped"
+   ],
+   "extra": [
+    "drop"
+   ],
+   "usable": true,
+   "order": 5,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "048d6f",
+   "line": "7a0583",
+   "src": "b835e1",
+   "in": 108.94,
+   "out": 111.42,
+   "look": "white",
+   "text": "Just dropped their Waffle Knit Thermals.",
+   "words": [
+    [
+     "just",
+     109.02,
+     109.44
+    ],
+    [
+     "dropped",
+     109.44,
+     109.76
+    ],
+    [
+     "their",
+     109.76,
+     110.02
+    ],
+    [
+     "Waffle",
+     110.02,
+     110.44
+    ],
+    [
+     "Knit",
+     110.44,
+     110.72
+    ],
+    [
+     "thermals.",
+     110.72,
+     111.24
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 6,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "718368",
+   "line": "7a0583",
+   "src": "b835e1",
+   "in": 114.6,
+   "out": 117.06,
+   "look": "white",
+   "text": "Just dropped their WaffleNet thermals.",
+   "words": [
+    [
+     "just",
+     114.68,
+     115.06
+    ],
+    [
+     "dropped",
+     115.06,
+     115.32
+    ],
+    [
+     "their",
+     115.32,
+     115.54
+    ],
+    [
+     "WaffleNet",
+     115.54,
+     116.22
+    ],
+    [
+     "thermals.",
+     116.22,
+     116.88
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 7,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "2cebdd",
+   "line": "7a0583",
+   "src": "b835e1",
+   "in": 118.22,
+   "out": 120.64,
+   "look": "white",
+   "text": "Just dropped their Waffle Knit thermals.",
+   "words": [
+    [
+     "just",
+     118.3,
+     118.68
+    ],
+    [
+     "dropped",
+     118.68,
+     118.96
+    ],
+    [
+     "their",
+     118.96,
+     119.18
+    ],
+    [
+     "Waffle",
+     119.18,
+     119.62
+    ],
+    [
+     "Knit",
+     119.62,
+     119.9
+    ],
+    [
+     "thermals.",
+     119.9,
+     120.46
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 8,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "161200",
+   "line": "7a0583",
+   "src": "b835e1",
+   "in": 122.34,
+   "out": 124.76,
+   "look": "white",
+   "text": "Just dropped their WaffleNet thermals.",
+   "words": [
+    [
+     "just",
+     122.42,
+     122.8
+    ],
+    [
+     "dropped",
+     122.8,
+     123.08
+    ],
+    [
+     "their",
+     123.08,
+     123.32
+    ],
+    [
+     "WaffleNet",
+     123.32,
+     123.9
+    ],
+    [
+     "thermals.",
+     123.9,
+     124.58
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 9,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "4b79ca",
+   "line": "7a0583",
+   "src": "b835e1",
+   "in": 125.99,
+   "out": 128.37,
+   "look": "white",
+   "text": "She just dropped their WaffleNet thermals.",
+   "words": [
+    [
+     "She",
+     126.07,
+     126.37
+    ],
+    [
+     "just",
+     126.37,
+     126.55
+    ],
+    [
+     "dropped",
+     126.55,
+     126.83
+    ],
+    [
+     "their",
+     126.83,
+     127.05
+    ],
+    [
+     "WaffleNet",
+     127.05,
+     127.59
+    ],
+    [
+     "thermals.",
+     127.59,
+     128.19
+    ]
+   ],
+   "score": 0.923,
+   "status": "close",
+   "flags": [
+    "reworded (0 skipped, 1 added)"
+   ],
+   "missing": [],
+   "extra": [
+    "she"
+   ],
+   "usable": true,
+   "order": 10,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "ca7cf0",
+   "line": "7a0583",
+   "src": "b835e1",
+   "in": 130.06,
+   "out": 132.6,
+   "look": "white",
+   "text": "Just dropped their WaffleNet thermals.",
+   "words": [
+    [
+     "just",
+     130.14,
+     130.6
+    ],
+    [
+     "dropped",
+     130.6,
+     130.92
+    ],
+    [
+     "their",
+     130.92,
+     131.18
+    ],
+    [
+     "WaffleNet",
+     131.18,
+     131.8
+    ],
+    [
+     "thermals.",
+     131.8,
+     132.42
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 11,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "9d2152",
+   "line": "7a0583",
+   "src": "b835e1",
+   "in": 134.22,
+   "out": 136.48,
+   "look": "white",
+   "text": "Just dropped their WaffleNet thermals.",
+   "words": [
+    [
+     "just",
+     134.3,
+     134.66
+    ],
+    [
+     "dropped",
+     134.66,
+     134.94
+    ],
+    [
+     "their",
+     134.94,
+     135.14
+    ],
+    [
+     "WaffleNet",
+     135.14,
+     135.74
+    ],
+    [
+     "thermals.",
+     135.74,
+     136.3
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 12,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "d5b715",
+   "line": "7a0583",
+   "src": "b835e1",
+   "in": 138.28,
+   "out": 140.74,
+   "look": "white",
+   "text": "Just dropped their Waffle Knit Thermals.",
+   "words": [
+    [
+     "just",
+     138.36,
+     138.82
+    ],
+    [
+     "dropped",
+     138.82,
+     139.14
+    ],
+    [
+     "their",
+     139.14,
+     139.42
+    ],
+    [
+     "Waffle",
+     139.42,
+     139.8
+    ],
+    [
+     "Knit",
+     139.8,
+     140.06
+    ],
+    [
+     "thermals.",
+     140.06,
+     140.56
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 13,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "7ef213",
+   "line": "171ac7",
+   "src": "b835e1",
+   "in": 141.54,
+   "out": 144.01,
+   "look": "white",
+   "text": "And the fact that you can get not one, but",
+   "words": [
+    [
+     "And",
+     141.62,
+     141.86
+    ],
+    [
+     "the",
+     141.86,
+     141.98
+    ],
+    [
+     "fact",
+     141.98,
+     142.14
+    ],
+    [
+     "that",
+     142.14,
+     142.28
+    ],
+    [
+     "you",
+     142.28,
+     142.38
+    ],
+    [
+     "can",
+     142.38,
+     142.5
+    ],
+    [
+     "get",
+     142.5,
+     142.62
+    ],
+    [
+     "not",
+     142.62,
+     142.78
+    ],
+    [
+     "one,",
+     142.78,
+     143.24
+    ],
+    [
+     "but",
+     143.54,
+     143.66
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "82be20",
+   "line": null,
+   "src": "b835e1",
+   "in": 143.68,
+   "out": 144.76,
+   "look": "white",
+   "text": "three of these?",
+   "words": [
+    [
+     "three",
+     143.66,
+     144.1
+    ],
+    [
+     "of",
+     144.1,
+     144.32
+    ],
+    [
+     "these?",
+     144.32,
+     144.58
+    ]
+   ],
+   "score": 0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 1,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "ecece5",
+   "line": null,
+   "src": "b835e1",
+   "in": 148.46,
+   "out": 149.6,
+   "look": "white",
+   "text": "Three of these?",
+   "words": [
+    [
+     "Three",
+     148.54,
+     148.9
+    ],
+    [
+     "of",
+     148.9,
+     149.14
+    ],
+    [
+     "these?",
+     149.14,
+     149.42
+    ]
+   ],
+   "score": 0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 2,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "79e11c",
+   "line": "171ac7",
+   "src": "b835e1",
+   "in": 150.92,
+   "out": 153.17,
+   "look": "white",
+   "text": "And the fact that you can get not one, but",
+   "words": [
+    [
+     "And",
+     151,
+     151.28
+    ],
+    [
+     "the",
+     151.28,
+     151.38
+    ],
+    [
+     "fact",
+     151.38,
+     151.56
+    ],
+    [
+     "that",
+     151.56,
+     151.7
+    ],
+    [
+     "you",
+     151.7,
+     151.74
+    ],
+    [
+     "can",
+     151.74,
+     151.86
+    ],
+    [
+     "get",
+     151.86,
+     151.96
+    ],
+    [
+     "not",
+     151.96,
+     152.12
+    ],
+    [
+     "one,",
+     152.12,
+     152.46
+    ],
+    [
+     "but",
+     152.72,
+     152.82
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 1,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "37855e",
+   "line": null,
+   "src": "b835e1",
+   "in": 152.84,
+   "out": 153.82,
+   "look": "white",
+   "text": "three of these?",
+   "words": [
+    [
+     "three",
+     152.82,
+     153.2
+    ],
+    [
+     "of",
+     153.2,
+     153.4
+    ],
+    [
+     "these?",
+     153.4,
+     153.64
+    ]
+   ],
+   "score": 0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 3,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "534174",
+   "line": null,
+   "src": "b835e1",
+   "in": 158.18,
+   "out": 159.4,
+   "look": "white",
+   "text": "Three of these?",
+   "words": [
+    [
+     "Three",
+     158.26,
+     158.6
+    ],
+    [
+     "of",
+     158.6,
+     158.86
+    ],
+    [
+     "these?",
+     158.86,
+     159.22
+    ]
+   ],
+   "score": 0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 4,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "ab6e62",
+   "line": null,
+   "src": "b835e1",
+   "in": 159.56,
+   "out": 160.96,
+   "look": "white",
+   "text": "Three of these?",
+   "words": [
+    [
+     "Three",
+     159.64,
+     160.32
+    ],
+    [
+     "of",
+     160.32,
+     160.58
+    ],
+    [
+     "these?",
+     160.58,
+     160.78
+    ]
+   ],
+   "score": 0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 5,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "103249",
+   "line": "171ac7",
+   "src": "b835e1",
+   "in": 165.16,
+   "out": 167.43,
+   "look": "white",
+   "text": "And the fact that you can get not one, but",
+   "words": [
+    [
+     "And",
+     165.24,
+     165.52
+    ],
+    [
+     "the",
+     165.52,
+     165.6
+    ],
+    [
+     "fact",
+     165.6,
+     165.74
+    ],
+    [
+     "that",
+     165.74,
+     165.88
+    ],
+    [
+     "you",
+     165.88,
+     165.92
+    ],
+    [
+     "can",
+     165.92,
+     166.04
+    ],
+    [
+     "get",
+     166.04,
+     166.14
+    ],
+    [
+     "not",
+     166.14,
+     166.3
+    ],
+    [
+     "one,",
+     166.3,
+     166.72
+    ],
+    [
+     "but",
+     166.94,
+     167.08
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 2,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "13334d",
+   "line": null,
+   "src": "b835e1",
+   "in": 167.1,
+   "out": 168.1,
+   "look": "white",
+   "text": "three of these?",
+   "words": [
+    [
+     "three",
+     167.08,
+     167.48
+    ],
+    [
+     "of",
+     167.48,
+     167.7
+    ],
+    [
+     "these?",
+     167.7,
+     167.92
+    ]
+   ],
+   "score": 0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 6,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "baaa1c",
+   "line": "171ac7",
+   "src": "b835e1",
+   "in": 174.38,
+   "out": 176.87,
+   "look": "white",
+   "text": "And the fact that you can get not one, but",
+   "words": [
+    [
+     "And",
+     174.46,
+     174.76
+    ],
+    [
+     "the",
+     174.76,
+     174.86
+    ],
+    [
+     "fact",
+     174.86,
+     175.02
+    ],
+    [
+     "that",
+     175.02,
+     175.16
+    ],
+    [
+     "you",
+     175.16,
+     175.24
+    ],
+    [
+     "can",
+     175.24,
+     175.38
+    ],
+    [
+     "get",
+     175.38,
+     175.5
+    ],
+    [
+     "not",
+     175.5,
+     175.68
+    ],
+    [
+     "one,",
+     175.68,
+     176.08
+    ],
+    [
+     "but",
+     176.36,
+     176.52
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 3,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "65874e",
+   "line": null,
+   "src": "b835e1",
+   "in": 176.54,
+   "out": 177.56,
+   "look": "white",
+   "text": "three of these?",
+   "words": [
+    [
+     "three",
+     176.52,
+     176.92
+    ],
+    [
+     "of",
+     176.92,
+     177.14
+    ],
+    [
+     "these?",
+     177.14,
+     177.38
+    ]
+   ],
+   "score": 0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 7,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "d33f6a",
+   "line": "171ac7",
+   "src": "b835e1",
+   "in": 178.66,
+   "out": 180.93,
+   "look": "white",
+   "text": "And the fact that you can get not one, but",
+   "words": [
+    [
+     "And",
+     178.74,
+     179.02
+    ],
+    [
+     "the",
+     179.02,
+     179.12
+    ],
+    [
+     "fact",
+     179.12,
+     179.28
+    ],
+    [
+     "that",
+     179.28,
+     179.44
+    ],
+    [
+     "you",
+     179.44,
+     179.52
+    ],
+    [
+     "can",
+     179.52,
+     179.64
+    ],
+    [
+     "get",
+     179.64,
+     179.78
+    ],
+    [
+     "not",
+     179.78,
+     179.94
+    ],
+    [
+     "one,",
+     179.94,
+     180.32
+    ],
+    [
+     "but",
+     180.48,
+     180.58
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 4,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "043563",
+   "line": null,
+   "src": "b835e1",
+   "in": 180.6,
+   "out": 181.54,
+   "look": "white",
+   "text": "three of these?",
+   "words": [
+    [
+     "three",
+     180.58,
+     180.94
+    ],
+    [
+     "of",
+     180.94,
+     181.16
+    ],
+    [
+     "these?",
+     181.16,
+     181.36
+    ]
+   ],
+   "score": 0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 8,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "67797e",
+   "line": null,
+   "src": "b835e1",
+   "in": 184.42,
+   "out": 185.56,
+   "look": "white",
+   "text": "Three of these?",
+   "words": [
+    [
+     "Three",
+     184.5,
+     184.9
+    ],
+    [
+     "of",
+     184.9,
+     185.12
+    ],
+    [
+     "these?",
+     185.12,
+     185.38
+    ]
+   ],
+   "score": 0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 9,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "b617c1",
+   "line": null,
+   "src": "b835e1",
+   "in": 189.54,
+   "out": 190.68,
+   "look": "white",
+   "text": "Three of these?",
+   "words": [
+    [
+     "Three",
+     189.62,
+     190.02
+    ],
+    [
+     "of",
+     190.02,
+     190.26
+    ],
+    [
+     "these?",
+     190.26,
+     190.5
+    ]
+   ],
+   "score": 0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 10,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "1559e8",
+   "line": null,
+   "src": "b835e1",
+   "in": 197.9,
+   "out": 199,
+   "look": "white",
+   "text": "Three of these?",
+   "words": [
+    [
+     "Three",
+     197.98,
+     198.34
+    ],
+    [
+     "of",
+     198.34,
+     198.58
+    ],
+    [
+     "these?",
+     198.58,
+     198.82
+    ]
+   ],
+   "score": 0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 11,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "1f854a",
+   "line": null,
+   "src": "b835e1",
+   "in": 213.64,
+   "out": 215.52,
+   "look": "olive",
+   "text": "And the fact that you can get not one.",
+   "words": [
+    [
+     "And",
+     213.72,
+     213.98
+    ],
+    [
+     "the",
+     213.98,
+     214.08
+    ],
+    [
+     "fact",
+     214.08,
+     214.24
+    ],
+    [
+     "that",
+     214.24,
+     214.42
+    ],
+    [
+     "you",
+     214.42,
+     214.5
+    ],
+    [
+     "can",
+     214.5,
+     214.64
+    ],
+    [
+     "get",
+     214.64,
+     214.78
+    ],
+    [
+     "not",
+     214.78,
+     214.96
+    ],
+    [
+     "one.",
+     214.96,
+     215.34
+    ]
+   ],
+   "score": 0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 12,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "70533e",
+   "line": null,
+   "src": "b835e1",
+   "in": 216.78,
+   "out": 218.7,
+   "look": "olive",
+   "text": "And the fact that you can get not one.",
+   "words": [
+    [
+     "And",
+     216.86,
+     217.14
+    ],
+    [
+     "the",
+     217.14,
+     217.24
+    ],
+    [
+     "fact",
+     217.24,
+     217.4
+    ],
+    [
+     "that",
+     217.4,
+     217.56
+    ],
+    [
+     "you",
+     217.56,
+     217.6
+    ],
+    [
+     "can",
+     217.6,
+     217.72
+    ],
+    [
+     "get",
+     217.72,
+     217.86
+    ],
+    [
+     "not",
+     217.86,
+     218.02
+    ],
+    [
+     "one.",
+     218.02,
+     218.52
+    ]
+   ],
+   "score": 0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 13,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "97426b",
+   "line": null,
+   "src": "b835e1",
+   "in": 219.37,
+   "out": 220.81,
+   "look": "olive",
+   "text": "And the fact that you can get nuts.",
+   "words": [
+    [
+     "And",
+     219.45,
+     219.73
+    ],
+    [
+     "the",
+     219.73,
+     219.83
+    ],
+    [
+     "fact",
+     219.83,
+     220.01
+    ],
+    [
+     "that",
+     220.01,
+     220.17
+    ],
+    [
+     "you",
+     220.17,
+     220.19
+    ],
+    [
+     "can",
+     220.19,
+     220.29
+    ],
+    [
+     "get",
+     220.29,
+     220.45
+    ],
+    [
+     "nuts.",
+     220.45,
+     220.63
+    ]
+   ],
+   "score": 0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 14,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "c4c8f5",
+   "line": null,
+   "src": "b835e1",
+   "in": 223.46,
+   "out": 225.66,
+   "look": "olive",
+   "text": "And the fact that you can get not one, but",
+   "words": [
+    [
+     "And",
+     223.54,
+     223.8
+    ],
+    [
+     "the",
+     223.8,
+     223.9
+    ],
+    [
+     "fact",
+     223.9,
+     224.06
+    ],
+    [
+     "that",
+     224.06,
+     224.2
+    ],
+    [
+     "you",
+     224.2,
+     224.28
+    ],
+    [
+     "can",
+     224.28,
+     224.4
+    ],
+    [
+     "get",
+     224.4,
+     224.56
+    ],
+    [
+     "not",
+     224.56,
+     224.74
+    ],
+    [
+     "one,",
+     224.74,
+     225.2
+    ],
+    [
+     "but",
+     225.38,
+     225.68
+    ]
+   ],
+   "score": 0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 15,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "93aeb6",
+   "line": "6efaa5",
+   "src": "b835e1",
+   "in": 226.03,
+   "out": 226.7,
+   "look": "olive",
+   "text": "three of these.",
+   "words": [
+    [
+     "three",
+     225.68,
+     226.08
+    ],
+    [
+     "of",
+     226.08,
+     226.3
+    ],
+    [
+     "these?",
+     226.3,
+     226.52
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "5398f0",
+   "line": "6efaa5",
+   "src": "b835e1",
+   "in": 229.95,
+   "out": 230.74,
+   "look": "olive",
+   "text": "three of these?",
+   "words": [
+    [
+     "three",
+     229.6,
+     230.02
+    ],
+    [
+     "of",
+     230.02,
+     230.26
+    ],
+    [
+     "these?",
+     230.26,
+     230.56
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 1,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "80a242",
+   "line": "6efaa5",
+   "src": "b835e1",
+   "in": 238.68,
+   "out": 239.25,
+   "look": "olive",
+   "text": "Three of these?",
+   "words": [
+    [
+     "three",
+     238.33,
+     238.61
+    ],
+    [
+     "of",
+     238.61,
+     238.83
+    ],
+    [
+     "these?",
+     238.83,
+     239.07
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 2,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "e2546e",
+   "line": "6efaa5",
+   "src": "b835e1",
+   "in": 241.12,
+   "out": 241.75,
+   "look": "olive",
+   "text": "three of these?",
+   "words": [
+    [
+     "three",
+     240.77,
+     241.11
+    ],
+    [
+     "of",
+     241.11,
+     241.33
+    ],
+    [
+     "these?",
+     241.33,
+     241.57
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 3,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "5172da",
+   "line": "6efaa5",
+   "src": "b835e1",
+   "in": 244.27,
+   "out": 245.1,
+   "look": "olive",
+   "text": "three of these?",
+   "words": [
+    [
+     "three",
+     243.92,
+     244.36
+    ],
+    [
+     "of",
+     244.36,
+     244.62
+    ],
+    [
+     "these?",
+     244.62,
+     244.92
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 4,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "270d40",
+   "line": null,
+   "src": "b835e1",
+   "in": 249.7,
+   "out": 251.7,
+   "look": "olive",
+   "text": "And the fact that you can get not one,",
+   "words": [
+    [
+     "And",
+     249.78,
+     250.04
+    ],
+    [
+     "the",
+     250.04,
+     250.14
+    ],
+    [
+     "fact",
+     250.14,
+     250.32
+    ],
+    [
+     "that",
+     250.32,
+     250.46
+    ],
+    [
+     "you",
+     250.46,
+     250.54
+    ],
+    [
+     "can",
+     250.54,
+     250.7
+    ],
+    [
+     "get",
+     250.7,
+     250.84
+    ],
+    [
+     "not",
+     250.84,
+     251.06
+    ],
+    [
+     "one,",
+     251.06,
+     251.52
+    ]
+   ],
+   "score": 0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 16,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "341481",
+   "line": null,
+   "src": "b835e1",
+   "in": 255.75,
+   "out": 258.07,
+   "look": "olive",
+   "text": "Oh, there's so much of this that's bad.",
+   "words": [
+    [
+     "Oh,",
+     255.83,
+     256.25
+    ],
+    [
+     "there's",
+     256.41,
+     256.57
+    ],
+    [
+     "so",
+     256.57,
+     256.67
+    ],
+    [
+     "much",
+     256.67,
+     256.85
+    ],
+    [
+     "of",
+     256.85,
+     256.97
+    ],
+    [
+     "this",
+     256.97,
+     257.13
+    ],
+    [
+     "that's",
+     257.13,
+     257.43
+    ],
+    [
+     "bad.",
+     257.43,
+     257.89
+    ]
+   ],
+   "score": 0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 17,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "3ba2cf",
+   "line": null,
+   "src": "b835e1",
+   "in": 259.57,
+   "out": 260.55,
+   "look": "olive",
+   "text": "I hate transitions.",
+   "words": [
+    [
+     "I",
+     259.65,
+     259.75
+    ],
+    [
+     "hate",
+     259.75,
+     259.95
+    ],
+    [
+     "transitions.",
+     259.95,
+     260.37
+    ]
+   ],
+   "score": 0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 18,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "b8345e",
+   "line": null,
+   "src": "b835e1",
+   "in": 269.48,
+   "out": 271.46,
+   "look": "olive",
+   "text": "And the fact that you can get not one, but",
+   "words": [
+    [
+     "And",
+     269.56,
+     269.82
+    ],
+    [
+     "the",
+     269.82,
+     269.94
+    ],
+    [
+     "fact",
+     269.94,
+     270.12
+    ],
+    [
+     "that",
+     270.12,
+     270.26
+    ],
+    [
+     "you",
+     270.26,
+     270.3
+    ],
+    [
+     "can",
+     270.3,
+     270.42
+    ],
+    [
+     "get",
+     270.42,
+     270.52
+    ],
+    [
+     "not",
+     270.52,
+     270.68
+    ],
+    [
+     "one,",
+     270.68,
+     271.08
+    ],
+    [
+     "but",
+     271.34,
+     271.48
+    ]
+   ],
+   "score": 0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 19,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "8629dc",
+   "line": "6efaa5",
+   "src": "b835e1",
+   "in": 271.83,
+   "out": 272.5,
+   "look": "olive",
+   "text": "three of these,",
+   "words": [
+    [
+     "three",
+     271.48,
+     271.82
+    ],
+    [
+     "of",
+     271.82,
+     272.02
+    ],
+    [
+     "these?",
+     272.02,
+     272.32
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 5,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "f348f3",
+   "line": null,
+   "src": "b835e1",
+   "in": 272.5,
+   "out": 274.62,
+   "look": "olive",
+   "text": "and the fact that you can get not one, but",
+   "words": [
+    [
+     "and",
+     272.58,
+     273.02
+    ],
+    [
+     "the",
+     273.02,
+     273.1
+    ],
+    [
+     "fact",
+     273.1,
+     273.3
+    ],
+    [
+     "that",
+     273.3,
+     273.46
+    ],
+    [
+     "you",
+     273.46,
+     273.52
+    ],
+    [
+     "can",
+     273.52,
+     273.66
+    ],
+    [
+     "get",
+     273.66,
+     273.78
+    ],
+    [
+     "not",
+     273.78,
+     273.94
+    ],
+    [
+     "one,",
+     273.94,
+     274.3
+    ],
+    [
+     "but",
+     274.42,
+     274.64
+    ]
+   ],
+   "score": 0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 20,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "8e93cd",
+   "line": "6efaa5",
+   "src": "b835e1",
+   "in": 274.99,
+   "out": 275.7,
+   "look": "olive",
+   "text": "three of these.",
+   "words": [
+    [
+     "three",
+     274.64,
+     275.06
+    ],
+    [
+     "of",
+     275.06,
+     275.28
+    ],
+    [
+     "these?",
+     275.28,
+     275.52
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 6,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "810bd0",
+   "line": null,
+   "src": "b835e1",
+   "in": 277.51,
+   "out": 279.63,
+   "look": "olive",
+   "text": "And the fact that you can get not one, but",
+   "words": [
+    [
+     "And",
+     277.59,
+     277.85
+    ],
+    [
+     "the",
+     277.85,
+     277.95
+    ],
+    [
+     "fact",
+     277.95,
+     278.15
+    ],
+    [
+     "that",
+     278.15,
+     278.27
+    ],
+    [
+     "you",
+     278.27,
+     278.35
+    ],
+    [
+     "can",
+     278.35,
+     278.51
+    ],
+    [
+     "get",
+     278.51,
+     278.63
+    ],
+    [
+     "not",
+     278.63,
+     278.83
+    ],
+    [
+     "one,",
+     278.83,
+     279.23
+    ],
+    [
+     "but",
+     279.51,
+     279.65
+    ]
+   ],
+   "score": 0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 21,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "487718",
+   "line": "6efaa5",
+   "src": "b835e1",
+   "in": 280,
+   "out": 280.75,
+   "look": "olive",
+   "text": "three of these?",
+   "words": [
+    [
+     "three",
+     279.65,
+     280.07
+    ],
+    [
+     "of",
+     280.07,
+     280.31
+    ],
+    [
+     "these?",
+     280.31,
+     280.57
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 7,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "b5d67d",
+   "line": "6efaa5",
+   "src": "b835e1",
+   "in": 283.24,
+   "out": 284.17,
+   "look": "olive",
+   "text": "three of these?",
+   "words": [
+    [
+     "three",
+     282.89,
+     283.41
+    ],
+    [
+     "of",
+     283.41,
+     283.67
+    ],
+    [
+     "these?",
+     283.67,
+     283.99
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 8,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "f176fe",
+   "line": null,
+   "src": "b835e1",
+   "in": 285.77,
+   "out": 287.89,
+   "look": "olive",
+   "text": "And the fact that you can get not one, but",
+   "words": [
+    [
+     "And",
+     285.85,
+     286.15
+    ],
+    [
+     "the",
+     286.15,
+     286.25
+    ],
+    [
+     "fact",
+     286.25,
+     286.43
+    ],
+    [
+     "that",
+     286.43,
+     286.57
+    ],
+    [
+     "you",
+     286.57,
+     286.63
+    ],
+    [
+     "can",
+     286.63,
+     286.75
+    ],
+    [
+     "get",
+     286.75,
+     286.87
+    ],
+    [
+     "not",
+     286.87,
+     287.05
+    ],
+    [
+     "one,",
+     287.05,
+     287.47
+    ],
+    [
+     "but",
+     287.69,
+     287.91
+    ]
+   ],
+   "score": 0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 22,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "b968f5",
+   "line": "6efaa5",
+   "src": "b835e1",
+   "in": 288.26,
+   "out": 288.99,
+   "look": "olive",
+   "text": "three of these?",
+   "words": [
+    [
+     "three",
+     287.91,
+     288.35
+    ],
+    [
+     "of",
+     288.35,
+     288.59
+    ],
+    [
+     "these?",
+     288.59,
+     288.81
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 9,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "48a6ee",
+   "line": "6efaa5",
+   "src": "b835e1",
+   "in": 296.92,
+   "out": 297.47,
+   "look": "olive",
+   "text": "Three of these?",
+   "words": [
+    [
+     "three",
+     296.57,
+     296.83
+    ],
+    [
+     "of",
+     296.83,
+     297.03
+    ],
+    [
+     "these?",
+     297.03,
+     297.29
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 10,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "22f4ff",
+   "line": null,
+   "src": "b835e1",
+   "in": 299.34,
+   "out": 301.34,
+   "look": "olive",
+   "text": "And the fact that you can get not one, but",
+   "words": [
+    [
+     "And",
+     299.42,
+     299.68
+    ],
+    [
+     "the",
+     299.68,
+     299.78
+    ],
+    [
+     "fact",
+     299.78,
+     299.96
+    ],
+    [
+     "that",
+     299.96,
+     300.08
+    ],
+    [
+     "you",
+     300.08,
+     300.16
+    ],
+    [
+     "can",
+     300.16,
+     300.3
+    ],
+    [
+     "get",
+     300.3,
+     300.42
+    ],
+    [
+     "not",
+     300.42,
+     300.6
+    ],
+    [
+     "one,",
+     300.6,
+     300.98
+    ],
+    [
+     "but",
+     301.22,
+     301.36
+    ]
+   ],
+   "score": 0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 23,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "70655d",
+   "line": "6efaa5",
+   "src": "b835e1",
+   "in": 301.71,
+   "out": 302.36,
+   "look": "olive",
+   "text": "three of these?",
+   "words": [
+    [
+     "three",
+     301.36,
+     301.76
+    ],
+    [
+     "of",
+     301.76,
+     301.98
+    ],
+    [
+     "these?",
+     301.98,
+     302.18
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 11,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "cdef34",
+   "line": "6efaa5",
+   "src": "b835e1",
+   "in": 308.53,
+   "out": 309.22,
+   "look": "olive",
+   "text": "Three of these?",
+   "words": [
+    [
+     "three",
+     308.18,
+     308.56
+    ],
+    [
+     "of",
+     308.56,
+     308.8
+    ],
+    [
+     "these?",
+     308.8,
+     309.04
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 12,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "86e55a",
+   "line": "6efaa5",
+   "src": "b835e1",
+   "in": 311.67,
+   "out": 312.26,
+   "look": "olive",
+   "text": "Three of these?",
+   "words": [
+    [
+     "three",
+     311.32,
+     311.62
+    ],
+    [
+     "of",
+     311.62,
+     311.82
+    ],
+    [
+     "these?",
+     311.82,
+     312.08
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 13,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "2aa8a0",
+   "line": null,
+   "src": "b835e1",
+   "in": 314.38,
+   "out": 316.52,
+   "look": "olive",
+   "text": "And the fact that you can get not one, but",
+   "words": [
+    [
+     "And",
+     314.46,
+     314.7
+    ],
+    [
+     "the",
+     314.7,
+     314.8
+    ],
+    [
+     "fact",
+     314.8,
+     315
+    ],
+    [
+     "that",
+     315,
+     315.12
+    ],
+    [
+     "you",
+     315.12,
+     315.22
+    ],
+    [
+     "can",
+     315.22,
+     315.38
+    ],
+    [
+     "get",
+     315.38,
+     315.54
+    ],
+    [
+     "not",
+     315.54,
+     315.74
+    ],
+    [
+     "one,",
+     315.74,
+     316.12
+    ],
+    [
+     "but",
+     316.38,
+     316.54
+    ]
+   ],
+   "score": 0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 24,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "1762b3",
+   "line": "6efaa5",
+   "src": "b835e1",
+   "in": 316.89,
+   "out": 317.66,
+   "look": "olive",
+   "text": "three of these?",
+   "words": [
+    [
+     "three",
+     316.54,
+     316.98
+    ],
+    [
+     "of",
+     316.98,
+     317.24
+    ],
+    [
+     "these?",
+     317.24,
+     317.48
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 14,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "0330b7",
+   "line": null,
+   "src": "b835e1",
+   "in": 318.63,
+   "out": 319.77,
+   "look": "olive",
+   "text": "And the fact that you can,",
+   "words": [
+    [
+     "And",
+     318.71,
+     318.95
+    ],
+    [
+     "the",
+     318.95,
+     319.05
+    ],
+    [
+     "fact",
+     319.05,
+     319.31
+    ],
+    [
+     "that",
+     319.31,
+     319.43
+    ],
+    [
+     "you",
+     319.43,
+     319.53
+    ],
+    [
+     "can,",
+     319.53,
+     319.73
+    ]
+   ],
+   "score": 0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 25,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "cde60d",
+   "line": null,
+   "src": "b835e1",
+   "in": 319.75,
+   "out": 322.19,
+   "look": "olive",
+   "text": "and the fact that you can get not one, but",
+   "words": [
+    [
+     "and",
+     319.79,
+     320.41
+    ],
+    [
+     "the",
+     320.41,
+     320.51
+    ],
+    [
+     "fact",
+     320.51,
+     320.71
+    ],
+    [
+     "that",
+     320.71,
+     320.89
+    ],
+    [
+     "you",
+     320.89,
+     320.95
+    ],
+    [
+     "can",
+     320.95,
+     321.11
+    ],
+    [
+     "get",
+     321.11,
+     321.25
+    ],
+    [
+     "not",
+     321.25,
+     321.45
+    ],
+    [
+     "one,",
+     321.45,
+     321.81
+    ],
+    [
+     "but",
+     322.05,
+     322.21
+    ]
+   ],
+   "score": 0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 26,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "50bf50",
+   "line": "6efaa5",
+   "src": "b835e1",
+   "in": 322.56,
+   "out": 323.23,
+   "look": "olive",
+   "text": "three of these?",
+   "words": [
+    [
+     "three",
+     322.21,
+     322.59
+    ],
+    [
+     "of",
+     322.59,
+     322.81
+    ],
+    [
+     "these?",
+     322.81,
+     323.05
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 15,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "493904",
+   "line": null,
+   "src": "b835e1",
+   "in": 324.84,
+   "out": 327.06,
+   "look": "olive",
+   "text": "Leo, you're gonna ruin the transition.",
+   "words": [
+    [
+     "Leo,",
+     324.92,
+     325.66
+    ],
+    [
+     "you're",
+     325.82,
+     325.92
+    ],
+    [
+     "gonna",
+     325.92,
+     326
+    ],
+    [
+     "ruin",
+     326,
+     326.34
+    ],
+    [
+     "the",
+     326.34,
+     326.5
+    ],
+    [
+     "transition.",
+     326.5,
+     326.88
+    ]
+   ],
+   "score": 0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 27,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "37291b",
+   "line": null,
+   "src": "b835e1",
+   "in": 332.26,
+   "out": 332.86,
+   "look": "olive",
+   "text": "Heh, heh, heh.",
+   "words": [
+    [
+     "Heh,",
+     332.34,
+     332.56
+    ],
+    [
+     "heh,",
+     332.56,
+     332.64
+    ],
+    [
+     "heh.",
+     332.66,
+     332.68
+    ]
+   ],
+   "score": 0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 28,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  },
+  {
+   "id": "5365dd",
+   "line": null,
+   "src": "b835e1",
+   "in": 336.49,
+   "out": 338.49,
+   "look": "olive",
+   "text": "Leo, it's, fuck.",
+   "words": [
+    [
+     "Leo,",
+     336.57,
+     336.99
+    ],
+    [
+     "it's,",
+     337.19,
+     337.41
+    ],
+    [
+     "fuck.",
+     337.75,
+     338.31
+    ]
+   ],
+   "score": 0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 29,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "user": {}
+  }
+ ],
+ "hooks": [],
+ "cta": "tap the orange cart to grab yours 🛒",
+ "style": {
+  "subs": {
+   "on": true,
+   "font": "Arial Black",
+   "size": 84,
+   "color": "#FFFFFF",
+   "highlight": "#FFE14D",
+   "outline": "#000000",
+   "outline_w": 6,
+   "uppercase": false,
+   "y": 0.66,
+   "words_per_line": 3,
+   "karaoke": true,
+   "pop": true
+  },
+  "hook": {
+   "on": true,
+   "seconds": 3,
+   "y": 0.2,
+   "preset": "box",
+   "font": "Arial Black",
+   "size": 58,
+   "color": "#000000",
+   "box_color": "#FFFFFF",
+   "accent": "#FE2C55",
+   "outline_w": 0,
+   "uppercase": false,
+   "rotate": 0,
+   "pop": true
+  },
+  "cta": {
+   "on": true,
+   "y": 0.8,
+   "preset": "sticker",
+   "font": "Arial Black",
+   "size": 52,
+   "color": "#FFFFFF",
+   "box_color": "#FE2C55",
+   "accent": "#FFE14D",
+   "outline_w": 0,
+   "uppercase": false,
+   "rotate": -2,
+   "pop": true
+  },
+  "punch_in": 1.12,
+  "pad_before": 0.08,
+  "pad_after": 0.18,
+  "voice_cleanup": false,
+  "loudness": -14
+ },
+ "skip": [],
+ "assets": [
+  {
+   "id": "2799ca",
+   "name": "designer price (test)",
+   "file": "C:\\Users\\thecc\\AppData\\Local\\Temp\\claude\\C--Users-thecc-OneDrive-Documents-MemeSupercut\\ac6c64e9-b003-412b-b39b-e8f2f786bfa3\\scratchpad\\fake_designer.png",
+   "kind": "image",
+   "w": 600,
+   "h": 760,
+   "crop": null
+  },
+  {
+   "id": "d134c1",
+   "name": "frame at 2:57.0",
+   "file": "C:\\Users\\thecc\\MemeSupercutData\\ads\\uploads\\test-raw-img-7656\\assets\\frame-0177000-291d39.png",
+   "kind": "image",
+   "w": 1080,
+   "h": 1920,
+   "crop": null
+  }
+ ],
+ "overlays": [
+  {
+   "id": "a5ef7c",
+   "asset": "2799ca",
+   "line": "6efaa5",
+   "at_word": "these?",
+   "at_occ": 0,
+   "hold": "line",
+   "x": 0.3741888791918856,
+   "y": 0.1551437554545643,
+   "w": 0.46,
+   "radius": 28,
+   "border": 0,
+   "shadow": true,
+   "pop": true
+  }
+ ],
+ "renders": {
+  "1": {
+   "file": "C:\\Users\\thecc\\Videos\\TikTok Shop\\Test raw IMG_7656\\test-raw-img-7656-v01.mp4",
+   "at": 1792270260.7640758
+  }
+ }
+}

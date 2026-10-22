@@ -1,0 +1,3578 @@
+{
+ "version": 1,
+ "rev": 61,
+ "title": "Dude Wipes",
+ "created": 1792274042.8666592,
+ "product": {
+  "name": "Dude Wipes Dumpkin Spice Flushable Wipes",
+  "link": "",
+  "description": "",
+  "hashtags": "#tiktokshop #tiktokmademebuyit"
+ },
+ "reference": {
+  "url": "",
+  "file": "",
+  "notes": ""
+ },
+ "sources": [
+  {
+   "id": "297ff7",
+   "file": "C:\\Users\\thecc\\Videos\\TikTok Shop\\Raw\\IMG_0218.MOV",
+   "name": "IMG_0218.MOV",
+   "status": "ready",
+   "error": null,
+   "looks": [],
+   "key": "88ffe1abd6b679",
+   "duration": 220.738333,
+   "width": 1920,
+   "height": 1080
+  }
+ ],
+ "script": [
+  {
+   "id": "ad4f4b",
+   "text": "My husband and I don't agree on everything, but we do agree that dude wipes are a home essential.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "cut_offset": null,
+   "lead_in": null,
+   "subs_off": false
+  },
+  {
+   "id": "728e4f",
+   "text": "And they just dropped their new Dumpkin Spice scent with stuff like nutmeg and clove.",
+   "alts": [
+    "And they just dropped their new Dumpkin Spice scent."
+   ],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "cut_offset": null,
+   "lead_in": null,
+   "subs_off": false
+  },
+  {
+   "id": "a3d78f",
+   "text": "Let's see how these smell.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "cut_offset": null,
+   "lead_in": null,
+   "subs_off": false
+  },
+  {
+   "id": "e9e675",
+   "text": "It's like a pie.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "cut_offset": null,
+   "lead_in": 1.5,
+   "subs_off": false
+  },
+  {
+   "id": "d03abb",
+   "text": "I never knew I needed this in a wipe,",
+   "alts": [
+    "I never thought I needed this in a wipe,"
+   ],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "cut_offset": null,
+   "lead_in": null,
+   "subs_off": false
+  },
+  {
+   "id": "81471c",
+   "text": "but I'm sure my husband's gonna love it.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "cut_offset": null,
+   "lead_in": null,
+   "subs_off": false
+  },
+  {
+   "id": "a35b52",
+   "text": "Like I said, they just dropped these, and they're selling out quick,",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": [
+    0.12,
+    0.3,
+    0.98,
+    0.58
+   ],
+   "wait_for": null,
+   "hold_after": null,
+   "cut_offset": null,
+   "lead_in": null,
+   "subs_off": false
+  },
+  {
+   "id": "a2a0a8",
+   "text": "so you better run and get yours before they sell out.",
+   "alts": [
+    "so you better get yours. I'll put the link below.",
+    "I'm going to drop the link below. Get yours today."
+   ],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": [
+    0.12,
+    0.3,
+    0.98,
+    0.58
+   ],
+   "wait_for": null,
+   "hold_after": null,
+   "cut_offset": null,
+   "lead_in": null,
+   "subs_off": false
+  }
+ ],
+ "script_guessed": false,
+ "takes": [
+  {
+   "id": "a59e0c",
+   "line": "ad4f4b",
+   "src": "297ff7",
+   "in": 3.11,
+   "out": 8.05,
+   "look": null,
+   "alt": 0,
+   "text": "My husband and I don't agree on everything, but we do agree that dude wipes are a home essential,",
+   "for_text": "My husband and I don't agree on everything, but we do agree that dude wipes are a home essential.",
+   "words": [
+    [
+     "My",
+     3.19,
+     3.51
+    ],
+    [
+     "husband",
+     3.51,
+     3.81
+    ],
+    [
+     "and",
+     3.81,
+     3.99
+    ],
+    [
+     "I",
+     3.99,
+     4.11
+    ],
+    [
+     "don't",
+     4.11,
+     4.35
+    ],
+    [
+     "agree",
+     4.35,
+     4.53
+    ],
+    [
+     "on",
+     4.53,
+     4.69
+    ],
+    [
+     "everything,",
+     4.69,
+     5.03
+    ],
+    [
+     "but",
+     5.27,
+     5.47
+    ],
+    [
+     "we",
+     5.47,
+     5.59
+    ],
+    [
+     "do",
+     5.59,
+     5.77
+    ],
+    [
+     "agree",
+     5.77,
+     6.07
+    ],
+    [
+     "that",
+     6.07,
+     6.25
+    ],
+    [
+     "dude",
+     6.25,
+     6.49
+    ],
+    [
+     "wipes",
+     6.49,
+     6.77
+    ],
+    [
+     "are",
+     6.77,
+     6.95
+    ],
+    [
+     "a",
+     6.95,
+     7.05
+    ],
+    [
+     "home",
+     7.05,
+     7.33
+    ],
+    [
+     "essential.",
+     7.33,
+     7.87
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "1718e2",
+   "line": "728e4f",
+   "src": "297ff7",
+   "in": 8.05,
+   "out": 10.73,
+   "look": null,
+   "alt": 1,
+   "text": "and they just dropped their new Dunkin' Spice scent.",
+   "for_text": "And they just dropped their new Dumpkin Spice scent.",
+   "words": [
+    [
+     "And",
+     8.13,
+     8.37
+    ],
+    [
+     "they",
+     8.37,
+     8.49
+    ],
+    [
+     "just",
+     8.49,
+     8.69
+    ],
+    [
+     "dropped",
+     8.69,
+     8.93
+    ],
+    [
+     "their",
+     8.93,
+     9.11
+    ],
+    [
+     "new",
+     9.11,
+     9.27
+    ],
+    [
+     "Dumpkin",
+     9.27,
+     9.85
+    ],
+    [
+     "Spice",
+     10.03,
+     10.33
+    ],
+    [
+     "scent.",
+     10.33,
+     10.55
+    ]
+   ],
+   "score": 0.889,
+   "status": "close",
+   "flags": [
+    "reworded (1 skipped, 1 added)"
+   ],
+   "missing": [
+    "dumpkin"
+   ],
+   "extra": [
+    "dunkin"
+   ],
+   "usable": true,
+   "order": 1,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "order": true
+   }
+  },
+  {
+   "id": "251d9a",
+   "line": "728e4f",
+   "src": "297ff7",
+   "in": 15.94,
+   "out": 18.52,
+   "look": null,
+   "alt": 1,
+   "text": "And they just dropped their new Dunkin' Spice scent.",
+   "for_text": "And they just dropped their new Dumpkin Spice scent.",
+   "words": [
+    [
+     "And",
+     16.02,
+     16.26
+    ],
+    [
+     "they",
+     16.26,
+     16.38
+    ],
+    [
+     "just",
+     16.38,
+     16.58
+    ],
+    [
+     "dropped",
+     16.58,
+     16.76
+    ],
+    [
+     "their",
+     16.76,
+     16.9
+    ],
+    [
+     "new",
+     16.9,
+     17.04
+    ],
+    [
+     "Dumpkin",
+     17.04,
+     17.6
+    ],
+    [
+     "Spice",
+     17.8,
+     18.1
+    ],
+    [
+     "scent.",
+     18.1,
+     18.34
+    ]
+   ],
+   "score": 0.889,
+   "status": "close",
+   "flags": [
+    "reworded (1 skipped, 1 added)"
+   ],
+   "missing": [
+    "dumpkin"
+   ],
+   "extra": [
+    "dunkin"
+   ],
+   "usable": true,
+   "order": 0,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "line": true,
+    "usable": true,
+    "order": true
+   }
+  },
+  {
+   "id": "5e38ee",
+   "line": "728e4f",
+   "src": "297ff7",
+   "in": 20.71,
+   "out": 25.21,
+   "look": null,
+   "alt": 0,
+   "text": "And they just dropped their new Dunkin' Spice scent with stuff like nutmeg and clove.",
+   "for_text": "And they just dropped their new Dumpkin Spice scent with stuff like nutmeg and clove.",
+   "words": [
+    [
+     "And",
+     20.79,
+     21.07
+    ],
+    [
+     "they",
+     21.07,
+     21.19
+    ],
+    [
+     "just",
+     21.19,
+     21.39
+    ],
+    [
+     "dropped",
+     21.39,
+     21.59
+    ],
+    [
+     "their",
+     21.59,
+     21.73
+    ],
+    [
+     "new",
+     21.73,
+     21.87
+    ],
+    [
+     "Dumpkin",
+     21.87,
+     22.45
+    ],
+    [
+     "Spice",
+     22.61,
+     22.89
+    ],
+    [
+     "scent",
+     22.89,
+     23.09
+    ],
+    [
+     "with",
+     23.09,
+     23.27
+    ],
+    [
+     "stuff",
+     23.27,
+     23.53
+    ],
+    [
+     "like",
+     23.53,
+     23.77
+    ],
+    [
+     "nutmeg",
+     23.77,
+     24.29
+    ],
+    [
+     "and",
+     24.29,
+     24.47
+    ],
+    [
+     "clove.",
+     24.47,
+     25.03
+    ]
+   ],
+   "score": 0.933,
+   "status": "close",
+   "flags": [
+    "reworded (1 skipped, 1 added)"
+   ],
+   "missing": [
+    "dumpkin"
+   ],
+   "extra": [
+    "dunkin"
+   ],
+   "usable": true,
+   "order": 2,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "order": true
+   }
+  },
+  {
+   "id": "7c836f",
+   "line": "ad4f4b",
+   "src": "297ff7",
+   "in": 31.98,
+   "out": 36.74,
+   "look": null,
+   "alt": 0,
+   "text": "My husband and I don't agree on everything, but we do agree that dude wipes are a home essential.",
+   "for_text": "My husband and I don't agree on everything, but we do agree that dude wipes are a home essential.",
+   "words": [
+    [
+     "My",
+     32.06,
+     32.32
+    ],
+    [
+     "husband",
+     32.32,
+     32.58
+    ],
+    [
+     "and",
+     32.58,
+     32.74
+    ],
+    [
+     "I",
+     32.74,
+     32.86
+    ],
+    [
+     "don't",
+     32.86,
+     33.12
+    ],
+    [
+     "agree",
+     33.12,
+     33.28
+    ],
+    [
+     "on",
+     33.28,
+     33.42
+    ],
+    [
+     "everything,",
+     33.42,
+     33.74
+    ],
+    [
+     "but",
+     34.02,
+     34.26
+    ],
+    [
+     "we",
+     34.26,
+     34.38
+    ],
+    [
+     "do",
+     34.38,
+     34.52
+    ],
+    [
+     "agree",
+     34.52,
+     34.8
+    ],
+    [
+     "that",
+     34.8,
+     35
+    ],
+    [
+     "dude",
+     35,
+     35.28
+    ],
+    [
+     "wipes",
+     35.28,
+     35.58
+    ],
+    [
+     "are",
+     35.58,
+     35.74
+    ],
+    [
+     "a",
+     35.74,
+     35.86
+    ],
+    [
+     "home",
+     35.86,
+     36.1
+    ],
+    [
+     "essential.",
+     36.1,
+     36.56
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 1,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "4890d6",
+   "line": "ad4f4b",
+   "src": "297ff7",
+   "in": 40.62,
+   "out": 45.44,
+   "look": null,
+   "alt": 0,
+   "text": "Listen, my husband and I don't agree on everything, but we do agree that dude wipes are a home essential.",
+   "for_text": "My husband and I don't agree on everything, but we do agree that dude wipes are a home essential.",
+   "words": [
+    [
+     "Listen,",
+     40.7,
+     41.08
+    ],
+    [
+     "My",
+     41.24,
+     41.28
+    ],
+    [
+     "husband",
+     41.28,
+     41.52
+    ],
+    [
+     "and",
+     41.52,
+     41.68
+    ],
+    [
+     "I",
+     41.68,
+     41.78
+    ],
+    [
+     "don't",
+     41.78,
+     42.04
+    ],
+    [
+     "agree",
+     42.04,
+     42.24
+    ],
+    [
+     "on",
+     42.24,
+     42.36
+    ],
+    [
+     "everything,",
+     42.36,
+     42.66
+    ],
+    [
+     "but",
+     42.72,
+     42.9
+    ],
+    [
+     "we",
+     42.9,
+     43.02
+    ],
+    [
+     "do",
+     43.02,
+     43.2
+    ],
+    [
+     "agree",
+     43.2,
+     43.48
+    ],
+    [
+     "that",
+     43.48,
+     43.64
+    ],
+    [
+     "dude",
+     43.64,
+     43.9
+    ],
+    [
+     "wipes",
+     43.9,
+     44.18
+    ],
+    [
+     "are",
+     44.18,
+     44.38
+    ],
+    [
+     "a",
+     44.38,
+     44.5
+    ],
+    [
+     "home",
+     44.5,
+     44.76
+    ],
+    [
+     "essential.",
+     44.76,
+     45.26
+    ]
+   ],
+   "score": 0.976,
+   "status": "close",
+   "flags": [
+    "reworded (0 skipped, 1 added)"
+   ],
+   "missing": [],
+   "extra": [
+    "listen"
+   ],
+   "usable": true,
+   "order": 2,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "bb121d",
+   "line": "728e4f",
+   "src": "297ff7",
+   "in": 45.48,
+   "out": 50.18,
+   "look": null,
+   "alt": 0,
+   "text": "And they just dropped their new Dunkin' Spice scent with stuff like nutmeg and clove.",
+   "for_text": "And they just dropped their new Dumpkin Spice scent with stuff like nutmeg and clove.",
+   "words": [
+    [
+     "And",
+     45.56,
+     45.96
+    ],
+    [
+     "they",
+     45.96,
+     46.06
+    ],
+    [
+     "just",
+     46.06,
+     46.26
+    ],
+    [
+     "dropped",
+     46.26,
+     46.46
+    ],
+    [
+     "their",
+     46.46,
+     46.6
+    ],
+    [
+     "new",
+     46.6,
+     46.74
+    ],
+    [
+     "Dumpkin",
+     46.74,
+     47.3
+    ],
+    [
+     "Spice",
+     47.46,
+     47.74
+    ],
+    [
+     "scent",
+     47.74,
+     47.96
+    ],
+    [
+     "with",
+     47.96,
+     48.3
+    ],
+    [
+     "stuff",
+     48.3,
+     48.52
+    ],
+    [
+     "like",
+     48.52,
+     48.78
+    ],
+    [
+     "nutmeg",
+     48.78,
+     49.28
+    ],
+    [
+     "and",
+     49.28,
+     49.46
+    ],
+    [
+     "clove.",
+     49.46,
+     50
+    ]
+   ],
+   "score": 0.933,
+   "status": "close",
+   "flags": [
+    "reworded (1 skipped, 1 added)"
+   ],
+   "missing": [
+    "dumpkin"
+   ],
+   "extra": [
+    "dunkin"
+   ],
+   "usable": true,
+   "order": 3,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "order": true
+   }
+  },
+  {
+   "id": "fdd969",
+   "line": "a3d78f",
+   "src": "297ff7",
+   "in": 62.73,
+   "out": 63.85,
+   "look": null,
+   "alt": 0,
+   "text": "Let's see how these smell.",
+   "for_text": "Let's see how these smell.",
+   "words": [
+    [
+     "Let's",
+     62.81,
+     62.99
+    ],
+    [
+     "see",
+     62.99,
+     63.07
+    ],
+    [
+     "how",
+     63.07,
+     63.19
+    ],
+    [
+     "these",
+     63.19,
+     63.33
+    ],
+    [
+     "smell.",
+     63.33,
+     63.67
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 1,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "order": true
+   }
+  },
+  {
+   "id": "253632",
+   "line": "a3d78f",
+   "src": "297ff7",
+   "in": 64.65,
+   "out": 65.97,
+   "look": null,
+   "alt": 0,
+   "text": "Let's see how these smell.",
+   "for_text": "Let's see how these smell.",
+   "words": [
+    [
+     "Let's",
+     64.73,
+     65.13
+    ],
+    [
+     "see",
+     65.13,
+     65.21
+    ],
+    [
+     "how",
+     65.21,
+     65.33
+    ],
+    [
+     "these",
+     65.33,
+     65.47
+    ],
+    [
+     "smell.",
+     65.47,
+     65.79
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "line": true,
+    "usable": true,
+    "order": true,
+    "sfx": true
+   }
+  },
+  {
+   "id": "29c382",
+   "line": "a3d78f",
+   "src": "297ff7",
+   "in": 66.98,
+   "out": 68.36,
+   "look": null,
+   "alt": 0,
+   "text": "Let's see how these smell.",
+   "for_text": "Let's see how these smell.",
+   "words": [
+    [
+     "Let's",
+     67.06,
+     67.46
+    ],
+    [
+     "see",
+     67.46,
+     67.56
+    ],
+    [
+     "how",
+     67.56,
+     67.7
+    ],
+    [
+     "these",
+     67.7,
+     67.84
+    ],
+    [
+     "smell.",
+     67.84,
+     68.18
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 2,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "order": true
+   }
+  },
+  {
+   "id": "c459db",
+   "line": "e9e675",
+   "src": "297ff7",
+   "in": 71,
+   "out": 73.94,
+   "look": null,
+   "alt": 0,
+   "text": "It's like a pie.",
+   "for_text": "It's like a pie.",
+   "words": [
+    [
+     "It's",
+     72.5,
+     72.86
+    ],
+    [
+     "like",
+     72.86,
+     73.06
+    ],
+    [
+     "a",
+     73.06,
+     73.22
+    ],
+    [
+     "pie.",
+     73.22,
+     73.76
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [
+    {
+     "id": "60aaef",
+     "name": "sparkle",
+     "at": 71.675,
+     "vol": 1.5
+    },
+    {
+     "id": "40af5d",
+     "name": "tada",
+     "at": 72.184,
+     "vol": 0.8
+    },
+    {
+     "id": "8cb2b9",
+     "name": "whoosh",
+     "at": 71.358,
+     "vol": 0.35
+    }
+   ],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "order": true,
+    "sfx": true
+   }
+  },
+  {
+   "id": "a8b2f9",
+   "line": "e9e675",
+   "src": "297ff7",
+   "in": 74.46,
+   "out": 77.04,
+   "look": null,
+   "alt": 0,
+   "text": "It's like a pie.",
+   "for_text": "It's like a pie.",
+   "words": [
+    [
+     "It's",
+     75.96,
+     76.18
+    ],
+    [
+     "like",
+     76.18,
+     76.32
+    ],
+    [
+     "a",
+     76.32,
+     76.42
+    ],
+    [
+     "pie.",
+     76.42,
+     76.86
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 1,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "order": true
+   }
+  },
+  {
+   "id": "bb1eb9",
+   "line": "e9e675",
+   "src": "297ff7",
+   "in": 77.31,
+   "out": 80.07,
+   "look": null,
+   "alt": 0,
+   "text": "It's like a pie.",
+   "for_text": "It's like a pie.",
+   "words": [
+    [
+     "It's",
+     78.81,
+     79.17
+    ],
+    [
+     "like",
+     79.17,
+     79.35
+    ],
+    [
+     "a",
+     79.35,
+     79.49
+    ],
+    [
+     "pie.",
+     79.49,
+     79.89
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 2,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "order": true
+   }
+  },
+  {
+   "id": "6bdf18",
+   "line": "a3d78f",
+   "src": "297ff7",
+   "in": 85.29,
+   "out": 86.71,
+   "look": null,
+   "alt": 0,
+   "text": "Let's see how these smell.",
+   "for_text": "Let's see how these smell.",
+   "words": [
+    [
+     "Let's",
+     85.37,
+     85.73
+    ],
+    [
+     "see",
+     85.73,
+     85.83
+    ],
+    [
+     "how",
+     85.83,
+     85.97
+    ],
+    [
+     "these",
+     85.97,
+     86.15
+    ],
+    [
+     "smell.",
+     86.15,
+     86.53
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 3,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "order": true
+   }
+  },
+  {
+   "id": "abdd59",
+   "line": "e9e675",
+   "src": "297ff7",
+   "in": 88.67,
+   "out": 91.45,
+   "look": null,
+   "alt": 0,
+   "text": "It's like a pie.",
+   "for_text": "It's like a pie.",
+   "words": [
+    [
+     "It's",
+     90.17,
+     90.53
+    ],
+    [
+     "like",
+     90.53,
+     90.69
+    ],
+    [
+     "a",
+     90.69,
+     90.81
+    ],
+    [
+     "pie.",
+     90.81,
+     91.27
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 3,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "order": true
+   }
+  },
+  {
+   "id": "383255",
+   "line": "a3d78f",
+   "src": "297ff7",
+   "in": 95.78,
+   "out": 97.06,
+   "look": null,
+   "alt": 0,
+   "text": "Let's see how these smell.",
+   "for_text": "Let's see how these smell.",
+   "words": [
+    [
+     "Let's",
+     95.86,
+     96.2
+    ],
+    [
+     "see",
+     96.2,
+     96.3
+    ],
+    [
+     "how",
+     96.3,
+     96.42
+    ],
+    [
+     "these",
+     96.42,
+     96.58
+    ],
+    [
+     "smell.",
+     96.58,
+     96.88
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 4,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "order": true
+   }
+  },
+  {
+   "id": "1af6f6",
+   "line": "e9e675",
+   "src": "297ff7",
+   "in": 100.57,
+   "out": 103.27,
+   "look": null,
+   "alt": 0,
+   "text": "It's like a pie.",
+   "for_text": "It's like a pie.",
+   "words": [
+    [
+     "It's",
+     102.07,
+     102.37
+    ],
+    [
+     "like",
+     102.37,
+     102.55
+    ],
+    [
+     "a",
+     102.55,
+     102.67
+    ],
+    [
+     "pie.",
+     102.67,
+     103.09
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 4,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "line": true,
+    "usable": true,
+    "order": true
+   }
+  },
+  {
+   "id": "a58891",
+   "line": "d03abb",
+   "src": "297ff7",
+   "in": 143.21,
+   "out": 145.23,
+   "look": null,
+   "alt": 1,
+   "text": "I never thought I needed this in a wipe.",
+   "for_text": "I never thought I needed this in a wipe,",
+   "words": [
+    [
+     "I",
+     143.29,
+     143.45
+    ],
+    [
+     "never",
+     143.45,
+     143.65
+    ],
+    [
+     "thought",
+     143.65,
+     143.85
+    ],
+    [
+     "I",
+     143.85,
+     144.03
+    ],
+    [
+     "needed",
+     144.03,
+     144.35
+    ],
+    [
+     "this",
+     144.35,
+     144.63
+    ],
+    [
+     "in",
+     144.63,
+     144.75
+    ],
+    [
+     "a",
+     144.75,
+     144.85
+    ],
+    [
+     "wipe,",
+     144.85,
+     145.05
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 1,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "order": true
+   }
+  },
+  {
+   "id": "7311ff",
+   "line": "d03abb",
+   "src": "297ff7",
+   "in": 148.52,
+   "out": 150.74,
+   "look": null,
+   "alt": 1,
+   "text": "I never thought I needed this in a wipe.",
+   "for_text": "I never thought I needed this in a wipe,",
+   "words": [
+    [
+     "I",
+     148.6,
+     148.82
+    ],
+    [
+     "never",
+     148.82,
+     149.02
+    ],
+    [
+     "thought",
+     149.02,
+     149.22
+    ],
+    [
+     "I",
+     149.22,
+     149.4
+    ],
+    [
+     "needed",
+     149.4,
+     149.8
+    ],
+    [
+     "this",
+     149.8,
+     150.1
+    ],
+    [
+     "in",
+     150.1,
+     150.22
+    ],
+    [
+     "a",
+     150.22,
+     150.32
+    ],
+    [
+     "wipe,",
+     150.32,
+     150.56
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "line": true,
+    "usable": true,
+    "order": true
+   }
+  },
+  {
+   "id": "47fabc",
+   "line": "d03abb",
+   "src": "297ff7",
+   "in": 152.68,
+   "out": 154.72,
+   "look": null,
+   "alt": 1,
+   "text": "I never thought I needed this in a wipe.",
+   "for_text": "I never thought I needed this in a wipe,",
+   "words": [
+    [
+     "I",
+     152.76,
+     153.02
+    ],
+    [
+     "never",
+     153.02,
+     153.2
+    ],
+    [
+     "thought",
+     153.2,
+     153.4
+    ],
+    [
+     "I",
+     153.4,
+     153.56
+    ],
+    [
+     "needed",
+     153.56,
+     153.86
+    ],
+    [
+     "this",
+     153.86,
+     154.12
+    ],
+    [
+     "in",
+     154.12,
+     154.24
+    ],
+    [
+     "a",
+     154.24,
+     154.32
+    ],
+    [
+     "wipe,",
+     154.32,
+     154.54
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 2,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "order": true
+   }
+  },
+  {
+   "id": "0eb3ff",
+   "line": "81471c",
+   "src": "297ff7",
+   "in": 155.08,
+   "out": 157.2,
+   "look": null,
+   "alt": 0,
+   "text": "But I'm sure my husband's gonna love it.",
+   "for_text": "but I'm sure my husband's gonna love it.",
+   "words": [
+    [
+     "but",
+     155.16,
+     155.4
+    ],
+    [
+     "I'm",
+     155.4,
+     155.54
+    ],
+    [
+     "sure",
+     155.54,
+     155.74
+    ],
+    [
+     "my",
+     155.74,
+     155.94
+    ],
+    [
+     "husband's",
+     155.94,
+     156.48
+    ],
+    [
+     "gonna",
+     156.48,
+     156.66
+    ],
+    [
+     "love",
+     156.66,
+     157.04
+    ],
+    [
+     "it.",
+     157.04,
+     157.18
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [
+    {
+     "id": "0efb87",
+     "name": "angel_ahh",
+     "at": 155.4,
+     "vol": 0.65
+    }
+   ],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "out": true,
+    "sfx": true
+   }
+  },
+  {
+   "id": "b53564",
+   "line": "d03abb",
+   "src": "297ff7",
+   "in": 158.82,
+   "out": 160.8,
+   "look": null,
+   "alt": 1,
+   "text": "I never thought I needed this in a wipe,",
+   "for_text": "I never thought I needed this in a wipe,",
+   "words": [
+    [
+     "I",
+     158.9,
+     159.16
+    ],
+    [
+     "never",
+     159.16,
+     159.34
+    ],
+    [
+     "thought",
+     159.34,
+     159.54
+    ],
+    [
+     "I",
+     159.54,
+     159.68
+    ],
+    [
+     "needed",
+     159.68,
+     159.94
+    ],
+    [
+     "this",
+     159.94,
+     160.2
+    ],
+    [
+     "in",
+     160.2,
+     160.32
+    ],
+    [
+     "a",
+     160.32,
+     160.38
+    ],
+    [
+     "wipe,",
+     160.38,
+     160.66
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 3,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "order": true
+   }
+  },
+  {
+   "id": "f0c8c8",
+   "line": "81471c",
+   "src": "297ff7",
+   "in": 160.74,
+   "out": 162.9,
+   "look": null,
+   "alt": 0,
+   "text": "but I'm sure my husband's gonna love it.",
+   "for_text": "but I'm sure my husband's gonna love it.",
+   "words": [
+    [
+     "but",
+     160.82,
+     161.08
+    ],
+    [
+     "I'm",
+     161.08,
+     161.22
+    ],
+    [
+     "sure",
+     161.22,
+     161.38
+    ],
+    [
+     "my",
+     161.38,
+     161.56
+    ],
+    [
+     "husband's",
+     161.56,
+     162.04
+    ],
+    [
+     "gonna",
+     162.04,
+     162.18
+    ],
+    [
+     "love",
+     162.18,
+     162.54
+    ],
+    [
+     "it.",
+     162.54,
+     162.72
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 1,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "77d332",
+   "line": "d03abb",
+   "src": "297ff7",
+   "in": 164.39,
+   "out": 166.15,
+   "look": null,
+   "alt": 0,
+   "text": "I never knew I needed this in a wipe,",
+   "for_text": "I never knew I needed this in a wipe,",
+   "words": [
+    [
+     "I",
+     164.47,
+     164.65
+    ],
+    [
+     "never",
+     164.65,
+     164.85
+    ],
+    [
+     "knew",
+     164.85,
+     165.01
+    ],
+    [
+     "I",
+     165.01,
+     165.11
+    ],
+    [
+     "needed",
+     165.11,
+     165.35
+    ],
+    [
+     "this",
+     165.35,
+     165.61
+    ],
+    [
+     "in",
+     165.61,
+     165.73
+    ],
+    [
+     "a",
+     165.73,
+     165.81
+    ],
+    [
+     "wipe,",
+     165.81,
+     166.03
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 4,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "order": true
+   }
+  },
+  {
+   "id": "5fa0f6",
+   "line": "81471c",
+   "src": "297ff7",
+   "in": 166.09,
+   "out": 168.13,
+   "look": null,
+   "alt": 0,
+   "text": "but I'm sure my husband's gonna love it.",
+   "for_text": "but I'm sure my husband's gonna love it.",
+   "words": [
+    [
+     "but",
+     166.17,
+     166.35
+    ],
+    [
+     "I'm",
+     166.35,
+     166.49
+    ],
+    [
+     "sure",
+     166.49,
+     166.63
+    ],
+    [
+     "my",
+     166.63,
+     166.83
+    ],
+    [
+     "husband's",
+     166.83,
+     167.35
+    ],
+    [
+     "gonna",
+     167.35,
+     167.51
+    ],
+    [
+     "love",
+     167.51,
+     167.81
+    ],
+    [
+     "it.",
+     167.81,
+     167.95
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 2,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "3fe51c",
+   "line": "d03abb",
+   "src": "297ff7",
+   "in": 169.61,
+   "out": 171.43,
+   "look": null,
+   "alt": 0,
+   "text": "I never knew I needed this in a wipe,",
+   "for_text": "I never knew I needed this in a wipe,",
+   "words": [
+    [
+     "I",
+     169.69,
+     169.95
+    ],
+    [
+     "never",
+     169.95,
+     170.09
+    ],
+    [
+     "knew",
+     170.09,
+     170.23
+    ],
+    [
+     "I",
+     170.23,
+     170.35
+    ],
+    [
+     "needed",
+     170.35,
+     170.61
+    ],
+    [
+     "this",
+     170.61,
+     170.85
+    ],
+    [
+     "in",
+     170.85,
+     170.95
+    ],
+    [
+     "a",
+     170.95,
+     171.01
+    ],
+    [
+     "wipe,",
+     171.01,
+     171.25
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 5,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "order": true
+   }
+  },
+  {
+   "id": "f76d88",
+   "line": "81471c",
+   "src": "297ff7",
+   "in": 171.39,
+   "out": 173.43,
+   "look": null,
+   "alt": 0,
+   "text": "but I'm sure my husband's gonna love it.",
+   "for_text": "but I'm sure my husband's gonna love it.",
+   "words": [
+    [
+     "but",
+     171.47,
+     171.99
+    ],
+    [
+     "I'm",
+     171.99,
+     172.09
+    ],
+    [
+     "sure",
+     172.09,
+     172.21
+    ],
+    [
+     "my",
+     172.21,
+     172.37
+    ],
+    [
+     "husband's",
+     172.37,
+     172.75
+    ],
+    [
+     "gonna",
+     172.75,
+     172.87
+    ],
+    [
+     "love",
+     172.87,
+     173.11
+    ],
+    [
+     "it.",
+     173.11,
+     173.25
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 3,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "9d259e",
+   "line": "d03abb",
+   "src": "297ff7",
+   "in": 175.43,
+   "out": 177.23,
+   "look": null,
+   "alt": 0,
+   "text": "I never knew I needed this in a way,",
+   "for_text": "I never knew I needed this in a wipe,",
+   "words": [
+    [
+     "I",
+     175.51,
+     175.77
+    ],
+    [
+     "never",
+     175.77,
+     175.95
+    ],
+    [
+     "knew",
+     175.95,
+     176.09
+    ],
+    [
+     "I",
+     176.09,
+     176.21
+    ],
+    [
+     "needed",
+     176.21,
+     176.49
+    ],
+    [
+     "this",
+     176.49,
+     176.73
+    ],
+    [
+     "in",
+     176.73,
+     176.85
+    ],
+    [
+     "a",
+     176.85,
+     176.93
+    ],
+    [
+     "wipe,",
+     176.93,
+     177.09
+    ]
+   ],
+   "score": 0.889,
+   "status": "close",
+   "flags": [
+    "reworded (1 skipped, 1 added)"
+   ],
+   "missing": [
+    "wipe"
+   ],
+   "extra": [
+    "way"
+   ],
+   "usable": true,
+   "order": 6,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "order": true
+   }
+  },
+  {
+   "id": "b779fb",
+   "line": "81471c",
+   "src": "297ff7",
+   "in": 177.17,
+   "out": 179.39,
+   "look": null,
+   "alt": 0,
+   "text": "but I'm sure my husband's gonna love it.",
+   "for_text": "but I'm sure my husband's gonna love it.",
+   "words": [
+    [
+     "but",
+     177.25,
+     177.83
+    ],
+    [
+     "I'm",
+     177.83,
+     177.95
+    ],
+    [
+     "sure",
+     177.95,
+     178.09
+    ],
+    [
+     "my",
+     178.09,
+     178.27
+    ],
+    [
+     "husband's",
+     178.27,
+     178.73
+    ],
+    [
+     "gonna",
+     178.73,
+     178.85
+    ],
+    [
+     "love",
+     178.85,
+     179.09
+    ],
+    [
+     "it.",
+     179.09,
+     179.21
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 4,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "6d77f2",
+   "line": "d03abb",
+   "src": "297ff7",
+   "in": 180.46,
+   "out": 182.36,
+   "look": null,
+   "alt": 0,
+   "text": "I never knew I needed this in a white.",
+   "for_text": "I never knew I needed this in a wipe,",
+   "words": [
+    [
+     "I",
+     180.54,
+     180.8
+    ],
+    [
+     "never",
+     180.8,
+     180.98
+    ],
+    [
+     "knew",
+     180.98,
+     181.1
+    ],
+    [
+     "I",
+     181.1,
+     181.24
+    ],
+    [
+     "needed",
+     181.24,
+     181.48
+    ],
+    [
+     "this",
+     181.48,
+     181.76
+    ],
+    [
+     "in",
+     181.76,
+     181.88
+    ],
+    [
+     "a",
+     181.88,
+     181.98
+    ],
+    [
+     "wipe,",
+     181.98,
+     182.18
+    ]
+   ],
+   "score": 0.889,
+   "status": "close",
+   "flags": [
+    "reworded (1 skipped, 1 added)"
+   ],
+   "missing": [
+    "wipe"
+   ],
+   "extra": [
+    "white"
+   ],
+   "usable": true,
+   "order": 7,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "order": true
+   }
+  },
+  {
+   "id": "f1ebba",
+   "line": "d03abb",
+   "src": "297ff7",
+   "in": 183.02,
+   "out": 184.92,
+   "look": null,
+   "alt": 0,
+   "text": "I never knew I needed this in a wipe,",
+   "for_text": "I never knew I needed this in a wipe,",
+   "words": [
+    [
+     "I",
+     183.1,
+     183.36
+    ],
+    [
+     "never",
+     183.36,
+     183.56
+    ],
+    [
+     "knew",
+     183.56,
+     183.7
+    ],
+    [
+     "I",
+     183.7,
+     183.82
+    ],
+    [
+     "needed",
+     183.82,
+     184.08
+    ],
+    [
+     "this",
+     184.08,
+     184.34
+    ],
+    [
+     "in",
+     184.34,
+     184.46
+    ],
+    [
+     "a",
+     184.46,
+     184.52
+    ],
+    [
+     "wipe,",
+     184.52,
+     184.78
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 8,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "order": true
+   }
+  },
+  {
+   "id": "b43ff2",
+   "line": "81471c",
+   "src": "297ff7",
+   "in": 184.86,
+   "out": 186.78,
+   "look": null,
+   "alt": 0,
+   "text": "but I'm sure my husband's gonna love it.",
+   "for_text": "but I'm sure my husband's gonna love it.",
+   "words": [
+    [
+     "but",
+     184.94,
+     185.24
+    ],
+    [
+     "I'm",
+     185.24,
+     185.36
+    ],
+    [
+     "sure",
+     185.36,
+     185.48
+    ],
+    [
+     "my",
+     185.48,
+     185.64
+    ],
+    [
+     "husband's",
+     185.64,
+     186.12
+    ],
+    [
+     "gonna",
+     186.12,
+     186.24
+    ],
+    [
+     "love",
+     186.24,
+     186.48
+    ],
+    [
+     "it.",
+     186.48,
+     186.6
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 5,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "3bb30a",
+   "line": "a35b52",
+   "src": "297ff7",
+   "in": 197.93,
+   "out": 200.73,
+   "look": null,
+   "alt": 0,
+   "text": "Like I said, they just dropped these and they're selling out quick,",
+   "for_text": "Like I said, they just dropped these, and they're selling out quick,",
+   "words": [
+    [
+     "Like",
+     198.01,
+     198.29
+    ],
+    [
+     "I",
+     198.29,
+     198.39
+    ],
+    [
+     "said,",
+     198.39,
+     198.55
+    ],
+    [
+     "they",
+     198.63,
+     198.71
+    ],
+    [
+     "just",
+     198.71,
+     199.03
+    ],
+    [
+     "dropped",
+     199.03,
+     199.35
+    ],
+    [
+     "these,",
+     199.35,
+     199.65
+    ],
+    [
+     "and",
+     199.65,
+     199.85
+    ],
+    [
+     "they're",
+     199.85,
+     200.01
+    ],
+    [
+     "selling",
+     200.01,
+     200.27
+    ],
+    [
+     "out",
+     200.27,
+     200.43
+    ],
+    [
+     "quick,",
+     200.43,
+     200.71
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "7625a5",
+   "line": "a2a0a8",
+   "src": "297ff7",
+   "in": 200.73,
+   "out": 202.87,
+   "look": null,
+   "alt": 0,
+   "text": "so you better run and get yours before they sell out.",
+   "for_text": "so you better run and get yours before they sell out.",
+   "words": [
+    [
+     "so",
+     200.75,
+     200.91
+    ],
+    [
+     "you",
+     200.91,
+     200.97
+    ],
+    [
+     "better",
+     200.97,
+     201.11
+    ],
+    [
+     "run",
+     201.11,
+     201.29
+    ],
+    [
+     "and",
+     201.29,
+     201.39
+    ],
+    [
+     "get",
+     201.39,
+     201.55
+    ],
+    [
+     "yours",
+     201.55,
+     201.79
+    ],
+    [
+     "before",
+     201.79,
+     202.09
+    ],
+    [
+     "they",
+     202.09,
+     202.31
+    ],
+    [
+     "sell",
+     202.31,
+     202.53
+    ],
+    [
+     "out.",
+     202.53,
+     202.69
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "c8ccc0",
+   "line": "a35b52",
+   "src": "297ff7",
+   "in": 204.1,
+   "out": 207.04,
+   "look": null,
+   "alt": 0,
+   "text": "Like I said, they just dropped these, and they're selling out quick,",
+   "for_text": "Like I said, they just dropped these, and they're selling out quick,",
+   "words": [
+    [
+     "Like",
+     204.18,
+     204.54
+    ],
+    [
+     "I",
+     204.54,
+     204.62
+    ],
+    [
+     "said,",
+     204.62,
+     204.78
+    ],
+    [
+     "they",
+     204.86,
+     204.94
+    ],
+    [
+     "just",
+     204.94,
+     205.22
+    ],
+    [
+     "dropped",
+     205.22,
+     205.52
+    ],
+    [
+     "these,",
+     205.52,
+     205.78
+    ],
+    [
+     "and",
+     205.96,
+     206.04
+    ],
+    [
+     "they're",
+     206.04,
+     206.28
+    ],
+    [
+     "selling",
+     206.28,
+     206.62
+    ],
+    [
+     "out",
+     206.62,
+     206.78
+    ],
+    [
+     "quick,",
+     206.78,
+     207.04
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 1,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "a7c20b",
+   "line": "a2a0a8",
+   "src": "297ff7",
+   "in": 207.06,
+   "out": 208.94,
+   "look": null,
+   "alt": 1,
+   "text": "so you better get yours. I'll put the link below.",
+   "for_text": "so you better get yours. I'll put the link below.",
+   "words": [
+    [
+     "so",
+     207.06,
+     207.24
+    ],
+    [
+     "you",
+     207.24,
+     207.34
+    ],
+    [
+     "better",
+     207.34,
+     207.46
+    ],
+    [
+     "get",
+     207.46,
+     207.66
+    ],
+    [
+     "yours.",
+     207.66,
+     207.9
+    ],
+    [
+     "I'll",
+     208.04,
+     208.18
+    ],
+    [
+     "put",
+     208.18,
+     208.28
+    ],
+    [
+     "the",
+     208.28,
+     208.4
+    ],
+    [
+     "link",
+     208.4,
+     208.56
+    ],
+    [
+     "below.",
+     208.56,
+     208.76
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 1,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "8a17db",
+   "line": "a35b52",
+   "src": "297ff7",
+   "in": 211.14,
+   "out": 213.86,
+   "look": null,
+   "alt": 0,
+   "text": "Like I said, they just dropped these and they're selling out quick.",
+   "for_text": "Like I said, they just dropped these, and they're selling out quick,",
+   "words": [
+    [
+     "Like",
+     211.22,
+     211.52
+    ],
+    [
+     "I",
+     211.52,
+     211.62
+    ],
+    [
+     "said,",
+     211.62,
+     211.8
+    ],
+    [
+     "they",
+     211.88,
+     211.98
+    ],
+    [
+     "just",
+     211.98,
+     212.24
+    ],
+    [
+     "dropped",
+     212.24,
+     212.52
+    ],
+    [
+     "these,",
+     212.52,
+     212.76
+    ],
+    [
+     "and",
+     212.76,
+     212.94
+    ],
+    [
+     "they're",
+     212.94,
+     213.1
+    ],
+    [
+     "selling",
+     213.1,
+     213.32
+    ],
+    [
+     "out",
+     213.32,
+     213.48
+    ],
+    [
+     "quick,",
+     213.48,
+     213.7
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 2,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "e53d86",
+   "line": "a2a0a8",
+   "src": "297ff7",
+   "in": 213.8,
+   "out": 215.76,
+   "look": null,
+   "alt": 2,
+   "text": "I'm going to drop the link below. Get yours today.",
+   "for_text": "I'm going to drop the link below. Get yours today.",
+   "words": [
+    [
+     "I'm",
+     213.88,
+     214.02
+    ],
+    [
+     "going",
+     214.02,
+     214.06
+    ],
+    [
+     "to",
+     214.06,
+     214.14
+    ],
+    [
+     "drop",
+     214.14,
+     214.3
+    ],
+    [
+     "the",
+     214.3,
+     214.42
+    ],
+    [
+     "link",
+     214.42,
+     214.58
+    ],
+    [
+     "below.",
+     214.58,
+     214.82
+    ],
+    [
+     "Get",
+     215,
+     215.14
+    ],
+    [
+     "yours",
+     215.14,
+     215.34
+    ],
+    [
+     "today.",
+     215.34,
+     215.58
+    ]
+   ],
+   "score": 1,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 2,
+   "zoom": 1,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  }
+ ],
+ "hooks": [],
+ "cta": "",
+ "style": {
+  "subs": {
+   "on": true,
+   "font": "Arial Black",
+   "size": 84,
+   "color": "#FFFFFF",
+   "highlight": "#FFE14D",
+   "outline": "#000000",
+   "outline_w": 6,
+   "uppercase": false,
+   "y": 0.66,
+   "words_per_line": 3,
+   "karaoke": true,
+   "pop": true
+  },
+  "look": {
+   "brightness": 0.0,
+   "smooth": 0.0
+  },
+  "speed": 1,
+  "pace": {
+   "auto": true,
+   "wps": 4.8,
+   "max": 1.1,
+   "pauses": true
+  },
+  "title": {
+   "on": true,
+   "y": 0.42,
+   "preset": "meme",
+   "font": "Impact",
+   "size": 150,
+   "color": "#FFFFFF",
+   "box_color": "#000000",
+   "accent": "#FFE14D",
+   "outline_w": 10,
+   "uppercase": true,
+   "rotate": -4,
+   "pop": true
+  },
+  "hook": {
+   "on": true,
+   "seconds": 3,
+   "y": 0.2,
+   "preset": "box",
+   "font": "Arial Black",
+   "size": 58,
+   "color": "#000000",
+   "box_color": "#FFFFFF",
+   "accent": "#FE2C55",
+   "outline_w": 0,
+   "uppercase": false,
+   "rotate": 0,
+   "pop": true
+  },
+  "cta": {
+   "on": false,
+   "y": 0.8,
+   "preset": "sticker",
+   "font": "Arial Black",
+   "size": 52,
+   "color": "#FFFFFF",
+   "box_color": "#FE2C55",
+   "accent": "#FFE14D",
+   "outline_w": 0,
+   "uppercase": false,
+   "rotate": -2,
+   "pop": true
+  },
+  "product_box": null,
+  "cart_pointer": {
+   "on": true,
+   "words": "orange cart, cart, basket, link below",
+   "seconds": 2.2,
+   "color": "#FF8A00",
+   "kind": "ring"
+  },
+  "punch_in": 1.12,
+  "pad_before": 0.08,
+  "pad_after": 0.18,
+  "voice_cleanup": false,
+  "loudness": -14
+ },
+ "skip": [],
+ "mix": null,
+ "mix_auto": true,
+ "batch_note": "",
+ "voiceover": null,
+ "voiceovers": [],
+ "from_inbox": false,
+ "assets": [],
+ "overlays": [],
+ "renders": {
+  "1": {
+   "file": "C:\\Users\\thecc\\Videos\\TikTok Shop\\Dude Wipes\\img-0218-v01.mp4",
+   "at": 1792375166.729728,
+   "sig": "57412e09e0a6",
+   "downloaded": "C:\\Users\\thecc\\OneDrive\\Documents\\Andyrynichols OneDrive\\OneDrive\\Ad Factory Outbox\\2026-10-18\\Dude Wipes - video 01.mp4",
+   "downloaded_at": 1792340869.4240756
+  },
+  "2": {
+   "file": "C:\\Users\\thecc\\Videos\\TikTok Shop\\Dude Wipes\\img-0218-v02.mp4",
+   "at": 1792375187.5056965,
+   "sig": "dc965ffe7bc8"
+  }
+ },
+ "saved": {}
+}

@@ -1,0 +1,77 @@
+{
+ "version": 1,
+ "rev": 1,
+ "title": "shoot-oct-17",
+ "created": 1792270134.9685402,
+ "product": {
+  "name": "",
+  "link": "",
+  "description": "",
+  "hashtags": "#tiktokshop #tiktokmademebuyit"
+ },
+ "reference": {
+  "url": "",
+  "file": "",
+  "notes": ""
+ },
+ "sources": [],
+ "script": [],
+ "script_guessed": false,
+ "takes": [],
+ "hooks": [],
+ "cta": "tap the orange cart to grab yours 🛒",
+ "style": {
+  "subs": {
+   "on": true,
+   "font": "Arial Black",
+   "size": 84,
+   "color": "#FFFFFF",
+   "highlight": "#FFE14D",
+   "outline": "#000000",
+   "outline_w": 6,
+   "uppercase": false,
+   "y": 0.66,
+   "words_per_line": 3,
+   "karaoke": true,
+   "pop": true
+  },
+  "hook": {
+   "on": true,
+   "seconds": 3.0,
+   "y": 0.2,
+   "preset": "box",
+   "font": "Arial Black",
+   "size": 58,
+   "color": "#000000",
+   "box_color": "#FFFFFF",
+   "accent": "#FE2C55",
+   "outline_w": 0,
+   "uppercase": false,
+   "rotate": 0,
+   "pop": true
+  },
+  "cta": {
+   "on": true,
+   "y": 0.8,
+   "preset": "sticker",
+   "font": "Arial Black",
+   "size": 52,
+   "color": "#FFFFFF",
+   "box_color": "#FE2C55",
+   "accent": "#FFE14D",
+   "outline_w": 0,
+   "uppercase": false,
+   "rotate": -2,
+   "pop": true
+  },
+  "punch_in": 1.12,
+  "pad_before": 0.08,
+  "pad_after": 0.18,
+  "voice_cleanup": false,
+  "loudness": -14
+ },
+ "skip": [],
+ "assets": [],
+ "overlays": [],
+ "renders": {}
+}

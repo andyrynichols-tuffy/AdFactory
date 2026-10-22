@@ -1,0 +1,2567 @@
+{
+ "version": 1,
+ "rev": 23,
+ "title": "MenPen 2",
+ "created": 1792372496.8304582,
+ "product": {
+  "name": "MenPen",
+  "link": "",
+  "description": "",
+  "hashtags": "#tiktokshop #tiktokmademebuyit"
+ },
+ "reference": {
+  "url": "",
+  "file": "",
+  "notes": ""
+ },
+ "sources": [
+  {
+   "id": "ac6375",
+   "file": "C:\\Users\\thecc\\MemeSupercutData\\ads\\uploads\\manpen-2\\20261019_020409000_iOS.MOV",
+   "name": "20261019_020409000_iOS.MOV",
+   "status": "ready",
+   "error": null,
+   "batch": 1,
+   "looks": [],
+   "key": "1965a8a01877da",
+   "duration": 45.703333,
+   "width": 1920,
+   "height": 1080
+  },
+  {
+   "id": "da3844",
+   "file": "C:\\Users\\thecc\\MemeSupercutData\\ads\\uploads\\manpen-2\\20261019_015932000_iOS.MOV",
+   "name": "20261019_015932000_iOS.MOV",
+   "status": "ready",
+   "error": null,
+   "batch": 2,
+   "looks": [],
+   "key": "1a720246e2fa3c",
+   "duration": 75.793333,
+   "width": 1920,
+   "height": 1080
+  }
+ ],
+ "script": [
+  {
+   "id": "d5e897",
+   "text": "Shot 1",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "9f7bed",
+   "text": "Shot 2",
+   "alts": [],
+   "optional": true,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "61cb6c",
+   "text": "Shot 3",
+   "alts": [],
+   "optional": true,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "f93e2c",
+   "text": "Shot 4",
+   "alts": [],
+   "optional": true,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "29cb83",
+   "text": "Shot 5",
+   "alts": [],
+   "optional": true,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "480812",
+   "text": "Shot 6",
+   "alts": [],
+   "optional": true,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "d789d2",
+   "text": "Shot 7",
+   "alts": [],
+   "optional": true,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "ae3b59",
+   "text": "Shot 8",
+   "alts": [],
+   "optional": true,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "8f2f0d",
+   "text": "Shot 9",
+   "alts": [],
+   "optional": true,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "7bf9cf",
+   "text": "Shot 10",
+   "alts": [],
+   "optional": true,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "24a44d",
+   "text": "Shot 11",
+   "alts": [],
+   "optional": true,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "9a1ff9",
+   "text": "Shot 12",
+   "alts": [],
+   "optional": true,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  }
+ ],
+ "script_guessed": false,
+ "takes": [
+  {
+   "id": "6a4167",
+   "line": "0c4aab",
+   "src": "ac6375",
+   "in": 1.32,
+   "out": 7.0,
+   "look": null,
+   "alt": 0,
+   "text": "I'm not gay, but I could literally kiss this influencer who told me to start darkening my eyebrows to frame my face.",
+   "for_text": "I'm not gay, but I could LITERALLY kiss this influencer who told me to start darkening my eyebrows to frame my face.",
+   "words": [
+    [
+     "I'm",
+     1.4,
+     1.7
+    ],
+    [
+     "not",
+     1.7,
+     1.86
+    ],
+    [
+     "gay,",
+     1.86,
+     2.1
+    ],
+    [
+     "but",
+     2.38,
+     2.42
+    ],
+    [
+     "I",
+     2.42,
+     2.52
+    ],
+    [
+     "could",
+     2.52,
+     2.64
+    ],
+    [
+     "LITERALLY",
+     2.64,
+     3.0
+    ],
+    [
+     "kiss",
+     3.0,
+     3.36
+    ],
+    [
+     "this",
+     3.36,
+     3.6
+    ],
+    [
+     "influencer",
+     3.6,
+     4.06
+    ],
+    [
+     "who",
+     4.06,
+     4.24
+    ],
+    [
+     "told",
+     4.24,
+     4.42
+    ],
+    [
+     "me",
+     4.42,
+     4.56
+    ],
+    [
+     "to",
+     4.56,
+     4.68
+    ],
+    [
+     "start",
+     4.68,
+     4.88
+    ],
+    [
+     "darkening",
+     4.88,
+     5.32
+    ],
+    [
+     "my",
+     5.32,
+     5.52
+    ],
+    [
+     "eyebrows",
+     5.52,
+     5.86
+    ],
+    [
+     "to",
+     5.86,
+     6.04
+    ],
+    [
+     "frame",
+     6.04,
+     6.28
+    ],
+    [
+     "my",
+     6.28,
+     6.44
+    ],
+    [
+     "face.",
+     6.44,
+     6.82
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.86,
+   "eye": 0.6,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "506049",
+   "line": "421889",
+   "src": "ac6375",
+   "in": 7.02,
+   "out": 9.54,
+   "look": null,
+   "alt": 0,
+   "text": "This is every celebrity's grooming secret.",
+   "for_text": "This is every celebrity grooming secret.",
+   "words": [
+    [
+     "This",
+     7.1,
+     7.58
+    ],
+    [
+     "is",
+     7.58,
+     7.74
+    ],
+    [
+     "every",
+     7.74,
+     8.1
+    ],
+    [
+     "celebrity",
+     8.1,
+     8.68
+    ],
+    [
+     "grooming",
+     8.68,
+     8.92
+    ],
+    [
+     "secret.",
+     8.92,
+     9.36
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.895,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "b49b68",
+   "line": "e406aa",
+   "src": "ac6375",
+   "in": 9.64,
+   "out": 12.64,
+   "look": null,
+   "alt": 0,
+   "text": "Darker eyebrows can give your face a more defined look.",
+   "for_text": "Darker eyebrows can give your face a more DEFINED look.",
+   "words": [
+    [
+     "Darker",
+     9.72,
+     10.2
+    ],
+    [
+     "eyebrows",
+     10.2,
+     10.56
+    ],
+    [
+     "can",
+     10.56,
+     10.8
+    ],
+    [
+     "give",
+     10.8,
+     10.96
+    ],
+    [
+     "your",
+     10.96,
+     11.12
+    ],
+    [
+     "face",
+     11.12,
+     11.4
+    ],
+    [
+     "a",
+     11.4,
+     11.56
+    ],
+    [
+     "more",
+     11.56,
+     11.72
+    ],
+    [
+     "DEFINED",
+     11.72,
+     12.02
+    ],
+    [
+     "look.",
+     12.02,
+     12.46
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.685,
+   "eye": 0.1,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "206480",
+   "line": "d73c0b",
+   "src": "ac6375",
+   "in": 12.84,
+   "out": 14.5,
+   "look": null,
+   "alt": 0,
+   "text": "Listen, you're not ugly.",
+   "for_text": "Listen, you're not ugly.",
+   "words": [
+    [
+     "Listen,",
+     12.92,
+     13.4
+    ],
+    [
+     "you're",
+     13.6,
+     13.76
+    ],
+    [
+     "not",
+     13.76,
+     13.94
+    ],
+    [
+     "ugly.",
+     13.94,
+     14.32
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.895,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "50036c",
+   "line": "e9dbe7",
+   "src": "ac6375",
+   "in": 14.46,
+   "out": 16.88,
+   "look": null,
+   "alt": 0,
+   "text": "You just need a little touch -up to make your eyes pop.",
+   "for_text": "You just need a little TOUCH-UP to make your eyes POP.",
+   "words": [
+    [
+     "You",
+     14.54,
+     14.82
+    ],
+    [
+     "just",
+     14.82,
+     14.98
+    ],
+    [
+     "need",
+     14.98,
+     15.14
+    ],
+    [
+     "a",
+     15.14,
+     15.24
+    ],
+    [
+     "little",
+     15.24,
+     15.36
+    ],
+    [
+     "TOUCH-UP",
+     15.36,
+     15.78
+    ],
+    [
+     "to",
+     15.78,
+     15.9
+    ],
+    [
+     "make",
+     15.9,
+     16.06
+    ],
+    [
+     "your",
+     16.06,
+     16.2
+    ],
+    [
+     "eyes",
+     16.2,
+     16.46
+    ],
+    [
+     "POP.",
+     16.46,
+     16.7
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.895,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "9ecb42",
+   "line": "f3d6ee",
+   "src": "ac6375",
+   "in": 17.22,
+   "out": 26.32,
+   "look": null,
+   "alt": 0,
+   "text": "And with this sweat and water resistant men pen, you can fill in your eyebrows, mustache, and beard using this super thin tip, then blend everything out with the brush on the other side.",
+   "for_text": "And with this sweat- and water-resistant MenPen, you can fill in your eyebrows, mustache, and beard using this super thin tip, then blend everything out with the brush on the other side.",
+   "words": [
+    [
+     "And",
+     17.3,
+     17.58
+    ],
+    [
+     "with",
+     17.58,
+     17.72
+    ],
+    [
+     "this",
+     17.72,
+     17.9
+    ],
+    [
+     "sweat-",
+     17.9,
+     18.16
+    ],
+    [
+     "and",
+     18.16,
+     18.26
+    ],
+    [
+     "water-resistant",
+     18.26,
+     18.79
+    ],
+    [
+     "MenPen,",
+     18.79,
+     19.32
+    ],
+    [
+     "you",
+     19.6,
+     20.04
+    ],
+    [
+     "can",
+     20.04,
+     20.18
+    ],
+    [
+     "fill",
+     20.18,
+     20.38
+    ],
+    [
+     "in",
+     20.38,
+     20.48
+    ],
+    [
+     "your",
+     20.48,
+     20.58
+    ],
+    [
+     "eyebrows,",
+     20.58,
+     21.0
+    ],
+    [
+     "mustache,",
+     21.2,
+     21.56
+    ],
+    [
+     "and",
+     21.8,
+     21.9
+    ],
+    [
+     "beard",
+     21.9,
+     22.22
+    ],
+    [
+     "using",
+     22.22,
+     22.54
+    ],
+    [
+     "this",
+     22.54,
+     22.78
+    ],
+    [
+     "super",
+     22.78,
+     23.08
+    ],
+    [
+     "thin",
+     23.08,
+     23.3
+    ],
+    [
+     "tip,",
+     23.3,
+     23.64
+    ],
+    [
+     "then",
+     23.84,
+     24.3
+    ],
+    [
+     "blend",
+     24.3,
+     24.54
+    ],
+    [
+     "everything",
+     24.54,
+     24.78
+    ],
+    [
+     "out",
+     24.78,
+     25.0
+    ],
+    [
+     "with",
+     25.0,
+     25.14
+    ],
+    [
+     "the",
+     25.14,
+     25.26
+    ],
+    [
+     "brush",
+     25.26,
+     25.48
+    ],
+    [
+     "on",
+     25.48,
+     25.6
+    ],
+    [
+     "the",
+     25.6,
+     25.68
+    ],
+    [
+     "other",
+     25.68,
+     25.84
+    ],
+    [
+     "side.",
+     25.84,
+     26.14
+    ]
+   ],
+   "score": 0.955,
+   "status": "close",
+   "flags": [
+    "reworded (1 skipped, 2 added)"
+   ],
+   "missing": [
+    "menpen"
+   ],
+   "extra": [
+    "men",
+    "pen"
+   ],
+   "usable": false,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.687,
+   "eye": 0.6,
+   "variant": "reworded",
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "e83027",
+   "line": "f4c735",
+   "src": "ac6375",
+   "in": 26.7,
+   "out": 27.76,
+   "look": null,
+   "alt": 0,
+   "text": "And the best part,",
+   "for_text": "And the BEST part?",
+   "words": [
+    [
+     "And",
+     26.78,
+     27.08
+    ],
+    [
+     "the",
+     27.08,
+     27.16
+    ],
+    [
+     "BEST",
+     27.16,
+     27.36
+    ],
+    [
+     "part?",
+     27.36,
+     27.62
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.895,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "76fccb",
+   "line": "13d97a",
+   "src": "ac6375",
+   "in": 27.7,
+   "out": 31.1,
+   "look": null,
+   "alt": 0,
+   "text": "they're giving you a second one free today when you tap the link below.",
+   "for_text": "They're giving you a second one FREE today when you tap the link below.",
+   "words": [
+    [
+     "They're",
+     27.78,
+     28.28
+    ],
+    [
+     "giving",
+     28.28,
+     28.52
+    ],
+    [
+     "you",
+     28.52,
+     28.68
+    ],
+    [
+     "a",
+     28.68,
+     28.82
+    ],
+    [
+     "second",
+     28.82,
+     29.14
+    ],
+    [
+     "one",
+     29.14,
+     29.3
+    ],
+    [
+     "FREE",
+     29.3,
+     29.56
+    ],
+    [
+     "today",
+     29.56,
+     29.88
+    ],
+    [
+     "when",
+     29.88,
+     30.08
+    ],
+    [
+     "you",
+     30.08,
+     30.18
+    ],
+    [
+     "tap",
+     30.18,
+     30.38
+    ],
+    [
+     "the",
+     30.38,
+     30.52
+    ],
+    [
+     "link",
+     30.52,
+     30.68
+    ],
+    [
+     "below.",
+     30.68,
+     30.92
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.895,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "c687c2",
+   "line": null,
+   "src": "ac6375",
+   "in": 33.96,
+   "out": 37.5,
+   "look": null,
+   "alt": 0,
+   "text": "I'm afraid they might run out, so go ahead and click the link below to get yours today.",
+   "for_text": null,
+   "words": [
+    [
+     "I'm",
+     34.04,
+     34.34
+    ],
+    [
+     "afraid",
+     34.34,
+     34.58
+    ],
+    [
+     "they",
+     34.58,
+     34.74
+    ],
+    [
+     "might",
+     34.74,
+     34.88
+    ],
+    [
+     "run",
+     34.88,
+     35.02
+    ],
+    [
+     "out,",
+     35.02,
+     35.24
+    ],
+    [
+     "so",
+     35.44,
+     35.48
+    ],
+    [
+     "go",
+     35.48,
+     35.62
+    ],
+    [
+     "ahead",
+     35.62,
+     35.72
+    ],
+    [
+     "and",
+     35.72,
+     35.84
+    ],
+    [
+     "click",
+     35.84,
+     36.1
+    ],
+    [
+     "the",
+     36.1,
+     36.26
+    ],
+    [
+     "link",
+     36.26,
+     36.38
+    ],
+    [
+     "below",
+     36.38,
+     36.62
+    ],
+    [
+     "to",
+     36.62,
+     36.78
+    ],
+    [
+     "get",
+     36.78,
+     36.92
+    ],
+    [
+     "yours",
+     36.92,
+     37.1
+    ],
+    [
+     "today.",
+     37.1,
+     37.32
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "5ea0dc",
+   "line": null,
+   "src": "ac6375",
+   "in": 39.4,
+   "out": 42.12,
+   "look": null,
+   "alt": 0,
+   "text": "Click the link below to get yours today before they run out.",
+   "for_text": null,
+   "words": [
+    [
+     "Click",
+     39.48,
+     39.76
+    ],
+    [
+     "the",
+     39.76,
+     39.92
+    ],
+    [
+     "link",
+     39.92,
+     40.08
+    ],
+    [
+     "below",
+     40.08,
+     40.32
+    ],
+    [
+     "to",
+     40.32,
+     40.5
+    ],
+    [
+     "get",
+     40.5,
+     40.64
+    ],
+    [
+     "yours",
+     40.64,
+     40.82
+    ],
+    [
+     "today",
+     40.82,
+     41.1
+    ],
+    [
+     "before",
+     41.1,
+     41.44
+    ],
+    [
+     "they",
+     41.44,
+     41.6
+    ],
+    [
+     "run",
+     41.6,
+     41.76
+    ],
+    [
+     "out.",
+     41.76,
+     41.94
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "751b11",
+   "line": "d5e897",
+   "src": "da3844",
+   "in": 2.25,
+   "out": 5.75,
+   "look": null,
+   "alt": 0,
+   "text": "I'm not gay, but I could literally kiss this influencer who told me to start",
+   "for_text": null,
+   "words": [
+    [
+     "I'm",
+     2.33,
+     2.63
+    ],
+    [
+     "not",
+     2.63,
+     2.79
+    ],
+    [
+     "gay,",
+     2.79,
+     3.03
+    ],
+    [
+     "but",
+     3.31,
+     3.35
+    ],
+    [
+     "I",
+     3.35,
+     3.45
+    ],
+    [
+     "could",
+     3.45,
+     3.57
+    ],
+    [
+     "literally",
+     3.57,
+     3.93
+    ],
+    [
+     "kiss",
+     3.93,
+     4.29
+    ],
+    [
+     "this",
+     4.29,
+     4.53
+    ],
+    [
+     "influencer",
+     4.53,
+     4.99
+    ],
+    [
+     "who",
+     4.99,
+     5.17
+    ],
+    [
+     "told",
+     5.17,
+     5.35
+    ],
+    [
+     "me",
+     5.35,
+     5.49
+    ],
+    [
+     "to",
+     5.49,
+     5.61
+    ],
+    [
+     "start",
+     5.61,
+     5.75
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [
+    "Visuals A + Voiceover: Pen across the brows"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 0.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": 1.0,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "manual": true,
+    "in": true,
+    "out": true,
+    "cuts": true,
+    "order": true,
+    "words": true,
+    "text": true,
+    "volume": true,
+    "speed": true
+   }
+  },
+  {
+   "id": "46b760",
+   "line": "9f7bed",
+   "src": "da3844",
+   "in": 45.75,
+   "out": 47.97,
+   "look": null,
+   "alt": 0,
+   "text": "darkening my eyebrows to frame my face.",
+   "for_text": null,
+   "words": [
+    [
+     "darkening",
+     45.81,
+     46.25
+    ],
+    [
+     "my",
+     46.25,
+     46.45
+    ],
+    [
+     "eyebrows",
+     46.45,
+     46.79
+    ],
+    [
+     "to",
+     46.79,
+     46.97
+    ],
+    [
+     "frame",
+     46.97,
+     47.21
+    ],
+    [
+     "my",
+     47.21,
+     47.37
+    ],
+    [
+     "face.",
+     47.37,
+     47.75
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [
+    "Visuals A + Voiceover: Close-up: filling the brow"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 0.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": 1.0,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "manual": true,
+    "in": true,
+    "out": true,
+    "cuts": true,
+    "order": true,
+    "words": true,
+    "text": true,
+    "volume": true,
+    "speed": true
+   }
+  },
+  {
+   "id": "b1a9f1",
+   "line": "61cb6c",
+   "src": "da3844",
+   "in": 26.625,
+   "out": 29.245,
+   "look": null,
+   "alt": 0,
+   "text": "This is every celebrity's grooming secret.",
+   "for_text": null,
+   "words": [
+    [
+     "This",
+     26.685,
+     27.165
+    ],
+    [
+     "is",
+     27.165,
+     27.325
+    ],
+    [
+     "every",
+     27.325,
+     27.685
+    ],
+    [
+     "celebrity's",
+     27.685,
+     28.265
+    ],
+    [
+     "grooming",
+     28.265,
+     28.505
+    ],
+    [
+     "secret.",
+     28.505,
+     28.945
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [
+    "Visuals A + Voiceover: Front look, pen held up"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 0.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": 1.0,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "manual": true,
+    "in": true,
+    "out": true,
+    "cuts": true,
+    "order": true,
+    "words": true,
+    "text": true,
+    "volume": true,
+    "speed": true
+   }
+  },
+  {
+   "id": "8b419a",
+   "line": "f93e2c",
+   "src": "da3844",
+   "in": 50.0,
+   "out": 53.2,
+   "look": null,
+   "alt": 0,
+   "text": "Darker eyebrows can give your face a more defined look.",
+   "for_text": null,
+   "words": [
+    [
+     "Darker",
+     50.06,
+     50.54
+    ],
+    [
+     "eyebrows",
+     50.54,
+     50.9
+    ],
+    [
+     "can",
+     50.9,
+     51.14
+    ],
+    [
+     "give",
+     51.14,
+     51.3
+    ],
+    [
+     "your",
+     51.3,
+     51.46
+    ],
+    [
+     "face",
+     51.46,
+     51.74
+    ],
+    [
+     "a",
+     51.74,
+     51.9
+    ],
+    [
+     "more",
+     51.9,
+     52.06
+    ],
+    [
+     "defined",
+     52.06,
+     52.36
+    ],
+    [
+     "look.",
+     52.36,
+     52.8
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [
+    "Visuals A + Voiceover: Close-up: filling the brow"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 0.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": 1.0,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "manual": true,
+    "in": true,
+    "out": true,
+    "cuts": true,
+    "order": true,
+    "words": true,
+    "text": true,
+    "volume": true,
+    "speed": true
+   }
+  },
+  {
+   "id": "b548eb",
+   "line": "29cb83",
+   "src": "da3844",
+   "in": 26.0,
+   "out": 27.62,
+   "look": null,
+   "alt": 0,
+   "text": "Listen, you're not ugly.",
+   "for_text": null,
+   "words": [
+    [
+     "Listen,",
+     26.06,
+     26.54
+    ],
+    [
+     "you're",
+     26.74,
+     26.9
+    ],
+    [
+     "not",
+     26.9,
+     27.08
+    ],
+    [
+     "ugly.",
+     27.08,
+     27.46
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [
+    "Visuals A + Voiceover: Front look"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 0.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": 1.0,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "manual": true,
+    "in": true,
+    "out": true,
+    "cuts": true,
+    "order": true,
+    "words": true,
+    "text": true,
+    "volume": true,
+    "speed": true
+   }
+  },
+  {
+   "id": "c192eb",
+   "line": "480812",
+   "src": "da3844",
+   "in": 32.875,
+   "out": 35.415,
+   "look": null,
+   "alt": 0,
+   "text": "You just need a little touch-up to make your eyes pop.",
+   "for_text": null,
+   "words": [
+    [
+     "You",
+     32.935,
+     33.215
+    ],
+    [
+     "just",
+     33.215,
+     33.375
+    ],
+    [
+     "need",
+     33.375,
+     33.535
+    ],
+    [
+     "a",
+     33.535,
+     33.635
+    ],
+    [
+     "little",
+     33.635,
+     33.755
+    ],
+    [
+     "touch-up",
+     33.755,
+     34.015
+    ],
+    [
+     "to",
+     34.175,
+     34.295
+    ],
+    [
+     "make",
+     34.295,
+     34.455
+    ],
+    [
+     "your",
+     34.455,
+     34.595
+    ],
+    [
+     "eyes",
+     34.595,
+     34.855
+    ],
+    [
+     "pop.",
+     34.855,
+     35.095
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [
+    "Visuals A + Voiceover: Pen at the eye"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 0.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": 1.0,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "manual": true,
+    "in": true,
+    "out": true,
+    "cuts": true,
+    "order": true,
+    "words": true,
+    "text": true,
+    "volume": true,
+    "speed": true
+   }
+  },
+  {
+   "id": "545508",
+   "line": "d789d2",
+   "src": "da3844",
+   "in": 56.375,
+   "out": 59.255,
+   "look": null,
+   "alt": 0,
+   "text": "And with this sweat and water resistant MenPen, you can",
+   "for_text": null,
+   "words": [
+    [
+     "And",
+     56.435,
+     56.715
+    ],
+    [
+     "with",
+     56.715,
+     56.855
+    ],
+    [
+     "this",
+     56.855,
+     57.035
+    ],
+    [
+     "sweat",
+     57.035,
+     57.295
+    ],
+    [
+     "and",
+     57.295,
+     57.395
+    ],
+    [
+     "water",
+     57.395,
+     57.615
+    ],
+    [
+     "resistant",
+     57.615,
+     57.955
+    ],
+    [
+     "MenPen,",
+     57.955,
+     58.455
+    ],
+    [
+     "you",
+     58.735,
+     59.175
+    ],
+    [
+     "can",
+     59.175,
+     59.255
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [
+    "Visuals A + Voiceover: Showing the MenPen"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 0.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": 1.0,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "manual": true,
+    "in": true,
+    "out": true,
+    "cuts": true,
+    "order": true,
+    "words": true,
+    "text": true,
+    "volume": true,
+    "speed": true
+   }
+  },
+  {
+   "id": "1a61b9",
+   "line": "ae3b59",
+   "src": "da3844",
+   "in": 62.25,
+   "out": 63.27,
+   "look": null,
+   "alt": 0,
+   "text": "fill in your eyebrows,",
+   "for_text": null,
+   "words": [
+    [
+     "fill",
+     62.31,
+     62.51
+    ],
+    [
+     "in",
+     62.51,
+     62.61
+    ],
+    [
+     "your",
+     62.61,
+     62.71
+    ],
+    [
+     "eyebrows,",
+     62.71,
+     63.13
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [
+    "Visuals A + Voiceover: Filling in"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 0.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": 1.0,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "manual": true,
+    "in": true,
+    "out": true,
+    "cuts": true,
+    "order": true,
+    "words": true,
+    "text": true,
+    "volume": true,
+    "speed": true
+   }
+  },
+  {
+   "id": "29ae79",
+   "line": "8f2f0d",
+   "src": "da3844",
+   "in": 41.625,
+   "out": 42.645,
+   "look": null,
+   "alt": 0,
+   "text": "mustache, and beard",
+   "for_text": null,
+   "words": [
+    [
+     "mustache,",
+     41.685,
+     42.045
+    ],
+    [
+     "and",
+     42.285,
+     42.385
+    ],
+    [
+     "beard",
+     42.385,
+     42.645
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [
+    "Visuals A + Voiceover: Pen at the beard"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 0.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": 1.0,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "manual": true,
+    "in": true,
+    "out": true,
+    "cuts": true,
+    "order": true,
+    "words": true,
+    "text": true,
+    "volume": true,
+    "speed": true
+   }
+  },
+  {
+   "id": "f6e9e9",
+   "line": "7bf9cf",
+   "src": "da3844",
+   "in": 38.75,
+   "out": 40.37,
+   "look": null,
+   "alt": 0,
+   "text": "using this super thin tip,",
+   "for_text": null,
+   "words": [
+    [
+     "using",
+     38.81,
+     39.13
+    ],
+    [
+     "this",
+     39.13,
+     39.37
+    ],
+    [
+     "super",
+     39.37,
+     39.67
+    ],
+    [
+     "thin",
+     39.67,
+     39.89
+    ],
+    [
+     "tip,",
+     39.89,
+     40.23
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [
+    "Visuals A + Voiceover: The thin tip"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 0.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": 1.0,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "manual": true,
+    "in": true,
+    "out": true,
+    "cuts": true,
+    "order": true,
+    "words": true,
+    "text": true,
+    "volume": true,
+    "speed": true
+   }
+  },
+  {
+   "id": "71fbe9",
+   "line": "24a44d",
+   "src": "da3844",
+   "in": 53.25,
+   "out": 55.93,
+   "look": null,
+   "alt": 0,
+   "text": "then blend everything out with the brush on the other side.",
+   "for_text": null,
+   "words": [
+    [
+     "then",
+     53.31,
+     53.77
+    ],
+    [
+     "blend",
+     53.77,
+     54.01
+    ],
+    [
+     "everything",
+     54.01,
+     54.25
+    ],
+    [
+     "out",
+     54.25,
+     54.47
+    ],
+    [
+     "with",
+     54.47,
+     54.61
+    ],
+    [
+     "the",
+     54.61,
+     54.73
+    ],
+    [
+     "brush",
+     54.73,
+     54.95
+    ],
+    [
+     "on",
+     54.95,
+     55.07
+    ],
+    [
+     "the",
+     55.07,
+     55.15
+    ],
+    [
+     "other",
+     55.15,
+     55.31
+    ],
+    [
+     "side.",
+     55.31,
+     55.61
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [
+    "Visuals A + Voiceover: Blending the brow"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 0.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": 1.0,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "manual": true,
+    "in": true,
+    "out": true,
+    "cuts": true,
+    "order": true,
+    "words": true,
+    "text": true,
+    "volume": true,
+    "speed": true
+   }
+  },
+  {
+   "id": "183091",
+   "line": "9a1ff9",
+   "src": "da3844",
+   "in": 6.25,
+   "out": 10.7,
+   "look": null,
+   "alt": 0,
+   "text": "And the best part, they're giving you a second one free today when you tap the link below.",
+   "for_text": null,
+   "words": [
+    [
+     "And",
+     6.31,
+     6.61
+    ],
+    [
+     "the",
+     6.61,
+     6.69
+    ],
+    [
+     "best",
+     6.69,
+     6.89
+    ],
+    [
+     "part,",
+     6.89,
+     7.15
+    ],
+    [
+     "they're",
+     7.31,
+     7.81
+    ],
+    [
+     "giving",
+     7.81,
+     8.05
+    ],
+    [
+     "you",
+     8.05,
+     8.21
+    ],
+    [
+     "a",
+     8.21,
+     8.35
+    ],
+    [
+     "second",
+     8.35,
+     8.67
+    ],
+    [
+     "one",
+     8.67,
+     8.83
+    ],
+    [
+     "free",
+     8.83,
+     9.09
+    ],
+    [
+     "today",
+     9.09,
+     9.41
+    ],
+    [
+     "when",
+     9.41,
+     9.61
+    ],
+    [
+     "you",
+     9.61,
+     9.71
+    ],
+    [
+     "tap",
+     9.71,
+     9.91
+    ],
+    [
+     "the",
+     9.91,
+     10.05
+    ],
+    [
+     "link",
+     10.05,
+     10.21
+    ],
+    [
+     "below.",
+     10.21,
+     10.45
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [
+    "Visuals A + Voiceover: Eyes on the lens, pen across the brows"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 0.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": 1.0,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {
+    "manual": true,
+    "in": true,
+    "out": true,
+    "cuts": true,
+    "order": true,
+    "words": true,
+    "text": true,
+    "volume": true,
+    "speed": true
+   }
+  }
+ ],
+ "hooks": [],
+ "cta": "",
+ "style": {
+  "subs": {
+   "on": true,
+   "font": "Arial Black",
+   "size": 56,
+   "color": "#FFFFFF",
+   "highlight": "#FFE14D",
+   "outline": "#000000",
+   "outline_w": 4,
+   "uppercase": false,
+   "y": 0.73,
+   "words_per_line": 4,
+   "karaoke": true,
+   "pop": true
+  },
+  "look": {
+   "brightness": -0.08,
+   "smooth": 0.35
+  },
+  "speed": 1.0,
+  "pace": {
+   "auto": false,
+   "wps": 4.8,
+   "max": 1.1,
+   "pauses": true
+  },
+  "title": {
+   "on": true,
+   "y": 0.42,
+   "preset": "meme",
+   "font": "Impact",
+   "size": 150,
+   "color": "#FFFFFF",
+   "box_color": "#000000",
+   "accent": "#FFE14D",
+   "outline_w": 10,
+   "uppercase": true,
+   "rotate": -4,
+   "pop": true
+  },
+  "hook": {
+   "on": true,
+   "seconds": 3.0,
+   "y": 0.2,
+   "preset": "box",
+   "font": "Arial Black",
+   "size": 58,
+   "color": "#000000",
+   "box_color": "#FFFFFF",
+   "accent": "#FE2C55",
+   "outline_w": 0,
+   "uppercase": false,
+   "rotate": 0,
+   "pop": true
+  },
+  "cta": {
+   "on": false,
+   "y": 0.8,
+   "preset": "sticker",
+   "font": "Arial Black",
+   "size": 52,
+   "color": "#FFFFFF",
+   "box_color": "#FE2C55",
+   "accent": "#FFE14D",
+   "outline_w": 0,
+   "uppercase": false,
+   "rotate": -2,
+   "pop": true
+  },
+  "product_box": null,
+  "cart_pointer": {
+   "on": true,
+   "words": "orange cart, cart, basket",
+   "seconds": 2.2,
+   "color": "#FF8A00"
+  },
+  "punch_in": 1.12,
+  "pad_before": 0.08,
+  "pad_after": 0.18,
+  "voice_cleanup": false,
+  "loudness": -14
+ },
+ "skip": [],
+ "mix": null,
+ "mix_auto": true,
+ "batch_note": "New footage can't make a whole video on its own, so it's mixed in with the earlier takes.",
+ "voiceover": {
+  "segments": [
+   {
+    "src": "ac6375",
+    "in": 1.32,
+    "out": 31.17,
+    "cuts": [
+     [
+      16.94,
+      17.16
+     ],
+     [
+      26.38,
+      26.64
+     ]
+    ],
+    "volume": 1.0
+   }
+  ],
+  "label": "Voiceover",
+  "volume": 1.0
+ },
+ "voiceovers": [
+  {
+   "segments": [
+    {
+     "src": "ac6375",
+     "in": 1.32,
+     "out": 31.17,
+     "cuts": [
+      [
+       16.94,
+       17.16
+      ],
+      [
+       26.38,
+       26.64
+      ]
+     ],
+     "volume": 1.0
+    }
+   ],
+   "label": "Voiceover",
+   "volume": 1.0
+  }
+ ],
+ "from_inbox": false,
+ "assets": [],
+ "overlays": [],
+ "renders": {
+  "1": {
+   "file": "C:\\Users\\thecc\\Videos\\TikTok Shop\\MenPen 2\\manpen-2-v01.mp4",
+   "at": 1792383870.9273894,
+   "sig": "2eb59dc0d3a2"
+  }
+ },
+ "saved": {},
+ "sheet": {
+  "sig": "1949b04a4a87",
+  "lines": [
+   "I'm not gay, but I could LITERALLY kiss this influencer who told me to start darkening my eyebrows to frame my face.",
+   "This is every celebrity grooming secret.",
+   "Darker eyebrows can give your face a more DEFINED look.",
+   "Listen, you're not ugly.",
+   "You just need a little TOUCH-UP to make your eyes POP.",
+   "And with this sweat- and water-resistant MenPen, you can fill in your eyebrows, mustache, and beard using this super thin tip, then blend everything out with the brush on the other side.",
+   "And the BEST part?",
+   "They're giving you a second one FREE today when you tap the link below."
+  ],
+  "row": "Manpen 2"
+ },
+ "script_notes": [
+  "Shot 1",
+  "Shot 2",
+  "Shot 3",
+  "Shot 4",
+  "Shot 5",
+  "Shot 6",
+  "Shot 7",
+  "Shot 8",
+  "Shot 9",
+  "Shot 10",
+  "Shot 11",
+  "Shot 12"
+ ]
+}

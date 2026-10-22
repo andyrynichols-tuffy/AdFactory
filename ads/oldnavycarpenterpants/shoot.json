@@ -1,0 +1,4885 @@
+{
+ "version": 1,
+ "rev": 11,
+ "title": "OldNavyCarpenterPants",
+ "created": 1792343067.009776,
+ "product": {
+  "name": "",
+  "link": "",
+  "description": "",
+  "hashtags": "#tiktokshop #tiktokmademebuyit"
+ },
+ "reference": {
+  "url": "",
+  "file": "",
+  "notes": ""
+ },
+ "sources": [
+  {
+   "id": "dec851",
+   "file": "C:\\Users\\thecc\\MemeSupercutData\\ads\\uploads\\oldnavycarpenterpants\\IMG_7579.MOV",
+   "name": "IMG_7579.MOV",
+   "status": "ready",
+   "error": null,
+   "looks": [],
+   "key": "ee32503491f872",
+   "duration": 211.808333,
+   "width": 1920,
+   "height": 1080
+  }
+ ],
+ "script": [
+  {
+   "id": "0040bb",
+   "text": "Finally, some pants that don't look like parachutes.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "b2c33b",
+   "text": "And this has more like a straight leg fit.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "75b500",
+   "text": "Still have that carpenter design.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "206b94",
+   "text": "And it's from this new brand called Old Navy.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "457210",
+   "text": "And they actually have some pretty nice clothing.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "1354f1",
+   "text": "And I see why this one is always selling out.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "cbab01",
+   "text": "And this nice black wash.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "b3d551",
+   "text": "A good pocket space.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "c1976e",
+   "text": "And if you want to grab these before they're gone,",
+   "alts": [
+    "And if you wanted to grab this,"
+   ],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "f18cd0",
+   "text": "I'll leave the link down below here.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "2d3331",
+   "text": "But they're setting out fast.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  }
+ ],
+ "script_guessed": true,
+ "takes": [
+  {
+   "id": "d1dafb",
+   "line": "0040bb",
+   "src": "dec851",
+   "in": 2.6,
+   "out": 5.5,
+   "look": null,
+   "alt": 0,
+   "text": "Finally, some pants that don't look like parachutes.",
+   "for_text": "Finally, some pants that don't look like parachutes.",
+   "words": [
+    [
+     "Finally,",
+     2.68,
+     3.16
+    ],
+    [
+     "some",
+     3.32,
+     3.42
+    ],
+    [
+     "pants",
+     3.42,
+     3.78
+    ],
+    [
+     "that",
+     3.78,
+     3.92
+    ],
+    [
+     "don't",
+     3.92,
+     4.14
+    ],
+    [
+     "look",
+     4.14,
+     4.28
+    ],
+    [
+     "like",
+     4.28,
+     4.46
+    ],
+    [
+     "parachutes.",
+     4.46,
+     5.32
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.895,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "6737df",
+   "line": "0040bb",
+   "src": "dec851",
+   "in": 5.99,
+   "out": 8.91,
+   "look": null,
+   "alt": 0,
+   "text": "Finally, some pants that don't look like parachutes.",
+   "for_text": "Finally, some pants that don't look like parachutes.",
+   "words": [
+    [
+     "Finally,",
+     6.07,
+     6.55
+    ],
+    [
+     "some",
+     6.75,
+     6.85
+    ],
+    [
+     "pants",
+     6.85,
+     7.19
+    ],
+    [
+     "that",
+     7.19,
+     7.37
+    ],
+    [
+     "don't",
+     7.37,
+     7.61
+    ],
+    [
+     "look",
+     7.61,
+     7.75
+    ],
+    [
+     "like",
+     7.75,
+     7.93
+    ],
+    [
+     "parachutes.",
+     7.93,
+     8.73
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.895,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "186fe5",
+   "line": "0040bb",
+   "src": "dec851",
+   "in": 11.46,
+   "out": 14.3,
+   "look": null,
+   "alt": 0,
+   "text": "Finally, some pants that don't look like parachutes.",
+   "for_text": "Finally, some pants that don't look like parachutes.",
+   "words": [
+    [
+     "Finally,",
+     11.54,
+     11.96
+    ],
+    [
+     "some",
+     12.14,
+     12.28
+    ],
+    [
+     "pants",
+     12.28,
+     12.62
+    ],
+    [
+     "that",
+     12.62,
+     12.8
+    ],
+    [
+     "don't",
+     12.8,
+     13.02
+    ],
+    [
+     "look",
+     13.02,
+     13.16
+    ],
+    [
+     "like",
+     13.16,
+     13.34
+    ],
+    [
+     "parachutes.",
+     13.34,
+     14.12
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 2,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.895,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "a55f7c",
+   "line": "0040bb",
+   "src": "dec851",
+   "in": 16.81,
+   "out": 19.71,
+   "look": null,
+   "alt": 0,
+   "text": "Finally, some pants that don't look like parachutes.",
+   "for_text": "Finally, some pants that don't look like parachutes.",
+   "words": [
+    [
+     "Finally,",
+     16.89,
+     17.37
+    ],
+    [
+     "some",
+     17.55,
+     17.67
+    ],
+    [
+     "pants",
+     17.67,
+     18.05
+    ],
+    [
+     "that",
+     18.05,
+     18.21
+    ],
+    [
+     "don't",
+     18.21,
+     18.43
+    ],
+    [
+     "look",
+     18.43,
+     18.55
+    ],
+    [
+     "like",
+     18.55,
+     18.73
+    ],
+    [
+     "parachutes.",
+     18.73,
+     19.53
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 3,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.895,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "a2e31f",
+   "line": "0040bb",
+   "src": "dec851",
+   "in": 24.42,
+   "out": 27.28,
+   "look": null,
+   "alt": 0,
+   "text": "Finally, some pants that don't look like parachutes.",
+   "for_text": "Finally, some pants that don't look like parachutes.",
+   "words": [
+    [
+     "Finally,",
+     24.5,
+     24.96
+    ],
+    [
+     "some",
+     25.14,
+     25.24
+    ],
+    [
+     "pants",
+     25.24,
+     25.6
+    ],
+    [
+     "that",
+     25.6,
+     25.78
+    ],
+    [
+     "don't",
+     25.78,
+     25.98
+    ],
+    [
+     "look",
+     25.98,
+     26.12
+    ],
+    [
+     "like",
+     26.12,
+     26.28
+    ],
+    [
+     "parachutes.",
+     26.28,
+     27.1
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 5,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.773,
+   "eye": 0.35,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "bb0322",
+   "line": "0040bb",
+   "src": "dec851",
+   "in": 27.78,
+   "out": 30.62,
+   "look": null,
+   "alt": 0,
+   "text": "Finally, some pants that don't look like parachutes.",
+   "for_text": "Finally, some pants that don't look like parachutes.",
+   "words": [
+    [
+     "Finally,",
+     27.86,
+     28.34
+    ],
+    [
+     "some",
+     28.52,
+     28.62
+    ],
+    [
+     "pants",
+     28.62,
+     28.96
+    ],
+    [
+     "that",
+     28.96,
+     29.12
+    ],
+    [
+     "don't",
+     29.12,
+     29.34
+    ],
+    [
+     "look",
+     29.34,
+     29.46
+    ],
+    [
+     "like",
+     29.46,
+     29.64
+    ],
+    [
+     "parachutes.",
+     29.64,
+     30.44
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 4,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.895,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "bbe580",
+   "line": null,
+   "src": "dec851",
+   "in": 33.61,
+   "out": 34.71,
+   "look": null,
+   "alt": 0,
+   "text": "Okay, these have, like,",
+   "for_text": null,
+   "words": [
+    [
+     "Okay,",
+     33.69,
+     33.95
+    ],
+    [
+     "these",
+     33.95,
+     34.17
+    ],
+    [
+     "have,",
+     34.17,
+     34.35
+    ],
+    [
+     "like,",
+     34.43,
+     34.53
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "b97b06",
+   "line": null,
+   "src": "dec851",
+   "in": 35.37,
+   "out": 36.63,
+   "look": null,
+   "alt": 0,
+   "text": "Could this have a lot?",
+   "for_text": null,
+   "words": [
+    [
+     "Could",
+     35.45,
+     35.79
+    ],
+    [
+     "this",
+     35.79,
+     35.99
+    ],
+    [
+     "have",
+     35.99,
+     36.15
+    ],
+    [
+     "a",
+     36.15,
+     36.25
+    ],
+    [
+     "lot?",
+     36.25,
+     36.45
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "ce78f8",
+   "line": "cbab01",
+   "src": "dec851",
+   "in": 37.51,
+   "out": 38.31,
+   "look": null,
+   "alt": 0,
+   "text": "And this",
+   "for_text": "And this nice black wash.",
+   "words": [
+    [
+     "And",
+     37.59,
+     37.93
+    ],
+    [
+     "this",
+     37.93,
+     38.13
+    ]
+   ],
+   "score": 0.571,
+   "status": "incomplete",
+   "flags": [
+    "stopped before the end of the line"
+   ],
+   "missing": [
+    "nice",
+    "black",
+    "wash"
+   ],
+   "extra": [],
+   "usable": false,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "68553a",
+   "line": "cbab01",
+   "src": "dec851",
+   "in": 40.39,
+   "out": 41.59,
+   "look": null,
+   "alt": 0,
+   "text": "And this has...",
+   "for_text": "And this nice black wash.",
+   "words": [
+    [
+     "And",
+     40.47,
+     40.79
+    ],
+    [
+     "this",
+     40.79,
+     41.05
+    ],
+    [
+     "has...",
+     41.05,
+     41.41
+    ]
+   ],
+   "score": 0.5,
+   "status": "incomplete",
+   "flags": [
+    "stopped before the end of the line"
+   ],
+   "missing": [
+    "nice",
+    "black",
+    "wash"
+   ],
+   "extra": [
+    "has"
+   ],
+   "usable": false,
+   "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "68a42f",
+   "line": "b2c33b",
+   "src": "dec851",
+   "in": 41.96,
+   "out": 43.86,
+   "look": null,
+   "alt": 0,
+   "text": "And this has more a straight -like fit.",
+   "for_text": "And this has more like a straight leg fit.",
+   "words": [
+    [
+     "And",
+     42.04,
+     42.32
+    ],
+    [
+     "this",
+     42.32,
+     42.5
+    ],
+    [
+     "has",
+     42.5,
+     42.64
+    ],
+    [
+     "more",
+     42.64,
+     42.84
+    ],
+    [
+     "a",
+     42.84,
+     43.0
+    ],
+    [
+     "straight",
+     43.0,
+     43.16
+    ],
+    [
+     "leg",
+     43.16,
+     43.38
+    ],
+    [
+     "fit.",
+     43.38,
+     43.68
+    ]
+   ],
+   "score": 0.824,
+   "status": "close",
+   "flags": [
+    "reworded (2 skipped, 1 added)"
+   ],
+   "missing": [
+    "like",
+    "leg"
+   ],
+   "extra": [
+    "like"
+   ],
+   "usable": true,
+   "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.472,
+   "eye": 0.1,
+   "variant": "reworded",
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "fb199f",
+   "line": "b2c33b",
+   "src": "dec851",
+   "in": 44.71,
+   "out": 46.71,
+   "look": null,
+   "alt": 0,
+   "text": "And this has more straight leg fit.",
+   "for_text": "And this has more like a straight leg fit.",
+   "words": [
+    [
+     "And",
+     44.79,
+     45.09
+    ],
+    [
+     "this",
+     45.09,
+     45.29
+    ],
+    [
+     "has",
+     45.29,
+     45.45
+    ],
+    [
+     "more",
+     45.45,
+     45.65
+    ],
+    [
+     "straight",
+     45.65,
+     45.99
+    ],
+    [
+     "leg",
+     45.99,
+     46.23
+    ],
+    [
+     "fit.",
+     46.23,
+     46.53
+    ]
+   ],
+   "score": 0.875,
+   "status": "close",
+   "flags": [
+    "reworded (2 skipped, 0 added)"
+   ],
+   "missing": [
+    "like",
+    "a"
+   ],
+   "extra": [],
+   "usable": true,
+   "order": 3,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.718,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "631790",
+   "line": "b2c33b",
+   "src": "dec851",
+   "in": 47.75,
+   "out": 49.93,
+   "look": null,
+   "alt": 0,
+   "text": "And this has more like a straight left fit.",
+   "for_text": "And this has more like a straight leg fit.",
+   "words": [
+    [
+     "And",
+     47.83,
+     48.15
+    ],
+    [
+     "this",
+     48.15,
+     48.31
+    ],
+    [
+     "has",
+     48.31,
+     48.47
+    ],
+    [
+     "more",
+     48.47,
+     48.69
+    ],
+    [
+     "like",
+     48.69,
+     48.89
+    ],
+    [
+     "a",
+     48.89,
+     48.99
+    ],
+    [
+     "straight",
+     48.99,
+     49.25
+    ],
+    [
+     "leg",
+     49.25,
+     49.49
+    ],
+    [
+     "fit.",
+     49.49,
+     49.75
+    ]
+   ],
+   "score": 0.889,
+   "status": "close",
+   "flags": [
+    "reworded (1 skipped, 1 added)"
+   ],
+   "missing": [
+    "leg"
+   ],
+   "extra": [
+    "left"
+   ],
+   "usable": true,
+   "order": 5,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.512,
+   "eye": 0.1,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "8afe4d",
+   "line": "b2c33b",
+   "src": "dec851",
+   "in": 50.76,
+   "out": 52.94,
+   "look": null,
+   "alt": 0,
+   "text": "And this has more like a straight leg fit.",
+   "for_text": "And this has more like a straight leg fit.",
+   "words": [
+    [
+     "And",
+     50.84,
+     51.16
+    ],
+    [
+     "this",
+     51.16,
+     51.32
+    ],
+    [
+     "has",
+     51.32,
+     51.48
+    ],
+    [
+     "more",
+     51.48,
+     51.64
+    ],
+    [
+     "like",
+     51.64,
+     51.82
+    ],
+    [
+     "a",
+     51.82,
+     51.92
+    ],
+    [
+     "straight",
+     51.92,
+     52.2
+    ],
+    [
+     "leg",
+     52.2,
+     52.44
+    ],
+    [
+     "fit.",
+     52.44,
+     52.76
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 4,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.685,
+   "eye": 0.1,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "01edf4",
+   "line": "b2c33b",
+   "src": "dec851",
+   "in": 54.15,
+   "out": 56.11,
+   "look": null,
+   "alt": 0,
+   "text": "And this has more like a straight leg fret.",
+   "for_text": "And this has more like a straight leg fit.",
+   "words": [
+    [
+     "And",
+     54.23,
+     54.53
+    ],
+    [
+     "this",
+     54.53,
+     54.69
+    ],
+    [
+     "has",
+     54.69,
+     54.83
+    ],
+    [
+     "more",
+     54.83,
+     54.97
+    ],
+    [
+     "like",
+     54.97,
+     55.13
+    ],
+    [
+     "a",
+     55.13,
+     55.27
+    ],
+    [
+     "straight",
+     55.27,
+     55.45
+    ],
+    [
+     "leg",
+     55.45,
+     55.67
+    ],
+    [
+     "fit.",
+     55.67,
+     55.93
+    ]
+   ],
+   "score": 0.889,
+   "status": "close",
+   "flags": [
+    "reworded (1 skipped, 1 added)"
+   ],
+   "missing": [
+    "fit"
+   ],
+   "extra": [
+    "fret"
+   ],
+   "usable": true,
+   "order": 2,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.722,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "65e1c7",
+   "line": "b2c33b",
+   "src": "dec851",
+   "in": 57.32,
+   "out": 59.92,
+   "look": null,
+   "alt": 0,
+   "text": "And this acts more like, and this has more like a,",
+   "for_text": "And this has more like a straight leg fit.",
+   "words": [
+    [
+     "And",
+     57.4,
+     57.72
+    ],
+    [
+     "this",
+     57.72,
+     57.9
+    ],
+    [
+     "acts",
+     57.9,
+     58.06
+    ],
+    [
+     "more",
+     58.06,
+     58.26
+    ],
+    [
+     "like,",
+     58.26,
+     58.44
+    ],
+    [
+     "And",
+     58.52,
+     59.0
+    ],
+    [
+     "this",
+     59.0,
+     59.14
+    ],
+    [
+     "has",
+     59.14,
+     59.28
+    ],
+    [
+     "more",
+     59.28,
+     59.46
+    ],
+    [
+     "like",
+     59.46,
+     59.66
+    ],
+    [
+     "a",
+     59.66,
+     59.74
+    ]
+   ],
+   "score": 0.6,
+   "status": "incomplete",
+   "flags": [
+    "stopped before the end of the line"
+   ],
+   "missing": [
+    "straight",
+    "leg",
+    "fit"
+   ],
+   "extra": [
+    "and",
+    "this",
+    "acts",
+    "more",
+    "like"
+   ],
+   "usable": false,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "511d61",
+   "line": "b2c33b",
+   "src": "dec851",
+   "in": 60.46,
+   "out": 62.64,
+   "look": null,
+   "alt": 0,
+   "text": "And this has more like a straight leg fit.",
+   "for_text": "And this has more like a straight leg fit.",
+   "words": [
+    [
+     "And",
+     60.54,
+     60.82
+    ],
+    [
+     "this",
+     60.82,
+     60.98
+    ],
+    [
+     "has",
+     60.98,
+     61.16
+    ],
+    [
+     "more",
+     61.16,
+     61.3
+    ],
+    [
+     "like",
+     61.3,
+     61.5
+    ],
+    [
+     "a",
+     61.5,
+     61.58
+    ],
+    [
+     "straight",
+     61.58,
+     61.82
+    ],
+    [
+     "leg",
+     61.82,
+     62.1
+    ],
+    [
+     "fit.",
+     62.1,
+     62.46
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.895,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "dda9a3",
+   "line": "b2c33b",
+   "src": "dec851",
+   "in": 65.61,
+   "out": 67.71,
+   "look": null,
+   "alt": 0,
+   "text": "Still have, like, still have, like.",
+   "for_text": "And this has more like a straight leg fit.",
+   "words": [
+    [
+     "Still",
+     65.69,
+     65.95
+    ],
+    [
+     "have,",
+     65.95,
+     66.11
+    ],
+    [
+     "like",
+     66.19,
+     66.27
+    ],
+    [
+     "still",
+     66.43,
+     67.11
+    ],
+    [
+     "have,",
+     67.11,
+     67.35
+    ],
+    [
+     "like.",
+     67.41,
+     67.53
+    ]
+   ],
+   "score": 0.133,
+   "status": "incomplete",
+   "flags": [
+    "stopped before the end of the line"
+   ],
+   "missing": [
+    "and",
+    "this",
+    "has",
+    "more",
+    "a",
+    "straight",
+    "leg",
+    "fit"
+   ],
+   "extra": [
+    "still",
+    "have",
+    "still",
+    "have",
+    "like"
+   ],
+   "usable": false,
+   "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "ca5348",
+   "line": "75b500",
+   "src": "dec851",
+   "in": 68.23,
+   "out": 69.03,
+   "look": null,
+   "alt": 0,
+   "text": "Still have that,",
+   "for_text": "Still have that carpenter design.",
+   "words": [
+    [
+     "Still",
+     68.31,
+     68.67
+    ],
+    [
+     "have",
+     68.67,
+     68.83
+    ],
+    [
+     "that",
+     68.83,
+     69.05
+    ]
+   ],
+   "score": 0.75,
+   "status": "incomplete",
+   "flags": [
+    "stopped before the end of the line"
+   ],
+   "missing": [
+    "carpenter",
+    "design"
+   ],
+   "extra": [],
+   "usable": false,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "d43f06",
+   "line": "75b500",
+   "src": "dec851",
+   "in": 69.07,
+   "out": 73.09,
+   "look": null,
+   "alt": 0,
+   "text": "still have that carpenter design, carpenter, carpenter design.",
+   "for_text": "Still have that carpenter design.",
+   "words": [
+    [
+     "Still",
+     69.05,
+     69.87
+    ],
+    [
+     "have",
+     69.87,
+     70.07
+    ],
+    [
+     "that",
+     70.07,
+     70.23
+    ],
+    [
+     "carpenter",
+     70.23,
+     70.75
+    ],
+    [
+     "design.",
+     70.75,
+     71.09
+    ],
+    [
+     "carpenter,",
+     71.09,
+     71.85
+    ],
+    [
+     "carpenter",
+     71.85,
+     72.61
+    ],
+    [
+     "design.",
+     72.61,
+     73.11
+    ]
+   ],
+   "score": 0.769,
+   "status": "close",
+   "flags": [
+    "reworded (0 skipped, 3 added)"
+   ],
+   "missing": [],
+   "extra": [
+    "carpenter",
+    "carpenter",
+    "design"
+   ],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.666,
+   "eye": null,
+   "variant": "reworded",
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "c9e3f5",
+   "line": "75b500",
+   "src": "dec851",
+   "in": 73.13,
+   "out": 75.23,
+   "look": null,
+   "alt": 0,
+   "text": "Still have that carpenter design.",
+   "for_text": "Still have that carpenter design.",
+   "words": [
+    [
+     "Still",
+     73.11,
+     73.85
+    ],
+    [
+     "have",
+     73.85,
+     74.03
+    ],
+    [
+     "that",
+     74.03,
+     74.19
+    ],
+    [
+     "carpenter",
+     74.19,
+     74.67
+    ],
+    [
+     "design.",
+     74.67,
+     75.05
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 2,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.895,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "53c2c6",
+   "line": "75b500",
+   "src": "dec851",
+   "in": 75.98,
+   "out": 80.4,
+   "look": null,
+   "alt": 0,
+   "text": "Still have that carpenter design, carpenter, carpenter, carpenter,",
+   "for_text": "Still have that carpenter design.",
+   "words": [
+    [
+     "Still",
+     76.06,
+     76.42
+    ],
+    [
+     "have",
+     76.42,
+     76.54
+    ],
+    [
+     "that",
+     76.54,
+     76.7
+    ],
+    [
+     "carpenter",
+     76.7,
+     77.16
+    ],
+    [
+     "design.",
+     77.16,
+     77.5
+    ],
+    [
+     "carpenter,",
+     77.7,
+     78.76
+    ],
+    [
+     "carpenter,",
+     78.92,
+     79.62
+    ],
+    [
+     "carpenter,",
+     79.62,
+     80.22
+    ]
+   ],
+   "score": 0.769,
+   "status": "close",
+   "flags": [
+    "reworded (0 skipped, 3 added)"
+   ],
+   "missing": [],
+   "extra": [
+    "carpenter",
+    "carpenter",
+    "carpenter"
+   ],
+   "usable": true,
+   "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.456,
+   "eye": 0.1,
+   "variant": "reworded",
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "c94523",
+   "line": "75b500",
+   "src": "dec851",
+   "in": 80.34,
+   "out": 82.34,
+   "look": null,
+   "alt": 0,
+   "text": "still have that carpenter design?",
+   "for_text": "Still have that carpenter design.",
+   "words": [
+    [
+     "Still",
+     80.42,
+     81.04
+    ],
+    [
+     "have",
+     81.04,
+     81.22
+    ],
+    [
+     "that",
+     81.22,
+     81.34
+    ],
+    [
+     "carpenter",
+     81.34,
+     81.86
+    ],
+    [
+     "design.",
+     81.86,
+     82.16
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 3,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.685,
+   "eye": 0.1,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "be6c40",
+   "line": "75b500",
+   "src": "dec851",
+   "in": 83.3,
+   "out": 85.12,
+   "look": null,
+   "alt": 0,
+   "text": "Still have that carpenter design.",
+   "for_text": "Still have that carpenter design.",
+   "words": [
+    [
+     "Still",
+     83.38,
+     83.72
+    ],
+    [
+     "have",
+     83.72,
+     83.88
+    ],
+    [
+     "that",
+     83.88,
+     84.06
+    ],
+    [
+     "carpenter",
+     84.06,
+     84.58
+    ],
+    [
+     "design.",
+     84.58,
+     84.94
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 4,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.685,
+   "eye": 0.1,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "50c1a0",
+   "line": "206b94",
+   "src": "dec851",
+   "in": 87.94,
+   "out": 91.4,
+   "look": null,
+   "alt": 0,
+   "text": "And this for, and it's for, and it's from this old.",
+   "for_text": "And it's from this new brand called Old Navy.",
+   "words": [
+    [
+     "And",
+     88.02,
+     88.32
+    ],
+    [
+     "this",
+     88.32,
+     88.48
+    ],
+    [
+     "for,",
+     88.48,
+     88.72
+    ],
+    [
+     "and",
+     88.9,
+     89.6
+    ],
+    [
+     "it's",
+     89.6,
+     89.8
+    ],
+    [
+     "for,",
+     89.8,
+     89.98
+    ],
+    [
+     "And",
+     90.18,
+     90.46
+    ],
+    [
+     "it's",
+     90.46,
+     90.68
+    ],
+    [
+     "from",
+     90.68,
+     90.82
+    ],
+    [
+     "this",
+     90.82,
+     91.0
+    ],
+    [
+     "Old",
+     91.0,
+     91.22
+    ]
+   ],
+   "score": 0.5,
+   "status": "incomplete",
+   "flags": [
+    "stopped before the end of the line"
+   ],
+   "missing": [
+    "new",
+    "brand",
+    "called",
+    "navy"
+   ],
+   "extra": [
+    "and",
+    "this",
+    "for",
+    "and",
+    "it's",
+    "for"
+   ],
+   "usable": false,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "061612",
+   "line": null,
+   "src": "dec851",
+   "in": 93.38,
+   "out": 94.12,
+   "look": null,
+   "alt": 0,
+   "text": "And it's for,",
+   "for_text": null,
+   "words": [
+    [
+     "And",
+     93.46,
+     93.74
+    ],
+    [
+     "it's",
+     93.74,
+     93.92
+    ],
+    [
+     "for,",
+     93.92,
+     94.06
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 2,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "d75782",
+   "line": "206b94",
+   "src": "dec851",
+   "in": 94.08,
+   "out": 95.14,
+   "look": null,
+   "alt": 0,
+   "text": "and it's from this,",
+   "for_text": "And it's from this new brand called Old Navy.",
+   "words": [
+    [
+     "And",
+     94.14,
+     94.4
+    ],
+    [
+     "it's",
+     94.4,
+     94.62
+    ],
+    [
+     "from",
+     94.62,
+     94.76
+    ],
+    [
+     "this",
+     94.76,
+     95.0
+    ]
+   ],
+   "score": 0.615,
+   "status": "incomplete",
+   "flags": [
+    "stopped before the end of the line"
+   ],
+   "missing": [
+    "new",
+    "brand",
+    "called",
+    "old",
+    "navy"
+   ],
+   "extra": [],
+   "usable": false,
+   "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "9ed50a",
+   "line": "206b94",
+   "src": "dec851",
+   "in": 95.08,
+   "out": 96.78,
+   "look": null,
+   "alt": 0,
+   "text": "and it's from its new bed,",
+   "for_text": "And it's from this new brand called Old Navy.",
+   "words": [
+    [
+     "And",
+     95.16,
+     95.64
+    ],
+    [
+     "it's",
+     95.64,
+     95.86
+    ],
+    [
+     "from",
+     95.86,
+     95.96
+    ],
+    [
+     "this",
+     95.96,
+     96.18
+    ],
+    [
+     "new",
+     96.18,
+     96.38
+    ],
+    [
+     "bed,",
+     96.38,
+     96.6
+    ]
+   ],
+   "score": 0.533,
+   "status": "incomplete",
+   "flags": [
+    "stopped before the end of the line"
+   ],
+   "missing": [
+    "this",
+    "brand",
+    "called",
+    "old",
+    "navy"
+   ],
+   "extra": [
+    "its",
+    "bed"
+   ],
+   "usable": false,
+   "order": 2,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "890188",
+   "line": "206b94",
+   "src": "dec851",
+   "in": 97.12,
+   "out": 99.48,
+   "look": null,
+   "alt": 0,
+   "text": "and it's from this new brand called Old Navi.",
+   "for_text": "And it's from this new brand called Old Navy.",
+   "words": [
+    [
+     "And",
+     97.2,
+     97.4
+    ],
+    [
+     "it's",
+     97.4,
+     97.58
+    ],
+    [
+     "from",
+     97.58,
+     97.7
+    ],
+    [
+     "this",
+     97.7,
+     97.9
+    ],
+    [
+     "new",
+     97.9,
+     98.1
+    ],
+    [
+     "brand",
+     98.1,
+     98.34
+    ],
+    [
+     "called",
+     98.34,
+     98.62
+    ],
+    [
+     "Old",
+     98.62,
+     98.88
+    ],
+    [
+     "Navy.",
+     98.88,
+     99.3
+    ]
+   ],
+   "score": 0.889,
+   "status": "close",
+   "flags": [
+    "reworded (1 skipped, 1 added)"
+   ],
+   "missing": [
+    "navy"
+   ],
+   "extra": [
+    "navi"
+   ],
+   "usable": true,
+   "order": 2,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.512,
+   "eye": 0.1,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "7df0e3",
+   "line": "206b94",
+   "src": "dec851",
+   "in": 100.42,
+   "out": 101.96,
+   "look": null,
+   "alt": 0,
+   "text": "And it's from this old brand,",
+   "for_text": "And it's from this new brand called Old Navy.",
+   "words": [
+    [
+     "And",
+     100.5,
+     100.76
+    ],
+    [
+     "it's",
+     100.76,
+     100.92
+    ],
+    [
+     "from",
+     100.92,
+     101.06
+    ],
+    [
+     "this",
+     101.06,
+     101.26
+    ],
+    [
+     "Old",
+     101.26,
+     101.46
+    ],
+    [
+     "Navy.",
+     101.46,
+     101.78
+    ]
+   ],
+   "score": 0.667,
+   "status": "incomplete",
+   "flags": [
+    "stopped before the end of the line"
+   ],
+   "missing": [
+    "new",
+    "brand",
+    "called",
+    "navy"
+   ],
+   "extra": [
+    "brand"
+   ],
+   "usable": false,
+   "order": 3,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "df8d7f",
+   "line": "206b94",
+   "src": "dec851",
+   "in": 101.98,
+   "out": 102.8,
+   "look": null,
+   "alt": 0,
+   "text": "and it's from this new,",
+   "for_text": "And it's from this new brand called Old Navy.",
+   "words": [
+    [
+     "And",
+     102.06,
+     102.06
+    ],
+    [
+     "it's",
+     102.06,
+     102.24
+    ],
+    [
+     "from",
+     102.24,
+     102.36
+    ],
+    [
+     "this",
+     102.36,
+     102.56
+    ],
+    [
+     "new",
+     102.56,
+     102.78
+    ]
+   ],
+   "score": 0.714,
+   "status": "incomplete",
+   "flags": [
+    "stopped before the end of the line"
+   ],
+   "missing": [
+    "brand",
+    "called",
+    "old",
+    "navy"
+   ],
+   "extra": [],
+   "usable": false,
+   "order": 4,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "c23b7d",
+   "line": "206b94",
+   "src": "dec851",
+   "in": 102.8,
+   "out": 105.16,
+   "look": null,
+   "alt": 0,
+   "text": "and it's from this new brand called Old Navi.",
+   "for_text": "And it's from this new brand called Old Navy.",
+   "words": [
+    [
+     "And",
+     102.82,
+     103.1
+    ],
+    [
+     "it's",
+     103.1,
+     103.28
+    ],
+    [
+     "from",
+     103.28,
+     103.4
+    ],
+    [
+     "this",
+     103.4,
+     103.6
+    ],
+    [
+     "new",
+     103.6,
+     103.78
+    ],
+    [
+     "brand",
+     103.78,
+     104.04
+    ],
+    [
+     "called",
+     104.04,
+     104.32
+    ],
+    [
+     "Old",
+     104.32,
+     104.56
+    ],
+    [
+     "Navy.",
+     104.56,
+     104.98
+    ]
+   ],
+   "score": 0.889,
+   "status": "close",
+   "flags": [
+    "reworded (1 skipped, 1 added)"
+   ],
+   "missing": [
+    "navy"
+   ],
+   "extra": [
+    "navi"
+   ],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.722,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "a206e0",
+   "line": "206b94",
+   "src": "dec851",
+   "in": 106.02,
+   "out": 107.62,
+   "look": null,
+   "alt": 0,
+   "text": "And it's from this old brand, and,",
+   "for_text": "And it's from this new brand called Old Navy.",
+   "words": [
+    [
+     "And",
+     106.1,
+     106.38
+    ],
+    [
+     "it's",
+     106.38,
+     106.54
+    ],
+    [
+     "from",
+     106.54,
+     106.66
+    ],
+    [
+     "this",
+     106.66,
+     106.86
+    ],
+    [
+     "Old",
+     106.86,
+     107.1
+    ],
+    [
+     "brand,",
+     107.1,
+     107.28
+    ],
+    [
+     "and,",
+     107.46,
+     107.64
+    ]
+   ],
+   "score": 0.625,
+   "status": "incomplete",
+   "flags": [
+    "stopped before the end of the line"
+   ],
+   "missing": [
+    "new",
+    "brand",
+    "called",
+    "navy"
+   ],
+   "extra": [
+    "brand",
+    "and"
+   ],
+   "usable": false,
+   "order": 5,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "4b52fc",
+   "line": "206b94",
+   "src": "dec851",
+   "in": 107.66,
+   "out": 109.96,
+   "look": null,
+   "alt": 0,
+   "text": "and it's from this new brand called Old Navi.",
+   "for_text": "And it's from this new brand called Old Navy.",
+   "words": [
+    [
+     "And",
+     107.64,
+     107.9
+    ],
+    [
+     "it's",
+     107.9,
+     108.06
+    ],
+    [
+     "from",
+     108.06,
+     108.18
+    ],
+    [
+     "this",
+     108.18,
+     108.36
+    ],
+    [
+     "new",
+     108.36,
+     108.58
+    ],
+    [
+     "brand",
+     108.58,
+     108.8
+    ],
+    [
+     "called",
+     108.8,
+     109.08
+    ],
+    [
+     "Old",
+     109.08,
+     109.34
+    ],
+    [
+     "Navy.",
+     109.34,
+     109.78
+    ]
+   ],
+   "score": 0.889,
+   "status": "close",
+   "flags": [
+    "reworded (1 skipped, 1 added)"
+   ],
+   "missing": [
+    "navy"
+   ],
+   "extra": [
+    "navi"
+   ],
+   "usable": true,
+   "order": 3,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.512,
+   "eye": 0.1,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "eb3a11",
+   "line": "206b94",
+   "src": "dec851",
+   "in": 110.66,
+   "out": 112.32,
+   "look": null,
+   "alt": 0,
+   "text": "And it's from this old brand called,",
+   "for_text": "And it's from this new brand called Old Navy.",
+   "words": [
+    [
+     "And",
+     110.74,
+     111.0
+    ],
+    [
+     "it's",
+     111.0,
+     111.16
+    ],
+    [
+     "from",
+     111.16,
+     111.28
+    ],
+    [
+     "this",
+     111.28,
+     111.46
+    ],
+    [
+     "new",
+     111.46,
+     111.68
+    ],
+    [
+     "brand",
+     111.68,
+     111.94
+    ],
+    [
+     "called",
+     111.94,
+     112.28
+    ]
+   ],
+   "score": 0.75,
+   "status": "incomplete",
+   "flags": [
+    "stopped before the end of the line"
+   ],
+   "missing": [
+    "new",
+    "old",
+    "navy"
+   ],
+   "extra": [
+    "old"
+   ],
+   "usable": false,
+   "order": 6,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "35743f",
+   "line": "206b94",
+   "src": "dec851",
+   "in": 112.3,
+   "out": 114.86,
+   "look": null,
+   "alt": 0,
+   "text": "and it's from this new brand called Old Navi.",
+   "for_text": "And it's from this new brand called Old Navy.",
+   "words": [
+    [
+     "And",
+     112.34,
+     112.7
+    ],
+    [
+     "it's",
+     112.7,
+     112.9
+    ],
+    [
+     "from",
+     112.9,
+     113.02
+    ],
+    [
+     "this",
+     113.02,
+     113.24
+    ],
+    [
+     "new",
+     113.24,
+     113.44
+    ],
+    [
+     "brand",
+     113.44,
+     113.68
+    ],
+    [
+     "called",
+     113.68,
+     113.98
+    ],
+    [
+     "Old",
+     113.98,
+     114.2
+    ],
+    [
+     "Navy.",
+     114.2,
+     114.68
+    ]
+   ],
+   "score": 0.889,
+   "status": "close",
+   "flags": [
+    "reworded (1 skipped, 1 added)"
+   ],
+   "missing": [
+    "navy"
+   ],
+   "extra": [
+    "navi"
+   ],
+   "usable": true,
+   "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.687,
+   "eye": 0.6,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "00688e",
+   "line": "457210",
+   "src": "dec851",
+   "in": 119.14,
+   "out": 121.08,
+   "look": null,
+   "alt": 0,
+   "text": "And they actually have some pretty nice clothing.",
+   "for_text": "And they actually have some pretty nice clothing.",
+   "words": [
+    [
+     "And",
+     119.22,
+     119.48
+    ],
+    [
+     "they",
+     119.48,
+     119.58
+    ],
+    [
+     "actually",
+     119.58,
+     119.82
+    ],
+    [
+     "have",
+     119.82,
+     120.0
+    ],
+    [
+     "some",
+     120.0,
+     120.16
+    ],
+    [
+     "pretty",
+     120.16,
+     120.36
+    ],
+    [
+     "nice",
+     120.36,
+     120.6
+    ],
+    [
+     "clothing.",
+     120.6,
+     120.9
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.86,
+   "eye": 0.6,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "13bd8c",
+   "line": "457210",
+   "src": "dec851",
+   "in": 122.38,
+   "out": 124.5,
+   "look": null,
+   "alt": 0,
+   "text": "And they actually have some pretty nice clothing.",
+   "for_text": "And they actually have some pretty nice clothing.",
+   "words": [
+    [
+     "And",
+     122.46,
+     122.74
+    ],
+    [
+     "they",
+     122.74,
+     122.86
+    ],
+    [
+     "actually",
+     122.86,
+     123.1
+    ],
+    [
+     "have",
+     123.1,
+     123.28
+    ],
+    [
+     "some",
+     123.28,
+     123.46
+    ],
+    [
+     "pretty",
+     123.46,
+     123.68
+    ],
+    [
+     "nice",
+     123.68,
+     123.9
+    ],
+    [
+     "clothing.",
+     123.9,
+     124.32
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.895,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "c622c3",
+   "line": "457210",
+   "src": "dec851",
+   "in": 125.29,
+   "out": 127.35,
+   "look": null,
+   "alt": 0,
+   "text": "And they actually have some pretty nice clothing.",
+   "for_text": "And they actually have some pretty nice clothing.",
+   "words": [
+    [
+     "And",
+     125.37,
+     125.63
+    ],
+    [
+     "they",
+     125.63,
+     125.75
+    ],
+    [
+     "actually",
+     125.75,
+     125.97
+    ],
+    [
+     "have",
+     125.97,
+     126.15
+    ],
+    [
+     "some",
+     126.15,
+     126.31
+    ],
+    [
+     "pretty",
+     126.31,
+     126.57
+    ],
+    [
+     "nice",
+     126.57,
+     126.81
+    ],
+    [
+     "clothing.",
+     126.81,
+     127.17
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 2,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.86,
+   "eye": 0.6,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "84b22d",
+   "line": "1354f1",
+   "src": "dec851",
+   "in": 130.06,
+   "out": 133.24,
+   "look": null,
+   "alt": 0,
+   "text": "I see why they, I see why this one is ours, so,",
+   "for_text": "And I see why this one is always selling out.",
+   "words": [
+    [
+     "I",
+     130.14,
+     130.44
+    ],
+    [
+     "see",
+     130.44,
+     130.62
+    ],
+    [
+     "why",
+     130.62,
+     130.78
+    ],
+    [
+     "they,",
+     130.78,
+     130.96
+    ],
+    [
+     "I",
+     131.2,
+     131.54
+    ],
+    [
+     "see",
+     131.54,
+     131.76
+    ],
+    [
+     "why",
+     131.76,
+     131.98
+    ],
+    [
+     "this",
+     131.98,
+     132.18
+    ],
+    [
+     "one",
+     132.18,
+     132.4
+    ],
+    [
+     "is",
+     132.4,
+     132.58
+    ],
+    [
+     "ours,",
+     132.58,
+     132.84
+    ],
+    [
+     "so,",
+     132.86,
+     133.06
+    ]
+   ],
+   "score": 0.545,
+   "status": "incomplete",
+   "flags": [
+    "stopped before the end of the line"
+   ],
+   "missing": [
+    "and",
+    "always",
+    "selling",
+    "out"
+   ],
+   "extra": [
+    "i",
+    "see",
+    "why",
+    "they",
+    "ours",
+    "so"
+   ],
+   "usable": false,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "d2ea93",
+   "line": "1354f1",
+   "src": "dec851",
+   "in": 134.02,
+   "out": 136.48,
+   "look": null,
+   "alt": 0,
+   "text": "And I see why this one is always selling out.",
+   "for_text": "And I see why this one is always selling out.",
+   "words": [
+    [
+     "And",
+     134.1,
+     134.36
+    ],
+    [
+     "I",
+     134.36,
+     134.46
+    ],
+    [
+     "see",
+     134.46,
+     134.7
+    ],
+    [
+     "why",
+     134.7,
+     134.9
+    ],
+    [
+     "this",
+     134.9,
+     135.12
+    ],
+    [
+     "one",
+     135.12,
+     135.32
+    ],
+    [
+     "is",
+     135.32,
+     135.48
+    ],
+    [
+     "always",
+     135.48,
+     135.72
+    ],
+    [
+     "selling",
+     135.72,
+     136.0
+    ],
+    [
+     "out.",
+     136.0,
+     136.3
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.685,
+   "eye": 0.1,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "ce6fea",
+   "line": "1354f1",
+   "src": "dec851",
+   "in": 137.83,
+   "out": 140.05,
+   "look": null,
+   "alt": 0,
+   "text": "And I see why this one is always selling out.",
+   "for_text": "And I see why this one is always selling out.",
+   "words": [
+    [
+     "And",
+     137.91,
+     138.17
+    ],
+    [
+     "I",
+     138.17,
+     138.27
+    ],
+    [
+     "see",
+     138.27,
+     138.43
+    ],
+    [
+     "why",
+     138.43,
+     138.59
+    ],
+    [
+     "this",
+     138.59,
+     138.79
+    ],
+    [
+     "one",
+     138.79,
+     138.97
+    ],
+    [
+     "is",
+     138.97,
+     139.09
+    ],
+    [
+     "always",
+     139.09,
+     139.33
+    ],
+    [
+     "selling",
+     139.33,
+     139.57
+    ],
+    [
+     "out.",
+     139.57,
+     139.87
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.685,
+   "eye": 0.1,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "c3692c",
+   "line": "cbab01",
+   "src": "dec851",
+   "in": 143.11,
+   "out": 145.11,
+   "look": null,
+   "alt": 0,
+   "text": "And this nice black wash,",
+   "for_text": "And this nice black wash.",
+   "words": [
+    [
+     "And",
+     143.19,
+     143.49
+    ],
+    [
+     "this",
+     143.49,
+     143.65
+    ],
+    [
+     "nice",
+     143.65,
+     144.07
+    ],
+    [
+     "black",
+     144.07,
+     144.45
+    ],
+    [
+     "wash.",
+     144.45,
+     144.93
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.895,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "5e79a8",
+   "line": "cbab01",
+   "src": "dec851",
+   "in": 145.09,
+   "out": 147.05,
+   "look": null,
+   "alt": 0,
+   "text": "and this nice black wash.",
+   "for_text": "And this nice black wash.",
+   "words": [
+    [
+     "And",
+     145.17,
+     145.77
+    ],
+    [
+     "this",
+     145.77,
+     145.91
+    ],
+    [
+     "nice",
+     145.91,
+     146.13
+    ],
+    [
+     "black",
+     146.13,
+     146.41
+    ],
+    [
+     "wash.",
+     146.41,
+     146.87
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.895,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "61c50f",
+   "line": "cbab01",
+   "src": "dec851",
+   "in": 147.59,
+   "out": 149.31,
+   "look": null,
+   "alt": 0,
+   "text": "And this nice black wash.",
+   "for_text": "And this nice black wash.",
+   "words": [
+    [
+     "And",
+     147.67,
+     147.97
+    ],
+    [
+     "this",
+     147.97,
+     148.13
+    ],
+    [
+     "nice",
+     148.13,
+     148.41
+    ],
+    [
+     "black",
+     148.41,
+     148.65
+    ],
+    [
+     "wash.",
+     148.65,
+     149.13
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 3,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.86,
+   "eye": 0.6,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "8898fd",
+   "line": "cbab01",
+   "src": "dec851",
+   "in": 150.89,
+   "out": 152.59,
+   "look": null,
+   "alt": 0,
+   "text": "And this nice black wash.",
+   "for_text": "And this nice black wash.",
+   "words": [
+    [
+     "And",
+     150.97,
+     151.27
+    ],
+    [
+     "this",
+     151.27,
+     151.41
+    ],
+    [
+     "nice",
+     151.41,
+     151.71
+    ],
+    [
+     "black",
+     151.71,
+     151.95
+    ],
+    [
+     "wash.",
+     151.95,
+     152.41
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 2,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.895,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "03875c",
+   "line": "b3d551",
+   "src": "dec851",
+   "in": 157.1,
+   "out": 158.78,
+   "look": null,
+   "alt": 0,
+   "text": "A good pocket space.",
+   "for_text": "A good pocket space.",
+   "words": [
+    [
+     "A",
+     157.18,
+     157.5
+    ],
+    [
+     "good",
+     157.5,
+     157.8
+    ],
+    [
+     "pocket",
+     157.8,
+     158.24
+    ],
+    [
+     "space.",
+     158.24,
+     158.6
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.895,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "51aabf",
+   "line": "b3d551",
+   "src": "dec851",
+   "in": 160.1,
+   "out": 161.6,
+   "look": null,
+   "alt": 0,
+   "text": "A good pocket space.",
+   "for_text": "A good pocket space.",
+   "words": [
+    [
+     "A",
+     160.18,
+     160.46
+    ],
+    [
+     "good",
+     160.46,
+     160.64
+    ],
+    [
+     "pocket",
+     160.64,
+     161.06
+    ],
+    [
+     "space.",
+     161.06,
+     161.42
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 2,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.685,
+   "eye": 0.1,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "ab9b96",
+   "line": "b3d551",
+   "src": "dec851",
+   "in": 165.38,
+   "out": 166.92,
+   "look": null,
+   "alt": 0,
+   "text": "A good pocket space.",
+   "for_text": "A good pocket space.",
+   "words": [
+    [
+     "A",
+     165.46,
+     165.76
+    ],
+    [
+     "good",
+     165.76,
+     165.96
+    ],
+    [
+     "pocket",
+     165.96,
+     166.36
+    ],
+    [
+     "space.",
+     166.36,
+     166.74
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.895,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "d28148",
+   "line": "b3d551",
+   "src": "dec851",
+   "in": 177.13,
+   "out": 178.61,
+   "look": null,
+   "alt": 0,
+   "text": "A good pocket space.",
+   "for_text": "A good pocket space.",
+   "words": [
+    [
+     "A",
+     177.21,
+     177.49
+    ],
+    [
+     "good",
+     177.49,
+     177.69
+    ],
+    [
+     "pocket",
+     177.69,
+     178.07
+    ],
+    [
+     "space.",
+     178.07,
+     178.43
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 3,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.685,
+   "eye": 0.1,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "975849",
+   "line": "c1976e",
+   "src": "dec851",
+   "in": 182.22,
+   "out": 184.26,
+   "look": null,
+   "alt": 0,
+   "text": "And if you want to grab these before they're gone,",
+   "for_text": "And if you want to grab these before they're gone,",
+   "words": [
+    [
+     "And",
+     182.3,
+     182.54
+    ],
+    [
+     "if",
+     182.54,
+     182.66
+    ],
+    [
+     "you",
+     182.66,
+     182.7
+    ],
+    [
+     "want",
+     182.7,
+     182.8
+    ],
+    [
+     "to",
+     182.8,
+     182.86
+    ],
+    [
+     "grab",
+     182.86,
+     183.02
+    ],
+    [
+     "these",
+     183.02,
+     183.24
+    ],
+    [
+     "before",
+     183.24,
+     183.58
+    ],
+    [
+     "they're",
+     183.58,
+     183.78
+    ],
+    [
+     "gone,",
+     183.78,
+     184.08
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.895,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "319385",
+   "line": "c1976e",
+   "src": "dec851",
+   "in": 186.31,
+   "out": 187.57,
+   "look": null,
+   "alt": 1,
+   "text": "And if you wanted to grab this,",
+   "for_text": "And if you wanted to grab this,",
+   "words": [
+    [
+     "And",
+     186.39,
+     186.63
+    ],
+    [
+     "if",
+     186.63,
+     186.75
+    ],
+    [
+     "you",
+     186.75,
+     186.81
+    ],
+    [
+     "wanted",
+     186.81,
+     186.89
+    ],
+    [
+     "to",
+     186.89,
+     187.03
+    ],
+    [
+     "grab",
+     187.03,
+     187.15
+    ],
+    [
+     "this,",
+     187.15,
+     187.39
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 2,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.685,
+   "eye": 0.1,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "b43cb5",
+   "line": "c1976e",
+   "src": "dec851",
+   "in": 189.19,
+   "out": 190.45,
+   "look": null,
+   "alt": 1,
+   "text": "And if you want to grab it.",
+   "for_text": "And if you wanted to grab this,",
+   "words": [
+    [
+     "And",
+     189.27,
+     189.55
+    ],
+    [
+     "if",
+     189.55,
+     189.67
+    ],
+    [
+     "you",
+     189.67,
+     189.71
+    ],
+    [
+     "wanted",
+     189.71,
+     189.83
+    ],
+    [
+     "to",
+     189.83,
+     189.89
+    ],
+    [
+     "grab",
+     189.89,
+     190.13
+    ],
+    [
+     "this,",
+     190.13,
+     190.27
+    ]
+   ],
+   "score": 0.714,
+   "status": "close",
+   "flags": [
+    "reworded (2 skipped, 2 added)"
+   ],
+   "missing": [
+    "wanted",
+    "this"
+   ],
+   "extra": [
+    "want",
+    "it"
+   ],
+   "usable": true,
+   "order": 3,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.594,
+   "eye": 0.6,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "18e2d5",
+   "line": "c1976e",
+   "src": "dec851",
+   "in": 191.59,
+   "out": 193.73,
+   "look": null,
+   "alt": 0,
+   "text": "And if you want to grab these before they're gone,",
+   "for_text": "And if you want to grab these before they're gone,",
+   "words": [
+    [
+     "And",
+     191.67,
+     191.93
+    ],
+    [
+     "if",
+     191.93,
+     192.05
+    ],
+    [
+     "you",
+     192.05,
+     192.09
+    ],
+    [
+     "want",
+     192.09,
+     192.19
+    ],
+    [
+     "to",
+     192.19,
+     192.25
+    ],
+    [
+     "grab",
+     192.25,
+     192.43
+    ],
+    [
+     "these",
+     192.43,
+     192.61
+    ],
+    [
+     "before",
+     192.61,
+     193.01
+    ],
+    [
+     "they're",
+     193.01,
+     193.23
+    ],
+    [
+     "gone,",
+     193.23,
+     193.55
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.895,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "4081a2",
+   "line": "f18cd0",
+   "src": "dec851",
+   "in": 195.53,
+   "out": 196.99,
+   "look": null,
+   "alt": 0,
+   "text": "I'll leave the link down below.",
+   "for_text": "I'll leave the link down below here.",
+   "words": [
+    [
+     "I'll",
+     195.61,
+     195.95
+    ],
+    [
+     "leave",
+     195.95,
+     196.09
+    ],
+    [
+     "the",
+     196.09,
+     196.21
+    ],
+    [
+     "link",
+     196.21,
+     196.35
+    ],
+    [
+     "down",
+     196.35,
+     196.57
+    ],
+    [
+     "below",
+     196.57,
+     196.81
+    ]
+   ],
+   "score": 0.933,
+   "status": "close",
+   "flags": [
+    "reworded (1 skipped, 0 added)"
+   ],
+   "missing": [
+    "here"
+   ],
+   "extra": [],
+   "usable": true,
+   "order": 3,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.545,
+   "eye": 0.1,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "dc7a95",
+   "line": "f18cd0",
+   "src": "dec851",
+   "in": 197.58,
+   "out": 198.98,
+   "look": null,
+   "alt": 0,
+   "text": "I'll leave the link down below,",
+   "for_text": "I'll leave the link down below here.",
+   "words": [
+    [
+     "I'll",
+     197.66,
+     198.02
+    ],
+    [
+     "leave",
+     198.02,
+     198.14
+    ],
+    [
+     "the",
+     198.14,
+     198.26
+    ],
+    [
+     "link",
+     198.26,
+     198.42
+    ],
+    [
+     "down",
+     198.42,
+     198.64
+    ],
+    [
+     "below",
+     198.64,
+     198.88
+    ]
+   ],
+   "score": 0.933,
+   "status": "close",
+   "flags": [
+    "reworded (1 skipped, 0 added)"
+   ],
+   "missing": [
+    "here"
+   ],
+   "extra": [],
+   "usable": true,
+   "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.755,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "8490ac",
+   "line": "f18cd0",
+   "src": "dec851",
+   "in": 198.92,
+   "out": 200.34,
+   "look": null,
+   "alt": 0,
+   "text": "I'll leave the link down below here.",
+   "for_text": "I'll leave the link down below here.",
+   "words": [
+    [
+     "I'll",
+     199.0,
+     199.18
+    ],
+    [
+     "leave",
+     199.18,
+     199.28
+    ],
+    [
+     "the",
+     199.28,
+     199.4
+    ],
+    [
+     "link",
+     199.4,
+     199.58
+    ],
+    [
+     "down",
+     199.58,
+     199.7
+    ],
+    [
+     "below",
+     199.7,
+     199.92
+    ],
+    [
+     "here.",
+     199.92,
+     200.16
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.86,
+   "eye": 0.6,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "ab00c7",
+   "line": "f18cd0",
+   "src": "dec851",
+   "in": 201.22,
+   "out": 201.92,
+   "look": null,
+   "alt": 0,
+   "text": "I'll leave the,",
+   "for_text": "I'll leave the link down below here.",
+   "words": [
+    [
+     "I'll",
+     201.3,
+     201.62
+    ],
+    [
+     "leave",
+     201.62,
+     201.74
+    ],
+    [
+     "the",
+     201.74,
+     201.88
+    ]
+   ],
+   "score": 0.667,
+   "status": "incomplete",
+   "flags": [
+    "stopped before the end of the line"
+   ],
+   "missing": [
+    "link",
+    "down",
+    "below",
+    "here"
+   ],
+   "extra": [],
+   "usable": false,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "5c90aa",
+   "line": "f18cd0",
+   "src": "dec851",
+   "in": 201.9,
+   "out": 203.58,
+   "look": null,
+   "alt": 0,
+   "text": "I'll leave the link down below here.",
+   "for_text": "I'll leave the link down below here.",
+   "words": [
+    [
+     "I'll",
+     201.94,
+     202.38
+    ],
+    [
+     "leave",
+     202.38,
+     202.5
+    ],
+    [
+     "the",
+     202.5,
+     202.6
+    ],
+    [
+     "link",
+     202.6,
+     202.74
+    ],
+    [
+     "down",
+     202.74,
+     202.94
+    ],
+    [
+     "below",
+     202.94,
+     203.14
+    ],
+    [
+     "here.",
+     203.14,
+     203.4
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 2,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.685,
+   "eye": 0.1,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "437f9f",
+   "line": "2d3331",
+   "src": "dec851",
+   "in": 205.22,
+   "out": 206.8,
+   "look": null,
+   "alt": 0,
+   "text": "But they're setting out fast.",
+   "for_text": "But they're setting out fast.",
+   "words": [
+    [
+     "But",
+     205.3,
+     205.58
+    ],
+    [
+     "they're",
+     205.58,
+     205.76
+    ],
+    [
+     "setting",
+     205.76,
+     205.92
+    ],
+    [
+     "out",
+     205.92,
+     206.1
+    ],
+    [
+     "fast.",
+     206.1,
+     206.62
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.895,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "c68570",
+   "line": "2d3331",
+   "src": "dec851",
+   "in": 206.92,
+   "out": 208.6,
+   "look": null,
+   "alt": 0,
+   "text": "But they're setting out fast.",
+   "for_text": "But they're setting out fast.",
+   "words": [
+    [
+     "But",
+     207.0,
+     207.42
+    ],
+    [
+     "they're",
+     207.42,
+     207.6
+    ],
+    [
+     "setting",
+     207.6,
+     207.76
+    ],
+    [
+     "out",
+     207.76,
+     207.96
+    ],
+    [
+     "fast.",
+     207.96,
+     208.42
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 2,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.685,
+   "eye": 0.1,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "deccf1",
+   "line": "2d3331",
+   "src": "dec851",
+   "in": 209.06,
+   "out": 210.42,
+   "look": null,
+   "alt": 0,
+   "text": "But they're setting out fast.",
+   "for_text": "But they're setting out fast.",
+   "words": [
+    [
+     "But",
+     209.14,
+     209.4
+    ],
+    [
+     "they're",
+     209.4,
+     209.58
+    ],
+    [
+     "setting",
+     209.58,
+     209.76
+    ],
+    [
+     "out",
+     209.76,
+     209.96
+    ],
+    [
+     "fast.",
+     209.96,
+     210.24
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.86,
+   "eye": 0.6,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  }
+ ],
+ "hooks": [],
+ "cta": "",
+ "style": {
+  "subs": {
+   "on": true,
+   "font": "Arial Black",
+   "size": 84,
+   "color": "#FFFFFF",
+   "highlight": "#FFE14D",
+   "outline": "#000000",
+   "outline_w": 6,
+   "uppercase": false,
+   "y": 0.66,
+   "words_per_line": 3,
+   "karaoke": true,
+   "pop": true
+  },
+  "speed": 1.0,
+  "pace": {
+   "auto": true,
+   "wps": 4.8,
+   "max": 1.1,
+   "pauses": true
+  },
+  "title": {
+   "on": true,
+   "y": 0.42,
+   "preset": "meme",
+   "font": "Impact",
+   "size": 150,
+   "color": "#FFFFFF",
+   "box_color": "#000000",
+   "accent": "#FFE14D",
+   "outline_w": 10,
+   "uppercase": true,
+   "rotate": -4,
+   "pop": true
+  },
+  "hook": {
+   "on": true,
+   "seconds": 3.0,
+   "y": 0.2,
+   "preset": "box",
+   "font": "Arial Black",
+   "size": 58,
+   "color": "#000000",
+   "box_color": "#FFFFFF",
+   "accent": "#FE2C55",
+   "outline_w": 0,
+   "uppercase": false,
+   "rotate": 0,
+   "pop": true
+  },
+  "cta": {
+   "on": false,
+   "y": 0.8,
+   "preset": "sticker",
+   "font": "Arial Black",
+   "size": 52,
+   "color": "#FFFFFF",
+   "box_color": "#FE2C55",
+   "accent": "#FFE14D",
+   "outline_w": 0,
+   "uppercase": false,
+   "rotate": -2,
+   "pop": true
+  },
+  "product_box": null,
+  "cart_pointer": {
+   "on": true,
+   "words": "orange cart, cart, basket",
+   "seconds": 2.2,
+   "color": "#FF8A00"
+  },
+  "punch_in": 1.12,
+  "pad_before": 0.08,
+  "pad_after": 0.18,
+  "voice_cleanup": false,
+  "loudness": -14
+ },
+ "skip": [],
+ "from_inbox": true,
+ "assets": [],
+ "overlays": [],
+ "renders": {},
+ "saved": {}
+}

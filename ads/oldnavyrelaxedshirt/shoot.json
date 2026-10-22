@@ -1,0 +1,2304 @@
+{
+ "version": 1,
+ "rev": 14,
+ "title": "OldNavyRelaxedShirt",
+ "created": 1792343374.2037246,
+ "product": {
+  "name": "",
+  "link": "",
+  "description": "",
+  "hashtags": "#tiktokshop #tiktokmademebuyit"
+ },
+ "reference": {
+  "url": "",
+  "file": "",
+  "notes": ""
+ },
+ "sources": [
+  {
+   "id": "a532a3",
+   "file": "C:\\Users\\thecc\\MemeSupercutData\\ads\\uploads\\oldnavyrelaxedshirt\\IMG_7581.MOV",
+   "name": "IMG_7581.MOV",
+   "status": "ready",
+   "error": null,
+   "looks": [],
+   "key": "409aa546e5782b",
+   "duration": 7.083333,
+   "width": 1920,
+   "height": 1080
+  },
+  {
+   "id": "6a50d4",
+   "file": "C:\\Users\\thecc\\MemeSupercutData\\ads\\uploads\\oldnavyrelaxedshirt\\IMG_7582.MOV",
+   "name": "IMG_7582.MOV",
+   "status": "ready",
+   "error": null,
+   "looks": [],
+   "key": "c60dadbe121138",
+   "duration": 73.635,
+   "width": 1920,
+   "height": 1080
+  }
+ ],
+ "script": [
+  {
+   "id": "49c6ba",
+   "text": "Wait, are these really 100% cotton and also relaxed fit?",
+   "alts": [
+    "Wait, are these really 100% cotton and also relaxed size?"
+   ],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "3468a1",
+   "text": "You guys, this is 100% cotton muslin button down.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "dcfd99",
+   "text": "It's breathable,",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "f93c06",
+   "text": "but don't buy this in store for full price like me,",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "0a1224",
+   "text": "because now on TikTok, they're running a huge sale, so tap the orange shopping cart.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "bf0f5f",
+   "text": "I just love this washed, unbothered look that this fabric has.",
+   "alts": [
+    "I just love this wash it, unbother look that this fabric has."
+   ],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "62db1a",
+   "text": "It is cool, it is relaxed, it is breathable, it's everything I need for a button-down shirt.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "f12fe9",
+   "text": "It's free shipping.",
+   "alts": [
+    "It is free shipping, shipping from us."
+   ],
+   "optional": true,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "011b0f",
+   "text": "They have different colors.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "156efb",
+   "text": "But they're running out of stock on a lot of colors inside,",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "707b36",
+   "text": "so if you still see the link below, tap it and check if you still can get one.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  }
+ ],
+ "script_guessed": false,
+ "takes": [
+  {
+   "id": "6cf8e6",
+   "line": "3468a1",
+   "src": "6a50d4",
+   "in": 0.46,
+   "out": 2.14,
+   "look": null,
+   "alt": 0,
+   "text": "You guys, this is a hundred percent.",
+   "for_text": "You guys, this is 100% cotton muslin button down.",
+   "words": [
+    [
+     "You",
+     0.54,
+     0.84
+    ],
+    [
+     "guys,",
+     0.84,
+     1.04
+    ],
+    [
+     "this",
+     1.18,
+     1.24
+    ],
+    [
+     "is",
+     1.24,
+     1.34
+    ],
+    [
+     "a",
+     1.34,
+     1.46
+    ],
+    [
+     "hundred",
+     1.46,
+     1.6
+    ],
+    [
+     "percent.",
+     1.6,
+     1.96
+    ]
+   ],
+   "score": 0.667,
+   "status": "incomplete",
+   "flags": [
+    "stopped before the end of the line"
+   ],
+   "missing": [
+    "one",
+    "cotton",
+    "muslin",
+    "button",
+    "down"
+   ],
+   "extra": [
+    "a"
+   ],
+   "usable": false,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "d415fe",
+   "line": "3468a1",
+   "src": "6a50d4",
+   "in": 3.66,
+   "out": 5.68,
+   "look": null,
+   "alt": 0,
+   "text": "You guys, this is a hundred percent BAP.",
+   "for_text": "You guys, this is 100% cotton muslin button down.",
+   "words": [
+    [
+     "You",
+     3.74,
+     4.02
+    ],
+    [
+     "guys,",
+     4.02,
+     4.24
+    ],
+    [
+     "this",
+     4.38,
+     4.44
+    ],
+    [
+     "is",
+     4.44,
+     4.56
+    ],
+    [
+     "a",
+     4.56,
+     4.66
+    ],
+    [
+     "hundred",
+     4.66,
+     4.82
+    ],
+    [
+     "percent",
+     4.82,
+     5.18
+    ],
+    [
+     "BAP.",
+     5.18,
+     5.5
+    ]
+   ],
+   "score": 0.632,
+   "status": "incomplete",
+   "flags": [
+    "stopped before the end of the line"
+   ],
+   "missing": [
+    "one",
+    "cotton",
+    "muslin",
+    "button",
+    "down"
+   ],
+   "extra": [
+    "a",
+    "bap"
+   ],
+   "usable": false,
+   "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "7d20bf",
+   "line": "3468a1",
+   "src": "6a50d4",
+   "in": 6.12,
+   "out": 9.54,
+   "look": null,
+   "alt": 0,
+   "text": "You guys, this is 100 % cotton muslin button down.",
+   "for_text": "You guys, this is 100% cotton muslin button down.",
+   "words": [
+    [
+     "You",
+     6.2,
+     6.48
+    ],
+    [
+     "guys,",
+     6.48,
+     6.66
+    ],
+    [
+     "this",
+     6.8,
+     6.86
+    ],
+    [
+     "is",
+     6.86,
+     6.96
+    ],
+    [
+     "100%",
+     6.96,
+     7.54
+    ],
+    [
+     "cotton",
+     7.54,
+     7.98
+    ],
+    [
+     "muslin",
+     7.98,
+     8.58
+    ],
+    [
+     "button",
+     8.58,
+     8.94
+    ],
+    [
+     "down.",
+     8.94,
+     9.36
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.802,
+   "eye": 0.43,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "effc12",
+   "line": "dcfd99",
+   "src": "6a50d4",
+   "in": 9.84,
+   "out": 11.62,
+   "look": null,
+   "alt": 0,
+   "text": "It's breathable.",
+   "for_text": "It's breathable,",
+   "words": [
+    [
+     "It's",
+     9.92,
+     10.56
+    ],
+    [
+     "breathable,",
+     10.56,
+     11.44
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.895,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "95d154",
+   "line": "dcfd99",
+   "src": "6a50d4",
+   "in": 11.7,
+   "out": 13.08,
+   "look": null,
+   "alt": 0,
+   "text": "It's breathable.",
+   "for_text": "It's breathable,",
+   "words": [
+    [
+     "It's",
+     11.78,
+     12.42
+    ],
+    [
+     "breathable,",
+     12.42,
+     12.9
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 2,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.685,
+   "eye": 0.1,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "a92073",
+   "line": "dcfd99",
+   "src": "6a50d4",
+   "in": 13.67,
+   "out": 14.79,
+   "look": null,
+   "alt": 0,
+   "text": "It's breathable,",
+   "for_text": "It's breathable,",
+   "words": [
+    [
+     "It's",
+     13.75,
+     14.17
+    ],
+    [
+     "breathable,",
+     14.17,
+     14.63
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.895,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "22cd99",
+   "line": "f93c06",
+   "src": "6a50d4",
+   "in": 14.73,
+   "out": 17.69,
+   "look": null,
+   "alt": 0,
+   "text": "but don't buy this in store for full price like me,",
+   "for_text": "but don't buy this in store for full price like me,",
+   "words": [
+    [
+     "but",
+     14.81,
+     14.89
+    ],
+    [
+     "don't",
+     14.89,
+     15.19
+    ],
+    [
+     "buy",
+     15.19,
+     15.37
+    ],
+    [
+     "this",
+     15.37,
+     15.59
+    ],
+    [
+     "in",
+     15.59,
+     15.73
+    ],
+    [
+     "store",
+     15.73,
+     16.07
+    ],
+    [
+     "for",
+     16.07,
+     16.29
+    ],
+    [
+     "full",
+     16.29,
+     16.61
+    ],
+    [
+     "price",
+     16.61,
+     16.93
+    ],
+    [
+     "like",
+     16.93,
+     17.15
+    ],
+    [
+     "me,",
+     17.15,
+     17.51
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.895,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "5022a0",
+   "line": "f93c06",
+   "src": "6a50d4",
+   "in": 17.97,
+   "out": 19.27,
+   "look": null,
+   "alt": 0,
+   "text": "but don't buy this in store,",
+   "for_text": "but don't buy this in store for full price like me,",
+   "words": [
+    [
+     "but",
+     18.05,
+     18.27
+    ],
+    [
+     "don't",
+     18.27,
+     18.47
+    ],
+    [
+     "buy",
+     18.47,
+     18.59
+    ],
+    [
+     "this",
+     18.59,
+     18.77
+    ],
+    [
+     "in",
+     18.77,
+     18.99
+    ],
+    [
+     "store",
+     18.99,
+     19.15
+    ]
+   ],
+   "score": 0.737,
+   "status": "incomplete",
+   "flags": [
+    "stopped before the end of the line"
+   ],
+   "missing": [
+    "for",
+    "full",
+    "price",
+    "like",
+    "me"
+   ],
+   "extra": [],
+   "usable": false,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "1459e0",
+   "line": "f93c06",
+   "src": "6a50d4",
+   "in": 19.21,
+   "out": 20.41,
+   "look": null,
+   "alt": 0,
+   "text": "but don't buy this,",
+   "for_text": "but don't buy this in store for full price like me,",
+   "words": [
+    [
+     "but",
+     19.29,
+     19.77
+    ],
+    [
+     "don't",
+     19.77,
+     19.99
+    ],
+    [
+     "buy",
+     19.99,
+     20.11
+    ],
+    [
+     "this",
+     20.11,
+     20.39
+    ]
+   ],
+   "score": 0.588,
+   "status": "incomplete",
+   "flags": [
+    "stopped before the end of the line"
+   ],
+   "missing": [
+    "in",
+    "store",
+    "for",
+    "full",
+    "price",
+    "like",
+    "me"
+   ],
+   "extra": [],
+   "usable": false,
+   "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "b0962c",
+   "line": "f93c06",
+   "src": "6a50d4",
+   "in": 20.41,
+   "out": 22.97,
+   "look": null,
+   "alt": 0,
+   "text": "but don't buy this in store for full price like me,",
+   "for_text": "but don't buy this in store for full price like me,",
+   "words": [
+    [
+     "but",
+     20.43,
+     20.81
+    ],
+    [
+     "don't",
+     20.81,
+     21.03
+    ],
+    [
+     "buy",
+     21.03,
+     21.15
+    ],
+    [
+     "this",
+     21.15,
+     21.33
+    ],
+    [
+     "in",
+     21.33,
+     21.47
+    ],
+    [
+     "store",
+     21.47,
+     21.75
+    ],
+    [
+     "for",
+     21.75,
+     21.95
+    ],
+    [
+     "full",
+     21.95,
+     22.13
+    ],
+    [
+     "price",
+     22.13,
+     22.39
+    ],
+    [
+     "like",
+     22.39,
+     22.61
+    ],
+    [
+     "me,",
+     22.61,
+     22.85
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.816,
+   "eye": 0.48,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "93f5e2",
+   "line": "0a1224",
+   "src": "6a50d4",
+   "in": 22.91,
+   "out": 27.45,
+   "look": null,
+   "alt": 0,
+   "text": "because now on TikTok, they're running a huge sale, so click the, tap the orange shopping cart.",
+   "for_text": "because now on TikTok, they're running a huge sale, so tap the orange shopping cart.",
+   "words": [
+    [
+     "because",
+     22.99,
+     23.11
+    ],
+    [
+     "now",
+     23.11,
+     23.29
+    ],
+    [
+     "on",
+     23.29,
+     23.43
+    ],
+    [
+     "TikTok,",
+     23.43,
+     23.67
+    ],
+    [
+     "they're",
+     23.81,
+     23.99
+    ],
+    [
+     "running",
+     23.99,
+     24.17
+    ],
+    [
+     "a",
+     24.17,
+     24.31
+    ],
+    [
+     "huge",
+     24.31,
+     24.57
+    ],
+    [
+     "sale,",
+     24.57,
+     24.83
+    ],
+    [
+     "so",
+     24.99,
+     25.05
+    ],
+    [
+     "click",
+     25.05,
+     25.27
+    ],
+    [
+     "the,",
+     25.27,
+     25.47
+    ],
+    [
+     "tap",
+     25.71,
+     26.35
+    ],
+    [
+     "the",
+     26.35,
+     26.51
+    ],
+    [
+     "orange",
+     26.51,
+     26.69
+    ],
+    [
+     "shopping",
+     26.69,
+     26.97
+    ],
+    [
+     "cart.",
+     26.97,
+     27.27
+    ]
+   ],
+   "score": 0.941,
+   "status": "close",
+   "flags": [
+    "reworded (0 skipped, 2 added)"
+   ],
+   "missing": [],
+   "extra": [
+    "click",
+    "the"
+   ],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.68,
+   "eye": 0.54,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "86fb9c",
+   "line": null,
+   "src": "6a50d4",
+   "in": 31.72,
+   "out": 32.28,
+   "look": null,
+   "alt": 0,
+   "text": "What do I see?",
+   "for_text": null,
+   "words": [
+    [
+     "What",
+     31.8,
+     31.9
+    ],
+    [
+     "do",
+     31.9,
+     31.9
+    ],
+    [
+     "I",
+     31.9,
+     32.0
+    ],
+    [
+     "see?",
+     32.0,
+     32.1
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "e94667",
+   "line": "bf0f5f",
+   "src": "6a50d4",
+   "in": 32.65,
+   "out": 36.13,
+   "look": null,
+   "alt": 1,
+   "text": "I love this, I love this wash it, unbother look.",
+   "for_text": "I just love this wash it, unbother look that this fabric has.",
+   "words": [
+    [
+     "I",
+     32.73,
+     32.95
+    ],
+    [
+     "love",
+     32.95,
+     33.15
+    ],
+    [
+     "this,",
+     33.15,
+     33.39
+    ],
+    [
+     "I",
+     33.41,
+     33.83
+    ],
+    [
+     "love",
+     33.83,
+     34.01
+    ],
+    [
+     "this",
+     34.01,
+     34.25
+    ],
+    [
+     "wash",
+     34.25,
+     34.67
+    ],
+    [
+     "it,",
+     34.67,
+     34.93
+    ],
+    [
+     "unbother",
+     35.15,
+     35.61
+    ],
+    [
+     "look",
+     35.61,
+     35.95
+    ]
+   ],
+   "score": 0.636,
+   "status": "incomplete",
+   "flags": [
+    "stopped before the end of the line"
+   ],
+   "missing": [
+    "just",
+    "that",
+    "this",
+    "fabric",
+    "has"
+   ],
+   "extra": [
+    "love",
+    "this",
+    "i"
+   ],
+   "usable": false,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "bd8182",
+   "line": "bf0f5f",
+   "src": "6a50d4",
+   "in": 36.27,
+   "out": 40.37,
+   "look": null,
+   "alt": 1,
+   "text": "I just love this wash it, unbother look that this fabric has.",
+   "for_text": "I just love this wash it, unbother look that this fabric has.",
+   "words": [
+    [
+     "I",
+     36.35,
+     36.87
+    ],
+    [
+     "just",
+     36.87,
+     37.15
+    ],
+    [
+     "love",
+     37.15,
+     37.51
+    ],
+    [
+     "this",
+     37.51,
+     37.81
+    ],
+    [
+     "wash",
+     37.81,
+     38.21
+    ],
+    [
+     "it,",
+     38.21,
+     38.37
+    ],
+    [
+     "unbother",
+     38.49,
+     38.89
+    ],
+    [
+     "look",
+     38.89,
+     39.11
+    ],
+    [
+     "that",
+     39.11,
+     39.29
+    ],
+    [
+     "this",
+     39.29,
+     39.49
+    ],
+    [
+     "fabric",
+     39.49,
+     39.85
+    ],
+    [
+     "has.",
+     39.85,
+     40.19
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.86,
+   "eye": 0.6,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "75077d",
+   "line": "62db1a",
+   "src": "6a50d4",
+   "in": 43.78,
+   "out": 49.12,
+   "look": null,
+   "alt": 0,
+   "text": "It is cool, it is relaxed, it is breathable, it's everything I need for a button -down shirt.",
+   "for_text": "It is cool, it is relaxed, it is breathable, it's everything I need for a button-down shirt.",
+   "words": [
+    [
+     "It",
+     43.86,
+     44.12
+    ],
+    [
+     "is",
+     44.12,
+     44.3
+    ],
+    [
+     "cool,",
+     44.3,
+     44.64
+    ],
+    [
+     "it",
+     44.82,
+     44.88
+    ],
+    [
+     "is",
+     44.88,
+     45.0
+    ],
+    [
+     "relaxed,",
+     45.0,
+     45.54
+    ],
+    [
+     "it",
+     45.58,
+     45.84
+    ],
+    [
+     "is",
+     45.84,
+     46.0
+    ],
+    [
+     "breathable,",
+     46.0,
+     46.54
+    ],
+    [
+     "it's",
+     46.72,
+     46.9
+    ],
+    [
+     "everything",
+     46.9,
+     47.34
+    ],
+    [
+     "I",
+     47.34,
+     47.54
+    ],
+    [
+     "need",
+     47.54,
+     47.72
+    ],
+    [
+     "for",
+     47.72,
+     47.92
+    ],
+    [
+     "a",
+     47.92,
+     48.08
+    ],
+    [
+     "button-down",
+     48.08,
+     48.52
+    ],
+    [
+     "shirt.",
+     48.52,
+     48.94
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.773,
+   "eye": 0.35,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "6fdc78",
+   "line": "f12fe9",
+   "src": "6a50d4",
+   "in": 52.2,
+   "out": 52.86,
+   "look": null,
+   "alt": 1,
+   "text": "It is free,",
+   "for_text": "It is free shipping, shipping from us.",
+   "words": [
+    [
+     "It",
+     52.28,
+     52.56
+    ],
+    [
+     "is",
+     52.56,
+     52.68
+    ],
+    [
+     "free",
+     52.68,
+     52.86
+    ]
+   ],
+   "score": 0.6,
+   "status": "incomplete",
+   "flags": [
+    "stopped before the end of the line"
+   ],
+   "missing": [
+    "shipping",
+    "shipping",
+    "from",
+    "us"
+   ],
+   "extra": [],
+   "usable": false,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "a3563b",
+   "line": "f12fe9",
+   "src": "6a50d4",
+   "in": 52.88,
+   "out": 55.5,
+   "look": null,
+   "alt": 1,
+   "text": "it is free shipping, shipping from us.",
+   "for_text": "It is free shipping, shipping from us.",
+   "words": [
+    [
+     "It",
+     52.88,
+     53.18
+    ],
+    [
+     "is",
+     53.18,
+     53.46
+    ],
+    [
+     "free",
+     53.46,
+     53.8
+    ],
+    [
+     "shipping,",
+     53.8,
+     54.22
+    ],
+    [
+     "shipping",
+     54.4,
+     54.76
+    ],
+    [
+     "from",
+     54.76,
+     55.0
+    ],
+    [
+     "us.",
+     55.0,
+     55.32
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.802,
+   "eye": 0.43,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "f39c19",
+   "line": "011b0f",
+   "src": "6a50d4",
+   "in": 55.64,
+   "out": 57.1,
+   "look": null,
+   "alt": 0,
+   "text": "They have different colors.",
+   "for_text": "They have different colors.",
+   "words": [
+    [
+     "They",
+     55.72,
+     56.0
+    ],
+    [
+     "have",
+     56.0,
+     56.16
+    ],
+    [
+     "different",
+     56.16,
+     56.48
+    ],
+    [
+     "colors.",
+     56.48,
+     56.92
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.685,
+   "eye": 0.1,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "0d3507",
+   "line": "156efb",
+   "src": "6a50d4",
+   "in": 59.37,
+   "out": 62.37,
+   "look": null,
+   "alt": 0,
+   "text": "And they're running out of stock on a lot of, and they're running out,",
+   "for_text": "But they're running out of stock on a lot of colors inside,",
+   "words": [
+    [
+     "But",
+     59.45,
+     59.73
+    ],
+    [
+     "they're",
+     59.73,
+     59.97
+    ],
+    [
+     "running",
+     59.97,
+     60.15
+    ],
+    [
+     "out",
+     60.15,
+     60.35
+    ],
+    [
+     "of",
+     60.35,
+     60.51
+    ],
+    [
+     "stock",
+     60.51,
+     60.83
+    ],
+    [
+     "on",
+     60.83,
+     61.07
+    ],
+    [
+     "a",
+     61.07,
+     61.25
+    ],
+    [
+     "lot",
+     61.25,
+     61.39
+    ],
+    [
+     "of",
+     61.39,
+     61.51
+    ],
+    [
+     "and",
+     61.51,
+     61.83
+    ],
+    [
+     "they're",
+     61.83,
+     61.99
+    ],
+    [
+     "running",
+     61.99,
+     62.13
+    ],
+    [
+     "out,",
+     62.13,
+     62.27
+    ]
+   ],
+   "score": 0.69,
+   "status": "incomplete",
+   "flags": [
+    "stopped before the end of the line"
+   ],
+   "missing": [
+    "but",
+    "colors",
+    "inside"
+   ],
+   "extra": [
+    "and",
+    "and",
+    "they",
+    "are",
+    "running",
+    "out"
+   ],
+   "usable": false,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "8e3c00",
+   "line": "156efb",
+   "src": "6a50d4",
+   "in": 62.31,
+   "out": 63.13,
+   "look": null,
+   "alt": 0,
+   "text": "but they're running,",
+   "for_text": "But they're running out of stock on a lot of colors inside,",
+   "words": [
+    [
+     "But",
+     62.39,
+     62.77
+    ],
+    [
+     "they're",
+     62.77,
+     62.97
+    ],
+    [
+     "running",
+     62.97,
+     63.15
+    ]
+   ],
+   "score": 0.471,
+   "status": "incomplete",
+   "flags": [
+    "stopped before the end of the line"
+   ],
+   "missing": [
+    "out",
+    "of",
+    "stock",
+    "on",
+    "a",
+    "lot",
+    "of",
+    "colors",
+    "inside"
+   ],
+   "extra": [],
+   "usable": false,
+   "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "e45c8c",
+   "line": "156efb",
+   "src": "6a50d4",
+   "in": 63.17,
+   "out": 65.51,
+   "look": null,
+   "alt": 0,
+   "text": "but they're running out of stock on a lot of Carlos,",
+   "for_text": "But they're running out of stock on a lot of colors inside,",
+   "words": [
+    [
+     "But",
+     63.15,
+     63.61
+    ],
+    [
+     "they're",
+     63.61,
+     63.81
+    ],
+    [
+     "running",
+     63.81,
+     63.97
+    ],
+    [
+     "out",
+     63.97,
+     64.13
+    ],
+    [
+     "of",
+     64.13,
+     64.27
+    ],
+    [
+     "stock",
+     64.27,
+     64.51
+    ],
+    [
+     "on",
+     64.51,
+     64.75
+    ],
+    [
+     "a",
+     64.75,
+     64.87
+    ],
+    [
+     "lot",
+     64.87,
+     64.97
+    ],
+    [
+     "of",
+     64.97,
+     65.09
+    ],
+    [
+     "Carlos,",
+     65.09,
+     65.53
+    ]
+   ],
+   "score": 0.88,
+   "status": "incomplete",
+   "flags": [
+    "stopped before the end of the line"
+   ],
+   "missing": [
+    "colors",
+    "inside"
+   ],
+   "extra": [
+    "carlos"
+   ],
+   "usable": false,
+   "order": 2,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "861444",
+   "line": "156efb",
+   "src": "6a50d4",
+   "in": 65.55,
+   "out": 69.09,
+   "look": null,
+   "alt": 0,
+   "text": "but they're running out of stock on a lot of colors inside.",
+   "for_text": "But they're running out of stock on a lot of colors inside,",
+   "words": [
+    [
+     "But",
+     65.53,
+     66.69
+    ],
+    [
+     "they're",
+     66.69,
+     66.89
+    ],
+    [
+     "running",
+     66.89,
+     67.05
+    ],
+    [
+     "out",
+     67.05,
+     67.23
+    ],
+    [
+     "of",
+     67.23,
+     67.37
+    ],
+    [
+     "stock",
+     67.37,
+     67.65
+    ],
+    [
+     "on",
+     67.65,
+     67.89
+    ],
+    [
+     "a",
+     67.89,
+     68.01
+    ],
+    [
+     "lot",
+     68.01,
+     68.13
+    ],
+    [
+     "of",
+     68.13,
+     68.25
+    ],
+    [
+     "colors",
+     68.25,
+     68.69
+    ],
+    [
+     "inside,",
+     68.69,
+     69.09
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.802,
+   "eye": 0.43,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "939112",
+   "line": "707b36",
+   "src": "6a50d4",
+   "in": 69.11,
+   "out": 72.75,
+   "look": null,
+   "alt": 0,
+   "text": "So if you still see the link below, tap it and check if you still can get one.",
+   "for_text": "so if you still see the link below, tap it and check if you still can get one.",
+   "words": [
+    [
+     "so",
+     69.11,
+     69.35
+    ],
+    [
+     "if",
+     69.35,
+     69.49
+    ],
+    [
+     "you",
+     69.49,
+     69.59
+    ],
+    [
+     "still",
+     69.59,
+     69.79
+    ],
+    [
+     "see",
+     69.79,
+     69.97
+    ],
+    [
+     "the",
+     69.97,
+     70.11
+    ],
+    [
+     "link",
+     70.11,
+     70.29
+    ],
+    [
+     "below,",
+     70.29,
+     70.61
+    ],
+    [
+     "tap",
+     70.73,
+     70.97
+    ],
+    [
+     "it",
+     70.97,
+     71.17
+    ],
+    [
+     "and",
+     71.17,
+     71.29
+    ],
+    [
+     "check",
+     71.29,
+     71.51
+    ],
+    [
+     "if",
+     71.51,
+     71.69
+    ],
+    [
+     "you",
+     71.69,
+     71.77
+    ],
+    [
+     "still",
+     71.77,
+     71.97
+    ],
+    [
+     "can",
+     71.97,
+     72.13
+    ],
+    [
+     "get",
+     72.13,
+     72.31
+    ],
+    [
+     "one.",
+     72.31,
+     72.57
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.895,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "52491f",
+   "line": "49c6ba",
+   "src": "a532a3",
+   "in": 0.65,
+   "out": 5.25,
+   "look": null,
+   "alt": 1,
+   "text": "Wait, are these really 100 % cotton and also relaxed size?",
+   "for_text": "Wait, are these really 100% cotton and also relaxed size?",
+   "words": [
+    [
+     "Wait,",
+     0.73,
+     1.19
+    ],
+    [
+     "are",
+     1.49,
+     1.59
+    ],
+    [
+     "these",
+     1.59,
+     1.83
+    ],
+    [
+     "really",
+     1.83,
+     2.19
+    ],
+    [
+     "100%",
+     2.19,
+     3.01
+    ],
+    [
+     "cotton",
+     3.01,
+     3.49
+    ],
+    [
+     "and",
+     3.49,
+     3.79
+    ],
+    [
+     "also",
+     3.79,
+     4.15
+    ],
+    [
+     "relaxed",
+     4.15,
+     4.61
+    ],
+    [
+     "size?",
+     4.61,
+     5.07
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [
+    [
+     1.31,
+     1.37
+    ]
+   ],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.953,
+   "eye": 0.87,
+   "variant": null,
+   "speed": null,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  }
+ ],
+ "hooks": [],
+ "cta": "",
+ "style": {
+  "subs": {
+   "on": true,
+   "font": "Arial Black",
+   "size": 84,
+   "color": "#FFFFFF",
+   "highlight": "#FFE14D",
+   "outline": "#000000",
+   "outline_w": 6,
+   "uppercase": false,
+   "y": 0.66,
+   "words_per_line": 3,
+   "karaoke": true,
+   "pop": true
+  },
+  "speed": 1.0,
+  "pace": {
+   "auto": true,
+   "wps": 4.8,
+   "max": 1.1,
+   "pauses": true
+  },
+  "title": {
+   "on": true,
+   "y": 0.42,
+   "preset": "meme",
+   "font": "Impact",
+   "size": 150,
+   "color": "#FFFFFF",
+   "box_color": "#000000",
+   "accent": "#FFE14D",
+   "outline_w": 10,
+   "uppercase": true,
+   "rotate": -4,
+   "pop": true
+  },
+  "hook": {
+   "on": true,
+   "seconds": 3.0,
+   "y": 0.2,
+   "preset": "box",
+   "font": "Arial Black",
+   "size": 58,
+   "color": "#000000",
+   "box_color": "#FFFFFF",
+   "accent": "#FE2C55",
+   "outline_w": 0,
+   "uppercase": false,
+   "rotate": 0,
+   "pop": true
+  },
+  "cta": {
+   "on": false,
+   "y": 0.8,
+   "preset": "sticker",
+   "font": "Arial Black",
+   "size": 52,
+   "color": "#FFFFFF",
+   "box_color": "#FE2C55",
+   "accent": "#FFE14D",
+   "outline_w": 0,
+   "uppercase": false,
+   "rotate": -2,
+   "pop": true
+  },
+  "product_box": null,
+  "cart_pointer": {
+   "on": true,
+   "words": "orange cart, cart, basket",
+   "seconds": 2.2,
+   "color": "#FF8A00"
+  },
+  "punch_in": 1.12,
+  "pad_before": 0.08,
+  "pad_after": 0.18,
+  "voice_cleanup": false,
+  "loudness": -14
+ },
+ "skip": [],
+ "from_inbox": true,
+ "assets": [],
+ "overlays": [],
+ "renders": {},
+ "saved": {}
+}
