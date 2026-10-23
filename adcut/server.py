@@ -274,6 +274,12 @@ def _job_for(sid):
     return live[-1] if live else None
 
 
+@app.get("/studio-theme.css")
+def studio_theme():
+    """The shared Studio design system (shared/studio-theme.css), loaded last by every app."""
+    return FileResponse(ROOT / "shared" / "studio-theme.css", media_type="text/css", headers={"Cache-Control": "no-cache"})
+
+
 @app.get("/api/busy")
 def busy():
     """For Studio (studio/): don't restart this app for an update while it's mid-job."""
