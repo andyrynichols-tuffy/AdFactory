@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 61,
+ "rev": 64,
  "title": "MenPen 1",
  "created": 1792372407.2218602,
  "product": {
@@ -3047,12 +3047,13 @@
  },
  "saved": {},
  "sheet": {
-  "sig": "585902906b31",
+  "sig": "1d8e953dbbe1",
   "lines": [
-   "This is every celebrity's grooming secret.",
-   "They are all darkening their eyebrows to give their face a more defined look.",
-   "Dark eyebrows frame your face and make your eyes pop out more.",
-   "If you want that celebrity look, try the MenPen today."
+   "Shot 1: Pen across the brows",
+   "Shot 2: Close-up: filling in the brow",
+   "Shot 3: Pointing the pen at the unfilled brow",
+   "Shot 4: The filled-in brow",
+   "Shot 5: Filling in, hand-held"
   ],
   "row": "Manpen 1"
  }
