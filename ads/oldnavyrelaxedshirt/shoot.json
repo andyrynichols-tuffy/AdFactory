@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 15,
+ "rev": 22,
  "title": "OldNavyRelaxedShirt",
  "created": 1792343374.2037246,
  "product": {
@@ -2349,5 +2349,22 @@
   "notes": "",
   "assigned": null,
   "done": false
+ },
+ "sheet": {
+  "row": "OldNavyRelaxedShirt",
+  "sig": "cacd17193f5a",
+  "lines": [
+   "Wait, are these really 100% cotton and also relaxed fit?",
+   "You guys, this is 100% cotton muslin button down.",
+   "It's breathable,",
+   "but don't buy this in store for full price like me,",
+   "because now on TikTok, they're running a huge sale, so tap the orange shopping cart.",
+   "I just love this washed, unbothered look that this fabric has.",
+   "It is cool, it is relaxed, it is breathable, it's everything I need for a button-down shirt.",
+   "It's free shipping.",
+   "They have different colors.",
+   "But they're running out of stock on a lot of colors inside,",
+   "so if you still see the link below, tap it and check if you still can get one."
+  ]
  }
 }

@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 170,
+ "rev": 179,
  "title": "Game Night",
  "created": 1792343278.6271605,
  "product": {
@@ -115458,5 +115458,21 @@
   "notes": "",
   "assigned": null,
   "done": false
+ },
+ "sheet": {
+  "row": "Game Night",
+  "sig": "90bae8756830",
+  "lines": [
+   "Hook (cold open)",
+   "Clip 1",
+   "Clip 2",
+   "Clip 3",
+   "Clip 4",
+   "Clip 5",
+   "Clip 6",
+   "Clip 7",
+   "Clip 8",
+   "Clip 9"
+  ]
  }
 }

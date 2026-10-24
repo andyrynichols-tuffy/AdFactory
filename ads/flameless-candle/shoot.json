@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 87,
+ "rev": 94,
  "title": "Flameless candle",
  "created": 1792270633.981801,
  "product": {
@@ -7752,5 +7752,26 @@
   "notes": "",
   "assigned": null,
   "done": false
+ },
+ "sheet": {
+  "row": "Flameless candle",
+  "sig": "4e4a90926df0",
+  "lines": [
+   "Ow!",
+   "I'm just kidding, it's not a real flame.",
+   "But you can blow it out.",
+   "Lid off, light on,",
+   "lid on, light off.",
+   "This is the Flameless Candle by Lifelines.",
+   "And it doesn't just look nice.",
+   "It's also an aroma diffuser as well, so it smells freaking great.",
+   "Depending on what color you get, you get a different scent.",
+   "This one's vanilla tangerine.",
+   "They just snap right in the bottom.",
+   "And a full charge gets you 50 hours of usage.",
+   "I'm getting one for every room.",
+   "If I can be fast enough, because some of the colors are already sold out.",
+   "If you want one before they're all gone, I'll put the link at the bottom."
+  ]
  }
 }
