@@ -182,6 +182,8 @@ def _order_dates(o, typed=None):
     worked-out date follows the delivery date when that changes."""
     if typed and typed != o.get("_was"):
         o["return_auto"] = False
+    if o.get("delivered") and o.get("status") in ("ordered", "shipped"):
+        o["status"] = "delivered"
     if o.get("return_days") not in (None, "") and (not o.get("return_by") or o.get("return_auto")):
         start = _day(o.get("delivered")) or _day(o.get("ordered"))
         if start:
@@ -363,7 +365,7 @@ def _all_shoots():
                 s = store.load(sid)
             except Exception:
                 continue
-            c = _cache[sid] = (mt, s, {"videos": store.videos(s)["count"], "products": {}})
+            c = _cache[sid] = (mt, s, {"videos": store.videos(s)["count"], "products": {}, "made": None})
         out.append((sid, c[1], c[2]))
     return sorted(out, key=lambda x: -(x[1].get("created") or 0))
 
@@ -463,17 +465,31 @@ def summary() -> dict:
             x["avg_views"] = round(x["views"] / x["tracked"]) if x["tracked"] else None
             x["eng"] = round(x["eng"] / x["tracked"], 1) if x["tracked"] else None
     made = {}
-    for b in shoots:
-        if b["product"]:
-            m = made.setdefault(b["product"], {"shoots": 0, "videos": 0})
+    for sid, s, info in _all_shoots():
+        if info["made"] is None:  # {product: videos} for this shoot
+            info["made"] = {}
+            for n in range(1, info["videos"] + 1):
+                pid = video_product(s, n, d)
+                if pid:
+                    info["made"][pid] = info["made"].get(pid, 0) + 1
+            pid = plan_of(s)["product"]
+            if pid and not info["made"]:
+                info["made"][pid] = 0  # planned, nothing made yet
+        for pid, k in info["made"].items():
+            m = made.setdefault(pid, {"shoots": 0, "videos": 0})
             m["shoots"] += 1
-            m["videos"] += b["videos"]
+            m["videos"] += k
     scripts_used = {}
     for b in shoots:
         if b["script"]:
             scripts_used[b["script"]] = scripts_used.get(b["script"], 0) + 1
     return {"per": per, "made": made, "scripts_used": scripts_used, "alerts": alerts(d, posts, shoots),
             "accounts": {a["id"]: account_numbers(stats, a) for a in d["accounts"]}}
+
+
+def _when(n):
+    return ("today" if n == 0 else "tomorrow" if n == 1 else f"in {n} days" if n > 0
+            else "was yesterday" if n == -1 else f"was {-n} days ago")
 
 
 def alerts(d, posts, shoots) -> list:
@@ -487,14 +503,14 @@ def alerts(d, posts, shoots) -> list:
         left = days_left(o["return_by"])
         if o["sample"] == "refundable" and left is not None and -3 <= left <= 7:
             out.append({"kind": "return", "level": "bad" if left <= 2 else "warn", "order": o["id"], "days": left,
-                        "text": f"{name}: last day to return {'was ' + str(-left) + ' days ago' if left < 0 else 'today' if left == 0 else 'in ' + str(left) + ' day' + ('s' if left != 1 else '')}"})
+                        "text": f"{name}: last day to return {_when(left)}"})
         due = days_left(o["video_due"])
         if due is not None and due <= 7 and (o["product"], o["account"]) not in posted_on:
             out.append({"kind": "due", "level": "bad" if due <= 2 else "warn", "order": o["id"], "days": due,
-                        "text": f"{name}: video due {'today' if due == 0 else ('in ' + str(due) + ' days') if due > 0 else str(-due) + ' days ago'}"})
+                        "text": f"{name}: video due {_when(due)}"})
     for b in shoots:
         if b["planned"] and b["stage"] == "film" and b["due_in"] is not None and b["due_in"] <= 3:
-            out.append({"kind": "film", "level": "warn", "sid": b["sid"], "days": b["due_in"], "text": f"{b['title']}: filming due"})
+            out.append({"kind": "film", "level": "warn", "sid": b["sid"], "days": b["due_in"], "text": f"{b['title']}: filming due {_when(b['due_in'])}"})
     return sorted(out, key=lambda a: a["days"])
 
 
