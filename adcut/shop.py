@@ -116,9 +116,21 @@ def load() -> dict:
         return d
 
 
+ON_CHANGE = []  # callbacks after any change (server.py: sync the spreadsheet soon)
+
+
+def changed():
+    for fn in ON_CHANGE:
+        try:
+            fn()
+        except Exception:
+            pass
+
+
 def save(d):
     with _lock:
         _write(FILE, d)
+    changed()
 
 
 def update(fn):
@@ -271,7 +283,9 @@ def set_plan(sid: str, changes: dict) -> dict:
             s["product"]["name"] = p["name"]
             if p["link"]:
                 s["product"]["link"] = p["link"]
-    return store.update(sid, fn)
+    out = store.update(sid, fn)
+    changed()
+    return out
 
 
 def new_video(body: dict) -> dict:
@@ -338,6 +352,7 @@ def posting(sid: str, body: dict) -> dict:
             m["posted"] = bool(body["posted"])
             m["posted_at"] = (m.get("posted_at") or _now()) if body["posted"] else None
     s = store.update(sid, fn)
+    changed()
     m = s["saved"][n]
     if m.get("url"):
         threading.Thread(target=_refresh_one, args=(m["url"],), daemon=True).start()
