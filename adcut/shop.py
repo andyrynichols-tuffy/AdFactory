@@ -33,7 +33,7 @@ KINDS = {
     "orders": {"product": None, "account": None, "order_no": "", "ordered": "", "delivered": "", "status": "ordered",
                "sample": "free", "cost": "", "return_days": None, "return_by": "", "video_due": "", "notes": ""},
     "tags": {"name": "", "group": "Format", "description": "", "color": ""},
-    "scripts": {"title": "", "text": "", "tags": [], "product": None, "notes": "", "from_shoot": None},
+    "scripts": {"title": "", "text": "", "tags": [], "product": None, "notes": "", "from_shoot": None, "edited": False},
 }
 PLAN = {"product": None, "account": None, "creator": None, "editor": None, "tags": [], "script": None,
         "due": "", "notes": "", "assigned": None, "done": False}
@@ -710,18 +710,37 @@ def _seed(d):
         store.update(sid, fn)
 
 
-def adopt_new_shoots():
-    """Shoots made outside the New-video form (the inbox, the Scripts & Links sheet) get a
-    library script from their sheet row, once."""
-    d = load()
-    have = {x["from_shoot"] for x in d["scripts"] if x.get("from_shoot")}
+def adopt_sheet():
+    """Every row of the Scripts & Links sheet is a library script too (its shoot linked to
+    it), kept in step with the sheet unless the script was edited here."""
+    from . import sheet
+    path = sheet.find()
+    if not path:
+        return 0
+    try:
+        rows = sheet.rows(path)
+    except Exception:  # open in Excel / half-synced: next pass
+        return 0
+    by_row = {}
     for r in store.shoots():
-        if r["id"] in have:
-            continue
         s = store.load(r["id"])
-        rows = (s.get("sheet") or {}).get("lines")
-        if not rows or len(rows) < 2 or plan_of(s)["script"]:
+        name = ((s.get("sheet") or {}).get("row") or "").strip().lower()
+        if name:
+            by_row[name] = (r["id"], s)
+    n = 0
+    for row in rows:
+        if not row["script"].strip() or row["shoot"].lower() not in by_row:
             continue
-        sc = upsert("scripts", {"title": s["title"], "text": "\n".join(rows), "product": plan_of(s)["product"],
-                                "from_shoot": r["id"]})
-        store.update(r["id"], lambda x, i=sc["id"]: x.__setitem__("shop", {**plan_of(x), "script": i}))
+        sid, s = by_row[row["shoot"].lower()]
+        d = load()
+        cur = next((x for x in d["scripts"] if x.get("from_shoot") == sid), None)
+        if cur and (cur["text"] == row["script"] or cur.get("edited")):
+            continue
+        pl = plan_of(s)
+        sc = upsert("scripts", {**(cur or {}), "title": cur["title"] if cur else s["title"], "text": row["script"],
+                                "product": (cur or {}).get("product") or pl["product"], "tags": (cur or {}).get("tags") or pl["tags"],
+                                "from_shoot": sid, "notes": (cur or {}).get("notes") or "From the Scripts & Links sheet"})
+        if pl["script"] != sc["id"]:
+            store.update(sid, lambda x, i=sc["id"]: x.__setitem__("shop", {**plan_of(x), "script": i}))
+        n += 1
+    return n

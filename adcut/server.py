@@ -22,12 +22,14 @@ from . import assets as assetmod
 from . import inbox
 from . import fx as fxmod
 from . import sounds as soundsmod
-from . import auth, preview, render, safety, sheet, store, takes, tunnel
+from . import auth, preview, render, safety, sheet, shop, shopapi, store, takes, tunnel
 
 EDITOR_DIR = ROOT / "adeditor"
 app = FastAPI(title="Ad Factory")
 JOBS = {}
 GPU = threading.Lock()  # one transcribe/render at a time
+app.include_router(shopapi.router)  # the TikTok Shop side: products, accounts, library, queue, analytics
+shopapi.BUSY = lambda: {j["shoot"] for j in JOBS.values() if j.get("state") in ("queued", "running")}
 
 
 @app.middleware("http")
@@ -79,7 +81,14 @@ def _sid(sid):
 
 @app.get("/api/shoots")
 def list_shoots():
-    return store.shoots()
+    rows = store.shoots()
+    for r in rows:
+        try:
+            pl = shop.plan_of(store.load(r["id"]))
+            r.update(shop={k: pl[k] for k in ("product", "account", "creator", "editor", "tags", "script", "due")})
+        except Exception:
+            r["shop"] = None
+    return rows
 
 
 @app.post("/api/shoots")
@@ -387,9 +396,15 @@ def _inbox_tick(_=None):
             _inbox_process(sid)
     try:
         sheet.sync(_inbox_process)  # the "Scripts & Links" spreadsheet: a shoot per row
+        if sheet.STATE.get("synced") and sheet.STATE.get("synced") != _ADOPTED.get("at"):
+            _ADOPTED["at"] = sheet.STATE["synced"]
+            shop.adopt_sheet()  # ...and a library script per row
     except Exception as e:  # noqa: BLE001  (shown on the home page)
         sheet.STATE["error"] = str(e)
     inbox.tick(_inbox_process)
+
+
+_ADOPTED = {"at": None}
 
 
 @app.get("/api/sheet")
@@ -404,6 +419,7 @@ def _start_inbox():
             _inbox_tick()
             time.sleep(30)
     threading.Thread(target=loop, daemon=True, name="inbox").start()
+    shop.start_background()  # TikTok numbers for the accounts + posted videos, every few hours
     tunnel.start(int(os.environ.get("ADCUT_PORT", "8770")))  # the web link (adcut/tunnel.py)
 
 
@@ -527,6 +543,7 @@ def start_download(sid: str, body: dict = Body(...)):
 def saved_list():
     """Every saved video across all shoots (the posting queue)."""
     out = []
+    shopd, stats = shop.load(), shop.load_stats()
     for row in store.shoots():
         s = store.load(row["id"])
         count = store.videos(s)["count"]
@@ -548,6 +565,8 @@ def saved_list():
                 "downloaded": r.get("downloaded"),
                 "product": s["product"]["name"], "link": s["product"]["link"],
                 "description": s["product"]["description"], "hashtags": s["product"]["hashtags"],
+                "account": m.get("account") or shop.plan_of(s)["account"], "url": m.get("url"),
+                "product_id": shop.video_product(s, n, shopd), "views": ((stats["videos"].get(m.get("video_id") or "") or {}).get("snapshots") or [{}])[-1].get("views"),
             })
     return sorted(out, key=lambda r: (r["title"].lower(), r["n"]))
 
