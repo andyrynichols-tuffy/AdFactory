@@ -31,7 +31,7 @@ KINDS = {
     # sample: free (free sample) | refundable (bought, can go back until return_by) | paid (bought to keep)
     # status: ordered | shipped | delivered | kept | returned | cancelled
     "orders": {"product": None, "account": None, "order_no": "", "ordered": "", "delivered": "", "status": "ordered",
-               "sample": "free", "cost": "", "return_days": None, "return_by": "", "video_due": "", "notes": ""},
+               "sample": "free", "cost": "", "return_days": None, "return_by": "", "return_auto": False, "video_due": "", "notes": ""},
     "tags": {"name": "", "group": "Format", "description": "", "color": ""},
     "scripts": {"title": "", "text": "", "tags": [], "product": None, "notes": "", "from_shoot": None, "edited": False},
 }
@@ -140,6 +140,7 @@ def upsert(kind: str, obj: dict) -> dict:
 
     def fn(d):
         cur = by_id(d, kind, obj.get("id"))
+        was = cur.get("return_by") if cur else None
         if cur:
             cur.update({k: v for k, v in obj.items() if k in KINDS[kind]}, updated=_now())
             out = cur
@@ -150,7 +151,8 @@ def upsert(kind: str, obj: dict) -> dict:
         if kind == "tags" and not out.get("color"):
             out["color"] = GROUP_COLORS.get(out["group"], "#adb5bd")
         if kind == "orders":
-            _order_dates(out)
+            out["_was"] = was
+            _order_dates(out, obj.get("return_by") if obj.get("return_by") != was else None)
         return out
     return update(fn)
 
@@ -175,12 +177,17 @@ def _day(s):
         return None
 
 
-def _order_dates(o):
-    """return_by = delivered + return_days when it isn't typed in."""
-    if o.get("return_days") not in (None, "") and not o.get("return_by"):
+def _order_dates(o, typed=None):
+    """return_by = delivered (else ordered) + return_days, unless a date was typed in. A
+    worked-out date follows the delivery date when that changes."""
+    if typed and typed != o.get("_was"):
+        o["return_auto"] = False
+    if o.get("return_days") not in (None, "") and (not o.get("return_by") or o.get("return_auto")):
         start = _day(o.get("delivered")) or _day(o.get("ordered"))
         if start:
             o["return_by"] = (start + timedelta(days=int(o["return_days"]))).isoformat()
+            o["return_auto"] = True
+    o.pop("_was", None)
 
 
 def days_left(s):

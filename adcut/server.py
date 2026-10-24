@@ -81,14 +81,7 @@ def _sid(sid):
 
 @app.get("/api/shoots")
 def list_shoots():
-    rows = store.shoots()
-    for r in rows:
-        try:
-            pl = shop.plan_of(store.load(r["id"]))
-            r.update(shop={k: pl[k] for k in ("product", "account", "creator", "editor", "tags", "script", "due")})
-        except Exception:
-            r["shop"] = None
-    return rows
+    return store.shoots()  # each row's "shop" = the plan (product, account, creator…: adcut/shop.py)
 
 
 @app.post("/api/shoots")

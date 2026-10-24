@@ -238,6 +238,7 @@ def shoots() -> list:
                     "lines": len(s["script"]), "sources": len(s["sources"]),
                     "rendered": len(s["renders"]), "product": s["product"]["name"],
                     "inbox": bool(s.get("from_inbox")), "script_guessed": bool(s.get("script_guessed")),
+                    "shop": s.get("shop"),
                     "batches": len({x.get("batch", 1) for x in s["sources"]}),
                     "ready": bool(s["sources"]) and all(x.get("status") == "ready" for x in s["sources"])})
     return sorted(out, key=lambda r: -r["created"])
