@@ -156,7 +156,7 @@ async function flushSave() { clearTimeout(saveT); if (S.dirty) await save(); }
 
 // ---------- home ----------
 async function showHome() {
-  showHomeTab(LS.get("homeTab", "shoots"));
+  showHomeTab(LS.get("homeTab", "overview"));
   renderInbox();
   S.sid = null; S.shoot = null; pause();
   history.replaceState(null, "", "#");
@@ -170,6 +170,7 @@ async function showHome() {
       <div><span class="big">${r.videos}</span> videos</div>
       <div class="meta">${r.lines} script lines · ${r.sources} raw file${r.sources === 1 ? "" : "s"} · ${r.rendered} rendered</div>
       ${r.product ? `<div class="meta">🛒 ${esc(r.product)}</div>` : ""}
+      ${r.shop && typeof accChip === "function" && (r.shop.account || r.shop.creator) ? `<div class="meta">${accChip(r.shop.account)} ${who(r.shop.creator)}</div>` : ""}
       ${!r.ready && r.sources ? '<div class="meta pending">⏳ pre-cutting…</div>' : r.inbox && !seenShoots().includes(r.id) ? '<div class="meta newb">📥 NEW from the inbox</div>' : ""}
       <div class="meta">${new Date(r.created * 1000).toLocaleDateString(undefined, { month: "short", day: "numeric" })}</div>
       <div class="cardModes"><button data-open="review">👁 Review</button><button data-open="edit">✏️ Edit</button></div>
@@ -1098,7 +1099,7 @@ $("#rendered").addEventListener("click", async e => {
   if (e.target.closest("#starOne")) toggleSaved(S.vid);
 });
 $("#rendered").addEventListener("change", e => {
-  if (e.target.id === "postedOne") setPosted(S.vid, e.target.checked);
+  if (e.target.id === "postedOne") { const n = S.vid; setPosted(n, e.target.checked); if (e.target.checked) flushSave().then(() => postDialog(S.sid, n)); }
 });
 $("#folderBtn").onclick = () => api(`/api/shoots/${S.sid}/open-folder?which=downloads`, { json: {} }).catch(e => toast(e.message));
 $("#playVid").onclick = () => (P.on && P.mode === "video" ? pause() : playVideo());
@@ -2005,10 +2006,13 @@ function setPosted(n, posted) {
 // home: Shoots | Saved
 let savedRows = [];
 function showHomeTab(tab) {
+  if (![...$$(".homeTabs button")].some(b => b.dataset.home === tab)) tab = "overview";
   LS.set("homeTab", tab);
   $$(".homeTabs button").forEach(b => b.classList.toggle("on", b.dataset.home === tab));
   $("#homeShoots").hidden = $("#shootsHead").hidden = tab !== "shoots";
   $("#homeSaved").hidden = $("#savedHead").hidden = tab !== "saved";
+  $$(".shopPane").forEach(p => (p.hidden = p.dataset.pane !== tab));  // shop.js: Overview, Queue, Products, Analytics, Library
+  if (typeof PANES !== "undefined" && PANES[tab]) PANES[tab]().catch(e => toast("Couldn't load: " + e.message));
   loadSaved();
 }
 $$(".homeTabs button").forEach(b => b.onclick = () => showHomeTab(b.dataset.home));
@@ -2035,10 +2039,11 @@ function renderSaved() {
       ${r.thumb ? `<img loading="lazy" data-act="open" src="${r.thumb}" alt="">` : `<div class="noimg" data-act="open"></div>`}
       <div class="sbody">
         <div class="scap" data-act="open"><b>${esc(r.title)}</b> · video ${r.n} <span class="muted">${r.duration ? fmt(r.duration) : ""}</span></div>
-        <div class="sfrom">${r.product ? `🛒 ${esc(r.product)} · ` : ""}saved ${fmtDate(r.saved_at)}${r.posted && r.posted_at ? ` · posted ${fmtDate(r.posted_at)}` : ""}${r.downloaded ? " · ⬇ downloaded" : ""}</div>
+        <div class="sfrom">${r.product ? `🛒 ${esc(r.product)} · ` : ""}${typeof accChip === "function" && r.account ? accChip(r.account) + " · " : ""}saved ${fmtDate(r.saved_at)}${r.posted && r.posted_at ? ` · posted ${fmtDate(r.posted_at)}` : ""}${r.downloaded ? " · ⬇ downloaded" : ""}${r.views != null ? ` · <b>${num(r.views)}</b> views` : ""}</div>
         ${!r.exists ? '<div class="warnx">⚠ this video no longer exists (the stacks got shorter)</div>' : r.changed ? '<div class="warnx">⚠ changed since you saved it</div>' : ""}
         <div class="sacts">
           <label class="chk"><input type="checkbox" data-act="posted" ${r.posted ? "checked" : ""}> Posted</label>
+          ${r.posted ? `<button data-act="tiktok" title="Which account it went up on, and its TikTok link (for Analytics)">${r.url ? "📊 Link ✓" : "🔗 Add TikTok link"}</button>` : ""}
           <button data-act="copy" ${r.description || r.hashtags ? "" : "disabled"} title="Copy the TikTok description + hashtags">⧉ Copy desc.</button>
           ${r.link ? `<button data-act="link" title="Copy the TikTok Shop link">⧉ Link</button>` : ""}
           ${r.rendered ? `<a class="btnlink" href="/api/output/${r.sid}/${r.n}" target="_blank" title="Watch the last render${r.fresh ? "" : " (out of date)"}">▶︎ Watch</a>` : ""}
@@ -2058,12 +2063,14 @@ $("#savedList").addEventListener("click", async e => {
   if (act === "link") copyText(r.link, "link");
   if (act === "unsave") { await api(`/api/shoots/${sid}/saved`, { json: { n, saved: false } }); loadSaved(); }
   if (act === "download") homeDownload([[sid, n]]);
+  if (act === "tiktok") postDialog(sid, n);
 });
 $("#savedList").addEventListener("change", async e => {
   if (e.target.dataset.act !== "posted") return;
   const li = e.target.closest("li.saved");
   await api(`/api/shoots/${li.dataset.sid}/saved`, { json: { n: +li.dataset.n, posted: e.target.checked } });
   loadSaved();
+  if (e.target.checked) postDialog(li.dataset.sid, +li.dataset.n);  // which account + its TikTok link
 });
 $("#dlAllSaved").onclick = () => homeDownload(savedList("todo").filter(r => r.exists).map(r => [r.sid, r.n]));
 $("#openPosting").onclick = async () => {
@@ -2659,6 +2666,7 @@ async function hdUpload(shoot = null) {
         const end = Math.min(f.size, off + PIECE);
         $("#hdMsg").textContent = `Uploading ${f.name} (${i + 1}/${HD.files.length}) · ${Math.round((sent + off) / total * 100)}%`;
         $("#hdFill").style.width = ((sent + off) / total * 100) + "%";
+        if (!S.sid) { $("#jobBox").hidden = false; $("#jobMsg").textContent = $("#hdMsg").textContent; $("#jobBox .bar i").style.width = $("#hdFill").style.width; }
         const q = `name=${encodeURIComponent(f.name)}&folder=${encodeURIComponent(folder)}&shoot=${encodeURIComponent(shoot || "")}&offset=${off}&total=${f.size}`;
         let r;
         try { r = await fetch(`/api/inbox/upload?${q}`, { method: "PUT", body: f.slice(off, end) }); }
@@ -2677,6 +2685,7 @@ async function hdUpload(shoot = null) {
   window.removeEventListener("beforeunload", stay);
   try { await lock?.release(); } catch { }
   hdShow("Idle"); HD.files = [];
+  if (!S.sid) $("#jobBox").hidden = true;
   renderInbox(); setTimeout(refreshHome, 2500);
 }
 {
@@ -2811,7 +2820,7 @@ $("#rvGrid").addEventListener("click", async e => {
     if (v.saved && !confirm(`Unsave video ${n}? Its clips get unlocked and can move to other videos.`)) return;
     await api(`/api/shoots/${RV.sid}/saved`, { json: { n, saved: !v.saved } }); return loadReview();
   }
-  if (act === "posted") { await api(`/api/shoots/${RV.sid}/saved`, { json: { n, posted: !v.posted } }); return loadReview(); }
+  if (act === "posted") { await api(`/api/shoots/${RV.sid}/saved`, { json: { n, posted: !v.posted } }); if (!v.posted) postDialog(RV.sid, n); return loadReview(); }
 });
 $("#modeSeg").addEventListener("click", async e => {
   const m = e.target.closest("[data-mode]")?.dataset.mode; if (!m) return;

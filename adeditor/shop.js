@@ -72,7 +72,7 @@ function fieldHtml(f, v) {
   if (f.type === "check") return `<label class="chk ${f.wide ? "wide" : ""}"><input type="checkbox" name="${f.k}" ${v ? "checked" : ""}> ${lab}</label>`;
   if (f.type === "tags") return `<div class="${cls} wide"><span>${lab}</span><div class="tagPick" data-tagpick="${f.k}"></div></div>`;
   if (f.type === "note") return `<p class="hint wide">${f.label}</p>`;
-  return `<label class="${cls}">${lab}<input name="${f.k}" type="${f.type || "text"}" value="${esc(v ?? "")}" placeholder="${esc(f.placeholder || "")}" ${f.list ? `list="${f.k}List"` : ""} ${req}>${f.list ? `<datalist id="${f.k}List">${f.list.map(x => `<option value="${esc(x)}">`).join("")}</datalist>` : ""}</label>`;
+  return `<label class="${cls}">${lab}<input name="${f.k}" type="${f.type || "text"}" value="${esc(v ?? f.def ?? "")}" placeholder="${esc(f.placeholder || "")}" ${f.list ? `list="${f.k}List"` : ""} ${req}>${f.list ? `<datalist id="${f.k}List">${f.list.map(x => `<option value="${esc(x)}">`).join("")}</datalist>` : ""}</label>`;
 }
 function readFields(form, fields, base) {
   const out = { ...base };
@@ -118,7 +118,7 @@ const F = {
     { k: "notes", label: "Notes", type: "textarea", wide: true, placeholder: "niche, shop/affiliate details…" },
     { k: "", type: "note", label: "🔒 No passwords here: keep those in your password manager. The handle is only used to read the account's public TikTok page." }],
   creators: () => [
-    { k: "name", label: "Name", required: true }, { k: "color", label: "Color", type: "color" },
+    { k: "name", label: "Name", required: true }, { k: "color", label: "Color", type: "color", def: "#4dabf7" },
     { k: "notes", label: "Notes", type: "textarea", wide: true }],
   products: () => [
     { k: "name", label: "Product name", required: true, wide: true, placeholder: "what to search when tagging it in TikTok" },
@@ -153,7 +153,7 @@ const F = {
     { k: "name", label: "Name", required: true },
     { k: "group", label: "Group", list: allGroups(), def: "Format", hint: "Format, Hook, Style, Tone or your own" },
     { k: "description", label: "What it means (shown on hover)", type: "textarea", wide: true, rows: 3, required: true },
-    { k: "color", label: "Color", type: "color" }],
+    { k: "color", label: "Color", type: "color", def: "#4dabf7" }],
 };
 const NOUN = { accounts: "account", creators: "person", products: "product", orders: "order", scripts: "script", tags: "tag" };
 async function editThing(kind, obj = {}, extra = {}) {
@@ -186,11 +186,11 @@ async function listDlg(kind, title, hint) {
   dlg.onclick = async e => {
     const ed = e.target.closest("[data-edit]"), add = e.target.closest("[data-add]");
     if (!ed && !add) return;
-    dlg.close();
+    dlg.close("edit");
     await editThing(kind, ed ? byId(kind, ed.dataset.edit) : {});
     await shopLoad(); draw(); dlg.showModal();
   };
-  dlg.onclose = () => { if (dlg.returnValue === "close") { dlg.remove(); shopRefresh(); } };
+  dlg.onclose = () => { if (dlg.returnValue !== "edit") { dlg.remove(); shopRefresh(); } };
   dlg.showModal();
 }
 async function shopRefresh() { await shopLoad(); const t = LS.get("homeTab", "overview"); if (PANES[t]) PANES[t](); }
@@ -459,7 +459,6 @@ async function renderProducts() {
   if (tab === "orders") {
     const rank = o => ["returned", "cancelled", "kept"].includes(o.status) ? 1e6 : Math.min(o._return_left ?? 1e5, o._due_left ?? 1e5);
     const list = [...d.orders].sort((a, b) => rank(a) - rank(b));
-    const postedOn = (pid, aid) => (sm.per.products[pid] ? null : 0);
     el.innerHTML = head + `<div class="tblWrap"><table class="tbl"><thead><tr><th>Product</th><th>Account</th><th>Kind</th><th>Status</th><th>Ordered</th><th>Delivered</th><th>Last day to return</th><th>Video due</th><th>Order #</th><th></th></tr></thead><tbody>
       ${list.map(o => { const open = !["returned", "cancelled", "kept"].includes(o.status);
         return `<tr data-order="${o.id}" class="${open ? "" : "closed"}"><td><b>${esc(prodName(o.product) || "?")}</b></td><td>${accChip(o.account)}</td><td>${SAMPLE[o.sample] || ""}</td>
@@ -492,8 +491,8 @@ $("#paneProducts").addEventListener("click", async e => {
   const go = e.target.closest("[data-go]")?.dataset.go;
   if (go === "product") return editThing("products", {});
   if (go === "order") { if (!SHOP.d.accounts.length) toast("Add the accounts first (Analytics → Accounts) so orders can say which one ordered", 5000); return editThing("orders", { sample: "free", status: "ordered", ordered: new Date().toISOString().slice(0, 10) }); }
-  const eo = e.target.closest("[data-edit-order]") || (e.target.closest("li[data-order]") && !e.target.closest("[data-prod] .qa"));
-  if (eo) return editThing("orders", byId("orders", (e.target.closest("[data-edit-order]") || e.target.closest("li[data-order]")).dataset.editOrder || e.target.closest("[data-order]").dataset.order));
+  const eo = e.target.closest("[data-edit-order]"); if (eo) return editThing("orders", byId("orders", eo.dataset.editOrder));
+  const li = e.target.closest("li[data-order]"); if (li) return editThing("orders", byId("orders", li.dataset.order));
   const card = e.target.closest("[data-prod]"); if (!card) return;
   const p = byId("products", card.dataset.prod), act = e.target.closest("[data-act]")?.dataset.act;
   if (act === "edit") return editThing("products", p);

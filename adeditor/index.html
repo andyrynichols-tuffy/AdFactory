@@ -8,6 +8,7 @@
 <meta name="theme-color" content="#0f0f12">
 <title>Ad Factory</title>
 <link rel="stylesheet" href="styles.css?v=43">
+<link rel="stylesheet" href="shop.css?v=1">
 <link rel="stylesheet" href="/studio-theme.css">
 </head>
 <body>
@@ -34,8 +35,14 @@
   <div class="homeBox">
     <div class="homeHead">
       <span class="seg homeTabs" role="group" aria-label="Home">
-        <button data-home="shoots" class="on">Shoots</button>
-        <button data-home="saved">☆ Saved <span id="savedCount" class="cnt"></span></button></span>
+        <button data-home="overview" title="What needs doing, and how each account is doing">🏠 Overview</button>
+        <button data-home="queue" title="Every video from idea to posted, per creator">📋 Queue</button>
+        <button data-home="products" title="Products, orders, samples and return windows">🛍 Products</button>
+        <button data-home="analytics" title="How the accounts and videos are doing on TikTok">📊 Analytics</button>
+        <button data-home="library" title="Scripts, and the format &amp; style tags">📚 Library</button>
+        <button data-home="shoots" title="The editor: raw footage → finished videos">🎬 Shoots</button>
+        <button data-home="saved" title="Saved videos waiting to post, and posted ones">📤 Posting <span id="savedCount" class="cnt"></span></button></span>
+      <button id="newVideoBtn" class="primary" title="Plan a video: style, script, product, account, creator, raw files">＋ New video</button>
       <span id="shootsHead" class="homeHeadRest">
         <input id="newTitle" placeholder="New shoot, e.g. “40oz bottle · Oct 17”">
         <button id="newShoot" class="primary">＋ New shoot</button></span>
@@ -48,6 +55,11 @@
         <button id="dlAllSaved" class="primary" hidden>⬇ Download all</button>
         <button id="openPosting" title="Open the Outbox in OneDrive (where downloaded videos go)">📂 Outbox</button></span>
     </div>
+    <div class="shopPane" data-pane="overview" id="paneOverview" hidden></div>
+    <div class="shopPane" data-pane="queue" id="paneQueue" hidden></div>
+    <div class="shopPane" data-pane="products" id="paneProducts" hidden></div>
+    <div class="shopPane" data-pane="analytics" id="paneAnalytics" hidden></div>
+    <div class="shopPane" data-pane="library" id="paneLibrary" hidden></div>
     <div id="homeShoots">
       <div id="homeDrop" class="homeDrop">
         <div class="hdIdle"><b class="hdTitle">⬆ Drop raw videos here</b> <span class="muted hdOr">or</span> <button id="hdPick">choose files</button>
@@ -264,6 +276,7 @@
   </div>
 </div>
 <div id="toast" hidden></div>
-<script src="app.js?v=50"></script>
+<script src="app.js?v=51"></script>
+<script src="shop.js?v=1"></script>
 </body>
 </html>
