@@ -34,6 +34,8 @@ const me = () => LS.get("me", "");
 // hover (or tap) a tag for what it means
 const TIP = document.createElement("div"); TIP.id = "tip"; TIP.hidden = true; document.body.appendChild(TIP);
 function showTip(el) {
+  const host = el.closest("dialog[open]") || document.body;  // an open dialog sits above everything else
+  if (TIP.parentNode !== host) host.appendChild(TIP);
   TIP.textContent = el.dataset.tip; TIP.hidden = false;
   const r = el.getBoundingClientRect(), w = Math.min(300, innerWidth - 20);
   TIP.style.maxWidth = w + "px";
