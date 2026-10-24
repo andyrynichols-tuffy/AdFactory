@@ -149,3 +149,5 @@ button.tag { background: color-mix(in srgb, var(--c) 14%, transparent) !importan
 button.tag.on { background: var(--c) !important; border-color: var(--c) !important; color: #111 !important; }
 .pipe button { height: auto !important; }
 .qa button, .chips button { height: auto; min-height: 26px; }
+.seg.chips { height: auto !important; padding: 0 !important; background: none !important; box-shadow: none !important; }
+@media (max-width: 760px) { .tbar { gap: 6px; } .tbar .spacer { display: none; } }
