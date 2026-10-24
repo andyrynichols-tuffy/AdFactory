@@ -92,11 +92,12 @@ function formDlg(title, fields, val = {}, o = {}) {
     const dlg = document.createElement("dialog"); dlg.className = "shopDlg";
     dlg.innerHTML = `<form method="dialog"><h3>${esc(title)}</h3>${o.hint ? `<p class="muted">${o.hint}</p>` : ""}
       <div class="fgrid">${fields.map(f => fieldHtml(f, val[f.k])).join("")}</div>
-      <div class="sdBtns">${o.remove ? `<button value="remove" formnovalidate class="ghost danger">${esc(o.remove)}</button>` : ""}<span class="spacer"></span>
-        <button value="cancel" formnovalidate>Cancel</button><button value="save" class="primary">${esc(o.ok || "Save")}</button></div></form>`;
+      <div class="sdBtns">${o.remove ? `<button type="button" data-close="remove" class="ghost danger">${esc(o.remove)}</button>` : ""}<span class="spacer"></span>
+        <button type="button" data-close="cancel">Cancel</button><button value="save" class="primary">${esc(o.ok || "Save")}</button></div></form>`;
     document.body.appendChild(dlg);
     $$("[data-tagpick]", dlg).forEach(el => tagPicker(el, val[el.dataset.tagpick] || []));
     const form = $("form", dlg);
+    $$("[data-close]", dlg).forEach(b => (b.onclick = () => dlg.close(b.dataset.close)));
     dlg.onclose = () => {
       const v = dlg.returnValue, out = v === "save" ? readFields(form, fields, val) : v === "remove" ? "remove" : null;
       dlg.remove(); res(out);
@@ -227,11 +228,13 @@ async function newVideo(pre = {}) {
         <label class="fld">Notes for the creator<textarea name="notes" rows="2" placeholder="angle, outfit, props…"></textarea></label>
       </div>
     </div>
-    <div class="sdBtns"><button value="cancel" formnovalidate>Cancel</button><span class="spacer"></span>
+    <div class="sdBtns"><button type="button" data-close="cancel">Cancel</button><span class="spacer"></span>
       <button value="assign" title="Put it in the creator's queue to film">📋 Send to queue</button>
       <button value="open" class="primary" title="Make the shoot now and open the editor">Create &amp; edit</button></div></form>`;
   document.body.appendChild(dlg);
   const f = $("form", dlg), el = n => f.elements[n];
+  $("[data-close]", dlg).onclick = () => dlg.close("cancel");
+  f.addEventListener("keydown", e => { if (e.key === "Enter" && e.target.tagName === "INPUT") e.preventDefault(); });
   const pick = $("[data-tagpick]", dlg);
   tagPicker(pick, pre.tags || []);
   let lib = null;  // the library script picked (its text as it was)
