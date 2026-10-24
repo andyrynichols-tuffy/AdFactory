@@ -16,10 +16,10 @@ const ORDER_ST = { ordered: "Ordered", shipped: "Shipped", delivered: "Delivered
 const LOGIN = { email: "Email", Google: "Google", Apple: "Apple", phone: "Phone number", other: "Other" };
 
 // ---------- little pieces ----------
-function tagChip(id, { on = false, btn = false } = {}) {
+function tagChip(id, { on = false, btn = false, group = false } = {}) {
   const t = byId("tags", id); if (!t) return "";
   const tag = btn ? "button" : "span";
-  return `<${tag} ${btn ? 'type="button"' : ""} class="tag ${on ? "on" : ""}" data-tag="${t.id}" data-tip="${esc(t.description || t.name)}" style="--c:${esc(t.color || "#adb5bd")}">${esc(t.name)}</${tag}>`;
+  return `<${tag} ${btn ? 'type="button"' : ""} class="tag ${on ? "on" : ""}" data-tag="${t.id}" data-tip="${esc(t.description || t.name)}" style="--c:${esc(t.color || "#adb5bd")}">${esc(t.name)}${group ? ` <small>${esc(t.group)}</small>` : ""}</${tag}>`;
 }
 const tagsRow = (ids, max = 99) => (ids || []).slice(0, max).map(id => tagChip(id)).join("") + ((ids || []).length > max ? `<span class="muted">+${ids.length - max}</span>` : "");
 const accChip = id => { const a = byId("accounts", id); return a ? `<span class="acc" style="--c:${esc(a.color)}" data-tip="${esc(a.handle ? "@" + a.handle.replace(/^@/, "") : a.name)}">${esc(a.name || "@" + a.handle)}</span>` : ""; };
@@ -47,20 +47,81 @@ document.addEventListener("mouseover", e => { const el = e.target.closest?.("[da
 document.addEventListener("touchstart", e => { const el = e.target.closest?.("[data-tip]"); if (el && el.dataset.tip) { showTip(el); clearTimeout(showTip.t); showTip.t = setTimeout(() => (TIP.hidden = true), 3500); } }, { passive: true });
 document.addEventListener("scroll", () => (TIP.hidden = true), true);
 
-function tagPicker(el, sel = []) {
-  el._sel = new Set(sel);
-  el.innerHTML = allGroups().map(g => {
-    const ts = SHOP.d.tags.filter(t => t.group === g).sort((a, b) => a.name.localeCompare(b.name));
-    return ts.length ? `<div class="tpGroup"><span class="tpG">${esc(g)}</span>${ts.map(t => tagChip(t.id, { on: el._sel.has(t.id), btn: true })).join("")}</div>` : "";
-  }).join("") || `<span class="muted">No tags yet: add some in Library → Formats & tags.</span>`;
-  el.onclick = e => {
+// how often each tag has been used (shoots + posted videos)
+function tagUse() {
+  const u = {};
+  for (const b of SHOP.board || []) for (const t of b.tags || []) u[t] = (u[t] || 0) + 1;
+  for (const [id, x] of Object.entries(SHOP.d.summary?.per?.tags || {})) u[id] = (u[id] || 0) + x.videos;
+  return u;
+}
+// tags worth suggesting: used on this product before, on the picked script, and the ones that do well
+function suggestTags(ctx = {}) {
+  const score = {}, add = (id, w) => { if (byId("tags", id)) score[id] = (score[id] || 0) + w; };
+  for (const b of SHOP.board || []) {
+    for (const t of b.tags || []) add(t, ctx.product && b.product === ctx.product ? 3 : 0.2);
+  }
+  for (const t of byId("scripts", ctx.script)?.tags || []) add(t, 4);
+  const per = SHOP.d.summary?.per?.tags || {}, best = Math.max(1, ...Object.values(per).map(x => x.avg_views || 0));
+  for (const [id, x] of Object.entries(per)) add(id, 0.3 * x.videos + 2 * (x.avg_views || 0) / best);
+  return Object.entries(score).sort((a, b) => b[1] - a[1]).map(x => x[0]);
+}
+// the tag picker: search, a few suggestions, and each group trimmed to its most-used tags (+N more)
+const TAG_LIMIT = 8;
+function tagPicker(el, sel = [], ctx = () => ({})) {
+  el._sel = new Set(sel); el._open = new Set(); el._q = "";
+  el.innerHTML = `<div class="tpTop"><input type="search" class="tpQ" placeholder="Search formats, hooks, styles, tones…" autocomplete="off"><span class="muted tpN"></span></div><div class="tpBody"></div>`;
+  const q = $(".tpQ", el), body = $(".tpBody", el);
+  const count = () => ($(".tpN", el).textContent = el._sel.size ? `${el._sel.size} picked` : "");
+  const draw = () => {
+    count();
+    if (!SHOP.d.tags.length) { body.innerHTML = `<span class="muted">No tags yet: add some in Library → Formats & tags.</span>`; return; }
+    const use = tagUse(), s = el._q.trim().toLowerCase();
+    const order = (a, b) => (el._sel.has(b.id) - el._sel.has(a.id)) || ((use[b.id] || 0) - (use[a.id] || 0)) || a.name.localeCompare(b.name);
+    if (s) {
+      const hits = SHOP.d.tags.filter(x => `${x.name} ${x.group} ${x.description}`.toLowerCase().includes(s))
+        .sort((a, b) => (b.name.toLowerCase().startsWith(s) - a.name.toLowerCase().startsWith(s)) || order(a, b));
+      body.innerHTML = (hits.length ? `<div class="tpGroup">${hits.map(x => tagChip(x.id, { on: el._sel.has(x.id), btn: true, group: true })).join("")}</div>`
+        : `<span class="muted">No tag matches “${esc(el._q.trim())}”.</span> `) + `<button type="button" class="tpMore tpNew">＋ New tag “${esc(el._q.trim())}”</button>`;
+      return;
+    }
+    const sug = suggestTags(ctx()).filter(id => !el._sel.has(id)).slice(0, 8);
+    body.innerHTML = (sug.length ? `<div class="tpGroup tpSug"><span class="tpG">✨ Suggested</span>${sug.map(id => tagChip(id, { btn: true, group: true })).join("")}</div>` : "") +
+      allGroups().map(g => {
+        const ts = SHOP.d.tags.filter(x => x.group === g).sort(order); if (!ts.length) return "";
+        const all = el._open.has(g) || ts.length <= TAG_LIMIT + 2;
+        const shown = all ? ts : ts.filter((x, i) => i < TAG_LIMIT || el._sel.has(x.id));
+        const btn = ts.length > shown.length ? `<button type="button" class="tpMore" data-more="${esc(g)}">+${ts.length - shown.length} more</button>`
+          : el._open.has(g) ? `<button type="button" class="tpMore" data-less="${esc(g)}">fewer</button>` : "";
+        return `<div class="tpGroup"><span class="tpG">${esc(g)}</span>${shown.map(x => tagChip(x.id, { on: el._sel.has(x.id), btn: true })).join("")}${btn}</div>`;
+      }).join("");
+  };
+  el._draw = draw;
+  q.oninput = () => { el._q = q.value; draw(); };
+  q.onkeydown = e => {
+    if (e.key === "Enter") {  // Enter picks the first match
+      e.preventDefault(); e.stopPropagation();
+      const c = $("[data-tag]", body);
+      if (c && el._q.trim()) { c.click(); q.value = el._q = ""; draw(); }
+    }
+    if (e.key === "Escape" && q.value) { e.preventDefault(); e.stopPropagation(); q.value = el._q = ""; draw(); }
+  };
+  body.onclick = async e => {
+    const more = e.target.closest("[data-more]"), less = e.target.closest("[data-less]");
+    if (more) { el._open.add(more.dataset.more); return draw(); }
+    if (less) { el._open.delete(less.dataset.less); return draw(); }
+    if (e.target.closest(".tpNew")) {
+      const nt = await editThing("tags", { name: el._q.trim(), group: "Format" });
+      if (nt) { el._sel.add(nt.id); q.value = el._q = ""; draw(); el.dispatchEvent(new Event("change", { bubbles: true })); }
+      return;
+    }
     const c = e.target.closest("[data-tag]"); if (!c) return;
     e.preventDefault();
     const id = c.dataset.tag;
     if (el._sel.has(id)) el._sel.delete(id); else el._sel.add(id);
-    c.classList.toggle("on", el._sel.has(id));
+    if (c.closest(".tpSug")) draw(); else { c.classList.toggle("on", el._sel.has(id)); count(); }
     el.dispatchEvent(new Event("change", { bubbles: true }));
   };
+  draw();
 }
 
 // ---------- a generic form in a dialog ----------
@@ -97,8 +158,11 @@ function formDlg(title, fields, val = {}, o = {}) {
       <div class="sdBtns">${o.remove ? `<button type="button" data-close="remove" class="ghost danger">${esc(o.remove)}</button>` : ""}<span class="spacer"></span>
         <button type="button" data-close="cancel">Cancel</button><button value="save" class="primary">${esc(o.ok || "Save")}</button></div></form>`;
     document.body.appendChild(dlg);
-    $$("[data-tagpick]", dlg).forEach(el => tagPicker(el, val[el.dataset.tagpick] || []));
     const form = $("form", dlg);
+    $$("[data-tagpick]", dlg).forEach(el => {
+      tagPicker(el, val[el.dataset.tagpick] || [], () => ({ product: form.elements.product?.value || val.product, script: form.elements.script?.value || val.script }));
+      for (const k of ["product", "script"]) form.elements[k]?.addEventListener?.("change", () => el._draw());
+    });
     $$("[data-close]", dlg).forEach(b => (b.onclick = () => dlg.close(b.dataset.close)));
     dlg.onclose = () => {
       const v = dlg.returnValue, out = v === "save" ? readFields(form, fields, val) : v === "remove" ? "remove" : null;
@@ -161,6 +225,7 @@ const F = {
 const NOUN = { accounts: "account", creators: "person", products: "product", orders: "order", scripts: "script", tags: "tag" };
 async function editThing(kind, obj = {}, extra = {}) {
   if (!SHOP.d) await shopLoad();
+  if (kind === "scripts" && !SHOP.board.length) SHOP.board = await api("/api/shop/board/all").catch(() => []);
   const isNew = !obj.id;
   const v = await formDlg(`${isNew ? "＋ New" : "Edit"} ${NOUN[kind]}`, F[kind](), obj, { remove: isNew ? null : "Remove", ...extra });
   if (!v) return null;
@@ -206,6 +271,7 @@ function scriptOptions(productId, tags) {
 }
 async function newVideo(pre = {}) {
   await shopLoad();
+  if (!SHOP.board.length) SHOP.board = await api("/api/shop/board/all").catch(() => []);  // for tag suggestions
   const d = SHOP.d;
   const dlg = document.createElement("dialog"); dlg.className = "shopDlg nvDlg";
   dlg.innerHTML = `<form method="dialog"><h3>＋ New video</h3>
@@ -238,7 +304,7 @@ async function newVideo(pre = {}) {
   $("[data-close]", dlg).onclick = () => dlg.close("cancel");
   f.addEventListener("keydown", e => { if (e.key === "Enter" && e.target.tagName === "INPUT") e.preventDefault(); });
   const pick = $("[data-tagpick]", dlg);
-  tagPicker(pick, pre.tags || []);
+  tagPicker(pick, pre.tags || [], () => ({ product: el("product").value, script: el("script").value }));
   let lib = null;  // the library script picked (its text as it was)
   const fillsFor = () => {
     const p = byId("products", el("product").value);
@@ -257,7 +323,7 @@ async function newVideo(pre = {}) {
     $(".nvSave span", dlg).textContent = lib ? "Save as a new script in the library" : "Save to the script library";
   };
   const drawScripts = () => { const v = el("script").value; el("script").innerHTML = scriptOptions(el("product").value, [...pick._sel]); el("script").value = v; };
-  el("product").onchange = () => { drawScripts(); drawFills(); };
+  el("product").onchange = () => { drawScripts(); drawFills(); pick._draw(); };
   el("account").onchange = () => { const a = byId("accounts", el("account").value); if (a?.creator && !el("creator").dataset.touched) el("creator").value = a.creator; };
   el("creator").onchange = () => (el("creator").dataset.touched = "1");
   pick.addEventListener("change", drawScripts);
@@ -266,9 +332,9 @@ async function newVideo(pre = {}) {
     if (lib) {
       el("script_text").value = lib.text;
       if (!el("product").value && lib.product) { el("product").value = lib.product; drawScripts(); el("script").value = lib.id; }
-      if (!pick._sel.size && lib.tags?.length) tagPicker(pick, lib.tags);
+      if (!pick._sel.size && lib.tags?.length) lib.tags.forEach(x => pick._sel.add(x));
     }
-    drawFills();
+    drawFills(); pick._draw();
   };
   el("script_text").addEventListener("input", drawFills);
   $(".nvAddP", dlg).onclick = async () => {
@@ -599,11 +665,13 @@ async function renderLibrary() {
   const tab = LS.get("libTab", "scripts"), q = (LS.get("libQ", "") || "").toLowerCase(), prod = LS.get("libProd", "");
   const head = `<div class="tbar"><span class="seg chips"><button data-ltab="scripts" class="${tab === "scripts" ? "on" : ""}">📝 Scripts <span class="cnt">${d.scripts.length}</span></button>
       <button data-ltab="tags" class="${tab === "tags" ? "on" : ""}">🏷 Formats &amp; tags <span class="cnt">${d.tags.length}</span></button></span>
-      ${tab === "scripts" ? `<input id="libQ" placeholder="Search scripts" value="${esc(LS.get("libQ", ""))}"><select id="libProd">${opts(products(), prod, p => p.name, "Any product")}</select>` : ""}
+      ${tab === "scripts" ? `<input id="libQ" placeholder="Search scripts" value="${esc(LS.get("libQ", ""))}"><select id="libProd">${opts(products(), prod, p => p.name, "Any product")}</select>`
+        : `<input id="tagQ" type="search" placeholder="Search tags" value="${esc(LS.get("tagQ", ""))}">`}
       <span class="spacer"></span><button class="primary" data-go="${tab === "scripts" ? "script" : "tag"}">＋ ${tab === "scripts" ? "Script" : "Tag"}</button></div>`;
   if (tab === "tags") {
     el.innerHTML = head + `<p class="muted">Tags describe a video's format, hook, style and tone. Pick them on a new video; Analytics compares how each one does. Hover a tag anywhere to see what it means.</p>` +
-      allGroups().map(g => { const ts = d.tags.filter(t => t.group === g).sort((a, b) => a.name.localeCompare(b.name));
+      allGroups().map(g => { const tq = (LS.get("tagQ", "") || "").toLowerCase();
+        const ts = d.tags.filter(t => t.group === g && (!tq || `${t.name} ${t.group} ${t.description}`.toLowerCase().includes(tq))).sort((a, b) => a.name.localeCompare(b.name));
         return ts.length ? `<h3 class="secHead">${esc(g)}</h3><div class="tagList">${ts.map(t => { const p = sm.per.tags[t.id] || {};
           return `<div class="tagRow" data-tagedit="${t.id}">${tagChip(t.id)}<span class="tdesc">${esc(t.description)}</span>
             <span class="muted tnum">${p.videos ? `${p.videos} video${p.videos === 1 ? "" : "s"}${p.avg_views != null ? ` · ${num(p.avg_views)} avg views` : ""}` : ""}</span><button data-tagedit="${t.id}">Edit</button></div>`; }).join("")}</div>` : ""; }).join("");
@@ -634,6 +702,7 @@ $("#paneLibrary").addEventListener("click", async e => {
   if (act === "video") return newVideo({ script: s.id, product: s.product, tags: s.tags });
 });
 $("#paneLibrary").addEventListener("input", e => {
+  if (e.target.id === "tagQ") { LS.set("tagQ", e.target.value); clearTimeout(renderLibrary.t); renderLibrary.t = setTimeout(async () => { await renderLibrary(); const i = $("#tagQ"); i.focus(); i.setSelectionRange(i.value.length, i.value.length); }, 200); }
   if (e.target.id === "libQ") { LS.set("libQ", e.target.value); clearTimeout(renderLibrary.t); renderLibrary.t = setTimeout(async () => { await renderLibrary(); const i = $("#libQ"); i.focus(); i.setSelectionRange(i.value.length, i.value.length); }, 250); }
 });
 $("#paneLibrary").addEventListener("change", e => { if (e.target.id === "libProd") { LS.set("libProd", e.target.value); renderLibrary(); } });
