@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 45,
+ "rev": 46,
  "title": "OldNavyWaffle",
  "created": 1792342945.3705559,
  "product": {
@@ -27289,5 +27289,21 @@
    "sig": "c7eeeb3a2a5d"
   }
  },
- "saved": {}
+ "saved": {},
+ "shop": {
+  "product": "039a4d",
+  "account": null,
+  "creator": null,
+  "editor": null,
+  "tags": [
+   "fd0e82",
+   "5bf6b8",
+   "c9aaa1"
+  ],
+  "script": "7c48ba",
+  "due": "",
+  "notes": "",
+  "assigned": null,
+  "done": false
+ }
 }

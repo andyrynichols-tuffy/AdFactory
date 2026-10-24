@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 72,
+ "rev": 81,
  "title": "MenPen 3",
  "created": 1792372496.8683283,
  "product": {
@@ -8258,5 +8258,22 @@
   "Shot 15",
   "Shot 16",
   "Shot 17"
- ]
+ ],
+ "shop": {
+  "product": "2973da",
+  "account": null,
+  "creator": null,
+  "editor": null,
+  "tags": [
+   "4a2baa",
+   "65bc7d",
+   "40e1c4",
+   "c9aaa1"
+  ],
+  "script": "36572d",
+  "due": "",
+  "notes": "",
+  "assigned": null,
+  "done": false
+ }
 }

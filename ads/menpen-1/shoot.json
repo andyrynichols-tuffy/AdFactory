@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 92,
+ "rev": 102,
  "title": "MenPen 1",
  "created": 1792372407.2218602,
  "product": {
@@ -3056,5 +3056,22 @@
    "Shot 5: Filling in, hand-held"
   ],
   "row": "Manpen 1"
+ },
+ "shop": {
+  "product": "2973da",
+  "account": null,
+  "creator": null,
+  "editor": null,
+  "tags": [
+   "4a2baa",
+   "65bc7d",
+   "40e1c4",
+   "c9aaa1"
+  ],
+  "script": "93271f",
+  "due": "",
+  "notes": "",
+  "assigned": null,
+  "done": false
  }
 }

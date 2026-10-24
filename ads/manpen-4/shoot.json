@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 54,
+ "rev": 63,
  "title": "MenPen 4",
  "created": 1792372496.9094005,
  "product": {
@@ -233,5 +233,22 @@
   "And that's why I like this for eyebrows, mustaches, and beards.",
   "You can add a little definition without making it super obvious.",
   "And if you wanna try it, I'll leave the same MenPen right down below for you."
- ]
+ ],
+ "shop": {
+  "product": "2973da",
+  "account": null,
+  "creator": null,
+  "editor": null,
+  "tags": [
+   "4a2baa",
+   "65bc7d",
+   "40e1c4",
+   "c9aaa1"
+  ],
+  "script": "7377bb",
+  "due": "",
+  "notes": "",
+  "assigned": null,
+  "done": false
+ }
 }

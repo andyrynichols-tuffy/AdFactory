@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 54,
+ "rev": 63,
  "title": "MenPen 2",
  "created": 1792372496.8304582,
  "product": {
@@ -2563,5 +2563,22 @@
   "Shot 10",
   "Shot 11",
   "Shot 12"
- ]
+ ],
+ "shop": {
+  "product": "2973da",
+  "account": null,
+  "creator": null,
+  "editor": null,
+  "tags": [
+   "4a2baa",
+   "65bc7d",
+   "40e1c4",
+   "c9aaa1"
+  ],
+  "script": "d5a29b",
+  "due": "",
+  "notes": "",
+  "assigned": null,
+  "done": false
+ }
 }

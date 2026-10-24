@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 61,
+ "rev": 62,
  "title": "Dude Wipes",
  "created": 1792274042.8666592,
  "product": {
@@ -3574,5 +3574,21 @@
    "sig": "dc965ffe7bc8"
   }
  },
- "saved": {}
+ "saved": {},
+ "shop": {
+  "product": "ddcf73",
+  "account": null,
+  "creator": null,
+  "editor": null,
+  "tags": [
+   "fd0e82",
+   "5bf6b8",
+   "c9aaa1"
+  ],
+  "script": "e6ff03",
+  "due": "",
+  "notes": "",
+  "assigned": null,
+  "done": false
+ }
 }

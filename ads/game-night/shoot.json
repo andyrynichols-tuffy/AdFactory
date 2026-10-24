@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 169,
+ "rev": 170,
  "title": "Game Night",
  "created": 1792343278.6271605,
  "product": {
@@ -115441,5 +115441,22 @@
    "sig": "5467f5f510a4"
   }
  },
- "saved": {}
+ "saved": {},
+ "shop": {
+  "product": null,
+  "account": null,
+  "creator": null,
+  "editor": null,
+  "tags": [
+   "e39280",
+   "8763a9",
+   "5bf6b8",
+   "d7dcda"
+  ],
+  "script": null,
+  "due": "",
+  "notes": "",
+  "assigned": null,
+  "done": false
+ }
 }

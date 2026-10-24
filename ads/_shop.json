@@ -1,0 +1,517 @@
+{
+ "accounts": [],
+ "creators": [],
+ "products": [
+  {
+   "name": "Flameless candle",
+   "brand": "",
+   "link": "",
+   "image": "",
+   "price": "",
+   "commission": "",
+   "category": "",
+   "fills": {},
+   "notes": "",
+   "archived": false,
+   "id": "f28369",
+   "created": 1792860245.8248835,
+   "updated": 1792860245.8248835
+  },
+  {
+   "name": "Dude Wipes Dumpkin Spice Flushable Wipes",
+   "brand": "Dude Wipes",
+   "link": "",
+   "image": "",
+   "price": "",
+   "commission": "",
+   "category": "",
+   "fills": {},
+   "notes": "",
+   "archived": false,
+   "id": "ddcf73",
+   "created": 1792860245.8350425,
+   "updated": 1792860245.8350425
+  },
+  {
+   "name": "Old Navy Waffle",
+   "brand": "Old Navy",
+   "link": "",
+   "image": "",
+   "price": "",
+   "commission": "",
+   "category": "",
+   "fills": {},
+   "notes": "",
+   "archived": false,
+   "id": "039a4d",
+   "created": 1792860245.8453348,
+   "updated": 1792860245.8453348
+  },
+  {
+   "name": "Old Navy Carpenter Pants",
+   "brand": "Old Navy",
+   "link": "",
+   "image": "",
+   "price": "",
+   "commission": "",
+   "category": "",
+   "fills": {},
+   "notes": "",
+   "archived": false,
+   "id": "916af2",
+   "created": 1792860245.8719082,
+   "updated": 1792860245.8719082
+  },
+  {
+   "name": "Drink If",
+   "brand": "",
+   "link": "",
+   "image": "",
+   "price": "",
+   "commission": "",
+   "category": "",
+   "fills": {},
+   "notes": "",
+   "archived": false,
+   "id": "d823a4",
+   "created": 1792860245.9083965,
+   "updated": 1792860245.9083965
+  },
+  {
+   "name": "First to Worst",
+   "brand": "",
+   "link": "",
+   "image": "",
+   "price": "",
+   "commission": "",
+   "category": "",
+   "fills": {},
+   "notes": "",
+   "archived": false,
+   "id": "9ee5a6",
+   "created": 1792860245.9083965,
+   "updated": 1792860245.9083965
+  },
+  {
+   "name": "This or That",
+   "brand": "",
+   "link": "",
+   "image": "",
+   "price": "",
+   "commission": "",
+   "category": "",
+   "fills": {},
+   "notes": "",
+   "archived": false,
+   "id": "cbe5a9",
+   "created": 1792860245.9083965,
+   "updated": 1792860245.9083965
+  },
+  {
+   "name": "Old Navy Relaxed Shirt",
+   "brand": "Old Navy",
+   "link": "",
+   "image": "",
+   "price": "",
+   "commission": "",
+   "category": "",
+   "fills": {},
+   "notes": "",
+   "archived": false,
+   "id": "86ba8f",
+   "created": 1792860246.019201,
+   "updated": 1792860246.019201
+  },
+  {
+   "name": "MenPen",
+   "brand": "MenPen",
+   "link": "",
+   "image": "",
+   "price": "",
+   "commission": "",
+   "category": "",
+   "fills": {},
+   "notes": "",
+   "archived": false,
+   "id": "2973da",
+   "created": 1792860246.019201,
+   "updated": 1792860246.019201
+  }
+ ],
+ "orders": [],
+ "tags": [
+  {
+   "name": "Talking head",
+   "group": "Format",
+   "description": "Creator talks straight to the camera, holding or using the product. The classic TikTok Shop review.",
+   "color": "#4dabf7",
+   "id": "fd0e82",
+   "created": 1792860245.760664,
+   "updated": 1792860245.760664
+  },
+  {
+   "name": "Voiceover",
+   "group": "Format",
+   "description": "A separate voice recording over silent shots of the product in use (like MenPen). The shots can be re-filmed to match a reference.",
+   "color": "#4dabf7",
+   "id": "4a2baa",
+   "created": 1792860245.760664,
+   "updated": 1792860245.760664
+  },
+  {
+   "name": "Demo",
+   "group": "Format",
+   "description": "Shows the product doing its job, start to finish. Proof instead of claims.",
+   "color": "#4dabf7",
+   "id": "8d126a",
+   "created": 1792860245.760664,
+   "updated": 1792860245.760664
+  },
+  {
+   "name": "Before / after",
+   "group": "Format",
+   "description": "Opens on the problem, ends on the result; the cut between them is the payoff.",
+   "color": "#4dabf7",
+   "id": "16056d",
+   "created": 1792860245.760664,
+   "updated": 1792860245.760664
+  },
+  {
+   "name": "Unboxing",
+   "group": "Format",
+   "description": "Opening the package on camera: first impressions and what's inside.",
+   "color": "#4dabf7",
+   "id": "bdc926",
+   "created": 1792860245.760664,
+   "updated": 1792860245.760664
+  },
+  {
+   "name": "Try-on",
+   "group": "Format",
+   "description": "Clothes worn on camera, with fit, fabric and a few angles or outfits.",
+   "color": "#4dabf7",
+   "id": "c77940",
+   "created": 1792860245.760664,
+   "updated": 1792860245.760664
+  },
+  {
+   "name": "Party-game montage",
+   "group": "Format",
+   "description": "Cold-open hook, the game's title, then fast card reads and reactions that loop back to the hook (Game Night).",
+   "color": "#4dabf7",
+   "id": "e39280",
+   "created": 1792860245.760664,
+   "updated": 1792860245.760664
+  },
+  {
+   "name": "Green screen",
+   "group": "Format",
+   "description": "Creator in front of a screenshot or the product page, reacting to it or pointing at it.",
+   "color": "#4dabf7",
+   "id": "15cd8c",
+   "created": 1792860245.760664,
+   "updated": 1792860245.760664
+  },
+  {
+   "name": "Skit",
+   "group": "Format",
+   "description": "A tiny acted scene where the product solves the problem.",
+   "color": "#4dabf7",
+   "id": "0f0703",
+   "created": 1792860245.760664,
+   "updated": 1792860245.760664
+  },
+  {
+   "name": "Comparison",
+   "group": "Format",
+   "description": "This vs. that: the product next to a competitor or the old way of doing it.",
+   "color": "#4dabf7",
+   "id": "79c1de",
+   "created": 1792860245.760664,
+   "updated": 1792860245.760664
+  },
+  {
+   "name": "Question hook",
+   "group": "Hook",
+   "description": "Opens on a question the viewer wants answered (\"why is nobody talking about…?\").",
+   "color": "#f783ac",
+   "id": "d4b179",
+   "created": 1792860245.760664,
+   "updated": 1792860245.760664
+  },
+  {
+   "name": "Problem hook",
+   "group": "Hook",
+   "description": "Opens on the annoying problem the product fixes.",
+   "color": "#f783ac",
+   "id": "acf1eb",
+   "created": 1792860245.760664,
+   "updated": 1792860245.760664
+  },
+  {
+   "name": "Bold claim",
+   "group": "Hook",
+   "description": "Opens on a strong claim or a surprising number.",
+   "color": "#f783ac",
+   "id": "65ad4d",
+   "created": 1792860245.760664,
+   "updated": 1792860245.760664
+  },
+  {
+   "name": "POV hook",
+   "group": "Hook",
+   "description": "\"POV: …\" framing that puts the viewer in the moment.",
+   "color": "#f783ac",
+   "id": "c7ead2",
+   "created": 1792860245.760664,
+   "updated": 1792860245.760664
+  },
+  {
+   "name": "Cold open",
+   "group": "Hook",
+   "description": "Starts on the craziest moment out of context, then shows how it got there.",
+   "color": "#f783ac",
+   "id": "8763a9",
+   "created": 1792860245.760664,
+   "updated": 1792860245.760664
+  },
+  {
+   "name": "Price hook",
+   "group": "Hook",
+   "description": "Leads with the deal: the price, the discount, \"under $X\".",
+   "color": "#f783ac",
+   "id": "eeb4ae",
+   "created": 1792860245.760664,
+   "updated": 1792860245.760664
+  },
+  {
+   "name": "Fast cuts",
+   "group": "Style",
+   "description": "Pauses cut out, about 5 words a second, a cut every 1–3 s.",
+   "color": "#ffa94d",
+   "id": "5bf6b8",
+   "created": 1792860245.760664,
+   "updated": 1792860245.760664
+  },
+  {
+   "name": "Eye contact",
+   "group": "Style",
+   "description": "Creator looks into the lens the whole time, no glancing off to the side.",
+   "color": "#ffa94d",
+   "id": "40e1c4",
+   "created": 1792860245.760664,
+   "updated": 1792860245.760664
+  },
+  {
+   "name": "Captions",
+   "group": "Style",
+   "description": "Word-by-word captions on screen, kept off the product and out of TikTok's buttons.",
+   "color": "#ffa94d",
+   "id": "c9aaa1",
+   "created": 1792860245.760664,
+   "updated": 1792860245.760664
+  },
+  {
+   "name": "Close-ups",
+   "group": "Style",
+   "description": "Tight shots of the details: texture, tip, label, fit.",
+   "color": "#ffa94d",
+   "id": "65bc7d",
+   "created": 1792860245.760664,
+   "updated": 1792860245.760664
+  },
+  {
+   "name": "Cart pointer",
+   "group": "Style",
+   "description": "Says \"orange cart\" and an arrow points at the product tag.",
+   "color": "#ffa94d",
+   "id": "b4cff5",
+   "created": 1792860245.760664,
+   "updated": 1792860245.760664
+  },
+  {
+   "name": "Funny",
+   "group": "Tone",
+   "description": "Built around a joke or an over-the-top reaction.",
+   "color": "#69db7c",
+   "id": "d7dcda",
+   "created": 1792860245.760664,
+   "updated": 1792860245.760664
+  },
+  {
+   "name": "Honest review",
+   "group": "Tone",
+   "description": "Pros and a con, said plainly. Trust over hype.",
+   "color": "#69db7c",
+   "id": "48b801",
+   "created": 1792860245.760664,
+   "updated": 1792860245.760664
+  },
+  {
+   "name": "Hype",
+   "group": "Tone",
+   "description": "High energy and urgent (\"run, don't walk\").",
+   "color": "#69db7c",
+   "id": "80a96e",
+   "created": 1792860245.760664,
+   "updated": 1792860245.760664
+  },
+  {
+   "name": "Calm / ASMR",
+   "group": "Tone",
+   "description": "Quiet, satisfying sounds and slow shots.",
+   "color": "#69db7c",
+   "id": "19a71d",
+   "created": 1792860245.760664,
+   "updated": 1792860245.760664
+  },
+  {
+   "name": "Relatable",
+   "group": "Tone",
+   "description": "Starts from an everyday moment the viewer has lived.",
+   "color": "#69db7c",
+   "id": "b9b222",
+   "created": 1792860245.760664,
+   "updated": 1792860245.760664
+  }
+ ],
+ "scripts": [
+  {
+   "title": "Flameless candle",
+   "text": "Ow!\nI'm just kidding, it's not a real flame.\nBut you can blow it out.\nLid off, light on,\nlid on, light off.\nThis is the Flameless Candle by Lifelines.\nAnd it doesn't just look nice.\nIt's also an aroma diffuser as well, so it smells freaking great.\nDepending on what color you get, you get a different scent.\nThis one's vanilla tangerine.\nThey just snap right in the bottom.\nAnd a full charge gets you 50 hours of usage.\nI'm getting one for every room.\nIf I can be fast enough, because some of the colors are already sold out.\nIf you want one before they're all gone, I'll put the link at the bottom.",
+   "tags": [
+    "fd0e82",
+    "5bf6b8",
+    "c9aaa1"
+   ],
+   "product": "f28369",
+   "notes": "",
+   "from_shoot": "flameless-candle",
+   "edited": false,
+   "id": "9a1b28",
+   "created": 1792270633.981801,
+   "updated": 1792860245.8248835
+  },
+  {
+   "title": "Dude Wipes",
+   "text": "My husband and I don't agree on everything, but we do agree that dude wipes are a home essential.\nAnd they just dropped their new Dumpkin Spice scent with stuff like nutmeg and clove.\nLet's see how these smell.\nIt's like a pie.\nI never knew I needed this in a wipe,\nbut I'm sure my husband's gonna love it.\nLike I said, they just dropped these, and they're selling out quick,\nso you better run and get yours before they sell out.",
+   "tags": [
+    "fd0e82",
+    "5bf6b8",
+    "c9aaa1"
+   ],
+   "product": "ddcf73",
+   "notes": "",
+   "from_shoot": "img-0218",
+   "edited": false,
+   "id": "e6ff03",
+   "created": 1792274042.8666592,
+   "updated": 1792860245.8350425
+  },
+  {
+   "title": "OldNavyWaffle",
+   "text": "Stop spending designer prices on just one of the name brand ones.\nThis is what one of the name brand ones costs.\nBecause Old Navy\njust dropped their Waffle Knit thermals.\nAnd the fact that you can get not one, but\nThree of these for the price of one is absolutely insane.\nBut don't be like me and buy these in store for full price.\nBecause they're actually way cheaper here right now, because they're running a huge fall and winter sale.\nIf you don't believe me, I'll link the verified Old Navy store right below.\nI'm just letting you know, everyone's buying them here because of how great the deal is.\nYou get that super soft waffle knit cotton material.\nIt hugs my arms, shoulders, and chest,\nbut still leaves plenty of room around the midsection.\nAnd the best part about these is they do fit true to size.\nI'm 6'2\", 195, and I'm wearing a size large.\nBut I can also wear a medium if I want a little snugger fit.\nBut if you do have any questions about sizing, just comment your height and weight and I can help you out.\nThe only problem is, with the massive sale going on, these are selling out fast.\nSo you can get yours before your size and color sell out, I'm going to drop the link right below.",
+   "tags": [
+    "fd0e82",
+    "5bf6b8",
+    "c9aaa1"
+   ],
+   "product": "039a4d",
+   "notes": "",
+   "from_shoot": "oldnavewaffle",
+   "edited": false,
+   "id": "7c48ba",
+   "created": 1792342945.3705559,
+   "updated": 1792860245.8453348
+  },
+  {
+   "title": "OldNavyRelaxedShirt",
+   "text": "Wait, are these really 100% cotton and also relaxed fit?\nYou guys, this is 100% cotton muslin button down.\nIt's breathable,\nbut don't buy this in store for full price like me,\nbecause now on TikTok, they're running a huge sale, so tap the orange shopping cart.\nI just love this washed, unbothered look that this fabric has.\nIt is cool, it is relaxed, it is breathable, it's everything I need for a button-down shirt.\nIt's free shipping.\nThey have different colors.\nBut they're running out of stock on a lot of colors inside,\nso if you still see the link below, tap it and check if you still can get one.",
+   "tags": [
+    "fd0e82",
+    "5bf6b8",
+    "c9aaa1"
+   ],
+   "product": "86ba8f",
+   "notes": "",
+   "from_shoot": "oldnavyrelaxedshirt",
+   "edited": false,
+   "id": "ac1d1f",
+   "created": 1792343374.2037246,
+   "updated": 1792860246.019201
+  },
+  {
+   "title": "MenPen 2",
+   "text": "I'm not gay, but I could LITERALLY kiss\n\nthis influencer who told me to start darkening my eyebrows to frame my face.\nThis is every celebrity grooming secret. Darker eyebrows can give your face a more DEFINED look.\nListen, you're not ugly. You just need a little TOUCH-UP to make your eyes POP.\nAnd with this sweat- and water-resistant MenPen, you can fill in your eyebrows, mustache, and beard using this super thin tip, then blend everything out with the brush on the other side.\nAnd the BEST part? They're giving you a second one FREE today when you tap the link below.",
+   "tags": [
+    "4a2baa",
+    "65bc7d",
+    "40e1c4",
+    "c9aaa1"
+   ],
+   "product": "2973da",
+   "notes": "From the Scripts & Links sheet",
+   "from_shoot": "manpen-2",
+   "edited": false,
+   "id": "d5a29b",
+   "created": 1792372496.8304582,
+   "updated": 1792860269.869948
+  },
+  {
+   "title": "MenPen 3",
+   "text": "I'm married, can I still use it?”\nYES, go ahead!\nPeople might start looking at you differently, and that's because darkening your eyebrows can actually help frame your face, making everything look a little more symmetrical and, guess what? PRETTIER.\n\nYES, you're not UGLY! You just need a little grooming secret.\nI saw that darkening eyebrows is one of those makeup tricks used to give celebrities like Robert Pattinson a more defined look. It really makes your eyes POP.\nAnd with this sweat- and water-resistant MenPen, you can fill in your eyebrows, mustache, and beard using this super thin tip, then blend everything out with the brush on the other side.\nAnd the BEST part? I bought ONE and received TWO! Apparently, they've got that deal going on right now.\nSo if you're interested, I'll leave the link right down below for you.",
+   "tags": [
+    "4a2baa",
+    "65bc7d",
+    "40e1c4",
+    "c9aaa1"
+   ],
+   "product": "2973da",
+   "notes": "From the Scripts & Links sheet",
+   "from_shoot": "manpen-3",
+   "edited": false,
+   "id": "36572d",
+   "created": 1792372496.8683283,
+   "updated": 1792860269.8889265
+  },
+  {
+   "title": "MenPen 4",
+   "text": "[Show the MenPen and apply it to one eyebrow]\nSo this is the MenPen. It has this super thin tip to fill in those little gaps, and a brush on the other side to blend everything out.\n[Apply some water and gently rub the eyebrow]\nAnd since it's supposed to be sweat- and water-resistant, let's actually TEST it.\n[Show the result close to the camera]\nOkay, LOOK at that!\n[Show the result of the test]\nAnd that's why I like this for eyebrows, mustaches, and beards. You can add a little definition without making it super obvious.\n[Camera facing front]\nAnd if you wanna try it, I'll leave the same MenPen right down below for you.",
+   "tags": [
+    "4a2baa",
+    "65bc7d",
+    "40e1c4",
+    "c9aaa1"
+   ],
+   "product": "2973da",
+   "notes": "From the Scripts & Links sheet",
+   "from_shoot": "manpen-4",
+   "edited": false,
+   "id": "7377bb",
+   "created": 1792372496.9094005,
+   "updated": 1792860269.909337
+  },
+  {
+   "title": "MenPen 1",
+   "text": "This is every celebrity's grooming secret\nThey are all darkening their eyebrows to give their face a more defined look\nDark eyebrows frame your face and make your eyes pop out more\nIf you want that celebrity look, try the MenPen today",
+   "tags": [
+    "4a2baa",
+    "65bc7d",
+    "40e1c4",
+    "c9aaa1"
+   ],
+   "product": "2973da",
+   "notes": "From the Scripts & Links sheet",
+   "from_shoot": "menpen-1",
+   "edited": false,
+   "id": "93271f",
+   "created": 1792860269.8478575,
+   "updated": 1792860269.8478575
+  }
+ ],
+ "trash": {},
+ "settings": {
+  "every_hours": 6
+ },
+ "seeded": true
+}
