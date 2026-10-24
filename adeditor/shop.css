@@ -142,3 +142,10 @@ button.danger { color: var(--bad); }
   .tagRow .tnum { display: none; }
   .shopDlg { padding: 14px; }
 }
+
+/* the Studio theme styles every button; these need to win */
+.homeTabs button.on, .chips button.on { background: var(--accent) !important; border-color: var(--accent) !important; color: #fff !important; }
+button.tag { background: color-mix(in srgb, var(--c) 14%, transparent) !important; border: 1px solid color-mix(in srgb, var(--c) 55%, transparent) !important; height: auto !important; }
+button.tag.on { background: var(--c) !important; border-color: var(--c) !important; color: #111 !important; }
+.pipe button { height: auto !important; }
+.qa button, .chips button { height: auto; min-height: 26px; }
