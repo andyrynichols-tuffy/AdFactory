@@ -125,6 +125,7 @@ class Refs:
     """Names <-> ids for the links between tabs; unknown names make new records."""
 
     def __init__(self):
+        self.created = 0
         self.reload()
 
     def reload(self):
@@ -146,6 +147,7 @@ class Refs:
             return None
         extra = {"description": "Added in the spreadsheet", "group": "Format"} if kind == "tags" else {}
         new = shop.upsert(kind, {"name": n, **extra})
+        self.created += 1
         self.reload()
         return new["id"]
 
@@ -492,6 +494,7 @@ def sync(path=None) -> dict:
     import openpyxl
     if not _lock.acquire(blocking=False):
         return STATUS
+    STATUS["changes"] = 0
     try:
         path = Path(path) if path else sheet.find()
         STATUS["path"] = str(path) if path else None
@@ -525,6 +528,9 @@ def sync(path=None) -> dict:
             _merge_kind(book, refs, base, kind, title, need, cols, extra)
         _merge_videos(book, refs, base)
         _merge_posted(book, refs, base)
+        if refs.created:  # names typed in one tab made records another tab lists: list them now
+            for kind, title, need, cols in TABS:
+                _merge_kind(book, refs, base, kind, title, need, cols, extra)
         if book.dirty:
             tmp = store.AD_DATA / "sheetdb-write.xlsx"
             wb.save(tmp)
