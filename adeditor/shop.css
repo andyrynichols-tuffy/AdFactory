@@ -2,7 +2,7 @@
 .homeTabs { flex-wrap: wrap; }
 #newVideoBtn { height: 30px; padding: 0 14px; font-size: 14px; }
 .shopPane { margin-top: 14px; }
-.shopPane .card, .shopDlg .card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+.shopPane .sc, .shopDlg .sc { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
 .shopPane h3 { margin: 0 0 8px; font-size: 15px; }
 .secHead { margin: 22px 0 8px !important; display: flex; gap: 8px; align-items: baseline; }
 .secHead .muted { font-weight: 400; font-size: 12px; }
@@ -32,8 +32,8 @@ button.tag.on::before { content: "✓"; }
   box-shadow: 0 6px 24px rgba(0,0,0,.45); pointer-events: none; }
 
 /* overview */
-.card.setup { border-color: var(--accent); margin-bottom: 14px; }
-.card.setup p { margin: 6px 0 10px; }
+.sc.setup { border-color: var(--accent); margin-bottom: 14px; }
+.sc.setup p { margin: 6px 0 10px; }
 .ovGrid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 12px; }
 .alerts { list-style: none; margin: 0; padding: 0; }
 .alerts li { padding: 7px 10px; border-radius: 8px; margin-bottom: 5px; cursor: pointer; background: var(--panel2); }
@@ -87,8 +87,8 @@ button.tag.on::before { content: "✓"; }
 .accHead .wide { flex-basis: 100%; }
 .spark { color: var(--accent2); vertical-align: middle; }
 .kpiRow { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-bottom: 10px; }
-.kpi { display: flex; flex-direction: column; gap: 2px; }
-.kpi span { color: var(--muted); font-size: 12px; } .kpi b { font-size: 24px; } .kpi em { font-style: normal; font-size: 11px; color: var(--muted); }
+.skpi { display: flex; flex-direction: column; gap: 2px; }
+.skpi span { color: var(--muted); font-size: 12px; } .skpi b { font-size: 24px; } .skpi em { font-style: normal; font-size: 11px; color: var(--muted); }
 .untracked { margin: 8px 0 0; padding-left: 18px; } .untracked li { margin: 4px 0; }
 .topVids { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 10px; }
 .tv { display: flex; gap: 10px; color: inherit; text-decoration: none; }

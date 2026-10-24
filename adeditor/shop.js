@@ -328,19 +328,19 @@ async function renderOverview() {
   const sm = d.summary, cnt = k => board.filter(b => b.stage === k && b.planned).length;
   const setup = !d.accounts.length || !d.creators.length;
   el.innerHTML = `
-    ${setup ? `<div class="card setup"><b>Set up the shop side</b>
+    ${setup ? `<div class="sc setup"><b>Set up the shop side</b>
       <p class="muted">Add the TikTok accounts he manages and the people who film, then products and orders. Logins stay with you: only the handle and login email are kept here, never passwords.</p>
       <div class="row"><button data-go="accounts" class="${d.accounts.length ? "" : "primary"}">＋ Accounts (${d.accounts.length})</button>
         <button data-go="creators" class="${d.creators.length ? "" : "primary"}">＋ People who film (${d.creators.length})</button>
         <button data-go="products">🛍 Products (${products().length})</button></div></div>` : ""}
     <div class="ovGrid">
-      <div class="card"><h3>Needs attention</h3>${sm.alerts.length ? `<ul class="alerts">${sm.alerts.map(a => `<li class="${a.level}" data-alert="${a.order || a.sid}" data-kind="${a.kind}">${a.kind === "return" ? "↩" : a.kind === "due" ? "🎬" : "📋"} ${esc(a.text)}</li>`).join("")}</ul>` : `<p class="muted">Nothing due. Return windows closing within a week and free-sample videos that are due show up here.</p>`}</div>
-      <div class="card"><h3>Pipeline</h3><div class="pipe">${d.stages.map(([k, l]) => `<button data-stage="${k}"><b>${k === "posted" ? board.filter(b => b.stage === k).length : cnt(k)}</b><span>${l}</span></button>`).join("")}</div>
+      <div class="sc"><h3>Needs attention</h3>${sm.alerts.length ? `<ul class="alerts">${sm.alerts.map(a => `<li class="${a.level}" data-alert="${a.order || a.sid}" data-kind="${a.kind}">${a.kind === "return" ? "↩" : a.kind === "due" ? "🎬" : "📋"} ${esc(a.text)}</li>`).join("")}</ul>` : `<p class="muted">Nothing due. Return windows closing within a week and free-sample videos that are due show up here.</p>`}</div>
+      <div class="sc"><h3>Pipeline</h3><div class="pipe">${d.stages.map(([k, l]) => `<button data-stage="${k}"><b>${k === "posted" ? board.filter(b => b.stage === k).length : cnt(k)}</b><span>${l}</span></button>`).join("")}</div>
         <p class="hint">Raw videos dropped in are pre-cut automatically; anyone can pick one up from the Queue to finish it.</p></div>
     </div>
     <h3 class="secHead">Accounts <button class="linkish" data-go="accounts">manage</button></h3>
     <div class="accGrid">${d.accounts.map(a => { const n = sm.accounts[a.id] || {}, p = sm.per.accounts[a.id] || {};
-      return `<div class="card accCard" data-acc="${a.id}" style="--c:${esc(a.color)}"><div class="accTop"><span class="dot"></span><b>${esc(a.name)}</b>
+      return `<div class="sc accCard" data-acc="${a.id}" style="--c:${esc(a.color)}"><div class="accTop"><span class="dot"></span><b>${esc(a.name)}</b>
         <span class="muted">${a.handle ? "@" + esc(a.handle.replace(/^@/, "")) : "no handle"}</span></div>
         <div class="kpis"><div><b>${num(n.followers)}</b><span>followers ${plus(n.week?.followers)}</span></div>
           <div><b>${p.posted || 0}</b><span>posted here</span></div><div><b>${num(p.avg_views)}</b><span>avg views</span></div></div>
@@ -475,7 +475,7 @@ async function renderProducts() {
   el.innerHTML = head + `<div class="prodGrid">${list.map(p => { const m = sm.made[p.id] || {}, per = sm.per.products[p.id] || {}, os = ordersOf(p.id);
     const tg = Object.entries(ptags[p.id] || {}).sort((a, b) => b[1] - a[1]).map(x => x[0]);
     const nScripts = d.scripts.filter(s => s.product === p.id).length;
-    return `<div class="card prod ${p.archived ? "arch" : ""}" data-prod="${p.id}">
+    return `<div class="sc prod ${p.archived ? "arch" : ""}" data-prod="${p.id}">
       <div class="pTop">${p.image ? `<img src="${esc(p.image)}" alt="" loading="lazy" onerror="this.remove()">` : `<div class="pImg">🛍</div>`}
         <div><b>${esc(p.name)}</b><div class="muted">${esc([p.brand, p.category, p.price, p.commission && p.commission + " commission"].filter(Boolean).join(" · "))}</div>
         ${p.link ? `<a href="${esc(p.link)}" target="_blank" rel="noopener" class="muted">Shop link ↗</a>` : ""}</div></div>
@@ -534,25 +534,25 @@ async function renderAnalytics() {
       ${d.accounts.map(x => `<button data-acc="${x.id}" class="${acc === x.id ? "on" : ""}" style="--c:${esc(x.color)}"><span class="dot"></span>${esc(x.name)}</button>`).join("")}</span>
       <button data-go="accounts">⚙ Accounts</button><span class="spacer"></span>
       <span class="muted">${st.running ? `checking TikTok… ${esc(st.msg || "")}` : `updated ${ago(st.last)}`}</span><button data-go="refresh" ${st.running ? "disabled" : ""} title="Read the public numbers now (one page at a time)">↻ Check now</button></div>
-    ${!d.accounts.length ? `<div class="card setup"><b>Add the accounts he manages</b><p class="muted">Each account's public TikTok page gives followers and likes; each posted video's link gives its views, likes, comments, shares and saves. No logins needed, and no passwords are kept.</p><button class="primary" data-go="accounts">＋ Add accounts</button></div>` : ""}
-    ${a ? `<div class="card accHead" style="--c:${esc(a.color)}"><span class="dot"></span><b>${esc(a.name)}</b>
+    ${!d.accounts.length ? `<div class="sc setup"><b>Add the accounts he manages</b><p class="muted">Each account's public TikTok page gives followers and likes; each posted video's link gives its views, likes, comments, shares and saves. No logins needed, and no passwords are kept.</p><button class="primary" data-go="accounts">＋ Add accounts</button></div>` : ""}
+    ${a ? `<div class="sc accHead" style="--c:${esc(a.color)}"><span class="dot"></span><b>${esc(a.name)}</b>
         ${a.handle ? `<a href="https://www.tiktok.com/@${esc(a.handle.replace(/^@/, ""))}" target="_blank" rel="noopener">@${esc(a.handle.replace(/^@/, ""))} ↗</a>` : '<span class="muted">no handle: add one to read its numbers</span>'}
         ${a.email ? `<span class="muted">· signs in with ${esc(LOGIN[a.login] || a.login || "email")}: ${esc(a.email)}</span>` : ""} ${a.creator ? `· usually ${who(a.creator)}` : ""}
         <span class="spacer"></span>${spark(an.accounts[a.id]?.series)}<button data-edit-acc="${a.id}">Edit</button>
         ${a.notes ? `<div class="muted wide">${esc(a.notes)}</div>` : ""}${an.accounts[a.id]?.error ? `<div class="warnx wide">⚠ ${esc(an.accounts[a.id].error)}</div>` : ""}</div>` : ""}
     <div class="kpiRow">
-      <div class="card kpi"><span>Followers</span><b>${num(t.followers || null)}</b><em>${plus(t.followers_week)} this week</em></div>
-      <div class="card kpi"><span>Views</span><b>${num(t.views)}</b><em>${plus(t.week_views)} this week</em></div>
-      <div class="card kpi"><span>Videos posted</span><b>${t.videos}</b><em>${t.tracked} with a link</em></div>
-      <div class="card kpi"><span>Engagement</span><b>${t.eng != null ? t.eng + "%" : "–"}</b><em>likes+comments+shares+saves ÷ views</em></div>
-      <div class="card kpi"><span>Likes · Shares</span><b>${num(t.likes)} · ${num(t.shares)}</b><em>${num(t.saves)} saves</em></div></div>
-    ${an.untracked.length ? `<div class="card"><b>${an.untracked.length} posted video${an.untracked.length === 1 ? " has" : "s have"} no TikTok link yet</b> <span class="muted">paste each one's link to see how it does</span>
+      <div class="sc skpi"><span>Followers</span><b>${num(t.followers || null)}</b><em>${plus(t.followers_week)} this week</em></div>
+      <div class="sc skpi"><span>Views</span><b>${num(t.views)}</b><em>${plus(t.week_views)} this week</em></div>
+      <div class="sc skpi"><span>Videos posted</span><b>${t.videos}</b><em>${t.tracked} with a link</em></div>
+      <div class="sc skpi"><span>Engagement</span><b>${t.eng != null ? t.eng + "%" : "–"}</b><em>likes+comments+shares+saves ÷ views</em></div>
+      <div class="sc skpi"><span>Likes · Shares</span><b>${num(t.likes)} · ${num(t.shares)}</b><em>${num(t.saves)} saves</em></div></div>
+    ${an.untracked.length ? `<div class="sc"><b>${an.untracked.length} posted video${an.untracked.length === 1 ? " has" : "s have"} no TikTok link yet</b> <span class="muted">paste each one's link to see how it does</span>
       <ul class="untracked">${an.untracked.slice(0, 12).map(u => `<li>${esc(u.title)} · video ${u.n} <button data-link="${u.sid}|${u.n}">Add link</button></li>`).join("")}</ul></div>` : ""}
     ${!acc && d.accounts.length ? `<h3 class="secHead">By account</h3><div class="tblWrap"><table class="tbl"><thead><tr><th>Account</th><th>Followers</th><th>This week</th><th>Posted here</th><th>Avg views</th><th>Engagement</th><th></th></tr></thead><tbody>
       ${d.accounts.map(x => { const n = an.accounts[x.id] || {}, p = an.per_account.find(r => r.id === x.id) || {};
         return `<tr><td>${accChip(x.id)}</td><td><b>${num(n.followers)}</b></td><td>${plus(n.week?.followers) || "–"}</td><td>${p.videos || 0}</td><td>${num(p.avg_views)}</td><td>${p.eng != null ? p.eng + "%" : "–"}</td><td>${spark(n.series)}</td></tr>`; }).join("")}</tbody></table></div>` : ""}
     <h3 class="secHead">Top videos · ${esc(scopeName)}</h3>
-    <div class="topVids">${an.top.map(p => `<a class="tv card" href="${esc(p.url)}" target="_blank" rel="noopener">
+    <div class="topVids">${an.top.map(p => `<a class="tv sc" href="${esc(p.url)}" target="_blank" rel="noopener">
         ${p.video_id ? `<img src="/api/shop/cover/${p.video_id}.jpg" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'noimg'}))">` : '<div class="noimg"></div>'}
         <div><b>${num(p.stats.views)}</b> views · ${p.eng}%<div class="muted">${esc(p.title)}${p.n ? " · " + p.n : ""}</div>
         <div class="qm">${accChip(p.account)} ${p.product ? "🛍 " + esc(prodName(p.product)) : ""}</div><div class="qtags">${tagsRow(p.tags, 3)}</div></div></a>`).join("")
@@ -561,7 +561,7 @@ async function renderAnalytics() {
     <h3 class="secHead">Scripts</h3>${perfTable(an.scripts, "Script", id => esc(byId("scripts", id)?.title || "?"), "Videos made from a library script show up here.")}
     <h3 class="secHead">Formats &amp; tags</h3>${perfTable(an.tags, "Tag", id => tagChip(id), "Tag videos (New video → Style, or ⋯ on a queue card) to compare formats.")}
     <h3 class="secHead">Creators</h3>${perfTable(an.creators, "Creator", id => who(id), "Set who's in each video to compare.")}
-    <div class="card trackBox"><b>Track a video made elsewhere</b> <span class="muted">it counts toward the account's numbers</span>
+    <div class="sc trackBox"><b>Track a video made elsewhere</b> <span class="muted">it counts toward the account's numbers</span>
       <div class="row"><input id="trackUrl" type="url" placeholder="https://www.tiktok.com/@…/video/…"><select id="trackAcc">${opts(d.accounts, acc, accLabel, "— account —")}</select><button data-go="track">Track</button></div></div>`;
 }
 function matrixTable(an, d) {
@@ -609,7 +609,7 @@ async function renderLibrary() {
   el.innerHTML = head + `<p class="muted">Scripts with <code>{product}</code>, <code>{brand}</code>, <code>{price}</code> or your own <code>{fill-ins}</code> work for any product: they're filled in when you make a video. Rows from the Scripts &amp; Links sheet land here too.</p>
     <div class="scriptGrid">${list.map(s => { const p = sm.per.scripts[s.id] || {}, used = sm.scripts_used[s.id] || 0;
       const lines = s.text.split("\n").filter(l => l.trim());
-      return `<div class="card script" data-script="${s.id}"><div class="qt"><b>${esc(s.title)}</b>${s.product ? `<span class="muted">🛍 ${esc(prodName(s.product))}</span>` : `<span class="muted">any product</span>`}</div>
+      return `<div class="sc script" data-script="${s.id}"><div class="qt"><b>${esc(s.title)}</b>${s.product ? `<span class="muted">🛍 ${esc(prodName(s.product))}</span>` : `<span class="muted">any product</span>`}</div>
         <div class="stext">${lines.slice(0, 4).map(l => `<div>${esc(l).replace(/\{([^}]+)\}/g, '<code>{$1}</code>').replace(/\[([^\]]+)\]/g, '<i class="muted">[$1]</i>')}</div>`).join("")}${lines.length > 4 ? `<div class="muted">+${lines.length - 4} more lines</div>` : ""}</div>
         ${s.tags?.length ? `<div class="qtags">${tagsRow(s.tags, 5)}</div>` : ""}
         <div class="qm muted">${used} shoot${used === 1 ? "" : "s"} · ${p.posted || 0} posted${p.avg_views != null ? ` · ${num(p.avg_views)} avg views` : ""}${s.from_shoot && !s.edited ? " · from the sheet" : ""}</div>
