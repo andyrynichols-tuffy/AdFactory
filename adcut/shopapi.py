@@ -1,14 +1,42 @@
 """HTTP API for the TikTok Shop side (adcut/shop.py): accounts, creators, products, orders,
 the script & format library, the creators' queue, posting links and analytics."""
+import os
 import threading
+from pathlib import Path
 
-from fastapi import APIRouter, Body, HTTPException
+from fastapi import APIRouter, Body, HTTPException, Request
 from fastapi.responses import FileResponse
 
-from . import shop, store
+from . import auth, sheetdb, shop, store
 
 router = APIRouter(prefix="/api/shop")
 BUSY = lambda: set()  # server.py points this at the shoots with a job running
+WAKE = None           # server.py: the event that runs a spreadsheet pass now
+
+
+@router.get("/sheet/status")
+def sheet_status(request: Request):
+    st = dict(sheetdb.STATUS)
+    st["name"] = Path(st["path"]).name.replace("^0", "&") if st.get("path") else None
+    st["local"] = not auth.remote(request)
+    st["tabs"] = [t for _, t, _, _ in sheetdb.TABS] + [sheetdb.POSTED_TAB]
+    return st
+
+
+@router.post("/sheet/sync")
+def sheet_sync():
+    if WAKE:
+        WAKE.set()
+    return {"ok": True}
+
+
+@router.post("/sheet/open")
+def sheet_open(request: Request):
+    """Opens the spreadsheet in Excel on this PC (not from the web link)."""
+    if auth.remote(request) or not sheetdb.STATUS.get("path"):
+        raise HTTPException(400, "open it from OneDrive on this device")
+    os.startfile(sheetdb.STATUS["path"])
+    return {"ok": True}
 
 
 @router.get("")

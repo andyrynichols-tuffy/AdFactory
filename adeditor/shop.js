@@ -707,6 +707,39 @@ $("#paneLibrary").addEventListener("input", e => {
 });
 $("#paneLibrary").addEventListener("change", e => { if (e.target.id === "libProd") { LS.set("libProd", e.target.value); renderLibrary(); } });
 
+// ---------- the Scripts & Links spreadsheet = the shared database (adcut/sheetdb.py) ----------
+async function sheetStatus() {
+  const st = await api("/api/shop/sheet/status").catch(() => null); if (!st) return null;
+  const c = $("#sheetChip");
+  const icon = { ok: "📗", waiting: "⏳", error: "⚠", missing: "⚠", starting: "📗" }[st.state] || "📗";
+  c.textContent = `${icon} Sheet${st.state === "ok" ? " ✓" : ""}`;
+  c.classList.toggle("warnbtn", st.state !== "ok" && st.state !== "starting");
+  c.title = st.state === "ok" ? `Spreadsheet in sync (${ago(st.synced)})` : st.msg || "Spreadsheet";
+  return st;
+}
+$("#sheetChip").onclick = async () => {
+  const st = await sheetStatus(); if (!st) return;
+  const dlg = document.createElement("dialog"); dlg.className = "shopDlg";
+  dlg.innerHTML = `<form method="dialog"><h3>📗 ${esc(st.name || "Scripts & Links spreadsheet")}</h3>
+    <p>${st.state === "ok" ? `In sync · checked ${ago(st.synced)}` : esc(st.msg || st.state)}</p>
+    <p class="muted">This spreadsheet in OneDrive is the shared database: edit in Excel (computer, web or phone) or here, and the other side catches up within about 30 seconds. If the same cell was changed in both, the spreadsheet wins.</p>
+    <ul class="muted small">
+      <li><b>First tab</b>: one row per video. Shoot, Link and Script are yours (a new row becomes a shoot); Product, Account, Creator, Tags, Due and Notes go both ways; Stage, Videos and Posted are filled in by the app.</li>
+      <li><b>${esc(st.tabs.join(", "))}</b>: one row per thing. Link tabs by typing names (a new name makes a new product, account or person). Deleting a row moves it to the app's trash.</li>
+      <li>Leave the <b>ID</b> column alone; sort and rename freely. No passwords anywhere: accounts keep the handle and login email.</li>
+      <li>The file is backed up on this PC before every change the app makes.</li></ul>
+    <div class="sdBtns"><span class="spacer"></span>${st.local ? `<button type="button" data-open>Open in Excel</button>` : ""}<button type="button" data-sync>↻ Sync now</button><button value="close" class="primary">Done</button></div></form>`;
+  document.body.appendChild(dlg);
+  dlg.onclick = async e => {
+    if (e.target.closest("[data-open]")) { await api("/api/shop/sheet/open", { json: {} }).catch(err => toast(err.message)); }
+    if (e.target.closest("[data-sync]")) { await api("/api/shop/sheet/sync", { json: {} }); toast("Syncing with the spreadsheet…"); setTimeout(async () => { await sheetStatus(); shopRefresh(); }, 6000); }
+  };
+  dlg.onclose = () => dlg.remove();
+  dlg.showModal();
+};
+sheetStatus();
+setInterval(() => { if (!$("#home").hidden) sheetStatus(); }, 15000);
+
 const PANES = { overview: renderOverview, queue: renderQueue, products: renderProducts, analytics: renderAnalytics, library: renderLibrary };
 $("#newVideoBtn").onclick = () => newVideo();
 // the Queue keeps up with uploads / pre-cuts finishing

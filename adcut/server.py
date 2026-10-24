@@ -22,7 +22,7 @@ from . import assets as assetmod
 from . import inbox
 from . import fx as fxmod
 from . import sounds as soundsmod
-from . import auth, preview, render, safety, sheet, shop, shopapi, store, takes, tunnel
+from . import auth, preview, render, safety, sheet, sheetdb, shop, shopapi, store, takes, tunnel
 
 EDITOR_DIR = ROOT / "adeditor"
 app = FastAPI(title="Ad Factory")
@@ -394,6 +394,7 @@ def _inbox_tick(_=None):
             shop.adopt_sheet()  # ...and a library script per row
     except Exception as e:  # noqa: BLE001  (shown on the home page)
         sheet.STATE["error"] = str(e)
+    sheetdb.sync()  # ...and the whole spreadsheet is the shared database (adcut/sheetdb.py)
     inbox.tick(_inbox_process)
 
 
@@ -405,12 +406,26 @@ def sheet_status():
     return sheet.STATE
 
 
+WAKE = threading.Event()  # a change in the app: sync the spreadsheet soon, not in 30 s
+
+
+def _changed():
+    if not sheetdb.busy():
+        WAKE.set()
+
+
+shop.ON_CHANGE.append(_changed)
+shopapi.WAKE = WAKE
+
+
 @app.on_event("startup")
 def _start_inbox():
     def loop():
         while True:
             _inbox_tick()
-            time.sleep(30)
+            if WAKE.wait(30):
+                time.sleep(3)  # let a burst of edits settle
+            WAKE.clear()
     threading.Thread(target=loop, daemon=True, name="inbox").start()
     shop.start_background()  # TikTok numbers for the accounts + posted videos, every few hours
     tunnel.start(int(os.environ.get("ADCUT_PORT", "8770")))  # the web link (adcut/tunnel.py)

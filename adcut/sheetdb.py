@@ -489,6 +489,10 @@ def _backup(path):
         old.unlink()
 
 
+def busy() -> bool:
+    return _lock.locked()
+
+
 def sync(path=None) -> dict:
     """One pass both ways. Safe to call often; writes only when something differs."""
     import openpyxl
