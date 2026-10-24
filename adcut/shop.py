@@ -344,25 +344,45 @@ def posting(sid: str, body: dict) -> dict:
 
 # ---------------------------------------------------------------- the queue
 
+_cache = {}
+
+
+def _all_shoots():
+    """[(sid, shoot, info)] for every shoot, newest first; a shoot is only re-read when its
+    file changed (the screens ask several times a minute). Read-only: don't modify them."""
+    out = []
+    for f in store.SHOOTS_DIR.glob("*/shoot.json"):
+        sid = f.parent.name
+        try:
+            mt = f.stat().st_mtime
+        except OSError:
+            continue
+        c = _cache.get(sid)
+        if not c or c[0] != mt:
+            try:
+                s = store.load(sid)
+            except Exception:
+                continue
+            c = _cache[sid] = (mt, s, {"videos": store.videos(s)["count"], "products": {}})
+        out.append((sid, c[1], c[2]))
+    return sorted(out, key=lambda x: -(x[1].get("created") or 0))
+
+
 def board(busy_ids=()) -> list:
     d = load()
     out = []
-    for r in store.shoots():
-        try:
-            s = store.load(r["id"])
-        except Exception:
-            continue
+    for sid, s, info in _all_shoots():
         pl = plan_of(s)
         saved = s.get("saved") or {}
-        st = "posted" if pl.get("done") else stage(s, r["id"] in busy_ids)
+        st = "posted" if pl.get("done") else stage(s, sid in busy_ids)
         p = by_id(d, "products", pl["product"])
         out.append({
-            "sid": r["id"], "title": s["title"], "created": s["created"], "stage": st,
+            "sid": sid, "title": s["title"], "created": s["created"], "stage": st,
             "product": pl["product"], "product_name": p["name"] if p else s["product"]["name"],
             "account": pl["account"], "creator": pl["creator"], "editor": pl["editor"], "tags": pl["tags"],
             "script": pl["script"], "due": pl["due"], "due_in": days_left(pl["due"]), "notes": pl["notes"],
             "assigned": pl["assigned"], "planned": bool(s.get("shop")),
-            "lines": len(s["script"]), "sources": len(s["sources"]), "videos": r["videos"],
+            "lines": len(s["script"]), "sources": len(s["sources"]), "videos": info["videos"],
             "saved": len(saved), "posted": sum(1 for m in saved.values() if m.get("posted")),
             "thumb": _thumb(s),
         })
@@ -380,20 +400,18 @@ def postings(d=None, stats=None) -> list:
     d = d or load()
     stats = stats or load_stats()
     out = []
-    for r in store.shoots():
-        try:
-            s = store.load(r["id"])
-        except Exception:
-            continue
+    for sid, s, info in _all_shoots():
         pl = plan_of(s)
         for k, m in (s.get("saved") or {}).items():
             vid = m.get("video_id")
             v = stats["videos"].get(vid) if vid else None
             snaps = (v or {}).get("snapshots") or []
+            if (k, m.get("product")) not in info["products"]:
+                info["products"][(k, m.get("product"))] = video_product(s, k, d)
             out.append({
-                "sid": r["id"], "title": s["title"], "n": int(k), "posted": bool(m.get("posted")),
+                "sid": sid, "title": s["title"], "n": int(k), "posted": bool(m.get("posted")),
                 "posted_at": m.get("posted_at") or (v or {}).get("created"), "saved_at": m.get("saved_at"),
-                "account": m.get("account") or pl["account"], "product": video_product(s, k, d),
+                "account": m.get("account") or pl["account"], "product": info["products"][(k, m.get("product"))],
                 "creator": pl["creator"], "script": pl["script"], "tags": pl["tags"],
                 "url": m.get("url"), "video_id": vid, "stats": snaps[-1] if snaps else None,
                 "week": _ago_delta(snaps, 7 * 86400), "desc": (v or {}).get("desc"), "error": (v or {}).get("error"),
@@ -729,11 +747,10 @@ def adopt_sheet():
     except Exception:  # open in Excel / half-synced: next pass
         return 0
     by_row = {}
-    for r in store.shoots():
-        s = store.load(r["id"])
+    for sid, s, _ in _all_shoots():
         name = ((s.get("sheet") or {}).get("row") or "").strip().lower()
         if name:
-            by_row[name] = (r["id"], s)
+            by_row[name] = (sid, s)
     n = 0
     for row in rows:
         if not row["script"].strip() or row["shoot"].lower() not in by_row:
