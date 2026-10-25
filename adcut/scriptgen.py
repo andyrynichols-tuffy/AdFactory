@@ -48,13 +48,54 @@ def busy() -> list:
 
 # ---------------------------------------------------------------- the video
 
+def _direct(url: str, folder):
+    """The way the Analytics page reader sees TikTok: the public page names the video file,
+    which downloads with that page's cookies."""
+    import http.cookiejar
+    import urllib.request
+    from supercut import analytics
+    op = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
+    hdr = {"User-Agent": analytics.UA, "Accept-Language": "en-US,en;q=0.9", "Referer": "https://www.tiktok.com/"}
+    r = op.open(urllib.request.Request(url, headers=hdr), timeout=30)
+    final, html = r.geturl(), r.read().decode("utf-8", "replace")
+    item = analytics._scope(html).get("webapp.video-detail", {}).get("itemInfo", {}).get("itemStruct", {})
+    v = item.get("video") or {}
+    urls = [v.get("playAddr"), v.get("downloadAddr")] + [
+        u for b in v.get("bitrateInfo") or [] for u in (b.get("PlayAddr") or {}).get("UrlList") or []]
+    for u in [u for u in urls if u]:
+        try:
+            data = op.open(urllib.request.Request(u, headers={**hdr, "Range": "bytes=0-"}), timeout=90).read()
+        except Exception:
+            continue
+        if len(data) > 50_000:
+            f = folder / "video.mp4"
+            f.write_bytes(data)
+            m = analytics.VIDEO_RX.search(final) or analytics.VIDEO_RX.search(url)
+            author = item.get("author") or {}
+            return f, {"video_id": str(item.get("id") or ""), "author": author.get("nickname") or "",
+                       "handle": author.get("uniqueId") or (m.group(1) if m else ""), "desc": item.get("desc") or "",
+                       "url": f"https://www.tiktok.com/@{author.get('uniqueId') or (m.group(1) if m else '')}/video/{item.get('id')}"
+                       if item.get("id") else final}
+    raise RuntimeError("TikTok didn't hand over the video file")
+
+
 def download(url: str, folder):
-    import yt_dlp
+    """The video + what TikTok says about it (direct first, yt-dlp if that fails)."""
     folder.mkdir(parents=True, exist_ok=True)
+    try:
+        return _direct(url, folder)
+    except Exception as first:
+        try:
+            import yt_dlp
+        except ImportError:
+            raise RuntimeError(f"couldn't download that video ({first})")
     opts = {"outtmpl": str(folder / "video.%(ext)s"), "format": "b[ext=mp4]/b", "quiet": True, "no_warnings": True,
             "noplaylist": True, "ffmpeg_location": str(FFMPEG), "overwrites": True}
-    with yt_dlp.YoutubeDL(opts) as y:
-        info = y.extract_info(url, download=True)
+    try:
+        with yt_dlp.YoutubeDL(opts) as y:
+            info = y.extract_info(url, download=True)
+    except Exception as e:
+        raise RuntimeError("couldn't download that video (is it public?)") from e
     f = next((p for p in folder.glob("video.*") if p.suffix != ".part"), None)
     if not f:
         raise RuntimeError("couldn't download that video (is it public?)")
