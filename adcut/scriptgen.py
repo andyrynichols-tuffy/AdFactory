@@ -123,17 +123,25 @@ def still(path, t, dst):
                     "-frames:v", "1", "-vf", "scale=360:-2", "-q:v", "4", str(dst)], creationflags=NO_WINDOW)
 
 
-def to_lines(words) -> list:
-    """Words -> spoken lines (a sentence, or a long pause, ends a line)."""
+def to_lines(words, cuts=()) -> list:
+    """Words -> spoken lines: a sentence, a long pause or a cut in the picture ends a line
+    (TikTok scripts are written shot by shot)."""
     lines, cur = [], []
     for i, w in enumerate(words):
         cur.append(w)
         nxt = words[i + 1] if i + 1 < len(words) else None
-        end = w[0][-1:] in ".!?" or (nxt and nxt[1] - w[2] > 0.7) or len(cur) >= 22 or not nxt
+        cut = nxt and any(w[2] - 0.1 <= c <= nxt[1] + 0.15 for c in cuts)
+        end = w[0][-1:] in ".!?" or (nxt and nxt[1] - w[2] > 0.7) or cut or len(cur) >= 22 or not nxt
         if end:
             lines.append({"text": " ".join(x[0] for x in cur).replace(" ,", ","), "t0": cur[0][1], "t1": cur[-1][2]})
             cur = []
-    return lines
+    out = []  # a word or two cut off from its sentence ("But" / "And") joins the next line
+    for l in lines:
+        if out and len(out[-1]["text"].split()) < 3 and out[-1]["text"][-1:] not in ".!?":
+            out[-1] = {"text": out[-1]["text"] + " " + l["text"], "t0": out[-1]["t0"], "t1": l["t1"]}
+        else:
+            out.append(l)
+    return out
 
 
 # ---------------------------------------------------------------- guessing the product details
@@ -160,7 +168,7 @@ FEATURES = ["water-resistant", "water resistant", "waterproof", "sweat-resistant
             "100% cotton", "cotton", "linen", "waffle", "fleece", "denim", "leather", "silicone", "ceramic", "bamboo",
             "super thin tip", "thin tip", "brush", "aroma diffuser", "diffuser", "remote"]
 ITEMS = ["eyebrow pencil", "eyebrow pen", "brow pencil", "pencil", "wipes", "candle", "shirt", "t-shirt", "tee",
-         "henley", "pants", "jeans", "shorts", "dress", "leggings", "hoodie", "sweater", "sweatshirt", "jacket",
+         "henley", "thermals", "thermal", "pants", "jeans", "shorts", "dress", "leggings", "hoodie", "sweater", "sweatshirt", "jacket",
          "shoes", "sneakers", "slippers", "socks", "bag", "backpack", "bottle", "water bottle", "tumbler", "mug",
          "serum", "cream", "lotion", "moisturizer", "cleanser", "shampoo", "conditioner", "mascara", "lipstick",
          "lip oil", "lip gloss", "foundation", "concealer", "sunscreen", "perfume", "cologne", "deodorant", "charger",
@@ -297,7 +305,10 @@ def from_link(url: str, title: str = "") -> dict:
         rid = hashlib.sha1(url.strip().encode()).hexdigest()[:10]
         folder = REFS / rid
         job["msg"] = "downloading the video…"
-        f, meta = download(url.strip(), folder)
+        if (folder / "meta.json").exists() and (folder / "video.mp4").exists():  # pasted before: reuse it
+            f, meta = folder / "video.mp4", json.loads((folder / "meta.json").read_text(encoding="utf-8"))
+        else:
+            f, meta = download(url.strip(), folder)
         rid2 = meta["video_id"] or rid
         dur = probe(f)["duration"]
         job["msg"] = "listening to it (transcribing)…"
@@ -309,9 +320,10 @@ def from_link(url: str, title: str = "") -> dict:
             words = transcribe_words(f, lambda m: job.update(msg=f"transcribing… {m.split(': ', 1)[-1]}"))
             wfile.write_text(json.dumps(words), encoding="utf-8")
         job["msg"] = "finding the shots…"
-        lines = to_lines(words)
+        spans = find_cuts(f, dur)
+        lines = to_lines(words, [a for a, _ in spans[1:]])
         shots = []
-        for k, (a, b) in enumerate(find_cuts(f, dur)):
+        for k, (a, b) in enumerate(spans):
             still(f, (a + b) / 2, folder / f"shot{k}.jpg")
             said = " ".join(w[0] for w in words if a <= (w[1] + w[2]) / 2 < b)
             shots.append({"t0": a, "t1": b, "said": said, "desc": "", "img": f"shot{k}.jpg"})
