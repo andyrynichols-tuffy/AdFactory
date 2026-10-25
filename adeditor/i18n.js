@@ -35,12 +35,12 @@
   window.tr = tr;
 
   const SKIP = "script,style,textarea,code,[translate=no],.notranslate";
-  const ATTRS = ["title", "placeholder", "aria-label", "data-tip"];
+  const ATTRS = ["title", "placeholder", "aria-label"];  // not data-tip: tag descriptions are content
   function attrs(el) {
     if (el.closest("[translate=no]")) return;
     for (const a of ATTRS) {
       const v = el.getAttribute(a);
-      if (v && (a !== "data-tip" || el.closest("dialog,.sbDlg") === null || true)) {
+      if (v) {
         const t = tr(v);
         if (t !== v) el.setAttribute(a, t);
       }
