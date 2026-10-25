@@ -16,10 +16,20 @@ async function sbJob(job, onMsg) {
   if (job.state === "error") throw new Error(job.error);
   return job.result;
 }
-async function aiReady() {
-  if (SB.ai === null) SB.ai = (await api("/api/shop/ai/status").catch(() => ({ available: false }))).available;
+async function aiReady(fresh = false) {
+  if (SB.ai === null || fresh) {
+    const st = await api(`/api/shop/ai/status${fresh ? "?fresh=1" : ""}`).catch(() => ({ available: false, help: "couldn't check" }));
+    SB.ai = st.available; SB.aiHelp = st.help;
+  }
   return SB.ai;
 }
+// a ✨ button while Claude Code isn't signed in: explain, check again
+document.addEventListener("click", async e => {
+  const b = e.target.closest(".aiBtn.aiOff"); if (!b) return;
+  e.stopImmediatePropagation(); e.preventDefault();
+  if (await aiReady(true)) { $$(".aiBtn.aiOff").forEach(x => x.classList.remove("aiOff")); toast("✨ AI is ready: press it again"); return; }
+  alert(SB.aiHelp || "✨ AI isn't available on this PC");
+}, true);
 
 // ---------- Library → 🔗 From a TikTok link ----------
 async function scriptFromLink() {
@@ -55,7 +65,7 @@ async function openBuilder(sid) {
   SB.s = s; SB.prods = prods;
   const src = s.source;
   const dlg = SB.dlg = document.createElement("dialog"); dlg.className = "shopDlg sbDlg";
-  const aiOff = SB.ai ? "" : 'disabled title="Claude Code isn\'t set up on this PC"';
+  const aiOff = SB.ai ? "" : 'data-off="1"';
   dlg.innerHTML = `<div class="sbHead"><input class="sbTitle" value="${esc(s.title)}" title="Script name">
       ${src ? `<a href="${esc(src.url)}" target="_blank" rel="noopener" class="muted">${src.handle ? "@" + esc(src.handle) : "TikTok"} ↗</a>` : `<span class="muted">typed-in script</span>`}
       <span class="spacer"></span><button type="button" data-act="rewrite" class="aiBtn" ${aiOff}>✨ AI: rewrite…</button><button type="button" data-act="close" class="primary">Done</button></div>
@@ -80,6 +90,7 @@ async function openBuilder(sid) {
       </div></div>
     <div class="sbPop" hidden></div>`;
   document.body.appendChild(dlg);
+  if (!SB.ai) $$(".aiBtn", dlg).forEach(b => { b.classList.add("aiOff"); b.title = SB.aiHelp || "AI isn't set up"; });
   sbRender();
   tagPicker($(".sbTags", dlg), s.tags || [], () => ({ product: s.product, script: s.id }));
   $(".sbTags", dlg).addEventListener("change", e => { SB.s.tags = [...$(".sbTags", dlg)._sel]; $(".sbTagN", dlg).textContent = SB.s.tags.length || ""; sbSave(); });
@@ -322,7 +333,7 @@ async function rewriteDlg(sid) {
       <div><div class="muted small">Rewritten</div><textarea class="rwOut" rows="14" placeholder="Pick a style or type one, then ✨ Rewrite"></textarea></div></div>
     <div class="rwMsg muted"></div>
     <div class="sdBtns"><button type="button" data-close>Cancel</button><span class="spacer"></span>
-      <button type="button" class="aiBtn" data-go ${SB.ai ? "" : 'disabled title="Claude Code isn\'t set up on this PC"'}>✨ Rewrite</button>
+      <button type="button" class="aiBtn ${SB.ai ? "" : "aiOff"}" data-go title="${SB.ai ? "" : esc(SB.aiHelp || "")}">✨ Rewrite</button>
       <button type="button" data-save="new" disabled>Save as a new script</button><button type="button" data-save="replace" class="primary" disabled>Replace this script</button></div></form>`;
   document.body.appendChild(dlg);
   const how = () => {

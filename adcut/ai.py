@@ -4,22 +4,37 @@ its own empty folder so it doesn't wander the repo. Everything else in the app i
 import json
 import re
 import subprocess
+import time
 
 from supercut import asks
 
 from . import store
 
 AI_DIR = store.AD_DATA / "ai"
+SIGN_IN = ("✨ AI needs Claude Code signed in on this PC, once: open a terminal, type claude, "
+           "then /login and follow the steps")
+_st = {"t": 0.0, "v": None}
+
+
+def status(fresh=False) -> dict:
+    """{installed, signed_in}: rechecked every 5 min once signed in, every 30 s until then (it starts the CLI)."""
+    ttl = 300 if (_st["v"] or {}).get("signed_in") else 30
+    if fresh or _st["v"] is None or time.time() - _st["t"] > ttl:
+        _st.update(t=time.time(), v=asks.status())
+    return _st["v"]
 
 
 def available() -> bool:
-    return bool(asks.claude_exe())
+    st = status()
+    return bool(st["installed"] and st["signed_in"])
 
 
 def ask(prompt: str, cwd=None, tools=(), timeout=300) -> str:
     exe = asks.claude_exe()
     if not exe:
         raise RuntimeError("Claude Code isn't installed on this PC, so the ✨ AI buttons can't run")
+    if not status()["signed_in"]:
+        raise RuntimeError(SIGN_IN)
     AI_DIR.mkdir(parents=True, exist_ok=True)
     cmd = [exe, "-p", "--output-format", "text"]
     if tools:

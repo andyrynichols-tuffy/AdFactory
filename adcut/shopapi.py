@@ -184,8 +184,10 @@ def scriptgen_file(ref: str, name: str):
 
 
 @router.get("/ai/status")
-def ai_status():
-    return {"available": ai.available()}
+def ai_status(fresh: int = 0):
+    st = ai.status(bool(fresh))
+    return {"available": bool(st["installed"] and st["signed_in"]), "installed": st["installed"],
+            "signed_in": st["signed_in"], "help": None if st["signed_in"] else ai.SIGN_IN}
 
 
 @router.post("/ai/{what}")

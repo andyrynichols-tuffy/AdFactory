@@ -223,3 +223,4 @@ button.tpMore:hover { color: var(--text) !important; border-color: #4a505b !impo
   .sbLeft { position: static; max-height: none; }
   .sbShots { max-height: 300px; }
 }
+.aiBtn.aiOff { opacity: .55; }
