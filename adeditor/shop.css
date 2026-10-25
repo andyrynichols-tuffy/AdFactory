@@ -224,3 +224,9 @@ button.tpMore:hover { color: var(--text) !important; border-color: #4a505b !impo
   .sbShots { max-height: 300px; }
 }
 .aiBtn.aiOff { opacity: .55; }
+.sbDlg { overflow-x: hidden; }
+.sbGrid { grid-template-columns: minmax(240px, 360px) minmax(0, 1fr); }
+.sbBar > span.muted { flex: 1 1 260px; }
+@media (max-width: 900px) { .sbGrid { grid-template-columns: minmax(0, 1fr); } .sbLeft { position: static; max-height: none; } .sbShots { max-height: 320px; } }
+.sbVid { display: block; width: auto; max-width: 100%; margin: 0 auto; }
+@media (max-width: 900px) { .sbVid { max-height: 34vh; } .sbShots { max-height: 260px; } }
