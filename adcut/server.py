@@ -22,7 +22,7 @@ from . import assets as assetmod
 from . import inbox
 from . import fx as fxmod
 from . import sounds as soundsmod
-from . import auth, preview, render, safety, sheet, sheetdb, shop, shopapi, store, takes, tunnel
+from . import auth, cameraapi, preview, render, safety, sheet, sheetdb, shop, shopapi, store, takes, tunnel
 
 EDITOR_DIR = ROOT / "adeditor"
 app = FastAPI(title="Ad Factory")
@@ -30,6 +30,8 @@ JOBS = {}
 GPU = threading.Lock()  # one transcribe/render at a time
 app.include_router(shopapi.router)  # the TikTok Shop side: products, accounts, library, queue, analytics
 shopapi.BUSY = lambda: {j["shoot"] for j in JOBS.values() if j.get("state") in ("queued", "running")}
+app.include_router(cameraapi.router)  # the Ad Camera iPhone app (ios/AdCamera)
+cameraapi.BUSY = shopapi.BUSY
 
 
 @app.middleware("http")
@@ -52,6 +54,10 @@ async def login(request: Request):
     from urllib.parse import parse_qs
     pw = parse_qs((await request.body()).decode("utf-8", "replace")).get("password", [""])[0]
     tok = auth.try_login(request, pw)
+    if "application/json" in (request.headers.get("accept") or ""):  # the Ad Camera app keeps the token itself
+        if not tok or tok == "wait":
+            return JSONResponse({"detail": "wait" if tok == "wait" else "wrong password"}, status_code=401)
+        return JSONResponse({"cookie": auth.COOKIE, "token": tok, "days": auth.DAYS})
     if not tok or tok == "wait":
         msg = "Too many tries. Wait 10 minutes." if tok == "wait" else "Wrong password."
         return HTMLResponse(auth.login_html(request, f'<div class="err">{msg}</div>'), status_code=401)
@@ -287,6 +293,7 @@ def busy():
     """For Studio (studio/): don't restart this app for an update while it's mid-job."""
     why = [j["kind"] for j in JOBS.values() if j.get("state") in ("queued", "running")]
     why += shopapi.scriptgen.busy()  # downloading / transcribing a TikTok for the script builder
+    why += ["upload"] * bool(UPLOADS)  # a phone sending videos (a restart would cut it off)
     return {"busy": bool(why), "why": why}
 
 
@@ -459,6 +466,9 @@ def inbox_open():
     return {"dir": str(inbox.open_folder())}
 
 
+UPLOADS = set()  # inbox files being received right now
+
+
 def _clean_name(x: str) -> str:
     return "".join(c for c in Path(x or "").name if c not in '<>:"/\\|?*').strip(" .")
 
@@ -492,12 +502,19 @@ async def inbox_upload(request: Request, name: str, offset: int = 0, total: int 
         have = 0
     elif offset != have:
         return JSONResponse({"size": have}, status_code=409)
-    with open(part, "wb" if offset == 0 else "ab") as f:
-        async for chunk in request.stream():
-            f.write(chunk)
+    UPLOADS.add(part)
+    try:
+        with open(part, "wb" if offset == 0 else "ab") as f:
+            async for chunk in request.stream():
+                f.write(chunk)
+    finally:
+        UPLOADS.discard(part)
     size = part.stat().st_size
     if total and size >= total:
         dst, n = d / fname, 2
+        if dst.exists() and dst.stat().st_size == size:  # a retry of a video that already made it (the phone lost the reply)
+            part.unlink()
+            return {"size": size, "done": True, "file": dst.name, "folder": sub}
         while dst.exists():
             dst, n = d / f"{Path(fname).stem} ({n}){Path(fname).suffix}", n + 1
         part.replace(dst)
