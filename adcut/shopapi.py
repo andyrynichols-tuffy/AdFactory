@@ -184,10 +184,22 @@ def scriptgen_file(ref: str, name: str):
 
 
 @router.get("/ai/status")
-def ai_status(fresh: int = 0):
+def ai_status(request: Request, fresh: int = 0):
     st = ai.status(bool(fresh))
     return {"available": bool(st["installed"] and st["signed_in"]), "installed": st["installed"],
-            "signed_in": st["signed_in"], "help": None if st["signed_in"] else ai.SIGN_IN}
+            "signed_in": st["signed_in"], "help": None if st["signed_in"] else ai.SIGN_IN,
+            "local": not auth.remote(request)}
+
+
+@router.post("/ai/login")
+def ai_login(request: Request):
+    if auth.remote(request):
+        raise HTTPException(400, "sign in on the PC that runs Ad Factory")
+    try:
+        ai.open_login()
+    except RuntimeError as e:
+        raise HTTPException(400, str(e))
+    return {"ok": True}
 
 
 @router.post("/ai/{what}")

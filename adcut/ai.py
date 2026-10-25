@@ -11,8 +11,17 @@ from supercut import asks
 from . import store
 
 AI_DIR = store.AD_DATA / "ai"
-SIGN_IN = ("✨ AI needs Claude Code signed in on this PC, once: open a terminal, type claude, "
-           "then /login and follow the steps")
+SIGN_IN = "✨ AI needs Claude Code signed in on this PC (once). Press a ✨ button on the PC to open the sign-in."
+
+
+def open_login():
+    """A window running Claude Code's own sign-in (finished in the browser by the user)."""
+    exe = asks.claude_exe()
+    if not exe:
+        raise RuntimeError("Claude Code isn't installed on this PC")
+    subprocess.Popen(["cmd", "/c", "start", "Claude Code sign-in", "cmd", "/k", exe, "auth", "login"],
+                     creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
+    _st["v"] = None  # check again next time
 _st = {"t": 0.0, "v": None}
 
 

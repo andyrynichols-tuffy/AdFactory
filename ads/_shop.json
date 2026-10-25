@@ -549,8 +549,8 @@
    "updated": 1792860269.8478575
   },
   {
-   "title": "TEST waffle reference",
-   "text": "Stop spending designer price for just one of the other name brand ones\nbecause {brand} just dropped their {feature 1} net {item}\nand the fact that you can get not one but three of these for the price of one is kind of crazy.\nBut\ndon't be dumb like me and buy these in store for full price because on here they're running a huge fall and\nwinter sale so these are way cheaper.\nIf you don't believe me I can link the verified {brand} store right there.\nBut\neverybody has started to buy these on here because of how good this deal is.\nYou\nget that super soft con {feature 1} net material that\nhugs your arms, shoulders, and chest but\nstill leaves plenty of room around that midsection.\nAnd\nthe best part about these is that they do fit true to size.\nI'm 5 '6\", 160 wearing a size medium.\nBut\nif you have any more questions about sizing, just comment your height and weight and I can help you out.\nThe\nonly problem with these though is that because of this massive sale they're on on here, they are selling out fast.\nSo\nif you do want to get the colors and size you want before this sale ends, I'll drop a link somewhere down\nbelow.",
+   "title": "@shamsontv · Old Navy waffle thermals",
+   "text": "Stop spending designer price for just one of the other name brand ones\nbecause {brand} just dropped their {feature 1} net {item}\nand the fact that you can get not one but three of these for the price of one is kind of crazy.\nBut don't be dumb like me and buy these in store for full price because on here they're running a huge fall and\nwinter sale so these are way cheaper.\nIf you don't believe me I can link the verified {brand} store right there.\nBut everybody has started to buy these on here because of how good this deal is.\nYou get that {feature 2} con {feature 1} net material that\nhugs your arms, shoulders, and chest but\nstill leaves plenty of room around that midsection.\nAnd the best part about these is that they do fit true to size.\nI'm 5 '6\", 160 wearing a size medium.\nBut if you have any more questions about sizing, just comment your height and weight and I can help you out.\nThe only problem with these though is that because of this massive sale they're on on here, they are selling out fast.\nSo if you do want to get the colors and size you want before this sale ends, I'll drop a link somewhere down\nbelow.",
    "tags": [],
    "product": null,
    "notes": "From https://www.tiktok.com/@shamsontv/video/7694716085098040589",
@@ -559,278 +559,7 @@
    "lines": [
     {
      "text": "Stop spending designer price for just one of the other name brand ones",
-     "t0": 0.0,
-     "t1": 3.1
-    },
-    {
-     "text": "because Old Navy just dropped their waffle net thermals",
-     "t0": 3.1,
-     "t1": 5.72
-    },
-    {
-     "text": "and the fact that you can get not one but three of these for the price of one is kind of crazy.",
-     "t0": 5.72,
-     "t1": 9.64
-    },
-    {
-     "text": "But",
-     "t0": 9.8,
-     "t1": 9.88
-    },
-    {
-     "text": "don't be dumb like me and buy these in store for full price because on here they're running a huge fall and",
-     "t0": 9.88,
-     "t1": 13.96
-    },
-    {
-     "text": "winter sale so these are way cheaper.",
-     "t0": 13.96,
-     "t1": 15.38
-    },
-    {
-     "text": "If you don't believe me I can link the verified Old Navy store right there.",
-     "t0": 15.46,
-     "t1": 18.18
-    },
-    {
-     "text": "But",
-     "t0": 18.28,
-     "t1": 18.36
-    },
-    {
-     "text": "everybody has started to buy these on here because of how good this deal is.",
-     "t0": 18.36,
-     "t1": 21.08
-    },
-    {
-     "text": "You",
-     "t0": 21.16,
-     "t1": 21.26
-    },
-    {
-     "text": "get that super soft con waffle net material that",
-     "t0": 21.26,
-     "t1": 23.44
-    },
-    {
-     "text": "hugs your arms, shoulders, and chest but",
-     "t0": 23.44,
-     "t1": 25.36
-    },
-    {
-     "text": "still leaves plenty of room around that midsection.",
-     "t0": 25.36,
-     "t1": 27.08
-    },
-    {
-     "text": "And",
-     "t0": 27.08,
-     "t1": 27.3
-    },
-    {
-     "text": "the best part about these is that they do fit true to size.",
-     "t0": 27.3,
-     "t1": 29.4
-    },
-    {
-     "text": "I'm 5 '6\", 160 wearing a size medium.",
-     "t0": 29.52,
-     "t1": 31.28
-    },
-    {
-     "text": "But",
-     "t0": 31.52,
-     "t1": 31.6
-    },
-    {
-     "text": "if you have any more questions about sizing, just comment your height and weight and I can help you out.",
-     "t0": 31.6,
-     "t1": 34.98
-    },
-    {
-     "text": "The",
-     "t0": 35.1,
-     "t1": 35.18
-    },
-    {
-     "text": "only problem with these though is that because of this massive sale they're on on here, they are selling out fast.",
-     "t0": 35.18,
-     "t1": 38.96
-    },
-    {
-     "text": "So",
-     "t0": 39.08,
-     "t1": 39.16
-    },
-    {
-     "text": "if you do want to get the colors and size you want before this sale ends, I'll drop a link somewhere down",
-     "t0": 39.16,
-     "t1": 43.0
-    },
-    {
-     "text": "below.",
-     "t0": 43.0,
-     "t1": 43.24
-    }
-   ],
-   "marks": [
-    {
-     "line": 1,
-     "a": 8,
-     "b": 16,
-     "slot": "brand"
-    },
-    {
-     "line": 1,
-     "a": 36,
-     "b": 42,
-     "slot": "feature 1"
-    },
-    {
-     "line": 1,
-     "a": 47,
-     "b": 55,
-     "slot": "item"
-    },
-    {
-     "line": 6,
-     "a": 48,
-     "b": 56,
-     "slot": "brand"
-    },
-    {
-     "line": 10,
-     "a": 24,
-     "b": 30,
-     "slot": "feature 1"
-    }
-   ],
-   "shots": [
-    {
-     "t0": 0.0,
-     "t1": 3.2,
-     "said": "Stop spending designer price for just one of the other name brand ones",
-     "desc": "",
-     "img": "shot0.jpg"
-    },
-    {
-     "t0": 3.2,
-     "t1": 4.13,
-     "said": "because Old Navy",
-     "desc": "",
-     "img": "shot1.jpg"
-    },
-    {
-     "t0": 4.13,
-     "t1": 5.83,
-     "said": "just dropped their waffle net thermals",
-     "desc": "",
-     "img": "shot2.jpg"
-    },
-    {
-     "t0": 5.83,
-     "t1": 9.8,
-     "said": "and the fact that you can get not one but three of these for the price of one is kind of crazy.",
-     "desc": "",
-     "img": "shot3.jpg"
-    },
-    {
-     "t0": 9.8,
-     "t1": 12.4,
-     "said": "But don't be dumb like me and buy these in store for full price because",
-     "desc": "",
-     "img": "shot4.jpg"
-    },
-    {
-     "t0": 12.4,
-     "t1": 18.3,
-     "said": "on here they're running a huge fall and winter sale so these are way cheaper. If you don't believe me I can link the verified Old Navy store right there.",
-     "desc": "",
-     "img": "shot5.jpg"
-    },
-    {
-     "t0": 18.3,
-     "t1": 21.2,
-     "said": "But everybody has started to buy these on here because of how good this deal is.",
-     "desc": "",
-     "img": "shot6.jpg"
-    },
-    {
-     "t0": 21.2,
-     "t1": 23.37,
-     "said": "You get that super soft con waffle net material that",
-     "desc": "",
-     "img": "shot7.jpg"
-    },
-    {
-     "t0": 23.37,
-     "t1": 25.3,
-     "said": "hugs your arms, shoulders, and chest but",
-     "desc": "",
-     "img": "shot8.jpg"
-    },
-    {
-     "t0": 25.3,
-     "t1": 27.27,
-     "said": "still leaves plenty of room around that midsection. And",
-     "desc": "",
-     "img": "shot9.jpg"
-    },
-    {
-     "t0": 27.27,
-     "t1": 31.57,
-     "said": "the best part about these is that they do fit true to size. I'm 5 '6\", 160 wearing a size medium. But",
-     "desc": "",
-     "img": "shot10.jpg"
-    },
-    {
-     "t0": 31.57,
-     "t1": 35.13,
-     "said": "if you have any more questions about sizing, just comment your height and weight and I can help you out.",
-     "desc": "",
-     "img": "shot11.jpg"
-    },
-    {
-     "t0": 35.13,
-     "t1": 39.1,
-     "said": "The only problem with these though is that because of this massive sale they're on on here, they are selling out fast.",
-     "desc": "",
-     "img": "shot12.jpg"
-    },
-    {
-     "t0": 39.1,
-     "t1": 43.4,
-     "said": "So if you do want to get the colors and size you want before this sale ends, I'll drop a link somewhere down below.",
-     "desc": "",
-     "img": "shot13.jpg"
-    }
-   ],
-   "source": {
-    "ref": "c703259623",
-    "url": "https://www.tiktok.com/@shamsontv/video/7694716085098040589",
-    "video_id": "7694716085098040589",
-    "author": "Sam",
-    "handle": "shamsontv",
-    "desc": "Old Navy waffle knit thermals #OldNavyMen #WaffleKnit #MensOutfits #EverydayMenswear #mensbasics ",
-    "duration": 43.4
-   },
-   "from_template": null,
-   "id": "dc849b",
-   "created": 1792956097.6609645,
-   "updated": 1792956097.6609645
-  },
-  {
-   "title": "TEST waffle reference",
-   "text": "Stop spending designer price for just one of the other name brand ones\nbecause {brand} just dropped their {feature 1} net {item}\nand the fact that you can get not one but three of these for the price of one is kind of crazy.\nBut don't be dumb like me and buy these in store for full price because on here they're running a huge fall and\nwinter sale so these are way cheaper.\nIf you don't believe me I can link the verified {brand} store right there.\nBut everybody has started to buy these on here because of how good this deal is.\nYou get that super soft con {feature 1} net material that\nhugs your arms, shoulders, and chest but\nstill leaves plenty of room around that midsection.\nAnd the best part about these is that they do fit true to size.\nI'm 5 '6\", 160 wearing a size medium.\nBut if you have any more questions about sizing, just comment your height and weight and I can help you out.\nThe only problem with these though is that because of this massive sale they're on on here, they are selling out fast.\nSo if you do want to get the colors and size you want before this sale ends, I'll drop a link somewhere down\nbelow.",
-   "tags": [],
-   "product": null,
-   "notes": "From https://www.tiktok.com/@shamsontv/video/7694716085098040589",
-   "from_shoot": null,
-   "edited": false,
-   "lines": [
-    {
-     "text": "Stop spending designer price for just one of the other name brand ones",
-     "t0": 0.0,
+     "t0": 0,
      "t1": 3.1
     },
     {
@@ -901,11 +630,11 @@
     {
      "text": "So if you do want to get the colors and size you want before this sale ends, I'll drop a link somewhere down",
      "t0": 39.08,
-     "t1": 43.0
+     "t1": 43
     },
     {
      "text": "below.",
-     "t0": 43.0,
+     "t0": 43,
      "t1": 43.24
     }
    ],
@@ -936,6 +665,12 @@
     },
     {
      "line": 7,
+     "a": 13,
+     "b": 23,
+     "slot": "feature 2"
+    },
+    {
+     "line": 7,
      "a": 28,
      "b": 34,
      "slot": "feature 1"
@@ -943,7 +678,7 @@
    ],
    "shots": [
     {
-     "t0": 0.0,
+     "t0": 0,
      "t1": 3.2,
      "said": "Stop spending designer price for just one of the other name brand ones",
      "desc": "",
@@ -1053,7 +788,7 @@
    "from_template": null,
    "id": "792b65",
    "created": 1792956111.0962741,
-   "updated": 1792956111.0962741
+   "updated": 1792956601.0385978
   }
  ],
  "trash": {},

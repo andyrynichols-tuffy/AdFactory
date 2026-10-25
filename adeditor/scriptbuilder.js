@@ -19,7 +19,7 @@ async function sbJob(job, onMsg) {
 async function aiReady(fresh = false) {
   if (SB.ai === null || fresh) {
     const st = await api(`/api/shop/ai/status${fresh ? "?fresh=1" : ""}`).catch(() => ({ available: false, help: "couldn't check" }));
-    SB.ai = st.available; SB.aiHelp = st.help;
+    SB.ai = st.available; SB.aiHelp = st.help; SB.aiLocal = st.local;
   }
   return SB.ai;
 }
@@ -28,7 +28,10 @@ document.addEventListener("click", async e => {
   const b = e.target.closest(".aiBtn.aiOff"); if (!b) return;
   e.stopImmediatePropagation(); e.preventDefault();
   if (await aiReady(true)) { $$(".aiBtn.aiOff").forEach(x => x.classList.remove("aiOff")); toast("✨ AI is ready: press it again"); return; }
-  alert(SB.aiHelp || "✨ AI isn't available on this PC");
+  if (!SB.aiLocal) { alert("✨ AI needs Claude Code signed in on the PC that runs Ad Factory (once). Do it from that PC."); return; }
+  if (confirm("✨ AI uses Claude Code on this PC, and it isn't signed in yet.\n\nOpen the sign-in window now? Finish signing in in your browser, then press the ✨ button again.")) {
+    await api("/api/shop/ai/login", { json: {} }).catch(err => toast(err.message, 6000));
+  }
 }, true);
 
 // ---------- Library → 🔗 From a TikTok link ----------
