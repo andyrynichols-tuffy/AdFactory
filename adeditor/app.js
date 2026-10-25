@@ -1271,9 +1271,16 @@ document.addEventListener("keydown", e => {
 });
 
 // ---------- boot ----------
-$("#langBtn").textContent = LANG === "pt" ? "🌐 EN" : "🌐 PT";
-$("#langBtn").title = LANG === "pt" ? "Switch to English" : "Mudar para português";
-$("#langBtn").onclick = () => setLang(LANG === "pt" ? "en" : "pt");
+// language: the button says which one is on; its menu lists them (i18n.js)
+$("#langBtn").textContent = `🌐 ${{ en: "English", pt: "Português" }[LANG] || "English"} ▾`;
+$("#langBtn").onclick = e => { e.stopPropagation(); $("#langMenu").hidden = !$("#langMenu").hidden; };
+$$("#langMenu [data-lang]").forEach(b => {
+  const on = b.dataset.lang === LANG;
+  b.classList.toggle("on", on); b.setAttribute("aria-checked", on);
+  b.onclick = () => (on ? ($("#langMenu").hidden = true) : setLang(b.dataset.lang));
+});
+document.addEventListener("click", e => { if (!e.target.closest(".langPick")) $("#langMenu").hidden = true; });
+document.addEventListener("keydown", e => { if (e.key === "Escape") $("#langMenu").hidden = true; });
 (async function boot() {
   [S.presets, S.fonts, S.sounds, S.fxKinds] = await Promise.all([api("/api/presets"), api("/api/fonts"), api("/api/sounds").catch(() => []), api("/api/fx").catch(() => [])]);
   const presetNames = ["deluxe", "box", "sticker", "meme", "neon", "story", "news"].filter(p => p === "deluxe" || S.presets[p]);

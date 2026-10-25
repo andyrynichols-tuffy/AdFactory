@@ -231,3 +231,14 @@ button.tpMore:hover { color: var(--text) !important; border-color: #4a505b !impo
 .sbVid { display: block; width: auto; max-width: 100%; margin: 0 auto; }
 @media (max-width: 900px) { .sbVid { max-height: 34vh; } .sbShots { max-height: 260px; } }
 .homeTabs { height: auto !important; row-gap: 4px; }
+
+/* language picker (top bar) */
+.langPick { position: relative; display: inline-flex; }
+.langMenu { position: absolute; right: 0; top: calc(100% + 6px); z-index: 60; display: flex; flex-direction: column; min-width: 190px;
+  padding: 4px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,.45); }
+.langMenu button { text-align: left; height: auto !important; padding: 7px 10px 7px 28px !important; border: 0 !important;
+  background: transparent !important; border-radius: 7px; position: relative; white-space: nowrap; }
+.langMenu button:hover { background: var(--panel2) !important; }
+.langMenu button.on { font-weight: 600; }
+.langMenu button.on::before { content: "✓"; position: absolute; left: 10px; color: var(--accent); }
+.langMenu button { justify-content: flex-start; display: flex; }
