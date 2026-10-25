@@ -160,12 +160,10 @@ function sbSelected() {
   while (b < text.length && /[\w'’-]/.test(text[b])) b++;
   if (a >= b) return;
   const part = text.slice(a, b), same = SB.s.marks.find(m => SB.s.lines[m.line].text.slice(m.a, m.b).toLowerCase() === part.toLowerCase());
-  const count = k => SB.s.marks.filter(m => m.slot.startsWith(k)).length;
   const guess = same?.slot || (/\$|\bdollars?\b/i.test(part) ? "price" : /%|\boff\b/i.test(part) ? "deal" : `feature ${new Set(SB.s.marks.filter(m => m.slot.startsWith("feature")).map(m => m.slot)).size + 1}`);
   sbPop(r.getBoundingClientRect(), `<b>Make “${esc(part)}” a blank</b>
     <div class="row"><input class="sbSlotIn" list="sbSlotList" value="${esc(guess)}"><button type="button" class="primary" data-pop="add">Mark</button></div>
     ${sbSlotList()}<div class="muted small">Same words in other lines get marked too.</div>`, { i, a, b, part });
-  void count;
 }
 function sbSlotList() {
   const have = [...new Set(SB.s.marks.map(m => m.slot))];
@@ -267,13 +265,13 @@ async function sbClick(e) {
   }
   if ((act === "savefor" || act === "video") && p) {
     await sbSaveNow();
-    const fills = sbFills(), text = fill(s.text, fills);
+    const fills = sbFills(), text = sbFill(s.text, fills);
     const saved = await api("/api/shop/scripts", { json: { title: `${s.title} · ${p.name}`, text, product: p.id, tags: s.tags || [], from_template: s.id, notes: `Made from “${s.title}”` } });
     toast(`Saved “${saved.title}” to the library`);
     if (act === "video") { dlg.close(); await shopLoad(); newVideo({ script: saved.id, product: p.id, tags: s.tags || [] }); }
   }
 }
-const fill = (text, vals) => text.replace(/\{([A-Za-z][\w ]{0,30})\}/g, (m, k) => (vals[k.trim().toLowerCase()] || "").trim() || m);
+const sbFill = (text, vals) => text.replace(/\{([A-Za-z][\w ]{0,30})\}/g, (m, k) => (vals[k.trim().toLowerCase()] || "").trim() || m);
 function sbFills() { return Object.fromEntries($$(".sbFills [data-slot]", SB.dlg).map(i => [i.dataset.slot, i.value.trim()])); }
 
 function sbAdapt(keep) {
@@ -361,8 +359,9 @@ async function rewriteDlg(sid) {
     }
     dlg.close();
     await shopLoad();
-    if (SB.dlg) { const id = SB.s.id; SB.dlg.close(); openBuilder(sv.dataset.save === "new" ? id : id); }
-    else if (LS.get("homeTab") === "library") renderLibrary();
+    if (SB.dlg) {  // reopen the builder on the new text (without saving the old lines over it)
+      const id = SB.s.id; SB.s = null; SB.dlg.close(); openBuilder(id);
+    } else if (LS.get("homeTab") === "library") renderLibrary();
   });
   dlg.onclose = () => dlg.remove();
   dlg.showModal();

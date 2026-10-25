@@ -667,7 +667,8 @@ async function renderLibrary() {
       <button data-ltab="tags" class="${tab === "tags" ? "on" : ""}">🏷 Formats &amp; tags <span class="cnt">${d.tags.length}</span></button></span>
       ${tab === "scripts" ? `<input id="libQ" placeholder="Search scripts" value="${esc(LS.get("libQ", ""))}"><select id="libProd">${opts(products(), prod, p => p.name, "Any product")}</select>`
         : `<input id="tagQ" type="search" placeholder="Search tags" value="${esc(LS.get("tagQ", ""))}">`}
-      <span class="spacer"></span><button class="primary" data-go="${tab === "scripts" ? "script" : "tag"}">＋ ${tab === "scripts" ? "Script" : "Tag"}</button></div>`;
+      <span class="spacer"></span>${tab === "scripts" ? `<button data-go="fromlink" title="Paste a TikTok link: its script + shot list, ready for any product">🔗 From a TikTok link</button>` : ""}
+      <button class="primary" data-go="${tab === "scripts" ? "script" : "tag"}">＋ ${tab === "scripts" ? "Script" : "Tag"}</button></div>`;
   if (tab === "tags") {
     el.innerHTML = head + `<p class="muted">Tags describe a video's format, hook, style and tone. Pick them on a new video; Analytics compares how each one does. Hover a tag anywhere to see what it means.</p>` +
       allGroups().map(g => { const tq = (LS.get("tagQ", "") || "").toLowerCase();
@@ -685,19 +686,23 @@ async function renderLibrary() {
       return `<div class="sc script" data-script="${s.id}"><div class="qt"><b>${esc(s.title)}</b>${s.product ? `<span class="muted">🛍 ${esc(prodName(s.product))}</span>` : `<span class="muted">any product</span>`}</div>
         <div class="stext">${lines.slice(0, 4).map(l => `<div>${esc(l).replace(/\{([^}]+)\}/g, '<code>{$1}</code>').replace(/\[([^\]]+)\]/g, '<i class="muted">[$1]</i>')}</div>`).join("")}${lines.length > 4 ? `<div class="muted">+${lines.length - 4} more lines</div>` : ""}</div>
         ${s.tags?.length ? `<div class="qtags">${tagsRow(s.tags, 5)}</div>` : ""}
-        <div class="qm muted">${used} shoot${used === 1 ? "" : "s"} · ${p.posted || 0} posted${p.avg_views != null ? ` · ${num(p.avg_views)} avg views` : ""}${s.from_shoot && !s.edited ? " · from the sheet" : ""}</div>
-        <div class="qa"><button data-act="edit">Edit</button><button data-act="copy">⧉ Copy</button><button data-act="video" class="primary">＋ Video from this</button></div></div>`; }).join("")
+        ${s.source ? `<div class="qm"><span class="srcBadge">🎬 from ${s.source.handle ? "@" + esc(s.source.handle) : "a TikTok"} · ${(s.shots || []).length} shots</span></div>` : ""}
+        <div class="qm muted">${used} shoot${used === 1 ? "" : "s"} · ${p.posted || 0} posted${p.avg_views != null ? ` · ${num(p.avg_views)} avg views` : ""}${s.from_shoot && !s.edited ? " · from the sheet" : ""}${s._placeholders?.length ? ` · ${s._placeholders.length} blank${s._placeholders.length === 1 ? "" : "s"}` : ""}</div>
+        <div class="qa"><button data-act="build" title="Blanks, shot list, make it for another product">🧩 Open</button><button data-act="edit">Edit</button><button data-act="rewrite" class="aiBtn" title="Rewrite it in another style">✨ Rewrite</button><button data-act="copy">⧉ Copy</button><button data-act="video" class="primary">＋ Video</button></div></div>`; }).join("")
       || `<p class="muted">No scripts${q || prod ? " match" : " yet"}.</p>`}</div>`;
 }
 $("#paneLibrary").addEventListener("click", async e => {
   const t = e.target.closest("[data-ltab]"); if (t) { LS.set("libTab", t.dataset.ltab); return renderLibrary(); }
   const go = e.target.closest("[data-go]")?.dataset.go;
   if (go === "script") return editThing("scripts", { product: LS.get("libProd", "") || null, tags: [] });
+  if (go === "fromlink") return scriptFromLink();
   if (go === "tag") return editThing("tags", { group: "Format" });
   const te = e.target.closest("[data-tagedit]"); if (te) return editThing("tags", byId("tags", te.dataset.tagedit));
   const card = e.target.closest("[data-script]"); if (!card) return;
   const s = byId("scripts", card.dataset.script), act = e.target.closest("[data-act]")?.dataset.act;
-  if (act === "edit" || (!act && !e.target.closest("button,a"))) return editThing("scripts", s);
+  if (act === "build" || (!act && !e.target.closest("button,a"))) return openBuilder(s.id);
+  if (act === "edit") return editThing("scripts", s);
+  if (act === "rewrite") return rewriteDlg(s.id);
   if (act === "copy") return copyText(s.text, "script");
   if (act === "video") return newVideo({ script: s.id, product: s.product, tags: s.tags });
 });
