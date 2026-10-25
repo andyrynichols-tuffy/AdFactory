@@ -141,6 +141,8 @@ def to_lines(words, cuts=()) -> list:
             out[-1] = {"text": out[-1]["text"] + " " + l["text"], "t0": out[-1]["t0"], "t1": l["t1"]}
         else:
             out.append(l)
+    if len(out) > 1 and len(out[-1]["text"].split()) < 3:  # ...and a last word or two joins the line before
+        out[-2:] = [{"text": out[-2]["text"] + " " + out[-1]["text"], "t0": out[-2]["t0"], "t1": out[-1]["t1"]}]
     return out
 
 
@@ -296,6 +298,30 @@ def originals(lines, marks) -> dict:
     for m in marks:
         out.setdefault(m["slot"], lines[m["line"]]["text"][m["a"]:m["b"]])
     return out
+
+
+def reconcile(s) -> dict:
+    """Lines + marks that match the script's text. Scripts typed in (or edited in the sheet or
+    rewritten) get them from their {placeholders}: each one shows what it said before."""
+    lines, marks = s.get("lines") or [], s.get("marks") or []
+    if lines and compile_text(lines, marks) == s["text"]:
+        return s
+    orig = originals(lines, marks)
+    old = {l["text"]: l for l in lines}
+    new_lines, new_marks = [], []
+    for raw in [x for x in (s["text"] or "").split("\n") if x.strip()]:
+        out, pos = "", 0
+        for m in shop.PH_RX.finditer(raw):
+            out += raw[pos:m.start()]
+            slot = m.group(1).strip().lower()
+            a = len(out)
+            out += orig.get(slot) or "{" + slot + "}"
+            new_marks.append({"line": len(new_lines), "a": a, "b": len(out), "slot": slot})
+            pos = m.end()
+        out += raw[pos:]
+        was = old.get(out) or {}
+        new_lines.append({"text": out, "t0": was.get("t0"), "t1": was.get("t1")})
+    return {**s, "lines": new_lines, "marks": new_marks}
 
 
 # ---------------------------------------------------------------- link -> library script

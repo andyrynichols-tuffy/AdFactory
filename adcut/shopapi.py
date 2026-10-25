@@ -140,6 +140,18 @@ def scriptgen_job(jid: str):
     return j
 
 
+@router.get("/scriptgen/script/{sid}")
+def scriptgen_script(sid: str):
+    """A library script for the builder: lines + marks in step with its text."""
+    s = shop.by_id(shop.load(), "scripts", sid)
+    if not s:
+        raise HTTPException(404, "no such script")
+    r = scriptgen.reconcile(s)
+    if r is not s:
+        shop.upsert("scripts", {"id": sid, "lines": r["lines"], "marks": r["marks"]})
+    return {**r, "_placeholders": shop.placeholders(r["text"]), "_originals": scriptgen.originals(r["lines"], r["marks"])}
+
+
 @router.post("/scriptgen/{sid}/marks")
 def scriptgen_marks(sid: str, body: dict = Body(...)):
     try:
