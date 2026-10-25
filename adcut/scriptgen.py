@@ -101,6 +101,13 @@ SKIP_CAPS = {"i", "i'm", "i've", "i'd", "i'll", "ok", "okay", "tiktok", "god", "
              "the", "this", "that", "it", "it's", "you", "your", "you're", "we", "my", "they", "if", "a", "like",
              "amazon", "target", "walmart", "mr", "mrs", "ms", "usa", "us", "america", "american", "christmas",
              "halloween", "thanksgiving", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"}
+# everyday words that only have a capital because a sentence starts with them
+COMMON = set("""because when what why how wait stop then now here there just also even every everyone don't let's look
+show apply camera okay ok so and but or if once after before while since until though although yes no hey hi guys
+you're it's that's this these those they we our my your his her their its one two three first next last finally
+today tonight tomorrow listen honestly literally seriously obviously plus also again still only really very super
+get got go going make made take put use try tap click grab run buy shop check see watch let give keep turn add hold
+fill brush blend rub open close pull push pour wash dry wear pick""".split())
 GENERIC_TAGS = {"fyp", "foryou", "foryoupage", "tiktokshop", "tiktokmademebuyit", "viral", "tiktokshopfinds", "ad",
                 "sponsored", "musthave", "giftideas", "deals", "sale", "fy", "trending", "creatorsearchinsights"}
 FEATURES = ["water-resistant", "water resistant", "waterproof", "sweat-resistant", "sweat resistant", "sweatproof",
@@ -133,8 +140,13 @@ def _cap_runs(text):
     for m in re.finditer(r"[A-Z][\w'&-]*(?:\s+[A-Z][\w'&-]*)*", text):
         spans = [(x.start() + m.start(), x.end() + m.start()) for x in re.finditer(r"\S+", m.group(0))]
         before = text[:m.start()].rstrip()
-        at_start = not before or before[-1] in ".!?\"“:"
+        at_start = not before or before[-1] in ".!?\"“:[("
         word = lambda s: text[s[0]:s[1]].lower().strip(".,!?:;\"”'")
+        raw = lambda s: text[s[0]:s[1]].strip(".,!?:;\"”'")
+        spans = [s for s in spans if not (len(raw(s)) > 1 and raw(s).isupper())] if all(
+            len(raw(s)) > 1 and raw(s).isupper() for s in spans) else spans  # ALL-CAPS = emphasis, not a name
+        if at_start and spans and word(spans[0]) in COMMON:
+            spans, at_start = spans[1:], False
         while spans and word(spans[0]).removesuffix("'s") in SKIP_CAPS:
             spans, at_start = spans[1:], False
         while spans and word(spans[-1]).removesuffix("'s") in SKIP_CAPS:
@@ -158,18 +170,39 @@ def guess_marks(lines, desc="") -> list:
     found = []  # (line, a, b, kind, text)
     counts = {}
     for i, l in enumerate(lines):
-        for a, b, ph in _cap_runs(l["text"]):
+        text = re.sub(r"\[[^\]]*\]", lambda m: " " * len(m.group(0)), l["text"])  # [directions] aren't said
+        names = _cap_runs(text)
+        ws = list(re.finditer(r"[\w'&-]+", text))
+        for n in (3, 2, 1):  # names from the caption's hashtags, said in lowercase ("dude wipes" = #dudewipes)
+            for k in range(len(ws) - n + 1):
+                a, b = ws[k].start(), ws[k + n - 1].end()
+                if re.sub(r"\W", "", text[a:b].lower()) in tags and not any(a < y and b > x for x, y, _ in names):
+                    names.append((a, b, text[a:b]))
+        for a, b, ph in names:
             found.append((i, a, b, "name", ph))
             counts[ph.lower()] = counts.get(ph.lower(), 0) + 1
     names = sorted({f[4].lower() for f in found},
                    key=lambda n: -(counts[n] + 3 * (n.replace(" ", "") in tags) + (n in desc_words)))
-    name_slot = {}
-    for n in names:
-        name_slot[n] = "product" if not name_slot else "brand" if len(name_slot) == 1 else f"name {len(name_slot)}"
+    d = shop.load()
+    known_products = {p["name"].lower() for p in d["products"]}
+    known_brands = {p["brand"].lower() for p in d["products"] if p.get("brand")}
+
+    def kind(n):  # a name we know, or "… by <name>", says which it is
+        if n in known_products:
+            return "product"
+        if n in known_brands or any(re.search(r"\bby\s+" + re.escape(n) + r"\b", l["text"], re.I) for l in lines):
+            return "brand"
+        return None
+    name_slot, used = {}, set()
+    for n in sorted(names, key=lambda n: kind(n) is None):
+        k = kind(n) or ("product" if "product" not in used else "brand" if "brand" not in used else None)
+        name_slot[n] = k if k and k not in used else f"name {len(name_slot) + 1}"
+        used.add(name_slot[n])
     for i, l in enumerate(lines):
-        low = l["text"].lower()
+        said = re.sub(r"\[[^\]]*\]", lambda m: " " * len(m.group(0)), l["text"])
+        low = said.lower()
         for slot, rx in RULES:
-            for m in re.finditer(rx, l["text"], re.I):
+            for m in re.finditer(rx, said, re.I):
                 found.append((i, m.start(), m.end(), slot, m.group(0)))
         for kind, words in (("feature", FEATURES), ("item", ITEMS)):
             for w in sorted(words, key=len, reverse=True):

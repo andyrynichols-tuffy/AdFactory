@@ -33,7 +33,10 @@ KINDS = {
     "orders": {"product": None, "account": None, "order_no": "", "ordered": "", "delivered": "", "status": "ordered",
                "sample": "free", "cost": "", "return_days": None, "return_by": "", "return_auto": False, "video_due": "", "notes": ""},
     "tags": {"name": "", "group": "Format", "description": "", "color": ""},
-    "scripts": {"title": "", "text": "", "tags": [], "product": None, "notes": "", "from_shoot": None, "edited": False},
+    # from a TikTok link (adcut/scriptgen.py): lines [{text, t0, t1}], marks [{line, a, b, slot}] (the
+    # product-specific bits; text = the template), shots [{t0, t1, said, desc, img}], source {ref, url, …}
+    "scripts": {"title": "", "text": "", "tags": [], "product": None, "notes": "", "from_shoot": None, "edited": False,
+                "lines": [], "marks": [], "shots": [], "source": None, "from_template": None},
 }
 PLAN = {"product": None, "account": None, "creator": None, "editor": None, "tags": [], "script": None,
         "due": "", "notes": "", "assigned": None, "done": False}

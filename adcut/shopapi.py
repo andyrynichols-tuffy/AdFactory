@@ -7,7 +7,7 @@ from pathlib import Path
 from fastapi import APIRouter, Body, HTTPException, Request
 from fastapi.responses import FileResponse
 
-from . import auth, sheetdb, shop, store
+from . import ai, auth, scriptgen, sheetdb, shop, store
 
 router = APIRouter(prefix="/api/shop")
 BUSY = lambda: set()  # server.py points this at the shoots with a job running
@@ -120,3 +120,73 @@ def cover(vid: str):
     if not vid.isdigit() or not f.exists():
         raise HTTPException(404, "no cover")
     return FileResponse(f, headers={"Cache-Control": "max-age=86400"})
+
+
+# ---------- script builder: TikTok link -> script + shot list (adcut/scriptgen.py) ----------
+
+@router.post("/scriptgen/link")
+def scriptgen_link(body: dict = Body(...)):
+    url = (body.get("url") or "").strip()
+    if "tiktok.com" not in url:
+        raise HTTPException(400, "paste a TikTok link")
+    return scriptgen.from_link(url, body.get("title") or "")
+
+
+@router.get("/scriptgen/jobs/{jid}")
+def scriptgen_job(jid: str):
+    j = scriptgen.JOBS.get(jid)
+    if not j:
+        raise HTTPException(404, "no such job")
+    return j
+
+
+@router.post("/scriptgen/{sid}/marks")
+def scriptgen_marks(sid: str, body: dict = Body(...)):
+    try:
+        return scriptgen.save_marks(sid, body)
+    except KeyError:
+        raise HTTPException(404, "no such script")
+
+
+@router.post("/scriptgen/{sid}/guess")
+def scriptgen_guess(sid: str):
+    """The local guess again (after editing lines)."""
+    s = shop.by_id(shop.load(), "scripts", sid)
+    if not s:
+        raise HTTPException(404, "no such script")
+    return {"marks": scriptgen.guess_marks(s.get("lines") or [], (s.get("source") or {}).get("desc", ""))}
+
+
+@router.get("/scriptgen/products")
+def scriptgen_products():
+    ps, last = scriptgen.products_by_delivery()
+    return [{"id": p["id"], "name": p["name"], "delivered": last.get(p["id"])} for p in ps]
+
+
+@router.get("/scriptgen/ref/{ref}/{name}")
+def scriptgen_file(ref: str, name: str):
+    f = scriptgen.REFS / ref / name
+    if not ref.isalnum() or "/" in name or "\\" in name or not f.is_file():
+        raise HTTPException(404, "no such file")
+    return FileResponse(f)
+
+
+@router.get("/ai/status")
+def ai_status():
+    return {"available": ai.available()}
+
+
+@router.post("/ai/{what}")
+def ai_run(what: str, body: dict = Body(...)):
+    """✨ AI, only when asked: marks / describe / fill / rewrite."""
+    if what == "marks":
+        return scriptgen.ai_marks(body["script"])
+    if what == "describe":
+        return scriptgen.ai_describe(body["script"])
+    if what == "fill":
+        return scriptgen.ai_fill(body["script"], body["product"], body.get("known") or {})
+    if what == "rewrite":
+        if not (body.get("text") or "").strip() or not (body.get("how") or "").strip():
+            raise HTTPException(400, "nothing to rewrite")
+        return scriptgen.ai_rewrite(body["text"], body["how"])
+    raise HTTPException(404, what)

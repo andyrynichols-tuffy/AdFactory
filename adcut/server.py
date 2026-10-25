@@ -286,6 +286,7 @@ def studio_theme():
 def busy():
     """For Studio (studio/): don't restart this app for an update while it's mid-job."""
     why = [j["kind"] for j in JOBS.values() if j.get("state") in ("queued", "running")]
+    why += shopapi.scriptgen.busy()  # downloading / transcribing a TikTok for the script builder
     return {"busy": bool(why), "why": why}
 
 
