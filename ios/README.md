@@ -5,8 +5,8 @@ product + script + style tags), then stop and start as often as you like: every 
 into that project. Each take is saved to the **Ad Studio** album in Photos and uploaded into
 the project's OneDrive inbox folder through Ad Factory, where it gets pre-cut like any drop.
 
-- Camera defaults for TikTok: vertical, 4K 30 fps, SDR (HDR off), HEVC, standard
-  stabilization, smooth autofocus, white balance held during a take, front camera unmirrored.
+- Camera defaults for TikTok: back camera, vertical, 4K 30 fps, SDR (HDR off), HEVC, standard
+  stabilization, smooth autofocus, white balance held during a take (front camera, if flipped to: unmirrored).
   Change them in Settings; "Back to the TikTok defaults" resets them.
 - Teleprompter with the project's script, up by the front lens (tap = next line).
 - TikTok UI guides (top tabs, like rail, caption block, cart tag) from `adcut/layout.py`.

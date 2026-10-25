@@ -54,12 +54,12 @@ enum Prefs {
             "prompter": true,
             "prompterSize": 26.0,
             "cellular": true,
-            "camera": "front",
+            "camera": "back",      // the back camera films (better lens and sensor); flip stays available
         ])
     }
 
     static func resetCamera() {
-        for k in ["res", "fps", "codec", "stab", "mirror", "lockWB"] {
+        for k in ["res", "fps", "codec", "stab", "mirror", "lockWB", "camera"] {
             UserDefaults.standard.removeObject(forKey: k)
         }
     }
