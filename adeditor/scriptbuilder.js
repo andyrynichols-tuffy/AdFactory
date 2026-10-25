@@ -68,6 +68,7 @@ async function openBuilder(sid) {
   SB.s = s; SB.prods = prods;
   const src = s.source;
   const dlg = SB.dlg = document.createElement("dialog"); dlg.className = "shopDlg sbDlg";
+  // (the script lines, preview and names below are marked translate="no": content stays English)
   const aiOff = SB.ai ? "" : 'data-off="1"';
   dlg.innerHTML = `<div class="sbHead"><input class="sbTitle" value="${esc(s.title)}" title="Script name">
       ${src ? `<a href="${esc(src.url)}" target="_blank" rel="noopener" class="muted">${src.handle ? "@" + esc(src.handle) : "TikTok"} ↗</a>` : `<span class="muted">typed-in script</span>`}
@@ -85,8 +86,8 @@ async function openBuilder(sid) {
         <div class="sbSlots"></div>
         <details class="sbTagsBox"><summary>Formats &amp; tags <span class="muted sbTagN"></span></summary><div class="tagPick sbTags"></div></details>
         <div class="sbAdapt"><h4>Make it for another product</h4>
-          <select class="sbProd"><option value="">— pick a product (latest deliveries first) —</option>${prods.map(p => `<option value="${p.id}">${esc(p.name)}${p.delivered ? ` · delivered ${shortDate(p.delivered)}` : ""}</option>`).join("")}</select>
-          <div class="sbFills"></div><div class="sbPreview"></div>
+          <select class="sbProd"><option value="">— pick a product (latest deliveries first) —</option>${prods.map(p => `<option value="${p.id}" translate="no">${esc(p.name)}${p.delivered ? ` · delivered ${shortDate(p.delivered)}` : ""}</option>`).join("")}</select>
+          <div class="sbFills"></div><div class="sbPreview" translate="no"></div>
           <div class="row sbAdaptBtns" hidden><button type="button" data-act="aifill" class="aiBtn" ${aiOff}>✨ AI: fill the blanks</button><span class="spacer"></span>
             <button type="button" data-act="savefor">Save script for this product</button><button type="button" data-act="video" class="primary">＋ Video</button></div>
           <div class="sbAiMsg muted"></div></div>
@@ -130,18 +131,18 @@ function sbRender() {
       pos = m.b;
     }
     if (pos < l.text.length) h += `<span data-o="${pos}">${esc(l.text.slice(pos))}</span>`;
-    return `<div class="sbLn" data-i="${i}"><span class="sbT" ${l.t0 != null ? `data-seek="${l.t0}" title="Play from here"` : ""}>${l.t0 != null ? fmt(l.t0) : ""}</span><div class="sbTx" data-i="${i}">${h}</div></div>`;
+    return `<div class="sbLn" data-i="${i}" translate="no"><span class="sbT" ${l.t0 != null ? `data-seek="${l.t0}" title="Play from here"` : ""}>${l.t0 != null ? fmt(l.t0) : ""}</span><div class="sbTx" data-i="${i}">${h}</div></div>`;
   }).join("") || `<p class="muted">No spoken lines found.</p>`;
   const orig = {};
   for (const m of s.marks) (orig[m.slot] ||= { text: s.lines[m.line].text.slice(m.a, m.b), n: 0 }).n++;
   $(".sbSlots", dlg).innerHTML = Object.keys(orig).length ? `<span class="muted">Blanks:</span> ` + Object.entries(orig).map(([k, v]) =>
-    `<button type="button" class="slotChip" data-slot-chip="${esc(k)}" style="--c:${slotColor(k)}" title="Rename"><code>{${esc(k)}}</code> ${esc(v.text)}${v.n > 1 ? ` ×${v.n}` : ""}</button>`).join("")
+    `<button type="button" translate="no" class="slotChip" data-slot-chip="${esc(k)}" style="--c:${slotColor(k)}" title="Rename"><code>{${esc(k)}}</code> ${esc(v.text)}${v.n > 1 ? ` ×${v.n}` : ""}</button>`).join("")
     : `<span class="muted">Nothing marked yet: select words in the script to make them blanks.</span>`;
   if (s.source) {
     $(".sbShots", dlg).innerHTML = s.shots.map((x, k) => `<li data-k="${k}">
       <img src="/api/shop/scriptgen/ref/${esc(s.source.ref)}/${esc(x.img)}" data-seek="${x.t0}" alt="" title="Play this shot" loading="lazy">
       <div><div class="muted small">Shot ${k + 1} · ${fmt(x.t0)}–${fmt(x.t1)}</div>
-        <div class="said">${x.said ? esc(x.said) : '<i class="muted">(no talking)</i>'}</div>
+        <div class="said">${x.said ? `<span translate="no">${esc(x.said)}</span>` : '<i class="muted">(no talking)</i>'}</div>
         <textarea rows="2" data-desc="${k}" placeholder="What's on screen: framing, what they do, any text">${esc(x.desc || "")}</textarea></div></li>`).join("");
   }
   sbAdapt(true);
@@ -332,7 +333,7 @@ async function rewriteDlg(sid) {
     <div class="rwChips">${QUICK.map(q => `<button type="button" class="tag" data-q="${esc(q)}" style="--c:#b197fc">${esc(q)}</button>`).join("")}
       ${tags.map(t => `<button type="button" class="tag" data-t="${t.id}" data-tip="${esc(t.description)}" style="--c:${esc(t.color)}">${esc(t.name)}</button>`).join("")}</div>
     <input class="rwHow" placeholder="…or say how, e.g. like a sarcastic best friend, for dads, in 15 seconds">
-    <div class="rwGrid"><div><div class="muted small">Now</div><div class="rwNow">${esc(s.text).replace(/\n/g, "<br>")}</div></div>
+    <div class="rwGrid"><div><div class="muted small">Now</div><div class="rwNow" translate="no">${esc(s.text).replace(/\n/g, "<br>")}</div></div>
       <div><div class="muted small">Rewritten</div><textarea class="rwOut" rows="14" placeholder="Pick a style or type one, then ✨ Rewrite"></textarea></div></div>
     <div class="rwMsg muted"></div>
     <div class="sdBtns"><button type="button" data-close>Cancel</button><span class="spacer"></span>

@@ -43,8 +43,8 @@ async def login_wall(request, call_next):
 
 
 @app.get("/login")
-def login_page():
-    return HTMLResponse(auth.LOGIN_HTML.replace("{err}", ""))
+def login_page(request: Request):
+    return HTMLResponse(auth.login_html(request))
 
 
 @app.post("/login")
@@ -54,7 +54,7 @@ async def login(request: Request):
     tok = auth.try_login(request, pw)
     if not tok or tok == "wait":
         msg = "Too many tries. Wait 10 minutes." if tok == "wait" else "Wrong password."
-        return HTMLResponse(auth.LOGIN_HTML.replace("{err}", f'<div class="err">{msg}</div>'), status_code=401)
+        return HTMLResponse(auth.login_html(request, f'<div class="err">{msg}</div>'), status_code=401)
     r = RedirectResponse("/", status_code=303)
     r.set_cookie(auth.COOKIE, tok, max_age=auth.DAYS * 86400, httponly=True, secure=True, samesite="lax")
     return r

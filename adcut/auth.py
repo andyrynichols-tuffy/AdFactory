@@ -95,3 +95,16 @@ button{margin-top:12px;width:100%;padding:11px;border:0;border-radius:9px;backgr
 <form method="post" action="/login"><h1>🎬 Ad Factory</h1><p>Enter the password to open the editor.</p>
 <input type="password" name="password" autofocus autocomplete="current-password" placeholder="Password">
 <button>Open editor</button>{err}</form></body></html>"""
+LOGIN_PT = {"Enter the password to open the editor.": "Digite a senha para abrir o editor.",
+            'placeholder="Password"': 'placeholder="Senha"', "<button>Open editor</button>": "<button>Abrir o editor</button>",
+            "Ad Factory · sign in": "Ad Factory · entrar", '<html>': '<html lang="pt-BR">',
+            "Wrong password.": "Senha errada.", "Too many tries. Wait 10 minutes.": "Tentativas demais. Espere 10 minutos."}
+
+
+def login_html(request, err="") -> str:
+    """The sign-in page, in Portuguese for a browser set to Portuguese."""
+    html = LOGIN_HTML.replace("{err}", err)
+    if (request.headers.get("accept-language") or "").lower().startswith("pt"):
+        for a, b in LOGIN_PT.items():
+            html = html.replace(a, b)
+    return html

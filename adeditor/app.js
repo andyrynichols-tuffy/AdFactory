@@ -166,7 +166,7 @@ async function showHome() {
   const list = await api("/api/shoots");
   $("#shootGrid").innerHTML = list.length ? list.map(r => `
     <div class="shoot" data-id="${r.id}">
-      <h3>${esc(r.title)}</h3>
+      <h3 translate="no">${esc(r.title)}</h3>
       <div><span class="big">${r.videos}</span> videos</div>
       <div class="meta">${r.lines} script lines · ${r.sources} raw file${r.sources === 1 ? "" : "s"} · ${r.rendered} rendered</div>
       ${r.product ? `<div class="meta">🛒 ${esc(r.product)}</div>` : ""}
@@ -1271,6 +1271,9 @@ document.addEventListener("keydown", e => {
 });
 
 // ---------- boot ----------
+$("#langBtn").textContent = LANG === "pt" ? "🌐 EN" : "🌐 PT";
+$("#langBtn").title = LANG === "pt" ? "Switch to English" : "Mudar para português";
+$("#langBtn").onclick = () => setLang(LANG === "pt" ? "en" : "pt");
 (async function boot() {
   [S.presets, S.fonts, S.sounds, S.fxKinds] = await Promise.all([api("/api/presets"), api("/api/fonts"), api("/api/sounds").catch(() => []), api("/api/fx").catch(() => [])]);
   const presetNames = ["deluxe", "box", "sticker", "meme", "neon", "story", "news"].filter(p => p === "deluxe" || S.presets[p]);
@@ -2038,7 +2041,7 @@ function renderSaved() {
   $("#savedList").innerHTML = list.map(r => `<li class="saved ${r.posted ? "done" : ""}" data-sid="${r.sid}" data-n="${r.n}">
       ${r.thumb ? `<img loading="lazy" data-act="open" src="${r.thumb}" alt="">` : `<div class="noimg" data-act="open"></div>`}
       <div class="sbody">
-        <div class="scap" data-act="open"><b>${esc(r.title)}</b> · video ${r.n} <span class="muted">${r.duration ? fmt(r.duration) : ""}</span></div>
+        <div class="scap" data-act="open"><b translate="no">${esc(r.title)}</b> · video ${r.n} <span class="muted">${r.duration ? fmt(r.duration) : ""}</span></div>
         <div class="sfrom">${r.product ? `🛒 ${esc(r.product)} · ` : ""}${typeof accChip === "function" && r.account ? accChip(r.account) + " · " : ""}saved ${fmtDate(r.saved_at)}${r.posted && r.posted_at ? ` · posted ${fmtDate(r.posted_at)}` : ""}${r.downloaded ? " · ⬇ downloaded" : ""}${r.views != null ? ` · <b>${num(r.views)}</b> views` : ""}</div>
         ${!r.exists ? '<div class="warnx">⚠ this video no longer exists (the stacks got shorter)</div>' : r.changed ? '<div class="warnx">⚠ changed since you saved it</div>' : ""}
         <div class="sacts">

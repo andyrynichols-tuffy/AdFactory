@@ -1,4 +1,4 @@
-"""Ad Factory interface text not in the Portuguese dictionary yet (adeditor/i18n-pt.js):
+r"""Ad Factory interface text not in the Portuguese dictionary yet (adeditor/i18n-pt.js):
     .venv\Scripts\python.exe tools/i18n_missing.py
 A small JS tokenizer separates code from strings and whole template literals, the markup is
 parsed as HTML, and text + title/placeholder hints are listed. Add missing ones to "exact"."""

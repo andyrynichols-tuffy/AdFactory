@@ -19,11 +19,11 @@ const LOGIN = { email: "Email", Google: "Google", Apple: "Apple", phone: "Phone 
 function tagChip(id, { on = false, btn = false, group = false } = {}) {
   const t = byId("tags", id); if (!t) return "";
   const tag = btn ? "button" : "span";
-  return `<${tag} ${btn ? 'type="button"' : ""} class="tag ${on ? "on" : ""}" data-tag="${t.id}" data-tip="${esc(t.description || t.name)}" style="--c:${esc(t.color || "#adb5bd")}">${esc(t.name)}${group ? ` <small>${esc(t.group)}</small>` : ""}</${tag}>`;
+  return `<${tag} ${btn ? 'type="button"' : ""} translate="no" class="tag ${on ? "on" : ""}" data-tag="${t.id}" data-tip="${esc(t.description || t.name)}" style="--c:${esc(t.color || "#adb5bd")}">${esc(t.name)}${group ? ` <small>${esc(t.group)}</small>` : ""}</${tag}>`;
 }
 const tagsRow = (ids, max = 99) => (ids || []).slice(0, max).map(id => tagChip(id)).join("") + ((ids || []).length > max ? `<span class="muted">+${ids.length - max}</span>` : "");
-const accChip = id => { const a = byId("accounts", id); return a ? `<span class="acc" style="--c:${esc(a.color)}" data-tip="${esc(a.handle ? "@" + a.handle.replace(/^@/, "") : a.name)}">${esc(a.name || "@" + a.handle)}</span>` : ""; };
-const who = id => { const c = byId("creators", id); return c ? `<span class="who" style="--c:${esc(c.color)}"><i>${esc(c.name.slice(0, 1).toUpperCase())}</i>${esc(c.name)}</span>` : ""; };
+const accChip = id => { const a = byId("accounts", id); return a ? `<span translate="no" class="acc" style="--c:${esc(a.color)}" data-tip="${esc(a.handle ? "@" + a.handle.replace(/^@/, "") : a.name)}">${esc(a.name || "@" + a.handle)}</span>` : ""; };
+const who = id => { const c = byId("creators", id); return c ? `<span translate="no" class="who" style="--c:${esc(c.color)}"><i>${esc(c.name.slice(0, 1).toUpperCase())}</i>${esc(c.name)}</span>` : ""; };
 const prodName = id => byId("products", id)?.name || "";
 const opts = (list, val, label = x => x.name, none = "—") => `<option value="">${none}</option>` + list.map(x => `<option value="${x.id}" ${x.id === val ? "selected" : ""}>${esc(label(x))}</option>`).join("");
 const accLabel = a => `${a.name || ""}${a.handle ? ` (@${a.handle.replace(/^@/, "")})` : ""}`.trim();
@@ -458,10 +458,10 @@ async function renderQueue() {
       return `<section class="kcol ${focus === k ? "focus" : ""}" data-col="${k}"><h4>${l} <span class="cnt">${col.length}</span></h4>${col.map(b => `
         <div class="qcard" data-sid="${b.sid}">
           ${b.thumb ? `<img loading="lazy" src="${b.thumb}" alt="">` : ""}
-          <div class="qt"><b>${esc(b.title)}</b>${b.due ? `<span class="due ${b.due_in != null && b.due_in < 0 ? "late" : b.due_in != null && b.due_in <= 2 ? "soon" : ""}">due ${shortDate(b.due)}</span>` : ""}</div>
-          <div class="qm">${b.product_name ? `🛍 ${esc(b.product_name)}` : `<span class="muted">no product</span>`} ${accChip(b.account)} ${who(b.creator)}</div>
+          <div class="qt"><b translate="no">${esc(b.title)}</b>${b.due ? `<span class="due ${b.due_in != null && b.due_in < 0 ? "late" : b.due_in != null && b.due_in <= 2 ? "soon" : ""}">due ${shortDate(b.due)}</span>` : ""}</div>
+          <div class="qm">${b.product_name ? `<span translate="no">🛍 ${esc(b.product_name)}</span>` : `<span class="muted">no product</span>`} ${accChip(b.account)} ${who(b.creator)}</div>
           ${b.tags?.length ? `<div class="qtags">${tagsRow(b.tags, 4)}</div>` : ""}
-          ${b.notes ? `<div class="qnote">${esc(b.notes)}</div>` : ""}
+          ${b.notes ? `<div class="qnote" translate="no">${esc(b.notes)}</div>` : ""}
           <div class="qm muted">${b.lines} lines · ${b.sources} raw · ${b.videos} videos${b.saved ? ` · ☆${b.saved}` : ""}${b.posted ? ` · ✓${b.posted} posted` : ""}</div>
           <div class="qa">${stageActs(b)}<button data-act="plan" title="Product, account, creator, tags, due date">⋯</button></div>
         </div>`).join("") || `<p class="muted kempty">—</p>`}</section>`; }).join("")}</div>`;
@@ -532,7 +532,7 @@ async function renderProducts() {
     const list = [...d.orders].sort((a, b) => rank(a) - rank(b));
     el.innerHTML = head + `<div class="tblWrap"><table class="tbl"><thead><tr><th>Product</th><th>Account</th><th>Kind</th><th>Status</th><th>Ordered</th><th>Delivered</th><th>Last day to return</th><th>Video due</th><th>Order #</th><th></th></tr></thead><tbody>
       ${list.map(o => { const open = !["returned", "cancelled", "kept"].includes(o.status);
-        return `<tr data-order="${o.id}" class="${open ? "" : "closed"}"><td><b>${esc(prodName(o.product) || "?")}</b></td><td>${accChip(o.account)}</td><td>${SAMPLE[o.sample] || ""}</td>
+        return `<tr data-order="${o.id}" class="${open ? "" : "closed"}"><td><b translate="no">${esc(prodName(o.product) || "?")}</b></td><td>${accChip(o.account)}</td><td>${SAMPLE[o.sample] || ""}</td>
         <td><select data-ost="${o.id}">${Object.entries(ORDER_ST).map(([k, l]) => `<option value="${k}" ${o.status === k ? "selected" : ""}>${l}</option>`).join("")}</select></td>
         <td>${shortDate(o.ordered)}</td><td>${shortDate(o.delivered)}</td>
         <td class="${open && o.sample === "refundable" && o._return_left != null ? (o._return_left <= 2 ? "late" : o._return_left <= 7 ? "soon" : "") : ""}">${o.return_by ? `${shortDate(o.return_by)} <span class="muted">${open ? dleft(o._return_left) : ""}</span>` : ""}</td>
@@ -548,7 +548,7 @@ async function renderProducts() {
     const nScripts = d.scripts.filter(s => s.product === p.id).length;
     return `<div class="sc prod ${p.archived ? "arch" : ""}" data-prod="${p.id}">
       <div class="pTop">${p.image ? `<img src="${esc(p.image)}" alt="" loading="lazy" onerror="this.remove()">` : `<div class="pImg">🛍</div>`}
-        <div><b>${esc(p.name)}</b><div class="muted">${esc([p.brand, p.category, p.price, p.commission && p.commission + " commission"].filter(Boolean).join(" · "))}</div>
+        <div><b translate="no">${esc(p.name)}</b><div class="muted" translate="no">${esc([p.brand, p.category, p.price, p.commission && p.commission + " commission"].filter(Boolean).join(" · "))}</div>
         ${p.link ? `<a href="${esc(p.link)}" target="_blank" rel="noopener" class="muted">Shop link ↗</a>` : ""}</div></div>
       <div class="kpis"><div><b>${m.videos || 0}</b><span>videos made</span></div><div><b>${per.posted || 0}</b><span>posted</span></div>
         <div><b>${num(per.views || null)}</b><span>views</span></div><div><b>${nScripts}</b><span>scripts</span></div></div>
@@ -625,7 +625,7 @@ async function renderAnalytics() {
     <h3 class="secHead">Top videos · ${esc(scopeName)}</h3>
     <div class="topVids">${an.top.map(p => `<a class="tv sc" href="${esc(p.url)}" target="_blank" rel="noopener">
         ${p.video_id ? `<img src="/api/shop/cover/${p.video_id}.jpg" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'noimg'}))">` : '<div class="noimg"></div>'}
-        <div><b>${num(p.stats.views)}</b> views · ${p.eng}%<div class="muted">${esc(p.title)}${p.n ? " · " + p.n : ""}</div>
+        <div><b>${num(p.stats.views)}</b> views · ${p.eng}%<div class="muted" translate="no">${esc(p.title)}${p.n ? " · " + p.n : ""}</div>
         <div class="qm">${accChip(p.account)} ${p.product ? "🛍 " + esc(prodName(p.product)) : ""}</div><div class="qtags">${tagsRow(p.tags, 3)}</div></div></a>`).join("")
       || `<p class="muted">No numbers yet. Mark videos posted (Posting tab or Review) and paste their TikTok links; numbers are read every few hours.</p>`}</div>
     ${!acc ? `<h3 class="secHead">Products × channels <span class="muted">avg views per video (videos)</span></h3>${matrixTable(an, d)}` : `<h3 class="secHead">Products on this account</h3>${perfTable(an.products, "Product", id => esc(prodName(id) || "?"), "No posted videos with a product yet.")}`}
@@ -674,7 +674,7 @@ async function renderLibrary() {
       allGroups().map(g => { const tq = (LS.get("tagQ", "") || "").toLowerCase();
         const ts = d.tags.filter(t => t.group === g && (!tq || `${t.name} ${t.group} ${t.description}`.toLowerCase().includes(tq))).sort((a, b) => a.name.localeCompare(b.name));
         return ts.length ? `<h3 class="secHead">${esc(g)}</h3><div class="tagList">${ts.map(t => { const p = sm.per.tags[t.id] || {};
-          return `<div class="tagRow" data-tagedit="${t.id}">${tagChip(t.id)}<span class="tdesc">${esc(t.description)}</span>
+          return `<div class="tagRow" data-tagedit="${t.id}">${tagChip(t.id)}<span class="tdesc" translate="no">${esc(t.description)}</span>
             <span class="muted tnum">${p.videos ? `${p.videos} video${p.videos === 1 ? "" : "s"}${p.avg_views != null ? ` · ${num(p.avg_views)} avg views` : ""}` : ""}</span><button data-tagedit="${t.id}">Edit</button></div>`; }).join("")}</div>` : ""; }).join("");
     return;
   }
@@ -683,8 +683,8 @@ async function renderLibrary() {
   el.innerHTML = head + `<p class="muted">Scripts with <code>{product}</code>, <code>{brand}</code>, <code>{price}</code> or your own <code>{fill-ins}</code> work for any product: they're filled in when you make a video. Rows from the Scripts &amp; Links sheet land here too.</p>
     <div class="scriptGrid">${list.map(s => { const p = sm.per.scripts[s.id] || {}, used = sm.scripts_used[s.id] || 0;
       const lines = s.text.split("\n").filter(l => l.trim());
-      return `<div class="sc script" data-script="${s.id}"><div class="qt"><b>${esc(s.title)}</b>${s.product ? `<span class="muted">🛍 ${esc(prodName(s.product))}</span>` : `<span class="muted">any product</span>`}</div>
-        <div class="stext">${lines.slice(0, 4).map(l => `<div>${esc(l).replace(/\{([^}]+)\}/g, '<code>{$1}</code>').replace(/\[([^\]]+)\]/g, '<i class="muted">[$1]</i>')}</div>`).join("")}${lines.length > 4 ? `<div class="muted">+${lines.length - 4} more lines</div>` : ""}</div>
+      return `<div class="sc script" data-script="${s.id}"><div class="qt"><b translate="no">${esc(s.title)}</b>${s.product ? `<span class="muted" translate="no">🛍 ${esc(prodName(s.product))}</span>` : `<span class="muted">any product</span>`}</div>
+        <div class="stext" translate="no">${lines.slice(0, 4).map(l => `<div>${esc(l).replace(/\{([^}]+)\}/g, '<code>{$1}</code>').replace(/\[([^\]]+)\]/g, '<i class="muted">[$1]</i>')}</div>`).join("")}${lines.length > 4 ? `<div class="muted">+${lines.length - 4} more lines</div>` : ""}</div>
         ${s.tags?.length ? `<div class="qtags">${tagsRow(s.tags, 5)}</div>` : ""}
         ${s.source ? `<div class="qm"><span class="srcBadge">🎬 from ${s.source.handle ? "@" + esc(s.source.handle) : "a TikTok"} · ${(s.shots || []).length} shots</span></div>` : ""}
         <div class="qm muted">${used} shoot${used === 1 ? "" : "s"} · ${p.posted || 0} posted${p.avg_views != null ? ` · ${num(p.avg_views)} avg views` : ""}${s.from_shoot && !s.edited ? " · from the sheet" : ""}${s._placeholders?.length ? ` · ${s._placeholders.length} blank${s._placeholders.length === 1 ? "" : "s"}` : ""}</div>
