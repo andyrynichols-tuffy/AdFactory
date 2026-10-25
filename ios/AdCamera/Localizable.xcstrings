@@ -1,0 +1,1026 @@
+{
+  "sourceLanguage": "en",
+  "version": "1.0",
+  "strings": {
+    "%lld filmed here": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld filmados aqui"
+          }
+        }
+      }
+    },
+    "%lld lines": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld linhas"
+          }
+        }
+      }
+    },
+    "%lld takes": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld takes"
+          }
+        }
+      }
+    },
+    "%lld takes waiting to upload": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld takes esperando para enviar"
+          }
+        }
+      }
+    },
+    "%lld to send": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld para enviar"
+          }
+        }
+      }
+    },
+    "%lld videos in Ad Factory": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld vídeos no Ad Factory"
+          }
+        }
+      }
+    },
+    "AE/AF LOCK": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AE/AF TRAVADO"
+          }
+        }
+      }
+    },
+    "Ad Camera films your TikTok Shop videos.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O Ad Camera filma seus vídeos do TikTok Shop."
+          }
+        }
+      }
+    },
+    "Ad Camera needs the camera. Allow it in the iPhone's Settings.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O Ad Camera precisa da câmera. Permita nos Ajustes do iPhone."
+          }
+        }
+      }
+    },
+    "Ad Factory answered %lld.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O Ad Factory respondeu %lld."
+          }
+        }
+      }
+    },
+    "Ad Factory password": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Senha do Ad Factory"
+          }
+        }
+      }
+    },
+    "Address": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Endereço"
+          }
+        }
+      }
+    },
+    "All sent": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tudo enviado"
+          }
+        }
+      }
+    },
+    "All takes sent to OneDrive": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todos os takes enviados ao OneDrive"
+          }
+        }
+      }
+    },
+    "Allow Photos for Ad Camera in the iPhone's Settings to save takes to the album.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Permita as Fotos para o Ad Camera nos Ajustes do iPhone para salvar os takes no álbum."
+          }
+        }
+      }
+    },
+    "Back to projects": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voltar aos projetos"
+          }
+        }
+      }
+    },
+    "Back to the TikTok defaults": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voltar ao padrão do TikTok"
+          }
+        }
+      }
+    },
+    "Brightness": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brilho"
+          }
+        }
+      }
+    },
+    "Camera": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Câmera"
+          }
+        }
+      }
+    },
+    "Cancel": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancelar"
+          }
+        }
+      }
+    },
+    "Cinematic (smoother, crops more)": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cinemática (mais suave, corta mais)"
+          }
+        }
+      }
+    },
+    "Clear sent": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Limpar enviados"
+          }
+        }
+      }
+    },
+    "Couldn't open that camera.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Não deu para abrir essa câmera."
+          }
+        }
+      }
+    },
+    "Countdown": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contagem regressiva"
+          }
+        }
+      }
+    },
+    "Decide later": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Decidir depois"
+          }
+        }
+      }
+    },
+    "Done": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        }
+      }
+    },
+    "Every take also saves to the \"Ad Studio\" album in Photos. Uploads go into the project's OneDrive folder and keep going with the phone locked.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada take também é salvo no álbum \"Ad Studio\" das Fotos. Os envios vão para a pasta do projeto no OneDrive e continuam com o celular bloqueado."
+          }
+        }
+      }
+    },
+    "Film it": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filmar"
+          }
+        }
+      }
+    },
+    "Filmed: add more takes": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filmados: adicione mais takes"
+          }
+        }
+      }
+    },
+    "Filming": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filmagem"
+          }
+        }
+      }
+    },
+    "Format": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Formato"
+          }
+        }
+      }
+    },
+    "Frame rate": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Taxa de quadros"
+          }
+        }
+      }
+    },
+    "Grid": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grade"
+          }
+        }
+      }
+    },
+    "H.264 (most compatible)": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "H.264 (mais compatível)"
+          }
+        }
+      }
+    },
+    "HEVC (smaller files)": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "HEVC (arquivos menores)"
+          }
+        }
+      }
+    },
+    "Hold white balance during a take": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Manter o balanço de branco durante o take"
+          }
+        }
+      }
+    },
+    "Hook": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gancho"
+          }
+        }
+      }
+    },
+    "In Photos": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nas Fotos"
+          }
+        }
+      }
+    },
+    "Left empty, it's named after the product and today's date.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se ficar vazio, leva o nome do produto e a data de hoje."
+          }
+        }
+      }
+    },
+    "Line %lld of %lld": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Linha %lld de %lld"
+          }
+        }
+      }
+    },
+    "Mirror the front camera": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Espelhar a câmera frontal"
+          }
+        }
+      }
+    },
+    "My own words": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Minhas próprias palavras"
+          }
+        }
+      }
+    },
+    "Name (optional)": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nome (opcional)"
+          }
+        }
+      }
+    },
+    "New project": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Novo projeto"
+          }
+        }
+      }
+    },
+    "No script": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sem roteiro"
+          }
+        }
+      }
+    },
+    "None": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nenhum"
+          }
+        }
+      }
+    },
+    "Nothing waiting to be filmed. Tap ＋ to start a project.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nada esperando para filmar. Toque em ＋ para começar um projeto."
+          }
+        }
+      }
+    },
+    "Off": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desligado"
+          }
+        }
+      }
+    },
+    "One line per line of the script…": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uma linha por linha do roteiro…"
+          }
+        }
+      }
+    },
+    "Posted": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Postado"
+          }
+        }
+      }
+    },
+    "Posted (%lld)": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Postados (%lld)"
+          }
+        }
+      }
+    },
+    "Posts on": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Posta em"
+          }
+        }
+      }
+    },
+    "Pre-cutting": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pré-cortando"
+          }
+        }
+      }
+    },
+    "Product": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Produto"
+          }
+        }
+      }
+    },
+    "Projects and uploads come from Ad Factory on the PC.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Os projetos e os envios vêm do Ad Factory no PC."
+          }
+        }
+      }
+    },
+    "Record": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gravar"
+          }
+        }
+      }
+    },
+    "Resolution": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resolução"
+          }
+        }
+      }
+    },
+    "Script": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Roteiro"
+          }
+        }
+      }
+    },
+    "Sent to OneDrive": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enviado ao OneDrive"
+          }
+        }
+      }
+    },
+    "Set for TikTok: vertical 4K at 30 fps, SDR (HDR is always off: HDR uploads look washed out on TikTok). 4K leaves room to crop and zoom in the editor. The front camera records unmirrored so product labels read the right way.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajustado para o TikTok: vertical em 4K a 30 fps, SDR (o HDR fica sempre desligado: vídeos em HDR ficam desbotados no TikTok). O 4K deixa espaço para cortar e dar zoom no editor. A câmera frontal grava sem espelhar, para os rótulos dos produtos ficarem legíveis."
+          }
+        }
+      }
+    },
+    "Settings": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajustes"
+          }
+        }
+      }
+    },
+    "Showing the list from last time. Takes you film wait on the phone and upload later.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostrando a lista da última vez. Os takes filmados esperam no celular e são enviados depois."
+          }
+        }
+      }
+    },
+    "Sign in": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Entrar"
+          }
+        }
+      }
+    },
+    "Sign in to Ad Factory": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Entrar no Ad Factory"
+          }
+        }
+      }
+    },
+    "Sign in to Ad Factory in Settings.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Entre no Ad Factory nos Ajustes."
+          }
+        }
+      }
+    },
+    "Sign out": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sair"
+          }
+        }
+      }
+    },
+    "Signed in": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conectado"
+          }
+        }
+      }
+    },
+    "Stabilization": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estabilização"
+          }
+        }
+      }
+    },
+    "Standard": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Padrão"
+          }
+        }
+      }
+    },
+    "Stop recording": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Parar de gravar"
+          }
+        }
+      }
+    },
+    "Style": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estilo"
+          }
+        }
+      }
+    },
+    "Switch camera": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trocar de câmera"
+          }
+        }
+      }
+    },
+    "Takes": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Takes"
+          }
+        }
+      }
+    },
+    "Tap the picture to focus there; hold to lock focus and brightness. Pinch to zoom. The volume buttons start and stop recording.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toque na imagem para focar ali; segure para travar o foco e o brilho. Faça pinça para dar zoom. Os botões de volume começam e param a gravação."
+          }
+        }
+      }
+    },
+    "Tap: next line · swipe right: back": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toque: próxima linha · deslize para a direita: voltar"
+          }
+        }
+      }
+    },
+    "Teleprompter": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teleprompter"
+          }
+        }
+      }
+    },
+    "Teleprompter text size": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tamanho do texto do teleprompter"
+          }
+        }
+      }
+    },
+    "The Ad Factory address isn't right. Check it in Settings.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O endereço do Ad Factory não está certo. Confira nos Ajustes."
+          }
+        }
+      }
+    },
+    "The same password as the Ad Factory web link. The phone reaches the PC through the Tailscale app, so keep it switched on.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A mesma senha do link web do Ad Factory. O celular chega ao PC pelo app Tailscale, então deixe-o ligado."
+          }
+        }
+      }
+    },
+    "The video file is missing on this phone.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O arquivo do vídeo não está mais neste celular."
+          }
+        }
+      }
+    },
+    "This project isn't in Ad Factory anymore.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este projeto não está mais no Ad Factory."
+          }
+        }
+      }
+    },
+    "TikTok screen guides": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guias da tela do TikTok"
+          }
+        }
+      }
+    },
+    "To edit": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Para editar"
+          }
+        }
+      }
+    },
+    "To film": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Para filmar"
+          }
+        }
+      }
+    },
+    "To post": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Para postar"
+          }
+        }
+      }
+    },
+    "Tone": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tom"
+          }
+        }
+      }
+    },
+    "Too many tries. Wait 10 minutes.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tentativas demais. Espere 10 minutos."
+          }
+        }
+      }
+    },
+    "Try again now": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tentar de novo agora"
+          }
+        }
+      }
+    },
+    "Upload over cellular": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enviar pelos dados móveis"
+          }
+        }
+      }
+    },
+    "Uploading %lld of %lld takes": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enviando %lld de %lld takes"
+          }
+        }
+      }
+    },
+    "Uploading %lld%%": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enviando %lld%%"
+          }
+        }
+      }
+    },
+    "Uploads": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Envios"
+          }
+        }
+      }
+    },
+    "Video format": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Formato do vídeo"
+          }
+        }
+      }
+    },
+    "Waiting to upload": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esperando para enviar"
+          }
+        }
+      }
+    },
+    "Waiting: sign in to Ad Factory in Settings.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esperando: entre no Ad Factory nos Ajustes."
+          }
+        }
+      }
+    },
+    "Wrong password.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Senha errada."
+          }
+        }
+      }
+    },
+    "caption + username": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "legenda + usuário"
+          }
+        }
+      }
+    },
+    "like / comment / share": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "curtir / comentar / compartilhar"
+          }
+        }
+      }
+    },
+    "line %lld": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "linha %lld"
+          }
+        }
+      }
+    },
+    "orange cart tag": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "etiqueta do carrinho laranja"
+          }
+        }
+      }
+    },
+    "top tabs": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "abas do topo"
+          }
+        }
+      }
+    },
+    "{Blanks} fill in from the product. Each line shows on the teleprompter.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "As {lacunas} são preenchidas com o produto. Cada linha aparece no teleprompter."
+          }
+        }
+      }
+    }
+  }
+}
