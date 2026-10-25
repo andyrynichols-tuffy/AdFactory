@@ -16,6 +16,8 @@ struct SettingsView: View {
     @AppStorage("grid") private var grid = false
     @AppStorage("prompterSize") private var prompterSize = 26.0
     @AppStorage("cellular") private var cellular = true
+    @AppStorage("tripodCountdown") private var tripodCountdown = 3
+    @AppStorage("tripodPrompter") private var tripodPrompter = false
 
     @State private var password = ""
     @State private var busy = false
@@ -94,6 +96,20 @@ struct SettingsView: View {
                     Text("Filming")
                 } footer: {
                     Text("Tap the picture to focus there; hold to lock focus and brightness. Pinch to zoom. The volume buttons start and stop recording.")
+                }
+
+                Section {
+                    Picker("Countdown", selection: $tripodCountdown) {
+                        Text("Off").tag(0)
+                        Text("3 s").tag(3)
+                        Text("5 s").tag(5)
+                        Text("10 s").tag(10)
+                    }
+                    Toggle("Teleprompter", isOn: $tripodPrompter)
+                } header: {
+                    Text("Tripod clamp")
+                } footer: {
+                    Text("Switch to it with the layout button on the camera screen: back camera, a strip left clear where the clamp covers the screen, the picture shrunk to fit, controls beside it. \"Set clamp area\" on the same button moves the strip.")
                 }
 
                 Section {

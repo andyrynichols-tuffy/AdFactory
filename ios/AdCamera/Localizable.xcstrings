@@ -172,6 +172,16 @@
         }
       }
     },
+    "Bottom": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Embaixo"
+          }
+        }
+      }
+    },
     "Brightness": {
       "localizations": {
         "pt-BR": {
@@ -208,6 +218,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cinemática (mais suave, corta mais)"
+          }
+        }
+      }
+    },
+    "Clamp": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Garra"
           }
         }
       }
@@ -352,6 +372,16 @@
         }
       }
     },
+    "Handheld": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Na mão"
+          }
+        }
+      }
+    },
     "Hold white balance during a take": {
       "localizations": {
         "pt-BR": {
@@ -382,6 +412,16 @@
         }
       }
     },
+    "Layout": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Layout"
+          }
+        }
+      }
+    },
     "Left empty, it's named after the product and today's date.": {
       "localizations": {
         "pt-BR": {
@@ -398,6 +438,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Linha %lld de %lld"
+          }
+        }
+      }
+    },
+    "Line the striped strip up with the clamp. The picture shrinks to fit the rest of the screen.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alinhe a faixa listrada com a garra. A imagem diminui para caber no resto da tela."
           }
         }
       }
@@ -592,6 +642,16 @@
         }
       }
     },
+    "Set clamp area": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ajustar a área da garra"
+          }
+        }
+      }
+    },
     "Set for TikTok: vertical 4K at 30 fps, SDR (HDR is always off: HDR uploads look washed out on TikTok). 4K leaves room to crop and zoom in the editor. The front camera records unmirrored so product labels read the right way.": {
       "localizations": {
         "pt-BR": {
@@ -702,6 +762,16 @@
         }
       }
     },
+    "Strip size": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tamanho da faixa"
+          }
+        }
+      }
+    },
     "Style": {
       "localizations": {
         "pt-BR": {
@@ -718,6 +788,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Trocar de câmera"
+          }
+        }
+      }
+    },
+    "Switch to it with the layout button on the camera screen: back camera, a strip left clear where the clamp covers the screen, the picture shrunk to fit, controls beside it. \"Set clamp area\" on the same button moves the strip.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ative pelo botão de layout na tela da câmera: câmera traseira, uma faixa livre onde a garra cobre a tela, a imagem reduzida para caber e os controles ao lado. \"Ajustar a área da garra\", no mesmo botão, move a faixa."
           }
         }
       }
@@ -802,6 +882,26 @@
         }
       }
     },
+    "Thicker": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mais grossa"
+          }
+        }
+      }
+    },
+    "Thinner": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mais fina"
+          }
+        }
+      }
+    },
     "This project isn't in Ad Factory anymore.": {
       "localizations": {
         "pt-BR": {
@@ -868,6 +968,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tentativas demais. Espere 10 minutos."
+          }
+        }
+      }
+    },
+    "Top": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Em cima"
+          }
+        }
+      }
+    },
+    "Tripod clamp": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tripé com garra"
           }
         }
       }
@@ -948,6 +1068,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Esperando: entre no Ad Factory nos Ajustes."
+          }
+        }
+      }
+    },
+    "Where does the clamp cover the screen?": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Onde a garra cobre a tela?"
           }
         }
       }
