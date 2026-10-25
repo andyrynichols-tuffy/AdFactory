@@ -295,6 +295,7 @@ window.I18N_PT = {
   "How new footage is used": "Como os vídeos novos são usados",
   "How the accounts and videos are doing on TikTok": "Como as contas e os vídeos estão indo no TikTok",
   "How the take ranks for video 1: clean read, no ums or rewording, looking into the lens": "Como o take se classifica para o vídeo 1: leitura limpa, sem “é…” nem mudança de texto, olhando para a lente",
+  "I'm": "Sou",
   "iCloud Drive isn't set up on this PC yet: install": "O iCloud Drive ainda não está configurado neste PC: instale o",
   "iCloud for Windows": "iCloud para Windows",
   "If he changes outfits during the shoot, mark when. Script lines can then ask for one outfit.": "Se ele troca de roupa durante a gravação, marque quando. As falas do roteiro podem pedir uma roupa específica.",
@@ -325,7 +326,7 @@ window.I18N_PT = {
   "Like": "Tipo",
   "like / comment / share": "curtir / comentar / compartilhar",
   "Likes · Shares": "Curtidas · Compartilhamentos",
-  "likes+comments+shares+saves ÷ views": "curtidas+comentários+compartilhamentos+salvamentos ÷ visualizações",
+  "likes+comments+shares+saves ÷ views": "curtidas + comentários + compartilhamentos + salvamentos ÷ visualizações",
   "Line": "Fala",
   "line start": "início da fala",
   "lines": "falas",
@@ -505,6 +506,8 @@ window.I18N_PT = {
   "Posted here": "Postados aqui",
   "Posted on": "Postado em",
   "posted video": "vídeo postado",
+  "posted video has no TikTok link yet": "vídeo postado ainda sem link do TikTok",
+  "posted videos have no TikTok link yet": "vídeos postados ainda sem link do TikTok",
   "POV: your ice is still ice 24 hours later": "POV: seu gelo ainda é gelo 24 horas depois",
   "Pre-cutting": "Pré-cortando",
   "pre-filled on new videos": "preenchido nos vídeos novos",
@@ -606,6 +609,7 @@ window.I18N_PT = {
   "Saved: its clips are locked to this video": "Salvo: os clipes dele estão travados neste vídeo",
   "Saved: its numbers show up in Analytics shortly": "Salvo: os números aparecem em Análises em breve",
   "Saved: its takes are locked to this video (click to unsave and free them)": "Salvo: os takes dele estão travados neste vídeo (clique para tirar dos salvos e liberá-los)",
+  "saves": "salvamentos",
   "Saving to the OneDrive Outbox…": "Salvando na Caixa de saída do OneDrive…",
   "Say you're finishing this one": "Dizer que você vai terminar este",
   "Screenshot added to ② Assets. Crop it or place it on a line.": "Captura adicionada em ② Imagens e clipes. Recorte ou coloque em uma fala.",
@@ -989,6 +993,7 @@ window.I18N_PT = {
   "＋ People who film (": "＋ Pessoas que filmam (",
   "＋ Place on a line": "＋ Colocar em uma fala",
   "＋ Product": "＋ Produto",
+  "＋ Script": "＋ Roteiro",
   "＋ Video": "＋ Vídeo",
   "🌐 English": "🌐 English",
   "🎁 Free sample": "🎁 Amostra grátis",
@@ -1085,12 +1090,24 @@ window.I18N_PT = {
    "$1 cenas"
   ],
   [
-   "\\b(\\d+) blanks?\\b",
-   "$1 lacuna(s)"
+   "\\b1 blank\\b",
+   "1 lacuna"
   ],
   [
-   "\\b(\\d+) shoots?\\b",
-   "$1 gravação(ões)"
+   "\\b(\\d+) blanks\\b",
+   "$1 lacunas"
+  ],
+  [
+   "\\b1 shoot\\b",
+   "1 gravação"
+  ],
+  [
+   "\\b(\\d+) shoots\\b",
+   "$1 gravações"
+  ],
+  [
+   "\\b(\\d+) saves\\b",
+   "$1 salvamentos"
   ],
   [
    "\\b(\\d+) picked\\b",
