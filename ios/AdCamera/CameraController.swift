@@ -102,10 +102,17 @@ final class CameraController: NSObject, ObservableObject, AVCaptureFileOutputRec
         queue.async { self.configure(position: pos, audio: audio) }
     }
 
-    func flip() {
+    /// remember = make it the handheld layout's camera (the tripod layout always starts on the back one).
+    func flip(remember: Bool = true) {
         guard !recording else { return }
         position = position == .front ? .back : .front
-        UserDefaults.standard.set(position == .back ? "back" : "front", forKey: "camera")
+        if remember { UserDefaults.standard.set(position == .back ? "back" : "front", forKey: "camera") }
+        reconfigure()
+    }
+
+    func use(_ pos: AVCaptureDevice.Position) {
+        guard !recording, pos != position else { return }
+        position = pos
         reconfigure()
     }
 

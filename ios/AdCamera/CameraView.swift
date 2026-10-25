@@ -2,8 +2,13 @@ import AVFoundation
 import SwiftUI
 
 /// Filming for one project: 9:16 viewfinder with TikTok's UI zones, the script as a
-/// teleprompter up by the lens, and a record button that can stop and start as often as
-/// needed. Every take goes into this project.
+/// teleprompter, and a record button that can stop and start as often as needed. Every take
+/// goes into this project.
+///
+/// Two layouts: Handheld (controls over the picture) and Tripod clamp (a dead strip at the
+/// top or bottom where the clamp covers the screen; the whole frame shrinks to fit the rest,
+/// with the most used controls in columns beside it). Tripod clamp has its own control set:
+/// back camera, its own countdown, teleprompter off by default.
 struct CameraView: View {
     let project: Project
     @EnvironmentObject private var model: AppModel
@@ -13,9 +18,15 @@ struct CameraView: View {
 
     @AppStorage("zones") private var showZones = true
     @AppStorage("grid") private var showGrid = false
-    @AppStorage("prompter") private var showPrompter = true
+    @AppStorage("prompter") private var handheldPrompter = true
+    @AppStorage("tripodPrompter") private var tripodPrompter = false
     @AppStorage("prompterSize") private var prompterSize = 26.0
-    @AppStorage("countdown") private var countdown = 0
+    @AppStorage("countdown") private var handheldCountdown = 0
+    @AppStorage("tripodCountdown") private var tripodCountdown = 3
+    @AppStorage("layout") private var layout = "handheld"
+    @AppStorage("clampTop") private var clampTop = false
+    @AppStorage("clampH") private var clampH = 160.0
+    @AppStorage("clampSet") private var clampSet = false
 
     @State private var line = 0
     @State private var counting: Int?
@@ -23,50 +34,42 @@ struct CameraView: View {
     @State private var showBias = false
     @State private var showSettings = false
     @State private var showUploads = false
+    @State private var editingClamp = false
+
+    private var tripod: Bool { layout == "tripod" }
+    private var prompterOn: Bool { tripod ? tripodPrompter : handheldPrompter }
+    private var showPrompter: Bool { prompterOn && !project.lines.isEmpty }
+    private var countdown: Int { tripod ? tripodCountdown : handheldCountdown }
 
     var body: some View {
         ZStack {
-            Color.black.ignoresSafeArea()
             GeometryReader { geo in
-                let w = min(geo.size.width, geo.size.height * 9 / 16)
-                let h = w * 16 / 9
-                ZStack {
-                    CameraPreview(camera: camera, shutter: tapRecord)
-                    Guides(zones: model.zones, safe: model.safe, showZones: showZones, showGrid: showGrid)
-                        .allowsHitTesting(false)
+                let frame = tripod ? TripodFrame(size: geo.size, insets: Self.windowInsets, top: clampTop,
+                                                 strip: CGFloat(clampH)) : nil
+                let r = frame?.preview ?? Self.handheldRect(geo.size)
+                ZStack(alignment: .topLeading) {
+                    Color.black
+                    ZStack {
+                        CameraPreview(camera: camera, shutter: tapRecord)
+                        Guides(zones: model.zones, safe: model.safe, showZones: showZones, showGrid: showGrid)
+                            .allowsHitTesting(false)
+                    }
+                    .frame(width: r.width, height: r.height)
+                    .clipped()
+                    .position(x: r.midX, y: r.midY)
+                    if let frame { tripodControls(frame) }
                 }
-                .frame(width: w, height: h)
-                .clipped()
-                .position(x: geo.size.width / 2, y: geo.size.height / 2)
+                .animation(.easeInOut(duration: 0.25), value: frame)
             }
             .ignoresSafeArea()
 
-            VStack(spacing: 10) {
-                topBar
-                if showPrompter && !project.lines.isEmpty { prompter }
-                if let p = camera.problem {
-                    Text(verbatim: p)
-                        .font(.footnote)
-                        .padding(10)
-                        .background(.orange.opacity(0.85), in: RoundedRectangle(cornerRadius: 10))
-                        .onTapGesture { camera.problem = nil }
-                        .padding(.horizontal)
-                }
-                Spacer()
-                if let n = counting {
-                    Text(verbatim: "\(n)")
-                        .font(.system(size: 120, weight: .heavy, design: .rounded))
-                        .shadow(radius: 10)
-                        .transition(.scale)
-                }
-                Spacer()
-                bottomBar
-            }
-            .foregroundStyle(.white)
+            if !tripod { handheldControls }
         }
+        .foregroundStyle(.white)
         .statusBarHidden()
         .persistentSystemOverlays(.hidden)
         .onAppear {
+            if tripod { camera.position = .back }
             camera.start()
             UIApplication.shared.isIdleTimerDisabled = true
         }
@@ -83,75 +86,314 @@ struct CameraView: View {
         }
     }
 
-    // MARK: - parts
-
-    private var topBar: some View {
-        HStack(alignment: .center) {
-            Button { dismiss() } label: {
-                Image(systemName: "chevron.left")
-                    .font(.title3.bold())
-                    .frame(width: 42, height: 42)
-                    .background(.black.opacity(0.45), in: Circle())
-            }
-            .disabled(camera.recording)
-            .accessibilityLabel(Text("Back to projects"))
-            Spacer()
-            VStack(spacing: 2) {
-                if let s = camera.started {
-                    HStack(spacing: 6) {
-                        Circle().fill(.red).frame(width: 9, height: 9)
-                        Text(s, style: .timer).monospacedDigit().font(.headline)
-                    }
-                    .padding(.horizontal, 12).padding(.vertical, 5)
-                    .background(.black.opacity(0.55), in: Capsule())
-                } else {
-                    Text(verbatim: project.title).font(.subheadline.bold()).lineLimit(1)
-                    Text(verbatim: camera.summary).font(.caption2).opacity(0.75)
-                }
-            }
-            Spacer()
-            Button { showSettings = true } label: {
-                Image(systemName: "gearshape")
-                    .font(.title3)
-                    .frame(width: 42, height: 42)
-                    .background(.black.opacity(0.45), in: Circle())
-            }
-            .disabled(camera.recording)
-            .accessibilityLabel(Text("Settings"))
-        }
-        .padding(.horizontal, 14)
-        .padding(.top, 4)
+    static func handheldRect(_ size: CGSize) -> CGRect {
+        let w = min(size.width, size.height * 9 / 16), h = w * 16 / 9
+        return CGRect(x: (size.width - w) / 2, y: (size.height - h) / 2, width: w, height: h)
     }
 
-    /// Up top, close to the front lens, so reading it still looks like eye contact.
-    private var prompter: some View {
+    static var windowInsets: UIEdgeInsets {
+        (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first?.safeAreaInsets ?? .zero
+    }
+
+    // MARK: - handheld: controls over the picture
+
+    private var handheldControls: some View {
+        VStack(spacing: 10) {
+            HStack(alignment: .center) {
+                backButton
+                Spacer()
+                status
+                Spacer()
+                HStack(spacing: 8) {
+                    layoutMenu
+                    settingsButton
+                }
+            }
+            .padding(.horizontal, 14)
+            .padding(.top, 4)
+            problemBanner
+            if showPrompter { prompterView(compact: false) }
+            Spacer()
+            if let n = counting { countdownNumber(n) }
+            Spacer()
+            VStack(spacing: 12) {
+                HStack(spacing: 8) {
+                    zonesTool
+                    prompterTool
+                    biasTool
+                    lockAndZoom
+                    Spacer()
+                    MicMeter(name: camera.mic, level: camera.level)
+                }
+                if showBias { biasSlider }
+                HStack {
+                    Button { showUploads = true } label: { takesBadge }
+                        .frame(width: 80, alignment: .leading)
+                    Spacer()
+                    RecordButton(recording: camera.recording, counting: counting != nil, action: tapRecord)
+                    Spacer()
+                    flipButton.frame(width: 80, alignment: .trailing)
+                }
+            }
+            .padding(.horizontal, 16)
+            .padding(.bottom, 6)
+        }
+    }
+
+    // MARK: - tripod clamp: dead strip, smaller picture, controls beside it
+
+    @ViewBuilder
+    private func tripodControls(_ f: TripodFrame) -> some View {
+        ClampStrip(editing: editingClamp)
+            .frame(width: f.strip.width, height: f.strip.height)
+            .position(x: f.strip.midX, y: f.strip.midY)
+
+        VStack(spacing: 12) {   // left: getting around, guides
+            backButton
+            layoutMenu
+            settingsButton
+            Spacer(minLength: 0)
+            zonesTool
+            prompterTool
+            biasTool
+        }
+        .padding(.vertical, 8)
+        .frame(width: f.left.width, height: f.left.height)
+        .position(x: f.left.midX, y: f.left.midY)
+
+        VStack(spacing: 12) {   // right: the thumb's side, record in the middle
+            Button { showUploads = true } label: { takesCount }
+            Spacer(minLength: 0)
+            RecordButton(recording: camera.recording, counting: counting != nil,
+                         size: min(76, f.right.width - 6), action: tapRecord)
+            Spacer(minLength: 0)
+            flipButton
+        }
+        .padding(.vertical, 8)
+        .frame(width: f.right.width, height: f.right.height)
+        .position(x: f.right.midX, y: f.right.midY)
+
+        VStack(spacing: 6) {   // above the picture
+            Spacer(minLength: 0)
+            status
+            problemBanner
+            if showPrompter && f.above.height >= 110 { prompterView(compact: true) }
+        }
+        .padding(.bottom, 6)
+        .frame(width: f.above.width + 2 * min(f.left.width, 40), height: max(0, f.above.height))
+        .clipped()
+        .position(x: f.above.midX, y: f.above.midY)
+
+        VStack(spacing: 6) {   // below the picture
+            HStack(spacing: 8) {
+                lockAndZoom
+                Spacer(minLength: 0)
+                MicMeter(name: camera.mic, level: camera.level)
+            }
+            if showBias { biasSlider }
+            Spacer(minLength: 0)
+        }
+        .padding(.top, 6)
+        .frame(width: f.below.width, height: max(0, f.below.height))
+        .clipped()
+        .position(x: f.below.midX, y: f.below.midY)
+
+        if let n = counting {
+            countdownNumber(n).position(x: f.preview.midX, y: f.preview.midY)
+        }
+        if editingClamp {
+            clampEditor
+                .frame(width: min(320, f.preview.width + 2 * f.left.width - 16))
+                .position(x: f.preview.midX, y: f.preview.midY)
+        }
+    }
+
+    private var clampEditor: some View {
+        VStack(spacing: 12) {
+            Text("Where does the clamp cover the screen?")
+                .font(.subheadline.bold())
+                .multilineTextAlignment(.center)
+            Picker("Clamp", selection: $clampTop) {
+                Text("Top").tag(true)
+                Text("Bottom").tag(false)
+            }
+            .pickerStyle(.segmented)
+            HStack(spacing: 14) {
+                Button { clampH = max(40, clampH - 10) } label: { Image(systemName: "minus") }
+                    .accessibilityLabel(Text("Thinner"))
+                Text("Strip size").font(.caption)
+                Button { clampH = min(320, clampH + 10) } label: { Image(systemName: "plus") }
+                    .accessibilityLabel(Text("Thicker"))
+            }
+            .buttonStyle(.bordered)
+            Text("Line the striped strip up with the clamp. The picture shrinks to fit the rest of the screen.")
+                .font(.caption)
+                .opacity(0.75)
+                .multilineTextAlignment(.center)
+            Button {
+                clampSet = true
+                editingClamp = false
+            } label: {
+                Text("Done").bold().frame(maxWidth: .infinity)
+            }
+            .buttonStyle(.borderedProminent)
+        }
+        .padding(14)
+        .background(.black.opacity(0.85), in: RoundedRectangle(cornerRadius: 16))
+    }
+
+    // MARK: - shared pieces
+
+    private var backButton: some View {
+        Button { dismiss() } label: { circle("chevron.left", bold: true) }
+            .disabled(camera.recording)
+            .accessibilityLabel(Text("Back to projects"))
+    }
+
+    private var settingsButton: some View {
+        Button { showSettings = true } label: { circle("gearshape") }
+            .disabled(camera.recording)
+            .accessibilityLabel(Text("Settings"))
+    }
+
+    private var flipButton: some View {
+        Button { camera.flip(remember: !tripod) } label: { circle("arrow.triangle.2.circlepath.camera") }
+            .disabled(camera.recording)
+            .accessibilityLabel(Text("Switch camera"))
+    }
+
+    private var layoutMenu: some View {
+        Menu {
+            Picker(selection: Binding(get: { layout }, set: { setLayout($0) })) {
+                Label("Handheld", systemImage: "hand.raised").tag("handheld")
+                Label("Tripod clamp", systemImage: "rectangle.bottomhalf.filled").tag("tripod")
+            } label: {
+                Text("Layout")
+            }
+            if tripod {
+                Button { editingClamp = true } label: {
+                    Label("Set clamp area", systemImage: "arrow.up.and.down")
+                }
+            }
+        } label: {
+            circle(tripod ? "rectangle.bottomhalf.filled" : "hand.raised")
+        }
+        .disabled(camera.recording)
+        .accessibilityLabel(Text("Layout"))
+    }
+
+    private func circle(_ icon: String, bold: Bool = false) -> some View {
+        Image(systemName: icon)
+            .font(bold ? .title3.bold() : .title3)
+            .frame(width: 42, height: 42)
+            .background(.black.opacity(0.45), in: Circle())
+    }
+
+    private var status: some View {
+        VStack(spacing: 2) {
+            if let s = camera.started {
+                HStack(spacing: 6) {
+                    Circle().fill(.red).frame(width: 9, height: 9)
+                    Text(s, style: .timer).monospacedDigit().font(.headline)
+                }
+                .padding(.horizontal, 12).padding(.vertical, 5)
+                .background(.black.opacity(0.55), in: Capsule())
+            } else {
+                Text(verbatim: project.title).font(.subheadline.bold()).lineLimit(1)
+                Text(verbatim: camera.summary).font(.caption2).opacity(0.75)
+            }
+        }
+    }
+
+    @ViewBuilder
+    private var problemBanner: some View {
+        if let p = camera.problem {
+            Text(verbatim: p)
+                .font(.footnote)
+                .lineLimit(3)
+                .padding(10)
+                .background(.orange.opacity(0.85), in: RoundedRectangle(cornerRadius: 10))
+                .onTapGesture { camera.problem = nil }
+                .padding(.horizontal)
+        }
+    }
+
+    private func countdownNumber(_ n: Int) -> some View {
+        Text(verbatim: "\(n)")
+            .font(.system(size: 120, weight: .heavy, design: .rounded))
+            .minimumScaleFactor(0.4)
+            .shadow(radius: 10)
+            .transition(.scale)
+    }
+
+    private var zonesTool: some View {
+        tool("rectangle.dashed", on: showZones, label: Text("TikTok screen guides")) { showZones.toggle() }
+    }
+
+    @ViewBuilder
+    private var prompterTool: some View {
+        if !project.lines.isEmpty {
+            tool("text.bubble", on: prompterOn, label: Text("Teleprompter")) {
+                if tripod { tripodPrompter.toggle() } else { handheldPrompter.toggle() }
+            }
+        }
+    }
+
+    private var biasTool: some View {
+        tool("plusminus.circle", on: showBias, label: Text("Brightness")) { showBias.toggle() }
+    }
+
+    private var biasSlider: some View {
+        Slider(value: Binding(get: { Double(camera.bias) }, set: { camera.setBias(Float($0)) }), in: -2...2, step: 0.1)
+            .tint(.yellow)
+    }
+
+    @ViewBuilder
+    private var lockAndZoom: some View {
+        if camera.locked {
+            Text("AE/AF LOCK")
+                .font(.caption2.bold())
+                .padding(.horizontal, 6).padding(.vertical, 3)
+                .background(.yellow, in: RoundedRectangle(cornerRadius: 4))
+                .foregroundStyle(.black)
+        }
+        if camera.zoom > 1.05 {
+            Text(verbatim: String(format: "%.1fx", camera.zoom)).font(.caption.bold())
+        }
+    }
+
+    /// Up top (by the front lens in handheld), so reading it still looks like eye contact.
+    private func prompterView(compact: Bool) -> some View {
         let lines = project.lines
         let i = min(line, lines.count - 1)
+        let size = compact ? min(prompterSize, 18) : prompterSize
         return VStack(spacing: 6) {
             Text(verbatim: lines[i])
-                .font(.system(size: prompterSize, weight: .bold))
+                .font(.system(size: size, weight: .bold))
                 .multilineTextAlignment(.center)
-                .lineLimit(5)
+                .lineLimit(compact ? 2 : 5)
                 .minimumScaleFactor(0.6)
-            if i + 1 < lines.count {
+            if !compact && i + 1 < lines.count {
                 Text(verbatim: lines[i + 1])
-                    .font(.system(size: prompterSize * 0.6))
+                    .font(.system(size: size * 0.6))
                     .multilineTextAlignment(.center)
                     .opacity(0.55)
                     .lineLimit(2)
             }
-            HStack {
-                Text("Line \(i + 1) of \(lines.count)")
-                Spacer()
-                Text("Tap: next line · swipe right: back")
+            if !compact {
+                HStack {
+                    Text("Line \(i + 1) of \(lines.count)")
+                    Spacer()
+                    Text("Tap: next line · swipe right: back")
+                }
+                .font(.caption2)
+                .opacity(0.6)
             }
-            .font(.caption2)
-            .opacity(0.6)
         }
-        .padding(12)
+        .padding(compact ? 8 : 12)
         .frame(maxWidth: .infinity)
         .background(.black.opacity(0.5), in: RoundedRectangle(cornerRadius: 14))
-        .padding(.horizontal, 12)
+        .padding(.horizontal, compact ? 0 : 12)
         .contentShape(Rectangle())
         .onTapGesture { line = min(lines.count - 1, i + 1) }
         .gesture(DragGesture(minimumDistance: 30).onEnded { v in
@@ -159,55 +401,9 @@ struct CameraView: View {
         })
     }
 
-    private var bottomBar: some View {
-        VStack(spacing: 12) {
-            HStack(spacing: 8) {
-                tool("rectangle.dashed", on: showZones, label: Text("TikTok screen guides")) { showZones.toggle() }
-                if !project.lines.isEmpty {
-                    tool("text.bubble", on: showPrompter, label: Text("Teleprompter")) { showPrompter.toggle() }
-                }
-                tool("plusminus.circle", on: showBias, label: Text("Brightness")) { showBias.toggle() }
-                if camera.locked {
-                    Text("AE/AF LOCK")
-                        .font(.caption2.bold())
-                        .padding(.horizontal, 6).padding(.vertical, 3)
-                        .background(.yellow, in: RoundedRectangle(cornerRadius: 4))
-                        .foregroundStyle(.black)
-                }
-                if camera.zoom > 1.05 {
-                    Text(verbatim: String(format: "%.1fx", camera.zoom)).font(.caption.bold())
-                }
-                Spacer()
-                MicMeter(name: camera.mic, level: camera.level)
-            }
-            if showBias {
-                Slider(value: Binding(get: { Double(camera.bias) }, set: { camera.setBias(Float($0)) }),
-                       in: -2...2, step: 0.1)
-                    .tint(.yellow)
-            }
-            HStack {
-                Button { showUploads = true } label: { takesBadge }
-                    .frame(width: 80, alignment: .leading)
-                Spacer()
-                RecordButton(recording: camera.recording, counting: counting != nil, action: tapRecord)
-                Spacer()
-                Button { camera.flip() } label: {
-                    Image(systemName: "arrow.triangle.2.circlepath.camera")
-                        .font(.title2)
-                        .frame(width: 56, height: 56)
-                        .background(.black.opacity(0.45), in: Circle())
-                }
-                .disabled(camera.recording)
-                .accessibilityLabel(Text("Switch camera"))
-                .frame(width: 80, alignment: .trailing)
-            }
-        }
-        .padding(.horizontal, 16)
-        .padding(.bottom, 6)
-    }
+    private var mine: [Clip] { clips.clips.filter { $0.project == project.sid } }
 
     private var takesBadge: some View {
-        let mine = clips.clips.filter { $0.project == project.sid }
         let left = mine.filter { !$0.uploaded }.count
         return VStack(alignment: .leading, spacing: 2) {
             Text("\(mine.count) takes").font(.subheadline.bold())
@@ -224,6 +420,23 @@ struct CameraView: View {
         .background(.black.opacity(0.45), in: RoundedRectangle(cornerRadius: 10))
     }
 
+    /// The takes badge squeezed into a side column: the count, and whether any are still uploading.
+    private var takesCount: some View {
+        let left = mine.filter { !$0.uploaded }.count
+        return VStack(spacing: 2) {
+            Text(verbatim: "\(mine.count)").font(.title3.bold())
+            if !mine.isEmpty {
+                Image(systemName: left > 0 ? "arrow.up.circle" : "checkmark.circle.fill")
+                    .font(.caption)
+                    .foregroundStyle(left > 0 ? Color.white : Color.green)
+            }
+        }
+        .frame(width: 54, height: 54)
+        .background(.black.opacity(0.45), in: RoundedRectangle(cornerRadius: 12))
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(Text("\(mine.count) takes"))
+    }
+
     private func tool(_ icon: String, on: Bool, label: Text, action: @escaping () -> Void) -> some View {
         Button(action: action) {
             Image(systemName: icon)
@@ -234,9 +447,23 @@ struct CameraView: View {
         .accessibilityLabel(label)
     }
 
-    // MARK: - recording
+    // MARK: - layout and recording
+
+    /// Each layout keeps its own control set: the tripod one films on the back camera.
+    private func setLayout(_ new: String) {
+        guard !camera.recording, new != layout else { return }
+        withAnimation { layout = new }
+        if new == "tripod" {
+            camera.use(.back)
+            if !clampSet { editingClamp = true }   // first time: show where the clamp goes
+        } else {
+            editingClamp = false
+            camera.use(UserDefaults.standard.string(forKey: "camera") == "front" ? .front : .back)
+        }
+    }
 
     private func tapRecord() {
+        if editingClamp { return }
         if camera.recording {
             camera.stopRecording()
             UIImpactFeedbackGenerator(style: .light).impactOccurred()
@@ -249,8 +476,9 @@ struct CameraView: View {
             return
         }
         guard countdown > 0 else { return begin() }
+        let from = countdown
         countTask = Task { @MainActor in
-            for n in stride(from: countdown, to: 0, by: -1) {
+            for n in stride(from: from, to: 0, by: -1) {
                 withAnimation { counting = n }
                 try? await Task.sleep(nanoseconds: 1_000_000_000)
                 if Task.isCancelled { return }
@@ -262,13 +490,65 @@ struct CameraView: View {
     }
 
     private func begin() {
-        let at = showPrompter && !project.lines.isEmpty ? line : nil
+        let at = showPrompter ? line : nil
         let p = project
         let store = clips
         camera.record(to: ClipStore.newFile(for: p)) { file, secs in
             store.add(file: file, project: p, seconds: secs, line: at)
         }
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+    }
+}
+
+/// Where everything goes in the Tripod clamp layout (full-screen points): the dead strip the
+/// clamp covers, the whole 9:16 frame shrunk to fit the rest (leaving `column` points on each
+/// side for controls), and the leftover space above and below the picture.
+struct TripodFrame: Equatable {
+    var strip: CGRect
+    var preview: CGRect
+    var above: CGRect
+    var below: CGRect
+    var left: CGRect
+    var right: CGRect
+
+    init(size: CGSize, insets: UIEdgeInsets, top: Bool, strip d: CGFloat, column: CGFloat = 72) {
+        let W = size.width, H = size.height
+        strip = top ? CGRect(x: 0, y: 0, width: W, height: d) : CGRect(x: 0, y: H - d, width: W, height: d)
+        let y0 = top ? max(d, insets.top) : insets.top
+        let y1 = top ? H - insets.bottom : H - max(d, insets.bottom)
+        let pw = max(0, min(W - 2 * column, (y1 - y0) * 9 / 16))
+        let ph = pw * 16 / 9
+        preview = CGRect(x: (W - pw) / 2, y: (y0 + y1 - ph) / 2, width: pw, height: ph)
+        above = CGRect(x: preview.minX, y: y0, width: pw, height: preview.minY - y0)
+        below = CGRect(x: preview.minX, y: preview.maxY, width: pw, height: y1 - preview.maxY)
+        left = CGRect(x: 0, y: y0, width: preview.minX, height: y1 - y0)
+        right = CGRect(x: preview.maxX, y: y0, width: W - preview.maxX, height: y1 - y0)
+    }
+}
+
+/// The part of the screen under the clamp: striped so it's easy to line up with the clamp.
+struct ClampStrip: View {
+    var editing: Bool
+
+    var body: some View {
+        Canvas { ctx, size in
+            var p = Path()
+            var x = -size.height
+            while x < size.width {
+                p.move(to: CGPoint(x: x, y: size.height))
+                p.addLine(to: CGPoint(x: x + size.height, y: 0))
+                x += 16
+            }
+            ctx.stroke(p, with: .color(.white.opacity(editing ? 0.4 : 0.12)), lineWidth: 2)
+        }
+        .background(Color.black.opacity(editing ? 0.5 : 0.2))
+        .overlay {
+            if editing {
+                Text("Clamp").font(.headline).padding(6).background(.black.opacity(0.6), in: Capsule())
+            }
+        }
+        .overlay(Rectangle().stroke(editing ? Color.yellow : Color.clear, lineWidth: 2))
+        .allowsHitTesting(false)
     }
 }
 
@@ -325,15 +605,16 @@ struct Guides: View {
 struct RecordButton: View {
     var recording: Bool
     var counting: Bool
+    var size: CGFloat = 80
     var action: () -> Void
 
     var body: some View {
         Button(action: action) {
             ZStack {
-                Circle().stroke(.white, lineWidth: 5).frame(width: 80, height: 80)
-                RoundedRectangle(cornerRadius: recording ? 8 : 33)
+                Circle().stroke(.white, lineWidth: size * 0.0625).frame(width: size, height: size)
+                RoundedRectangle(cornerRadius: recording ? size * 0.1 : size * 0.41)
                     .fill(Color.red)
-                    .frame(width: recording ? 34 : 66, height: recording ? 34 : 66)
+                    .frame(width: recording ? size * 0.42 : size * 0.82, height: recording ? size * 0.42 : size * 0.82)
                 if counting {
                     Image(systemName: "xmark").font(.title2.bold()).foregroundStyle(.white)
                 }

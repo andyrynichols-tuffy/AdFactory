@@ -55,6 +55,12 @@ enum Prefs {
             "prompterSize": 26.0,
             "cellular": true,
             "camera": "back",      // the back camera films (better lens and sensor); flip stays available
+            "layout": "handheld",  // or "tripod": dead strip under the clamp, picture shrunk, controls beside it
+            "tripodCountdown": 3,
+            "tripodPrompter": false,
+            "clampTop": false,
+            "clampH": 160.0,       // about an inch
+            "clampSet": false,
         ])
     }
 
