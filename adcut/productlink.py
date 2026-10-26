@@ -127,6 +127,33 @@ def video_products(url: str) -> list:
     return found
 
 
+def short_name(title: str) -> str:
+    """TikTok Shop titles are search-stuffed ("Men's Eyebrow & Beard Filler Pen - Coconut & Castor Oil
+    Infused, …"): keep the part before the first " - ", "|", "," or "(", at most 8 words."""
+    s = re.split(r"\s[-–|]\s|[,(|]", title or "", maxsplit=1)[0].strip()
+    return " ".join(s.split()[:8]) or (title or "")[:60]
+
+
+def is_shop_link(link: str) -> bool:
+    """A TikTok Shop product link (what a product needs to be tagged in a video)."""
+    return bool(link) and "tiktok.com" in link and bool(PRODUCT_RX.search(link))
+
+
+def product_id_of(link: str) -> str:
+    m = PRODUCT_RX.search(link or "")
+    return m.group(1) if m else ""
+
+
+def match(found: dict, products: list):
+    """The product already in the app that this is (same TikTok product id, else same name)."""
+    pid = found.get("product_id") or product_id_of(found.get("link"))
+    for p in products:
+        if pid and product_id_of(p.get("link")) == pid:
+            return p["id"]
+    names = {found.get("name", "").lower(), found.get("short", "").lower()} - {""}
+    return next((p["id"] for p in products if p["name"].lower() in names), None)
+
+
 def from_link(url: str) -> dict:
     """{"products": [...], "from_video": bool}"""
     url = url.strip()
@@ -150,3 +177,12 @@ def from_link(url: str) -> dict:
     if "tiktok.com" in url and PRODUCT_RX.search(url):
         return {"products": [tiktok_product(url)], "from_video": False}
     return {"products": [other_product(url)], "from_video": False}
+
+
+def lookup(url: str, products: list) -> dict:
+    """from_link + a short name for each + which existing product it is."""
+    r = from_link(url)
+    for f in r["products"]:
+        f["short"] = short_name(f["name"])
+        f["existing"] = match(f, products)
+    return r

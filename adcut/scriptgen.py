@@ -354,12 +354,20 @@ def from_link(url: str, title: str = "") -> dict:
             said = " ".join(w[0] for w in words if a <= (w[1] + w[2]) / 2 < b)
             shots.append({"t0": a, "t1": b, "said": said, "desc": "", "img": f"shot{k}.jpg"})
         marks = guess_marks(lines, meta["desc"])
+        try:
+            from . import productlink
+            tagged = productlink.video_products(meta["url"])
+        except Exception:
+            tagged = []
+        mine = next((m for m in (productlink.match({"product_id": x["product_id"], "name": x["title"]}, shop.load()["products"])
+                                 for x in tagged) if m), None) if tagged else None
         (folder / "meta.json").write_text(json.dumps({**meta, "duration": dur, "file": f.name}, ensure_ascii=False), encoding="utf-8")
         name = title.strip() or (f"@{meta['handle']}" if meta["handle"] else "TikTok") + f" · {date.today().strftime('%b %d').replace(' 0', ' ')}"
         rec = shop.upsert("scripts", {
             "title": name, "text": compile_text(lines, marks), "lines": lines, "marks": marks, "shots": shots,
             "source": {"ref": folder.name, "url": meta["url"], "video_id": rid2, "author": meta["author"],
-                       "handle": meta["handle"], "desc": meta["desc"], "duration": dur},
+                       "handle": meta["handle"], "desc": meta["desc"], "duration": dur, "products": tagged},
+            "product": mine,
             "notes": f"From {meta['url']}"})
         return {"script": rec["id"]}
     return _job("from-link", work)

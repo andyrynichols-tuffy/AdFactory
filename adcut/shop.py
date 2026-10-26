@@ -501,7 +501,10 @@ def summary() -> dict:
     for b in shoots:
         if b["script"]:
             scripts_used[b["script"]] = scripts_used.get(b["script"], 0) + 1
-    return {"per": per, "made": made, "scripts_used": scripts_used, "alerts": alerts(d, posts, shoots),
+    from .productlink import is_shop_link
+    unlinked = [p["id"] for p in d["products"] if not p.get("archived") and not is_shop_link(p.get("link"))]
+    return {"per": per, "made": made, "scripts_used": scripts_used, "alerts": alerts(d, posts, shoots, unlinked),
+            "unlinked": unlinked,
             "accounts": {a["id"]: account_numbers(stats, a) for a in d["accounts"]}}
 
 
@@ -510,8 +513,11 @@ def _when(n):
             else "was yesterday" if n == -1 else f"was {-n} days ago")
 
 
-def alerts(d, posts, shoots) -> list:
+def alerts(d, posts, shoots, unlinked=()) -> list:
     out = []
+    if unlinked:  # a product can't be tagged in a video without its TikTok Shop link
+        out.append({"kind": "link", "level": "warn", "days": 99, "count": len(unlinked),
+                    "text": f"{len(unlinked)} product{'s need' if len(unlinked) != 1 else ' needs'} a TikTok Shop link"})
     posted_on = {(p["product"], p["account"]) for p in posts if p["posted"]}
     for o in d["orders"]:
         if o["status"] in ("returned", "cancelled", "kept"):

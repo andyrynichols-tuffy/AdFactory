@@ -7,7 +7,7 @@ from pathlib import Path
 from fastapi import APIRouter, Body, HTTPException, Request
 from fastapi.responses import FileResponse
 
-from . import ai, auth, scriptgen, sheetdb, shop, store
+from . import ai, auth, productlink, scriptgen, sheetdb, shop, store
 
 router = APIRouter(prefix="/api/shop")
 BUSY = lambda: set()  # server.py points this at the shoots with a job running
@@ -63,6 +63,17 @@ def remove_one(kind: str, oid: str):
     if kind not in shop.KINDS:
         raise HTTPException(404, f"no {kind}")
     return shop.remove(kind, oid)
+
+
+@router.post("/products/from-link")
+def product_from_link(body: dict = Body(...)):
+    """Product details from a TikTok Shop product link, a TikTok video (its tagged product) or a shop page."""
+    try:
+        return productlink.lookup(body.get("url") or "", shop.load()["products"])
+    except ValueError as e:
+        raise HTTPException(400, str(e))
+    except Exception as e:  # TikTok said no / timed out
+        raise HTTPException(502, f"Couldn't read that page ({type(e).__name__}). Try again in a moment.")
 
 
 @router.get("/board/all")
