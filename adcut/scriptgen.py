@@ -336,6 +336,9 @@ def from_link(url: str, title: str = "") -> dict:
         else:
             f, meta = download(url.strip(), folder)
         rid2 = meta["video_id"] or rid
+        same = next((x for x in shop.load()["scripts"] if rid2 and (x.get("source") or {}).get("video_id") == rid2), None)
+        if same:  # this video was made into a script already: that one (its marks and edits are kept)
+            return {"script": same["id"], "reused": True}
         dur = probe(f)["duration"]
         job["msg"] = "listening to it (transcribing)…"
         wfile = folder / "words.json"

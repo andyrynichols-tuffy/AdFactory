@@ -242,3 +242,17 @@ button.tpMore:hover { color: var(--text) !important; border-color: #4a505b !impo
 .langMenu button.on { font-weight: 600; }
 .langMenu button.on::before { content: "✓"; position: absolute; left: 10px; color: var(--accent); }
 .langMenu button { justify-content: flex-start; display: flex; }
+
+/* fill a form in from a link; products that need a TikTok Shop link; New video's quick start */
+.afBox { margin: 4px 0 10px; padding: 8px 10px; border-radius: 10px; background: rgba(37, 244, 238, .05); border: 1px solid rgba(37, 244, 238, .2); }
+.afRow { display: flex; gap: 8px; } .afRow input { flex: 1; min-width: 0; }
+.afMsg { margin-top: 5px; } .afMsg:empty { display: none; } .afMsg button { font-size: 12px; padding: 2px 8px; margin: 2px 4px 0 0; }
+.needLink { margin: 6px 0; padding: 5px 8px; border-radius: 8px; background: rgba(252, 196, 25, .1); color: var(--warn);
+  font-size: 12px; display: flex; gap: 8px; align-items: center; justify-content: space-between; }
+.needLink button { font-size: 12px; padding: 2px 9px; }
+.nvQuick { margin: 6px 0 10px; padding: 10px 12px; border-radius: 12px; background: rgba(37, 244, 238, .05); border: 1px solid rgba(37, 244, 238, .22); }
+.nvQHead { margin-bottom: 6px; }
+.nvQuick .nvRow { align-items: center; margin: 5px 0; } .nvQuick .nvRow input { flex: 1; min-width: 0; padding: 7px 9px; }
+.nvQMsg:empty { display: none; } .nvQMsg button { font-size: 12px; padding: 2px 8px; margin: 2px 4px 0 0; }
+.nvFHead { display: flex; gap: 8px; align-items: center; justify-content: space-between; }
+.nvFHead .aiBtn { font-size: 12px; padding: 2px 9px; }

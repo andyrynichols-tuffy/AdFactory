@@ -154,6 +154,8 @@ function formDlg(title, fields, val = {}, o = {}) {
   return new Promise(res => {
     const dlg = document.createElement("dialog"); dlg.className = "shopDlg";
     dlg.innerHTML = `<form method="dialog"><h3>${esc(title)}</h3>${o.hint ? `<p class="muted">${o.hint}</p>` : ""}
+      ${o.autofill ? `<div class="afBox"><div class="afRow"><input class="afUrl" type="url" placeholder="${esc(o.autofill.placeholder)}">
+        <button type="button" class="afGo">${esc(o.autofill.button || "Fill in")}</button></div><div class="afMsg muted small">${esc(o.autofill.hint || "")}</div></div>` : ""}
       <div class="fgrid">${fields.map(f => fieldHtml(f, val[f.k])).join("")}</div>
       <div class="sdBtns">${o.remove ? `<button type="button" data-close="remove" class="ghost danger">${esc(o.remove)}</button>` : ""}<span class="spacer"></span>
         <button type="button" data-close="cancel">Cancel</button><button value="save" class="primary">${esc(o.ok || "Save")}</button></div></form>`;
@@ -164,12 +166,26 @@ function formDlg(title, fields, val = {}, o = {}) {
       for (const k of ["product", "script"]) form.elements[k]?.addEventListener?.("change", () => el._draw());
     });
     $$("[data-close]", dlg).forEach(b => (b.onclick = () => dlg.close(b.dataset.close)));
+    form._id = val.id;
+    if (o.autofill) {  // paste a link: the form fills itself in
+      const u = $(".afUrl", dlg), go = $(".afGo", dlg), say = h => ($(".afMsg", dlg).innerHTML = h);
+      const run = async () => {
+        const url = u.value.trim();
+        if (!/^https?:\/\//.test(url)) { say("Paste a full link (https://…)"); return; }
+        go.disabled = true;
+        try { await o.autofill.run(url, form, dlg, say); } catch (err) { say("⚠ " + esc(err.message)); }
+        go.disabled = false;
+      };
+      go.onclick = run;
+      u.addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); run(); } });
+      u.addEventListener("paste", () => setTimeout(run, 50));
+    }
     dlg.onclose = () => {
       const v = dlg.returnValue, out = v === "save" ? readFields(form, fields, val) : v === "remove" ? "remove" : null;
       dlg.remove(); res(out);
     };
     dlg.showModal();
-    form.querySelector("input:not([type=checkbox]),textarea,select")?.focus();
+    (o.focusAutofill && $(".afUrl", dlg) || form.querySelector("input:not([type=checkbox]),textarea,select"))?.focus();
   });
 }
 
@@ -222,12 +238,54 @@ const F = {
     { k: "description", label: "What it means (shown on hover)", type: "textarea", wide: true, rows: 3, required: true },
     { k: "color", label: "Color", type: "color", def: "#4dabf7" }],
 };
+// a TikTok Shop product link (what a product needs so it can be tagged in a video)
+const isShopLink = l => /tiktok\.com/.test(l || "") && /(\/pdp\/(?:[^/?#]+\/)?|\/view\/product\/|product_id=)\d{12,}/.test(l || "");
+function fillProductForm(form, f) {
+  const set = (k, v) => { const e = form.elements[k]; if (e && v && !e.value.trim()) e.value = v; };
+  set("name", f.short || f.name); set("brand", f.brand); set("category", f.category); set("price", f.price); set("image", f.image);
+  const link = form.elements.link;
+  if (link && f.link && (!link.value.trim() || !isShopLink(link.value))) link.value = f.link;
+  set("notes", [f.notes, f.short && f.name !== f.short ? `Full title: ${f.name}` : ""].filter(Boolean).join("\n"));
+  const fl = form.elements.fills;
+  if (fl && f.fills) {
+    const have = new Set(fl.value.split("\n").map(l => l.split(":")[0].trim().toLowerCase()).filter(Boolean));
+    const add = Object.entries(f.fills).filter(([k]) => !have.has(k)).map(([k, v]) => `${k}: ${v}`);
+    if (add.length) fl.value = [fl.value.trim(), ...add].filter(Boolean).join("\n");
+  }
+}
+async function findProduct(url, say) {
+  say("⏳ reading the page…");
+  const r = await api("/api/shop/products/from-link", { json: { url } });
+  if (r.products.length === 1) return r.products[0];
+  return new Promise(res => {  // a video with several products: pick one
+    say(`This video has ${r.products.length} products: ` + r.products.map((f, i) => `<button type="button" data-af="${i}">${esc(f.short)}</button>`).join(" "));
+    $$("[data-af]").forEach(b => (b.onclick = () => res(r.products[+b.dataset.af])));
+  });
+}
+const AUTOFILL = {
+  products: { placeholder: "🔗 Fill in from a link: a TikTok Shop product, or a TikTok video that has it", button: "Fill in",
+    run: async (url, form, dlg, say) => {
+      const f = await findProduct(url, say);
+      fillProductForm(form, f);
+      const dup = f.existing && f.existing !== form._id ? byId("products", f.existing) : null;
+      say(`✓ Filled in from ${/tiktok\.com/.test(f.link) ? "TikTok Shop" : "the page"}: check it, then Save.` +
+        (dup ? ` <span class="warnx">This is already in Products as “${esc(dup.name)}”.</span>` : ""));
+    } },
+  scripts: { placeholder: "🔗 Or make it from a TikTok video: paste its link", button: "Get the script",
+    hint: "Its script + shot list, with the product details marked as blanks.",
+    run: async (url, form, dlg, say) => {
+      const job = await api("/api/shop/scriptgen/link", { json: { url, title: form.elements.title?.value.trim() || "" } });
+      const r = await sbJob(job, m => say("⏳ " + esc(m)));
+      dlg.close("cancel"); await shopLoad(); toast("Script made from the video"); openBuilder(r.script);
+    } },
+};
 const NOUN = { accounts: "account", creators: "person", products: "product", orders: "order", scripts: "script", tags: "tag" };
 async function editThing(kind, obj = {}, extra = {}) {
   if (!SHOP.d) await shopLoad();
   if (kind === "scripts" && !SHOP.board.length) SHOP.board = await api("/api/shop/board/all").catch(() => []);
   const isNew = !obj.id;
-  const v = await formDlg(`${isNew ? "＋ New" : "Edit"} ${NOUN[kind]}`, F[kind](), obj, { remove: isNew ? null : "Remove", ...extra });
+  const v = await formDlg(`${isNew ? "＋ New" : "Edit"} ${NOUN[kind]}`, F[kind](), obj,
+    { remove: isNew ? null : "Remove", autofill: kind === "scripts" && !isNew ? null : AUTOFILL[kind], ...extra });
   if (!v) return null;
   if (v === "remove") {
     if (!confirm(`Remove this ${NOUN[kind]}? (It's kept in the trash in ads/_shop.json.)`)) return null;
@@ -275,7 +333,13 @@ async function newVideo(pre = {}) {
   const d = SHOP.d;
   const dlg = document.createElement("dialog"); dlg.className = "shopDlg nvDlg";
   dlg.innerHTML = `<form method="dialog"><h3>＋ New video</h3>
-    <p class="muted">Fill in what you know; everything is optional. <b>Send to queue</b> assigns it to the creator to film; dropping in raw videos gets it pre-cut automatically.</p>
+    <div class="nvQuick"><div class="nvQHead"><b>⚡ Start from links</b> <span class="fhint">paste them and the rest fills in</span></div>
+      <div class="nvRow"><input name="product_url" type="url" placeholder="🛍 Product: its TikTok Shop link (or a TikTok video that has it)">
+        <button type="button" data-q="product">Get product</button></div>
+      <div class="nvRow"><input name="video_url" type="url" placeholder="🎬 Video to copy: its TikTok link (or pick a saved script below)" value="${esc(pre.reference || "")}">
+        <button type="button" data-q="video">Get its script</button></div>
+      <div class="nvQMsg muted small"></div></div>
+    <p class="muted">Everything else is optional. <b>📷 Ready to shoot</b> puts it in the creator's queue and in Ad Camera's projects; dropping in raw videos gets it pre-cut automatically.</p>
     <div class="nvGrid">
       <div class="nvCol">
         <div class="nvRow"><label class="fld">Product<select name="product">${opts(products(), pre.product, p => p.name, "— pick a product —")}</select></label>
@@ -283,7 +347,6 @@ async function newVideo(pre = {}) {
         <label class="fld">Channel (TikTok account)<select name="account">${opts(d.accounts, pre.account, accLabel, d.accounts.length ? "— pick an account —" : "— no accounts yet (Analytics → Accounts) —")}</select></label>
         <label class="fld">Creator (who's in it)<select name="creator">${opts(d.creators, pre.creator, c => c.name, d.creators.length ? "— pick a person —" : "— nobody yet (Queue → People) —")}</select></label>
         <div class="fld">Style <span class="fhint">optional · hover a tag for what it means</span><div class="tagPick" data-tagpick="tags"></div></div>
-        <label class="fld">Video to copy <span class="fhint">TikTok link, optional</span><input name="reference" type="url" placeholder="https://www.tiktok.com/…" value="${esc(pre.reference || "")}"></label>
       </div>
       <div class="nvCol">
         <label class="fld">Script<select name="script"></select></label>
@@ -297,8 +360,8 @@ async function newVideo(pre = {}) {
       </div>
     </div>
     <div class="sdBtns"><button type="button" data-close="cancel">Cancel</button><span class="spacer"></span>
-      <button value="assign" title="Put it in the creator's queue to film">📋 Send to queue</button>
-      <button value="open" class="primary" title="Make the shoot now and open the editor">Create &amp; edit</button></div></form>`;
+      <button value="open" title="Make the shoot now and open the editor">✏️ Create &amp; edit</button>
+      <button value="assign" class="primary" title="Put it in the creator's queue and in Ad Camera's projects, ready to film">📷 Ready to shoot</button></div></form>`;
   document.body.appendChild(dlg);
   const f = $("form", dlg), el = n => f.elements[n];
   $("[data-close]", dlg).onclick = () => dlg.close("cancel");
@@ -312,12 +375,18 @@ async function newVideo(pre = {}) {
     return Object.fromEntries(Object.entries(base).filter(([, v]) => v));
   };
   const keep = {};  // fill-ins typed here
+  const was = () => {  // what each blank said in the video the script came from
+    const out = {};
+    for (const m of lib?.marks || []) out[m.slot] ??= (lib.lines?.[m.line]?.text || "").slice(m.a, m.b);
+    return out;
+  };
   const drawFills = () => {
     $$(".nvFills input", dlg).forEach(i => (keep[i.dataset.ph] = i.value));
     const phs = [...new Set([...el("script_text").value.matchAll(/\{([A-Za-z][\w ]{0,30})\}/g)].map(m => m[1].trim().toLowerCase()))];
-    const auto = fillsFor();
-    $(".nvFills", dlg).innerHTML = phs.length ? `<div class="fhint">Fill-ins (from the product where it has them):</div>` + phs.map(k =>
-      `<label class="nvFill ${auto[k] || keep[k] ? "" : "need"}"><code>{${esc(k)}}</code><input data-ph="${esc(k)}" value="${esc(keep[k] ?? auto[k] ?? "")}" placeholder="${auto[k] ? "" : "type it"}"></label>`).join("") : "";
+    const auto = fillsFor(), orig = was();
+    $(".nvFills", dlg).innerHTML = phs.length ? `<div class="nvFHead"><span class="fhint">Fill-ins (from the product where it has them):</span>
+      ${lib && el("product").value ? `<button type="button" class="aiBtn" data-q="aifill" title="Claude writes the empty ones for this product">✨ AI: fill the blanks</button>` : ""}</div>` + phs.map(k =>
+      `<label class="nvFill ${auto[k] || keep[k] ? "" : "need"}"><code>{${esc(k)}}</code><input data-ph="${esc(k)}" value="${esc(keep[k] ?? auto[k] ?? "")}" placeholder="${auto[k] ? "" : orig[k] ? `was: ${esc(orig[k])}` : "type it"}"></label>`).join("") : "";
     const changed = !lib || el("script_text").value !== lib.text;
     $(".nvSave", dlg).hidden = !changed || !el("script_text").value.trim();
     $(".nvSave span", dlg).textContent = lib ? "Save as a new script in the library" : "Save to the script library";
@@ -337,6 +406,64 @@ async function newVideo(pre = {}) {
     drawFills(); pick._draw();
   };
   el("script_text").addEventListener("input", drawFills);
+  // ⚡ links: a product link makes (or finds) the product; a video link makes its script
+  const qmsg = h => ($(".nvQMsg", dlg).innerHTML = h);
+  const qBusy = (which, on) => { const b = $(`[data-q="${which}"]`, dlg); if (b) b.disabled = on; };
+  const getProduct = async () => {
+    const url = el("product_url").value.trim(); if (!url) return;
+    qBusy("product", true);
+    try {
+      const f = await findProduct(url, qmsg);
+      let pid = f.existing;
+      if (pid) {  // already have it: fill in what it was missing (its TikTok Shop link above all)
+        const p = byId("products", pid), patch = { id: pid };
+        for (const k of ["brand", "category", "price", "image"]) if (!p[k] && f[k]) patch[k] = f[k];
+        if (!isShopLink(p.link) && f.link) patch.link = f.link;
+        if (Object.keys(patch).length > 1) await api("/api/shop/products", { json: patch });
+        qmsg(`✓ Product: <b>${esc(p.name)}</b> (already in Products)`);
+      } else {
+        const made = await api("/api/shop/products", { json: { name: f.short || f.name, brand: f.brand, category: f.category, price: f.price,
+          link: f.link, image: f.image, fills: f.fills || {}, notes: [f.notes, f.short && f.name !== f.short ? `Full title: ${f.name}` : ""].filter(Boolean).join("\n") } });
+        pid = made.id;
+        qmsg(`✓ Added <b>${esc(made.name)}</b> to Products`);
+      }
+      await shopLoad();
+      el("product").innerHTML = opts(products(), pid, x => x.name, "— pick a product —"); el("product").onchange();
+    } catch (err) { qmsg("⚠ " + esc(err.message)); }
+    qBusy("product", false);
+  };
+  const getScript = async () => {
+    const url = el("video_url").value.trim(); if (!url) return;
+    qBusy("video", true);
+    try {
+      const job = await api("/api/shop/scriptgen/link", { json: { url } });
+      const r = await sbJob(job, m => qmsg("⏳ " + esc(m)));
+      await shopLoad(); drawScripts();
+      el("script").value = r.script; el("script").onchange();
+      const s = byId("scripts", r.script);
+      qmsg(`✓ Script from the video: <b>${esc(s?.title || "")}</b> · ${(s?.lines || []).length} lines, ${(s?.shots || []).length} shots. Check the blanks on the right.`);
+    } catch (err) { qmsg("⚠ " + esc(err.message)); }
+    qBusy("video", false);
+  };
+  dlg.addEventListener("click", async e => {
+    const q = e.target.closest("[data-q]")?.dataset.q;
+    if (q === "product") getProduct();
+    if (q === "video") getScript();
+    if (q === "aifill" && lib && el("product").value) {
+      const b = e.target.closest("[data-q]"); b.disabled = true;
+      try {
+        const known = Object.fromEntries($$(".nvFills input", dlg).map(i => [i.dataset.ph, i.value.trim()]));
+        const r = await sbJob(await api("/api/shop/ai/fill", { json: { script: lib.id, product: el("product").value, known } }), m => qmsg(esc(m)));
+        for (const [k, v] of Object.entries(r.fills || {})) { const i = $(`.nvFills [data-ph="${CSS.escape(k)}"]`, dlg); if (i && !i.value.trim()) i.value = v; }
+        qmsg("✨ Blanks filled in by Claude: check them.");
+      } catch (err) { qmsg("⚠ " + esc(err.message)); }
+      b.disabled = false;
+    }
+  });
+  for (const [name, fn] of [["product_url", getProduct], ["video_url", getScript]]) {
+    el(name).addEventListener("paste", () => setTimeout(fn, 50));
+    el(name).addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); fn(); } });
+  }
   $(".nvAddP", dlg).onclick = async () => {
     dlg.close("keep");
     const p = await editThing("products", {});
@@ -351,11 +478,13 @@ async function newVideo(pre = {}) {
     const how = dlg.returnValue;
     if (how === "keep") return;
     if (how !== "assign" && how !== "open") { dlg.remove(); return; }
+    const empty = $$(".nvFills input", dlg).filter(i => !i.value.trim()).map(i => `{${i.dataset.ph}}`);
+    if (empty.length && !confirm(`${empty.length} blank${empty.length === 1 ? " is" : "s are"} still empty (${empty.join(", ")}): ${empty.length === 1 ? "it shows" : "they show"} like that on the teleprompter. Make it anyway?`)) { dlg.showModal(); return; }
     const vars = Object.fromEntries($$(".nvFills input", dlg).map(i => [i.dataset.ph, i.value.trim()]).filter(x => x[1]));
     const text = el("script_text").value, files = [...el("files").files];
     const body = {
       product: el("product").value || null, account: el("account").value || null, creator: el("creator").value || null,
-      tags: [...pick._sel], reference: el("reference").value.trim(), script: lib && text === lib.text ? lib.id : null,
+      tags: [...pick._sel], reference: el("video_url").value.trim(), script: lib && text === lib.text ? lib.id : null,
       script_text: text, vars, save_script: !$(".nvSave", dlg).hidden && el("save_script").checked,
       due: el("due").value, notes: el("notes").value.trim(), title: el("title").value.trim(), assign: how === "assign",
     };
@@ -368,7 +497,7 @@ async function newVideo(pre = {}) {
         toast(`“${r.title}” made. Uploading the raw videos; it gets pre-cut automatically.`, 5000);
         if (HD.files.length) hdUpload(r.id);
       } else if (how === "open") openShoot(r.id);
-      else { toast(`📋 “${r.title}” is in ${byId("creators", body.creator)?.name ? byId("creators", body.creator).name + "'s" : "the"} queue`, 4000); showHomeTab("queue"); }
+      else { toast(`📷 “${r.title}” is ready to shoot: open it in Ad Camera (it's in ${byId("creators", body.creator)?.name ? byId("creators", body.creator).name + "'s" : "the"} queue too)`, 6000); showHomeTab("queue"); }
     } catch (e) { toast("Couldn't make it: " + e.message, 6000); }
   };
   dlg.showModal();
@@ -405,7 +534,7 @@ async function renderOverview() {
         <button data-go="creators" class="${d.creators.length ? "" : "primary"}">＋ People who film (${d.creators.length})</button>
         <button data-go="products">🛍 Products (${products().length})</button></div></div>` : ""}
     <div class="ovGrid">
-      <div class="sc"><h3>Needs attention</h3>${sm.alerts.length ? `<ul class="alerts">${sm.alerts.map(a => `<li class="${a.level}" data-alert="${a.order || a.sid}" data-kind="${a.kind}">${a.kind === "return" ? "↩" : a.kind === "due" ? "🎬" : "📋"} ${esc(a.text)}</li>`).join("")}</ul>` : `<p class="muted">Nothing due. Return windows closing within a week and free-sample videos that are due show up here.</p>`}</div>
+      <div class="sc"><h3>Needs attention</h3>${sm.alerts.length ? `<ul class="alerts">${sm.alerts.map(a => `<li class="${a.level}" data-alert="${a.order || a.sid || ""}" data-kind="${a.kind}">${a.kind === "return" ? "↩" : a.kind === "due" ? "🎬" : a.kind === "link" ? "🔗" : "📋"} ${esc(a.text)}</li>`).join("")}</ul>` : `<p class="muted">Nothing due. Return windows closing within a week and free-sample videos that are due show up here.</p>`}</div>
       <div class="sc"><h3>Pipeline</h3><div class="pipe">${d.stages.map(([k, l]) => `<button data-stage="${k}"><b>${k === "posted" ? board.filter(b => b.stage === k).length : cnt(k)}</b><span>${l}</span></button>`).join("")}</div>
         <p class="hint">Raw videos dropped in are pre-cut automatically; anyone can pick one up from the Queue to finish it.</p></div>
     </div>
@@ -424,7 +553,10 @@ async function renderOverview() {
     const st = e.target.closest("[data-stage]"); if (st) { LS.set("queueFocus", st.dataset.stage); return showHomeTab("queue"); }
     const acc = e.target.closest("[data-acc]"); if (acc) { LS.set("anAcc", acc.dataset.acc); return showHomeTab("analytics"); }
     const al = e.target.closest("[data-alert]");
-    if (al) { if (al.dataset.kind === "film") openShoot(al.dataset.alert); else editThing("orders", byId("orders", al.dataset.alert)); }
+    if (al) {
+      if (al.dataset.kind === "link") { LS.set("prodTab", "products"); LS.set("prodNeedLink", true); return showHomeTab("products"); }
+      if (al.dataset.kind === "film") openShoot(al.dataset.alert); else editThing("orders", byId("orders", al.dataset.alert));
+    }
   };
 }
 
@@ -514,6 +646,7 @@ async function renderProducts() {
   const el = $("#paneProducts");
   const d = await shopLoad(), sm = d.summary;
   const tab = LS.get("prodTab", "products"), q = (LS.get("prodQ", "") || "").toLowerCase(), arch = LS.get("prodArch", false);
+  const needOnly = LS.get("prodNeedLink", false), unlinked = d.products.filter(p => !p.archived && !isShopLink(p.link));
   const ordersOf = pid => d.orders.filter(o => o.product === pid);
   const ptags = {};
   for (const b of (SHOP.board.length ? SHOP.board : await api("/api/shop/board/all").then(x => (SHOP.board = x))))
@@ -525,7 +658,8 @@ async function renderProducts() {
     return `<li data-order="${o.id}">${a ? accChip(a.id) : '<span class="muted">no account</span>'} ${SAMPLE[o.sample] || ""} · ${ORDER_ST[o.status] || o.status} ${ret} ${due}</li>`; };
   const head = `<div class="tbar"><span class="seg chips"><button data-ptab="products" class="${tab === "products" ? "on" : ""}">🛍 Products</button>
       <button data-ptab="orders" class="${tab === "orders" ? "on" : ""}">📦 Orders &amp; samples <span class="cnt">${d.orders.length}</span></button></span>
-      ${tab === "products" ? `<input id="prodQ" placeholder="Search products" value="${esc(LS.get("prodQ", ""))}"><label class="chk"><input type="checkbox" id="prodArch" ${arch ? "checked" : ""}> archived</label>` : ""}
+      ${tab === "products" ? `<input id="prodQ" placeholder="Search products" value="${esc(LS.get("prodQ", ""))}"><label class="chk"><input type="checkbox" id="prodArch" ${arch ? "checked" : ""}> archived</label>
+        ${unlinked.length || needOnly ? `<span class="seg chips"><button data-go="needlink" class="${needOnly ? "on" : ""}" title="Products without a TikTok Shop link can't be tagged in a video">⚠ Needs a TikTok Shop link <span class="cnt">${unlinked.length}</span></button></span>` : ""}` : ""}
       <span class="spacer"></span><button data-go="order">＋ Log an order</button><button class="primary" data-go="product">＋ Product</button></div>`;
   if (tab === "orders") {
     const rank = o => ["returned", "cancelled", "kept"].includes(o.status) ? 1e6 : Math.min(o._return_left ?? 1e5, o._due_left ?? 1e5);
@@ -542,7 +676,7 @@ async function renderProducts() {
       </tbody></table></div>`;
     return;
   }
-  const list = d.products.filter(p => (arch || !p.archived) && (!q || `${p.name} ${p.brand} ${p.category}`.toLowerCase().includes(q))).sort((a, b) => a.name.localeCompare(b.name));
+  const list = d.products.filter(p => (arch || !p.archived) && (!needOnly || !isShopLink(p.link)) && (!q || `${p.name} ${p.brand} ${p.category}`.toLowerCase().includes(q))).sort((a, b) => a.name.localeCompare(b.name));
   el.innerHTML = head + `<div class="prodGrid">${list.map(p => { const m = sm.made[p.id] || {}, per = sm.per.products[p.id] || {}, os = ordersOf(p.id);
     const tg = Object.entries(ptags[p.id] || {}).sort((a, b) => b[1] - a[1]).map(x => x[0]);
     const nScripts = d.scripts.filter(s => s.product === p.id).length;
@@ -550,6 +684,7 @@ async function renderProducts() {
       <div class="pTop">${p.image ? `<img src="${esc(p.image)}" alt="" loading="lazy" onerror="this.remove()">` : `<div class="pImg">🛍</div>`}
         <div><b translate="no">${esc(p.name)}</b><div class="muted" translate="no">${esc([p.brand, p.category, p.price, p.commission && p.commission + " commission"].filter(Boolean).join(" · "))}</div>
         ${p.link ? `<a href="${esc(p.link)}" target="_blank" rel="noopener" class="muted">Shop link ↗</a>` : ""}</div></div>
+      ${isShopLink(p.link) ? "" : `<div class="needLink">⚠ ${p.link ? "Not a TikTok Shop link" : "No TikTok Shop link"} <button data-act="linkit" title="Paste its TikTok Shop link (or a TikTok video that has it): the rest fills in">🔗 Link it</button></div>`}
       <div class="kpis"><div><b>${m.videos || 0}</b><span>videos made</span></div><div><b>${per.posted || 0}</b><span>posted</span></div>
         <div><b>${num(per.views || null)}</b><span>views</span></div><div><b>${nScripts}</b><span>scripts</span></div></div>
       ${tg.length ? `<div class="qtags">${tagsRow(tg, 5)}</div>` : ""}
@@ -560,6 +695,7 @@ async function renderProducts() {
 $("#paneProducts").addEventListener("click", async e => {
   const t = e.target.closest("[data-ptab]"); if (t) { LS.set("prodTab", t.dataset.ptab); return renderProducts(); }
   const go = e.target.closest("[data-go]")?.dataset.go;
+  if (go === "needlink") { LS.set("prodNeedLink", !LS.get("prodNeedLink", false)); return renderProducts(); }
   if (go === "product") return editThing("products", {});
   if (go === "order") { if (!SHOP.d.accounts.length) toast("Add the accounts first (Analytics → Accounts) so orders can say which one ordered", 5000); return editThing("orders", { sample: "free", status: "ordered", ordered: new Date().toISOString().slice(0, 10) }); }
   const eo = e.target.closest("[data-edit-order]"); if (eo) return editThing("orders", byId("orders", eo.dataset.editOrder));
@@ -567,6 +703,7 @@ $("#paneProducts").addEventListener("click", async e => {
   const card = e.target.closest("[data-prod]"); if (!card) return;
   const p = byId("products", card.dataset.prod), act = e.target.closest("[data-act]")?.dataset.act;
   if (act === "edit") return editThing("products", p);
+  if (act === "linkit") return editThing("products", p, { focusAutofill: true });
   if (act === "order") return editThing("orders", { product: p.id, sample: "free", status: "ordered", ordered: new Date().toISOString().slice(0, 10) });
   if (act === "video") return newVideo({ product: p.id });
   if (act === "scripts") { LS.set("libTab", "scripts"); LS.set("libProd", p.id); return showHomeTab("library"); }
