@@ -88,7 +88,8 @@ async function openBuilder(sid) {
         <div class="sbAdapt"><h4>Make it for another product</h4>
           <select class="sbProd"><option value="">— pick a product (latest deliveries first) —</option>${prods.map(p => `<option value="${p.id}" translate="no">${esc(p.name)}${p.delivered ? ` · delivered ${shortDate(p.delivered)}` : ""}</option>`).join("")}</select>
           <div class="sbFills"></div><div class="sbPreview" translate="no"></div>
-          <div class="row sbAdaptBtns" hidden><button type="button" data-act="aifill" class="aiBtn" ${aiOff}>✨ AI: fill the blanks</button><span class="spacer"></span>
+          <div class="row sbAdaptBtns" hidden><button type="button" data-act="swapall" title="Put the product's details in where the app knows them">⇄ Swap for this product</button>
+            <button type="button" data-act="aifill" class="aiBtn" ${aiOff}>✨ AI: rewrite them for it</button><span class="spacer"></span>
             <button type="button" data-act="savefor">Save script for this product</button><button type="button" data-act="video" class="primary">＋ Video</button></div>
           <div class="sbAiMsg muted"></div></div>
       </div></div>
@@ -268,12 +269,21 @@ async function sbClick(e) {
   }
   if (act === "rewrite") { await sbSaveNow(); return rewriteDlg(s.id); }
   const pid = $(".sbProd", dlg).value, p = byId("products", pid);
+  const orig = {};
+  for (const m of s.marks) orig[m.slot] ??= s.lines[m.line].text.slice(m.a, m.b);
+  const same = i => !i.value.trim() || i.value.trim() === (orig[i.dataset.slot] || "");  // not changed by hand
+  if (act === "swapall" && p) {
+    const auto = { product: p.name, brand: p.brand, price: p.price, category: p.category, commission: p.commission, ...(p.fills || {}) };
+    let n = 0;
+    for (const i of $$(".sbFills [data-slot]", dlg)) if (auto[i.dataset.slot]) { i.value = auto[i.dataset.slot]; n++; }
+    msg.textContent = `⇄ Swapped ${n}; the others are still the video's words.`; return sbPreview();
+  }
   if (act === "aifill" && p) {
     busy(btn, true);
     try {
-      const known = sbFills();
+      const known = Object.fromEntries($$(".sbFills [data-slot]", dlg).filter(i => !same(i)).map(i => [i.dataset.slot, i.value.trim()]));
       const r = await sbJob(await api("/api/shop/ai/fill", { json: { script: s.id, product: pid, known } }), m => (msg.textContent = m));
-      for (const [k, v] of Object.entries(r.fills || {})) { const i = $(`.sbFills [data-slot="${CSS.escape(k)}"]`, dlg); if (i && !i.value.trim()) i.value = v; }
+      for (const [k, v] of Object.entries(r.fills || {})) { const i = $(`.sbFills [data-slot="${CSS.escape(k)}"]`, dlg); if (i && same(i)) i.value = v; }
       msg.textContent = "✨ Filled in by Claude: check them before saving."; sbPreview();
     } catch (err) { msg.textContent = "⚠ " + err.message; }
     busy(btn, false); return;
@@ -299,7 +309,7 @@ function sbAdapt(keep) {
   for (const k of shop_placeholders(s.text)) orig[k] ??= "";
   const auto = { product: p.name, brand: p.brand, price: p.price, category: p.category, commission: p.commission, ...(p.fills || {}) };
   $(".sbFills", dlg).innerHTML = Object.entries(orig).map(([k, was]) => `<label class="nvFill"><code style="color:${slotColor(k)}">{${esc(k)}}</code>
-    <input data-slot="${esc(k)}" value="${esc(typed[k] ?? auto[k] ?? "")}" placeholder="${was ? `was: ${esc(was)}` : "type it"}"></label>`).join("");
+    <input data-slot="${esc(k)}" value="${esc(typed[k] ?? (was || auto[k]) ?? "")}" placeholder="${was ? `was: ${esc(was)}` : "type it"}"></label>`).join("");
   sbPreview();
 }
 const shop_placeholders = text => [...new Set([...String(text).matchAll(/\{([A-Za-z][\w ]{0,30})\}/g)].map(m => m[1].trim().toLowerCase()))];

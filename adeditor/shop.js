@@ -354,6 +354,8 @@ async function newVideo(pre = {}) {
       <div class="nvCol">
         <label class="fld">Script<select name="script"></select></label>
         <div class="nvFills"></div>
+        <div class="nvPreview" translate="no" hidden></div>
+        <button type="button" class="linkish nvEditTxt" hidden>✏️ Edit the wording</button>
         <textarea name="script_text" rows="9" placeholder="Type or paste the script, one line per line. [Directions in brackets] go to the notes, not the captions."></textarea>
         <label class="chk nvSave"><input type="checkbox" name="save_script" checked> <span>Save to the script library</span></label>
         <label class="fld">Raw videos <span class="fhint">optional: or drop them in later</span><input type="file" name="files" multiple accept="video/*,.mov,.mp4,.m4v"></label>
@@ -401,13 +403,45 @@ async function newVideo(pre = {}) {
     for (const m of lib?.marks || []) out[m.slot] ??= (lib.lines?.[m.line]?.text || "").slice(m.a, m.b);
     return out;
   };
+  let showText = false;  // the raw wording (with {key words}) is tucked away for a script from a video
+  const keyed = () => !!(lib?.marks?.length && el("script_text").value === lib.text);
+  const rowState = i => {
+    const o = was()[i.dataset.ph];
+    i.closest(".nvFill").classList.toggle("need", !i.value.trim());
+    i.closest(".nvFill").classList.toggle("swapped", !!o && i.value.trim() !== o);
+  };
+  const drawPreview = () => {
+    const on = keyed();
+    $(".nvPreview", dlg).hidden = !on;
+    el("script_text").hidden = on && !showText;
+    $(".nvEditTxt", dlg).hidden = !on || showText;
+    if (!on) return;
+    const vals = Object.fromEntries($$(".nvFills input", dlg).map(i => [i.dataset.ph, i.value.trim()])), orig = was();
+    $(".nvPreview", dlg).innerHTML = esc(el("script_text").value).replace(/\{([A-Za-z][\w ]{0,30})\}/g, (m, k) => {
+      k = k.trim().toLowerCase();
+      const v = vals[k];
+      return v ? `<mark class="${v === orig[k] ? "kw" : "kw swapped"}" title="{${esc(k)}}">${esc(v)}</mark>` : `<code class="blank">${m}</code>`;
+    }).replace(/\n/g, "<br>");
+  };
   const drawFills = () => {
     $$(".nvFills input", dlg).forEach(i => (keep[i.dataset.ph] = i.value));
     const phs = [...new Set([...el("script_text").value.matchAll(/\{([A-Za-z][\w ]{0,30})\}/g)].map(m => m[1].trim().toLowerCase()))];
-    const auto = fillsFor(), orig = was();
-    $(".nvFills", dlg).innerHTML = phs.length ? `<div class="nvFHead"><span class="fhint">Fill-ins (from the product where it has them):</span>
-      ${lib && el("product").value ? `<button type="button" class="aiBtn" data-q="aifill" title="Claude writes the empty ones for this product">✨ AI: fill the blanks</button>` : ""}</div>` + phs.map(k =>
-      `<label class="nvFill ${auto[k] || keep[k] ? "" : "need"}"><code>{${esc(k)}}</code><input data-ph="${esc(k)}" value="${esc(keep[k] ?? auto[k] ?? "")}" placeholder="${auto[k] ? "" : orig[k] ? `was: ${esc(orig[k])}` : "type it"}"></label>`).join("") : "";
+    const auto = fillsFor(), orig = was(), on = keyed(), p = byId("products", el("product").value);
+    const sug = [...new Set([p?.name, p?.brand, p?.category, p?.price, ...Object.values(p?.fills || {})].filter(Boolean))];
+    // from a video: every key word starts as the video said it; a typed-in script: from the product where it can
+    const head = on
+      ? `<div class="nvFHead"><span><b>Key words</b> <span class="fhint">as the video says them: change any, or swap them for the product</span></span>
+          <span>${p ? `<button type="button" data-q="swapall" title="Put ${esc(p.name)}'s details in where the app knows them">⇄ Swap for ${esc(p.name)}</button>` : ""}
+          ${p ? `<button type="button" class="aiBtn" data-q="aifill" title="Claude rewrites the key words you haven't changed, for this product">✨ AI: rewrite them for ${esc(p.name)}</button>` : ""}</span></div>`
+      : `<div class="nvFHead"><span class="fhint">Fill-ins (from the product where it has them):</span>
+          ${lib && p ? `<button type="button" class="aiBtn" data-q="aifill" title="Claude writes the empty ones for this product">✨ AI: fill the blanks</button>` : ""}</div>`;
+    $(".nvFills", dlg).innerHTML = phs.length ? head + `<datalist id="nvSug">${sug.map(v => `<option value="${esc(v)}">`).join("")}</datalist>` + phs.map(k => {
+      const v = keep[k] ?? (on ? orig[k] ?? auto[k] : auto[k] ?? orig[k]) ?? "";
+      return `<label class="nvFill"><code>{${esc(k)}}</code><input data-ph="${esc(k)}" list="nvSug" value="${esc(v)}" placeholder="${orig[k] ? `was: ${esc(orig[k])}` : "type it"}">
+        ${orig[k] ? `<button type="button" class="nvReset" data-reset="${esc(k)}" title="Back to the video's words: ${esc(orig[k])}">↺</button>` : ""}</label>`;
+    }).join("") : "";
+    $$(".nvFills input", dlg).forEach(rowState);
+    drawPreview();
     const changed = !lib || el("script_text").value !== lib.text;
     $(".nvSave", dlg).hidden = !changed || !el("script_text").value.trim();
     $(".nvSave span", dlg).textContent = lib ? "Save as a new script in the library" : "Save to the script library";
@@ -419,6 +453,8 @@ async function newVideo(pre = {}) {
   pick.addEventListener("change", drawScripts);
   el("script").onchange = () => {
     lib = byId("scripts", el("script").value);
+    for (const k of Object.keys(keep)) delete keep[k];  // a new script starts from its own words
+    showText = false;
     if (lib) {
       el("script_text").value = lib.text;
       if (!el("product").value && lib.product) { el("product").value = lib.product; drawScripts(); el("script").value = lib.id; }
@@ -427,6 +463,8 @@ async function newVideo(pre = {}) {
     drawFills(); pick._draw();
   };
   el("script_text").addEventListener("input", drawFills);
+  $(".nvEditTxt", dlg).onclick = () => { showText = true; drawPreview(); el("script_text").focus(); };
+  dlg.addEventListener("input", e => { if (e.target.closest(".nvFills input")) { rowState(e.target); drawPreview(); } });
   // ⚡ links: a product link makes (or finds) the product; a video link makes its script
   const pmsg = h => ($('.nvQMsg[data-m="product"]', dlg).innerHTML = h), qmsg = h => ($('.nvQMsg[data-m="video"]', dlg).innerHTML = h);
   const qBusy = (which, on) => { const b = $(`[data-q="${which}"]`, dlg); if (b) b.disabled = on; };
@@ -478,13 +516,26 @@ async function newVideo(pre = {}) {
     const q = e.target.closest("[data-q]")?.dataset.q;
     if (q === "product") getProduct();
     if (q === "video") getScript();
+    const rs = e.target.closest("[data-reset]");
+    if (rs) { const i = $(`.nvFills [data-ph="${CSS.escape(rs.dataset.reset)}"]`, dlg); i.value = was()[rs.dataset.reset] || ""; rowState(i); drawPreview(); }
+    if (q === "swapall") {  // the product's own details where the app knows them; the rest stay as the video said
+      const auto = fillsFor();
+      let n = 0;
+      for (const i of $$(".nvFills input", dlg)) if (auto[i.dataset.ph]) { i.value = auto[i.dataset.ph]; rowState(i); n++; }
+      const left = $$(".nvFills input", dlg).filter(i => i.value.trim() === (was()[i.dataset.ph] || "")).map(i => `{${i.dataset.ph}}`);
+      qmsg(`⇄ Swapped ${n} key word${n === 1 ? "" : "s"}.` + (left.length ? ` <span>Still the video's words:</span> <span translate="no">${esc(left.join(", "))}</span>. <span>Type them in, or use ✨ AI.</span>` : ""));
+      drawPreview();
+    }
     if (q === "aifill" && lib && el("product").value) {
       const b = e.target.closest("[data-q]"); b.disabled = true;
       try {
-        const known = Object.fromEntries($$(".nvFills input", dlg).map(i => [i.dataset.ph, i.value.trim()]));
+        const orig = was(), ins = $$(".nvFills input", dlg);
+        const same = i => !i.value.trim() || i.value.trim() === (orig[i.dataset.ph] || "");  // not changed by hand
+        const known = Object.fromEntries(ins.filter(i => !same(i)).map(i => [i.dataset.ph, i.value.trim()]));
         const r = await sbJob(await api("/api/shop/ai/fill", { json: { script: lib.id, product: el("product").value, known } }), m => qmsg(esc(m)));
-        for (const [k, v] of Object.entries(r.fills || {})) { const i = $(`.nvFills [data-ph="${CSS.escape(k)}"]`, dlg); if (i && !i.value.trim()) i.value = v; }
-        qmsg("✨ Blanks filled in by Claude: check them.");
+        for (const [k, v] of Object.entries(r.fills || {})) { const i = $(`.nvFills [data-ph="${CSS.escape(k)}"]`, dlg); if (i && same(i)) { i.value = v; rowState(i); } }
+        qmsg("✨ Key words rewritten by Claude: check them.");
+        drawPreview();
       } catch (err) { qmsg("⚠ " + esc(err.message)); }
       b.disabled = false;
     }
@@ -511,7 +562,7 @@ async function newVideo(pre = {}) {
     const text = el("script_text").value, files = [...el("files").files];
     const body = {
       product: el("product").value || null, account: el("account").value || null, creator: el("creator").value || null,
-      tags: [...pick._sel], reference: el("video_url").value.trim(), script: lib && text === lib.text ? lib.id : null,
+      tags: [...pick._sel], reference: el("video_url").value.trim(), script: lib && text === lib.text ? lib.id : null, base_script: lib?.id || null,
       script_text: text, vars, save_script: !$(".nvSave", dlg).hidden && el("save_script").checked,
       due: el("due").value, notes: el("notes").value.trim(), title: el("title").value.trim(), assign: how === "assign",
     };

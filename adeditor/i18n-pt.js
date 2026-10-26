@@ -45,6 +45,7 @@ window.I18N_PT = {
   ": waiting for it to finish syncing, then pre-cutting": ": esperando terminar de sincronizar, depois pré-corta",
   "; that video's take swapped places with it": "; o take daquele vídeo trocou de lugar com ele",
   "; the other lines have up to": "; as outras falas têm até",
+  "; the others are still the video's words.": "; as outras ainda são as palavras do vídeo.",
   "; the take that was there went to the rejects": "; o take que estava lá foi para os rejeitados",
   "= about this product. Select words to mark more; click a highlight to rename or unmark it.": "= sobre este produto. Selecione palavras para marcar mais; clique num destaque para renomear ou desmarcar.",
   "? (It's kept in the trash in ads/_shop.json.)": "? (Fica guardado na lixeira em ads/_shop.json.)",
@@ -91,6 +92,7 @@ window.I18N_PT = {
   "Apply framing to the whole line": "Aplicar o enquadramento à fala inteira",
   "Archived (no longer promoting it)": "Arquivado (não está mais divulgando)",
   "Arrow + ring color": "Cor da seta + anel",
+  "as the video says them: change any, or swap them for the product": "como o vídeo diz: mude qualquer uma, ou troque pelas do produto",
   "assigns it to the creator to film; dropping in raw videos gets it pre-cut automatically.": "atribui ao criador para filmar; colocar os vídeos brutos já faz o pré-corte automático.",
   "auto pace": "ritmo automático",
   "auto ·": "automático ·",
@@ -99,6 +101,7 @@ window.I18N_PT = {
   "avg views per video (videos)": "média de visualizações por vídeo (vídeos)",
   "Back to automatic": "Voltar ao automático",
   "back to the transcript": "voltar à transcrição",
+  "Back to the video's words:": "Voltar às palavras do vídeo:",
   "Base speed for every clip": "Velocidade base de cada clipe",
   "batches of footage": "lotes de vídeos",
   "be cut": "ser cortado",
@@ -140,6 +143,7 @@ window.I18N_PT = {
   "choose files": "escolher arquivos",
   "Choose videos": "Escolher vídeos",
   "Classic": "Clássico",
+  "Claude rewrites the key words you haven't changed, for this product": "O Claude reescreve as palavras-chave que você não mudou, para este produto",
   "Claude rewrites the wording; {blanks} and [directions] stay as they are. Nothing changes until you save.": "O Claude reescreve o texto; as {lacunas} e as [instruções] ficam como estão. Nada muda até você salvar.",
   "Claude writes the empty ones for this product": "O Claude escreve as vazias para este produto",
   "Clean": "Limpo",
@@ -332,6 +336,7 @@ window.I18N_PT = {
   "Kept": "Ficou comigo",
   "kept in sync": "sincronizada",
   "kept separate": "mantidos separados",
+  "Key words": "Palavras-chave",
   "Kind": "Tipo",
   "Language / Idioma": "Idioma / Language",
   "Last day to return": "Último dia para devolver",
@@ -725,6 +730,7 @@ window.I18N_PT = {
   "Stays": "Fica",
   "still empty (": "ainda vazia(s) (",
   "Still empty:": "Ainda vazias:",
+  "Still the video's words:": "Ainda com as palavras do vídeo:",
   "Stop editing so someone else can pick it up": "Parar de editar para outra pessoa poder pegar",
   "Style": "Estilo",
   "Sub height": "Altura da legenda",
@@ -804,6 +810,7 @@ window.I18N_PT = {
   "Try again in a moment.": "Tente de novo em instantes.",
   "type it": "digite",
   "Type or paste the script, one line per line. [Directions in brackets] go to the notes, not the captions.": "Digite ou cole o roteiro, uma fala por linha. [Instruções entre colchetes] vão para as observações, não para as legendas.",
+  "Type them in, or use ✨ AI.": "Digite, ou use ✨ IA.",
   "typed-in script": "roteiro digitado",
   "Unassigned": "Sem responsável",
   "Undo (Ctrl+Z)": "Desfazer (Ctrl+Z)",
@@ -931,6 +938,8 @@ window.I18N_PT = {
   "↻ Find takes again": "↻ Encontrar takes de novo",
   "↻ Re-match": "↻ Reorganizar",
   "↻ Sync now": "↻ Sincronizar agora",
+  "⇄ Swap for": "⇄ Trocar pelas de",
+  "⇄ Swap for this product": "⇄ Trocar pelas deste produto",
   "⏪ 0.5s before": "⏪ 0,5s antes",
   "⏪ 1.5s before": "⏪ 1,5s antes",
   "⏪ 1s before": "⏪ 1s antes",
@@ -978,6 +987,7 @@ window.I18N_PT = {
   "✍ Write a new script": "✍ Escrever um roteiro novo",
   "✏️ Create & edit": "✏️ Criar e editar",
   "✏️ Edit": "✏️ Editar",
+  "✏️ Edit the wording": "✏️ Editar o texto",
   "✓ added": "✓ adicionado",
   "✓ Added": "✓ Adicionado",
   "✓ Back in the stack": "✓ De volta à pilha",
@@ -999,6 +1009,8 @@ window.I18N_PT = {
   "✨ AI: describe shots": "✨ IA: descrever cenas",
   "✨ AI: fill the blanks": "✨ IA: preencher as lacunas",
   "✨ AI: find product details": "✨ IA: achar detalhes do produto",
+  "✨ AI: rewrite them for": "✨ IA: reescrever para",
+  "✨ AI: rewrite them for it": "✨ IA: reescrever para ele",
   "✨ AI: rewrite “": "✨ IA: reescrever “",
   "✨ AI: rewrite…": "✨ IA: reescrever…",
   "✨ asking Claude to describe each shot…": "✨ pedindo ao Claude para descrever cada cena…",
@@ -1008,6 +1020,7 @@ window.I18N_PT = {
   "✨ Blanks filled in by Claude: check them.": "✨ Lacunas preenchidas pelo Claude: confira.",
   "✨ Effects": "✨ Efeitos",
   "✨ Filled in by Claude: check them before saving.": "✨ Preenchido pelo Claude: confira antes de salvar.",
+  "✨ Key words rewritten by Claude: check them.": "✨ Palavras-chave reescritas pelo Claude: confira.",
   "✨ Rewrite": "✨ Reescrever",
   "✨ Shot list written": "✨ Lista de cenas escrita",
   "✨ Suggested": "✨ Sugeridas",
@@ -1216,6 +1229,14 @@ window.I18N_PT = {
   [
    "\\bh ago\\b",
    "h atrás"
+  ],
+  [
+   "⇄ Swapped (\\d+) key words?\\.",
+   "⇄ $1 trocada(s)."
+  ],
+  [
+   "⇄ Swapped (\\d+)",
+   "⇄ $1 trocada(s)"
   ]
  ]
 };

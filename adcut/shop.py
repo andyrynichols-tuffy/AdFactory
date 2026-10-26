@@ -311,8 +311,8 @@ def new_video(body: dict) -> dict:
         script_id = upsert("scripts", {"title": body.get("script_title") or title, "text": body.get("script_text"),
                                        "tags": body.get("tags") or [], "product": p["id"] if p else None})["id"]
     sid = store.create(title)
-    lib = by_id(d, "scripts", body.get("script"))
-    if lib and lib.get("lines") and (body.get("script_text") or "") == lib["text"]:
+    lib = by_id(d, "scripts", body.get("script") or body.get("base_script"))
+    if lib and lib.get("lines"):
         # a script made from a video: its lines already break where that video cut, so keep them
         notes = [m.strip() for m in re.findall(r"\[([^\]]+)\]", text)]
         lines = [x for x in (re.sub(r"\[[^\]]+\]", "", ln).strip(' "') for ln in text.split("\n")) if x]
