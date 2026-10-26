@@ -108,6 +108,17 @@ enum API {
         Server.token = t.token
     }
 
+    /// Any Ad Factory JSON call; the answer comes back exactly as it was written (see JSON).
+    static func json(_ path: String, method: String = "GET", body: JSON? = nil) async throws -> JSON {
+        var r = try Server.request(path, method: method)
+        r.timeoutInterval = 60   // a whole shoot can be a few MB
+        if let body {
+            r.httpBody = body.data()
+            r.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        }
+        return try JSON.parse(try await send(r))
+    }
+
     static func catalog() async throws -> Data {
         try await send(try Server.request("api/camera/projects"))
     }

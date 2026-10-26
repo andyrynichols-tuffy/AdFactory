@@ -15,6 +15,7 @@ struct CameraView: View {
     @EnvironmentObject private var clips: ClipStore
     @Environment(\.dismiss) private var dismiss
     @StateObject private var camera = CameraController()
+    @ObservedObject private var big = BigScreen.shared
 
     @AppStorage("zones") private var showZones = true
     @AppStorage("grid") private var showGrid = false
@@ -44,7 +45,7 @@ struct CameraView: View {
 
     private var tripod: Bool { layout == "tripod" }
     private var prompterOn: Bool { tripod ? tripodPrompter : handheldPrompter }
-    private var showPrompter: Bool { prompterOn && !project.lines.isEmpty }
+    private var showPrompter: Bool { prompterOn && !project.lines.isEmpty && !big.connected }   // on a big screen instead
     private var countdown: Int { tripod ? tripodCountdown : handheldCountdown }
 
     var body: some View {
@@ -65,6 +66,7 @@ struct CameraView: View {
                     .position(x: r.midX, y: r.midY)
                     if let frame { tripodControls(frame) }
                 }
+                .coordinateSpace(name: "screen")
                 .animation(.easeInOut(duration: 0.25), value: frame)
             }
             .ignoresSafeArea()
@@ -89,12 +91,18 @@ struct CameraView: View {
             if tripod { camera.position = .back }
             camera.start()
             UIApplication.shared.isIdleTimerDisabled = true
+            (big.zones, big.safe, big.showZones, big.line) = (model.zones, model.safe, showZones, line)
+            (big.camera, big.project) = (camera, project)
         }
         .onDisappear {
             countTask?.cancel()
             camera.stop()
             UIApplication.shared.isIdleTimerDisabled = false
+            (big.camera, big.project, big.counting) = (nil, nil, nil)
         }
+        .onChange(of: line) { big.line = line }
+        .onChange(of: counting) { big.counting = counting }
+        .onChange(of: showZones) { big.showZones = showZones }
         .sheet(isPresented: $showSettings, onDismiss: { camera.reconfigure() }) {
             SettingsView().environmentObject(model)
         }
@@ -133,6 +141,7 @@ struct CameraView: View {
             if let n = counting { countdownNumber(n) }
             Spacer()
             VStack(spacing: 12) {
+                lineStepper
                 HStack(spacing: 8) {
                     zonesTool
                     prompterTool
@@ -166,7 +175,8 @@ struct CameraView: View {
 
         VStack(spacing: 12) {   // left: getting around, guides
             backButton
-            layoutMenu
+            handheldButton
+            clampAreaButton
             settingsButton
             Spacer(minLength: 0)
             zonesTool
@@ -220,14 +230,45 @@ struct CameraView: View {
         .clipped()
         .position(x: f.below.midX, y: f.below.midY)
 
+        lineStepper.position(x: f.preview.midX, y: f.preview.maxY - 30)
         if let n = counting {
             countdownNumber(n).position(x: f.preview.midX, y: f.preview.midY)
         }
         if editingClamp {
+            clampHandle(f)
             clampEditor
                 .frame(width: min(320, f.preview.width + 2 * f.left.width - 16))
                 .position(x: f.preview.midX, y: f.preview.midY)
         }
+    }
+
+    /// The strip plus a band past its edge (the part the clamp leaves uncovered): drag to
+    /// move the edge, double-tap to put the strip at the other end of the screen.
+    private func clampHandle(_ f: TripodFrame) -> some View {
+        let band: CGFloat = 36
+        let edge = clampTop ? f.strip.maxY : f.strip.minY
+        let area = CGRect(x: 0, y: clampTop ? 0 : edge - band, width: f.strip.width, height: f.strip.height + band)
+        return ZStack(alignment: clampTop ? .bottom : .top) {
+            Color.clear
+            Capsule().fill(Color.yellow)
+                .frame(width: 56, height: 6)
+                .padding(clampTop ? .bottom : .top, band / 2 - 3)
+        }
+        .frame(width: area.width, height: area.height)
+        .contentShape(Rectangle())
+        .position(x: area.midX, y: area.midY)
+        .gesture(DragGesture(minimumDistance: 2, coordinateSpace: .named("screen")).onChanged { g in
+            let h = clampTop ? g.location.y : f.strip.maxY - g.location.y
+            var t = Transaction()
+            t.disablesAnimations = true   // the picture follows the finger
+            withTransaction(t) { clampH = Double(min(320, max(40, h)).rounded()) }
+        })
+        .onTapGesture(count: 2) { withAnimation { clampTop.toggle() } }
+        .accessibilityLabel(Text("Clamp"))
+        .accessibilityAdjustableAction { dir in
+            clampH = dir == .increment ? min(320, clampH + 10) : max(40, clampH - 10)
+        }
+        .accessibilityAction(named: Text("Move to the other end")) { clampTop.toggle() }
     }
 
     private var clampEditor: some View {
@@ -235,20 +276,7 @@ struct CameraView: View {
             Text("Where does the clamp cover the screen?")
                 .font(.subheadline.bold())
                 .multilineTextAlignment(.center)
-            Picker("Clamp", selection: $clampTop) {
-                Text("Top").tag(true)
-                Text("Bottom").tag(false)
-            }
-            .pickerStyle(.segmented)
-            HStack(spacing: 14) {
-                Button { clampH = max(40, clampH - 10) } label: { Image(systemName: "minus") }
-                    .accessibilityLabel(Text("Thinner"))
-                Text("Strip size").font(.caption)
-                Button { clampH = min(320, clampH + 10) } label: { Image(systemName: "plus") }
-                    .accessibilityLabel(Text("Thicker"))
-            }
-            .buttonStyle(.bordered)
-            Text("Line the striped strip up with the clamp. The picture shrinks to fit the rest of the screen.")
+            Text("Drag the strip's edge to the clamp's edge. Double-tap the strip to move it to the other end. The picture shrinks to fit the rest of the screen.")
                 .font(.caption)
                 .opacity(0.75)
                 .multilineTextAlignment(.center)
@@ -284,6 +312,7 @@ struct CameraView: View {
             .accessibilityLabel(Text("Switch camera"))
     }
 
+    /// Handheld only: the way into the Tripod clamp layout.
     private var layoutMenu: some View {
         Menu {
             Picker(selection: Binding(get: { layout }, set: { setLayout($0) })) {
@@ -292,16 +321,31 @@ struct CameraView: View {
             } label: {
                 Text("Layout")
             }
-            if tripod {
-                Button { editingClamp = true } label: {
-                    Label("Set clamp area", systemImage: "arrow.up.and.down")
-                }
-            }
         } label: {
-            circle(tripod ? "rectangle.bottomhalf.filled" : "hand.raised")
+            circle("hand.raised")
         }
         .disabled(camera.recording)
         .accessibilityLabel(Text("Layout"))
+    }
+
+    /// Tripod clamp: one tap back to Handheld, named so it's easy to find.
+    private var handheldButton: some View {
+        Button { setLayout("handheld") } label: { labeled("hand.raised", "Handheld") }
+            .disabled(camera.recording)
+            .accessibilityLabel(Text("Handheld"))
+    }
+
+    private var clampAreaButton: some View {
+        Button { editingClamp = true } label: { labeled("arrow.up.and.down", "Clamp") }
+            .disabled(camera.recording || editingClamp)
+            .accessibilityLabel(Text("Set clamp area"))
+    }
+
+    private func labeled(_ icon: String, _ name: LocalizedStringKey) -> some View {
+        VStack(spacing: 3) {
+            circle(icon)
+            Text(name).font(.caption2.bold()).lineLimit(1).minimumScaleFactor(0.7)
+        }
     }
 
     private func circle(_ icon: String, bold: Bool = false) -> some View {
@@ -392,10 +436,33 @@ struct CameraView: View {
 
     @ViewBuilder
     private var prompterTool: some View {
-        if !project.lines.isEmpty {
+        if !project.lines.isEmpty && !big.connected {
             tool("text.bubble", on: prompterOn, label: Text("Teleprompter")) {
                 if tripod { tripodPrompter.toggle() } else { handheldPrompter.toggle() }
             }
+        }
+    }
+
+    /// With the script on a big screen, the phone keeps just the line it's on, to step through.
+    @ViewBuilder
+    private var lineStepper: some View {
+        if big.connected, !project.lines.isEmpty {
+            let i = max(0, min(line, project.lines.count - 1))
+            HStack(spacing: 10) {
+                Button { line = max(0, i - 1) } label: {
+                    Image(systemName: "chevron.left").font(.headline).frame(width: 44, height: 38)
+                }
+                .disabled(i == 0)
+                .accessibilityLabel(Text("Previous line"))
+                Text("Line \(i + 1) of \(project.lines.count)").font(.subheadline.bold().monospacedDigit())
+                Button { line = min(project.lines.count - 1, i + 1) } label: {
+                    Image(systemName: "chevron.right").font(.headline).frame(width: 44, height: 38)
+                }
+                .disabled(i >= project.lines.count - 1)
+                .accessibilityLabel(Text("Next line"))
+            }
+            .padding(.horizontal, 4)
+            .background(.black.opacity(0.55), in: Capsule())
         }
     }
 

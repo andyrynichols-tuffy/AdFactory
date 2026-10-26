@@ -1,8 +1,8 @@
 import SwiftUI
 import WebKit
 
-/// A project's page: a big Film button, Continue editing once Ad Factory has cut videos,
-/// and thumbnails of every clip so far (filmed on this phone, and already in Ad Factory).
+/// A project's page: a big Film button, Edit videos once Ad Factory has cut videos (the phone
+/// editor; Ad Factory's own Review page is a tap below it), and thumbnails of every clip so far (filmed on this phone, and already in Ad Factory).
 struct ProjectView: View {
     let project: Project
     var film: () -> Void
@@ -10,6 +10,7 @@ struct ProjectView: View {
     @State private var detail: ProjectDetail?
     @State private var problem: String?
     @State private var showEditor = false
+    @State private var showReview = false
     @State private var showScript = false
 
     private let grid = Array(repeating: GridItem(.flexible(), spacing: 6), count: 3)
@@ -32,7 +33,7 @@ struct ProjectView: View {
                 if editing {
                     Button { showEditor = true } label: {
                         VStack(spacing: 2) {
-                            Label("Continue editing", systemImage: "scissors").font(.headline)
+                            Label("Edit videos", systemImage: "scissors").font(.headline)
                             if let d = detail {
                                 Text("\(d.videos) videos cut · \(d.saved) saved").font(.caption).opacity(0.75)
                             }
@@ -41,6 +42,11 @@ struct ProjectView: View {
                         .background(Color.white.opacity(0.12), in: RoundedRectangle(cornerRadius: 14))
                     }
                     .foregroundStyle(.primary)
+                    Button { showReview = true } label: {
+                        Label("Review videos in Ad Factory", systemImage: "play.rectangle.on.rectangle")
+                            .font(.subheadline)
+                            .frame(maxWidth: .infinity)
+                    }
                 } else if stage == "precut" {
                     Label("Ad Factory is pre-cutting the clips…", systemImage: "hourglass")
                         .font(.subheadline).foregroundStyle(.secondary)
@@ -87,15 +93,18 @@ struct ProjectView: View {
                 try? await Task.sleep(nanoseconds: 15_000_000_000)
             }
         }
-        .sheet(isPresented: $showEditor) {
+        .navigationDestination(isPresented: $showEditor) {
+            EditorView(project: project)
+        }
+        .sheet(isPresented: $showReview) {
             NavigationStack {
-                AdFactoryPage(path: "/#review/\(project.sid)")
+                AdFactoryPage(path: "/#review/\(project.sid)") { showReview = false }
                     .ignoresSafeArea(edges: .bottom)
                     .navigationTitle("Ad Factory")
                     .navigationBarTitleDisplayMode(.inline)
                     .toolbar {
                         ToolbarItem(placement: .confirmationAction) {
-                            Button("Done") { showEditor = false }
+                            Button("Done") { showReview = false }
                         }
                     }
             }
@@ -199,11 +208,41 @@ struct RemoteThumb: View {
 
 /// Ad Factory's own page for the project (its phone-friendly Review screen), signed in with
 /// the app's cookie. The mobile single-video editor will take this button over.
+/// It stays on that one screen: the page's own ← (to Ad Factory's home) and Review/Edit switch
+/// (the desktop editor) are hidden, since Done closes it; if it leaves anyway, `left` runs.
 struct AdFactoryPage: UIViewRepresentable {
     let path: String
+    var left: () -> Void = {}
+
+    func makeCoordinator() -> Coordinator { Coordinator(left: left) }
+
+    final class Coordinator: NSObject, WKScriptMessageHandler {
+        let left: () -> Void
+        init(left: @escaping () -> Void) { self.left = left }
+        func userContentController(_ c: WKUserContentController, didReceive message: WKScriptMessage) {
+            DispatchQueue.main.async(execute: left)
+        }
+    }
 
     func makeUIView(context: Context) -> WKWebView {
-        let web = WKWebView(frame: .zero, configuration: WKWebViewConfiguration())
+        let config = WKWebViewConfiguration()
+        let stay = """
+        (function () {
+          var css = document.createElement('style');
+          css.textContent = '#backBtn, #modeSeg { display: none !important; }';
+          document.documentElement.appendChild(css);
+          var check = function () {
+            if (!location.hash.startsWith('#review/')) window.webkit.messageHandlers.left.postMessage(location.hash);
+          };
+          var replace = history.replaceState;
+          history.replaceState = function () { replace.apply(history, arguments); check(); };
+          window.addEventListener('hashchange', check);
+        })();
+        """
+        config.userContentController.addUserScript(WKUserScript(source: stay, injectionTime: .atDocumentStart,
+                                                                forMainFrameOnly: true))
+        config.userContentController.add(context.coordinator, name: "left")
+        let web = WKWebView(frame: .zero, configuration: config)
         guard let base = Server.baseURL, let url = URL(string: path, relativeTo: base) else { return web }
         if let token = Server.token, let host = base.host,
            let cookie = HTTPCookie(properties: [.domain: host, .path: "/", .name: Server.cookieName,

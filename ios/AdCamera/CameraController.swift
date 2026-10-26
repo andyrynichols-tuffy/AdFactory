@@ -6,6 +6,7 @@ import UIKit
 final class CameraController: NSObject, ObservableObject, AVCaptureFileOutputRecordingDelegate {
     let session = AVCaptureSession()
     weak var preview: AVCaptureVideoPreviewLayer?
+    weak var bigPreview: AVCaptureVideoPreviewLayer?   // the same picture on a TV / Mac (BigScreen)
 
     @Published var position: AVCaptureDevice.Position =
         UserDefaults.standard.string(forKey: "camera") == "back" ? .back : .front
@@ -226,7 +227,24 @@ final class CameraController: NSObject, ObservableObject, AVCaptureFileOutputRec
             self.zoom = 1
             self.bias = 0
             self.locked = false
-            if let c = self.preview?.connection, c.isVideoRotationAngleSupported(90) { c.videoRotationAngle = 90 }
+            for layer in [self.preview, self.bigPreview] {
+                if let c = layer?.connection, c.isVideoRotationAngleSupported(90) { c.videoRotationAngle = 90 }
+            }
+        }
+    }
+
+    /// The big screen's picture: a second preview of the same session. If that ever takes the
+    /// phone's own picture away, the phone gets it back and the big screen does without.
+    func attachBig(_ layer: AVCaptureVideoPreviewLayer) {
+        layer.session = session
+        bigPreview = layer
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) { [weak self, weak layer] in
+            guard let self, let layer, let phone = self.preview else { return }
+            if phone.connection == nil, layer.connection != nil {
+                layer.session = nil
+                phone.session = nil
+                phone.session = self.session
+            }
         }
     }
 

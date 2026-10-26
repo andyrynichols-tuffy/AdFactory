@@ -111,7 +111,7 @@ struct SettingsView: View {
                 } header: {
                     Text("Tripod clamp")
                 } footer: {
-                    Text("Switch to it with the layout button on the camera screen: back camera, a strip left clear where the clamp covers the screen, the picture shrunk to fit, controls beside it. \"Set clamp area\" on the same button moves the strip.")
+                    Text("Switch to it with the layout button on the camera screen: back camera, a strip left clear where the clamp covers the screen, the picture shrunk to fit, controls beside it. In it, \"Clamp\" moves the strip and \"Handheld\" switches back.")
                 }
 
                 Section {
