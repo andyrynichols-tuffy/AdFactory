@@ -354,6 +354,7 @@ async function newVideo(pre = {}) {
       <div class="nvCol">
         <label class="fld">Script<select name="script"></select></label>
         <div class="nvFills"></div>
+        <div class="nvKMsg muted small"></div>
         <div class="nvPreview" translate="no" hidden></div>
         <button type="button" class="linkish nvEditTxt" hidden>✏️ Edit the wording</button>
         <textarea name="script_text" rows="9" placeholder="Type or paste the script, one line per line. [Directions in brackets] go to the notes, not the captions."></textarea>
@@ -466,6 +467,7 @@ async function newVideo(pre = {}) {
   $(".nvEditTxt", dlg).onclick = () => { showText = true; drawPreview(); el("script_text").focus(); };
   dlg.addEventListener("input", e => { if (e.target.closest(".nvFills input")) { rowState(e.target); drawPreview(); } });
   // ⚡ links: a product link makes (or finds) the product; a video link makes its script
+  const kmsg = h => ($(".nvKMsg", dlg).innerHTML = h);
   const pmsg = h => ($('.nvQMsg[data-m="product"]', dlg).innerHTML = h), qmsg = h => ($('.nvQMsg[data-m="video"]', dlg).innerHTML = h);
   const qBusy = (which, on) => { const b = $(`[data-q="${which}"]`, dlg); if (b) b.disabled = on; };
   const getProduct = async () => {
@@ -523,7 +525,7 @@ async function newVideo(pre = {}) {
       let n = 0;
       for (const i of $$(".nvFills input", dlg)) if (auto[i.dataset.ph]) { i.value = auto[i.dataset.ph]; rowState(i); n++; }
       const left = $$(".nvFills input", dlg).filter(i => i.value.trim() === (was()[i.dataset.ph] || "")).map(i => `{${i.dataset.ph}}`);
-      qmsg(`⇄ Swapped ${n} key word${n === 1 ? "" : "s"}.` + (left.length ? ` <span>Still the video's words:</span> <span translate="no">${esc(left.join(", "))}</span>. <span>Type them in, or use ✨ AI.</span>` : ""));
+      kmsg(`⇄ Swapped ${n} key word${n === 1 ? "" : "s"}.` + (left.length ? ` <span>Still the video's words:</span> <span translate="no">${esc(left.join(", "))}</span>. <span>Type them in, or use ✨ AI.</span>` : ""));
       drawPreview();
     }
     if (q === "aifill" && lib && el("product").value) {
@@ -532,11 +534,11 @@ async function newVideo(pre = {}) {
         const orig = was(), ins = $$(".nvFills input", dlg);
         const same = i => !i.value.trim() || i.value.trim() === (orig[i.dataset.ph] || "");  // not changed by hand
         const known = Object.fromEntries(ins.filter(i => !same(i)).map(i => [i.dataset.ph, i.value.trim()]));
-        const r = await sbJob(await api("/api/shop/ai/fill", { json: { script: lib.id, product: el("product").value, known } }), m => qmsg(esc(m)));
+        const r = await sbJob(await api("/api/shop/ai/fill", { json: { script: lib.id, product: el("product").value, known } }), m => kmsg(esc(m)));
         for (const [k, v] of Object.entries(r.fills || {})) { const i = $(`.nvFills [data-ph="${CSS.escape(k)}"]`, dlg); if (i && same(i)) { i.value = v; rowState(i); } }
-        qmsg("✨ Key words rewritten by Claude: check them.");
+        kmsg("✨ Key words rewritten by Claude: check them.");
         drawPreview();
-      } catch (err) { qmsg("⚠ " + esc(err.message)); }
+      } catch (err) { kmsg("⚠ " + esc(err.message)); }
       b.disabled = false;
     }
   });

@@ -268,3 +268,4 @@ button.tpMore:hover { color: var(--text) !important; border-color: #4a505b !impo
 .nvFHead { flex-wrap: wrap; } .nvFHead > span:last-child { display: flex; gap: 6px; flex-wrap: wrap; }
 .nvFHead button { font-size: 12px; padding: 2px 9px; }
 .nvEditTxt { font-size: 12px; margin: 0 0 6px; }
+.nvKMsg { margin: 4px 0; } .nvKMsg:empty { display: none; }
