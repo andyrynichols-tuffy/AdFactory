@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 124,
+ "rev": 127,
  "title": "MenPen 3",
  "created": 1792372496.8683283,
  "product": {
@@ -79,6 +79,19 @@
    "duration": 33.593333,
    "width": 1920,
    "height": 1080
+  },
+  {
+   "id": "ea4b2d",
+   "file": "C:\\Users\\thecc\\MemeSupercutData\\ads\\uploads\\manpen-3\\MenPen 3 2026-10-25 21.44.27.mov",
+   "name": "MenPen 3 2026-10-25 21.44.27.mov",
+   "status": "ready",
+   "error": null,
+   "batch": 4,
+   "looks": [],
+   "key": "1ff5a6fd73b776",
+   "duration": 77.4,
+   "width": 3840,
+   "height": 2160
   }
  ],
  "script": [
@@ -325,17 +338,17 @@
  "takes": [
   {
    "id": "0b93f8",
-   "line": "83d5ef",
+   "line": null,
    "src": "226469",
    "in": 0.46,
    "out": 2.22,
    "look": null,
    "alt": 0,
    "text": "Yes, you're not ugly.",
-   "for_text": "YES, you're not UGLY!",
+   "for_text": null,
    "words": [
     [
-     "YES,",
+     "Yes,",
      0.54,
      1.06
     ],
@@ -350,32 +363,34 @@
      1.62
     ],
     [
-     "UGLY!",
+     "ugly.",
      1.62,
      2.04
     ]
    ],
-   "score": 1,
-   "status": "good",
-   "flags": [],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
    "missing": [],
    "extra": [],
    "usable": false,
-   "order": 0,
-   "zoom": 1,
+   "order": 4,
+   "zoom": 1.0,
    "pan_x": 0.5,
    "pan_y": 0.5,
-   "volume": 1,
+   "volume": 1.0,
    "cuts": [],
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": 0.895,
+   "quality": null,
    "eye": null,
    "variant": null,
    "speed": null,
-   "bright": 0,
-   "freeze": 0,
+   "bright": 0.0,
+   "freeze": 0.0,
    "title": "",
    "game": null,
    "spice": null,
@@ -383,14 +398,14 @@
   },
   {
    "id": "e8115a",
-   "line": "b4bc29",
+   "line": null,
    "src": "226469",
    "in": 2.22,
    "out": 3.96,
    "look": null,
    "alt": 0,
    "text": "You just need a little grooming secret.",
-   "for_text": "You just need a little grooming secret.",
+   "for_text": null,
    "words": [
     [
      "You",
@@ -428,27 +443,29 @@
      3.78
     ]
    ],
-   "score": 1,
-   "status": "good",
-   "flags": [],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
    "missing": [],
    "extra": [],
    "usable": false,
-   "order": 0,
-   "zoom": 1,
+   "order": 5,
+   "zoom": 1.0,
    "pan_x": 0.5,
    "pan_y": 0.5,
-   "volume": 1,
+   "volume": 1.0,
    "cuts": [],
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": 0.895,
+   "quality": null,
    "eye": null,
    "variant": null,
    "speed": null,
-   "bright": 0,
-   "freeze": 0,
+   "bright": 0.0,
+   "freeze": 0.0,
    "title": "",
    "game": null,
    "spice": null,
@@ -456,14 +473,14 @@
   },
   {
    "id": "65bc69",
-   "line": "692575",
+   "line": null,
    "src": "226469",
    "in": 3.94,
    "out": 10.22,
    "look": null,
    "alt": 0,
    "text": "I saw that darkening eyebrows is one of those makeup tricks used to give celebrities like Robert Pattinson a more defined look.",
-   "for_text": "I saw that darkening eyebrows is one of those makeup tricks used to give celebrities like Robert Pattinson a more defined look.",
+   "for_text": null,
    "words": [
     [
      "I",
@@ -576,27 +593,29 @@
      10.04
     ]
    ],
-   "score": 1,
-   "status": "good",
-   "flags": [],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
    "missing": [],
    "extra": [],
    "usable": false,
-   "order": 0,
-   "zoom": 1,
+   "order": 6,
+   "zoom": 1.0,
    "pan_x": 0.5,
    "pan_y": 0.5,
-   "volume": 1,
+   "volume": 1.0,
    "cuts": [],
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": 0.895,
+   "quality": null,
    "eye": null,
    "variant": null,
    "speed": null,
-   "bright": 0,
-   "freeze": 0,
+   "bright": 0.0,
+   "freeze": 0.0,
    "title": "",
    "game": null,
    "spice": null,
@@ -604,14 +623,14 @@
   },
   {
    "id": "139973",
-   "line": "226842",
+   "line": null,
    "src": "226469",
    "in": 10.98,
    "out": 12.54,
    "look": null,
    "alt": 0,
    "text": "It really makes your eyes pop.",
-   "for_text": "It really makes your eyes POP.",
+   "for_text": null,
    "words": [
     [
      "It",
@@ -639,32 +658,34 @@
      12.1
     ],
     [
-     "POP.",
+     "pop.",
      12.1,
      12.36
     ]
    ],
-   "score": 1,
-   "status": "good",
-   "flags": [],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
    "missing": [],
    "extra": [],
    "usable": false,
-   "order": 0,
-   "zoom": 1,
+   "order": 7,
+   "zoom": 1.0,
    "pan_x": 0.5,
    "pan_y": 0.5,
-   "volume": 1,
+   "volume": 1.0,
    "cuts": [],
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": 0.895,
+   "quality": null,
    "eye": null,
    "variant": null,
    "speed": null,
-   "bright": 0,
-   "freeze": 0,
+   "bright": 0.0,
+   "freeze": 0.0,
    "title": "",
    "game": null,
    "spice": null,
@@ -672,14 +693,14 @@
   },
   {
    "id": "104e9c",
-   "line": "f0f957",
+   "line": null,
    "src": "226469",
    "in": 13.54,
    "out": 21.86,
    "look": null,
    "alt": 0,
    "text": "And with this sweat and water resistant men pen, you can fill in your eyebrows, mustache, and beard using this super thin tip, then blend everything out with the brush on the other side.",
-   "for_text": "And with this sweat- and water-resistant MenPen, you can fill in your eyebrows, mustache, and beard using this super thin tip, then blend everything out with the brush on the other side.",
+   "for_text": null,
    "words": [
     [
      "And",
@@ -697,7 +718,7 @@
      14.16
     ],
     [
-     "sweat-",
+     "sweat",
      14.16,
      14.42
     ],
@@ -707,13 +728,23 @@
      14.52
     ],
     [
-     "water-resistant",
+     "water",
      14.52,
-     15.05
+     14.76
     ],
     [
-     "MenPen,",
-     15.05,
+     "resistant",
+     14.76,
+     15.1
+    ],
+    [
+     "men",
+     15.1,
+     15.34
+    ],
+    [
+     "pen,",
+     15.34,
      15.58
     ],
     [
@@ -724,11 +755,11 @@
     [
      "can",
      15.88,
-     16
+     16.0
     ],
     [
      "fill",
-     16,
+     16.0,
      16.26
     ],
     [
@@ -842,34 +873,29 @@
      21.68
     ]
    ],
-   "score": 0.955,
-   "status": "close",
+   "score": 0.0,
+   "status": "unmatched",
    "flags": [
-    "reworded (1 skipped, 2 added)"
+    "not a script line"
    ],
-   "missing": [
-    "menpen"
-   ],
-   "extra": [
-    "men",
-    "pen"
-   ],
+   "missing": [],
+   "extra": [],
    "usable": false,
-   "order": 0,
-   "zoom": 1,
+   "order": 8,
+   "zoom": 1.0,
    "pan_x": 0.5,
    "pan_y": 0.5,
-   "volume": 1,
+   "volume": 1.0,
    "cuts": [],
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": 0.721,
+   "quality": null,
    "eye": null,
-   "variant": "reworded",
+   "variant": null,
    "speed": null,
-   "bright": 0,
-   "freeze": 0,
+   "bright": 0.0,
+   "freeze": 0.0,
    "title": "",
    "game": null,
    "spice": null,
@@ -877,14 +903,14 @@
   },
   {
    "id": "b4de10",
-   "line": "bb56a7",
+   "line": null,
    "src": "226469",
    "in": 21.96,
-   "out": 23.14,
+   "out": 25.16,
    "look": null,
    "alt": 0,
-   "text": "And the best part,",
-   "for_text": "And the BEST part?",
+   "text": "And the best part, I bought one and received two.",
+   "for_text": null,
    "words": [
     [
      "And",
@@ -897,53 +923,15 @@
      22.56
     ],
     [
-     "BEST",
+     "best",
      22.56,
      22.78
     ],
     [
-     "part?",
+     "part,",
      22.78,
-     23
-    ]
-   ],
-   "score": 1,
-   "status": "good",
-   "flags": [],
-   "missing": [],
-   "extra": [],
-   "usable": false,
-   "order": 0,
-   "zoom": 1,
-   "pan_x": 0.5,
-   "pan_y": 0.5,
-   "volume": 1,
-   "cuts": [],
-   "splits": [],
-   "sfx": [],
-   "fx": [],
-   "quality": 0.895,
-   "eye": null,
-   "variant": null,
-   "speed": null,
-   "bright": 0,
-   "freeze": 0,
-   "title": "",
-   "game": null,
-   "spice": null,
-   "user": {}
-  },
-  {
-   "id": "e42fef",
-   "line": "299ce4",
-   "src": "226469",
-   "in": 23.08,
-   "out": 25.16,
-   "look": null,
-   "alt": 0,
-   "text": "I bought one and received two.",
-   "for_text": "I bought ONE and received TWO!",
-   "words": [
+     23.0
+    ],
     [
      "I",
      23.16,
@@ -955,7 +943,7 @@
      23.72
     ],
     [
-     "ONE",
+     "one",
      23.72,
      24.04
     ],
@@ -970,32 +958,34 @@
      24.64
     ],
     [
-     "TWO!",
+     "two.",
      24.64,
      24.98
     ]
    ],
-   "score": 1,
-   "status": "good",
-   "flags": [],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
    "missing": [],
    "extra": [],
    "usable": false,
-   "order": 0,
-   "zoom": 1,
+   "order": 9,
+   "zoom": 1.0,
    "pan_x": 0.5,
    "pan_y": 0.5,
-   "volume": 1,
+   "volume": 1.0,
    "cuts": [],
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": 0.895,
+   "quality": null,
    "eye": null,
    "variant": null,
    "speed": null,
-   "bright": 0,
-   "freeze": 0,
+   "bright": 0.0,
+   "freeze": 0.0,
    "title": "",
    "game": null,
    "spice": null,
@@ -1003,17 +993,17 @@
   },
   {
    "id": "03a084",
-   "line": "2c0867",
+   "line": null,
    "src": "226469",
    "in": 25.4,
    "out": 27.6,
    "look": null,
    "alt": 0,
    "text": "Apparently they've got this deal going on right now.",
-   "for_text": "Apparently, they've got that deal going on right now.",
+   "for_text": null,
    "words": [
     [
-     "Apparently,",
+     "Apparently",
      25.48,
      25.92
     ],
@@ -1028,7 +1018,7 @@
      26.26
     ],
     [
-     "that",
+     "this",
      26.26,
      26.46
     ],
@@ -1058,33 +1048,29 @@
      27.42
     ]
    ],
-   "score": 0.9,
-   "status": "close",
+   "score": 0.0,
+   "status": "unmatched",
    "flags": [
-    "reworded (1 skipped, 1 added)"
+    "not a script line"
    ],
-   "missing": [
-    "that"
-   ],
-   "extra": [
-    "this"
-   ],
+   "missing": [],
+   "extra": [],
    "usable": false,
-   "order": 0,
-   "zoom": 1,
+   "order": 10,
+   "zoom": 1.0,
    "pan_x": 0.5,
    "pan_y": 0.5,
-   "volume": 1,
+   "volume": 1.0,
    "cuts": [],
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": 0.725,
+   "quality": null,
    "eye": null,
    "variant": null,
    "speed": null,
-   "bright": 0,
-   "freeze": 0,
+   "bright": 0.0,
+   "freeze": 0.0,
    "title": "",
    "game": null,
    "spice": null,
@@ -1092,14 +1078,14 @@
   },
   {
    "id": "3b04e0",
-   "line": "f884b7",
+   "line": null,
    "src": "226469",
    "in": 27.6,
    "out": 30.44,
    "look": null,
    "alt": 0,
    "text": "So if you're interested, I'll leave the link right below for you.",
-   "for_text": "So if you're interested, I'll leave the link right down below for you.",
+   "for_text": null,
    "words": [
     [
      "So",
@@ -1162,31 +1148,869 @@
      30.26
     ]
    ],
-   "score": 0.966,
-   "status": "close",
+   "score": 0.0,
+   "status": "unmatched",
    "flags": [
-    "reworded (1 skipped, 0 added)"
+    "not a script line"
    ],
-   "missing": [
-    "down"
-   ],
+   "missing": [],
    "extra": [],
    "usable": false,
-   "order": 0,
-   "zoom": 1,
+   "order": 11,
+   "zoom": 1.0,
    "pan_x": 0.5,
    "pan_y": 0.5,
-   "volume": 1,
+   "volume": 1.0,
    "cuts": [],
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": 0.765,
+   "quality": null,
    "eye": null,
    "variant": null,
    "speed": null,
-   "bright": 0,
-   "freeze": 0,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "44cb7b",
+   "line": null,
+   "src": "6d84ff",
+   "in": 0.52,
+   "out": 2.28,
+   "look": null,
+   "alt": 0,
+   "text": "Yes, you're not ugly.",
+   "for_text": null,
+   "words": [
+    [
+     "Yes,",
+     0.6,
+     1.16
+    ],
+    [
+     "you're",
+     1.4,
+     1.5
+    ],
+    [
+     "not",
+     1.5,
+     1.72
+    ],
+    [
+     "ugly.",
+     1.72,
+     2.1
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 12,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "9f6e18",
+   "line": null,
+   "src": "6d84ff",
+   "in": 2.22,
+   "out": 4.12,
+   "look": null,
+   "alt": 0,
+   "text": "You just need a little grooming secret.",
+   "for_text": null,
+   "words": [
+    [
+     "You",
+     2.3,
+     2.62
+    ],
+    [
+     "just",
+     2.62,
+     2.78
+    ],
+    [
+     "need",
+     2.78,
+     2.92
+    ],
+    [
+     "a",
+     2.92,
+     3.04
+    ],
+    [
+     "little",
+     3.04,
+     3.18
+    ],
+    [
+     "grooming",
+     3.18,
+     3.52
+    ],
+    [
+     "secret.",
+     3.52,
+     3.94
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 13,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "06446d",
+   "line": null,
+   "src": "6d84ff",
+   "in": 4.18,
+   "out": 10.16,
+   "look": null,
+   "alt": 0,
+   "text": "I saw that darkening eyebrows is one of those makeup tricks used to give celebrities like Robert Pattinson a more defined look.",
+   "for_text": null,
+   "words": [
+    [
+     "I",
+     4.26,
+     4.72
+    ],
+    [
+     "saw",
+     4.72,
+     4.88
+    ],
+    [
+     "that",
+     4.88,
+     5.04
+    ],
+    [
+     "darkening",
+     5.04,
+     5.4
+    ],
+    [
+     "eyebrows",
+     5.4,
+     5.78
+    ],
+    [
+     "is",
+     5.78,
+     6.02
+    ],
+    [
+     "one",
+     6.02,
+     6.14
+    ],
+    [
+     "of",
+     6.14,
+     6.22
+    ],
+    [
+     "those",
+     6.22,
+     6.38
+    ],
+    [
+     "makeup",
+     6.38,
+     6.6
+    ],
+    [
+     "tricks",
+     6.6,
+     6.94
+    ],
+    [
+     "used",
+     6.94,
+     7.2
+    ],
+    [
+     "to",
+     7.2,
+     7.32
+    ],
+    [
+     "give",
+     7.32,
+     7.46
+    ],
+    [
+     "celebrities",
+     7.46,
+     7.94
+    ],
+    [
+     "like",
+     7.94,
+     8.16
+    ],
+    [
+     "Robert",
+     8.16,
+     8.44
+    ],
+    [
+     "Pattinson",
+     8.44,
+     8.92
+    ],
+    [
+     "a",
+     8.92,
+     9.08
+    ],
+    [
+     "more",
+     9.08,
+     9.24
+    ],
+    [
+     "defined",
+     9.24,
+     9.58
+    ],
+    [
+     "look.",
+     9.58,
+     9.98
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 14,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "bddfc9",
+   "line": null,
+   "src": "6d84ff",
+   "in": 10.54,
+   "out": 12.12,
+   "look": null,
+   "alt": 0,
+   "text": "It really makes your eyes pop.",
+   "for_text": null,
+   "words": [
+    [
+     "It",
+     10.62,
+     10.9
+    ],
+    [
+     "really",
+     10.9,
+     11.1
+    ],
+    [
+     "makes",
+     11.1,
+     11.3
+    ],
+    [
+     "your",
+     11.3,
+     11.46
+    ],
+    [
+     "eyes",
+     11.46,
+     11.68
+    ],
+    [
+     "pop.",
+     11.68,
+     11.94
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 15,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "211755",
+   "line": null,
+   "src": "6d84ff",
+   "in": 13.1,
+   "out": 22.34,
+   "look": null,
+   "alt": 0,
+   "text": "And with this sweat and water resistant men pen, you can fill in your eyebrows, mustache, and beard using this super thin tip, then blend everything out with the brush on the other side.",
+   "for_text": null,
+   "words": [
+    [
+     "And",
+     13.18,
+     13.42
+    ],
+    [
+     "with",
+     13.42,
+     13.56
+    ],
+    [
+     "this",
+     13.56,
+     13.72
+    ],
+    [
+     "sweat",
+     13.72,
+     14.02
+    ],
+    [
+     "and",
+     14.02,
+     14.12
+    ],
+    [
+     "water",
+     14.12,
+     14.36
+    ],
+    [
+     "resistant",
+     14.36,
+     14.74
+    ],
+    [
+     "men",
+     14.74,
+     15.02
+    ],
+    [
+     "pen,",
+     15.02,
+     15.26
+    ],
+    [
+     "you",
+     15.48,
+     15.84
+    ],
+    [
+     "can",
+     15.84,
+     15.98
+    ],
+    [
+     "fill",
+     15.98,
+     16.22
+    ],
+    [
+     "in",
+     16.22,
+     16.32
+    ],
+    [
+     "your",
+     16.32,
+     16.44
+    ],
+    [
+     "eyebrows,",
+     16.44,
+     16.86
+    ],
+    [
+     "mustache,",
+     17.0,
+     17.36
+    ],
+    [
+     "and",
+     17.58,
+     17.7
+    ],
+    [
+     "beard",
+     17.7,
+     18.02
+    ],
+    [
+     "using",
+     18.02,
+     18.3
+    ],
+    [
+     "this",
+     18.3,
+     18.52
+    ],
+    [
+     "super",
+     18.52,
+     18.86
+    ],
+    [
+     "thin",
+     18.86,
+     19.06
+    ],
+    [
+     "tip,",
+     19.06,
+     19.46
+    ],
+    [
+     "then",
+     19.68,
+     20.12
+    ],
+    [
+     "blend",
+     20.12,
+     20.4
+    ],
+    [
+     "everything",
+     20.4,
+     20.68
+    ],
+    [
+     "out",
+     20.68,
+     20.9
+    ],
+    [
+     "with",
+     20.9,
+     21.04
+    ],
+    [
+     "the",
+     21.04,
+     21.16
+    ],
+    [
+     "brush",
+     21.16,
+     21.38
+    ],
+    [
+     "on",
+     21.38,
+     21.54
+    ],
+    [
+     "the",
+     21.54,
+     21.64
+    ],
+    [
+     "other",
+     21.64,
+     21.8
+    ],
+    [
+     "side.",
+     21.8,
+     22.16
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 16,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "ea6bb2",
+   "line": null,
+   "src": "6d84ff",
+   "in": 22.4,
+   "out": 25.56,
+   "look": null,
+   "alt": 0,
+   "text": "And the best part, I bought one and received two.",
+   "for_text": null,
+   "words": [
+    [
+     "And",
+     22.48,
+     22.92
+    ],
+    [
+     "the",
+     22.92,
+     23.0
+    ],
+    [
+     "best",
+     23.0,
+     23.24
+    ],
+    [
+     "part,",
+     23.24,
+     23.48
+    ],
+    [
+     "I",
+     23.6,
+     23.76
+    ],
+    [
+     "bought",
+     23.76,
+     24.08
+    ],
+    [
+     "one",
+     24.08,
+     24.44
+    ],
+    [
+     "and",
+     24.44,
+     24.68
+    ],
+    [
+     "received",
+     24.68,
+     25.04
+    ],
+    [
+     "two.",
+     25.04,
+     25.38
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 17,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "fecf4a",
+   "line": null,
+   "src": "6d84ff",
+   "in": 25.94,
+   "out": 28.1,
+   "look": null,
+   "alt": 0,
+   "text": "Apparently they've got that deal going on right now.",
+   "for_text": null,
+   "words": [
+    [
+     "Apparently",
+     26.02,
+     26.46
+    ],
+    [
+     "they've",
+     26.46,
+     26.72
+    ],
+    [
+     "got",
+     26.72,
+     26.8
+    ],
+    [
+     "that",
+     26.8,
+     26.98
+    ],
+    [
+     "deal",
+     26.98,
+     27.2
+    ],
+    [
+     "going",
+     27.2,
+     27.42
+    ],
+    [
+     "on",
+     27.42,
+     27.56
+    ],
+    [
+     "right",
+     27.56,
+     27.7
+    ],
+    [
+     "now.",
+     27.7,
+     27.92
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 18,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "78c39c",
+   "line": null,
+   "src": "6d84ff",
+   "in": 28.14,
+   "out": 30.96,
+   "look": null,
+   "alt": 0,
+   "text": "So if you're interested, I'll leave the link right below for you.",
+   "for_text": null,
+   "words": [
+    [
+     "So",
+     28.22,
+     28.66
+    ],
+    [
+     "if",
+     28.66,
+     28.82
+    ],
+    [
+     "you're",
+     28.82,
+     28.94
+    ],
+    [
+     "interested,",
+     28.94,
+     29.26
+    ],
+    [
+     "I'll",
+     29.42,
+     29.56
+    ],
+    [
+     "leave",
+     29.56,
+     29.68
+    ],
+    [
+     "the",
+     29.68,
+     29.8
+    ],
+    [
+     "link",
+     29.8,
+     30.02
+    ],
+    [
+     "right",
+     30.02,
+     30.18
+    ],
+    [
+     "below",
+     30.18,
+     30.44
+    ],
+    [
+     "for",
+     30.44,
+     30.62
+    ],
+    [
+     "you.",
+     30.62,
+     30.78
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 19,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
    "title": "",
    "game": null,
    "spice": null,
@@ -1194,14 +2018,14 @@
   },
   {
    "id": "6ca294",
-   "line": "5a1c3e",
+   "line": null,
    "src": "d6903a",
    "in": 1.35,
    "out": 3.21,
    "look": null,
    "alt": 0,
    "text": "I'm married, can I still use this?",
-   "for_text": "I'm married, can I still use it?",
+   "for_text": null,
    "words": [
     [
      "I'm",
@@ -1234,38 +2058,34 @@
      2.81
     ],
     [
-     "it?",
+     "this?",
      2.81,
      3.03
     ]
    ],
-   "score": 0.875,
-   "status": "close",
+   "score": 0.0,
+   "status": "unmatched",
    "flags": [
-    "reworded (1 skipped, 1 added)"
+    "not a script line"
    ],
-   "missing": [
-    "it"
-   ],
-   "extra": [
-    "this"
-   ],
+   "missing": [],
+   "extra": [],
    "usable": false,
    "order": 0,
-   "zoom": 1,
+   "zoom": 1.0,
    "pan_x": 0.5,
    "pan_y": 0.5,
-   "volume": 1,
+   "volume": 1.0,
    "cuts": [],
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": 0.718,
+   "quality": null,
    "eye": null,
    "variant": null,
    "speed": null,
-   "bright": 0,
-   "freeze": 0,
+   "bright": 0.0,
+   "freeze": 0.0,
    "title": "",
    "game": null,
    "spice": null,
@@ -1273,17 +2093,17 @@
   },
   {
    "id": "ed9532",
-   "line": "73ba0c",
+   "line": null,
    "src": "d6903a",
    "in": 3.49,
    "out": 4.75,
    "look": null,
    "alt": 0,
    "text": "Yes, go ahead.",
-   "for_text": "YES, go ahead!",
+   "for_text": null,
    "words": [
     [
-     "YES,",
+     "Yes,",
      3.57,
      4.01
     ],
@@ -1293,32 +2113,34 @@
      4.33
     ],
     [
-     "ahead!",
+     "ahead.",
      4.33,
      4.57
     ]
    ],
-   "score": 1,
-   "status": "good",
-   "flags": [],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
    "missing": [],
    "extra": [],
    "usable": false,
-   "order": 0,
-   "zoom": 1,
+   "order": 1,
+   "zoom": 1.0,
    "pan_x": 0.5,
    "pan_y": 0.5,
-   "volume": 1,
+   "volume": 1.0,
    "cuts": [],
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": 0.895,
+   "quality": null,
    "eye": null,
    "variant": null,
    "speed": null,
-   "bright": 0,
-   "freeze": 0,
+   "bright": 0.0,
+   "freeze": 0.0,
    "title": "",
    "game": null,
    "spice": null,
@@ -1326,14 +2148,14 @@
   },
   {
    "id": "295b4d",
-   "line": "0ded2a",
+   "line": null,
    "src": "d6903a",
    "in": 4.97,
    "out": 13.33,
    "look": null,
    "alt": 0,
    "text": "Some people might start looking at you differently, but that's because you darkening your eyebrows can actually help frame your face, making everything look a little more symmetrical, and guess what?",
-   "for_text": "People might start looking at you differently, and that's because darkening your eyebrows can actually help frame your face, making everything look a little more symmetrical and, guess what?",
+   "for_text": null,
    "words": [
     [
      "Some",
@@ -1341,7 +2163,7 @@
      5.49
     ],
     [
-     "People",
+     "people",
      5.49,
      5.71
     ],
@@ -1376,7 +2198,7 @@
      6.77
     ],
     [
-     "and",
+     "but",
      7.07,
      7.17
     ],
@@ -1471,12 +2293,12 @@
      11.71
     ],
     [
-     "symmetrical",
+     "symmetrical,",
      11.71,
      12.15
     ],
     [
-     "and,",
+     "and",
      12.43,
      12.55
     ],
@@ -1491,83 +2313,29 @@
      13.15
     ]
    ],
-   "score": 0.933,
-   "status": "close",
+   "score": 0.0,
+   "status": "unmatched",
    "flags": [
-    "reworded (1 skipped, 3 added)"
+    "not a script line"
    ],
-   "missing": [
-    "and"
-   ],
-   "extra": [
-    "some",
-    "but",
-    "you"
-   ],
-   "usable": false,
-   "order": 0,
-   "zoom": 1,
-   "pan_x": 0.5,
-   "pan_y": 0.5,
-   "volume": 1,
-   "cuts": [
-    [
-     6.89,
-     6.95
-    ]
-   ],
-   "splits": [],
-   "sfx": [],
-   "fx": [],
-   "quality": 0.695,
-   "eye": null,
-   "variant": "reworded",
-   "speed": null,
-   "bright": 0,
-   "freeze": 0,
-   "title": "",
-   "game": null,
-   "spice": null,
-   "user": {}
-  },
-  {
-   "id": "3ace7c",
-   "line": "6d2c81",
-   "src": "d6903a",
-   "in": 13.29,
-   "out": 13.97,
-   "look": null,
-   "alt": 0,
-   "text": "Prettier.",
-   "for_text": "PRETTIER.",
-   "words": [
-    [
-     "PRETTIER.",
-     13.37,
-     13.79
-    ]
-   ],
-   "score": 1,
-   "status": "good",
-   "flags": [],
    "missing": [],
    "extra": [],
    "usable": false,
-   "order": 0,
-   "zoom": 1,
+   "order": 2,
+   "zoom": 1.0,
    "pan_x": 0.5,
    "pan_y": 0.5,
-   "volume": 1,
+   "volume": 1.0,
    "cuts": [],
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": 0.895,
+   "quality": null,
    "eye": null,
    "variant": null,
    "speed": null,
-   "bright": 0,
-   "freeze": 0,
+   "bright": 0.0,
+   "freeze": 0.0,
    "title": "",
    "game": null,
    "spice": null,
@@ -1670,7 +2438,7 @@
      17.88
     ]
    ],
-   "score": 0,
+   "score": 0.0,
    "status": "unmatched",
    "flags": [
     "not a script line"
@@ -1678,11 +2446,11 @@
    "missing": [],
    "extra": [],
    "usable": false,
-   "order": 0,
-   "zoom": 1,
+   "order": 3,
+   "zoom": 1.0,
    "pan_x": 0.5,
    "pan_y": 0.5,
-   "volume": 1,
+   "volume": 1.0,
    "cuts": [],
    "splits": [],
    "sfx": [],
@@ -1691,8 +2459,1986 @@
    "eye": null,
    "variant": null,
    "speed": null,
-   "bright": 0,
-   "freeze": 0,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "e1b8a5",
+   "line": "b31bb7",
+   "src": "ea4b2d",
+   "in": 0.02,
+   "out": 0.6,
+   "look": null,
+   "alt": 0,
+   "text": "It's short.",
+   "for_text": "Shot 10",
+   "words": [
+    [
+     "Shot",
+     0.0,
+     0.24
+    ],
+    [
+     "10",
+     0.24,
+     0.42
+    ]
+   ],
+   "score": 0.5,
+   "status": "incomplete",
+   "flags": [
+    "only 50% of the line"
+   ],
+   "missing": [
+    "ten"
+   ],
+   "extra": [
+    "it's"
+   ],
+   "usable": false,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "8dea28",
+   "line": null,
+   "src": "ea4b2d",
+   "in": 1.74,
+   "out": 7.86,
+   "look": null,
+   "alt": 0,
+   "text": "I've used DIY techniques like making a Halloween costume of this Polynesian Disney princess.",
+   "for_text": null,
+   "words": [
+    [
+     "I've",
+     1.82,
+     2.04
+    ],
+    [
+     "used",
+     2.04,
+     2.14
+    ],
+    [
+     "DIY",
+     2.14,
+     2.42
+    ],
+    [
+     "techniques",
+     2.42,
+     2.92
+    ],
+    [
+     "like",
+     2.92,
+     3.22
+    ],
+    [
+     "making",
+     3.22,
+     3.52
+    ],
+    [
+     "a",
+     3.52,
+     3.8
+    ],
+    [
+     "Halloween",
+     3.8,
+     4.18
+    ],
+    [
+     "costume",
+     4.18,
+     4.74
+    ],
+    [
+     "of",
+     4.74,
+     5.32
+    ],
+    [
+     "this",
+     5.32,
+     5.86
+    ],
+    [
+     "Polynesian",
+     5.86,
+     6.92
+    ],
+    [
+     "Disney",
+     6.92,
+     7.32
+    ],
+    [
+     "princess.",
+     7.32,
+     7.68
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 20,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "440e2e",
+   "line": "495892",
+   "src": "ea4b2d",
+   "in": 9.25,
+   "out": 10.03,
+   "look": null,
+   "alt": 0,
+   "text": "Who is Moana?",
+   "for_text": "Shot 1",
+   "words": [
+    [
+     "Who",
+     9.33,
+     9.43
+    ],
+    [
+     "is",
+     9.43,
+     9.59
+    ],
+    [
+     "Moana?",
+     9.59,
+     9.91
+    ]
+   ],
+   "score": 0.0,
+   "status": "incomplete",
+   "flags": [
+    "stopped before the end of the line"
+   ],
+   "missing": [
+    "shot",
+    "one"
+   ],
+   "extra": [
+    "who",
+    "is",
+    "moana"
+   ],
+   "usable": false,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "a0259e",
+   "line": null,
+   "src": "ea4b2d",
+   "in": 9.97,
+   "out": 11.07,
+   "look": null,
+   "alt": 0,
+   "text": "That's right, it's Moana.",
+   "for_text": null,
+   "words": [
+    [
+     "That's",
+     10.05,
+     10.27
+    ],
+    [
+     "right,",
+     10.27,
+     10.41
+    ],
+    [
+     "it's",
+     10.53,
+     10.61
+    ],
+    [
+     "Moana.",
+     10.61,
+     10.89
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 21,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "079377",
+   "line": null,
+   "src": "ea4b2d",
+   "in": 12.11,
+   "out": 13.19,
+   "look": null,
+   "alt": 0,
+   "text": "math and science, 400.",
+   "for_text": null,
+   "words": [
+    [
+     "math",
+     12.19,
+     12.39
+    ],
+    [
+     "and",
+     12.39,
+     12.51
+    ],
+    [
+     "science,",
+     12.51,
+     12.69
+    ],
+    [
+     "400.",
+     12.83,
+     13.01
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 22,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "6449e4",
+   "line": null,
+   "src": "ea4b2d",
+   "in": 13.86,
+   "out": 21.26,
+   "look": null,
+   "alt": 0,
+   "text": "On one March 14th, 3 -14, PBS Learning Media put out a video about this delicious -sounding mathematical constant.",
+   "for_text": null,
+   "words": [
+    [
+     "On",
+     13.94,
+     14.26
+    ],
+    [
+     "one",
+     14.26,
+     14.46
+    ],
+    [
+     "March",
+     14.46,
+     14.82
+    ],
+    [
+     "14th,",
+     14.82,
+     15.52
+    ],
+    [
+     "3",
+     15.68,
+     15.8
+    ],
+    [
+     "-14,",
+     15.8,
+     16.22
+    ],
+    [
+     "PBS",
+     16.54,
+     17.06
+    ],
+    [
+     "Learning",
+     17.06,
+     17.5
+    ],
+    [
+     "Media",
+     17.5,
+     17.9
+    ],
+    [
+     "put",
+     17.9,
+     18.16
+    ],
+    [
+     "out",
+     18.16,
+     18.28
+    ],
+    [
+     "a",
+     18.28,
+     18.4
+    ],
+    [
+     "video",
+     18.4,
+     18.64
+    ],
+    [
+     "about",
+     18.64,
+     18.9
+    ],
+    [
+     "this",
+     18.9,
+     19.14
+    ],
+    [
+     "delicious",
+     19.14,
+     19.58
+    ],
+    [
+     "-sounding",
+     19.58,
+     20.04
+    ],
+    [
+     "mathematical",
+     20.04,
+     20.56
+    ],
+    [
+     "constant.",
+     20.56,
+     21.08
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 23,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "baef46",
+   "line": null,
+   "src": "ea4b2d",
+   "in": 22.5,
+   "out": 23.3,
+   "look": null,
+   "alt": 0,
+   "text": "What is pop?",
+   "for_text": null,
+   "words": [
+    [
+     "What",
+     22.58,
+     22.78
+    ],
+    [
+     "is",
+     22.78,
+     22.9
+    ],
+    [
+     "pop?",
+     22.9,
+     23.12
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 24,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "d9d39e",
+   "line": "4c69cf",
+   "src": "ea4b2d",
+   "in": 23.59,
+   "out": 24.11,
+   "look": null,
+   "alt": 0,
+   "text": "Right.",
+   "for_text": "Shot 8",
+   "words": [
+    [
+     "Right.",
+     23.67,
+     23.93
+    ]
+   ],
+   "score": 0.667,
+   "status": "incomplete",
+   "flags": [
+    "only 50% of the line"
+   ],
+   "missing": [
+    "shot"
+   ],
+   "extra": [],
+   "usable": false,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "c37e03",
+   "line": null,
+   "src": "ea4b2d",
+   "in": 26.22,
+   "out": 27.76,
+   "look": null,
+   "alt": 0,
+   "text": "Earworm for 1 ,000.",
+   "for_text": null,
+   "words": [
+    [
+     "Earworm",
+     26.3,
+     26.94
+    ],
+    [
+     "for",
+     26.94,
+     27.12
+    ],
+    [
+     "1",
+     27.12,
+     27.32
+    ],
+    [
+     ",000.",
+     27.32,
+     27.58
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 25,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "599508",
+   "line": null,
+   "src": "ea4b2d",
+   "in": 28.36,
+   "out": 33.82,
+   "look": null,
+   "alt": 0,
+   "text": "The viral earworm, Dumb Ways to Do This, was created as part of a safety campaign from Melbourne Metro.",
+   "for_text": null,
+   "words": [
+    [
+     "The",
+     28.44,
+     28.52
+    ],
+    [
+     "viral",
+     28.52,
+     28.76
+    ],
+    [
+     "earworm,",
+     28.76,
+     29.36
+    ],
+    [
+     "Dumb",
+     29.36,
+     29.7
+    ],
+    [
+     "Ways",
+     29.7,
+     29.96
+    ],
+    [
+     "to",
+     29.96,
+     30.1
+    ],
+    [
+     "Do",
+     30.1,
+     30.22
+    ],
+    [
+     "This,",
+     30.22,
+     30.52
+    ],
+    [
+     "was",
+     30.68,
+     30.94
+    ],
+    [
+     "created",
+     30.94,
+     31.28
+    ],
+    [
+     "as",
+     31.28,
+     31.48
+    ],
+    [
+     "part",
+     31.48,
+     31.68
+    ],
+    [
+     "of",
+     31.68,
+     31.78
+    ],
+    [
+     "a",
+     31.78,
+     31.88
+    ],
+    [
+     "safety",
+     31.88,
+     32.18
+    ],
+    [
+     "campaign",
+     32.18,
+     32.6
+    ],
+    [
+     "from",
+     32.6,
+     32.94
+    ],
+    [
+     "Melbourne",
+     32.94,
+     33.2
+    ],
+    [
+     "Metro.",
+     33.2,
+     33.64
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 26,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "80c808",
+   "line": null,
+   "src": "ea4b2d",
+   "in": 35.02,
+   "out": 36.08,
+   "look": null,
+   "alt": 0,
+   "text": "What is, to die?",
+   "for_text": null,
+   "words": [
+    [
+     "What",
+     35.1,
+     35.34
+    ],
+    [
+     "is,",
+     35.34,
+     35.5
+    ],
+    [
+     "to",
+     35.6,
+     35.72
+    ],
+    [
+     "die?",
+     35.72,
+     35.96
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 27,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "f3aaa9",
+   "line": null,
+   "src": "ea4b2d",
+   "in": 36.02,
+   "out": 37.12,
+   "look": null,
+   "alt": 0,
+   "text": "Dumb ways to die.",
+   "for_text": null,
+   "words": [
+    [
+     "Dumb",
+     36.1,
+     36.34
+    ],
+    [
+     "ways",
+     36.34,
+     36.54
+    ],
+    [
+     "to",
+     36.54,
+     36.7
+    ],
+    [
+     "die.",
+     36.7,
+     36.96
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 28,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "1de578",
+   "line": null,
+   "src": "ea4b2d",
+   "in": 37.06,
+   "out": 37.82,
+   "look": null,
+   "alt": 0,
+   "text": "You get a thousand.",
+   "for_text": null,
+   "words": [
+    [
+     "You",
+     37.14,
+     37.18
+    ],
+    [
+     "get",
+     37.18,
+     37.34
+    ],
+    [
+     "a",
+     37.34,
+     37.42
+    ],
+    [
+     "thousand.",
+     37.42,
+     37.64
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 29,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "09aa29",
+   "line": null,
+   "src": "ea4b2d",
+   "in": 37.9,
+   "out": 39.54,
+   "look": null,
+   "alt": 0,
+   "text": "Do, uh, shorts for 800, please.",
+   "for_text": null,
+   "words": [
+    [
+     "Do,",
+     37.98,
+     38.14
+    ],
+    [
+     "uh,",
+     38.24,
+     38.38
+    ],
+    [
+     "shorts",
+     38.56,
+     38.74
+    ],
+    [
+     "for",
+     38.74,
+     38.92
+    ],
+    [
+     "800,",
+     38.92,
+     39.12
+    ],
+    [
+     "please.",
+     39.3,
+     39.36
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 30,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "353a53",
+   "line": null,
+   "src": "ea4b2d",
+   "in": 40.68,
+   "out": 44.74,
+   "look": null,
+   "alt": 0,
+   "text": "An HB or an HG refers to either one of these friendly relations.",
+   "for_text": null,
+   "words": [
+    [
+     "An",
+     40.76,
+     40.76
+    ],
+    [
+     "HB",
+     40.76,
+     41.1
+    ],
+    [
+     "or",
+     41.1,
+     41.5
+    ],
+    [
+     "an",
+     41.5,
+     41.72
+    ],
+    [
+     "HG",
+     41.72,
+     42.18
+    ],
+    [
+     "refers",
+     42.18,
+     42.76
+    ],
+    [
+     "to",
+     42.76,
+     42.98
+    ],
+    [
+     "either",
+     42.98,
+     43.28
+    ],
+    [
+     "one",
+     43.28,
+     43.48
+    ],
+    [
+     "of",
+     43.48,
+     43.6
+    ],
+    [
+     "these",
+     43.6,
+     43.84
+    ],
+    [
+     "friendly",
+     43.84,
+     44.22
+    ],
+    [
+     "relations.",
+     44.22,
+     44.56
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 31,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "1a9cbf",
+   "line": null,
+   "src": "ea4b2d",
+   "in": 47.24,
+   "out": 47.96,
+   "look": null,
+   "alt": 0,
+   "text": "Uh -huh.",
+   "for_text": null,
+   "words": [
+    [
+     "Uh",
+     47.32,
+     47.66
+    ],
+    [
+     "-huh.",
+     47.66,
+     47.78
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 32,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "4cdfec",
+   "line": null,
+   "src": "ea4b2d",
+   "in": 48.81,
+   "out": 49.93,
+   "look": null,
+   "alt": 0,
+   "text": "That would be a homeboy and a.",
+   "for_text": null,
+   "words": [
+    [
+     "That",
+     48.89,
+     48.97
+    ],
+    [
+     "would",
+     48.97,
+     49.03
+    ],
+    [
+     "be",
+     49.03,
+     49.11
+    ],
+    [
+     "a",
+     49.11,
+     49.21
+    ],
+    [
+     "homeboy",
+     49.21,
+     49.55
+    ],
+    [
+     "and",
+     49.55,
+     49.75
+    ],
+    [
+     "a.",
+     49.75,
+     49.75
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 33,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "653fe8",
+   "line": null,
+   "src": "ea4b2d",
+   "in": 50.15,
+   "out": 50.83,
+   "look": null,
+   "alt": 0,
+   "text": "Boom, girl.",
+   "for_text": null,
+   "words": [
+    [
+     "Boom,",
+     50.23,
+     50.45
+    ],
+    [
+     "girl.",
+     50.45,
+     50.65
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 34,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "cd41f7",
+   "line": null,
+   "src": "ea4b2d",
+   "in": 51.94,
+   "out": 53.44,
+   "look": null,
+   "alt": 0,
+   "text": "You guys say that, HB, HG?",
+   "for_text": null,
+   "words": [
+    [
+     "You",
+     52.02,
+     52.16
+    ],
+    [
+     "guys",
+     52.16,
+     52.3
+    ],
+    [
+     "say",
+     52.3,
+     52.44
+    ],
+    [
+     "that,",
+     52.44,
+     52.52
+    ],
+    [
+     "HB,",
+     52.64,
+     52.94
+    ],
+    [
+     "HG?",
+     53.06,
+     53.36
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 35,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "4d48d9",
+   "line": null,
+   "src": "ea4b2d",
+   "in": 53.38,
+   "out": 55.0,
+   "look": null,
+   "alt": 0,
+   "text": "You're my HB, Ken, all of a sudden.",
+   "for_text": null,
+   "words": [
+    [
+     "You're",
+     53.46,
+     53.58
+    ],
+    [
+     "my",
+     53.58,
+     53.7
+    ],
+    [
+     "HB,",
+     53.7,
+     54.08
+    ],
+    [
+     "Ken,",
+     54.12,
+     54.28
+    ],
+    [
+     "all",
+     54.44,
+     54.54
+    ],
+    [
+     "of",
+     54.54,
+     54.64
+    ],
+    [
+     "a",
+     54.64,
+     54.68
+    ],
+    [
+     "sudden.",
+     54.68,
+     54.82
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 36,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "45b526",
+   "line": null,
+   "src": "ea4b2d",
+   "in": 56.78,
+   "out": 58.48,
+   "look": null,
+   "alt": 0,
+   "text": "My day one, back to you.",
+   "for_text": null,
+   "words": [
+    [
+     "My",
+     56.86,
+     57.0
+    ],
+    [
+     "day",
+     57.0,
+     57.16
+    ],
+    [
+     "one,",
+     57.16,
+     57.52
+    ],
+    [
+     "back",
+     57.68,
+     58.08
+    ],
+    [
+     "to",
+     58.08,
+     58.18
+    ],
+    [
+     "you.",
+     58.18,
+     58.3
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 37,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "f2298b",
+   "line": null,
+   "src": "ea4b2d",
+   "in": 59.59,
+   "out": 61.55,
+   "look": null,
+   "alt": 0,
+   "text": "Shorts for one thousand plates.",
+   "for_text": null,
+   "words": [
+    [
+     "Shorts",
+     59.67,
+     60.27
+    ],
+    [
+     "for",
+     60.27,
+     60.41
+    ],
+    [
+     "one",
+     60.41,
+     60.65
+    ],
+    [
+     "thousand",
+     60.65,
+     61.09
+    ],
+    [
+     "plates.",
+     61.09,
+     61.37
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 38,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "0c75eb",
+   "line": null,
+   "src": "ea4b2d",
+   "in": 62.7,
+   "out": 67.46,
+   "look": null,
+   "alt": 0,
+   "text": "Is this acronym popularized in 2026 to reference people.",
+   "for_text": null,
+   "words": [
+    [
+     "Is",
+     62.78,
+     63.22
+    ],
+    [
+     "this",
+     63.22,
+     63.6
+    ],
+    [
+     "acronym",
+     63.6,
+     64.04
+    ],
+    [
+     "popularized",
+     64.04,
+     64.84
+    ],
+    [
+     "in",
+     64.84,
+     64.94
+    ],
+    [
+     "2026",
+     64.94,
+     65.6
+    ],
+    [
+     "to",
+     65.6,
+     66.1
+    ],
+    [
+     "reference",
+     66.1,
+     66.44
+    ],
+    [
+     "people.",
+     66.44,
+     67.28
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 39,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "d5955b",
+   "line": null,
+   "src": "ea4b2d",
+   "in": 70.12,
+   "out": 72.24,
+   "look": null,
+   "alt": 0,
+   "text": "I know this, I know this, uh, what is Lark Bay?",
+   "for_text": null,
+   "words": [
+    [
+     "I",
+     70.2,
+     70.42
+    ],
+    [
+     "know",
+     70.42,
+     70.54
+    ],
+    [
+     "this,",
+     70.54,
+     70.68
+    ],
+    [
+     "I",
+     70.74,
+     70.84
+    ],
+    [
+     "know",
+     70.84,
+     70.92
+    ],
+    [
+     "this,",
+     70.92,
+     71.04
+    ],
+    [
+     "uh,",
+     71.1,
+     71.2
+    ],
+    [
+     "what",
+     71.3,
+     71.72
+    ],
+    [
+     "is",
+     71.72,
+     71.82
+    ],
+    [
+     "Lark",
+     71.82,
+     72.02
+    ],
+    [
+     "Bay?",
+     72.02,
+     72.1
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 40,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "1b985f",
+   "line": null,
+   "src": "ea4b2d",
+   "in": 72.18,
+   "out": 73.42,
+   "look": null,
+   "alt": 0,
+   "text": "Yes, they're Lark Berries.",
+   "for_text": null,
+   "words": [
+    [
+     "Yes,",
+     72.26,
+     72.5
+    ],
+    [
+     "they're",
+     72.62,
+     72.76
+    ],
+    [
+     "Lark",
+     72.76,
+     72.96
+    ],
+    [
+     "Berries.",
+     72.96,
+     73.24
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 41,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "31a391",
+   "line": null,
+   "src": "ea4b2d",
+   "in": 74.5,
+   "out": 75.38,
+   "look": null,
+   "alt": 0,
+   "text": "Where'd you now, Andrea?",
+   "for_text": null,
+   "words": [
+    [
+     "Where'd",
+     74.58,
+     74.84
+    ],
+    [
+     "you",
+     74.84,
+     74.88
+    ],
+    [
+     "now,",
+     74.88,
+     75.12
+    ],
+    [
+     "Andrea?",
+     75.16,
+     75.2
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 42,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "ea521f",
+   "line": null,
+   "src": "ea4b2d",
+   "in": 75.44,
+   "out": 77.2,
+   "look": null,
+   "alt": 0,
+   "text": "Oh, can I get my real room for $600?",
+   "for_text": null,
+   "words": [
+    [
+     "Oh,",
+     75.52,
+     75.52
+    ],
+    [
+     "can",
+     75.68,
+     75.78
+    ],
+    [
+     "I",
+     75.78,
+     75.86
+    ],
+    [
+     "get",
+     75.86,
+     75.98
+    ],
+    [
+     "my",
+     75.98,
+     76.18
+    ],
+    [
+     "real",
+     76.18,
+     76.3
+    ],
+    [
+     "room",
+     76.3,
+     76.56
+    ],
+    [
+     "for",
+     76.56,
+     76.78
+    ],
+    [
+     "$600?",
+     76.78,
+     77.02
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 43,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
    "title": "",
    "game": null,
    "spice": null,
@@ -1762,8 +4508,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.883,
+   "eye": 0.67,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -1827,8 +4573,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.98,
+   "eye": 0.94,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -1937,8 +4683,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.958,
+   "eye": 0.88,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -2032,8 +4778,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.947,
+   "eye": 0.85,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -2117,8 +4863,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.963,
+   "eye": 0.89,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -2187,8 +4933,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.968,
+   "eye": 0.91,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -2257,8 +5003,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.984,
+   "eye": 0.95,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -2342,8 +5088,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.964,
+   "eye": 0.9,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -2502,8 +5248,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.96,
+   "eye": 0.89,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -2582,8 +5328,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.917,
+   "eye": 0.76,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -2682,8 +5428,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.989,
+   "eye": 0.97,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -2752,8 +5498,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.976,
+   "eye": 0.93,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -2817,8 +5563,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.958,
+   "eye": 0.88,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -2892,8 +5638,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.977,
+   "eye": 0.94,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -2997,8 +5743,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.909,
+   "eye": 0.74,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -3142,8 +5888,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.978,
+   "eye": 0.94,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -3252,8 +5998,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.974,
+   "eye": 0.93,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -3337,8 +6083,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.883,
+   "eye": 0.67,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -3402,8 +6148,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.98,
+   "eye": 0.94,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -3512,8 +6258,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.958,
+   "eye": 0.88,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -3607,8 +6353,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.947,
+   "eye": 0.85,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -3692,8 +6438,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.963,
+   "eye": 0.89,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -3762,8 +6508,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.968,
+   "eye": 0.91,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -3832,8 +6578,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.985,
+   "eye": 0.96,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -3917,8 +6663,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.964,
+   "eye": 0.9,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -4077,8 +6823,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.96,
+   "eye": 0.89,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -4157,8 +6903,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.924,
+   "eye": 0.78,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -4257,8 +7003,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.989,
+   "eye": 0.97,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -4327,8 +7073,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.976,
+   "eye": 0.93,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -4392,8 +7138,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.964,
+   "eye": 0.9,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -4467,8 +7213,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.977,
+   "eye": 0.94,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -4572,8 +7318,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.909,
+   "eye": 0.74,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -4717,8 +7463,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.977,
+   "eye": 0.93,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -4827,8 +7573,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.974,
+   "eye": 0.93,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -4912,8 +7658,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.786,
+   "eye": 0.39,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -4977,8 +7723,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.971,
+   "eye": 0.92,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -5087,8 +7833,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.888,
+   "eye": 0.68,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -5182,8 +7928,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.965,
+   "eye": 0.9,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -5267,8 +8013,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.976,
+   "eye": 0.93,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -5337,8 +8083,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.936,
+   "eye": 0.82,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -5407,8 +8153,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.98,
+   "eye": 0.94,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -5492,8 +8238,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.921,
+   "eye": 0.77,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -5652,8 +8398,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.9,
+   "eye": 0.72,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -5732,8 +8478,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.985,
+   "eye": 0.96,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -5832,8 +8578,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.959,
+   "eye": 0.88,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -5902,8 +8648,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.97,
+   "eye": 0.91,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -5967,8 +8713,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.897,
+   "eye": 0.71,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -6042,8 +8788,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.96,
+   "eye": 0.88,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -6147,8 +8893,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.931,
+   "eye": 0.8,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -6292,8 +9038,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.97,
+   "eye": 0.91,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -6402,8 +9148,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.866,
+   "eye": 0.62,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -6487,8 +9233,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.786,
+   "eye": 0.39,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -6552,8 +9298,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.971,
+   "eye": 0.92,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -6662,8 +9408,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.888,
+   "eye": 0.68,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -6757,8 +9503,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.965,
+   "eye": 0.9,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -6842,8 +9588,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.976,
+   "eye": 0.93,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -6912,8 +9658,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.936,
+   "eye": 0.82,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -6982,8 +9728,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.979,
+   "eye": 0.94,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -7067,8 +9813,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.921,
+   "eye": 0.77,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -7227,8 +9973,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.899,
+   "eye": 0.71,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -7307,8 +10053,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.985,
+   "eye": 0.96,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -7407,8 +10153,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.963,
+   "eye": 0.89,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -7477,8 +10223,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.97,
+   "eye": 0.91,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -7542,8 +10288,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.89,
+   "eye": 0.69,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -7617,8 +10363,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.958,
+   "eye": 0.88,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -7722,8 +10468,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.934,
+   "eye": 0.81,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -7867,8 +10613,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.97,
+   "eye": 0.91,
    "variant": null,
    "speed": 1,
    "bright": 0,
@@ -7977,8 +10723,8 @@
    "splits": [],
    "sfx": [],
    "fx": [],
-   "quality": null,
-   "eye": null,
+   "quality": 0.866,
+   "eye": 0.62,
    "variant": null,
    "speed": 1,
    "bright": 0,
