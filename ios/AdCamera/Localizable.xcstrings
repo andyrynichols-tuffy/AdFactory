@@ -872,6 +872,16 @@
         }
       }
     },
+    "No script for this project.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este projeto não tem roteiro."
+          }
+        }
+      }
+    },
     "No sound": {
       "localizations": {
         "pt-BR": {
@@ -998,6 +1008,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Uma linha por linha do roteiro…"
+          }
+        }
+      }
+    },
+    "Open a project on the phone and tap Film: the camera and the script show up here.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abra um projeto no celular e toque em Filmar: a câmera e o roteiro aparecem aqui."
           }
         }
       }
@@ -1578,6 +1598,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "O endereço do Ad Factory não está certo. Confira nos Ajustes."
+          }
+        }
+      }
+    },
+    "The microphone is off for Ad Camera, so videos won't have sound.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O microfone está desligado para o Ad Camera, então os vídeos ficarão sem som."
           }
         }
       }

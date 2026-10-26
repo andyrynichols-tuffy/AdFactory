@@ -15,6 +15,7 @@ struct CameraView: View {
     @EnvironmentObject private var clips: ClipStore
     @Environment(\.dismiss) private var dismiss
     @StateObject private var camera = CameraController()
+    @ObservedObject private var big = BigScreen.shared
 
     @AppStorage("zones") private var showZones = true
     @AppStorage("grid") private var showGrid = false
@@ -44,7 +45,7 @@ struct CameraView: View {
 
     private var tripod: Bool { layout == "tripod" }
     private var prompterOn: Bool { tripod ? tripodPrompter : handheldPrompter }
-    private var showPrompter: Bool { prompterOn && !project.lines.isEmpty }
+    private var showPrompter: Bool { prompterOn && !project.lines.isEmpty && !big.connected }   // on a big screen instead
     private var countdown: Int { tripod ? tripodCountdown : handheldCountdown }
 
     var body: some View {
@@ -90,12 +91,18 @@ struct CameraView: View {
             if tripod { camera.position = .back }
             camera.start()
             UIApplication.shared.isIdleTimerDisabled = true
+            (big.zones, big.safe, big.showZones, big.line) = (model.zones, model.safe, showZones, line)
+            (big.camera, big.project) = (camera, project)
         }
         .onDisappear {
             countTask?.cancel()
             camera.stop()
             UIApplication.shared.isIdleTimerDisabled = false
+            (big.camera, big.project, big.counting) = (nil, nil, nil)
         }
+        .onChange(of: line) { big.line = line }
+        .onChange(of: counting) { big.counting = counting }
+        .onChange(of: showZones) { big.showZones = showZones }
         .sheet(isPresented: $showSettings, onDismiss: { camera.reconfigure() }) {
             SettingsView().environmentObject(model)
         }
@@ -134,6 +141,7 @@ struct CameraView: View {
             if let n = counting { countdownNumber(n) }
             Spacer()
             VStack(spacing: 12) {
+                lineStepper
                 HStack(spacing: 8) {
                     zonesTool
                     prompterTool
@@ -222,6 +230,7 @@ struct CameraView: View {
         .clipped()
         .position(x: f.below.midX, y: f.below.midY)
 
+        lineStepper.position(x: f.preview.midX, y: f.preview.maxY - 30)
         if let n = counting {
             countdownNumber(n).position(x: f.preview.midX, y: f.preview.midY)
         }
@@ -427,10 +436,33 @@ struct CameraView: View {
 
     @ViewBuilder
     private var prompterTool: some View {
-        if !project.lines.isEmpty {
+        if !project.lines.isEmpty && !big.connected {
             tool("text.bubble", on: prompterOn, label: Text("Teleprompter")) {
                 if tripod { tripodPrompter.toggle() } else { handheldPrompter.toggle() }
             }
+        }
+    }
+
+    /// With the script on a big screen, the phone keeps just the line it's on, to step through.
+    @ViewBuilder
+    private var lineStepper: some View {
+        if big.connected, !project.lines.isEmpty {
+            let i = max(0, min(line, project.lines.count - 1))
+            HStack(spacing: 10) {
+                Button { line = max(0, i - 1) } label: {
+                    Image(systemName: "chevron.left").font(.headline).frame(width: 44, height: 38)
+                }
+                .disabled(i == 0)
+                .accessibilityLabel(Text("Previous line"))
+                Text("Line \(i + 1) of \(project.lines.count)").font(.subheadline.bold().monospacedDigit())
+                Button { line = min(project.lines.count - 1, i + 1) } label: {
+                    Image(systemName: "chevron.right").font(.headline).frame(width: 44, height: 38)
+                }
+                .disabled(i >= project.lines.count - 1)
+                .accessibilityLabel(Text("Next line"))
+            }
+            .padding(.horizontal, 4)
+            .background(.black.opacity(0.55), in: Capsule())
         }
     }
 

@@ -31,6 +31,17 @@ struct AdCameraApp: App {
 }
 
 final class AppDelegate: NSObject, UIApplicationDelegate {
+    /// A TV, Mac or monitor showing the phone gets its own window: the camera and the script
+    /// big (BigScreen). The phone's own window stays SwiftUI's.
+    func application(_ application: UIApplication, configurationForConnecting session: UISceneSession,
+                     options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        let config = UISceneConfiguration(name: nil, sessionRole: session.role)
+        if session.role == .windowExternalDisplayNonInteractive {
+            config.delegateClass = BigScreenSceneDelegate.self
+        }
+        return config
+    }
+
     /// Uploads keep going after the app is closed; iOS wakes the app when they finish.
     func application(_ application: UIApplication, handleEventsForBackgroundURLSession identifier: String,
                      completionHandler: @escaping () -> Void) {
