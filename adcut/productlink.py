@@ -11,6 +11,7 @@ import re
 
 from supercut import analytics
 
+VIDEO_ID_RX = re.compile(r"/video/(\d{8,})")  # short links can land on tiktok.com/@/video/<id>
 PRODUCT_RX = re.compile(r"(?:/pdp/(?:[^/?#]+/)?|/view/product/|product_id=)(\d{12,})")
 MAX_FILLS = 8
 
@@ -131,9 +132,9 @@ def from_link(url: str) -> dict:
     url = url.strip()
     if not re.match(r"https?://", url):
         raise ValueError("Paste a full link (https://…)")
-    if "tiktok.com" in url and (analytics.VIDEO_RX.search(url) or re.search(r"//(vm|vt)\.tiktok\.com/|tiktok\.com/t/", url)):
+    if "tiktok.com" in url and (VIDEO_ID_RX.search(url) or re.search(r"//(vm|vt)\.tiktok\.com/|tiktok\.com/t/", url)):
         final, _ = analytics._get(url)  # short links: see where they go
-        if analytics.VIDEO_RX.search(final):
+        if VIDEO_ID_RX.search(final):
             tagged = video_products(final)
             if not tagged:
                 raise ValueError("No product is tagged in that video")
