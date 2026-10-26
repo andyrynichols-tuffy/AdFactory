@@ -431,7 +431,8 @@ async function newVideo(pre = {}) {
     const sug = [...new Set([p?.name, p?.brand, p?.category, p?.price, ...Object.values(p?.fills || {})].filter(Boolean))];
     // from a video: every key word starts as the video said it; a typed-in script: from the product where it can
     const head = on
-      ? `<div class="nvFHead"><span><b>Key words</b> <span class="fhint">as the video says them: change any, or swap them for the product</span></span>
+      ? `<div class="nvFHead"><span><b>Key words</b> <span class="fhint">as the video says them: change any, or swap them for the product</span>
+            <button type="button" class="linkish" data-q="adjust" title="Mark other words, or unmark wrong ones, in the script builder">🧩 Adjust key words</button></span>
           <span>${p ? `<button type="button" data-q="swapall" title="Put ${esc(p.name)}'s details in where the app knows them">⇄ Swap for ${esc(p.name)}</button>` : ""}
           ${p ? `<button type="button" class="aiBtn" data-q="aifill" title="Claude rewrites the key words you haven't changed, for this product">✨ AI: rewrite them for ${esc(p.name)}</button>` : ""}</span></div>`
       : `<div class="nvFHead"><span class="fhint">Fill-ins (from the product where it has them):</span>
@@ -439,7 +440,8 @@ async function newVideo(pre = {}) {
     $(".nvFills", dlg).innerHTML = phs.length ? head + `<datalist id="nvSug">${sug.map(v => `<option value="${esc(v)}">`).join("")}</datalist>` + phs.map(k => {
       const v = keep[k] ?? (on ? orig[k] ?? auto[k] : auto[k] ?? orig[k]) ?? "";
       return `<label class="nvFill"><code>{${esc(k)}}</code><input data-ph="${esc(k)}" list="nvSug" value="${esc(v)}" placeholder="${orig[k] ? `was: ${esc(orig[k])}` : "type it"}">
-        ${orig[k] ? `<button type="button" class="nvReset" data-reset="${esc(k)}" title="Back to the video's words: ${esc(orig[k])}">↺</button>` : ""}</label>`;
+        ${orig[k] ? `<button type="button" class="nvReset" data-reset="${esc(k)}" title="Back to the video's words: ${esc(orig[k])}">↺</button>` : ""}
+        ${on && orig[k] ? `<button type="button" class="nvReset" data-unmark="${esc(k)}" title="Not a key word: keep what the video says and stop marking it">✕</button>` : ""}</label>`;
     }).join("") : "";
     $$(".nvFills input", dlg).forEach(rowState);
     drawPreview();
@@ -518,6 +520,26 @@ async function newVideo(pre = {}) {
     const q = e.target.closest("[data-q]")?.dataset.q;
     if (q === "product") getProduct();
     if (q === "video") getScript();
+    const um = e.target.closest("[data-unmark]");
+    if (um && lib) {  // not a key word after all ("in case you need to adjust"): back into the script as said
+      const slot = um.dataset.unmark, word = was()[slot];
+      const r = await api(`/api/shop/scriptgen/${lib.id}/marks`, { json: { marks: (lib.marks || []).filter(m => m.slot !== slot) } });
+      Object.assign(lib, r);
+      delete keep[slot];
+      el("script_text").value = lib.text; drawFills();
+      kmsg(`“${esc(word)}” <span>isn't a key word any more.</span>`);
+      return;
+    }
+    if (q === "adjust" && lib) {  // the full editor (select words to mark, click a highlight to unmark)
+      const id = lib.id;
+      return openBuilder(id, async () => {
+        await shopLoad();
+        lib = byId("scripts", id);
+        for (const k of Object.keys(keep)) if (!(lib?.marks || []).some(m => m.slot === k)) delete keep[k];
+        if (lib) el("script_text").value = lib.text;
+        drawFills();
+      });
+    }
     const rs = e.target.closest("[data-reset]");
     if (rs) { const i = $(`.nvFills [data-ph="${CSS.escape(rs.dataset.reset)}"]`, dlg); i.value = was()[rs.dataset.reset] || ""; rowState(i); drawPreview(); }
     if (q === "swapall") {  // the product's own details where the app knows them; the rest stay as the video said

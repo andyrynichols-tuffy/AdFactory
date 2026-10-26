@@ -62,7 +62,7 @@ async function scriptFromLink() {
 }
 
 // ---------- the builder ----------
-async function openBuilder(sid) {
+async function openBuilder(sid, onClose) {
   if (!SHOP.d) await shopLoad();
   const [s, prods] = await Promise.all([api(`/api/shop/scriptgen/script/${sid}`), api("/api/shop/scriptgen/products"), aiReady()]);
   SB.s = s; SB.prods = prods;
@@ -116,7 +116,7 @@ async function openBuilder(sid) {
     $$(".sbShots li", dlg).forEach((li, k) => li.classList.toggle("now", SB.s.shots[k].t0 <= t && t < SB.s.shots[k].t1));
     $$(".sbLn", dlg).forEach((ln, i) => { const l = SB.s.lines[i]; ln.classList.toggle("now", l.t0 != null && l.t0 <= t && t <= l.t1 + 0.2); });
   });
-  dlg.onclose = async () => { clearTimeout(SB.saveT); await sbSaveNow(); dlg.remove(); SB.dlg = null; shopRefresh(); };
+  dlg.onclose = async () => { clearTimeout(SB.saveT); await sbSaveNow(); dlg.remove(); SB.dlg = null; shopRefresh(); onClose?.(); };
   dlg.addEventListener("cancel", e => { if (!$(".sbPop", dlg).hidden) { e.preventDefault(); sbPopHide(); } });
   dlg.showModal();
 }
