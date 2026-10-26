@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 6,
+ "rev": 14,
  "title": "HM Baggy Sweats THall 10.26.26",
  "created": 1793056500.1949503,
  "product": {
@@ -14,7 +14,34 @@
   "file": "",
   "notes": ""
  },
- "sources": [],
+ "sources": [
+  {
+   "id": "bc4c83",
+   "file": "C:\\Users\\thecc\\MemeSupercutData\\ads\\uploads\\hm-baggy-sweats-thall-10-26-26\\HM Baggy Sweats THall 10.26.26 2026-10-26 18.26.01.mov",
+   "name": "HM Baggy Sweats THall 10.26.26 2026-10-26 18.26.01.mov",
+   "status": "ready",
+   "error": null,
+   "batch": 1,
+   "looks": [],
+   "key": "b285217bb21134",
+   "duration": 12.883333,
+   "width": 3840,
+   "height": 2160
+  },
+  {
+   "id": "93a5cb",
+   "file": "C:\\Users\\thecc\\MemeSupercutData\\ads\\uploads\\hm-baggy-sweats-thall-10-26-26\\HM Baggy Sweats THall 10.26.26 2026-10-26 18.47.17.mov",
+   "name": "HM Baggy Sweats THall 10.26.26 2026-10-26 18.47.17.mov",
+   "status": "ready",
+   "error": null,
+   "batch": 2,
+   "looks": [],
+   "key": "135f84898b5a1e",
+   "duration": 3.148333,
+   "width": 3840,
+   "height": 2160
+  }
+ ],
  "script": [
   {
    "id": "d7c100",
@@ -242,7 +269,143 @@
   }
  ],
  "script_guessed": false,
- "takes": [],
+ "takes": [
+  {
+   "id": "41c1df",
+   "line": null,
+   "src": "93a5cb",
+   "in": 0.97,
+   "out": 2.79,
+   "look": null,
+   "alt": 0,
+   "text": "Ba -ba -ba -ba -ba -ba -ba.",
+   "for_text": null,
+   "words": [
+    [
+     "Ba",
+     1.05,
+     1.33
+    ],
+    [
+     "-ba",
+     1.33,
+     1.47
+    ],
+    [
+     "-ba",
+     1.47,
+     1.75
+    ],
+    [
+     "-ba",
+     1.75,
+     2.07
+    ],
+    [
+     "-ba",
+     2.07,
+     2.31
+    ],
+    [
+     "-ba",
+     2.31,
+     2.49
+    ],
+    [
+     "-ba.",
+     2.49,
+     2.61
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "f63179",
+   "line": null,
+   "src": "bc4c83",
+   "in": 9.54,
+   "out": 12.04,
+   "look": null,
+   "alt": 0,
+   "text": "Hello, hello, hello, hello.",
+   "for_text": null,
+   "words": [
+    [
+     "Hello,",
+     9.62,
+     9.96
+    ],
+    [
+     "hello,",
+     10.1,
+     10.62
+    ],
+    [
+     "hello,",
+     10.88,
+     11.32
+    ],
+    [
+     "hello.",
+     11.62,
+     11.86
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  }
+ ],
  "hooks": [],
  "cta": "",
  "style": {
@@ -330,7 +493,7 @@
  "skip": [],
  "mix": null,
  "mix_auto": true,
- "batch_note": "",
+ "batch_note": "New footage filled in what the earlier footage was missing, so everything was re-cut together.",
  "voiceover": null,
  "voiceovers": [],
  "from_inbox": false,
