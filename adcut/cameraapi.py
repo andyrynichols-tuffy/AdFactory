@@ -3,7 +3,7 @@ making a new one. Footage comes back through the inbox upload (/api/inbox/upload
 so the camera's clips land in the shoot's own OneDrive folder and get pre-cut like any drop."""
 from fastapi import APIRouter, Body, HTTPException
 
-from . import layout, shop
+from . import layout, shop, store
 
 router = APIRouter(prefix="/api/camera")
 BUSY = lambda: set()  # server.py points this at the shoots with a job running
@@ -36,6 +36,24 @@ def projects():
         "accounts": [{"id": a["id"], "name": a["name"], "handle": a["handle"]} for a in d["accounts"]],
         "zones": layout.UI_ZONES, "safe": layout.SAFE,
     }
+
+
+@router.get("/projects/{sid}")
+def project(sid: str):
+    """One project's page on the phone: its clips in Ad Factory (with thumbnails) and how
+    far the edit is (videos cut, saved)."""
+    try:
+        s = store.load(sid)
+    except (ValueError, OSError):
+        raise HTTPException(404, f"no shoot {sid}")
+    clips = []
+    for x in s["sources"]:
+        ready = x.get("status") == "ready" and x.get("key")
+        t = min(1.0, (x.get("duration") or 2) / 2)
+        clips.append({"id": x["id"], "name": x["name"], "status": x.get("status") or "", "duration": x.get("duration") or 0,
+                      "batch": x.get("batch") or 1, "thumb": f"/api/thumb/{x['key']}?t={t:.1f}" if ready else None})
+    return {**_project(shop.load(), sid, s, BUSY()), "sources": clips,
+            "videos": len(store.videos(s)["videos"]), "saved": len(s.get("saved") or {})}
 
 
 @router.post("/projects")
