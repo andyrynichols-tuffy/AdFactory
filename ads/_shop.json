@@ -1,6 +1,28 @@
 {
- "accounts": [],
- "creators": [],
+ "accounts": [
+  {
+   "name": "AndysBestFinds",
+   "handle": "@andysbestfinds",
+   "email": "",
+   "login": "email",
+   "creator": "9d770c",
+   "color": "#736eaf",
+   "notes": "",
+   "id": "c4a9a3",
+   "created": 1793054803.2018495,
+   "updated": 1793054824.3770068
+  }
+ ],
+ "creators": [
+  {
+   "name": "Andy",
+   "color": "#4dabf7",
+   "notes": "",
+   "id": "9d770c",
+   "created": 1793054814.2534318,
+   "updated": 1793054814.2534318
+  }
+ ],
  "products": [
   {
    "name": "Flameless candle",
@@ -136,6 +158,30 @@
    "id": "2973da",
    "created": 1792860246.019201,
    "updated": 1792860246.019201
+  },
+  {
+   "name": "H&M Loose Fit Sweatpants",
+   "brand": "H&M",
+   "link": "https://shop.tiktok.com/us/pdp/1732146858012217649",
+   "image": "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/941bcc783fe44df9bc99dcfa542f6944~tplv-fhlh96nyum-resize-webp:260:260.webp?dr=12185&t=555f072d&ps=933b5bde&shp=7745054a&shcp=9b759fb9&idc=useast5&from=2001012042",
+   "price": "$35.98",
+   "commission": "",
+   "category": "Men's Jeans",
+   "fills": {
+    "clothing type": "Casual",
+    "material": "cotton",
+    "closure type": "Regular waist",
+    "fit": "Loose fit",
+    "inseam style": "Sweatpants",
+    "design": "Sweatpants",
+    "pattern": "Solid colour",
+    "style": "Sweatpants"
+   },
+   "notes": "H&M loose fit sweatpants in heavyweight cotton blend with a soft brushed inside. Covered elastication, drawstring waist, and side pockets for casual wear.",
+   "archived": false,
+   "id": "c9a20a",
+   "created": 1793054160.07531,
+   "updated": 1793054160.07531
   }
  ],
  "orders": [],
@@ -788,7 +834,7 @@
    "from_template": null,
    "id": "792b65",
    "created": 1792956111.0962741,
-   "updated": 1792957271.6589572
+   "updated": 1793055616.8381002
   },
   {
    "title": "Old Navy Relaxed Shirt · Oct 25",
@@ -806,6 +852,240 @@
    "id": "5bf8d8",
    "created": 1792981439.034581,
    "updated": 1792981439.034581
+  },
+  {
+   "title": "@thallsupply · Oct 26",
+   "text": "So H &M\njust dropped gray and black\nbaggy {feature 1} {item 2} on their Christmas sale.\nAnd now you don't just get one,\nbut you can actually get two pairs of the relaxed baggy fit {item 2} for less than what one usually costs by itself.\nObviously H &M is a known brand for their quality.\nYou get an elastic waistband, drawstrings in the front in case you need to adjust,\ntwo super deep pockets in the front, and the super relaxed baggy fit with the wide leg openings.\nThe best part is that these fit pretty true to size.\nI'm 5 '8\", 145, and this is what an extra small looks like on me.\nBut if you need any help on sizing, let me know down in the comments below.\nIn stores, these {item 2} are over {price} a piece.\nBut on TikTok, you can get them for less than {price 2} and you get {deal}.\nSo if you guys are wanting some good blank {item} for this fall and winter, I'm going to drop the best\nlink for it at the bottom of this video.\nBut I'd be quick before they sell out.",
+   "tags": [],
+   "product": null,
+   "notes": "From https://www.tiktok.com/@thallsupply/video/7692813589702397214",
+   "from_shoot": null,
+   "edited": false,
+   "lines": [
+    {
+     "text": "So H &M",
+     "t0": 0.0,
+     "t1": 0.82
+    },
+    {
+     "text": "just dropped gray and black",
+     "t0": 0.82,
+     "t1": 2.38
+    },
+    {
+     "text": "baggy relaxed fit sweatpants on their Christmas sale.",
+     "t0": 2.38,
+     "t1": 5.04
+    },
+    {
+     "text": "And now you don't just get one,",
+     "t0": 5.2,
+     "t1": 6.28
+    },
+    {
+     "text": "but you can actually get two pairs of the relaxed baggy fit sweatpants for less than what one usually costs by itself.",
+     "t0": 6.4,
+     "t1": 12.04
+    },
+    {
+     "text": "Obviously H &M is a known brand for their quality.",
+     "t0": 12.24,
+     "t1": 14.6
+    },
+    {
+     "text": "You get an elastic waistband, drawstrings in the front in case you need to adjust,",
+     "t0": 14.82,
+     "t1": 18.32
+    },
+    {
+     "text": "two super deep pockets in the front, and the super relaxed baggy fit with the wide leg openings.",
+     "t0": 18.56,
+     "t1": 23.54
+    },
+    {
+     "text": "The best part is that these fit pretty true to size.",
+     "t0": 23.7,
+     "t1": 25.72
+    },
+    {
+     "text": "I'm 5 '8\", 145, and this is what an extra small looks like on me.",
+     "t0": 25.86,
+     "t1": 29.18
+    },
+    {
+     "text": "But if you need any help on sizing, let me know down in the comments below.",
+     "t0": 29.18,
+     "t1": 31.92
+    },
+    {
+     "text": "In stores, these sweatpants are over $60 a piece.",
+     "t0": 32.1,
+     "t1": 34.52
+    },
+    {
+     "text": "But on TikTok, you can get them for less than $30 and you get free shipping.",
+     "t0": 34.66,
+     "t1": 38.32
+    },
+    {
+     "text": "So if you guys are wanting some good blank baggy sweatpants for this fall and winter, I'm going to drop the best",
+     "t0": 38.46,
+     "t1": 42.58
+    },
+    {
+     "text": "link for it at the bottom of this video.",
+     "t0": 42.58,
+     "t1": 43.94
+    },
+    {
+     "text": "But I'd be quick before they sell out.",
+     "t0": 43.94,
+     "t1": 45.54
+    }
+   ],
+   "marks": [
+    {
+     "line": 2,
+     "a": 6,
+     "b": 17,
+     "slot": "feature 1"
+    },
+    {
+     "line": 2,
+     "a": 18,
+     "b": 28,
+     "slot": "item 2"
+    },
+    {
+     "line": 4,
+     "a": 60,
+     "b": 70,
+     "slot": "item 2"
+    },
+    {
+     "line": 11,
+     "a": 17,
+     "b": 27,
+     "slot": "item 2"
+    },
+    {
+     "line": 11,
+     "a": 37,
+     "b": 40,
+     "slot": "price"
+    },
+    {
+     "line": 12,
+     "a": 46,
+     "b": 49,
+     "slot": "price 2"
+    },
+    {
+     "line": 12,
+     "a": 62,
+     "b": 75,
+     "slot": "deal"
+    },
+    {
+     "line": 13,
+     "a": 43,
+     "b": 59,
+     "slot": "item"
+    }
+   ],
+   "shots": [
+    {
+     "t0": 0.0,
+     "t1": 0.9,
+     "said": "So H &M",
+     "desc": "",
+     "img": "shot0.jpg"
+    },
+    {
+     "t0": 0.9,
+     "t1": 1.87,
+     "said": "just dropped gray and",
+     "desc": "",
+     "img": "shot1.jpg"
+    },
+    {
+     "t0": 1.87,
+     "t1": 2.53,
+     "said": "black",
+     "desc": "",
+     "img": "shot2.jpg"
+    },
+    {
+     "t0": 2.53,
+     "t1": 5.17,
+     "said": "baggy relaxed fit sweatpants on their Christmas sale.",
+     "desc": "",
+     "img": "shot3.jpg"
+    },
+    {
+     "t0": 5.17,
+     "t1": 6.43,
+     "said": "And now you don't just get one,",
+     "desc": "",
+     "img": "shot4.jpg"
+    },
+    {
+     "t0": 6.43,
+     "t1": 12.27,
+     "said": "but you can actually get two pairs of the relaxed baggy fit sweatpants for less than what one usually costs by itself.",
+     "desc": "",
+     "img": "shot5.jpg"
+    },
+    {
+     "t0": 12.27,
+     "t1": 18.57,
+     "said": "Obviously H &M is a known brand for their quality. You get an elastic waistband, drawstrings in the front in case you need to adjust,",
+     "desc": "",
+     "img": "shot6.jpg"
+    },
+    {
+     "t0": 18.57,
+     "t1": 23.77,
+     "said": "two super deep pockets in the front, and the super relaxed baggy fit with the wide leg openings. The",
+     "desc": "",
+     "img": "shot7.jpg"
+    },
+    {
+     "t0": 23.77,
+     "t1": 32.1,
+     "said": "best part is that these fit pretty true to size. I'm 5 '8\", 145, and this is what an extra small looks like on me. But if you need any help on sizing, let me know down in the comments below.",
+     "desc": "",
+     "img": "shot8.jpg"
+    },
+    {
+     "t0": 32.1,
+     "t1": 45.63,
+     "said": "In stores, these sweatpants are over $60 a piece. But on TikTok, you can get them for less than $30 and you get free shipping. So if you guys are wanting some good blank baggy sweatpants for this fall and winter, I'm going to drop the best link for it at the bottom of this video. But I'd be quick before they sell out.",
+     "desc": "",
+     "img": "shot9.jpg"
+    }
+   ],
+   "source": {
+    "ref": "ed3779e943",
+    "url": "https://www.tiktok.com/@thallsupply/video/7692813589702397214",
+    "video_id": "7692813589702397214",
+    "author": "Tyler",
+    "handle": "thallsupply",
+    "desc": "every size and color is in stock right now so be quick… #sweatpants #baggysweatpants #christmasshopping #foryoupage #fyp ",
+    "duration": 45.633333,
+    "products": [
+     {
+      "product_id": "1732146858012217649",
+      "title": "H&M Loose Fit Sweatpants",
+      "url": "https://www.tiktok.com/view/product/1732146858012217649",
+      "image": "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/941bcc783fe44df9bc99dcfa542f6944~tplv-fhlh96nyum-resize-jpeg:800:800.jpeg?dr=12186&t=555f072d&ps=933b5bde&shp=615b9c44&shcp=57d7afb6&idc=useast5&from=1633393732"
+     }
+    ]
+   },
+   "from_template": null,
+   "id": "ef8dfd",
+   "created": 1793054109.9265306,
+   "updated": 1793055518.2045784
   }
  ],
  "trash": {},
