@@ -338,9 +338,10 @@ async function newVideo(pre = {}) {
     <div class="nvQuick"><div class="nvQHead"><b>⚡ Start from links</b> <span class="fhint">paste them and the rest fills in</span></div>
       <div class="nvRow"><input name="product_url" type="url" placeholder="🛍 Product: its TikTok Shop link (or a TikTok video that has it)">
         <button type="button" data-q="product">Get product</button></div>
+      <div class="nvQMsg muted small" data-m="product"></div>
       <div class="nvRow"><input name="video_url" type="url" placeholder="🎬 Video to copy: its TikTok link (or pick a saved script below)" value="${esc(pre.reference || "")}">
         <button type="button" data-q="video">Get its script</button></div>
-      <div class="nvQMsg muted small"></div></div>
+      <div class="nvQMsg muted small" data-m="video"></div></div>
     <p class="muted">Everything else is optional. <b>📷 Ready to shoot</b> puts it in the creator's queue and in Ad Camera's projects; dropping in raw videos gets it pre-cut automatically.</p>
     <div class="nvGrid">
       <div class="nvCol">
@@ -409,20 +410,20 @@ async function newVideo(pre = {}) {
   };
   el("script_text").addEventListener("input", drawFills);
   // ⚡ links: a product link makes (or finds) the product; a video link makes its script
-  const qmsg = h => ($(".nvQMsg", dlg).innerHTML = h);
+  const pmsg = h => ($('.nvQMsg[data-m="product"]', dlg).innerHTML = h), qmsg = h => ($('.nvQMsg[data-m="video"]', dlg).innerHTML = h);
   const qBusy = (which, on) => { const b = $(`[data-q="${which}"]`, dlg); if (b) b.disabled = on; };
   const getProduct = async () => {
     const url = el("product_url").value.trim(); if (!url) return;
     qBusy("product", true);
     try {
-      const f = await findProduct(url, qmsg);
+      const f = await findProduct(url, pmsg);
       let pid = f.existing;
       if (!pid && f.similar) {  // probably one you have, without its link yet: ask
         const like = byId("products", f.similar);
         pid = await new Promise(res => {
-          qmsg(`Is this your <b>${esc(like.name)}</b>? <button type="button" data-yes>Yes, use it (and save its link)</button> <button type="button" data-no>No, add “${esc(f.short)}”</button>`);
-          $(".nvQMsg [data-yes]", dlg).onclick = () => res(like.id);
-          $(".nvQMsg [data-no]", dlg).onclick = () => res(null);
+          pmsg(`Is this your <b>${esc(like.name)}</b>? <button type="button" data-yes>Yes, use it (and save its link)</button> <button type="button" data-no>No, add “${esc(f.short)}”</button>`);
+          $('.nvQMsg[data-m="product"] [data-yes]', dlg).onclick = () => res(like.id);
+          $('.nvQMsg[data-m="product"] [data-no]', dlg).onclick = () => res(null);
         });
       }
       if (pid) {  // already have it: fill in what it was missing (its TikTok Shop link above all)
@@ -430,16 +431,16 @@ async function newVideo(pre = {}) {
         for (const k of ["brand", "category", "price", "image"]) if (!p[k] && f[k]) patch[k] = f[k];
         if (!isShopLink(p.link) && f.link) patch.link = f.link;
         if (Object.keys(patch).length > 1) await api("/api/shop/products", { json: patch });
-        qmsg(`✓ Product: <b>${esc(p.name)}</b> (already in Products)`);
+        pmsg(`✓ Product: <b>${esc(p.name)}</b> (already in Products)`);
       } else {
         const made = await api("/api/shop/products", { json: { name: f.short || f.name, brand: f.brand, category: f.category, price: f.price,
           link: f.link, image: f.image, fills: f.fills || {}, notes: [f.notes, f.short && f.name !== f.short ? `Full title: ${f.name}` : ""].filter(Boolean).join("\n") } });
         pid = made.id;
-        qmsg(`✓ Added <b>${esc(made.name)}</b> to Products`);
+        pmsg(`✓ Added <b>${esc(made.name)}</b> to Products`);
       }
       await shopLoad();
       el("product").innerHTML = opts(products(), pid, x => x.name, "— pick a product —"); el("product").onchange();
-    } catch (err) { qmsg("⚠ " + esc(err.message)); }
+    } catch (err) { pmsg("⚠ " + esc(err.message)); }
     qBusy("product", false);
   };
   const getScript = async () => {
