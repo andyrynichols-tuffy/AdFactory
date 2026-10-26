@@ -14,6 +14,9 @@ from supercut import analytics
 VIDEO_ID_RX = re.compile(r"/video/(\d{8,})")  # short links can land on tiktok.com/@/video/<id>
 PRODUCT_RX = re.compile(r"(?:/pdp/(?:[^/?#]+/)?|/view/product/|product_id=)(\d{12,})")
 MAX_FILLS = 8
+NOT_FILLS = {"manufacturer", "region of origin", "country of origin", "place of origin", "warranty", "warranty type",
+             "warranty duration", "model", "model number", "certification", "certifications", "net weight", "quantity",
+             "quantity per pack", "item weight", "gtin", "upc", "ean", "sku", "california prop 65"}
 
 
 def _meta(page: str) -> dict:
@@ -65,7 +68,8 @@ def tiktok_product(url: str) -> dict:
     fills = {}
     for s in specs:
         k, v = str(s.get("name", "")).strip().lower(), str(s.get("value", "")).strip()
-        if k and v and k != "brand" and len(fills) < MAX_FILLS:
+        if (k and v and k != "brand" and k not in NOT_FILLS and not re.search(r"dangerous|hazard|battery|prop 65|compliance", k)
+                and v.lower() not in ("none", "no", "n/a", "na", "other") and len(fills) < MAX_FILLS):
             fills[k] = v
     link = (meta.get("og:url") or final).split("?")[0]
     return {"name": title, "brand": _title_case(brand) if brand else "", "category": cats[-1].get("category_name", "") if cats else "",
@@ -154,6 +158,33 @@ def match(found: dict, products: list):
     return next((p["id"] for p in products if p["name"].lower() in names), None)
 
 
+def _norm(s) -> str:
+    return re.sub(r"[^a-z0-9]", "", (s or "").lower())
+
+
+def _words(s) -> set:
+    return {w for w in re.findall(r"[a-z0-9]+", (s or "").lower()) if len(w) > 2}
+
+
+def similar(found: dict, products: list):
+    """A product already in the app that's probably this one, by brand ("MenPens" ≈ your "MenPen";
+    "Old Navy … Waffle T-Shirt" ≈ your "Old Navy Waffle"). For asking, never for linking on its own."""
+    brand = _norm(found.get("brand"))
+    if len(brand) < 4:
+        return None
+    fw = _words(found.get("name")) | _words(found.get("short"))
+    best, score = None, 0
+    for p in products:
+        pn, pb = _norm(p["name"]), _norm(p.get("brand"))
+        if not (pn.startswith(brand.rstrip("s")) or (len(pn) >= 4 and brand.startswith(pn)) or pb == brand):
+            continue
+        extra = len((_words(p["name"]) - _words(found.get("brand"))) & fw)
+        sc = 1 + 2 * extra if (extra or pn.rstrip("s") == brand.rstrip("s")) else 0
+        if sc > score:
+            best, score = p["id"], sc
+    return best
+
+
 def from_link(url: str) -> dict:
     """{"products": [...], "from_video": bool}"""
     url = url.strip()
@@ -185,4 +216,5 @@ def lookup(url: str, products: list) -> dict:
     for f in r["products"]:
         f["short"] = short_name(f["name"])
         f["existing"] = match(f, products)
+        f["similar"] = None if f["existing"] else similar(f, products)
     return r

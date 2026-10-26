@@ -268,8 +268,10 @@ const AUTOFILL = {
       const f = await findProduct(url, say);
       fillProductForm(form, f);
       const dup = f.existing && f.existing !== form._id ? byId("products", f.existing) : null;
+      const like = !dup && !form._id && f.similar ? byId("products", f.similar) : null;
       say(`✓ Filled in from ${/tiktok\.com/.test(f.link) ? "TikTok Shop" : "the page"}: check it, then Save.` +
-        (dup ? ` <span class="warnx">This is already in Products as “${esc(dup.name)}”.</span>` : ""));
+        (dup ? ` <span class="warnx">This is already in Products as “${esc(dup.name)}”.</span>` :
+          like ? ` <span class="warnx">Is this your “${esc(like.name)}”? Then cancel and use 🔗 Link it on that one instead.</span>` : ""));
     } },
   scripts: { placeholder: "🔗 Or make it from a TikTok video: paste its link", button: "Get the script",
     hint: "Its script + shot list, with the product details marked as blanks.",
@@ -415,6 +417,14 @@ async function newVideo(pre = {}) {
     try {
       const f = await findProduct(url, qmsg);
       let pid = f.existing;
+      if (!pid && f.similar) {  // probably one you have, without its link yet: ask
+        const like = byId("products", f.similar);
+        pid = await new Promise(res => {
+          qmsg(`Is this your <b>${esc(like.name)}</b>? <button type="button" data-yes>Yes, use it (and save its link)</button> <button type="button" data-no>No, add “${esc(f.short)}”</button>`);
+          $(".nvQMsg [data-yes]", dlg).onclick = () => res(like.id);
+          $(".nvQMsg [data-no]", dlg).onclick = () => res(null);
+        });
+      }
       if (pid) {  // already have it: fill in what it was missing (its TikTok Shop link above all)
         const p = byId("products", pid), patch = { id: pid };
         for (const k of ["brand", "category", "price", "image"]) if (!p[k] && f[k]) patch[k] = f[k];
