@@ -2,6 +2,16 @@
   "sourceLanguage": "en",
   "version": "1.0",
   "strings": {
+    "%@ s at %@×": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ s a %2$@×"
+          }
+        }
+      }
+    },
     "%lld filmed here": {
       "localizations": {
         "pt-BR": {
@@ -162,12 +172,42 @@
         }
       }
     },
+    "Allow Ad Camera to add to Photos in Settings.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Permita que o Ad Camera adicione às Fotos nos Ajustes."
+          }
+        }
+      }
+    },
     "Allow Photos for Ad Camera in the iPhone's Settings to save takes to the album.": {
       "localizations": {
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Permita as Fotos para o Ad Camera nos Ajustes do iPhone para salvar os takes no álbum."
+          }
+        }
+      }
+    },
+    "Auto · %@×": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Automática · %@×"
+          }
+        }
+      }
+    },
+    "Back": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voltar"
           }
         }
       }
@@ -192,12 +232,12 @@
         }
       }
     },
-    "Bottom": {
+    "Back to what was said": {
       "localizations": {
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Embaixo"
+            "value": "Voltar ao que foi dito"
           }
         }
       }
@@ -232,6 +272,36 @@
         }
       }
     },
+    "Captions": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Legendas"
+          }
+        }
+      }
+    },
+    "Captions edited": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Legendas editadas"
+          }
+        }
+      }
+    },
+    "Check wording": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Confira as palavras"
+          }
+        }
+      }
+    },
     "Cinematic (smoother, crops more)": {
       "localizations": {
         "pt-BR": {
@@ -262,16 +332,6 @@
         }
       }
     },
-    "Continue editing": {
-      "localizations": {
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Continuar editando"
-          }
-        }
-      }
-    },
     "Couldn't open that camera.": {
       "localizations": {
         "pt-BR": {
@@ -282,12 +342,32 @@
         }
       }
     },
+    "Couldn't open the project": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Não deu para abrir o projeto"
+          }
+        }
+      }
+    },
     "Countdown": {
       "localizations": {
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Contagem regressiva"
+          }
+        }
+      }
+    },
+    "Cut off": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cortado"
           }
         }
       }
@@ -308,6 +388,66 @@
           "stringUnit": {
             "state": "translated",
             "value": "OK"
+          }
+        }
+      }
+    },
+    "Drag along the bar to find the spot, then set the start or end there. ± moves it a twentieth of a second.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arraste na barra para achar o ponto e marque o início ou o fim ali. ± move um vigésimo de segundo."
+          }
+        }
+      }
+    },
+    "Drag the strip's edge to the clamp's edge. Double-tap the strip to move it to the other end. The picture shrinks to fit the rest of the screen.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arraste a borda da faixa até a borda da garra. Toque duas vezes na faixa para levá-la à outra ponta. A imagem diminui para caber no resto da tela."
+          }
+        }
+      }
+    },
+    "Earlier": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Antes"
+          }
+        }
+      }
+    },
+    "Edit line %lld": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Editar a linha %lld"
+          }
+        }
+      }
+    },
+    "Edit videos": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Editar vídeos"
+          }
+        }
+      }
+    },
+    "End": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fim"
           }
         }
       }
@@ -372,6 +512,26 @@
         }
       }
     },
+    "Fixing a word keeps its timing. Adding or removing words spreads them over the same stretch.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Corrigir uma palavra mantém o tempo dela. Pôr ou tirar palavras espalha todas pelo mesmo trecho."
+          }
+        }
+      }
+    },
+    "Flub": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erro"
+          }
+        }
+      }
+    },
     "Format": {
       "localizations": {
         "pt-BR": {
@@ -388,6 +548,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "Taxa de quadros"
+          }
+        }
+      }
+    },
+    "Get it ready": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preparar o vídeo"
+          }
+        }
+      }
+    },
+    "Get it ready again (it changed)": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preparar de novo (mudou)"
+          }
+        }
+      }
+    },
+    "Getting the preview ready on the PC…": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preparando a prévia no PC…"
+          }
+        }
+      }
+    },
+    "Good": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bom"
           }
         }
       }
@@ -482,6 +682,46 @@
         }
       }
     },
+    "In saved video %lld": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No vídeo salvo %lld"
+          }
+        }
+      }
+    },
+    "In video %lld": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No vídeo %lld"
+          }
+        }
+      }
+    },
+    "Keep this video": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Manter este vídeo"
+          }
+        }
+      }
+    },
+    "Later": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Depois"
+          }
+        }
+      }
+    },
     "Layout": {
       "localizations": {
         "pt-BR": {
@@ -502,6 +742,16 @@
         }
       }
     },
+    "Line %lld": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Linha %lld"
+          }
+        }
+      }
+    },
     "Line %lld of %lld": {
       "localizations": {
         "pt-BR": {
@@ -512,12 +762,22 @@
         }
       }
     },
-    "Line the striped strip up with the clamp. The picture shrinks to fit the rest of the screen.": {
+    "Makes the finished video on the PC. Takes a minute or two.": {
       "localizations": {
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Alinhe a faixa listrada com a garra. A imagem diminui para caber no resto da tela."
+            "value": "Faz o vídeo final no PC. Leva um ou dois minutos."
+          }
+        }
+      }
+    },
+    "Mark posted": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marcar como postado"
           }
         }
       }
@@ -538,6 +798,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Espelhar a câmera frontal"
+          }
+        }
+      }
+    },
+    "Move to the other end": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Levar para a outra ponta"
           }
         }
       }
@@ -632,6 +902,16 @@
         }
       }
     },
+    "No videos yet: Ad Factory makes them once the takes are cut.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ainda não há vídeos: o Ad Factory faz quando os takes forem cortados."
+          }
+        }
+      }
+    },
     "None": {
       "localizations": {
         "pt-BR": {
@@ -642,12 +922,62 @@
         }
       }
     },
+    "Not Shop-safe": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Não é seguro para o Shop"
+          }
+        }
+      }
+    },
+    "Not in this video": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Não está neste vídeo"
+          }
+        }
+      }
+    },
+    "Not posted": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Não postado"
+          }
+        }
+      }
+    },
     "Nothing waiting to be filmed. Tap ＋ to start a project.": {
       "localizations": {
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Nada esperando para filmar. Toque em ＋ para começar um projeto."
+          }
+        }
+      }
+    },
+    "Now in this video; the take that was here went to the rejects.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Agora está neste vídeo; o take que estava aqui foi para os descartados."
+          }
+        }
+      }
+    },
+    "OK": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
           }
         }
       }
@@ -672,6 +1002,56 @@
         }
       }
     },
+    "Other": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Outro"
+          }
+        }
+      }
+    },
+    "Other takes of this line": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Outros takes desta linha"
+          }
+        }
+      }
+    },
+    "Pause": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pausar"
+          }
+        }
+      }
+    },
+    "Paused": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pausa"
+          }
+        }
+      }
+    },
+    "Play": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tocar"
+          }
+        }
+      }
+    },
     "Posted": {
       "localizations": {
         "pt-BR": {
@@ -688,6 +1068,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Postados (%lld)"
+          }
+        }
+      }
+    },
+    "Posted: its takes are locked, because TikTok flags reused footage.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Postado: os takes estão travados, porque o TikTok marca imagens reutilizadas."
           }
         }
       }
@@ -752,6 +1142,16 @@
         }
       }
     },
+    "Reject": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descartado"
+          }
+        }
+      }
+    },
     "Resize": {
       "localizations": {
         "pt-BR": {
@@ -768,6 +1168,86 @@
           "stringUnit": {
             "state": "translated",
             "value": "Resolução"
+          }
+        }
+      }
+    },
+    "Review videos in Ad Factory": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revisar vídeos no Ad Factory"
+          }
+        }
+      }
+    },
+    "Reworded": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Outras palavras"
+          }
+        }
+      }
+    },
+    "Save": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salvar"
+          }
+        }
+      }
+    },
+    "Save captions": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salvar legendas"
+          }
+        }
+      }
+    },
+    "Save to Photos": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salvar nas Fotos"
+          }
+        }
+      }
+    },
+    "Saved": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salvo"
+          }
+        }
+      }
+    },
+    "Saved to Photos": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salvo nas Fotos"
+          }
+        }
+      }
+    },
+    "Saved: its takes are locked. Unsave it to change them.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salvo: os takes estão travados. Tire dos salvos para mudar."
           }
         }
       }
@@ -818,6 +1298,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ajustado para o TikTok: vertical em 4K a 30 fps, SDR (o HDR fica sempre desligado: vídeos em HDR ficam desbotados no TikTok). O 4K deixa espaço para cortar e dar zoom no editor. A câmera frontal grava sem espelhar, para os rótulos dos produtos ficarem legíveis."
+          }
+        }
+      }
+    },
+    "Set here": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Marcar aqui"
           }
         }
       }
@@ -892,6 +1382,46 @@
         }
       }
     },
+    "Skip this video": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pular este vídeo"
+          }
+        }
+      }
+    },
+    "Skipped": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pulado"
+          }
+        }
+      }
+    },
+    "Spare": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reserva"
+          }
+        }
+      }
+    },
+    "Speed": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Velocidade"
+          }
+        }
+      }
+    },
     "Stabilization": {
       "localizations": {
         "pt-BR": {
@@ -912,22 +1442,32 @@
         }
       }
     },
+    "Start": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Início"
+          }
+        }
+      }
+    },
+    "Stayed lit": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ficou acesa"
+          }
+        }
+      }
+    },
     "Stop recording": {
       "localizations": {
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Parar de gravar"
-          }
-        }
-      }
-    },
-    "Strip size": {
-      "localizations": {
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tamanho da faixa"
           }
         }
       }
@@ -942,6 +1482,16 @@
         }
       }
     },
+    "Swapped: the take that was in this video moved to where this one was.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trocado: o take que estava neste vídeo foi para onde este estava."
+          }
+        }
+      }
+    },
     "Switch camera": {
       "localizations": {
         "pt-BR": {
@@ -952,12 +1502,12 @@
         }
       }
     },
-    "Switch to it with the layout button on the camera screen: back camera, a strip left clear where the clamp covers the screen, the picture shrunk to fit, controls beside it. \"Set clamp area\" on the same button moves the strip.": {
+    "Switch to it with the layout button on the camera screen: back camera, a strip left clear where the clamp covers the screen, the picture shrunk to fit, controls beside it. In it, \"Clamp\" moves the strip and \"Handheld\" switches back.": {
       "localizations": {
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ative pelo botão de layout na tela da câmera: câmera traseira, uma faixa livre onde a garra cobre a tela, a imagem reduzida para caber e os controles ao lado. \"Ajustar a área da garra\", no mesmo botão, move a faixa."
+            "value": "Ative pelo botão de layout na tela da câmera: câmera traseira, uma faixa livre onde a garra cobre a tela, a imagem reduzida para caber e os controles ao lado. Nele, \"Garra\" move a faixa e \"Na mão\" volta ao normal."
           }
         }
       }
@@ -1012,6 +1562,16 @@
         }
       }
     },
+    "That take is locked in saved video %lld.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esse take está travado no vídeo salvo %lld."
+          }
+        }
+      }
+    },
     "The Ad Factory address isn't right. Check it in Settings.": {
       "localizations": {
         "pt-BR": {
@@ -1028,6 +1588,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "O microfone está desligado para o Ad Camera, então os vídeos ficarão sem som. Toque para ativar nos Ajustes."
+          }
+        }
+      }
+    },
+    "The preview didn't build on the PC.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A prévia não foi feita no PC."
           }
         }
       }
@@ -1052,22 +1622,32 @@
         }
       }
     },
-    "Thicker": {
+    "There's only this one.": {
       "localizations": {
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Mais grossa"
+            "value": "Só tem este."
           }
         }
       }
     },
-    "Thinner": {
+    "This line isn't in the video anymore.": {
       "localizations": {
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Mais fina"
+            "value": "Esta linha não está mais no vídeo."
+          }
+        }
+      }
+    },
+    "This project changed on the computer, so the phone loaded that version and redid your changes on top.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Este projeto mudou no computador, então o celular carregou essa versão e refez suas mudanças por cima."
           }
         }
       }
@@ -1142,12 +1722,22 @@
         }
       }
     },
-    "Top": {
+    "Trim": {
       "localizations": {
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Em cima"
+            "value": "Corte"
+          }
+        }
+      }
+    },
+    "Trim bar": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Barra de corte"
           }
         }
       }
@@ -1162,12 +1752,42 @@
         }
       }
     },
+    "Try again": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tentar de novo"
+          }
+        }
+      }
+    },
     "Try again now": {
       "localizations": {
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Tentar de novo agora"
+          }
+        }
+      }
+    },
+    "Trying another take": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Testando outro take"
+          }
+        }
+      }
+    },
+    "Unsave": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tirar dos salvos"
           }
         }
       }
@@ -1212,12 +1832,52 @@
         }
       }
     },
+    "Use": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usar"
+          }
+        }
+      }
+    },
+    "Use this take": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usar este take"
+          }
+        }
+      }
+    },
     "Using the iPhone's own mic, not %@.": {
       "localizations": {
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Usando o microfone do próprio iPhone, não o %@."
+          }
+        }
+      }
+    },
+    "Video %lld": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vídeo %lld"
+          }
+        }
+      }
+    },
+    "Video %lld is saved: its takes are locked.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O vídeo %lld está salvo: os takes estão travados."
           }
         }
       }
@@ -1262,12 +1922,42 @@
         }
       }
     },
+    "Watch": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Assistir"
+          }
+        }
+      }
+    },
+    "What the captions say": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O que as legendas dizem"
+          }
+        }
+      }
+    },
     "Where does the clamp cover the screen?": {
       "localizations": {
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Onde a garra cobre a tela?"
+          }
+        }
+      }
+    },
+    "Working on it…": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trabalhando nisso…"
           }
         }
       }

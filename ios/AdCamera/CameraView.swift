@@ -65,6 +65,7 @@ struct CameraView: View {
                     .position(x: r.midX, y: r.midY)
                     if let frame { tripodControls(frame) }
                 }
+                .coordinateSpace(name: "screen")
                 .animation(.easeInOut(duration: 0.25), value: frame)
             }
             .ignoresSafeArea()
@@ -166,7 +167,8 @@ struct CameraView: View {
 
         VStack(spacing: 12) {   // left: getting around, guides
             backButton
-            layoutMenu
+            handheldButton
+            clampAreaButton
             settingsButton
             Spacer(minLength: 0)
             zonesTool
@@ -224,10 +226,40 @@ struct CameraView: View {
             countdownNumber(n).position(x: f.preview.midX, y: f.preview.midY)
         }
         if editingClamp {
+            clampHandle(f)
             clampEditor
                 .frame(width: min(320, f.preview.width + 2 * f.left.width - 16))
                 .position(x: f.preview.midX, y: f.preview.midY)
         }
+    }
+
+    /// The strip plus a band past its edge (the part the clamp leaves uncovered): drag to
+    /// move the edge, double-tap to put the strip at the other end of the screen.
+    private func clampHandle(_ f: TripodFrame) -> some View {
+        let band: CGFloat = 36
+        let edge = clampTop ? f.strip.maxY : f.strip.minY
+        let area = CGRect(x: 0, y: clampTop ? 0 : edge - band, width: f.strip.width, height: f.strip.height + band)
+        return ZStack(alignment: clampTop ? .bottom : .top) {
+            Color.clear
+            Capsule().fill(Color.yellow)
+                .frame(width: 56, height: 6)
+                .padding(clampTop ? .bottom : .top, band / 2 - 3)
+        }
+        .frame(width: area.width, height: area.height)
+        .contentShape(Rectangle())
+        .position(x: area.midX, y: area.midY)
+        .gesture(DragGesture(minimumDistance: 2, coordinateSpace: .named("screen")).onChanged { g in
+            let h = clampTop ? g.location.y : f.strip.maxY - g.location.y
+            var t = Transaction()
+            t.disablesAnimations = true   // the picture follows the finger
+            withTransaction(t) { clampH = Double(min(320, max(40, h)).rounded()) }
+        })
+        .onTapGesture(count: 2) { withAnimation { clampTop.toggle() } }
+        .accessibilityLabel(Text("Clamp"))
+        .accessibilityAdjustableAction { dir in
+            clampH = dir == .increment ? min(320, clampH + 10) : max(40, clampH - 10)
+        }
+        .accessibilityAction(named: Text("Move to the other end")) { clampTop.toggle() }
     }
 
     private var clampEditor: some View {
@@ -235,20 +267,7 @@ struct CameraView: View {
             Text("Where does the clamp cover the screen?")
                 .font(.subheadline.bold())
                 .multilineTextAlignment(.center)
-            Picker("Clamp", selection: $clampTop) {
-                Text("Top").tag(true)
-                Text("Bottom").tag(false)
-            }
-            .pickerStyle(.segmented)
-            HStack(spacing: 14) {
-                Button { clampH = max(40, clampH - 10) } label: { Image(systemName: "minus") }
-                    .accessibilityLabel(Text("Thinner"))
-                Text("Strip size").font(.caption)
-                Button { clampH = min(320, clampH + 10) } label: { Image(systemName: "plus") }
-                    .accessibilityLabel(Text("Thicker"))
-            }
-            .buttonStyle(.bordered)
-            Text("Line the striped strip up with the clamp. The picture shrinks to fit the rest of the screen.")
+            Text("Drag the strip's edge to the clamp's edge. Double-tap the strip to move it to the other end. The picture shrinks to fit the rest of the screen.")
                 .font(.caption)
                 .opacity(0.75)
                 .multilineTextAlignment(.center)
@@ -284,6 +303,7 @@ struct CameraView: View {
             .accessibilityLabel(Text("Switch camera"))
     }
 
+    /// Handheld only: the way into the Tripod clamp layout.
     private var layoutMenu: some View {
         Menu {
             Picker(selection: Binding(get: { layout }, set: { setLayout($0) })) {
@@ -292,16 +312,31 @@ struct CameraView: View {
             } label: {
                 Text("Layout")
             }
-            if tripod {
-                Button { editingClamp = true } label: {
-                    Label("Set clamp area", systemImage: "arrow.up.and.down")
-                }
-            }
         } label: {
-            circle(tripod ? "rectangle.bottomhalf.filled" : "hand.raised")
+            circle("hand.raised")
         }
         .disabled(camera.recording)
         .accessibilityLabel(Text("Layout"))
+    }
+
+    /// Tripod clamp: one tap back to Handheld, named so it's easy to find.
+    private var handheldButton: some View {
+        Button { setLayout("handheld") } label: { labeled("hand.raised", "Handheld") }
+            .disabled(camera.recording)
+            .accessibilityLabel(Text("Handheld"))
+    }
+
+    private var clampAreaButton: some View {
+        Button { editingClamp = true } label: { labeled("arrow.up.and.down", "Clamp") }
+            .disabled(camera.recording || editingClamp)
+            .accessibilityLabel(Text("Set clamp area"))
+    }
+
+    private func labeled(_ icon: String, _ name: LocalizedStringKey) -> some View {
+        VStack(spacing: 3) {
+            circle(icon)
+            Text(name).font(.caption2.bold()).lineLimit(1).minimumScaleFactor(0.7)
+        }
     }
 
     private func circle(_ icon: String, bold: Bool = false) -> some View {
