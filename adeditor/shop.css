@@ -256,3 +256,4 @@ button.tpMore:hover { color: var(--text) !important; border-color: #4a505b !impo
 .nvQMsg:empty { display: none; } .nvQMsg button { font-size: 12px; padding: 2px 8px; margin: 2px 4px 0 0; }
 .nvFHead { display: flex; gap: 8px; align-items: center; justify-content: space-between; }
 .nvFHead .aiBtn { font-size: 12px; padding: 2px 9px; }
+.nvWarn { margin: 10px 0 0; padding: 8px 10px; border-radius: 9px; background: rgba(252, 196, 25, .12); color: var(--warn); font-size: 13px; }

@@ -362,6 +362,7 @@ async function newVideo(pre = {}) {
         <label class="fld">Notes for the creator<textarea name="notes" rows="2" placeholder="angle, outfit, props…"></textarea></label>
       </div>
     </div>
+    <div class="nvWarn" hidden></div>
     <div class="sdBtns"><button type="button" data-close="cancel">Cancel</button><span class="spacer"></span>
       <button value="open" title="Make the shoot now and open the editor">✏️ Create &amp; edit</button>
       <button value="assign" class="primary" title="Put it in the creator's queue and in Ad Camera's projects, ready to film">📷 Ready to shoot</button></div></form>`;
@@ -369,6 +370,23 @@ async function newVideo(pre = {}) {
   const f = $("form", dlg), el = n => f.elements[n];
   $("[data-close]", dlg).onclick = () => dlg.close("cancel");
   f.addEventListener("keydown", e => { if (e.key === "Enter" && e.target.tagName === "INPUT") e.preventDefault(); });
+  // empty blanks: say so here (a pop-up can be blocked inside Studio's window); pressing again makes it anyway
+  let warned = false;
+  f.addEventListener("submit", e => {
+    if (!["assign", "open"].includes(e.submitter?.value)) return;
+    const empty = $$(".nvFills input", dlg).filter(i => !i.value.trim());
+    if (!empty.length || warned) return;
+    e.preventDefault(); warned = true;
+    empty.forEach(i => i.closest(".nvFill")?.classList.add("need"));
+    const w = $(".nvWarn", dlg);
+    w.innerHTML = `⚠ <b>Still empty:</b> <span translate="no">${empty.map(i => `{${esc(i.dataset.ph)}}`).join(", ")}</span>.
+      <span>Fill them in, or press the button again to make it anyway (they show like that on the teleprompter).</span>`;
+    w.hidden = false; w.scrollIntoView({ block: "nearest", behavior: "smooth" }); empty[0].focus();
+  });
+  f.addEventListener("input", e => {
+    if (!e.target.closest(".nvFills")) return;
+    if (!$$(".nvFills input", dlg).some(i => !i.value.trim())) { $(".nvWarn", dlg).hidden = true; warned = false; }
+  });
   const pick = $("[data-tagpick]", dlg);
   tagPicker(pick, pre.tags || [], () => ({ product: el("product").value, script: el("script").value }));
   let lib = null;  // the library script picked (its text as it was)
@@ -489,8 +507,6 @@ async function newVideo(pre = {}) {
     const how = dlg.returnValue;
     if (how === "keep") return;
     if (how !== "assign" && how !== "open") { dlg.remove(); return; }
-    const empty = $$(".nvFills input", dlg).filter(i => !i.value.trim()).map(i => `{${i.dataset.ph}}`);
-    if (empty.length && !confirm(`${empty.length} blank${empty.length === 1 ? " is" : "s are"} still empty (${empty.join(", ")}): ${empty.length === 1 ? "it shows" : "they show"} like that on the teleprompter. Make it anyway?`)) { dlg.showModal(); return; }
     const vars = Object.fromEntries($$(".nvFills input", dlg).map(i => [i.dataset.ph, i.value.trim()]).filter(x => x[1]));
     const text = el("script_text").value, files = [...el("files").files];
     const body = {
