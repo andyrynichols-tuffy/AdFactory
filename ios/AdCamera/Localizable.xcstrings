@@ -192,6 +192,26 @@
         }
       }
     },
+    "Archive": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arquivar"
+          }
+        }
+      }
+    },
+    "Archived": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arquivados"
+          }
+        }
+      }
+    },
     "Auto · %@×": {
       "localizations": {
         "pt-BR": {
@@ -378,6 +398,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Decidir depois"
+          }
+        }
+      }
+    },
+    "Delete": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apagar"
+          }
+        }
+      }
+    },
+    "Delete \"%@\"?": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apagar \"%@\"?"
           }
         }
       }
@@ -698,6 +738,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "No vídeo %lld"
+          }
+        }
+      }
+    },
+    "It moves to Ad Factory's trash folder on the PC. Its raw footage and finished videos are kept.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ele vai para a lixeira do Ad Factory no PC. As gravações e os vídeos prontos são mantidos."
           }
         }
       }
@@ -1512,6 +1562,26 @@
         }
       }
     },
+    "Swipe a project from the right to archive it.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deslize um projeto da direita para arquivar."
+          }
+        }
+      }
+    },
+    "Swipe from the left to bring one back, from the right to delete it.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deslize da esquerda para trazer de volta, da direita para apagar."
+          }
+        }
+      }
+    },
     "Switch camera": {
       "localizations": {
         "pt-BR": {
@@ -1808,6 +1878,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Testando outro take"
+          }
+        }
+      }
+    },
+    "Unarchive": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desarquivar"
           }
         }
       }
