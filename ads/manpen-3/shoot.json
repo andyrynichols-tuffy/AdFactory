@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 119,
+ "rev": 124,
  "title": "MenPen 3",
  "created": 1792372496.8683283,
  "product": {
@@ -1702,8 +1702,8 @@
    "id": "0d3d65",
    "line": "495892",
    "src": "a69701",
-   "in": 6.375,
-   "out": 8.375,
+   "in": 6.275,
+   "out": 8.525,
    "look": null,
    "alt": 0,
    "text": "I'm married, can I still use this?",
