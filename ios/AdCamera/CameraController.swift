@@ -15,6 +15,11 @@ final class CameraController: NSObject, ObservableObject, AVCaptureFileOutputRec
     @Published var problem: String?
     @Published var mic = ""
     @Published var level: Float = 0      // 0...1
+    @Published var micOff = false        // no mic permission / no audio input: videos would be silent
+    @Published var silent = false        // recording, but nothing coming in (lav transmitter off?)
+    @Published var externalExpected = false   // on the iPhone's own mic, though an external one was used before
+    @Published var externalName = ""     // the external mic last seen (e.g. the Maono receiver)
+    private var silentSince: Date?
     @Published var locked = false        // focus + exposure held (long press)
     @Published var bias: Float = 0
     @Published var zoom: CGFloat = 1
@@ -72,16 +77,32 @@ final class CameraController: NSObject, ObservableObject, AVCaptureFileOutputRec
                 }
                 return
             }
-            queue.async {
+            await MainActor.run { self.micOff = !mic }
+            self.queue.async {
                 self.configure(position: pos, audio: mic)
                 if !self.session.isRunning { self.session.startRunning() }
-                DispatchQueue.main.async { self.mic = Self.micName() }
+                DispatchQueue.main.async { self.updateMic() }
             }
         }
         levelTimer?.invalidate()
         levelTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] _ in
-            guard let self, let ch = self.output.connection(with: .audio)?.audioChannels.first else { return }
-            self.level = max(0, min(1, (ch.averagePowerLevel + 50) / 50))   // -50...0 dB
+            guard let self else { return }
+            guard let ch = self.output.connection(with: .audio)?.audioChannels.first else {
+                self.level = 0
+                return
+            }
+            let db = ch.averagePowerLevel
+            self.level = max(0, min(1, (db + 50) / 50))   // -50...0 dB
+            // A wireless lav whose transmitter is off sends dead digital silence, far below any
+            // room noise. Only judged while recording, when sound is surely flowing.
+            if self.recording && !(db > -70) {
+                let since = self.silentSince ?? Date()
+                self.silentSince = since
+                if Date().timeIntervalSince(since) > 2 && !self.silent { self.silent = true }
+            } else {
+                self.silentSince = nil
+                if self.silent { self.silent = false }
+            }
         }
     }
 
@@ -142,6 +163,8 @@ final class CameraController: NSObject, ObservableObject, AVCaptureFileOutputRec
             session.addInput(a)
             audioInput = a
         }
+        let noAudio = audioInput == nil
+        DispatchQueue.main.async { self.micOff = noAudio }
         if !session.outputs.contains(output), session.canAddOutput(output) {
             session.addOutput(output)
         }
@@ -272,6 +295,8 @@ final class CameraController: NSObject, ObservableObject, AVCaptureFileOutputRec
         DispatchQueue.main.async {
             self.recording = false
             self.started = nil
+            self.silent = false
+            self.silentSince = nil
             if !ok { self.problem = error?.localizedDescription }
             if exists { self.finished?(url, secs.isFinite ? secs : 0) }   // keep whatever got filmed
             self.finished = nil
@@ -327,10 +352,19 @@ final class CameraController: NSObject, ObservableObject, AVCaptureFileOutputRec
     // MARK: - microphone
 
     @objc private func routeChanged() {
-        DispatchQueue.main.async { self.mic = Self.micName() }
+        DispatchQueue.main.async { self.updateMic() }
     }
 
-    static func micName() -> String {
-        AVAudioSession.sharedInstance().currentRoute.inputs.first?.portName ?? ""
+    /// Which mic iOS is recording from. An external one (USB-C receiver, wired lav) is
+    /// remembered, so falling back to the iPhone's own mic later (receiver not plugged in) is flagged.
+    func updateMic() {
+        let d = UserDefaults.standard
+        let input = AVAudioSession.sharedInstance().currentRoute.inputs.first
+        mic = input?.portName ?? ""
+        if let input, input.portType != .builtInMic {
+            d.set(input.portName, forKey: "externalMic")
+        }
+        externalName = d.string(forKey: "externalMic") ?? ""
+        externalExpected = input?.portType == .builtInMic && !externalName.isEmpty && d.bool(forKey: "warnMic")
     }
 }

@@ -18,6 +18,7 @@ struct SettingsView: View {
     @AppStorage("cellular") private var cellular = true
     @AppStorage("tripodCountdown") private var tripodCountdown = 3
     @AppStorage("tripodPrompter") private var tripodPrompter = false
+    @AppStorage("warnMic") private var warnMic = true
 
     @State private var password = ""
     @State private var busy = false
@@ -90,12 +91,13 @@ struct SettingsView: View {
                     Toggle("Grid", isOn: $grid)
                     VStack(alignment: .leading) {
                         Text("Teleprompter text size")
-                        Slider(value: $prompterSize, in: 18...44, step: 1)
+                        Slider(value: $prompterSize, in: 14...64, step: 1)
                     }
+                    Toggle("Warn when the external mic isn't plugged in", isOn: $warnMic)
                 } header: {
                     Text("Filming")
                 } footer: {
-                    Text("Tap the picture to focus there; hold to lock focus and brightness. Pinch to zoom. The volume buttons start and stop recording.")
+                    Text("Tap the picture to focus there; hold to lock focus and brightness. Pinch to zoom. The volume buttons start and stop recording. Drag the teleprompter to move it, drag its corner to make it wider, pinch it to change the text size. Takes that come out with no sound are flagged right away.")
                 }
 
                 Section {

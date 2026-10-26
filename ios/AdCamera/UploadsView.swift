@@ -57,6 +57,10 @@ struct ClipRow: View {
             }
             .font(.caption)
             .foregroundStyle(.secondary)
+            if clip.silent == true {
+                Label("No sound in this take", systemImage: "speaker.slash.fill")
+                    .font(.caption.bold()).foregroundStyle(.red)
+            }
             if clip.uploaded {
                 Label("Sent to OneDrive", systemImage: "checkmark.icloud.fill")
                     .font(.caption).foregroundStyle(.green)

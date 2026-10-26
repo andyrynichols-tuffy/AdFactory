@@ -4,6 +4,7 @@ import SwiftUI
 struct ProjectsView: View {
     @EnvironmentObject private var model: AppModel
     @EnvironmentObject private var clips: ClipStore
+    @State private var path: [Project] = []
     @State private var filming: Project?
     @State private var made: Project?
     @State private var showNew = false
@@ -12,7 +13,7 @@ struct ProjectsView: View {
     @State private var showPosted = false
 
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             List {
                 if !model.signedIn {
                     Section {
@@ -85,10 +86,14 @@ struct ProjectsView: View {
                 if model.catalog == nil && model.loading { ProgressView() }
             }
             .task { await model.refresh() }
+            .navigationDestination(for: Project.self) { p in
+                ProjectView(project: p) { filming = p }
+            }
         }
         .sheet(isPresented: $showNew, onDismiss: {
-            if let p = made {   // straight to the camera for the new project
+            if let p = made {   // a new project goes straight to the camera, with its page underneath
                 made = nil
+                path = [p]
                 filming = p
             }
         }) {
@@ -107,10 +112,9 @@ struct ProjectsView: View {
     }
 
     private func row(_ p: Project) -> some View {
-        Button { filming = p } label: {
+        NavigationLink(value: p) {
             ProjectRow(project: p, here: clips.count(for: p.sid))
         }
-        .foregroundStyle(.primary)
     }
 }
 

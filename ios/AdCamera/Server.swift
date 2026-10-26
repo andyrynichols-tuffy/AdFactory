@@ -1,5 +1,6 @@
 import Foundation
 import Security
+import UIKit
 
 /// Where Ad Factory is and how this phone signs in to it. The default address is the PC's
 /// Tailscale link (tailnet only: the phone needs the Tailscale app switched on).
@@ -110,6 +111,27 @@ enum API {
     static func catalog() async throws -> Data {
         try await send(try Server.request("api/camera/projects"))
     }
+
+    static func project(_ sid: String) async throws -> ProjectDetail {
+        let dec = JSONDecoder()
+        dec.keyDecodingStrategy = .convertFromSnakeCase
+        return try dec.decode(ProjectDetail.self, from: try await send(try Server.request("api/camera/projects/\(sid)")))
+    }
+
+    /// An Ad Factory image (thumbnails need the sign-in cookie, so no AsyncImage); kept in memory.
+    static func image(_ path: String) async -> UIImage? {
+        if let hit = images.object(forKey: path as NSString) { return hit }
+        guard let base = Server.baseURL, let url = URL(string: path, relativeTo: base) else { return nil }
+        var r = URLRequest(url: url)
+        r.httpShouldHandleCookies = false
+        if let t = Server.token { r.setValue("\(Server.cookieName)=\(t)", forHTTPHeaderField: "Cookie") }
+        guard let got = try? await URLSession.shared.data(for: r),
+              (got.1 as? HTTPURLResponse)?.statusCode == 200, let img = UIImage(data: got.0) else { return nil }
+        images.setObject(img, forKey: path as NSString)
+        return img
+    }
+
+    private static let images = NSCache<NSString, UIImage>()
 
     static func newProject(_ p: NewProject) async throws -> Project {
         var r = try Server.request("api/camera/projects", method: "POST")

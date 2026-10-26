@@ -68,6 +68,25 @@ struct Catalog: Codable {
     static let defaultSafe: [Double] = [0.04, 0.085, 0.82, 0.735]
 }
 
+/// A video Ad Factory already has for a project (GET /api/camera/projects/<sid>).
+struct SourceClip: Codable, Identifiable, Hashable {
+    var id: String
+    var name: String
+    var status: String         // ready / queued / error…
+    var duration: Double
+    var batch: Int
+    var thumb: String?         // /api/thumb/… once it's processed
+}
+
+/// The project page: its clips in Ad Factory and how far the edit is.
+struct ProjectDetail: Codable {
+    var stage: String
+    var lines: [String]
+    var sources: [SourceClip]
+    var videos: Int            // videos cut from the takes so far
+    var saved: Int
+}
+
 /// POST /api/camera/projects (the same fields as Ad Factory's "＋ New video").
 struct NewProject: Encodable {
     var title: String
@@ -91,6 +110,7 @@ struct Clip: Codable, Identifiable, Equatable {
     var inPhotos = false
     var uploaded = false
     var error: String?
+    var silent: Bool?          // true = no sound got recorded (AudioCheck); nil = not checked
 }
 
 enum Stage {

@@ -27,6 +27,12 @@ struct CameraView: View {
     @AppStorage("clampTop") private var clampTop = false
     @AppStorage("clampH") private var clampH = 160.0
     @AppStorage("clampSet") private var clampSet = false
+    @AppStorage("pX") private var handX = 0.5      // where the teleprompter sits, per layout
+    @AppStorage("pY") private var handY = 0.22
+    @AppStorage("pW") private var handW = 0.92
+    @AppStorage("tpX") private var triX = 0.5
+    @AppStorage("tpY") private var triY = 0.15
+    @AppStorage("tpW") private var triW = 0.62
 
     @State private var line = 0
     @State private var counting: Int?
@@ -64,6 +70,17 @@ struct CameraView: View {
             .ignoresSafeArea()
 
             if !tripod { handheldControls }
+
+            GeometryReader { geo in
+                if showPrompter {
+                    FloatingPrompter(lines: project.lines, line: $line,
+                                     x: tripod ? $triX : $handX, y: tripod ? $triY : $handY,
+                                     width: tripod ? $triW : $handW, size: $prompterSize, screen: geo.size) {
+                        if tripod { tripodPrompter = false } else { handheldPrompter = false }
+                    }
+                }
+            }
+            .ignoresSafeArea()
         }
         .foregroundStyle(.white)
         .statusBarHidden()
@@ -111,8 +128,7 @@ struct CameraView: View {
             }
             .padding(.horizontal, 14)
             .padding(.top, 4)
-            problemBanner
-            if showPrompter { prompterView(compact: false) }
+            alerts
             Spacer()
             if let n = counting { countdownNumber(n) }
             Spacer()
@@ -123,7 +139,7 @@ struct CameraView: View {
                     biasTool
                     lockAndZoom
                     Spacer()
-                    MicMeter(name: camera.mic, level: camera.level)
+                    micMeter
                 }
                 if showBias { biasSlider }
                 HStack {
@@ -176,19 +192,25 @@ struct CameraView: View {
         VStack(spacing: 6) {   // above the picture
             Spacer(minLength: 0)
             status
-            problemBanner
-            if showPrompter && f.above.height >= 110 { prompterView(compact: true) }
         }
         .padding(.bottom, 6)
         .frame(width: f.above.width + 2 * min(f.left.width, 40), height: max(0, f.above.height))
         .clipped()
         .position(x: f.above.midX, y: f.above.midY)
 
+        VStack {   // warnings (no sound, mic off…) along the top of the picture
+            alerts
+            Spacer(minLength: 0)
+        }
+        .padding(.top, 8)
+        .frame(width: f.preview.width + 2 * min(f.left.width, 30), height: f.preview.height)
+        .position(x: f.preview.midX, y: f.preview.midY)
+
         VStack(spacing: 6) {   // below the picture
             HStack(spacing: 8) {
                 lockAndZoom
                 Spacer(minLength: 0)
-                MicMeter(name: camera.mic, level: camera.level)
+                micMeter
             }
             if showBias { biasSlider }
             Spacer(minLength: 0)
@@ -305,17 +327,55 @@ struct CameraView: View {
         }
     }
 
+    /// Camera problems, and the sound checks: a wireless lav whose transmitter is off (or a
+    /// receiver that isn't plugged in) otherwise only shows up later as a silent video.
     @ViewBuilder
-    private var problemBanner: some View {
-        if let p = camera.problem {
-            Text(verbatim: p)
-                .font(.footnote)
-                .lineLimit(3)
-                .padding(10)
-                .background(.orange.opacity(0.85), in: RoundedRectangle(cornerRadius: 10))
-                .onTapGesture { camera.problem = nil }
-                .padding(.horizontal)
+    private var alerts: some View {
+        VStack(spacing: 6) {
+            if camera.micOff {
+                banner(Text("The microphone is off for Ad Camera, so videos won't have sound. Tap to turn it on in Settings."),
+                       color: .red) {
+                    if let url = URL(string: UIApplication.openSettingsURLString) { UIApplication.shared.open(url) }
+                }
+            } else if camera.silent {
+                banner(Text("No sound coming in. Is the mic's transmitter on?"), color: .red) {}
+            } else if camera.externalExpected && !camera.recording {
+                banner(Text("Using the iPhone's own mic, not \(camera.externalName)."), color: .orange) {}
+            }
+            if let id = clips.silentTake, mine.contains(where: { $0.id == id }) {
+                banner(Text("That take has no sound. Check the mic and film it again."), color: .red) {
+                    clips.silentTake = nil
+                }
+            }
+            if let p = camera.problem {
+                banner(Text(verbatim: p), color: .orange) { camera.problem = nil }
+            }
         }
+        .padding(.horizontal)
+    }
+
+    private func banner(_ text: Text, color: Color, tap: @escaping () -> Void) -> some View {
+        text
+            .font(.footnote.bold())
+            .multilineTextAlignment(.center)
+            .lineLimit(3)
+            .padding(10)
+            .frame(maxWidth: .infinity)
+            .background(color.opacity(0.88), in: RoundedRectangle(cornerRadius: 10))
+            .onTapGesture(perform: tap)
+    }
+
+    private var micMeter: some View {
+        if camera.micOff {
+            return MicMeter(name: String(localized: "Mic is off"), level: 0, tint: .red)
+        }
+        if camera.silent {
+            return MicMeter(name: String(localized: "No sound"), level: camera.level, tint: .red)
+        }
+        if camera.externalExpected {
+            return MicMeter(name: String(localized: "iPhone mic"), level: camera.level, tint: .orange)
+        }
+        return MicMeter(name: camera.mic, level: camera.level, tint: nil)
     }
 
     private func countdownNumber(_ n: Int) -> some View {
@@ -360,45 +420,6 @@ struct CameraView: View {
         if camera.zoom > 1.05 {
             Text(verbatim: String(format: "%.1fx", camera.zoom)).font(.caption.bold())
         }
-    }
-
-    /// Up top (by the front lens in handheld), so reading it still looks like eye contact.
-    private func prompterView(compact: Bool) -> some View {
-        let lines = project.lines
-        let i = min(line, lines.count - 1)
-        let size = compact ? min(prompterSize, 18) : prompterSize
-        return VStack(spacing: 6) {
-            Text(verbatim: lines[i])
-                .font(.system(size: size, weight: .bold))
-                .multilineTextAlignment(.center)
-                .lineLimit(compact ? 2 : 5)
-                .minimumScaleFactor(0.6)
-            if !compact && i + 1 < lines.count {
-                Text(verbatim: lines[i + 1])
-                    .font(.system(size: size * 0.6))
-                    .multilineTextAlignment(.center)
-                    .opacity(0.55)
-                    .lineLimit(2)
-            }
-            if !compact {
-                HStack {
-                    Text("Line \(i + 1) of \(lines.count)")
-                    Spacer()
-                    Text("Tap: next line · swipe right: back")
-                }
-                .font(.caption2)
-                .opacity(0.6)
-            }
-        }
-        .padding(compact ? 8 : 12)
-        .frame(maxWidth: .infinity)
-        .background(.black.opacity(0.5), in: RoundedRectangle(cornerRadius: 14))
-        .padding(.horizontal, compact ? 0 : 12)
-        .contentShape(Rectangle())
-        .onTapGesture { line = min(lines.count - 1, i + 1) }
-        .gesture(DragGesture(minimumDistance: 30).onEnded { v in
-            line = v.translation.width > 0 ? max(0, i - 1) : min(lines.count - 1, i + 1)
-        })
     }
 
     private var mine: [Clip] { clips.clips.filter { $0.project == project.sid } }
@@ -626,9 +647,11 @@ struct RecordButton: View {
     }
 }
 
+/// Which mic is recording and how loud it is; tinted red/orange when the sound needs a look.
 struct MicMeter: View {
     var name: String
     var level: Float
+    var tint: Color?
 
     var body: some View {
         HStack(spacing: 6) {
@@ -642,10 +665,10 @@ struct MicMeter: View {
                         .frame(width: 50 * CGFloat(level), height: 6)
                 }
             if !name.isEmpty {
-                Text(verbatim: name).font(.caption2).lineLimit(1).frame(maxWidth: 100, alignment: .leading)
+                Text(verbatim: name).font(.caption2.bold()).lineLimit(1).frame(maxWidth: 100, alignment: .leading)
             }
         }
         .padding(.horizontal, 8).padding(.vertical, 6)
-        .background(.black.opacity(0.45), in: Capsule())
+        .background((tint ?? .black).opacity(tint == nil ? 0.45 : 0.85), in: Capsule())
     }
 }

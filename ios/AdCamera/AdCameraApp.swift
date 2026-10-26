@@ -61,6 +61,7 @@ enum Prefs {
             "clampTop": false,
             "clampH": 160.0,       // about an inch
             "clampSet": false,
+            "warnMic": true,       // flag the iPhone's own mic once an external one (the lav) has been used
         ])
     }
 

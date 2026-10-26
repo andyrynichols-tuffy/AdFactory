@@ -1,5 +1,7 @@
+import AVFoundation
 import Foundation
 import Photos
+import UIKit
 
 /// Every take filmed on this phone: saved to Photos ("Ad Studio" album) and uploaded into
 /// its project's OneDrive inbox folder through Ad Factory (PUT /api/inbox/upload?shoot=…).
@@ -10,6 +12,7 @@ final class ClipStore: NSObject, ObservableObject, URLSessionDataDelegate {
 
     @Published private(set) var clips: [Clip] = []
     @Published private(set) var progress: [UUID: Double] = [:]   // uploading right now
+    @Published var silentTake: UUID?     // the latest take that came out with no sound
     var backgroundDone: (() -> Void)?
 
     static let folder: URL = {
@@ -65,8 +68,53 @@ final class ClipStore: NSObject, ObservableObject, URLSessionDataDelegate {
                         seconds: seconds, bytes: size, line: line)
         clips.insert(clip, at: 0)
         save()
+        makeThumb(clip.id, file)
+        checkSound(clip.id, file)
         savePhoto(clip.id)
         upload(clip.id)
+    }
+
+    // MARK: - thumbnails (kept after the video itself is cleaned up)
+
+    @Published private(set) var thumbsMade = 0
+
+    static let thumbs: URL = {
+        let d = folder.appendingPathComponent("thumbs", isDirectory: true)
+        try? FileManager.default.createDirectory(at: d, withIntermediateDirectories: true)
+        return d
+    }()
+
+    static func thumb(_ id: UUID) -> UIImage? {
+        UIImage(contentsOfFile: thumbs.appendingPathComponent("\(id.uuidString).jpg").path)
+    }
+
+    private func makeThumb(_ id: UUID, _ file: URL) {
+        Task {
+            let gen = AVAssetImageGenerator(asset: AVURLAsset(url: file))
+            gen.appliesPreferredTrackTransform = true
+            gen.maximumSize = CGSize(width: 270, height: 480)
+            guard let shot = try? await gen.image(at: CMTime(seconds: 0.5, preferredTimescale: 600)),
+                  let data = UIImage(cgImage: shot.image).jpegData(compressionQuality: 0.7) else { return }
+            try? data.write(to: Self.thumbs.appendingPathComponent("\(id.uuidString).jpg"))
+            await MainActor.run { self.thumbsMade += 1 }
+        }
+    }
+
+    /// Flags a take that recorded no sound (it still saves and uploads: nothing is thrown away).
+    private func checkSound(_ id: UUID, _ file: URL) {
+        Task {
+            let quiet = await AudioCheck.isSilent(file)
+            await MainActor.run {
+                guard let quiet else { return }
+                self.update(id) { $0.silent = quiet }
+                if quiet {
+                    self.silentTake = id
+                    UINotificationFeedbackGenerator().notificationOccurred(.warning)
+                } else if self.silentTake == id {
+                    self.silentTake = nil
+                }
+            }
+        }
     }
 
     func count(for project: String) -> Int {

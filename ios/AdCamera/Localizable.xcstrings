@@ -52,6 +52,16 @@
         }
       }
     },
+    "%lld videos cut · %lld saved": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld vídeos cortados · %lld salvos"
+          }
+        }
+      }
+    },
     "%lld videos in Ad Factory": {
       "localizations": {
         "pt-BR": {
@@ -98,6 +108,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "O Ad Factory respondeu %lld."
+          }
+        }
+      }
+    },
+    "Ad Factory is pre-cutting the clips…": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O Ad Factory está pré-cortando os clipes…"
           }
         }
       }
@@ -242,6 +262,16 @@
         }
       }
     },
+    "Continue editing": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continuar editando"
+          }
+        }
+      }
+    },
     "Couldn't open that camera.": {
       "localizations": {
         "pt-BR": {
@@ -292,12 +322,32 @@
         }
       }
     },
+    "Film": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filmar"
+          }
+        }
+      }
+    },
     "Film it": {
       "localizations": {
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Filmar"
+          }
+        }
+      }
+    },
+    "Filmed on this phone": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filmados neste celular"
           }
         }
       }
@@ -382,6 +432,16 @@
         }
       }
     },
+    "Hide the teleprompter": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esconder o teleprompter"
+          }
+        }
+      }
+    },
     "Hold white balance during a take": {
       "localizations": {
         "pt-BR": {
@@ -398,6 +458,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Gancho"
+          }
+        }
+      }
+    },
+    "In Ad Factory": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No Ad Factory"
           }
         }
       }
@@ -452,6 +522,16 @@
         }
       }
     },
+    "Mic is off": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Microfone desligado"
+          }
+        }
+      }
+    },
     "Mirror the front camera": {
       "localizations": {
         "pt-BR": {
@@ -492,12 +572,62 @@
         }
       }
     },
+    "Next line": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Próxima linha"
+          }
+        }
+      }
+    },
+    "No clips yet. Tap Film to start.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nenhum clipe ainda. Toque em Filmar para começar."
+          }
+        }
+      }
+    },
     "No script": {
       "localizations": {
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Sem roteiro"
+          }
+        }
+      }
+    },
+    "No sound": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sem som"
+          }
+        }
+      }
+    },
+    "No sound coming in. Is the mic's transmitter on?": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Não está chegando som. O transmissor do microfone está ligado?"
+          }
+        }
+      }
+    },
+    "No sound in this take": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Take sem som"
           }
         }
       }
@@ -582,6 +712,16 @@
         }
       }
     },
+    "Previous line": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Linha anterior"
+          }
+        }
+      }
+    },
     "Product": {
       "localizations": {
         "pt-BR": {
@@ -612,6 +752,16 @@
         }
       }
     },
+    "Resize": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Redimensionar"
+          }
+        }
+      }
+    },
     "Resolution": {
       "localizations": {
         "pt-BR": {
@@ -628,6 +778,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Roteiro"
+          }
+        }
+      }
+    },
+    "Script (%lld lines)": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Roteiro (%lld linhas)"
           }
         }
       }
@@ -812,22 +972,12 @@
         }
       }
     },
-    "Tap the picture to focus there; hold to lock focus and brightness. Pinch to zoom. The volume buttons start and stop recording.": {
+    "Tap the picture to focus there; hold to lock focus and brightness. Pinch to zoom. The volume buttons start and stop recording. Drag the teleprompter to move it, drag its corner to make it wider, pinch it to change the text size. Takes that come out with no sound are flagged right away.": {
       "localizations": {
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Toque na imagem para focar ali; segure para travar o foco e o brilho. Faça pinça para dar zoom. Os botões de volume começam e param a gravação."
-          }
-        }
-      }
-    },
-    "Tap: next line · swipe right: back": {
-      "localizations": {
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Toque: próxima linha · deslize para a direita: voltar"
+            "value": "Toque na imagem para focar ali; segure para travar o foco e o brilho. Faça pinça para dar zoom. Os botões de volume começam e param a gravação. Arraste o teleprompter para movê-lo, arraste o canto para deixá-lo mais largo e faça pinça nele para mudar o tamanho do texto. Takes que saem sem som são avisados na hora."
           }
         }
       }
@@ -852,12 +1002,32 @@
         }
       }
     },
+    "That take has no sound. Check the mic and film it again.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esse take ficou sem som. Confira o microfone e filme de novo."
+          }
+        }
+      }
+    },
     "The Ad Factory address isn't right. Check it in Settings.": {
       "localizations": {
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "O endereço do Ad Factory não está certo. Confira nos Ajustes."
+          }
+        }
+      }
+    },
+    "The microphone is off for Ad Camera, so videos won't have sound. Tap to turn it on in Settings.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O microfone está desligado para o Ad Camera, então os vídeos ficarão sem som. Toque para ativar nos Ajustes."
           }
         }
       }
@@ -1042,6 +1212,16 @@
         }
       }
     },
+    "Using the iPhone's own mic, not %@.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usando o microfone do próprio iPhone, não o %@."
+          }
+        }
+      }
+    },
     "Video format": {
       "localizations": {
         "pt-BR": {
@@ -1072,6 +1252,16 @@
         }
       }
     },
+    "Warn when the external mic isn't plugged in": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Avisar quando o microfone externo não estiver conectado"
+          }
+        }
+      }
+    },
     "Where does the clamp cover the screen?": {
       "localizations": {
         "pt-BR": {
@@ -1098,6 +1288,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "legenda + usuário"
+          }
+        }
+      }
+    },
+    "iPhone mic": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mic do iPhone"
           }
         }
       }
