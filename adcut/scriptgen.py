@@ -168,14 +168,15 @@ FEATURES = ["water-resistant", "water resistant", "waterproof", "sweat-resistant
             "breathable", "stretchy", "high-waisted", "high waisted", "relaxed fit", "slim fit", "oversized",
             "lightweight", "heavyweight", "insulated", "noise-cancelling", "noise cancelling", "dishwasher safe",
             "100% cotton", "cotton", "linen", "waffle", "fleece", "denim", "leather", "silicone", "ceramic", "bamboo",
-            "super thin tip", "thin tip", "brush", "aroma diffuser", "diffuser", "remote"]
+            "super thin tip", "thin tip", "brush", "aroma diffuser", "diffuser"]
 ITEMS = ["eyebrow pencil", "eyebrow pen", "brow pencil", "pencil", "wipes", "candle", "shirt", "t-shirt", "tee",
-         "henley", "thermals", "thermal", "pants", "jeans", "shorts", "dress", "leggings", "hoodie", "sweater", "sweatshirt", "jacket",
+         "henley", "thermals", "thermal", "pants", "sweatpants", "joggers", "cardigan", "flannel", "beanie", "boots",
+         "sandals", "pajamas", "robe", "boxers", "jeans", "shorts", "dress", "leggings", "hoodie", "sweater", "sweatshirt", "jacket",
          "shoes", "sneakers", "slippers", "socks", "bag", "backpack", "bottle", "water bottle", "tumbler", "mug",
          "serum", "cream", "lotion", "moisturizer", "cleanser", "shampoo", "conditioner", "mascara", "lipstick",
          "lip oil", "lip gloss", "foundation", "concealer", "sunscreen", "perfume", "cologne", "deodorant", "charger",
-         "phone case", "case", "lamp", "light", "vacuum", "organizer", "pillow", "blanket", "sheets", "towel", "pan",
-         "knife", "game", "card game", "toy", "gummies", "supplement", "vitamins", "protein", "tea", "coffee", "pen"]
+         "phone case", "lamp", "vacuum", "organizer", "pillow", "blanket", "sheets", "towel", "pan",
+         "knife", "board game", "card game", "toy", "gummies", "supplement", "vitamins", "protein", "tea", "coffee", "pen"]
 RULES = [
     ("price", r"\$\s?\d[\d,]*(?:\.\d{2})?|\b\d+(?:\.\d{2})?\s?(?:dollars|bucks)\b"),
     ("deal", r"\b\d{1,3}\s?(?:%|percent)\s?off\b|\bbuy one,? get one(?: free)?\b|\bBOGO\b|\bfree shipping\b|\bon sale\b"),
@@ -220,21 +221,27 @@ def guess_marks(lines, desc="") -> list:
     desc_words = set(re.findall(r"[a-z]{4,}", re.sub(r"#\w+", "", (desc or "").lower())))
     found = []  # (line, a, b, kind, text)
     counts = {}
+    d = shop.load()
+    known = {p["name"].lower() for p in d["products"]} | {p["brand"].lower() for p in d["products"] if p.get("brand")}
+    item_words = {w.split()[-1].rstrip("s") for w in ITEMS}
     for i, l in enumerate(lines):
         text = re.sub(r"\[[^\]]*\]", lambda m: " " * len(m.group(0)), l["text"])  # [directions] aren't said
-        names = _cap_runs(text)
+        names = [(a, b, ph, "name") for a, b, ph in _cap_runs(text)]
         ws = list(re.finditer(r"[\w'&-]+", text))
         for n in (3, 2, 1):  # names from the caption's hashtags, said in lowercase ("dude wipes" = #dudewipes)
             for k in range(len(ws) - n + 1):
                 a, b = ws[k].start(), ws[k + n - 1].end()
-                if re.sub(r"\W", "", text[a:b].lower()) in tags and not any(a < y and b > x for x, y, _ in names):
-                    names.append((a, b, text[a:b]))
-        for a, b, ph in names:
-            found.append((i, a, b, "name", ph))
-            counts[ph.lower()] = counts.get(ph.lower(), 0) + 1
-    names = sorted({f[4].lower() for f in found},
+                if re.sub(r"\W", "", text[a:b].lower()) in tags and not any(a < y and b > x for x, y, *_ in names):
+                    low = text[a:b].lower()
+                    # a lowercase hashtag that names a kind of thing ("baggy sweatpants") is the item, not a brand
+                    kind = "item" if low not in known and low.split()[-1].rstrip("s") in item_words else "name"
+                    names.append((a, b, text[a:b], kind))
+        for a, b, ph, kind in names:
+            found.append((i, a, b, kind, ph))
+            if kind == "name":
+                counts[ph.lower()] = counts.get(ph.lower(), 0) + 1
+    names = sorted({f[4].lower() for f in found if f[3] == "name"},
                    key=lambda n: -(counts[n] + 3 * (n.replace(" ", "") in tags) + (n in desc_words)))
-    d = shop.load()
     known_products = {p["name"].lower() for p in d["products"]}
     known_brands = {p["brand"].lower() for p in d["products"] if p.get("brand")}
 
