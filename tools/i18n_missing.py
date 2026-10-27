@@ -111,7 +111,7 @@ def tokens(src):
 
 
 P("index.html").feed((ROOT / "index.html").read_text(encoding="utf-8"))
-for name in ("app.js", "shop.js", "scriptbuilder.js"):
+for name in ("app.js", "shop.js", "scriptbuilder.js", "planner.js"):
     for kind, text in tokens((ROOT / name).read_text(encoding="utf-8")):
         if "<" in text or ">" in text:
             p = P(name)
