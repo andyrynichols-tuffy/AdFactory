@@ -300,10 +300,10 @@ TEMPLATES = [  # {it}/{It is}/{This is}… follow the item: "it" for a top, "the
      "{This is} the {brand} {product}, and the {feature 1} is honestly so good.\n"
      "{It is} on TikTok Shop, link's right here."),
     ("skit", "Where'd you get those? (two-person skit)",
-     "A: Wait, I love your {item}. Where'd you get {it}?\n"
-     "B: {brand}. I got {it} on TikTok Shop.\n"
-     "A: For real? How much?\n"
-     "B: {price}. The link's right there.\n"
+     "A: Wait, I love your {item}, where'd you get {it}?\n"
+     "B: {brand}, I got {it} on TikTok Shop.\n"
+     "A: For real, how much?\n"
+     "B: {price}, the link's right there.\n"
      "A: Okay, send it to me."),
     ("carousel", "On-image text (carousel)",
      "{season} essential: {item}\n"
