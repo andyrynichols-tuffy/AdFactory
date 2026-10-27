@@ -19,24 +19,25 @@ _lock = threading.Lock()
 WEARS = {"Men's Jeans": "bottom", "Men's Pants": "bottom"}  # product category -> which size applies (default top)
 WORN = {"worn", "skit"}  # formats where the product is on the person
 WEEKDAYS = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
-FORMATS = [  # share = % of a channel's posts; takes = near-identical takes per product; minutes per take
+FORMATS = [  # lighting notes are for the kit: one large round key light + two rectangle fill panels.
+    # share = % of a channel's posts; takes = near-identical takes per product; minutes per take
     {"key": "carousel", "label": "Flat-lay carousel", "setup": "Wood floor, top-down", "share": 25, "takes": 1,
-     "take_min": 12.0, "edit_min": 3.0, "light_min": 15, "light": "Daylight from a window, mid-morning, overhead lights off (mixed colour looks orange). Light from one side, a white foam board on the other to fill shadows. Phone straight above, parallel to the floor. Lock exposure and white balance; same spot for every carousel.",
+     "take_min": 12.0, "edit_min": 3.0, "light_min": 15, "light": "Key (circle) high above one end of the outfit, angled down at 45°, ~70%. Fill panel 1 low on the opposite side, ~30%, to soften shadows. Fill panel 2 off, or low across the far end if the floor looks uneven. Room lights off, all three at 5600K. Phone straight above; lock exposure and white balance; same spot every carousel.",
      "tip": "Style one outfit around the item on the floor, 5-7 photos, one line of on-image text. Brings the reach. Keep the outfit and swap only the colourway between carousels."},
     {"key": "flatlay_vo", "label": "Flat-lay voiceover video", "setup": "White bed or couch, hand pointing", "share": 30, "takes": 3,
-     "take_min": 1.0, "edit_min": 0.7, "light_min": 10, "light": "Soft light from the side at 45° (window or softbox through diffusion), bounce on the far side. Expose for the white sheets: tap to lock and drop exposure a touch so they don't blow out. Don't move the light between takes.",
+     "take_min": 1.0, "edit_min": 0.7, "light_min": 10, "light": "Key (circle) at 45° to one side of the bed, above it, ~60%. Fill panel 1 on the other side, ~30%. Fill panel 2 above or behind the bed, low, so the white sheets light evenly. Tap to lock, then drop exposure a touch so the whites don't blow out. Don't move anything between takes.",
      "tip": "One take, ~20 s, read the sale script while pointing at the item."},
     {"key": "worn", "label": "Worn, faceless", "setup": "Bedroom, waist-down", "share": 20, "takes": 3,
-     "take_min": 2.0, "edit_min": 0.7, "light_min": 15, "light": "Key light in front at 45°, a bit above waist height, soft (softbox or window); never a window behind you. Bounce to fill the other side so the fabric shows. Daylight-colour bulbs only (5000K). Mark where you stand so every take matches.",
+     "take_min": 2.0, "edit_min": 0.7, "light_min": 15, "light": "Key (circle) in front at 45°, center at chest height, tilted down toward the waist, ~70%. Fill panel 1 on the other side, ~35%, so the fabric shows. Fill panel 2 behind and to the side, low, as a rim light that outlines the fit against the background. Never a window behind you. Tape a mark on the floor so every take matches.",
      "tip": "Wear it, film waist-down, say your height and size."},
     {"key": "held", "label": "Holding the item", "setup": "Hand-held close-up (shoes, gadgets, tags)", "share": 10, "takes": 2,
-     "take_min": 1.0, "edit_min": 0.7, "light_min": 8, "light": "Close soft light from one side, low and grazing, so the knit or waffle texture pops. Keep your hand and phone from shadowing the item. Plain background.",
+     "take_min": 1.0, "edit_min": 0.7, "light_min": 8, "light": "Key (circle) close and low to one side, grazing across the item, ~50%, so the knit or waffle texture pops. Fill panel 1 opposite, ~20%. Fill panel 2 off. Keep your hand and phone from shadowing the item; plain background.",
      "tip": "\"I think I just found the perfect…\" Good for side products."},
     {"key": "skit", "label": "Two-person skit / POV", "setup": "Outside or by the car, both of you", "share": 10, "takes": 2,
-     "take_min": 2.5, "edit_min": 1.0, "light_min": 10, "light": "Outside: open shade (the shady side of the house or car), or golden hour; no midday sun on faces. Both of you face the light. Inside: one big soft light in front, same for both people.",
+     "take_min": 2.5, "edit_min": 1.0, "light_min": 10, "light": "Outside: no lights; open shade (the shady side of the house or car) or golden hour, both of you facing the light. Inside: key (circle) in front between you, ~70%; one fill panel at 45° on each side, ~35%, so both of you are lit the same.",
      "tip": "\"Wait, where'd you get those?\" The same exchange for each product."},
     {"key": "other", "label": "Brand deal / trend / no-product", "setup": "Anything", "share": 5, "takes": 1,
-     "take_min": 5.0, "edit_min": 3.0, "light_min": 10, "light": "Match the setup it borrows. Soft, even, daylight colour, no mixed bulbs.",
+     "take_min": 5.0, "edit_min": 3.0, "light_min": 10, "light": "Match the setup it borrows: key (circle) at 45°, fill panel opposite at about half power, second panel as rim or off. All at 5600K, room lights off.",
      "tip": "A brand deal or a non-product post that can go wide."},
 ]
 DEFAULTS = {
