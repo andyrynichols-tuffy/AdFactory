@@ -1257,7 +1257,22 @@ window.I18N_PT = {
   "🧺 Prep": "🧺 Preparo",
   "% of each channel's posts · takes per product · minutes per post": "% dos posts de cada canal · tomadas por produto · minutos por post",
   "Prep: pull the day's pieces, steam, de-lint, tags off, set up the floor + bed": "Preparo: separar as peças do dia, passar no vapor, tirar fiapos e etiquetas, montar o chão + a cama",
-  "Style one outfit around the item on the floor, 5-7 photos, one line of on-image text. Brings the reach. Keep the outfit and swap only the colourway between carousels.": "Monte um look com a peça no chão, 5-7 fotos, uma linha de texto na imagem. Traz o alcance. Mantenha o look e troque só a cor entre os carrosséis."
+  "Style one outfit around the item on the floor, 5-7 photos, one line of on-image text. Brings the reach. Keep the outfit and swap only the colourway between carousels.": "Monte um look com a peça no chão, 5-7 fotos, uma linha de texto na imagem. Traz o alcance. Mantenha o look e troque só a cor entre os carrosséis.",
+  "Daylight from a window, mid-morning, overhead lights off (mixed colour looks orange). Light from one side, a white foam board on the other to fill shadows. Phone straight above, parallel to the floor. Lock exposure and white balance; same spot for every carousel.": "Luz do dia da janela, no meio da manhã, luzes do teto apagadas (cores misturadas ficam laranja). Luz de um lado, uma placa de isopor branca do outro para suavizar as sombras. Celular bem por cima, paralelo ao chão. Trave exposição e balanço de branco; mesmo lugar em todo carrossel.",
+  "💡 Daylight from a window, mid-morning, overhead lights off (mixed colour looks orange). Light from one side, a white foam board on the other to fill shadows. Phone straight above, parallel to the floor. Lock exposure and white balance; same spot for every carousel.": "💡 Luz do dia da janela, no meio da manhã, luzes do teto apagadas (cores misturadas ficam laranja). Luz de um lado, uma placa de isopor branca do outro para suavizar as sombras. Celular bem por cima, paralelo ao chão. Trave exposição e balanço de branco; mesmo lugar em todo carrossel.",
+  "Soft light from the side at 45° (window or softbox through diffusion), bounce on the far side. Expose for the white sheets: tap to lock and drop exposure a touch so they don't blow out. Don't move the light between takes.": "Luz suave de lado a 45° (janela ou softbox com difusor), rebatedor do outro lado. Exponha para o lençol branco: toque para travar e baixe um pouco a exposição para não estourar. Não mexa na luz entre as tomadas.",
+  "💡 Soft light from the side at 45° (window or softbox through diffusion), bounce on the far side. Expose for the white sheets: tap to lock and drop exposure a touch so they don't blow out. Don't move the light between takes.": "💡 Luz suave de lado a 45° (janela ou softbox com difusor), rebatedor do outro lado. Exponha para o lençol branco: toque para travar e baixe um pouco a exposição para não estourar. Não mexa na luz entre as tomadas.",
+  "Key light in front at 45°, a bit above waist height, soft (softbox or window); never a window behind you. Bounce to fill the other side so the fabric shows. Daylight-colour bulbs only (5000K). Mark where you stand so every take matches.": "Luz principal na frente a 45°, um pouco acima da cintura, suave (softbox ou janela); nunca uma janela atrás de você. Rebatedor do outro lado para mostrar o tecido. Só lâmpadas cor de luz do dia (5000K). Marque onde você fica para todas as tomadas ficarem iguais.",
+  "💡 Key light in front at 45°, a bit above waist height, soft (softbox or window); never a window behind you. Bounce to fill the other side so the fabric shows. Daylight-colour bulbs only (5000K). Mark where you stand so every take matches.": "💡 Luz principal na frente a 45°, um pouco acima da cintura, suave (softbox ou janela); nunca uma janela atrás de você. Rebatedor do outro lado para mostrar o tecido. Só lâmpadas cor de luz do dia (5000K). Marque onde você fica para todas as tomadas ficarem iguais.",
+  "Close soft light from one side, low and grazing, so the knit or waffle texture pops. Keep your hand and phone from shadowing the item. Plain background.": "Luz suave e próxima de um lado, baixa e rasante, para a textura do tricô ou waffle aparecer. Não deixe a mão nem o celular fazerem sombra na peça. Fundo liso.",
+  "💡 Close soft light from one side, low and grazing, so the knit or waffle texture pops. Keep your hand and phone from shadowing the item. Plain background.": "💡 Luz suave e próxima de um lado, baixa e rasante, para a textura do tricô ou waffle aparecer. Não deixe a mão nem o celular fazerem sombra na peça. Fundo liso.",
+  "Outside: open shade (the shady side of the house or car), or golden hour; no midday sun on faces. Both of you face the light. Inside: one big soft light in front, same for both people.": "Lá fora: sombra aberta (o lado sombreado da casa ou do carro) ou golden hour; nada de sol do meio-dia no rosto. Vocês dois de frente para a luz. Dentro: uma luz grande e suave na frente, igual para os dois.",
+  "💡 Outside: open shade (the shady side of the house or car), or golden hour; no midday sun on faces. Both of you face the light. Inside: one big soft light in front, same for both people.": "💡 Lá fora: sombra aberta (o lado sombreado da casa ou do carro) ou golden hour; nada de sol do meio-dia no rosto. Vocês dois de frente para a luz. Dentro: uma luz grande e suave na frente, igual para os dois.",
+  "Match the setup it borrows. Soft, even, daylight colour, no mixed bulbs.": "Igual ao cenário que ele usa. Suave, uniforme, cor de luz do dia, sem lâmpadas misturadas.",
+  "💡 Match the setup it borrows. Soft, even, daylight colour, no mixed bulbs.": "💡 Igual ao cenário que ele usa. Suave, uniforme, cor de luz do dia, sem lâmpadas misturadas.",
+  "Lighting": "Iluminação",
+  "min lights": "min de luz",
+  "min to set up)": "min para montar)"
  },
  "patterns": [
   [
@@ -1407,6 +1422,10 @@ window.I18N_PT = {
   [
    "^Scheduled posts go live: (\\d+), nothing to do",
    "Posts agendados entram no ar: $1, nada a fazer"
+  ],
+  [
+   "\\((\\d+) min to set up\\)",
+   "($1 min para montar)"
   ]
  ]
 };

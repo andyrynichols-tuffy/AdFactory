@@ -21,17 +21,23 @@ WORN = {"worn", "skit"}  # formats where the product is on the person
 WEEKDAYS = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
 FORMATS = [  # share = % of a channel's posts; takes = near-identical takes per product; minutes per take
     {"key": "carousel", "label": "Flat-lay carousel", "setup": "Wood floor, top-down", "share": 25, "takes": 1,
-     "take_min": 12.0, "edit_min": 3.0, "tip": "Style one outfit around the item on the floor, 5-7 photos, one line of on-image text. Brings the reach. Keep the outfit and swap only the colourway between carousels."},
+     "take_min": 12.0, "edit_min": 3.0, "light_min": 15, "light": "Daylight from a window, mid-morning, overhead lights off (mixed colour looks orange). Light from one side, a white foam board on the other to fill shadows. Phone straight above, parallel to the floor. Lock exposure and white balance; same spot for every carousel.",
+     "tip": "Style one outfit around the item on the floor, 5-7 photos, one line of on-image text. Brings the reach. Keep the outfit and swap only the colourway between carousels."},
     {"key": "flatlay_vo", "label": "Flat-lay voiceover video", "setup": "White bed or couch, hand pointing", "share": 30, "takes": 3,
-     "take_min": 1.0, "edit_min": 0.7, "tip": "One take, ~20 s, read the sale script while pointing at the item."},
+     "take_min": 1.0, "edit_min": 0.7, "light_min": 10, "light": "Soft light from the side at 45° (window or softbox through diffusion), bounce on the far side. Expose for the white sheets: tap to lock and drop exposure a touch so they don't blow out. Don't move the light between takes.",
+     "tip": "One take, ~20 s, read the sale script while pointing at the item."},
     {"key": "worn", "label": "Worn, faceless", "setup": "Bedroom, waist-down", "share": 20, "takes": 3,
-     "take_min": 2.0, "edit_min": 0.7, "tip": "Wear it, film waist-down, say your height and size."},
+     "take_min": 2.0, "edit_min": 0.7, "light_min": 15, "light": "Key light in front at 45°, a bit above waist height, soft (softbox or window); never a window behind you. Bounce to fill the other side so the fabric shows. Daylight-colour bulbs only (5000K). Mark where you stand so every take matches.",
+     "tip": "Wear it, film waist-down, say your height and size."},
     {"key": "held", "label": "Holding the item", "setup": "Hand-held close-up (shoes, gadgets, tags)", "share": 10, "takes": 2,
-     "take_min": 1.0, "edit_min": 0.7, "tip": "\"I think I just found the perfect…\" Good for side products."},
+     "take_min": 1.0, "edit_min": 0.7, "light_min": 8, "light": "Close soft light from one side, low and grazing, so the knit or waffle texture pops. Keep your hand and phone from shadowing the item. Plain background.",
+     "tip": "\"I think I just found the perfect…\" Good for side products."},
     {"key": "skit", "label": "Two-person skit / POV", "setup": "Outside or by the car, both of you", "share": 10, "takes": 2,
-     "take_min": 2.5, "edit_min": 1.0, "tip": "\"Wait, where'd you get those?\" The same exchange for each product."},
+     "take_min": 2.5, "edit_min": 1.0, "light_min": 10, "light": "Outside: open shade (the shady side of the house or car), or golden hour; no midday sun on faces. Both of you face the light. Inside: one big soft light in front, same for both people.",
+     "tip": "\"Wait, where'd you get those?\" The same exchange for each product."},
     {"key": "other", "label": "Brand deal / trend / no-product", "setup": "Anything", "share": 5, "takes": 1,
-     "take_min": 5.0, "edit_min": 3.0, "tip": "A brand deal or a non-product post that can go wide."},
+     "take_min": 5.0, "edit_min": 3.0, "light_min": 10, "light": "Match the setup it borrows. Soft, even, daylight colour, no mixed bulbs.",
+     "tip": "A brand deal or a non-product post that can go wide."},
 ]
 DEFAULTS = {
     "posts": {"mon": 20, "tue": 20, "wed": 20, "thu": 20, "fri": 20, "sat": 5, "sun": 20},
@@ -156,10 +162,10 @@ def generate(day_iso: str) -> dict:
                 else:
                     items.append({"product": pid, "name": p["name"] if p else "(pick a product)", "takes": t})
             sid = f"{key}-{ci}"
-            sets.append({"id": sid, "format": key, "label": f["label"], "setup": f["setup"], "tip": f["tip"],
+            sets.append({"id": sid, "format": key, "label": f["label"], "setup": f["setup"], "tip": f["tip"], "light": f["light"], "light_min": round(_mins(st, key, "light_min")),
                          "channel": ch.get("account"), "channel_name": (acc or {}).get("name") or f"Channel {ci + 1}",
                          "pov": ch.get("pov", "me"), "items": items, "posts": cnt,
-                         "script": st["scripts"].get(key), "minutes": round(st["day"]["setup_min"] + cnt * _mins(st, key, "take_min")),
+                         "script": st["scripts"].get(key), "minutes": round(_mins(st, key, "light_min") + cnt * _mins(st, key, "take_min")),
                          "edit_minutes": round(cnt * _mins(st, key, "edit_min")), "projects": []})
             for it in items:
                 for _ in range(it["takes"]):
@@ -289,7 +295,7 @@ def make_projects(day_iso: str, set_id: str) -> list:
         r = shop.new_video({"product": it["product"], "account": s["channel"], "script": sc["id"] if sc else None,
                             "script_text": sc["text"] if sc else "", "vars": vars_, "assign": True,
                             "title": f"{label} · {s['label']} · {it['name'][:28]}",
-                            "notes": f"{s['setup']}. {it['takes']} take{'s' if it['takes'] != 1 else ''}, near-identical. {s['tip']}"})
+                            "notes": f"{s['setup']}. {it['takes']} take{'s' if it['takes'] != 1 else ''}, near-identical. {s['tip']}\nLighting: {s.get('light', '')}"})
         made.append({"sid": r["id"], "title": r["title"], "product": it["product"]})
     s["projects"] = s.get("projects", []) + made
     d["days"][day_iso] = plan
