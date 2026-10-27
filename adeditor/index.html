@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#0f0f12">
 <title>Ad Factory</title>
 <link rel="stylesheet" href="styles.css?v=43">
-<link rel="stylesheet" href="shop.css?v=16">
+<link rel="stylesheet" href="shop.css?v=17">
 <link rel="stylesheet" href="/studio-theme.css">
 </head>
 <body>
@@ -38,6 +38,7 @@
     <div class="homeHead">
       <span class="seg homeTabs" role="group" aria-label="Home">
         <button data-home="overview" title="What needs doing, and how each account is doing">🏠 Overview</button>
+        <button data-home="planner" title="Today's shoots, editing, research and posting, the @sully.finds way">🗓 Planner</button>
         <button data-home="queue" title="Every video from idea to posted, per creator">📋 Queue</button>
         <button data-home="products" title="Products, orders, samples and return windows">🛍 Products</button>
         <button data-home="analytics" title="How the accounts and videos are doing on TikTok">📊 Analytics</button>
@@ -59,6 +60,7 @@
         <button id="openPosting" title="Open the Outbox in OneDrive (where downloaded videos go)">📂 Outbox</button></span>
     </div>
     <div class="shopPane" data-pane="overview" id="paneOverview" hidden></div>
+    <div class="shopPane" data-pane="planner" id="panePlanner" hidden></div>
     <div class="shopPane" data-pane="queue" id="paneQueue" hidden></div>
     <div class="shopPane" data-pane="products" id="paneProducts" hidden></div>
     <div class="shopPane" data-pane="analytics" id="paneAnalytics" hidden></div>
@@ -284,5 +286,6 @@
 <script src="app.js?v=53"></script>
 <script src="shop.js?v=15"></script>
 <script src="scriptbuilder.js?v=5"></script>
+<script src="planner.js?v=1"></script>
 </body>
 </html>

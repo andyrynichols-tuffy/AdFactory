@@ -269,3 +269,23 @@ button.tpMore:hover { color: var(--text) !important; border-color: #4a505b !impo
 .nvFHead button { font-size: 12px; padding: 2px 9px; }
 .nvEditTxt { font-size: 12px; margin: 0 0 6px; }
 .nvKMsg { margin: 4px 0; } .nvKMsg:empty { display: none; }
+
+/* 🗓 Planner */
+.plDay { font-size: 15px; margin-left: 6px; }
+.plGrid { display: grid; grid-template-columns: minmax(260px, 1fr) minmax(0, 1.4fr); gap: 16px; align-items: start; }
+.plTime { list-style: none; margin: 0; padding: 0; }
+.plTime li { display: grid; grid-template-columns: 54px 1fr; gap: 10px; padding: 7px 10px; margin-bottom: 4px; border-radius: 9px;
+  background: var(--panel); border-left: 4px solid var(--c); font-size: 13px; }
+.plTime li[data-goto] { cursor: pointer; } .plTime li[data-goto]:hover { background: var(--panel2); }
+.plTime .plT { font-weight: 600; font-size: 12px; line-height: 1.3; }
+.plTime li.k-post { background: rgba(37, 244, 238, .06); }
+.plSet { margin-bottom: 10px; }
+.plItems { margin: 6px 0; padding-left: 18px; font-size: 13px; }
+.okx { color: var(--ok); font-size: 13px; }
+.plDlg { width: min(860px, 96vw); }
+.plDlg h4 { margin: 14px 0 6px; }
+.plRow { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; font-size: 13px; margin: 4px 0; }
+.plRow label { color: var(--muted); } .plRow input, .plRow select { color: var(--text); }
+.plMix td { white-space: normal; }
+.plLineup { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 12px; max-height: 220px; overflow: auto; font-size: 13px; }
+@media (max-width: 800px) { .plGrid { grid-template-columns: 1fr; } }
