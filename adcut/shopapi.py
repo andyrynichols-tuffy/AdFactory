@@ -264,3 +264,39 @@ def competitors_view(handle: str, days: int = 7):
         return competitors.view(handle, days)
     except KeyError:
         raise HTTPException(404, f"not tracking @{handle}")
+
+
+# ---------- daily planner (adcut/planner.py): a @sully.finds-style day ----------
+from . import planner  # noqa: E402
+
+
+@router.get("/planner/settings")
+def planner_settings():
+    d, sh = planner.load(), shop.load()
+    return {"settings": d["settings"], "formats": planner.FORMATS, "weekdays": planner.WEEKDAYS,
+            "accounts": [{"id": a["id"], "name": a["name"], "handle": a["handle"]} for a in sh["accounts"]]}
+
+
+@router.post("/planner/settings")
+def planner_save(body: dict = Body(...)):
+    return planner.set_settings(body)
+
+
+@router.get("/planner/day/{day}")
+def planner_day(day: str):
+    return planner.get(day)
+
+
+@router.post("/planner/day/{day}/rebuild")
+def planner_rebuild(day: str):
+    return planner.generate(day)
+
+
+@router.post("/planner/day/{day}/mark")
+def planner_mark(day: str, body: dict = Body(...)):
+    return planner.mark(day, int(body["k"]), bool(body.get("done")))
+
+
+@router.post("/planner/day/{day}/projects")
+def planner_projects(day: str, body: dict = Body(...)):
+    return {"made": planner.make_projects(day, body["set"])}
