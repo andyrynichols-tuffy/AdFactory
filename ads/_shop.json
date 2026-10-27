@@ -1103,6 +1103,103 @@
    "id": "e9827e",
    "created": 1793056524.0796208,
    "updated": 1793056524.0796208
+  },
+  {
+   "title": "Sale news (flat-lay voiceover)",
+   "text": "{brand} is finally putting their {product} on sale on their TikTok Shop.\nThey've got that {feature 1} that goes with literally any fit.\nYou can grab them for {price} with free shipping right now.\nI'll leave the link right here before your size sells out.",
+   "tags": [
+    "8d126a",
+    "eeb4ae"
+   ],
+   "product": null,
+   "notes": "Planner template, modelled on @sully.finds (docs/sully-finds-study.md)",
+   "from_shoot": null,
+   "edited": false,
+   "lines": [],
+   "marks": [],
+   "shots": [],
+   "source": null,
+   "from_template": null,
+   "id": "912ed1",
+   "created": 1793127373.3204288,
+   "updated": 1793127373.3204288
+  },
+  {
+   "title": "Height + size (worn, faceless)",
+   "text": "Just in time for this {season}: the {product}.\n{who} {height}, wearing a size {size}, and this is exactly how they fit.\nThe {feature 1} makes them go with everything.\nThey're on sale on TikTok Shop right now.",
+   "tags": [
+    "c77940"
+   ],
+   "product": null,
+   "notes": "Planner template, modelled on @sully.finds (docs/sully-finds-study.md)",
+   "from_shoot": null,
+   "edited": false,
+   "lines": [],
+   "marks": [],
+   "shots": [],
+   "source": null,
+   "from_template": null,
+   "id": "75f67d",
+   "created": 1793127373.3440218,
+   "updated": 1793127373.3440218
+  },
+  {
+   "title": "I just found the perfect one (held item)",
+   "text": "I think I just found the perfect {item} for this {season}.\nThese are the {product}, and the {feature 1} is honestly so good.\nThey're on sale on TikTok Shop, link's right here.",
+   "tags": [
+    "8d126a"
+   ],
+   "product": null,
+   "notes": "Planner template, modelled on @sully.finds (docs/sully-finds-study.md)",
+   "from_shoot": null,
+   "edited": false,
+   "lines": [],
+   "marks": [],
+   "shots": [],
+   "source": null,
+   "from_template": null,
+   "id": "7444a4",
+   "created": 1793127373.3705888,
+   "updated": 1793127373.3705888
+  },
+  {
+   "title": "Where'd you get those? (two-person skit)",
+   "text": "A: Wait, where'd you get those {item}?\nB: {brand}. Their TikTok Shop.\nA: Aren't those super expensive in store?\nB: Not on TikTok. They're on sale, and shipping's free.\nA: Okay, send me the link.",
+   "tags": [
+    "0f0703",
+    "d7dcda"
+   ],
+   "product": null,
+   "notes": "Planner template, modelled on @sully.finds (docs/sully-finds-study.md)",
+   "from_shoot": null,
+   "edited": false,
+   "lines": [],
+   "marks": [],
+   "shots": [],
+   "source": null,
+   "from_template": null,
+   "id": "1a7555",
+   "created": 1793127373.3875465,
+   "updated": 1793127373.3875465
+  },
+  {
+   "title": "On-image text (carousel)",
+   "text": "{season} essential: {item}\n[or] POV: you found the perfect {item} for any fit\n[or] \"I need some affordable {item} for this {season}\"",
+   "tags": [
+    "eeb4ae"
+   ],
+   "product": null,
+   "notes": "Planner template, modelled on @sully.finds (docs/sully-finds-study.md)",
+   "from_shoot": null,
+   "edited": false,
+   "lines": [],
+   "marks": [],
+   "shots": [],
+   "source": null,
+   "from_template": null,
+   "id": "b289a0",
+   "created": 1793127373.4052935,
+   "updated": 1793127373.4052935
   }
  ],
  "trash": {},
