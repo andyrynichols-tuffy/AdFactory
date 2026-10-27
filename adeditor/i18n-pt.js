@@ -1372,8 +1372,8 @@ window.I18N_PT = {
    "Gravar: "
   ],
   [
-   "\\b(\\d+) per channel × (\\d+) · (\\d+) posted",
-   "$1 por canal × $2 · $3 postados"
+   "(\\d+) per channel × (\\d+)",
+   "$1 por canal × $2"
   ],
   [
    "\\b(\\d+) posts · ~",
@@ -1384,7 +1384,7 @@ window.I18N_PT = {
    "Editar + revisar ($1 posts: carrosséis montados, vídeos conferidos)"
   ],
   [
-   "^Posting window: (\\d+) posts, one every ~(\\d+) min per channel",
+   "^(?:Posting|Postagem) window: (\\d+) posts, one every ~(\\d+) min per channel",
    "Janela de postagem: $1 posts, um a cada ~$2 min por canal"
   ]
  ]

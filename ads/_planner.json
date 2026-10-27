@@ -1,0 +1,925 @@
+{
+ "settings": {
+  "posts": {
+   "mon": 20,
+   "tue": 20,
+   "wed": 20,
+   "thu": 20,
+   "fri": 20,
+   "sat": 5,
+   "sun": 20
+  },
+  "mix": {
+   "carousel": 25,
+   "flatlay_vo": 30,
+   "worn": 20,
+   "held": 10,
+   "skit": 10,
+   "other": 5
+  },
+  "takes": {
+   "carousel": 1,
+   "flatlay_vo": 3,
+   "worn": 3,
+   "held": 2,
+   "skit": 2,
+   "other": 1
+  },
+  "day": {
+   "start": "07:30",
+   "end": "22:00",
+   "post_from": "15:00",
+   "post_to": "20:00",
+   "setup_min": 10,
+   "research_min": 30,
+   "gym": {
+    "at": "08:00",
+    "min": 75
+   },
+   "meals": [
+    {
+     "name": "Breakfast",
+     "at": "09:20",
+     "min": 20
+    },
+    {
+     "name": "Lunch",
+     "at": "12:30",
+     "min": 30
+    },
+    {
+     "name": "Dinner",
+     "at": "18:30",
+     "min": 40
+    }
+   ]
+  },
+  "channels": [
+   {
+    "account": "c4a9a3",
+    "pov": "me",
+    "height": "",
+    "size_bottom": "",
+    "size_top": ""
+   }
+  ],
+  "lineup": [],
+  "scripts": {
+   "flatlay_vo": "912ed1",
+   "worn": "75f67d",
+   "held": "7444a4",
+   "skit": "1a7555",
+   "carousel": "b289a0"
+  }
+ },
+ "days": {
+  "2026-10-28": {
+   "date": "2026-10-28",
+   "season": "fall",
+   "posts_per_channel": 20,
+   "channels": 1,
+   "sets": [
+    {
+     "id": "carousel-0",
+     "format": "carousel",
+     "label": "Flat-lay carousel",
+     "setup": "Wood floor, top-down",
+     "tip": "5-7 photos of the item laid flat, one line of on-image text. Brings the reach.",
+     "channel": "c4a9a3",
+     "channel_name": "AndysBestFinds",
+     "pov": "me",
+     "items": [
+      {
+       "product": "c9a20a",
+       "name": "H&M Loose Fit Sweatpants",
+       "takes": 1
+      },
+      {
+       "product": "c9a20a",
+       "name": "H&M Loose Fit Sweatpants",
+       "takes": 1
+      },
+      {
+       "product": "c9a20a",
+       "name": "H&M Loose Fit Sweatpants",
+       "takes": 1
+      },
+      {
+       "product": "c9a20a",
+       "name": "H&M Loose Fit Sweatpants",
+       "takes": 1
+      },
+      {
+       "product": "c9a20a",
+       "name": "H&M Loose Fit Sweatpants",
+       "takes": 1
+      }
+     ],
+     "posts": 5,
+     "script": "b289a0",
+     "minutes": 25,
+     "edit_minutes": 10,
+     "projects": []
+    },
+    {
+     "id": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "label": "Flat-lay voiceover video",
+     "setup": "White bed or couch, hand pointing",
+     "tip": "One take, ~20 s, read the sale script while pointing at the item.",
+     "channel": "c4a9a3",
+     "channel_name": "AndysBestFinds",
+     "pov": "me",
+     "items": [
+      {
+       "product": "c9a20a",
+       "name": "H&M Loose Fit Sweatpants",
+       "takes": 3
+      },
+      {
+       "product": "c9a20a",
+       "name": "H&M Loose Fit Sweatpants",
+       "takes": 3
+      }
+     ],
+     "posts": 6,
+     "script": "912ed1",
+     "minutes": 16,
+     "edit_minutes": 4,
+     "projects": []
+    },
+    {
+     "id": "worn-0",
+     "format": "worn",
+     "label": "Worn, faceless",
+     "setup": "Bedroom, waist-down",
+     "tip": "Wear it, film waist-down, say your height and size.",
+     "channel": "c4a9a3",
+     "channel_name": "AndysBestFinds",
+     "pov": "me",
+     "items": [
+      {
+       "product": "c9a20a",
+       "name": "H&M Loose Fit Sweatpants",
+       "takes": 3
+      },
+      {
+       "product": "c9a20a",
+       "name": "H&M Loose Fit Sweatpants",
+       "takes": 1
+      }
+     ],
+     "posts": 4,
+     "script": "75f67d",
+     "minutes": 18,
+     "edit_minutes": 3,
+     "projects": []
+    },
+    {
+     "id": "held-0",
+     "format": "held",
+     "label": "Holding the item",
+     "setup": "Hand-held close-up (shoes, gadgets, tags)",
+     "tip": "\"I think I just found the perfect…\" Good for side products.",
+     "channel": "c4a9a3",
+     "channel_name": "AndysBestFinds",
+     "pov": "me",
+     "items": [
+      {
+       "product": "c9a20a",
+       "name": "H&M Loose Fit Sweatpants",
+       "takes": 2
+      }
+     ],
+     "posts": 2,
+     "script": "7444a4",
+     "minutes": 12,
+     "edit_minutes": 1,
+     "projects": []
+    },
+    {
+     "id": "skit-0",
+     "format": "skit",
+     "label": "Two-person skit / POV",
+     "setup": "Outside or by the car, both of you",
+     "tip": "\"Wait, where'd you get those?\" The same exchange for each product.",
+     "channel": "c4a9a3",
+     "channel_name": "AndysBestFinds",
+     "pov": "me",
+     "items": [
+      {
+       "product": "c9a20a",
+       "name": "H&M Loose Fit Sweatpants",
+       "takes": 2
+      }
+     ],
+     "posts": 2,
+     "script": "1a7555",
+     "minutes": 15,
+     "edit_minutes": 2,
+     "projects": []
+    },
+    {
+     "id": "other-0",
+     "format": "other",
+     "label": "Brand deal / trend / no-product",
+     "setup": "Anything",
+     "tip": "A brand deal or a non-product post that can go wide.",
+     "channel": "c4a9a3",
+     "channel_name": "AndysBestFinds",
+     "pov": "me",
+     "items": [
+      {
+       "product": "c9a20a",
+       "name": "H&M Loose Fit Sweatpants",
+       "takes": 1
+      }
+     ],
+     "posts": 1,
+     "script": null,
+     "minutes": 15,
+     "edit_minutes": 3,
+     "projects": []
+    }
+   ],
+   "posts": [
+    {
+     "set": "carousel-0",
+     "format": "carousel",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "15:08"
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "15:22"
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "15:38"
+    },
+    {
+     "set": "held-0",
+     "format": "held",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "15:52"
+    },
+    {
+     "set": "skit-0",
+     "format": "skit",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "16:08"
+    },
+    {
+     "set": "other-0",
+     "format": "other",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "16:22"
+    },
+    {
+     "set": "carousel-0",
+     "format": "carousel",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "16:38"
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "16:52"
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "17:08"
+    },
+    {
+     "set": "held-0",
+     "format": "held",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "17:22"
+    },
+    {
+     "set": "skit-0",
+     "format": "skit",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "17:38"
+    },
+    {
+     "set": "carousel-0",
+     "format": "carousel",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "17:52"
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "18:08"
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "18:22"
+    },
+    {
+     "set": "carousel-0",
+     "format": "carousel",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "18:38"
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "18:52"
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "19:08"
+    },
+    {
+     "set": "carousel-0",
+     "format": "carousel",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "19:22"
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "19:38"
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "19:52"
+    }
+   ],
+   "blocks": [
+    {
+     "kind": "shoot",
+     "title": "Shoot: Flat-lay carousel · AndysBestFinds",
+     "start": "07:30",
+     "end": "07:55",
+     "set": "carousel-0"
+    },
+    {
+     "kind": "gym",
+     "title": "Gym",
+     "start": "08:00",
+     "end": "09:15"
+    },
+    {
+     "kind": "meal",
+     "title": "Breakfast",
+     "start": "09:20",
+     "end": "09:40"
+    },
+    {
+     "kind": "shoot",
+     "title": "Shoot: Flat-lay voiceover video · AndysBestFinds",
+     "start": "09:40",
+     "end": "09:56",
+     "set": "flatlay_vo-0"
+    },
+    {
+     "kind": "shoot",
+     "title": "Shoot: Worn, faceless · AndysBestFinds",
+     "start": "09:56",
+     "end": "10:14",
+     "set": "worn-0"
+    },
+    {
+     "kind": "shoot",
+     "title": "Shoot: Holding the item · AndysBestFinds",
+     "start": "10:14",
+     "end": "10:26",
+     "set": "held-0"
+    },
+    {
+     "kind": "shoot",
+     "title": "Shoot: Two-person skit / POV · AndysBestFinds",
+     "start": "10:26",
+     "end": "10:41",
+     "set": "skit-0"
+    },
+    {
+     "kind": "shoot",
+     "title": "Shoot: Brand deal / trend / no-product · AndysBestFinds",
+     "start": "10:41",
+     "end": "10:56",
+     "set": "other-0"
+    },
+    {
+     "kind": "edit",
+     "title": "Edit + review (20 posts: carousels assembled, videos checked)",
+     "start": "10:56",
+     "end": "11:19"
+    },
+    {
+     "kind": "research",
+     "title": "Research: Analytics, competitor tracker, next lineup",
+     "start": "11:19",
+     "end": "11:49"
+    },
+    {
+     "kind": "meal",
+     "title": "Lunch",
+     "start": "12:30",
+     "end": "13:00"
+    },
+    {
+     "kind": "post",
+     "title": "Posting window: 20 posts, one every ~15 min per channel",
+     "start": "15:00",
+     "end": "20:00"
+    },
+    {
+     "kind": "meal",
+     "title": "Dinner",
+     "start": "18:30",
+     "end": "19:10"
+    }
+   ],
+   "generated": "2026-10-27T13:56"
+  },
+  "2026-10-27": {
+   "date": "2026-10-27",
+   "season": "fall",
+   "posts_per_channel": 20,
+   "channels": 1,
+   "sets": [
+    {
+     "id": "carousel-0",
+     "format": "carousel",
+     "label": "Flat-lay carousel",
+     "setup": "Wood floor, top-down",
+     "tip": "5-7 photos of the item laid flat, one line of on-image text. Brings the reach.",
+     "channel": "c4a9a3",
+     "channel_name": "AndysBestFinds",
+     "pov": "me",
+     "items": [
+      {
+       "product": "c9a20a",
+       "name": "H&M Loose Fit Sweatpants",
+       "takes": 5
+      }
+     ],
+     "posts": 5,
+     "script": "b289a0",
+     "minutes": 25,
+     "edit_minutes": 10,
+     "projects": []
+    },
+    {
+     "id": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "label": "Flat-lay voiceover video",
+     "setup": "White bed or couch, hand pointing",
+     "tip": "One take, ~20 s, read the sale script while pointing at the item.",
+     "channel": "c4a9a3",
+     "channel_name": "AndysBestFinds",
+     "pov": "me",
+     "items": [
+      {
+       "product": "c9a20a",
+       "name": "H&M Loose Fit Sweatpants",
+       "takes": 6
+      }
+     ],
+     "posts": 6,
+     "script": "912ed1",
+     "minutes": 16,
+     "edit_minutes": 4,
+     "projects": []
+    },
+    {
+     "id": "worn-0",
+     "format": "worn",
+     "label": "Worn, faceless",
+     "setup": "Bedroom, waist-down",
+     "tip": "Wear it, film waist-down, say your height and size.",
+     "channel": "c4a9a3",
+     "channel_name": "AndysBestFinds",
+     "pov": "me",
+     "items": [
+      {
+       "product": "c9a20a",
+       "name": "H&M Loose Fit Sweatpants",
+       "takes": 4
+      }
+     ],
+     "posts": 4,
+     "script": "75f67d",
+     "minutes": 18,
+     "edit_minutes": 3,
+     "projects": []
+    },
+    {
+     "id": "held-0",
+     "format": "held",
+     "label": "Holding the item",
+     "setup": "Hand-held close-up (shoes, gadgets, tags)",
+     "tip": "\"I think I just found the perfect…\" Good for side products.",
+     "channel": "c4a9a3",
+     "channel_name": "AndysBestFinds",
+     "pov": "me",
+     "items": [
+      {
+       "product": "c9a20a",
+       "name": "H&M Loose Fit Sweatpants",
+       "takes": 2
+      }
+     ],
+     "posts": 2,
+     "script": "7444a4",
+     "minutes": 12,
+     "edit_minutes": 1,
+     "projects": []
+    },
+    {
+     "id": "skit-0",
+     "format": "skit",
+     "label": "Two-person skit / POV",
+     "setup": "Outside or by the car, both of you",
+     "tip": "\"Wait, where'd you get those?\" The same exchange for each product.",
+     "channel": "c4a9a3",
+     "channel_name": "AndysBestFinds",
+     "pov": "me",
+     "items": [
+      {
+       "product": "c9a20a",
+       "name": "H&M Loose Fit Sweatpants",
+       "takes": 2
+      }
+     ],
+     "posts": 2,
+     "script": "1a7555",
+     "minutes": 15,
+     "edit_minutes": 2,
+     "projects": []
+    },
+    {
+     "id": "other-0",
+     "format": "other",
+     "label": "Brand deal / trend / no-product",
+     "setup": "Anything",
+     "tip": "A brand deal or a non-product post that can go wide.",
+     "channel": "c4a9a3",
+     "channel_name": "AndysBestFinds",
+     "pov": "me",
+     "items": [
+      {
+       "product": "c9a20a",
+       "name": "H&M Loose Fit Sweatpants",
+       "takes": 1
+      }
+     ],
+     "posts": 1,
+     "script": null,
+     "minutes": 15,
+     "edit_minutes": 3,
+     "projects": []
+    }
+   ],
+   "posts": [
+    {
+     "set": "carousel-0",
+     "format": "carousel",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "15:08"
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "15:22"
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "15:38"
+    },
+    {
+     "set": "held-0",
+     "format": "held",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "15:52"
+    },
+    {
+     "set": "skit-0",
+     "format": "skit",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "16:08"
+    },
+    {
+     "set": "other-0",
+     "format": "other",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "16:22"
+    },
+    {
+     "set": "carousel-0",
+     "format": "carousel",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "16:38"
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "16:52"
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "17:08"
+    },
+    {
+     "set": "held-0",
+     "format": "held",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "17:22"
+    },
+    {
+     "set": "skit-0",
+     "format": "skit",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "17:38"
+    },
+    {
+     "set": "carousel-0",
+     "format": "carousel",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "17:52"
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "18:08"
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "18:22"
+    },
+    {
+     "set": "carousel-0",
+     "format": "carousel",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "18:38"
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "18:52"
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "19:08"
+    },
+    {
+     "set": "carousel-0",
+     "format": "carousel",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "19:22"
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "19:38"
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "c9a20a",
+     "name": "H&M Loose Fit Sweatpants",
+     "done": false,
+     "time": "19:52"
+    }
+   ],
+   "blocks": [
+    {
+     "kind": "shoot",
+     "title": "Shoot: Flat-lay carousel · AndysBestFinds",
+     "start": "07:30",
+     "end": "07:55",
+     "set": "carousel-0"
+    },
+    {
+     "kind": "gym",
+     "title": "Gym",
+     "start": "08:00",
+     "end": "09:15"
+    },
+    {
+     "kind": "meal",
+     "title": "Breakfast",
+     "start": "09:20",
+     "end": "09:40"
+    },
+    {
+     "kind": "shoot",
+     "title": "Shoot: Flat-lay voiceover video · AndysBestFinds",
+     "start": "09:40",
+     "end": "09:56",
+     "set": "flatlay_vo-0"
+    },
+    {
+     "kind": "shoot",
+     "title": "Shoot: Worn, faceless · AndysBestFinds",
+     "start": "09:56",
+     "end": "10:14",
+     "set": "worn-0"
+    },
+    {
+     "kind": "shoot",
+     "title": "Shoot: Holding the item · AndysBestFinds",
+     "start": "10:14",
+     "end": "10:26",
+     "set": "held-0"
+    },
+    {
+     "kind": "shoot",
+     "title": "Shoot: Two-person skit / POV · AndysBestFinds",
+     "start": "10:26",
+     "end": "10:41",
+     "set": "skit-0"
+    },
+    {
+     "kind": "shoot",
+     "title": "Shoot: Brand deal / trend / no-product · AndysBestFinds",
+     "start": "10:41",
+     "end": "10:56",
+     "set": "other-0"
+    },
+    {
+     "kind": "edit",
+     "title": "Edit + review (20 posts: carousels assembled, videos checked)",
+     "start": "10:56",
+     "end": "11:19"
+    },
+    {
+     "kind": "research",
+     "title": "Research: Analytics, competitor tracker, next lineup",
+     "start": "11:19",
+     "end": "11:49"
+    },
+    {
+     "kind": "meal",
+     "title": "Lunch",
+     "start": "12:30",
+     "end": "13:00"
+    },
+    {
+     "kind": "post",
+     "title": "Posting window: 20 posts, one every ~15 min per channel",
+     "start": "15:00",
+     "end": "20:00"
+    },
+    {
+     "kind": "meal",
+     "title": "Dinner",
+     "start": "18:30",
+     "end": "19:10"
+    }
+   ],
+   "generated": "2026-10-27T13:59"
+  }
+ }
+}

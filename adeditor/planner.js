@@ -17,7 +17,7 @@ async function renderPlanner() {
   const p = PL.plan;
   const shoot = p.sets.reduce((a, s) => a + s.minutes, 0), edit = p.sets.reduce((a, s) => a + s.edit_minutes, 0);
   const done = p.posts.filter(x => x.done).length;
-  const dayName = new Date(PL.day + "T12:00").toLocaleDateString(undefined, { weekday: "long", month: "short", day: "numeric" });
+  const dayName = new Date(PL.day + "T12:00").toLocaleDateString(window.LANG === "pt" ? "pt-BR" : "en-US", { weekday: "long", month: "short", day: "numeric" });
   el.innerHTML = `<div class="tbar"><button data-pd="-1" title="Previous day">◀</button><input type="date" id="planDate" value="${PL.day}" min="${todayIso()}"><button data-pd="1" title="Next day">▶</button>
       <button data-pd="0">Today</button><b class="plDay">${esc(dayName)}</b><span class="spacer"></span>
       <button data-go="plrebuild" title="Make the day again from the settings (posted marks are kept)">↻ Rebuild the day</button><button data-go="plsettings">⚙ Planner settings</button></div>
@@ -29,10 +29,10 @@ async function renderPlanner() {
       <div class="sc skpi"><span>Posting</span><b>${esc(PL.cfg.settings.day.post_from)}–${esc(PL.cfg.settings.day.post_to)}</b><em>${p.season} lineup</em></div></div>
     <div class="plGrid">
       <div><h3 class="secHead">The day</h3><ol class="plTime">${p.blocks.map(b => `<li class="k-${b.kind}" style="--c:${KIND[b.kind]?.[1] || "#888"}" ${b.set ? `data-goto="${b.set}"` : ""}>
-          <span class="plT">${b.start}<br><span class="muted">${b.end}</span></span><span class="plB">${KIND[b.kind]?.[0] || ""} ${esc(b.title)}</span></li>`).join("")}</ol></div>
+          <span class="plT">${b.start}<br><span class="muted">${b.end}</span></span><span class="plB"><span>${KIND[b.kind]?.[0] || ""}</span> <span>${esc(b.title)}</span></span></li>`).join("")}</ol></div>
       <div><h3 class="secHead">Shoot sets <span class="muted">one setup each, product after product</span></h3>
         ${p.sets.map(s => { const n = s.items.filter(i => i.product).length, sc = byId("scripts", s.script);
-          return `<div class="sc plSet" id="set-${s.id}"><div class="qt"><b>${FMT_ICON[s.format] || ""} ${esc(s.label)}</b><span class="muted" translate="no">${esc(s.channel_name)} · ${s.pov === "me" ? "your POV" : "partner POV"}</span></div>
+          return `<div class="sc plSet" id="set-${s.id}"><div class="qt"><b>${FMT_ICON[s.format] || ""} ${esc(s.label)}</b><span class="muted"><span translate="no">${esc(s.channel_name)}</span> · <span>${s.pov === "me" ? "your POV" : "partner POV"}</span></span></div>
             <div class="muted small">📍 ${esc(s.setup)} · ${s.posts} posts · ~${mins(s.minutes)}</div>
             <div class="hint">${esc(s.tip)}</div>
             <ul class="plItems">${s.items.map(i => `<li><span translate="no">${esc(i.name)}</span> <b>× ${i.takes}</b></li>`).join("")}</ul>
