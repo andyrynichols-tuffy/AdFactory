@@ -106,7 +106,7 @@ def _grid(handle, expect):
         return {"items": []}
 
 
-def refresh(only=None, pause=(3.0, 6.0)):
+def refresh(only=None, pause=(3.0, 6.0), grid=True):
     """One daily pass (gentle: one page at a time)."""
     from supercut import analytics as an
     if status["running"]:
@@ -116,7 +116,7 @@ def refresh(only=None, pause=(3.0, 6.0)):
         d = load()
         cut = time.time() - WINDOW_DAYS * 86400
         for h, p in list(d["profiles"].items()):
-            if only and h != only:
+            if not grid or (only and h != only):
                 continue
             status["msg"] = f"@{h}: reading the profile"
             recent = sum(1 for v in p["videos"].values() if v.get("created", 0) >= cut)

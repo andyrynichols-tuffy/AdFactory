@@ -872,8 +872,50 @@ async function renderAnalytics() {
     <h3 class="secHead">Formats &amp; tags</h3>${perfTable(an.tags, "Tag", id => tagChip(id), "Tag videos (New video → Style, or ⋯ on a queue card) to compare formats.")}
     <h3 class="secHead">Creators</h3>${perfTable(an.creators, "Creator", id => who(id), "Set who's in each video to compare.")}
     <div class="sc trackBox"><b>Track a video made elsewhere</b> <span class="muted">it counts toward the account's numbers</span>
-      <div class="row"><input id="trackUrl" type="url" placeholder="https://www.tiktok.com/@…/video/…"><select id="trackAcc">${opts(d.accounts, acc, accLabel, "— account —")}</select><button data-go="track">Track</button></div></div>`;
+      <div class="row"><input id="trackUrl" type="url" placeholder="https://www.tiktok.com/@…/video/…"><select id="trackAcc">${opts(d.accounts, acc, accLabel, "— account —")}</select><button data-go="track">Track</button></div></div>
+    <div id="compBox"></div>`;
+  renderCompetitors().catch(() => { });
 }
+// ---------- competitors: what other creators' videos probably sell (adcut/competitors.py) ----------
+const money = v => v == null ? "–" : "$" + (v >= 1e6 ? (v / 1e6).toFixed(1) + "M" : v >= 1e4 ? Math.round(v / 1e3) + "K" : v >= 1e3 ? (v / 1e3).toFixed(1) + "K" : Math.round(v));
+async function renderCompetitors() {
+  const box = $("#compBox"); if (!box) return;
+  const all = await api("/api/shop/competitors/all");
+  const cur = LS.get("compHandle", "") || all.profiles[0]?.handle || "", days = LS.get("compDays", 7);
+  const v = cur ? await api(`/api/shop/competitors/${encodeURIComponent(cur)}/view?days=${days}`).catch(() => null) : null;
+  const st = all.status;
+  box.innerHTML = `<h3 class="secHead">🕵️ Competitors <span class="muted">estimated sales from public counters, like Kalodata</span></h3>
+    <div class="tbar"><span class="seg chips">${all.profiles.map(p => `<button data-comp="${esc(p.handle)}" class="${p.handle === cur ? "on" : ""}" translate="no">@${esc(p.handle)}</button>`).join("")}</span>
+      <input id="compAdd" placeholder="@handle to track"><button data-go="compadd">＋ Track</button><span class="spacer"></span>
+      <span class="seg chips">${[1, 7, 30].map(n => `<button data-cdays="${n}" class="${n === days ? "on" : ""}">${n === 1 ? "1 day" : n + " days"}</button>`).join("")}</span>
+      ${cur ? `<button data-go="comprefresh" ${st.running ? "disabled" : ""}>↻ Check now</button>` : ""}</div>
+    <p class="hint">Once a day: each video's views and each tagged product's public "items sold" count. Sales = the count's growth × price, split across his videos by the views each gained. The count includes everyone selling that product, so treat it as an upper bound; there's no history before tracking started, and nothing about clicks or conversion (only the seller sees those).
+      ${st.running ? `<b>Checking: ${esc(st.msg || "")}</b>` : ""}</p>
+    ${!v ? `<p class="muted">Add a creator's handle to start tracking.</p>` : `
+    <div class="kpiRow">
+      <div class="sc skpi"><span>Est. sales · ${days === 1 ? "1 day" : days + " days"}</span><b>${money(v.est_revenue)}</b><em>${v.history_days < 1 ? "needs 2 daily checks first" : `tracking for ${v.history_days} days`}</em></div>
+      <div class="sc skpi"><span>Videos posted · ${days} days</span><b>${v.posted}</b><em>${v.videos_tracked} followed (last 30 days)</em></div>
+      <div class="sc skpi"><span>Products tagged</span><b>${v.products_tracked}</b><em>checked ${ago(v.last)}</em></div></div>
+    <h3 class="secHead">Products <span class="muted">by estimated sales</span></h3>
+    <div class="tblWrap"><table class="tbl"><thead><tr><th>Product</th><th>Price</th><th>His videos</th><th>Views gained</th><th>Sold</th><th>Est. sales</th><th>Sold all time</th></tr></thead><tbody>
+      ${v.products.map(p => `<tr><td translate="no">${p.link ? `<a href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.title)}</a>` : esc(p.title)}</td><td>${esc(p.price || "")}</td><td>${p.videos}</td>
+        <td>${num(p.view_gain)}</td><td>${p.sold == null ? "–" : num(p.sold)}</td><td><b>${money(p.est_revenue)}</b></td><td>${num(p.sold_total)}</td></tr>`).join("") || `<tr><td colspan="7" class="muted">No tagged products yet.</td></tr>`}</tbody></table></div>
+    <h3 class="secHead">Videos <span class="muted">by estimated sales, then views gained</span></h3>
+    <div class="tblWrap"><table class="tbl"><thead><tr><th>Video</th><th>Posted</th><th>Kind</th><th>Views</th><th>Gained</th><th>Est. sales</th></tr></thead><tbody>
+      ${v.videos.map(x => `<tr><td translate="no"><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.desc || x.id)}</a></td><td>${x.created ? new Date(x.created * 1000).toLocaleDateString(undefined, { month: "short", day: "numeric" }) : ""}</td>
+        <td>${x.carousel ? "🖼 carousel" : "🎬 video"}</td><td>${num(x.views)}</td><td>${num(x.view_gain)}</td><td><b>${money(x.est_revenue)}</b></td></tr>`).join("")}</tbody></table></div>`}`;
+}
+$("#paneAnalytics").addEventListener("click", async e => {
+  const c = e.target.closest("[data-comp]"); if (c) { LS.set("compHandle", c.dataset.comp); return renderCompetitors(); }
+  const dd = e.target.closest("[data-cdays]"); if (dd) { LS.set("compDays", +dd.dataset.cdays); return renderCompetitors(); }
+  const go = e.target.closest("[data-go]")?.dataset.go;
+  if (go === "compadd") {
+    const h = $("#compAdd").value.trim(); if (!h) return;
+    try { const r = await api("/api/shop/competitors/add", { json: { handle: h } }); LS.set("compHandle", r.handle); toast(`Tracking @${r.handle}: the first check takes a few minutes`, 5000); renderCompetitors(); }
+    catch (err) { toast(err.message); }
+  }
+  if (go === "comprefresh") { await api(`/api/shop/competitors/${encodeURIComponent(LS.get("compHandle", ""))}/refresh`, { json: {} }); toast("Checking (one page at a time)…"); setTimeout(renderCompetitors, 2000); }
+});
 function matrixTable(an, d) {
   const accs = d.accounts, prods = Object.keys(an.matrix);
   if (!prods.length || !accs.length) return `<p class="muted">Shows which product does best on which account once posted videos have an account, a product and a link.</p>`;

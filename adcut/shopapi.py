@@ -7,7 +7,7 @@ from pathlib import Path
 from fastapi import APIRouter, Body, HTTPException, Request
 from fastapi.responses import FileResponse
 
-from . import ai, auth, productlink, scriptgen, sheetdb, shop, store
+from . import ai, auth, competitors, productlink, scriptgen, sheetdb, shop, store
 
 router = APIRouter(prefix="/api/shop")
 BUSY = lambda: set()  # server.py points this at the shoots with a job running
@@ -227,3 +227,40 @@ def ai_run(what: str, body: dict = Body(...)):
             raise HTTPException(400, "nothing to rewrite")
         return scriptgen.ai_rewrite(body["text"], body["how"])
     raise HTTPException(404, what)
+
+
+# ---------- competitor tracker (adcut/competitors.py): estimates from public counters ----------
+
+@router.get("/competitors/all")
+def competitors_all():
+    return {"profiles": competitors.summary(), "status": competitors.status}
+
+
+@router.post("/competitors/add")
+def competitors_add(body: dict = Body(...)):
+    try:
+        r = competitors.add(body.get("handle") or "")
+    except ValueError as e:
+        raise HTTPException(400, str(e))
+    threading.Thread(target=competitors.refresh, kwargs={"only": r["handle"]}, daemon=True).start()
+    return r
+
+
+@router.post("/competitors/{handle}/remove")
+def competitors_remove(handle: str):
+    competitors.remove(handle)
+    return {"ok": True}
+
+
+@router.post("/competitors/{handle}/refresh")
+def competitors_refresh(handle: str):
+    threading.Thread(target=competitors.refresh, kwargs={"only": handle}, daemon=True).start()
+    return {"ok": True}
+
+
+@router.get("/competitors/{handle}/view")
+def competitors_view(handle: str, days: int = 7):
+    try:
+        return competitors.view(handle, days)
+    except KeyError:
+        raise HTTPException(404, f"not tracking @{handle}")
