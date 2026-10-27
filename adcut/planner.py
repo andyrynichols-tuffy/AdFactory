@@ -21,7 +21,7 @@ WORN = {"worn", "skit"}  # formats where the product is on the person
 WEEKDAYS = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
 FORMATS = [  # share = % of a channel's posts; takes = near-identical takes per product; minutes per take
     {"key": "carousel", "label": "Flat-lay carousel", "setup": "Wood floor, top-down", "share": 25, "takes": 1,
-     "take_min": 3.0, "edit_min": 2.0, "tip": "5-7 photos of the item laid flat, one line of on-image text. Brings the reach."},
+     "take_min": 12.0, "edit_min": 3.0, "tip": "Style one outfit around the item on the floor, 5-7 photos, one line of on-image text. Brings the reach. Keep the outfit and swap only the colourway between carousels."},
     {"key": "flatlay_vo", "label": "Flat-lay voiceover video", "setup": "White bed or couch, hand pointing", "share": 30, "takes": 3,
      "take_min": 1.0, "edit_min": 0.7, "tip": "One take, ~20 s, read the sale script while pointing at the item."},
     {"key": "worn", "label": "Worn, faceless", "setup": "Bedroom, waist-down", "share": 20, "takes": 3,
@@ -39,7 +39,8 @@ DEFAULTS = {
     "takes": {f["key"]: f["takes"] for f in FORMATS},
     "day": {"start": "07:30", "end": "22:00", "post_from": "15:00", "post_to": "20:00", "setup_min": 10,
             "research_min": 30, "gym": {"at": "08:00", "min": 75},
-            "schedule": True, "schedule_min": 1.5,  # schedule the day's posts in TikTok Studio right after editing
+            "schedule": True, "schedule_min": 1.5,
+            "prep_min": 30,  # pull the day's pieces, steam, de-lint, remove tags, set up the floor + bed  # schedule the day's posts in TikTok Studio right after editing
             "meals": [{"name": "Breakfast", "at": "09:20", "min": 20}, {"name": "Lunch", "at": "12:30", "min": 30},
                       {"name": "Dinner", "at": "18:30", "min": 40}]},
     "channels": [],   # [{account, pov: "me" | "partner", height, size_top, size_bottom}]
@@ -102,6 +103,11 @@ def _split(n, mix):
     return out
 
 
+def _mins(st, key, which):
+    """Minutes per post for a format: the settings' override (minutes: {key: {take_min, edit_min}}) or the default."""
+    return float(((st.get("minutes") or {}).get(key) or {}).get(which) or next(f[which] for f in FORMATS if f["key"] == key))
+
+
 def _lineup(st, sh):
     from .productlink import is_shop_link
     ps = {p["id"]: p for p in sh["products"] if not p.get("archived")}
@@ -153,8 +159,8 @@ def generate(day_iso: str) -> dict:
             sets.append({"id": sid, "format": key, "label": f["label"], "setup": f["setup"], "tip": f["tip"],
                          "channel": ch.get("account"), "channel_name": (acc or {}).get("name") or f"Channel {ci + 1}",
                          "pov": ch.get("pov", "me"), "items": items, "posts": cnt,
-                         "script": st["scripts"].get(key), "minutes": round(st["day"]["setup_min"] + cnt * f["take_min"]),
-                         "edit_minutes": round(cnt * f["edit_min"]), "projects": []})
+                         "script": st["scripts"].get(key), "minutes": round(st["day"]["setup_min"] + cnt * _mins(st, key, "take_min")),
+                         "edit_minutes": round(cnt * _mins(st, key, "edit_min")), "projects": []})
             for it in items:
                 for _ in range(it["takes"]):
                     posts.append({"set": sid, "format": key, "channel": ch.get("account"), "product": it["product"],
@@ -202,7 +208,9 @@ def _blocks(st, sets, n_posts):
         if day.get("gym") and day["gym"].get("min") else []
     fixed += [{"kind": "meal", "title": m["name"], "start": _t(m["at"]), "end": _t(m["at"]) + m["min"]} for m in day["meals"]]
     post_from, post_to = _t(day["post_from"]), _t(day["post_to"])
-    work = [{"kind": "shoot", "title": f"Shoot: {s['label']} · {s['channel_name']}", "min": s["minutes"], "set": s["id"]} for s in sets]
+    work = [{"kind": "prep", "title": "Prep: pull the day's pieces, steam, de-lint, tags off, set up the floor + bed",
+             "min": int(day.get("prep_min", 30))}] if day.get("prep_min", 30) else []
+    work += [{"kind": "shoot", "title": f"Shoot: {s['label']} · {s['channel_name']}", "min": s["minutes"], "set": s["id"]} for s in sets]
     edit = sum(s["edit_minutes"] for s in sets)
     work.append({"kind": "edit", "title": f"Edit + review ({n_posts} posts: carousels assembled, videos checked)", "min": edit})
     sched = day.get("schedule", True)

@@ -5,7 +5,7 @@ const PL = { day: null, plan: null, cfg: null };
 const todayIso = () => { const d = new Date(); return new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10); };
 const addDays = (iso, n) => { const d = new Date(iso + "T12:00"); d.setDate(d.getDate() + n); return d.toISOString().slice(0, 10); };
 const mins = m => m >= 60 ? `${Math.floor(m / 60)}h ${String(Math.round(m % 60)).padStart(2, "0")}m` : `${Math.round(m)} min`;
-const KIND = { gym: ["🏋️", "#ff8787"], meal: ["🍽", "#ffd43b"], shoot: ["🎬", "#21a366"], edit: ["✂️", "#74c0fc"], research: ["🔎", "#b197fc"], post: ["📤", "#25f4ee"], live: ["📅", "#6c757d"] };
+const KIND = { gym: ["🏋️", "#ff8787"], meal: ["🍽", "#ffd43b"], shoot: ["🎬", "#21a366"], edit: ["✂️", "#74c0fc"], research: ["🔎", "#b197fc"], post: ["📤", "#25f4ee"], live: ["📅", "#6c757d"], prep: ["🧺", "#f59f00"] };
 const FMT_ICON = { carousel: "🖼", flatlay_vo: "👉", worn: "👖", held: "✋", skit: "🎭", other: "✨" };
 
 async function renderPlanner() {
@@ -73,12 +73,13 @@ async function plannerSettings() {
   dlg.innerHTML = `<form><h3>⚙ Planner settings</h3>
     <p class="muted">Defaults follow @sully.finds: ~20 posts a channel on weekdays, Saturday light, posting 3–8 pm, carousels for reach, near-identical takes per product.</p>
     <h4>Posts per channel</h4><div class="plRow">${cfg.weekdays.map(w => `<label>${w}<br>${num("posts." + w, st.posts[w], 52)}</label>`).join("")}</div>
-    <h4>Format mix <span class="fhint">% of each channel's posts · takes per product</span></h4>
-    <table class="tbl plMix">${cfg.formats.map(f => `<tr><td>${FMT_ICON[f.key] || ""} ${esc(f.label)}<div class="muted small">${esc(f.tip)}</div></td><td>${num("mix." + f.key, st.mix[f.key])} %</td><td>× ${num("takes." + f.key, st.takes[f.key], 48)}</td></tr>`).join("")}</table>
+    <h4>Format mix <span class="fhint">% of each channel's posts · takes per product · minutes per post</span></h4>
+    <table class="tbl plMix">${cfg.formats.map(f => `<tr><td>${FMT_ICON[f.key] || ""} ${esc(f.label)}<div class="muted small">${esc(f.tip)}</div></td><td>${num("mix." + f.key, st.mix[f.key])} %</td><td>× ${num("takes." + f.key, st.takes[f.key], 48)}</td>
+      <td>${num("minutes." + f.key + ".take_min", st.minutes?.[f.key]?.take_min ?? f.take_min, 52)} min shoot</td><td>${num("minutes." + f.key + ".edit_min", st.minutes?.[f.key]?.edit_min ?? f.edit_min, 52)} min edit</td></tr>`).join("")}</table>
     <h4>The day</h4>
     <div class="plRow"><label>Start ${tIn("day.start", st.day.start)}</label><label>End ${tIn("day.end", st.day.end)}</label>
       <label>Post from ${tIn("day.post_from", st.day.post_from)}</label><label>to ${tIn("day.post_to", st.day.post_to)}</label>
-      <label>Setup per set ${num("day.setup_min", st.day.setup_min, 52)} min</label><label>Research ${num("day.research_min", st.day.research_min, 52)} min</label></div>
+      <label>Setup per set ${num("day.setup_min", st.day.setup_min, 52)} min</label><label>Research ${num("day.research_min", st.day.research_min, 52)} min</label><label>🧺 Prep ${num("day.prep_min", st.day.prep_min ?? 30, 52)} min</label></div>
     <div class="plRow"><label class="chk"><input type="checkbox" data-k="day.schedule" ${st.day.schedule !== false ? "checked" : ""}> 📅 Schedule posts ahead in TikTok Studio</label>
       <label>${num("day.schedule_min", st.day.schedule_min ?? 1.5, 52)} min per post</label></div>
     <div class="plRow"><label>🏋️ Gym at ${tIn("day.gym.at", st.day.gym.at)}</label><label>for ${num("day.gym.min", st.day.gym.min, 52)} min</label></div>

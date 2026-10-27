@@ -1251,7 +1251,13 @@ window.I18N_PT = {
   "📅 Schedule posts ahead in TikTok Studio": "📅 Agendar posts no TikTok Studio",
   "min per post": "min por post",
   "scheduled": "agendados",
-  "tick each one once it's scheduled": "marque cada um quando estiver agendado"
+  "tick each one once it's scheduled": "marque cada um quando estiver agendado",
+  "min shoot": "min gravando",
+  "min edit": "min editando",
+  "🧺 Prep": "🧺 Preparo",
+  "% of each channel's posts · takes per product · minutes per post": "% dos posts de cada canal · tomadas por produto · minutos por post",
+  "Prep: pull the day's pieces, steam, de-lint, tags off, set up the floor + bed": "Preparo: separar as peças do dia, passar no vapor, tirar fiapos e etiquetas, montar o chão + a cama",
+  "Style one outfit around the item on the floor, 5-7 photos, one line of on-image text. Brings the reach. Keep the outfit and swap only the colourway between carousels.": "Monte um look com a peça no chão, 5-7 fotos, uma linha de texto na imagem. Traz o alcance. Mantenha o look e troque só a cor entre os carrosséis."
  },
  "patterns": [
   [
