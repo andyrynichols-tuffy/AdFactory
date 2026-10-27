@@ -182,6 +182,209 @@
    "id": "c9a20a",
    "created": 1793054160.07531,
    "updated": 1793054160.07531
+  },
+  {
+   "name": "Old Navy Waffle Henley - Jurassic Green",
+   "brand": "Old Navy",
+   "link": "https://shop.tiktok.com/us/pdp/1732577449617167015",
+   "image": "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/6b7ffb05d84a4b468d84c4381e423bb1~tplv-fhlh96nyum-resize-webp:260:260.webp",
+   "price": "$34.49",
+   "commission": "",
+   "category": "Men's Tops",
+   "fills": {
+    "color": "jurassic green",
+    "material": "soft-washed waffle knit",
+    "style": "long-sleeve henley",
+    "size": "M"
+   },
+   "notes": "Old Navy Long-Sleeve Waffle Henley T-Shirt, style 909057, colour Jurassic Green. Old Navy page: https://oldnavy.gap.com/browse/product.do?pid=909057062 (on sale $13.49 on 2026-10-27). One TikTok Shop listing covers every colour.",
+   "archived": false,
+   "id": "58c082",
+   "created": 1793142774.0862663,
+   "updated": 1793142952.1557927
+  },
+  {
+   "name": "Old Navy Waffle Henley - Kicking Up Dust",
+   "brand": "Old Navy",
+   "link": "https://shop.tiktok.com/us/pdp/1732577449617167015",
+   "image": "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/6b7ffb05d84a4b468d84c4381e423bb1~tplv-fhlh96nyum-resize-webp:260:260.webp",
+   "price": "$34.49",
+   "commission": "",
+   "category": "Men's Tops",
+   "fills": {
+    "color": "kicking up dust",
+    "material": "soft-washed waffle knit",
+    "style": "long-sleeve henley",
+    "size": "M"
+   },
+   "notes": "Old Navy Long-Sleeve Waffle Henley T-Shirt, style 909057, colour Kicking Up Dust. Old Navy page: https://oldnavy.gap.com/browse/product.do?pid=909057052 (on sale $13.49 on 2026-10-27). One TikTok Shop listing covers every colour.",
+   "archived": false,
+   "id": "aad169",
+   "created": 1793142774.1169302,
+   "updated": 1793142952.1818993
+  },
+  {
+   "name": "Old Navy Waffle Henley - In The Navy",
+   "brand": "Old Navy",
+   "link": "https://shop.tiktok.com/us/pdp/1732577449617167015",
+   "image": "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/6b7ffb05d84a4b468d84c4381e423bb1~tplv-fhlh96nyum-resize-webp:260:260.webp",
+   "price": "$34.49",
+   "commission": "",
+   "category": "Men's Tops",
+   "fills": {
+    "color": "in the navy",
+    "material": "soft-washed waffle knit",
+    "style": "long-sleeve henley",
+    "size": "M"
+   },
+   "notes": "Old Navy Long-Sleeve Waffle Henley T-Shirt, style 909057, colour In The Navy. Old Navy page: https://oldnavy.gap.com/browse/product.do?pid=909057002 (on sale $13.49 on 2026-10-27). One TikTok Shop listing covers every colour.",
+   "archived": false,
+   "id": "8e26fd",
+   "created": 1793142774.1432064,
+   "updated": 1793142952.203947
+  },
+  {
+   "name": "Old Navy Long-Sleeve Waffle Crew - Heritage Green",
+   "brand": "Old Navy",
+   "link": "https://shop.tiktok.com/us/pdp/1732595338038186663",
+   "image": "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/61700ecec5b3441bacf8e13febaa323a~tplv-fhlh96nyum-resize-webp:260:260.webp",
+   "price": "$24.99",
+   "commission": "",
+   "category": "Men's Tops",
+   "fills": {
+    "color": "heritage green",
+    "material": "waffle knit",
+    "style": "long-sleeve crew neck",
+    "size": "M"
+   },
+   "notes": "Old Navy Crew-Neck Waffle T-Shirt (long sleeve), style 909054, colour Heritage Green, size M. Old Navy page: https://oldnavy.gap.com/browse/product.do?pid=909054042 (on sale $12.49 on 2026-10-27). One TikTok Shop listing covers every colour.",
+   "archived": false,
+   "id": "70db4e",
+   "created": 1793142892.9484224,
+   "updated": 1793142952.217721
+  },
+  {
+   "name": "Old Navy Long-Sleeve Waffle Crew - Sea Salt",
+   "brand": "Old Navy",
+   "link": "https://shop.tiktok.com/us/pdp/1732595338038186663",
+   "image": "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/61700ecec5b3441bacf8e13febaa323a~tplv-fhlh96nyum-resize-webp:260:260.webp",
+   "price": "$24.99",
+   "commission": "",
+   "category": "Men's Tops",
+   "fills": {
+    "color": "sea salt",
+    "material": "waffle knit",
+    "style": "long-sleeve crew neck",
+    "size": "M"
+   },
+   "notes": "Old Navy Crew-Neck Waffle T-Shirt (long sleeve), style 909054, colour Sea Salt, size M. Old Navy page: https://oldnavy.gap.com/browse/product.do?pid=909054062 (on sale $12.49 on 2026-10-27). One TikTok Shop listing covers every colour.",
+   "archived": false,
+   "id": "9bbabf",
+   "created": 1793142892.9783325,
+   "updated": 1793142952.2467062
+  },
+  {
+   "name": "Old Navy Long-Sleeve Waffle Crew - Dark Walnut",
+   "brand": "Old Navy",
+   "link": "https://shop.tiktok.com/us/pdp/1732595338038186663",
+   "image": "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/61700ecec5b3441bacf8e13febaa323a~tplv-fhlh96nyum-resize-webp:260:260.webp",
+   "price": "$24.99",
+   "commission": "",
+   "category": "Men's Tops",
+   "fills": {
+    "color": "dark walnut",
+    "material": "waffle knit",
+    "style": "long-sleeve crew neck",
+    "size": "L"
+   },
+   "notes": "Old Navy Crew-Neck Waffle T-Shirt (long sleeve), style 909054, colour Dark Walnut, size L. Old Navy page: https://oldnavy.gap.com/browse/product.do?pid=909054022 (on sale $12.49 on 2026-10-27). One TikTok Shop listing covers every colour.",
+   "archived": false,
+   "id": "27ab82",
+   "created": 1793142893.0007365,
+   "updated": 1793142952.2567022
+  },
+  {
+   "name": "Old Navy Crew-Neck Sweater - Brown Heather",
+   "brand": "Old Navy",
+   "link": "",
+   "image": "",
+   "price": "$49.99",
+   "commission": "",
+   "category": "Men's Sweaters",
+   "fills": {
+    "color": "brown heather",
+    "material": "chunky rib knit",
+    "style": "crew-neck sweater",
+    "size": "L"
+   },
+   "notes": "Old Navy Crew-Neck Sweater (chunky rib knit, raglan sleeves, machine washable), style 903459, colour Brown Heather, size L. Old Navy page: https://oldnavy.gap.com/browse/product.do?pid=903459022 (on sale $24.99 on 2026-10-27). Needs its TikTok Shop link.",
+   "archived": false,
+   "id": "772dcf",
+   "created": 1793143205.7724617,
+   "updated": 1793143205.7724617
+  },
+  {
+   "name": "Old Navy Crew-Neck Sweater - Cozy Cashmere",
+   "brand": "Old Navy",
+   "link": "",
+   "image": "",
+   "price": "$49.99",
+   "commission": "",
+   "category": "Men's Sweaters",
+   "fills": {
+    "color": "cozy cashmere",
+    "material": "chunky rib knit",
+    "style": "crew-neck sweater",
+    "size": "L"
+   },
+   "notes": "Old Navy Crew-Neck Sweater (chunky rib knit, raglan sleeves, machine washable), style 903459, colour Cozy Cashmere, size L. Old Navy page: https://oldnavy.gap.com/browse/product.do?pid=903459032 (on sale $24.99 on 2026-10-27). Needs its TikTok Shop link.",
+   "archived": false,
+   "id": "6838c7",
+   "created": 1793143205.796598,
+   "updated": 1793143205.796598
+  },
+  {
+   "name": "Old Navy Crew-Neck Sweater - Forest Canopy",
+   "brand": "Old Navy",
+   "link": "",
+   "image": "",
+   "price": "$49.99",
+   "commission": "",
+   "category": "Men's Sweaters",
+   "fills": {
+    "color": "forest canopy",
+    "material": "chunky rib knit",
+    "style": "crew-neck sweater",
+    "size": "M"
+   },
+   "notes": "Old Navy Crew-Neck Sweater (chunky rib knit, raglan sleeves, machine washable), style 903459, colour Forest Canopy, size M. Old Navy page: https://oldnavy.gap.com/browse/product.do?pid=903459012 (on sale $24.99 on 2026-10-27). Needs its TikTok Shop link.",
+   "archived": false,
+   "id": "229a70",
+   "created": 1793143205.8126922,
+   "updated": 1793143205.8126922
+  },
+  {
+   "name": "Old Navy 90s Double-Knee Carpenter Jeans - Black Rinse",
+   "brand": "Old Navy",
+   "link": "",
+   "image": "",
+   "price": "$54.99",
+   "commission": "",
+   "category": "Men's Jeans",
+   "fills": {
+    "color": "black rinse",
+    "material": "denim",
+    "style": "90s straight double-knee carpenter jeans",
+    "fit": "relaxed through the hip, straight leg",
+    "size": "34x30",
+    "feature 1": "double knees",
+    "feature 2": "hammer loop"
+   },
+   "notes": "Old Navy 90s Straight Double Knee Carpenter Jeans, style 539419, colour Black Rinse, size 34x30. Only he can wear these (too big for her). Old Navy page: https://oldnavy.gap.com/browse/product.do?pid=539419002 (on sale $27.49 on 2026-10-27). Needs its TikTok Shop link.",
+   "archived": false,
+   "id": "c8cebc",
+   "created": 1793143341.865066,
+   "updated": 1793143341.865066
   }
  ],
  "orders": [],
