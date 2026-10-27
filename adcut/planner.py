@@ -263,10 +263,12 @@ def make_projects(day_iso: str, set_id: str) -> list:
         f = p.get("fills") or {}
         base, _, color = (p.get("name") or "").partition(" - ")  # "H&M Zip Hoodie - Grey Marl" -> said as "… in grey marl"
         plural = WEARS.get(p.get("category"), "top") == "bottom"
+        brand = p.get("brand") or ""
+        spoken = base[len(brand):].strip() if brand and base.startswith(brand) else base  # the brand is said on its own
         vars_ = {"season": plan["season"], "who": "I'm" if s["pov"] == "me" else "He's",
-                 "product": f"{base} in {color.lower()}" if color else base, "item": (f.get("style") or p.get("category") or "").lower(),
+                 "product": (f"{spoken} in {color.lower()}" if color else spoken), "item": (f.get("style") or p.get("category") or "").lower(),
                  "height": chan.get("height") or "", "size": size, "fit note": fit_note,
-                 "it": "them" if plural else "it", "it fits": "they fit" if plural else "it fits", "It's": "They're" if plural else "It's",
+                 "it": "them" if plural else "it", "it fits": "they fit" if plural else "it fits", "It is": "They're" if plural else "It's",
                  "It has": "They've got" if plural else "It's got", "This is": "These are" if plural else "This is"}
         r = shop.new_video({"product": it["product"], "account": s["channel"], "script": sc["id"] if sc else None,
                             "script_text": sc["text"] if sc else "", "vars": vars_, "assign": True,
@@ -281,31 +283,32 @@ def make_projects(day_iso: str, set_id: str) -> list:
 
 # ---------------------------------------------------------------- script templates (our own wording)
 
-TEMPLATES = [  # {it}/{It's}/{this is}… follow the item: "it" for a top, "they" for pants (see make_projects)
+TEMPLATES = [  # {it}/{It is}/{This is}… follow the item: "it" for a top, "they" for pants (see make_projects).
+    # No "on sale" / "free shipping" claims: TikTok prices often sit above the tag. Add them per video when true.
     ("flatlay_vo", "Sale news (flat-lay voiceover)",
-     "{brand} is finally putting their {product} on sale on their TikTok Shop.\n"
+     "{brand} finally has their {product} on TikTok Shop.\n"
      "{It has} that {feature 1} that goes with literally any fit.\n"
-     "You can grab {it} for {price} with free shipping right now.\n"
+     "You can grab {it} for {price} right now.\n"
      "I'll leave the link right here before your size sells out."),
     ("worn", "Height + size (worn, faceless)",
-     "Just in time for this {season}: the {product}.\n"
+     "Just in time for this {season}: the {brand} {product}.\n"
      "{who} {height}, wearing a size {size} {fit note}, and this is exactly how {it fits}.\n"
      "The {feature 1} goes with everything.\n"
-     "{It's} on sale on TikTok Shop right now."),
+     "{It is} on TikTok Shop right now, link's right here."),
     ("held", "I just found the perfect one (held item)",
      "I think I just found the perfect {item} for this {season}.\n"
-     "{This is} the {product}, and the {feature 1} is honestly so good.\n"
-     "{It's} on sale on TikTok Shop, link's right here."),
+     "{This is} the {brand} {product}, and the {feature 1} is honestly so good.\n"
+     "{It is} on TikTok Shop, link's right here."),
     ("skit", "Where'd you get those? (two-person skit)",
      "A: Wait, I love your {item}. Where'd you get {it}?\n"
-     "B: {brand}. Their TikTok Shop.\n"
-     "A: Isn't {brand} kind of expensive in store?\n"
-     "B: Not on TikTok. {It's} on sale, and shipping's free.\n"
-     "A: Okay, send me the link."),
+     "B: {brand}. I got {it} on TikTok Shop.\n"
+     "A: For real? How much?\n"
+     "B: {price}. The link's right there.\n"
+     "A: Okay, send it to me."),
     ("carousel", "On-image text (carousel)",
      "{season} essential: {item}\n"
      "[or] POV: you found the perfect {item} for any fit\n"
-     "[or] \"I need an affordable {item} for this {season}\""),
+     "[or] \"I need a good {item} for this {season}\""),
 ]
 
 
