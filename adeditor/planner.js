@@ -83,9 +83,10 @@ async function plannerSettings() {
     <div class="plRow plMeals">${st.day.meals.map((m, i) => `<label>🍽 <input data-meal="${i}" data-f="name" value="${esc(m.name)}" style="width:90px"> at <input type="time" data-meal="${i}" data-f="at" value="${m.at}"> for <input type="number" data-meal="${i}" data-f="min" value="${m.min}" style="width:52px"> min</label>`).join("")}</div>
     <h4>Channels</h4>
     ${cfg.accounts.map(a => { const c = chans[a.id] || {}; return `<div class="plRow plChan" data-acc="${a.id}"><label class="chk"><input type="checkbox" data-f="on" ${!st.channels.length || chans[a.id] ? "checked" : ""}> <b translate="no">${esc(a.name)}</b></label>
-      <label>POV <select data-f="pov"><option value="me" ${c.pov !== "partner" ? "selected" : ""}>his own ("I'm 6'1…")</option><option value="partner" ${c.pov === "partner" ? "selected" : ""}>yours ("He's 6'1…")</option></select></label>
+      <label>POV <select data-f="pov"><option value="me" ${c.pov !== "partner" ? "selected" : ""}>the wearer talks ("I'm 6'1…")</option><option value="partner" ${c.pov === "partner" ? "selected" : ""}>someone else talks ("He's 6'1…")</option></select></label>
       <label>Height <input data-f="height" value="${esc(c.height || "")}" placeholder="6'1 160" style="width:90px"></label>
-      <label>Sizes <input data-f="size_bottom" value="${esc(c.size_bottom || "")}" placeholder="32x32" style="width:70px"> <input data-f="size_top" value="${esc(c.size_top || "")}" placeholder="L" style="width:44px"></label></div>`; }).join("") || `<p class="muted">No accounts yet.</p>`}
+      <label>Sizes <input data-f="size_bottom" value="${esc(c.size_bottom || "")}" placeholder="32x32" style="width:70px"> <input data-f="size_top" value="${esc(c.size_top || "")}" placeholder="L" style="width:44px"></label>
+      <details class="plCant"><summary>Can't wear (${(c.cant_wear || []).length})</summary>${products().map(p => `<label class="chk"><input type="checkbox" data-cant="${p.id}" ${(c.cant_wear || []).includes(p.id) ? "checked" : ""}> <span translate="no">${esc(p.name)}</span></label>`).join("")}</details></div>`; }).join("") || `<p class="muted">No accounts yet.</p>`}
     <h4>Product lineup <span class="fhint">none ticked = every product with a TikTok Shop link</span></h4>
     <div class="plLineup">${products().map(p => `<label class="chk"><input type="checkbox" data-lineup="${p.id}" ${lineup.has(p.id) ? "checked" : ""}> <span translate="no">${esc(p.name)}</span></label>`).join("")}</div>
     <div class="sdBtns"><span class="spacer"></span><button type="button" data-close>Cancel</button><button class="primary" data-save>Save + rebuild the day</button></div></form>`;
@@ -100,7 +101,7 @@ async function plannerSettings() {
     });
     st.day.meals.forEach((_, i) => out.day.meals.push({ name: $(`[data-meal="${i}"][data-f=name]`, dlg).value, at: $(`[data-meal="${i}"][data-f=at]`, dlg).value, min: +$(`[data-meal="${i}"][data-f=min]`, dlg).value || 0 }));
     out.channels = $$(".plChan", dlg).filter(r => $("[data-f=on]", r).checked).map(r => ({ account: r.dataset.acc, pov: $("[data-f=pov]", r).value,
-      height: $("[data-f=height]", r).value.trim(), size_bottom: $("[data-f=size_bottom]", r).value.trim(), size_top: $("[data-f=size_top]", r).value.trim() }));
+      height: $("[data-f=height]", r).value.trim(), size_bottom: $("[data-f=size_bottom]", r).value.trim(), size_top: $("[data-f=size_top]", r).value.trim(), cant_wear: $$("[data-cant]", r).filter(i => i.checked).map(i => i.dataset.cant) }));
     out.lineup = $$("[data-lineup]", dlg).filter(i => i.checked).map(i => i.dataset.lineup);
     await api("/api/shop/planner/settings", { json: out });
     await api(`/api/shop/planner/day/${PL.day}/rebuild`, { json: {} });

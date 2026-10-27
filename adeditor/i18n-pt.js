@@ -1244,7 +1244,10 @@ window.I18N_PT = {
   "Wear it, film waist-down, say your height and size.": "Vista, filme da cintura para baixo, diga sua altura e tamanho.",
   "\"I think I just found the perfect…\" Good for side products.": "\"I think I just found the perfect…\" Bom para produtos extras.",
   "\"Wait, where'd you get those?\" The same exchange for each product.": "\"Wait, where'd you get those?\" O mesmo diálogo para cada produto.",
-  "A brand deal or a non-product post that can go wide.": "Uma publi ou um post sem produto que pode viralizar."
+  "A brand deal or a non-product post that can go wide.": "Uma publi ou um post sem produto que pode viralizar.",
+  "Can't wear": "Não serve",
+  "the wearer talks (\"I'm 6'1…\")": "quem veste fala (\"I'm 6'1…\")",
+  "someone else talks (\"He's 6'1…\")": "outra pessoa fala (\"He's 6'1…\")"
  },
  "patterns": [
   [

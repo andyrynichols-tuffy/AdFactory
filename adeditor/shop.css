@@ -289,3 +289,5 @@ button.tpMore:hover { color: var(--text) !important; border-color: #4a505b !impo
 .plMix td { white-space: normal; }
 .plLineup { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 12px; max-height: 220px; overflow: auto; font-size: 13px; }
 @media (max-width: 800px) { .plGrid { grid-template-columns: 1fr; } }
+.plCant { flex-basis: 100%; } .plCant summary { cursor: pointer; color: var(--muted); }
+.plCant label { display: block; margin: 2px 0 2px 14px; }

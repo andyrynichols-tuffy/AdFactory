@@ -16,6 +16,7 @@ from . import shop, store
 
 FILE = store.SHOOTS_DIR / "_planner.json"
 _lock = threading.Lock()
+WORN = {"worn", "skit"}  # formats where the product is on the person
 WEEKDAYS = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
 FORMATS = [  # share = % of a channel's posts; takes = near-identical takes per product; minutes per take
     {"key": "carousel", "label": "Flat-lay carousel", "setup": "Wood floor, top-down", "share": 25, "takes": 1,
@@ -109,7 +110,7 @@ def _lineup(st, sh):
 def _channels(st, sh):
     chans = [c for c in st["channels"] if shop.by_id(sh, "accounts", c.get("account"))]
     if not chans:  # every account, one POV each (the first is "me")
-        chans = [{"account": a["id"], "pov": "me" if k == 0 else "partner"} for k, a in enumerate(sh["accounts"])]
+        chans = [{"account": a["id"], "pov": "me"} for a in sh["accounts"]]  # each person films and talks about themselves
     return chans or [{"account": None, "pov": "me"}]
 
 
@@ -126,6 +127,8 @@ def generate(day_iso: str) -> dict:
     for ci, ch in enumerate(chans):
         acc = shop.by_id(sh, "accounts", ch.get("account"))
         counts = _split(n, st["mix"])
+        skip = set(ch.get("cant_wear") or [])  # products this channel's person can't wear (too big…)
+        wearable = [p for p in lineup if p["id"] not in skip] or lineup
         for key, cnt in counts.items():
             if not cnt:
                 continue
@@ -133,8 +136,9 @@ def generate(day_iso: str) -> dict:
             takes = max(1, int(st["takes"].get(key, f["takes"])))
             k_products = max(1, math.ceil(cnt / takes))
             items, left = [], cnt
+            pool = wearable if key in WORN else lineup
             for j in range(k_products):
-                p = lineup[(offset + ci * 3 + j + len(sets)) % len(lineup)] if lineup else None
+                p = pool[(offset + ci * 3 + j + len(sets)) % len(pool)] if pool else None
                 t = min(takes, left)
                 left -= t
                 pid = p["id"] if p else None
