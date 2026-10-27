@@ -5,7 +5,7 @@ const PL = { day: null, plan: null, cfg: null };
 const todayIso = () => { const d = new Date(); return new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10); };
 const addDays = (iso, n) => { const d = new Date(iso + "T12:00"); d.setDate(d.getDate() + n); return d.toISOString().slice(0, 10); };
 const mins = m => m >= 60 ? `${Math.floor(m / 60)}h ${String(Math.round(m % 60)).padStart(2, "0")}m` : `${Math.round(m)} min`;
-const KIND = { gym: ["🏋️", "#ff8787"], meal: ["🍽", "#ffd43b"], shoot: ["🎬", "#21a366"], edit: ["✂️", "#74c0fc"], research: ["🔎", "#b197fc"], post: ["📤", "#25f4ee"] };
+const KIND = { gym: ["🏋️", "#ff8787"], meal: ["🍽", "#ffd43b"], shoot: ["🎬", "#21a366"], edit: ["✂️", "#74c0fc"], research: ["🔎", "#b197fc"], post: ["📤", "#25f4ee"], live: ["📅", "#6c757d"] };
 const FMT_ICON = { carousel: "🖼", flatlay_vo: "👉", worn: "👖", held: "✋", skit: "🎭", other: "✨" };
 
 async function renderPlanner() {
@@ -23,7 +23,7 @@ async function renderPlanner() {
       <button data-go="plrebuild" title="Make the day again from the settings (posted marks are kept)">↻ Rebuild the day</button><button data-go="plsettings">⚙ Planner settings</button></div>
     ${!PL.cfg.accounts.length ? `<div class="sc setup"><b>Add your TikTok accounts first</b><p class="muted">The planner makes a day per channel (yours and his). Analytics → ⚙ Accounts.</p></div>` : ""}
     <div class="kpiRow">
-      <div class="sc skpi"><span>Posts</span><b>${p.posts.length}</b><em>${p.posts_per_channel} per channel × ${p.channels} · ${done} posted</em></div>
+      <div class="sc skpi"><span>Posts</span><b>${p.posts.length}</b><em>${p.posts_per_channel} per channel × ${p.channels} · ${done} ${PL.cfg.settings.day.schedule !== false ? "scheduled" : "posted"}</em></div>
       <div class="sc skpi"><span>Shooting</span><b>${mins(shoot)}</b><em>${p.sets.length} sets, one setup each</em></div>
       <div class="sc skpi"><span>Editing</span><b>${mins(edit)}</b><em>carousels + checking the pre-cuts</em></div>
       <div class="sc skpi"><span>Posting</span><b>${esc(PL.cfg.settings.day.post_from)}–${esc(PL.cfg.settings.day.post_to)}</b><em>${p.season} lineup</em></div></div>
@@ -39,7 +39,7 @@ async function renderPlanner() {
             ${sc ? `<div class="qm muted">📝 <span translate="no">${esc(sc.title)}</span></div>` : ""}
             <div class="qa">${s.projects?.length ? `<span class="okx">✓ ${s.projects.length} project${s.projects.length === 1 ? "" : "s"} in Ad Camera</span>` :
               `<button class="primary" data-mkset="${s.id}" ${n ? "" : "disabled"} title="One project per product, with the script and how many takes">📷 Make ${n} Ad Camera project${n === 1 ? "" : "s"}</button>`}</div></div>`; }).join("") || `<p class="muted">No posts planned for this day.</p>`}</div></div>
-    <h3 class="secHead">Posting schedule <span class="muted">tick each one once it's up</span></h3>
+    <h3 class="secHead">Posting schedule <span class="muted">${PL.cfg.settings.day.schedule !== false ? "tick each one once it's scheduled" : "tick each one once it's up"}</span></h3>
     <div class="tblWrap"><table class="tbl"><thead><tr><th></th><th>Time</th><th>Channel</th><th>Format</th><th>Product</th></tr></thead><tbody>
       ${p.posts.map((x, k) => `<tr class="${x.done ? "closed" : ""}"><td><input type="checkbox" data-mark="${k}" ${x.done ? "checked" : ""}></td><td>${x.time}</td>
         <td>${accChip(x.channel) || "–"}</td><td>${FMT_ICON[x.format] || ""} ${esc((PL.cfg.formats.find(f => f.key === x.format) || {}).label || x.format)}</td><td translate="no">${esc(x.name)}</td></tr>`).join("")}</tbody></table></div>`;
@@ -79,6 +79,8 @@ async function plannerSettings() {
     <div class="plRow"><label>Start ${tIn("day.start", st.day.start)}</label><label>End ${tIn("day.end", st.day.end)}</label>
       <label>Post from ${tIn("day.post_from", st.day.post_from)}</label><label>to ${tIn("day.post_to", st.day.post_to)}</label>
       <label>Setup per set ${num("day.setup_min", st.day.setup_min, 52)} min</label><label>Research ${num("day.research_min", st.day.research_min, 52)} min</label></div>
+    <div class="plRow"><label class="chk"><input type="checkbox" data-k="day.schedule" ${st.day.schedule !== false ? "checked" : ""}> 📅 Schedule posts ahead in TikTok Studio</label>
+      <label>${num("day.schedule_min", st.day.schedule_min ?? 1.5, 52)} min per post</label></div>
     <div class="plRow"><label>🏋️ Gym at ${tIn("day.gym.at", st.day.gym.at)}</label><label>for ${num("day.gym.min", st.day.gym.min, 52)} min</label></div>
     <div class="plRow plMeals">${st.day.meals.map((m, i) => `<label>🍽 <input data-meal="${i}" data-f="name" value="${esc(m.name)}" style="width:90px"> at <input type="time" data-meal="${i}" data-f="at" value="${m.at}"> for <input type="number" data-meal="${i}" data-f="min" value="${m.min}" style="width:52px"> min</label>`).join("")}</div>
     <h4>Channels</h4>
@@ -96,7 +98,7 @@ async function plannerSettings() {
   $("[data-save]", dlg).onclick = async () => {
     const out = { posts: {}, mix: {}, takes: {}, day: { gym: {}, meals: [] } };
     $$("[data-k]", dlg).forEach(i => {
-      const path = i.dataset.k.split("."), v = i.type === "number" ? Number(i.value || 0) : i.value;
+      const path = i.dataset.k.split("."), v = i.type === "checkbox" ? i.checked : i.type === "number" ? Number(i.value || 0) : i.value;
       let o = out; path.slice(0, -1).forEach(p => (o = o[p] ||= {})); o[path.at(-1)] = v;
     });
     st.day.meals.forEach((_, i) => out.day.meals.push({ name: $(`[data-meal="${i}"][data-f=name]`, dlg).value, at: $(`[data-meal="${i}"][data-f=at]`, dlg).value, min: +$(`[data-meal="${i}"][data-f=min]`, dlg).value || 0 }));

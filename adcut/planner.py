@@ -39,6 +39,7 @@ DEFAULTS = {
     "takes": {f["key"]: f["takes"] for f in FORMATS},
     "day": {"start": "07:30", "end": "22:00", "post_from": "15:00", "post_to": "20:00", "setup_min": 10,
             "research_min": 30, "gym": {"at": "08:00", "min": 75},
+            "schedule": True, "schedule_min": 1.5,  # schedule the day's posts in TikTok Studio right after editing
             "meals": [{"name": "Breakfast", "at": "09:20", "min": 20}, {"name": "Lunch", "at": "12:30", "min": 30},
                       {"name": "Dinner", "at": "18:30", "min": 40}]},
     "channels": [],   # [{account, pov: "me" | "partner", height, size_top, size_bottom}]
@@ -204,6 +205,10 @@ def _blocks(st, sets, n_posts):
     work = [{"kind": "shoot", "title": f"Shoot: {s['label']} · {s['channel_name']}", "min": s["minutes"], "set": s["id"]} for s in sets]
     edit = sum(s["edit_minutes"] for s in sets)
     work.append({"kind": "edit", "title": f"Edit + review ({n_posts} posts: carousels assembled, videos checked)", "min": edit})
+    sched = day.get("schedule", True)
+    if sched:  # posts go out on their own at their times: one sitting instead of an evening of posting
+        work.append({"kind": "post", "title": f"Schedule {n_posts} posts in TikTok Studio (times in the posting schedule)",
+                     "min": math.ceil(n_posts * float(day.get("schedule_min", 1.5)))})
     work.append({"kind": "research", "title": "Research: Analytics, competitor tracker, next lineup", "min": day["research_min"]})
     busy = sorted(fixed, key=lambda x: x["start"])
     out, t = list(fixed), _t(day["start"])
@@ -221,9 +226,12 @@ def _blocks(st, sets, n_posts):
             out.append({"kind": w["kind"], "title": w["title"], "start": t, "end": stop, **({"set": w["set"]} if w.get("set") else {})})
             need -= stop - t
             t = stop
-    out.append({"kind": "post", "title": f"Posting window: {n_posts} posts, one every ~{max(1, round((post_to - post_from) / max(1, n_posts / max(1, len({s['channel'] for s in sets})))))} min per channel",
-                "start": post_from, "end": post_to})
-    out.sort(key=lambda x: (x["start"], x["kind"] != "post"))
+    if sched:
+        out.append({"kind": "live", "title": f"Scheduled posts go live: {n_posts}, nothing to do", "start": post_from, "end": post_to})
+    else:
+        out.append({"kind": "post", "title": f"Posting window: {n_posts} posts, one every ~{max(1, round((post_to - post_from) / max(1, n_posts / max(1, len({s['channel'] for s in sets})))))} min per channel",
+                    "start": post_from, "end": post_to})
+    out.sort(key=lambda x: (x["start"], x["kind"] not in ("post", "live")))
     for x in out:
         x["start"], x["end"] = _s(x["start"]), _s(x["end"])
     return out

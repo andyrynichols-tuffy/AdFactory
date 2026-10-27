@@ -291,3 +291,4 @@ button.tpMore:hover { color: var(--text) !important; border-color: #4a505b !impo
 @media (max-width: 800px) { .plGrid { grid-template-columns: 1fr; } }
 .plCant { flex-basis: 100%; } .plCant summary { cursor: pointer; color: var(--muted); }
 .plCant label { display: block; margin: 2px 0 2px 14px; }
+.plTime li.k-live { opacity: .7; }

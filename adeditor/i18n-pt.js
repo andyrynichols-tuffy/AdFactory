@@ -1247,7 +1247,11 @@ window.I18N_PT = {
   "A brand deal or a non-product post that can go wide.": "Uma publi ou um post sem produto que pode viralizar.",
   "Can't wear": "Não serve",
   "the wearer talks (\"I'm 6'1…\")": "quem veste fala (\"I'm 6'1…\")",
-  "someone else talks (\"He's 6'1…\")": "outra pessoa fala (\"He's 6'1…\")"
+  "someone else talks (\"He's 6'1…\")": "outra pessoa fala (\"He's 6'1…\")",
+  "📅 Schedule posts ahead in TikTok Studio": "📅 Agendar posts no TikTok Studio",
+  "min per post": "min por post",
+  "scheduled": "agendados",
+  "tick each one once it's scheduled": "marque cada um quando estiver agendado"
  },
  "patterns": [
   [
@@ -1389,6 +1393,14 @@ window.I18N_PT = {
   [
    "^(?:Posting|Postagem) window: (\\d+) posts, one every ~(\\d+) min per channel",
    "Janela de postagem: $1 posts, um a cada ~$2 min por canal"
+  ],
+  [
+   "^Schedule (\\d+) posts in TikTok Studio \\(times in the posting schedule\\)",
+   "Agendar $1 posts no TikTok Studio (horários na lista de postagem)"
+  ],
+  [
+   "^Scheduled posts go live: (\\d+), nothing to do",
+   "Posts agendados entram no ar: $1, nada a fazer"
   ]
  ]
 };
