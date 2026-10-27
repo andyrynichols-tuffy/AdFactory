@@ -16,6 +16,7 @@ from . import shop, store
 
 FILE = store.SHOOTS_DIR / "_planner.json"
 _lock = threading.Lock()
+WEARS = {"Men's Jeans": "bottom", "Men's Pants": "bottom"}  # product category -> which size applies (default top)
 WORN = {"worn", "skit"}  # formats where the product is on the person
 WEEKDAYS = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
 FORMATS = [  # share = % of a channel's posts; takes = near-identical takes per product; minutes per take
@@ -255,8 +256,12 @@ def make_projects(day_iso: str, set_id: str) -> list:
         if not it["product"]:
             continue
         p = shop.by_id(sh, "products", it["product"]) or {}
+        # size: the channel's own (one usual size) or else the sample's tag size, with how it wears (M fitted, L looser)
+        own = chan.get("size_bottom") if WEARS.get(p.get("category"), "top") == "bottom" else chan.get("size_top")
+        size = own or (p.get("fills") or {}).get("size") or ""
+        fit_note = "" if own else {"S": "for a more fitted look", "M": "for a more fitted look", "L": "for a looser fit", "XL": "for a looser fit"}.get(size.upper(), "")
         vars_ = {"season": plan["season"], "who": "I'm" if s["pov"] == "me" else "He's", "item": (p.get("category") or "").lower(),
-                 "height": chan.get("height") or "", "size": chan.get("size_bottom") or chan.get("size_top") or ""}
+                 "height": chan.get("height") or "", "size": size, "fit note": fit_note}
         r = shop.new_video({"product": it["product"], "account": s["channel"], "script": sc["id"] if sc else None,
                             "script_text": sc["text"] if sc else "", "vars": vars_, "assign": True,
                             "title": f"{label} · {s['label']} · {it['name'][:28]}",
@@ -278,7 +283,7 @@ TEMPLATES = [
      "I'll leave the link right here before your size sells out."),
     ("worn", "Height + size (worn, faceless)",
      "Just in time for this {season}: the {product}.\n"
-     "{who} {height}, wearing a size {size}, and this is exactly how they fit.\n"
+     "{who} {height}, wearing a size {size} {fit note}, and this is exactly how they fit.\n"
      "The {feature 1} makes them go with everything.\n"
      "They're on sale on TikTok Shop right now."),
     ("held", "I just found the perfect one (held item)",
