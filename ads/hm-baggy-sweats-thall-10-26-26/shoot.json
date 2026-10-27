@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 14,
+ "rev": 24,
  "title": "HM Baggy Sweats THall 10.26.26",
  "created": 1793056500.1949503,
  "product": {
@@ -38,6 +38,58 @@
    "looks": [],
    "key": "135f84898b5a1e",
    "duration": 3.148333,
+   "width": 3840,
+   "height": 2160
+  },
+  {
+   "id": "0527aa",
+   "file": "C:\\Users\\thecc\\MemeSupercutData\\ads\\uploads\\hm-baggy-sweats-thall-10-26-26\\HM Baggy Sweats THall 10.26.26 2026-10-26 18.59.10.mov",
+   "name": "HM Baggy Sweats THall 10.26.26 2026-10-26 18.59.10.mov",
+   "status": "ready",
+   "error": null,
+   "batch": 3,
+   "looks": [],
+   "key": "5d16407096ecba",
+   "duration": 1.681667,
+   "width": 3840,
+   "height": 2160
+  },
+  {
+   "id": "4a79c1",
+   "file": "C:\\Users\\thecc\\MemeSupercutData\\ads\\uploads\\hm-baggy-sweats-thall-10-26-26\\HM Baggy Sweats THall 10.26.26 2026-10-26 19.03.55.mov",
+   "name": "HM Baggy Sweats THall 10.26.26 2026-10-26 19.03.55.mov",
+   "status": "ready",
+   "error": null,
+   "batch": 4,
+   "looks": [],
+   "key": "023276dce45625",
+   "duration": 18.848333,
+   "width": 3840,
+   "height": 2160
+  },
+  {
+   "id": "b4504f",
+   "file": "C:\\Users\\thecc\\MemeSupercutData\\ads\\uploads\\hm-baggy-sweats-thall-10-26-26\\HM Baggy Sweats THall 10.26.26 2026-10-26 19.05.01.mov",
+   "name": "HM Baggy Sweats THall 10.26.26 2026-10-26 19.05.01.mov",
+   "status": "ready",
+   "error": null,
+   "batch": 5,
+   "looks": [],
+   "key": "3de28d298c0189",
+   "duration": 15.165,
+   "width": 3840,
+   "height": 2160
+  },
+  {
+   "id": "31cc42",
+   "file": "C:\\Users\\thecc\\MemeSupercutData\\ads\\uploads\\hm-baggy-sweats-thall-10-26-26\\HM Baggy Sweats THall 10.26.26 2026-10-26 19.05.18.mov",
+   "name": "HM Baggy Sweats THall 10.26.26 2026-10-26 19.05.18.mov",
+   "status": "ready",
+   "error": null,
+   "batch": 5,
+   "looks": [],
+   "key": "4e03e3a2d61891",
+   "duration": 0.365,
    "width": 3840,
    "height": 2160
   }
@@ -271,6 +323,167 @@
  "script_guessed": false,
  "takes": [
   {
+   "id": "319fb9",
+   "line": null,
+   "src": "31cc42",
+   "in": 0.02,
+   "out": 0.345,
+   "look": null,
+   "alt": 0,
+   "text": "Thanks for you.",
+   "for_text": null,
+   "words": [
+    [
+     "Thanks",
+     0.02,
+     0.14
+    ],
+    [
+     "for",
+     0.14,
+     0.26
+    ],
+    [
+     "you.",
+     0.26,
+     0.34
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 4,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "497dc9",
+   "line": "d7c100",
+   "src": "4a79c1",
+   "in": 9.48,
+   "out": 10.68,
+   "look": null,
+   "alt": 0,
+   "text": "So, H &M.",
+   "for_text": "So H &M",
+   "words": [
+    [
+     "So",
+     9.56,
+     9.82
+    ],
+    [
+     "H",
+     9.96,
+     10.14
+    ],
+    [
+     "&M",
+     10.14,
+     10.5
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.685,
+   "eye": 0.1,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "c7c45b",
+   "line": "d7c100",
+   "src": "4a79c1",
+   "in": 15.18,
+   "out": 16.36,
+   "look": null,
+   "alt": 0,
+   "text": "So, H &M.",
+   "for_text": "So H &M",
+   "words": [
+    [
+     "So",
+     15.26,
+     15.54
+    ],
+    [
+     "H",
+     15.72,
+     15.8
+    ],
+    [
+     "&M",
+     15.8,
+     16.18
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.895,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
    "id": "41c1df",
    "line": null,
    "src": "93a5cb",
@@ -326,6 +539,276 @@
    "extra": [],
    "usable": false,
    "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "e1c98d",
+   "line": "f96e26",
+   "src": "b4504f",
+   "in": 2.18,
+   "out": 4.6,
+   "look": null,
+   "alt": 0,
+   "text": "Just stop gray. No.",
+   "for_text": "just dropped gray and black",
+   "words": [
+    [
+     "just",
+     2.26,
+     2.62
+    ],
+    [
+     "dropped",
+     2.62,
+     2.92
+    ],
+    [
+     "gray",
+     2.92,
+     3.28
+    ],
+    [
+     "No.",
+     4.12,
+     4.42
+    ]
+   ],
+   "score": 0.444,
+   "status": "incomplete",
+   "flags": [
+    "stopped before the end of the line"
+   ],
+   "missing": [
+    "dropped",
+    "and",
+    "black"
+   ],
+   "extra": [
+    "stop",
+    "no"
+   ],
+   "usable": false,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "e1364e",
+   "line": null,
+   "src": "b4504f",
+   "in": 9.06,
+   "out": 10.2,
+   "look": null,
+   "alt": 0,
+   "text": "Just stop greeting.",
+   "for_text": null,
+   "words": [
+    [
+     "Just",
+     9.14,
+     9.44
+    ],
+    [
+     "stop",
+     9.44,
+     9.68
+    ],
+    [
+     "greeting.",
+     9.68,
+     10.02
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 2,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "495778",
+   "line": "f96e26",
+   "src": "b4504f",
+   "in": 11.27,
+   "out": 12.45,
+   "look": null,
+   "alt": 0,
+   "text": "Just drop green.",
+   "for_text": "just dropped gray and black",
+   "words": [
+    [
+     "just",
+     11.35,
+     11.67
+    ],
+    [
+     "drop",
+     11.67,
+     11.93
+    ],
+    [
+     "green.",
+     11.93,
+     12.27
+    ]
+   ],
+   "score": 0.25,
+   "status": "incomplete",
+   "flags": [
+    "stopped before the end of the line"
+   ],
+   "missing": [
+    "dropped",
+    "gray",
+    "and",
+    "black"
+   ],
+   "extra": [
+    "drop",
+    "green"
+   ],
+   "usable": false,
+   "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "75cc7b",
+   "line": null,
+   "src": "b4504f",
+   "in": 13.67,
+   "out": 15.145,
+   "look": null,
+   "alt": 0,
+   "text": "I don't really feel like doing this right now.",
+   "for_text": null,
+   "words": [
+    [
+     "I",
+     13.75,
+     13.99
+    ],
+    [
+     "don't",
+     13.99,
+     14.15
+    ],
+    [
+     "really",
+     14.15,
+     14.43
+    ],
+    [
+     "feel",
+     14.43,
+     14.59
+    ],
+    [
+     "like",
+     14.59,
+     14.71
+    ],
+    [
+     "doing",
+     14.71,
+     14.87
+    ],
+    [
+     "this",
+     14.87,
+     15.09
+    ],
+    [
+     "right",
+     15.09,
+     15.13
+    ],
+    [
+     "now.",
+     15.13,
+     15.13
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 3,
    "zoom": 1.0,
    "pan_x": 0.5,
    "pan_y": 0.5,
