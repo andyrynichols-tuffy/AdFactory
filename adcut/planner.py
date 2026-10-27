@@ -137,7 +137,12 @@ def generate(day_iso: str) -> dict:
                 p = lineup[(offset + ci * 3 + j + len(sets)) % len(lineup)] if lineup else None
                 t = min(takes, left)
                 left -= t
-                items.append({"product": p["id"] if p else None, "name": p["name"] if p else "(pick a product)", "takes": t})
+                pid = p["id"] if p else None
+                same = next((it for it in items if it["product"] == pid), None)  # short lineup: more takes, not a repeat row
+                if same:
+                    same["takes"] += t
+                else:
+                    items.append({"product": pid, "name": p["name"] if p else "(pick a product)", "takes": t})
             sid = f"{key}-{ci}"
             sets.append({"id": sid, "format": key, "label": f["label"], "setup": f["setup"], "tip": f["tip"],
                          "channel": ch.get("account"), "channel_name": (acc or {}).get("name") or f"Channel {ci + 1}",
