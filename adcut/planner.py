@@ -260,8 +260,14 @@ def make_projects(day_iso: str, set_id: str) -> list:
         own = chan.get("size_bottom") if WEARS.get(p.get("category"), "top") == "bottom" else chan.get("size_top")
         size = own or (p.get("fills") or {}).get("size") or ""
         fit_note = "" if own else {"S": "for a more fitted look", "M": "for a more fitted look", "L": "for a looser fit", "XL": "for a looser fit"}.get(size.upper(), "")
-        vars_ = {"season": plan["season"], "who": "I'm" if s["pov"] == "me" else "He's", "item": (p.get("category") or "").lower(),
-                 "height": chan.get("height") or "", "size": size, "fit note": fit_note}
+        f = p.get("fills") or {}
+        base, _, color = (p.get("name") or "").partition(" - ")  # "H&M Zip Hoodie - Grey Marl" -> said as "… in grey marl"
+        plural = WEARS.get(p.get("category"), "top") == "bottom"
+        vars_ = {"season": plan["season"], "who": "I'm" if s["pov"] == "me" else "He's",
+                 "product": f"{base} in {color.lower()}" if color else base, "item": (f.get("style") or p.get("category") or "").lower(),
+                 "height": chan.get("height") or "", "size": size, "fit note": fit_note,
+                 "it": "them" if plural else "it", "it fits": "they fit" if plural else "it fits", "It's": "They're" if plural else "It's",
+                 "It has": "They've got" if plural else "It's got", "This is": "These are" if plural else "This is"}
         r = shop.new_video({"product": it["product"], "account": s["channel"], "script": sc["id"] if sc else None,
                             "script_text": sc["text"] if sc else "", "vars": vars_, "assign": True,
                             "title": f"{label} · {s['label']} · {it['name'][:28]}",
@@ -275,31 +281,31 @@ def make_projects(day_iso: str, set_id: str) -> list:
 
 # ---------------------------------------------------------------- script templates (our own wording)
 
-TEMPLATES = [
+TEMPLATES = [  # {it}/{It's}/{this is}… follow the item: "it" for a top, "they" for pants (see make_projects)
     ("flatlay_vo", "Sale news (flat-lay voiceover)",
      "{brand} is finally putting their {product} on sale on their TikTok Shop.\n"
-     "They've got that {feature 1} that goes with literally any fit.\n"
-     "You can grab them for {price} with free shipping right now.\n"
+     "{It has} that {feature 1} that goes with literally any fit.\n"
+     "You can grab {it} for {price} with free shipping right now.\n"
      "I'll leave the link right here before your size sells out."),
     ("worn", "Height + size (worn, faceless)",
      "Just in time for this {season}: the {product}.\n"
-     "{who} {height}, wearing a size {size} {fit note}, and this is exactly how they fit.\n"
-     "The {feature 1} makes them go with everything.\n"
-     "They're on sale on TikTok Shop right now."),
+     "{who} {height}, wearing a size {size} {fit note}, and this is exactly how {it fits}.\n"
+     "The {feature 1} goes with everything.\n"
+     "{It's} on sale on TikTok Shop right now."),
     ("held", "I just found the perfect one (held item)",
      "I think I just found the perfect {item} for this {season}.\n"
-     "These are the {product}, and the {feature 1} is honestly so good.\n"
-     "They're on sale on TikTok Shop, link's right here."),
+     "{This is} the {product}, and the {feature 1} is honestly so good.\n"
+     "{It's} on sale on TikTok Shop, link's right here."),
     ("skit", "Where'd you get those? (two-person skit)",
-     "A: Wait, where'd you get those {item}?\n"
+     "A: Wait, I love your {item}. Where'd you get {it}?\n"
      "B: {brand}. Their TikTok Shop.\n"
-     "A: Aren't those super expensive in store?\n"
-     "B: Not on TikTok. They're on sale, and shipping's free.\n"
+     "A: Isn't {brand} kind of expensive in store?\n"
+     "B: Not on TikTok. {It's} on sale, and shipping's free.\n"
      "A: Okay, send me the link."),
     ("carousel", "On-image text (carousel)",
      "{season} essential: {item}\n"
      "[or] POV: you found the perfect {item} for any fit\n"
-     "[or] \"I need some affordable {item} for this {season}\""),
+     "[or] \"I need an affordable {item} for this {season}\""),
 ]
 
 
@@ -310,7 +316,10 @@ def seed_templates():
     tag = {t["name"]: t["id"] for t in sh["tags"]}
     tags = {"flatlay_vo": ["Demo", "Price hook"], "worn": ["Try-on"], "held": ["Demo"], "skit": ["Skit", "Funny"], "carousel": ["Price hook"]}
     for key, title, text in TEMPLATES:
-        sid = have.get(title) or shop.upsert("scripts", {"title": title, "text": text, "tags": [tag[n] for n in tags.get(key, []) if n in tag],
+        sid = have.get(title)
+        if sid and (shop.by_id(sh, "scripts", sid) or {}).get("notes", "").startswith("Planner template"):
+            shop.upsert("scripts", {"id": sid, "text": text})  # keep the library copy in step with the template
+        sid = sid or shop.upsert("scripts", {"title": title, "text": text, "tags": [tag[n] for n in tags.get(key, []) if n in tag],
                                                           "notes": "Planner template, modelled on @sully.finds (docs/sully-finds-study.md)"})["id"]
         d["settings"]["scripts"].setdefault(key, sid)
     save(d)
