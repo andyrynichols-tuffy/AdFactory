@@ -322,6 +322,12 @@ def planner_scripts(day: str, set_id: str):
     return out
 
 
+@router.get("/planner/order/{day}")
+def planner_order(day: str):
+    """The day's projects in filming order, each with what to lay out and what changed (Ad Camera's "Next project")."""
+    return {sid: o for sid, o in planner.shoot_order().items() if o["day"] == day}
+
+
 @router.get("/planner/live/{day}")
 def planner_live(day: str):
     """Posts from any batch that go live on this date."""

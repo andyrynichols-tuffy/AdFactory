@@ -335,3 +335,7 @@ html .lightbox button { position: absolute; background: rgba(255, 255, 255, .12)
 .plWeek > div { display: grid; gap: 3px; align-content: start; }
 .plWeek b { text-transform: capitalize; }
 @media (max-width: 760px) { .plWeek { grid-template-columns: repeat(2, 1fr); } }
+
+.mxPill.now { background: rgba(255, 69, 58, .18); color: #ff8a82; } .mxPill.next { background: var(--mx-accent-soft); color: var(--mx-accent-hi); }
+.mxFilm tr.now td { background: rgba(255, 69, 58, .07); } .mxFilm tr.next td { background: rgba(10, 132, 255, .06); }
+.mxFilm td .small { font-size: 11.5px; margin-top: 1px; }

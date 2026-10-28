@@ -1541,7 +1541,11 @@ window.I18N_PT = {
   "Batch days: one format per shoot day, scheduled over the next week": "Dias de lote: um formato por dia de gravação, agendado para a próxima semana",
   "Daily: each day shoots its own posts": "Diário: cada dia grava os próprios posts",
   "Our accounts can post carousels": "Nossas contas podem postar carrosséis",
-  "Without carousel access (TikTok is rolling it out slowly), their posts go to the videos.": "Sem acesso a carrosséis (o TikTok está liberando aos poucos), os posts deles vão para os vídeos."
+  "Without carousel access (TikTok is rolling it out slowly), their posts go to the videos.": "Sem acesso a carrosséis (o TikTok está liberando aos poucos), os posts deles vão para os vídeos.",
+  "Now filming": "Gravando agora",
+  "Up next": "A seguir",
+  "After this:": "Depois deste:",
+  "On the iPhone open the first project below in Ad Camera. Say “Ad Camera, action” to start and “Ad Camera, cut” to stop, or use the Apple Watch. When its takes are in, say “Ad Camera, next project”: the phone shows what to lay out next, and this list follows along.": "No iPhone, abra o primeiro projeto abaixo no Ad Camera. Diga “Ad Camera, action” para começar e “Ad Camera, cut” para parar, ou use o Apple Watch. Quando as tomadas estiverem prontas, diga “Ad Camera, next project”: o celular mostra o que separar a seguir, e esta lista acompanha."
  },
  "patterns": [
   [
@@ -1767,6 +1771,10 @@ window.I18N_PT = {
   [
    "· version (\\d+)",
    "· versão $1"
+  ],
+  [
+   ", a new setup \\((.+)\\)\\.$",
+   ", uma nova montagem ($1)."
   ]
  ]
 };

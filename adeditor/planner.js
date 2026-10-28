@@ -128,8 +128,9 @@ async function markPost(day, box) {
 const tiktokId = url => (String(url || "").match(/\/(?:video|photo)\/(\d+)/) || [])[1];
 async function renderShoot(setId) {
   const el = $("#panePlanner"), p = PL.plan, s = p.sets.find(x => x.id === setId);
-  const kit = await api(`/api/shop/planner/day/${PL.day}/kit`).catch(() => ({ posts: [] }));
-  PL.kit = kit.posts;
+  const [kit, order, cam] = await Promise.all([api(`/api/shop/planner/day/${PL.day}/kit`).catch(() => ({ posts: [] })),
+    api(`/api/shop/planner/order/${PL.day}`).catch(() => ({})), api("/api/camera/status").catch(() => ({}))]);
+  PL.kit = kit.posts; PL.order = order;
   const mine = kit.posts.filter(x => x.set === s.id), sc = byId("scripts", s.script);
   const carousel = s.format === "carousel", vid = tiktokId(s.example);
   if (carousel) return renderCarouselShoot(el, s, mine).then(showExample);
@@ -157,11 +158,8 @@ async function renderShoot(setId) {
               <p class="mxNote">In Ad Camera tap <b>Shoot carousels</b>, pick these carousels and how many outfits: it walks you through every outfit with every product (all outfits for one product, or one outfit across the products), and each photo lands in its carousel's folder below. Say <b>“Ad Camera, action”</b> to take a photo hands-free.</p>
               <p class="mxNote muted">Photos taken another way: drop them on their carousel below, in order.</p>
               ${mine.map(x => kitPhotoRow(x)).join("")}`)
-          : step("film", "Film in Ad Camera", `<p class="mxNote">On the iPhone open each project below in Ad Camera. Say <b>“Ad Camera, action”</b> to start and <b>“Ad Camera, cut”</b> to stop, or use the Apple Watch. Film the takes back to back, then swap to the next colour.</p>
-              ${s.projects?.length ? `<table class="mxList"><tbody>${s.projects.map(pr => { const ps = mine.filter(x => x.sid === pr.sid), need = ps.length || 1, have = ps[0]?.takes || 0;
-                const it = s.items.find(i => (i.unit || i.product) === (pr.unit || pr.product)), ver = "";
-                return `<tr><td><span translate="no">${esc(colorOf(it?.name || prodName(pr.product)) || prodName(pr.product))}</span>${ver}</td><td class="num">${have} of ${need} <span>${need === 1 ? "take" : "takes"} in</span></td><td>${have >= need ? `<span class="mxPill ok">Filmed</span>` : have ? `<span class="mxPill wait">Filming</span>` : `<span class="mxPill">To film</span>`}</td><td class="num"><button data-open="${esc(pr.sid)}">Open</button></td></tr>`; }).join("")}</tbody></table>`
-                : `<p class="mxNote muted">Send this setup to Ad Camera first (button at the top).</p>`}
+          : step("film", "Film in Ad Camera", `<p class="mxNote">On the iPhone open the first project below in Ad Camera. Say <b>“Ad Camera, action”</b> to start and <b>“Ad Camera, cut”</b> to stop, or use the Apple Watch. When its takes are in, say <b>“Ad Camera, next project”</b>: the phone shows what to lay out next, and this list follows along.</p>
+              ${s.projects?.length ? `<div id="filmBox">${filmTable(s, mine, order, cam)}</div>` : `<p class="mxNote muted">Send this setup to Ad Camera first (button at the top).</p>`}
               <div class="mxLabel">The scripts <span class="muted">· complete, one per colour, the same lines every take</span></div>
               <div id="scriptBox" class="mxScripts" data-set="${s.id}"></div>`)}
         ${step("after", carousel ? "When the photos are in" : "When the takes are in", carousel
@@ -175,6 +173,36 @@ async function renderShoot(setId) {
     </div>`;
   showExample();
   showScripts();
+  clearInterval(PL.poll);
+  if (!s.projects?.length) return;
+  PL.filmSig = "";
+  PL.poll = setInterval(async () => {  // takes tick in and "Now filming" moves while Ad Camera is shooting
+    const box = $("#filmBox");
+    if (!box || LS.get("planOpen", "") !== s.id) return clearInterval(PL.poll);
+    const [k, c] = await Promise.all([api(`/api/shop/planner/day/${PL.day}/kit`).catch(() => null), api("/api/camera/status").catch(() => null)]);
+    if (!k || !c) return;
+    const html = filmTable(s, k.posts.filter(x => x.set === s.id), PL.order, c);
+    if (html !== PL.filmSig) { PL.filmSig = html; PL.kit = k.posts; box.innerHTML = html; }
+  }, 5000);
+}
+// the set's projects in filming order: what to lay out, what changed, takes in, and which one the phone has open
+function filmTable(s, mine, order, cam) {
+  const ord = sid => order[sid]?.n ?? 1e9;
+  const prs = [...s.projects].sort((a, b) => ord(a.sid) - ord(b.sid));
+  const takes = pr => { const ps = mine.filter(x => x.sid === pr.sid); return [ps[0]?.takes || 0, ps.length || 1]; };
+  const open = cam?.open && Date.now() / 1000 - (cam.open_at || 0) < 1800 && order[cam.open] ? cam.open : "";
+  const next = open ? order[open].next : (prs.find(pr => { const [h, n] = takes(pr); return h < n; }) || {}).sid;
+  const leaving = open && prs.some(pr => pr.sid === open) && next && !prs.some(pr => pr.sid === next) ? order[next] : null;
+  const rows = prs.map(pr => {
+    const [have, need] = takes(pr), o = order[pr.sid] || {}, it = s.items.find(i => (i.unit || i.product) === (pr.unit || pr.product));
+    const name = o.lay || colorOf(it?.name || prodName(pr.product)) || prodName(pr.product);
+    const pill = pr.sid === open ? `<span class="mxPill now">Now filming</span>` : pr.sid === next ? `<span class="mxPill next">Up next</span>`
+      : have >= need ? `<span class="mxPill ok">Filmed</span>` : have ? `<span class="mxPill wait">Filming</span>` : `<span class="mxPill">To film</span>`;
+    return `<tr class="${pr.sid === open ? "now" : pr.sid === next ? "next" : ""}"><td class="num muted">${o.n || ""}</td>
+      <td><span translate="no">${esc(name)}</span>${o.change && !o.change.startsWith("New setup") ? `<div class="muted small" translate="no">${esc(o.change)}</div>` : ""}</td>
+      <td class="num">${have} of ${need} <span>${need === 1 ? "take" : "takes"} in</span></td><td>${pill}</td><td class="num"><button data-open="${esc(pr.sid)}">Open</button></td></tr>`;
+  }).join("");
+  return `<table class="mxList mxFilm"><tbody>${rows}</tbody></table>${leaving ? `<p class="mxNote">After this: <b>${esc(leaving.set_label)}</b>, a new setup (${esc(leaving.setup)}).</p>` : ""}`;
 }
 async function showScripts() {  // each product's full script, as Ad Camera's teleprompter will show it
   const box = $("#scriptBox"); if (!box) return;
