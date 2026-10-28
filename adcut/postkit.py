@@ -3,7 +3,8 @@ work as possible. Every post in the day's posting schedule gets its own folder,
 
     <Outbox>/<date> posts/NN HH.MM <format> - <product>/
         video.mp4          the finished video (rendered with its captions), for video posts
-        photo-1.jpg …      the carousel's 2-5 photos (a different outfit around the item in each), uploaded from the Mac or phone
+        outfit-0.jpg …     the carousel: outfit-0 = the cover (the item on its own, with the on-screen text), then one
+                           photo per outfit around the item (Ad Camera's carousel mode, or dropped on the Mac)
         description.txt    what to paste into TikTok: the description, the product to tag and its link
 
 and progress is tracked per post: footage in → video ready / photos in → description ready → scheduled.
@@ -106,8 +107,9 @@ def write_text(item, day: str):
     lines = [f"POST {item['n']} · {item['time']} · {item['label']}", f"PRODUCT: {item['name']}",
              f"TIKTOK SHOP LINK: {item['link']}", "", "DESCRIPTION (paste into TikTok):", item["description"], ""]
     if item["carousel"]:
-        lines += ["CAROUSEL: the 2-5 photos in this folder, in order (each a different outfit around the item).",
-                  "On-image text, one line on the first photo:",
+        lines += ["CAROUSEL: the photos in this folder, in order: outfit-0 is the cover (the item on its own),",
+                  "then one photo per outfit around the item.",
+                  "On-image text, one line on the cover:",
                   f"  {carousel_text(day, item)}", ""]
     lines += ["Tag the product: Add link → Products → search it, or paste the link above."]
     (f / "description.txt").write_text("\n".join(lines), encoding="utf-8")
@@ -182,7 +184,8 @@ def outfits_for(sid: str) -> list:
 
 
 def add_outfit_photo(sid: str, outfit: int, name: str, data: bytes) -> dict:
-    """Ad Camera's carousel mode: the photo of outfit N for this product's carousel (a retake replaces it)."""
+    """Ad Camera's carousel mode: the photo of outfit N for this product's carousel (0 = the cover: the item on
+    its own, with the text). A retake replaces it."""
     day, it = _carousel_post(sid)
     if not it:
         raise LookupError("not a planned carousel project")

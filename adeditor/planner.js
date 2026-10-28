@@ -197,7 +197,7 @@ async function renderCarouselShoot(el, s, mine) {
   el.innerHTML = `
     <div class="mxBar"><button data-go="shootback">‹ ${esc(dayName(PL.day, { weekday: "long", month: "short", day: "numeric" }))}</button></div>
     <div class="mxDayHead"><h2>${esc(s.label)}</h2>
-      <div class="mxStats"><span>${esc(s.setup)}</span><span><b>${cp.products.length}</b> carousels × <b>${n}</b> outfits = <b>${cp.products.length * n}</b> photos</span><span><b>${mins(s.minutes)}</b></span><span><b>${filled}</b> of ${mine.length} started</span></div></div>
+      <div class="mxStats"><span>${esc(s.setup)}</span><span><b>${cp.products.length}</b> carousels × (cover + <b>${n}</b> outfits) = <b>${cp.products.length * (n + 1)}</b> photos</span><span><b>${mins(s.minutes)}</b></span><span><b>${filled}</b> of ${mine.length} started</span></div></div>
     <div class="mxRules"><b>Stay on track</b><ul>${cp.rules.map(r => `<li>${esc(r)}</li>`).join("")}</ul></div>
     <ol class="mxSteps">
       ${step("setup", "Set up", `<p class="mxNote">${esc(s.setup)}. Tape a rectangle on the floor where every item goes, so each photo is framed the same.</p><div class="mxDiagrams">${DG.setup(s.format)}</div>`)}
@@ -219,7 +219,7 @@ async function renderCarouselShoot(el, s, mine) {
       ${step("text", "The on-screen text", `<p class="mxNote muted">One line on the first photo of each carousel. Varied on purpose so the day's carousels don't all say the same thing.</p>
         <table class="mxList"><tbody>${cp.products.map(r => `<tr><td translate="no" class="muted" style="width:34%">${esc(r.name)}</td><td><input data-ctext="${r.product}" value="${esc(r.text)}" translate="no"></td></tr>`).join("")}</tbody></table>
         <div class="row"><span class="spacer"></span><button class="primary" data-go="textsave">Save Text</button></div>`)}
-      ${step("film", "Shoot", `<p class="mxNote">In Ad Camera tap <b>Shoot carousels</b>, pick these carousels and <b>${n}</b> outfits. It shows the outfit and what to lay out with each product, and moves through every combination. Say <b>“Ad Camera, action”</b> for each photo.</p>
+      ${step("film", "Shoot", `<p class="mxNote">In Ad Camera tap <b>Shoot carousels</b>, pick these carousels and <b>${n}</b> outfits. Each carousel starts with its cover (the item on its own), then one photo per outfit; it shows what to lay out with each product and moves through every combination. Say <b>“Ad Camera, action”</b> for each photo.</p>
         <p class="mxNote muted">The previews below fill in as the photos arrive. Photos taken another way: drop them on their carousel.</p>`)}
       ${step("after", "When the photos are in", `<p class="mxNote">Check each preview, then <b>Posting Kit</b> → <b>Prepare Posting Kit</b>. Each carousel's folder has its photos in order and its text and description.</p>`)}
     </ol>
@@ -240,13 +240,14 @@ function carouselPreviews(cp, mine) {
     const r = cp.products.find(y => y.product === x.product) || { text: "", with: [] };
     const byOutfit = i => x.photos.find(f => f.startsWith(`outfit-${i + 1}.`));
     const extra = x.photos.filter(f => !f.startsWith("outfit-"));
-    const slides = cp.outfits.map((o, i) => ({ photo: byOutfit(i), label: `${i + 1}. ${o.name || "Outfit " + (i + 1)}`, with: r.with[i] || "" }))
+    const slides = [{ photo: x.photos.find(f => f.startsWith("outfit-0.")), label: "Cover", with: "", cover: true }]
+      .concat(cp.outfits.map((o, i) => ({ photo: byOutfit(i), label: `${i + 1}. ${o.name || "Outfit " + (i + 1)}`, with: r.with[i] || "" })))
       .concat(extra.map(f => ({ photo: f, label: "Added", with: "" })));
-    const got = slides.filter(z => z.photo).length;
+    const got = slides.filter(z => z.photo).length, want = cp.outfits.length + 1;
     return `<div class="mxCar" data-photo-k="${x.k}">
-      <div class="mxCarHead"><b translate="no">${esc(colorOf(x.name) || x.name)}</b><span class="muted">${x.time} · ${got} of ${cp.outfits.length}</span></div>
+      <div class="mxCarHead"><b translate="no">${esc(colorOf(x.name) || x.name)}</b><span class="muted">${x.time} · ${got} of ${want}</span></div>
       <div class="mxCarStrip">${slides.map((z, i) => `<div class="mxSlide ${z.photo ? "has" : ""}">
-        ${z.photo ? `<img src="/api/shop/planner/day/${PL.day}/kit/${x.k}/file/${encodeURIComponent(z.photo)}" alt="" loading="lazy">` : `<div class="mxSlot"><b>${esc(z.label)}</b><span>with ${esc(z.with)}</span></div>`}
+        ${z.photo ? `<img src="/api/shop/planner/day/${PL.day}/kit/${x.k}/file/${encodeURIComponent(z.photo)}" alt="" loading="lazy">` : `<div class="mxSlot"><b>${esc(z.label)}</b><span>${z.cover ? "the item on its own" : "with " + esc(z.with)}</span></div>`}
         ${i === 0 && r.text ? `<div class="mxOnText" translate="no">${esc(r.text)}</div>` : ""}<span class="mxSlideN">${i + 1}</span></div>`).join("")}</div>
       <div class="mxCarFoot muted">${baseOf(x.name) ? `<span translate="no">${esc(baseOf(x.name))}</span> · ` : ""}<label class="linkish">add photos<input type="file" accept="image/*" multiple hidden data-photo-pick="${x.k}"></label></div></div>`;
   }).join("");

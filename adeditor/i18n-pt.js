@@ -1527,7 +1527,10 @@ window.I18N_PT = {
   "Fill 1 ~20%": "Painel 1 ~20%",
   "Fill 2 off": "Painel 2 desligado",
   "Key ~70%": "Principal ~70%",
-  "Fill ~35%": "Painel ~35%"
+  "Fill ~35%": "Painel ~35%",
+  "Photo 1 is the cover: the item on its own, centered, smoothed flat, with room at the top for the text. Then one photo per outfit.": "A foto 1 é a capa: só a peça, no centro, bem lisa, com espaço em cima para o texto. Depois uma foto por look.",
+  "Cover": "Capa",
+  "the item on its own": "só a peça"
  },
  "patterns": [
   [
@@ -1745,6 +1748,10 @@ window.I18N_PT = {
   [
    "(\\d+) of (\\d+)$",
    "$1 de $2"
+  ],
+  [
+   "^(\\d+) carousels × \\(cover \\+ (\\d+) outfits\\) = (\\d+) photos$",
+   "$1 carrosséis × (capa + $2 looks) = $3 fotos"
   ]
  ]
 };

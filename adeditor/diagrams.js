@@ -57,13 +57,7 @@ const DG = (() => {
       <line x1="120" y1="75" x2="120" y2="205" stroke="${C.dim}" marker-end="url(#a)"/>${T(110, 145, "arm's length", { a: "end", size: 10, c: C.dim })}
       ${key(60, 45, "Key high, 45° down", 150, 205)}
       <defs><marker id="a" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="${C.dim}"/></marker></defs>`, "Side view: height and angle")
-      + svg(360, 250, `
-      <rect x="95" y="25" width="170" height="210" rx="6" fill="none" stroke="${C.line}"/>${T(180, 18, "what the phone sees (3:4)", { c: C.dim, size: 10 })}
-      <rect x="95" y="25" width="170" height="38" fill="#fff" fill-opacity=".05"/>${T(180, 48, "text goes here", { c: C.dim, size: 10 })}
-      <rect x="140" y="85" width="80" height="95" rx="8" fill="${C.item}" fill-opacity=".3" stroke="${C.item}" stroke-width="2"/>${T(180, 136, "item, center", { c: C.item })}
-      <rect x="105" y="190" width="40" height="34" rx="5" fill="#fff" fill-opacity=".1" stroke="${C.line}"/>${T(125, 211, "shoes", { size: 9, c: C.dim })}
-      <rect x="215" y="70" width="40" height="70" rx="5" fill="#fff" fill-opacity=".1" stroke="${C.line}"/>${T(235, 109, "outfit", { size: 9, c: C.dim })}
-      <rect x="215" y="150" width="40" height="70" rx="5" fill="#fff" fill-opacity=".1" stroke="${C.line}"/>${T(235, 189, "outfit", { size: 9, c: C.dim })}`, "The frame: item in the middle, outfit around it"),
+,
     flatlay_vo: () => svg(360, 230, `
       <rect x="40" y="150" width="280" height="40" rx="8" fill="#fff" fill-opacity=".06" stroke="${C.line}"/>${T(180, 210, "bed", { c: C.dim, size: 10 })}
       <rect x="140" y="140" width="80" height="10" rx="3" fill="${C.item}" fill-opacity=".5"/>${T(180, 132, "item, smoothed flat", { c: C.item, size: 10 })}

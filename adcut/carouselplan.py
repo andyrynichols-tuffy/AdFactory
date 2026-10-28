@@ -7,8 +7,9 @@ A carousel set on a planned day gets:
   Suggested from basics and our own lineup, in neutral colours so the item for sale stays the star; editable.
 - `texts`: the one line of on-screen text per carousel (product), in @sully.finds' formats ("Fall essential: …",
   "POV: you found the perfect …", a quote), rotated so the day's carousels don't all say the same thing; editable.
+Each carousel = a cover (photo 1: the item on its own, with the text, like @sully.finds) + one photo per outfit.
 Ad Camera's carousel mode shows the current outfit and the text; the shoot page previews each carousel as its
-photos come in (photo 1 carries the text)."""
+photos come in."""
 from datetime import date
 
 from . import planner, shop
@@ -27,6 +28,7 @@ OUTFITS = [
 TEXTS = ["{Season} essential: {item}", "POV: you found the perfect {item}", "“I need a good {item} for this {season}”",
          "{Season} pick up: {item}", "{brand} {item} on TikTok Shop", "Rate this {item} fit 1-10"]
 RULES = [
+    "Photo 1 is the cover: the item on its own, centered, smoothed flat, with room at the top for the text. Then one photo per outfit.",
     "Decide the outfits before the first photo: they're listed here. Swap a piece only if you don't own it.",
     "Same outfits for every product: outfit 2 is outfit 2 for all of them. Don't restyle per product.",
     "The item for sale is the star: center it, lay it flat and smooth, companions in quieter colours.",
