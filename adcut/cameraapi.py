@@ -28,7 +28,8 @@ def _project(d, sid, s, busy):
             "tags": [tags[t] for t in pl["tags"] if t in tags], "due": pl["due"],
             "lines": [ln["text"] for ln in s["script"]], "clips": len(s["sources"]),
             "carousel": (CAROUSELS.get(sid) or {}).get("format") == "carousel",
-            "outfits": postkit.outfits_for(sid) if (CAROUSELS.get(sid) or {}).get("format") == "carousel" else [],
+            "done_slots": postkit.outfits_for(sid) if (CAROUSELS.get(sid) or {}).get("format") == "carousel" else [],
+            "outfits": [int(x[1:]) for x in (postkit.outfits_for(sid) if (CAROUSELS.get(sid) or {}).get("format") == "carousel" else []) if x.startswith("o")],
             **_carousel_plan(sid)}
 
 
@@ -44,8 +45,11 @@ def _carousel_plan(sid):
         row = next(r for r in cp["products"] if r["product"] == ix["product"])
     except StopIteration:
         return {}
+    covers = [{"slot": k, "name": n, "with": "the item on its own"} for k, n in planner.COVERS]
+    outfits = [{"slot": f"o{i + 1}", "name": o.get("name") or f"Outfit {i + 1}", "with": w} for i, (o, w) in enumerate(zip(cp["outfits"], row["with"]))]
     return {"carousel_text": row["text"], "carousel_set": ix["day"] + "/" + ix["set"],
-            "outfit_plan": [{"name": o.get("name") or f"Outfit {i + 1}", "with": w} for i, (o, w) in enumerate(zip(cp["outfits"], row["with"]))]}
+            "outfit_plan": [{"name": o["name"], "with": o["with"]} for o in outfits],
+            "photo_slots": covers + outfits}
 
 
 @router.get("/projects")
@@ -101,12 +105,12 @@ def new_project(body: dict = Body(...)):
 
 
 @router.put("/photo")
-async def photo(request: Request, shoot: str, outfit: int, name: str = "photo.jpg"):
+async def photo(request: Request, shoot: str, outfit: int = -1, slot: str = "", name: str = "photo.jpg"):
     """Carousel mode: one photo = one outfit with one product; it goes into that product's carousel
     folder in the day's posting kit (adcut/postkit.py) as outfit-N."""
     import time
     LAST.update(upload=time.time(), shoot=shoot)
     try:
-        return postkit.add_outfit_photo(shoot, outfit, name, await request.body())
+        return postkit.add_outfit_photo(shoot, slot or outfit, name, await request.body())
     except LookupError as e:
         raise HTTPException(404, str(e))

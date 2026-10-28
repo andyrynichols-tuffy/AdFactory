@@ -1,15 +1,16 @@
-"""Posting kit for a planned day (user, 2026-10-27): once the takes are in, do as much of the posting
-work as possible. Every post in the day's posting schedule gets its own folder,
+"""Posting kit for a planned shoot day (user, 2026-10-27): once the takes are in, do as much of the posting work as
+possible, and keep each batch together so nothing gets lost. Every post the day's batch fills gets its own folder,
 
-    <Outbox>/<date> posts/NN HH.MM <format> - <product>/
+    <Outbox>/<shoot day> batch/<date> <HH.MM> <format> - <product>/
         video.mp4          the finished video (rendered with its captions), for video posts
-        outfit-0.jpg …     the carousel: outfit-0 = the cover (the item on its own, with the on-screen text), then one
-                           photo per outfit around the item (Ad Camera's carousel mode, or dropped on the Mac)
+        1-c2.jpg, 2-o1.jpg… a carousel's photos in order, copied from the product's photo pool
         description.txt    what to paste into TikTok: the description, the product to tag and its link
 
-and progress is tracked per post: footage in → video ready / photos in → description ready → scheduled.
-Post k of a (set, product) is video k of that product's Ad Camera project (its takes, in order).
-Descriptions follow @sully.finds: the wearer's height + the size they're wearing + a few hashtags."""
+Carousels: each product has one photo pool per batch, `_pool/<product>/` (c1-c3 = cover poses: folded left,
+folded right, laid flat; o1…oN = the session's outfits), filled by Ad Camera's carousel mode (or photos dropped on
+the Mac). The planner remixes each pool into several carousels over the week (planner.carousel_combo), each with a
+fresh cover and its own text. Progress per post: film → footage in → ready → scheduled. Post k of a (set, product)
+is video k of that product's Ad Camera project. Descriptions follow @sully.finds: height + size + a few hashtags."""
 import re
 import shutil
 import threading
@@ -23,6 +24,7 @@ JOB = {"running": False, "msg": "", "day": None, "done": 0, "total": 0, "error":
 TAGS = [("hoodie", "#hoodie #ziphoodie"), ("henley", "#henley"), ("sweater", "#sweater #knitsweater"), ("sweatpants", "#sweatpants"),
         ("jeans", "#jeans"), ("carpenter", "#carpenterjeans"), ("waffle", "#waffleknit"), ("crew", "#crewneck"), ("baggy", "#baggyjeans"),
         ("loose", "#loosefit"), ("muslin", "#buttonup"), ("shirt", "#shirt"), ("tee", "#tee")]
+SLOT_RX = re.compile(r"^(c\d|o\d+)\.")
 
 
 def _safe(t, n=60):
@@ -31,7 +33,12 @@ def _safe(t, n=60):
 
 
 def kit_dir(day: str) -> Path:
-    return store.OUTPUT_DIR / f"{day} posts"
+    mode = (planner.load()["days"].get(day) or {}).get("mode", "daily")
+    return store.OUTPUT_DIR / (f"{day} batch" if mode == "batch" else f"{day} posts")
+
+
+def pool_dir(day: str, product_name: str) -> Path:
+    return kit_dir(day) / "_pool" / _safe(product_name, 70)
 
 
 def hashtags(p: dict) -> str:
@@ -54,14 +61,28 @@ def description(post: dict, chan: dict, p: dict) -> str:
     return " ".join(x for x in (line, hashtags(p)) if x)
 
 
+def pool_photos(day: str, product_name: str) -> dict:
+    """{slot: file name} of a product's photo pool (c1.jpg, o2.jpg…)."""
+    f = pool_dir(day, product_name)
+    out = {}
+    if f.is_dir():
+        for q in f.iterdir():
+            m = SLOT_RX.match(q.name)
+            if m and q.suffix.lower() in PHOTO_EXT:
+                out[m.group(1)] = q.name
+    return out
+
+
 def posts(day: str) -> list:
-    """The day's posts in posting order, each tied to its project, video number and folder."""
+    """The day's posts (for a batch: the coming week's, dated) in posting order, each tied to its project, video
+    number or carousel photos, and folder."""
+    from . import carouselplan
     plan = planner.get(day)
     sh = shop.load()
     st = planner.load()["settings"]
     chans = {c.get("account"): c for c in planner._channels(st, sh)}
-    seen, out = {}, []
-    root = kit_dir(day)
+    seen, out, root = {}, [], kit_dir(day)
+    pools = {}
     for k, x in enumerate(plan["posts"]):
         s = next((y for y in plan["sets"] if y["id"] == x["set"]), None)
         proj = next((pr for pr in (s or {}).get("projects") or [] if pr["product"] == x["product"]), None)
@@ -69,11 +90,20 @@ def posts(day: str) -> list:
         p = shop.by_id(sh, "products", x["product"]) or {}
         carousel = x["format"] == "carousel"
         label = (s or {}).get("label") or x["format"]
-        folder = root / _safe(f"{k + 1:02d} {x['time'].replace(':', '.')} {label} - {x['name']}", 90)
-        item = {"k": k, "n": k + 1, "time": x["time"], "format": x["format"], "label": label, "name": x["name"],
+        when = x.get("date") or day
+        folder = root / _safe(f"{when} {x['time'].replace(':', '.')} {label} - {x['name']}", 110)
+        item = {"k": k, "n": k + 1, "date": when, "time": x["time"], "format": x["format"], "label": label, "name": x["name"],
                 "product": x["product"], "link": p.get("link") or "", "set": x["set"], "sid": proj["sid"] if proj else None,
-                "video": nth, "carousel": carousel, "folder": str(folder), "scheduled": bool(x.get("done")),
+                "video": x.get("take") or nth, "carousel": carousel, "folder": str(folder), "scheduled": bool(x.get("done")),
                 "description": description(x, chans.get(x["channel"], {}), p)}
+        if carousel:
+            if x["product"] not in pools:
+                pools[x["product"]] = pool_photos(day, x["name"])
+            combo = x.get("photos") or ["c1", "o1", "o2", "o3"]
+            texts = (s or {}).get("texts") or {}
+            key = f"{x['product']}#{item['video']}"
+            item.update(combo=combo, pool=pools[x["product"]], text_key=key,
+                        text=texts.get(key) or carouselplan.default_text(p, k, day))
         item.update(_state(item))
         out.append(item)
     return out
@@ -82,9 +112,13 @@ def posts(day: str) -> list:
 def _state(item) -> dict:
     """Where this post is: footage, video / photos, description."""
     f = Path(item["folder"])
-    photos = sorted(q.name for q in f.glob("*") if q.suffix.lower() in PHOTO_EXT) if f.is_dir() else []
-    st = {"photos": photos, "video_file": (f / "video.mp4").is_file(), "desc_file": (f / "description.txt").is_file(),
-          "takes": 0, "stage": "film", "videos": 0}
+    st = {"video_file": (f / "video.mp4").is_file(), "desc_file": (f / "description.txt").is_file(), "takes": 0, "stage": "film", "videos": 0}
+    if item["carousel"]:
+        have = [c for c in item["combo"] if c in item["pool"]]
+        st["photos"] = [item["pool"][c] for c in have]
+        st["step"] = "scheduled" if item["scheduled"] else "ready" if len(have) == len(item["combo"]) else "photos"
+        return st
+    st["photos"] = []
     if item["sid"]:
         try:
             s = store.load(item["sid"])
@@ -93,30 +127,41 @@ def _state(item) -> dict:
             st["videos"] = store.videos(s)["count"] if s["sources"] else 0
         except Exception:
             pass
-    if item["carousel"]:
-        st["step"] = "scheduled" if item["scheduled"] else "ready" if photos else "photos"
-    else:
-        st["step"] = ("scheduled" if item["scheduled"] else "ready" if st["video_file"]
-                      else "render" if st["videos"] >= item["video"] else "precut" if st["takes"] else "film")
+    st["step"] = ("scheduled" if item["scheduled"] else "ready" if st["video_file"]
+                  else "render" if st["videos"] >= item["video"] else "precut" if st["takes"] else "film")
     return st
 
 
 def write_text(item, day: str):
     f = Path(item["folder"])
     f.mkdir(parents=True, exist_ok=True)
-    lines = [f"POST {item['n']} · {item['time']} · {item['label']}", f"PRODUCT: {item['name']}",
+    when = date.fromisoformat(item["date"]).strftime("%a %b %d").replace(" 0", " ")
+    lines = [f"POST {item['n']} · {when} {item['time']} · {item['label']}", f"PRODUCT: {item['name']}",
              f"TIKTOK SHOP LINK: {item['link']}", "", "DESCRIPTION (paste into TikTok):", item["description"], ""]
     if item["carousel"]:
-        lines += ["CAROUSEL: the photos in this folder, in order: outfit-0 is the cover (the item on its own),",
-                  "then one photo per outfit around the item.",
-                  "On-image text, one line on the cover:",
-                  f"  {carousel_text(day, item)}", ""]
-    lines += ["Tag the product: Add link → Products → search it, or paste the link above."]
+        lines += [f"CAROUSEL: the {len(item['combo'])} photos in this folder, in order (photo 1 is the cover).",
+                  "On-image text, one line on the cover:", f"  {item['text']}", ""]
+    lines += ["Tag the product: Add link → Products → search it, or paste the link above.",
+              "Schedule it in TikTok Studio for the date and time above."]
     (f / "description.txt").write_text("\n".join(lines), encoding="utf-8")
 
 
+def _copy_carousel(item, day):
+    """The carousel's photos from its product's pool into its folder, numbered in order."""
+    f = Path(item["folder"])
+    for q in f.glob("*"):
+        if q.suffix.lower() in PHOTO_EXT:
+            q.unlink()
+    pool = pool_dir(day, item["name"])
+    for i, slot in enumerate(item["combo"], 1):
+        name = item["pool"].get(slot)
+        if name:
+            shutil.copy2(pool / name, f / f"{i}-{name}")
+
+
 def build(day: str):
-    """Make every post's folder and description; render and copy the videos whose footage is in."""
+    """Make every post's folder and description; carousels get their photos from the pools; videos whose
+    footage is in get rendered and copied."""
     if JOB["running"]:
         return JOB
     JOB.update(running=True, day=day, msg="starting…", done=0, error=None)
@@ -128,7 +173,9 @@ def build(day: str):
             for i, it in enumerate(items):
                 JOB.update(done=i, msg=f"post {it['n']} of {len(items)}")
                 write_text(it, day)
-                if not it["carousel"] and it["sid"] and it["videos"] >= it["video"]:
+                if it["carousel"]:
+                    _copy_carousel(it, day)
+                elif it["sid"] and it["videos"] >= it["video"]:
                     out = render.fresh_render(it["sid"], it["video"], lambda m: JOB.update(msg=f"post {it['n']}: {m}"))
                     shutil.copy2(out, Path(it["folder"]) / "video.mp4")
             JOB.update(done=len(items), msg="posting kit ready")
@@ -144,67 +191,68 @@ def busy() -> list:
     return ["posting kit"] if JOB["running"] else []
 
 
+def _next_free_slot(day: str, it: dict) -> str:
+    """Where a photo dropped on a carousel goes: the first of its combo's photos missing from the pool."""
+    for slot in it["combo"]:
+        if slot not in it["pool"]:
+            return slot
+    n = max([int(c[1:]) for c in it["pool"] if c.startswith("o")] + [0]) + 1
+    return f"o{n}"
+
+
+def save_slot(day: str, product_name: str, slot: str, name: str, data: bytes) -> str:
+    f = pool_dir(day, product_name)
+    f.mkdir(parents=True, exist_ok=True)
+    for old in f.glob(f"{slot}.*"):
+        old.unlink()
+    ext = Path(name).suffix.lower() if Path(name).suffix.lower() in PHOTO_EXT else ".jpg"
+    (f / f"{slot}{ext}").write_bytes(data)
+    return f"{slot}{ext}"
+
+
 def add_photo(day: str, k: int, name: str, data: bytes) -> str:
+    """A photo dropped on a post on the Mac (videos: into its folder; carousels: into its pool, first missing photo)."""
     it = posts(day)[k]
+    if it["carousel"]:
+        return save_slot(day, it["name"], _next_free_slot(day, it), name, data)
     f = Path(it["folder"])
     f.mkdir(parents=True, exist_ok=True)
     ext = Path(name).suffix.lower() if Path(name).suffix.lower() in PHOTO_EXT else ".jpg"
-    n = len([q for q in f.glob("photo-*")]) + 1
-    dest = f / f"photo-{n}{ext}"
+    dest = f / f"photo-{len(list(f.glob('photo-*'))) + 1}{ext}"
     dest.write_bytes(data)
-    if not (f / "description.txt").exists():
-        write_text(it, day)
     return dest.name
 
 
 def file_path(day: str, k: int, name: str) -> Path:
-    f = Path(posts(day)[k]["folder"]) / Path(name).name
-    if not f.is_file():
-        raise FileNotFoundError(name)
-    return f
+    it = posts(day)[k]
+    for base in (Path(it["folder"]), pool_dir(day, it["name"])):
+        f = base / Path(name).name
+        if f.is_file():
+            return f
+    raise FileNotFoundError(name)
 
 
-def _carousel_post(sid: str):
+def _pool_of(sid: str):
     ix = planner.project_index().get(sid)
     if not ix or ix["format"] != "carousel":
         return None, None
-    day = ix["day"]
-    for it in posts(day):
-        if it["sid"] == sid and it["carousel"]:
-            return day, it
-    return day, None
+    name = (shop.by_id(shop.load(), "products", ix["product"]) or {}).get("name", "")
+    return ix["day"], name
 
 
 def outfits_for(sid: str) -> list:
-    """Which outfit numbers already have a photo for this carousel project (Ad Camera shows them done)."""
-    _, it = _carousel_post(sid)
-    if not it:
-        return []
-    return sorted(int(n[7:].split(".")[0]) for n in it["photos"] if n.startswith("outfit-") and n[7:].split(".")[0].isdigit())
+    """Which photo slots of this carousel project's pool are already in (Ad Camera shows them done)."""
+    day, name = _pool_of(sid)
+    return sorted(pool_photos(day, name)) if day else []
 
 
-def add_outfit_photo(sid: str, outfit: int, name: str, data: bytes) -> dict:
-    """Ad Camera's carousel mode: the photo of outfit N for this product's carousel (0 = the cover: the item on
-    its own, with the text). A retake replaces it."""
-    day, it = _carousel_post(sid)
-    if not it:
+def add_outfit_photo(sid: str, slot, name: str, data: bytes) -> dict:
+    """Ad Camera's carousel mode: one photo of the product's pool (c1-c3 = cover poses, o1… = outfits; an old
+    numeric outfit: 0 = the first cover, N = outfit N). A retake replaces it."""
+    day, pname = _pool_of(sid)
+    if not day:
         raise LookupError("not a planned carousel project")
-    f = Path(it["folder"])
-    f.mkdir(parents=True, exist_ok=True)
-    for old in f.glob(f"outfit-{outfit}.*"):
-        old.unlink()
-    ext = Path(name).suffix.lower() if Path(name).suffix.lower() in PHOTO_EXT else ".jpg"
-    (f / f"outfit-{outfit}{ext}").write_bytes(data)
-    if not (f / "description.txt").exists():
-        write_text(it, day)
-    return {"saved": f"outfit-{outfit}{ext}", "outfits": outfits_for(sid)}
-
-
-def carousel_text(day: str, item: dict) -> str:
-    """The planned on-screen text for this carousel (adcut/carouselplan.py)."""
-    from . import carouselplan
-    s = next((x for x in planner.get(day)["sets"] if x["id"] == item["set"]), None)
-    if not s:
-        return ""
-    row = next((r for r in carouselplan.for_set(day, s)["products"] if r["product"] == item["product"]), None)
-    return row["text"] if row else ""
+    if isinstance(slot, int) or str(slot).isdigit():
+        slot = "c1" if int(slot) == 0 else f"o{int(slot)}"
+    saved = save_slot(day, pname, str(slot), name, data)
+    return {"saved": saved, "outfits": outfits_for(sid)}
