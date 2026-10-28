@@ -3,10 +3,15 @@ import UIKit
 
 /// The capture session, set up for TikTok: vertical, SDR (HDR off), 4K or 1080p at a fixed
 /// frame rate, smooth autofocus, white balance held during a take, front camera unmirrored.
-final class CameraController: NSObject, ObservableObject, AVCaptureFileOutputRecordingDelegate, AVCapturePhotoCaptureDelegate {
+final class CameraController: NSObject, ObservableObject, AVCaptureFileOutputRecordingDelegate, AVCapturePhotoCaptureDelegate,
+                              AVCaptureVideoDataOutputSampleBufferDelegate {
     let session = AVCaptureSession()
     weak var preview: AVCaptureVideoPreviewLayer?
-    weak var bigPreview: AVCaptureVideoPreviewLayer?   // the same picture on a TV / Mac (BigScreen)
+    // The same picture on a TV / Mac (BigScreen). iOS feeds only one preview layer per session
+    // (the phone's), so the big screen gets the camera frames themselves while it's connected.
+    private let bigOutput = AVCaptureVideoDataOutput()
+    private let bigQueue = DispatchQueue(label: "adcamera.big")
+    private var bigRenderer: AVSampleBufferVideoRenderer?   // only touched on bigQueue
 
     @Published var position: AVCaptureDevice.Position =
         UserDefaults.standard.string(forKey: "camera") == "back" ? .back : .front
@@ -228,6 +233,7 @@ final class CameraController: NSObject, ObservableObject, AVCaptureFileOutputRec
             if config.hevc && output.availableVideoCodecTypes.contains(.hevc) { codec = .hevc }
             output.setOutputSettings([AVVideoCodecKey: codec], for: c)
         }
+        setUpBigConnection(position: pos)
         session.commitConfiguration()
 
         let dims = CMVideoFormatDescriptionGetDimensions(dev.activeFormat.formatDescription)
@@ -240,25 +246,60 @@ final class CameraController: NSObject, ObservableObject, AVCaptureFileOutputRec
             self.zoom = 1
             self.bias = 0
             self.locked = false
-            for layer in [self.preview, self.bigPreview] {
-                if let c = layer?.connection, c.isVideoRotationAngleSupported(90) { c.videoRotationAngle = 90 }
-            }
+            if let c = self.preview?.connection, c.isVideoRotationAngleSupported(90) { c.videoRotationAngle = 90 }
         }
     }
 
-    /// The big screen's picture: a second preview of the same session. If that ever takes the
-    /// phone's own picture away, the phone gets it back and the big screen does without.
-    func attachBig(_ layer: AVCaptureVideoPreviewLayer) {
-        layer.session = session
-        bigPreview = layer
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) { [weak self, weak layer] in
-            guard let self, let layer, let phone = self.preview else { return }
-            if phone.connection == nil, layer.connection != nil {
-                layer.session = nil
-                phone.session = nil
-                phone.session = self.session
+    /// The big screen's picture: camera frames drawn into its layer. The frame output is only in
+    /// the session while a big screen is showing, so filming without one is untouched.
+    func attachBig(_ layer: AVSampleBufferDisplayLayer) {
+        let renderer = layer.sampleBufferRenderer
+        bigQueue.async { self.bigRenderer = renderer }
+        let pos = position
+        queue.async {
+            guard !self.session.outputs.contains(self.bigOutput) else { return }
+            self.session.beginConfiguration()
+            if self.session.canAddOutput(self.bigOutput) {
+                self.bigOutput.alwaysDiscardsLateVideoFrames = true
+                self.bigOutput.setSampleBufferDelegate(self, queue: self.bigQueue)
+                self.session.addOutput(self.bigOutput)
+                self.setUpBigConnection(position: pos)
             }
+            self.session.commitConfiguration()
         }
+    }
+
+    func detachBig() {
+        bigQueue.async { self.bigRenderer = nil }
+        queue.async {
+            guard self.session.outputs.contains(self.bigOutput) else { return }
+            self.session.beginConfiguration()
+            self.session.removeOutput(self.bigOutput)
+            self.session.commitConfiguration()
+        }
+    }
+
+    /// Portrait like the takes, mirrored for the front camera like the phone's preview.
+    private func setUpBigConnection(position pos: AVCaptureDevice.Position) {
+        guard let c = bigOutput.connection(with: .video) else { return }
+        if c.isVideoRotationAngleSupported(90) { c.videoRotationAngle = 90 }
+        if c.isVideoMirroringSupported {
+            c.automaticallyAdjustsVideoMirroring = false
+            c.isVideoMirrored = pos == .front
+        }
+    }
+
+    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        guard let r = bigRenderer else { return }
+        if r.status == .failed { r.flush() }
+        guard r.isReadyForMoreMediaData else { return }
+        // show each frame as it arrives (the layer has no clock of its own)
+        if let a = CMSampleBufferGetSampleAttachmentsArray(sampleBuffer, createIfNecessary: true), CFArrayGetCount(a) > 0 {
+            let d = unsafeBitCast(CFArrayGetValueAtIndex(a, 0), to: CFMutableDictionary.self)
+            CFDictionarySetValue(d, Unmanaged.passUnretained(kCMSampleAttachmentKey_DisplayImmediately).toOpaque(),
+                                 Unmanaged.passUnretained(kCFBooleanTrue).toOpaque())
+        }
+        r.enqueue(sampleBuffer)
     }
 
     /// The best 16:9 SDR format at this width and frame rate: 8-bit video range first (what

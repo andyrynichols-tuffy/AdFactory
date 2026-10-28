@@ -152,21 +152,23 @@ struct BigCameraPreview: UIViewRepresentable {
 
     func makeUIView(context: Context) -> BigPreviewView {
         let v = BigPreviewView()
-        v.previewLayer.videoGravity = .resizeAspectFill
-        camera.attachBig(v.previewLayer)
+        v.displayLayer.videoGravity = .resizeAspectFill
+        v.camera = camera
+        camera.attachBig(v.displayLayer)
         return v
     }
 
     func updateUIView(_ v: BigPreviewView, context: Context) {}
 
     static func dismantleUIView(_ v: BigPreviewView, coordinator: ()) {
-        v.previewLayer.session = nil
+        v.camera?.detachBig()
     }
 }
 
 final class BigPreviewView: UIView {
-    override class var layerClass: AnyClass { AVCaptureVideoPreviewLayer.self }
-    var previewLayer: AVCaptureVideoPreviewLayer { layer as! AVCaptureVideoPreviewLayer }
+    override class var layerClass: AnyClass { AVSampleBufferDisplayLayer.self }
+    var displayLayer: AVSampleBufferDisplayLayer { layer as! AVSampleBufferDisplayLayer }
+    weak var camera: CameraController?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -174,9 +176,4 @@ final class BigPreviewView: UIView {
     }
 
     required init?(coder: NSCoder) { fatalError("not used") }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        if let c = previewLayer.connection, c.isVideoRotationAngleSupported(90) { c.videoRotationAngle = 90 }
-    }
 }
