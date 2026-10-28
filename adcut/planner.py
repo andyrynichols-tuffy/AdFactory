@@ -813,7 +813,8 @@ def shoot_order() -> dict:
                 was, now = set(prev[3]), set(cols)
                 bits = ([f"add {' + '.join(c for c in cols if c not in was)}"] if now - was else []) + \
                        ([f"take out {' + '.join(c for c in prev[3] if c not in now)}"] if was - now else [])
-                change = ", ".join(bits).capitalize() or "Same pieces, film it again"
+                change = ", ".join(bits)
+                change = change[:1].upper() + change[1:] if change else "Same pieces, film it again"
             out[pr["sid"]] = {"day": day, "set": s["id"], "set_label": s.get("label", ""), "n": i + 1, "of": len(seq),
                               "next": seq[i + 1][2]["sid"] if i + 1 < len(seq) else None, "prev": prev[2]["sid"] if prev else None,
                               "setup": s.get("setup", ""), "lay": " + ".join(cols), "item": base, "change": change}
