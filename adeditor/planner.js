@@ -24,9 +24,10 @@ const baseOf = name => (name || "").split(" - ")[0];
 function lightTable(light) {
   if (!light) return "";
   const rows = [], notes = [];
-  for (const s of light.split(/(?<=[.;])\s+(?=[A-Z])/)) {
-    const m = s.match(/^(Key \(circle\)|Fill panel 1|Fill panel 2)\s*(.*)$/);
-    m ? rows.push([m[1].replace("Key (circle)", "Key light"), m[2]]) : notes.push(s);
+  light = (window.tr || (s => s))(light);  // the whole note translates as one string, so split after
+  for (const s of light.split(/(?<=[.;])\s+(?=[A-ZÀ-Ú])/)) {
+    const m = s.match(/^(Key \(circle\)|Fill panel 1|Fill panel 2|Luz principal \(círculo\)|Painel 1|Painel 2)\s*(.*)$/);
+    m ? rows.push([m[1].replace("Key (circle)", "Key light").replace("Luz principal (círculo)", "Luz principal"), m[2]]) : notes.push(s);
   }
   return `<div class="mxLight">${rows.length ? `<table class="mxKV">${rows.map(([k, v]) => `<tr><th>${esc(k)}</th><td>${esc(v)}</td></tr>`).join("")}</table>` : ""}
     ${notes.length ? `<p class="mxNote">${esc(notes.join(" "))}</p>` : ""}</div>`;
@@ -40,7 +41,7 @@ function setCard(s, opts = {}) {
     <div class="mxCardBody">
       <div class="mxField"><div class="mxLabel">Pieces</div>
         <table class="mxList"><tbody>${s.items.map(i => { const p = byId("products", i.product);
-          return `<tr><td translate="no">${esc(baseOf(i.name))}</td><td translate="no" class="muted">${esc(colorOf(i.name))}</td><td class="muted">${esc(p?.fills?.size || "")}</td><td class="num">${i.takes} ${i.takes === 1 ? "take" : "takes"}</td></tr>`; }).join("")}</tbody></table></div>
+          return `<tr><td translate="no">${esc(baseOf(i.name))}</td><td translate="no" class="muted">${esc(colorOf(i.name))}</td><td class="muted">${esc(p?.fills?.size || "")}</td><td class="num">${i.takes} <span>${i.takes === 1 ? "take" : "takes"}</span></td></tr>`; }).join("")}</tbody></table></div>
       <div class="mxField"><div class="mxLabel">Lighting <span class="muted">· ${s.light_min} min to set up</span></div>${lightTable(s.light)}</div>
       <div class="mxField"><div class="mxLabel">How</div><p class="mxNote">${esc(fmt.tip || s.tip || "")}</p>
         ${sc ? `<p class="mxNote muted">Script: <span translate="no">${esc(sc.title)}</span></p>` : ""}</div>
