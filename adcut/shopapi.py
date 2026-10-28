@@ -297,6 +297,16 @@ def planner_mark(day: str, body: dict = Body(...)):
     return planner.mark(day, int(body["k"]), bool(body.get("done")))
 
 
+@router.get("/planner/days")
+def planner_days():
+    return planner.days()
+
+
+@router.post("/planner/day/{day}/block")
+def planner_block(day: str, body: dict = Body(...)):
+    return planner.mark_block(day, str(body["key"]), bool(body.get("done")))
+
+
 @router.post("/planner/day/{day}/projects")
 def planner_projects(day: str, body: dict = Body(...)):
     return {"made": planner.make_projects(day, body["set"])}

@@ -201,6 +201,7 @@ def generate(day_iso: str) -> dict:
         p["done"] = (p["set"], p["product"], k) in done
     plan = {"date": day_iso, "season": season(day), "posts_per_channel": n, "channels": len(chans),
             "sets": sets, "posts": posts, "blocks": _blocks(st, sets, len(posts)), "generated": datetime.now().isoformat(timespec="minutes")}
+    plan["blocks_done"] = [k for k in old.get("blocks_done") or [] if any(block_key(b) == k for b in plan["blocks"])]
     for s in sets:  # projects made earlier for this set stay linked
         s["projects"] = next((x.get("projects", []) for x in old.get("sets") or [] if x["id"] == s["id"]), [])
     d["days"][day_iso] = plan
@@ -249,6 +250,32 @@ def _blocks(st, sets, n_posts):
     out.sort(key=lambda x: (x["start"], x["kind"] not in ("post", "live")))
     for x in out:
         x["start"], x["end"] = _s(x["start"]), _s(x["end"])
+    return out
+
+
+def block_key(b: dict) -> str:
+    """A block's identity for check-offs: kind + set (or title) + start, so a rebuild keeps the ticks that still apply."""
+    return f"{b['kind']}|{b.get('set') or b['title']}|{b['start']}"
+
+
+def mark_block(day_iso: str, key: str, done: bool) -> dict:
+    d = load()
+    plan = d["days"].get(day_iso)
+    if plan:
+        have = [k for k in plan.get("blocks_done") or [] if k != key]
+        plan["blocks_done"] = have + ([key] if done else [])
+        save(d)
+    return plan
+
+
+def days() -> list:
+    """Every planned day, oldest first: posts, sets, Ad Camera projects made, what's ticked off."""
+    out = []
+    for k, p in sorted(load()["days"].items()):
+        out.append({"date": k, "posts": len(p.get("posts") or []), "sets": len(p.get("sets") or []),
+                    "projects": sum(len(s.get("projects") or []) for s in p.get("sets") or []),
+                    "posted": sum(1 for x in p.get("posts") or [] if x.get("done")),
+                    "blocks": len(p.get("blocks") or []), "blocks_done": len(p.get("blocks_done") or [])})
     return out
 
 
