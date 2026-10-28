@@ -9,8 +9,13 @@ const DG = (() => {
   const beam = (x1, y1, x2, y2, c) => `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${c}" stroke-width="1.2" stroke-dasharray="3 4" opacity=".7"/>`;
   const key = (x, y, label, tx, ty) => `${beam(x, y, tx, ty, C.key)}<circle cx="${x}" cy="${y}" r="17" fill="${C.key}" fill-opacity=".22" stroke="${C.key}" stroke-width="2"/>
     <circle cx="${x}" cy="${y}" r="6" fill="${C.key}"/>${T(x, y + 31, label, { c: C.key })}`;
-  const panel = (x, y, deg, label, tx, ty, off) => `${off ? "" : beam(x, y, tx, ty, C.fill)}<g transform="translate(${x} ${y}) rotate(${deg})"><rect x="-16" y="-6" width="32" height="12" rx="2"
-    fill="${C.fill}" fill-opacity="${off ? 0 : .22}" stroke="${C.fill}" stroke-width="2" ${off ? 'stroke-dasharray="3 3"' : ""}/></g>${T(x, y + 24, label, { c: C.fill })}`;
+  // a panel faces what it lights: its broad side turned to the target (the lit face drawn bright), like a real one
+  const panel = (x, y, _deg, label, tx, ty, off) => {
+    const rot = Math.atan2(ty - y, tx - x) * 180 / Math.PI - 90;   // local +y = toward the target
+    return `${off ? "" : beam(x, y, tx, ty, C.fill)}<g transform="translate(${x} ${y}) rotate(${rot.toFixed(1)})">
+      <rect x="-17" y="-6" width="34" height="12" rx="2" fill="${C.fill}" fill-opacity="${off ? 0 : .16}" stroke="${C.fill}" stroke-width="1.6" ${off ? 'stroke-dasharray="3 3"' : ""}/>
+      ${off ? "" : `<line x1="-15" y1="6" x2="15" y2="6" stroke="#fff" stroke-width="3" stroke-linecap="round"/>`}</g>${T(x, y + 26, label, { c: C.fill })}`;
+  };
   const phone = (x, y, deg, label, fov = true) => `<g transform="translate(${x} ${y}) rotate(${deg})">${fov ? `<path d="M0 -8 L-34 -70 L34 -70 Z" fill="#fff" fill-opacity=".05" stroke="${C.faint}"/>` : ""}
     <rect x="-7" y="-12" width="14" height="24" rx="3" fill="#1c1c1e" stroke="${C.phone}" stroke-width="1.6"/><circle cx="0" cy="-6" r="2" fill="${C.phone}"/></g>${T(x, y + 26, label)}`;
   const person = (x, y, label) => `<ellipse cx="${x}" cy="${y}" rx="22" ry="13" fill="${C.item}" fill-opacity=".25" stroke="${C.item}" stroke-width="2"/>
