@@ -100,6 +100,7 @@ $("#panePlanner").addEventListener("click", async e => {
   const os = e.target.closest("[data-open-set]"); if (os) { LS.set("planOpen", os.dataset.openSet); $("#home .homeBox").scrollTop = 0; return renderPlanner(); }
   if (e.target.closest("[data-go=shootback]")) { LS.set("planOpen", ""); return renderPlanner(); }
   if (e.target.closest("[data-go=example]")) { const v = $("#exampleUrl")?.value || ""; await api(`/api/shop/planner/day/${PL.day}/set/${LS.get("planOpen", "")}`, { json: { example: v } }); toast(v ? "Example saved for this shoot" : "Back to the default example"); return renderPlanner(); }
+  if (await carouselClick(e)) return;
   if (kitClick(e, PL.day, renderPlanner)) return;
   const go = e.target.closest("[data-go]")?.dataset.go;
   if (go === "plrebuild") { await api(`/api/shop/planner/day/${PL.day}/rebuild`, { json: {} }); toast("Day rebuilt"); return renderPlanner(); }
@@ -130,6 +131,7 @@ async function renderShoot(setId) {
   PL.kit = kit.posts;
   const mine = kit.posts.filter(x => x.set === s.id), sc = byId("scripts", s.script);
   const carousel = s.format === "carousel", vid = tiktokId(s.example);
+  if (carousel) return renderCarouselShoot(el, s, mine);
   const ticks = new Set(LS.get(`steps:${PL.day}:${s.id}`, []));
   const step = (k, title, body) => `<li class="mxStep ${ticks.has(k) ? "done" : ""}"><label class="mxStepHead"><input type="checkbox" data-step="${k}" ${ticks.has(k) ? "checked" : ""}><b>${title}</b></label><div class="mxStepBody">${body}</div></li>`;
   const filmed = mine.filter(x => !["film", "photos"].includes(x.step)).length;
@@ -174,6 +176,80 @@ const STEP = { film: ["To film", ""], photos: ["Needs photos", ""], precut: ["Pr
 const stepPill = s => { const [l, c] = STEP[s] || [s, ""]; return `<span class="mxPill ${c}">${l}</span>`; };
 const kitPhotoRow = x => `<div class="mxDrop" data-photo-k="${x.k}"><div><b>Post ${x.n}</b> <span class="muted">${x.time} · <span translate="no">${esc(colorOf(x.name) || x.name)}</span></span></div>
   <div class="muted">${x.photos.length ? `${x.photos.length} of 2–5 photos in · ` : "Drop 2–5 photos here, or "}<label class="linkish">choose<input type="file" accept="image/*" multiple hidden data-photo-pick="${x.k}"></label></div></div>`;
+
+// ---------- carousel shoots: plan the outfits and the on-screen text first, then watch each carousel fill in ----------
+async function renderCarouselShoot(el, s, mine) {
+  const cp = PL.cp = await api(`/api/shop/planner/day/${PL.day}/carousel/${s.id}`);
+  const ticks = new Set(LS.get(`steps:${PL.day}:${s.id}`, []));
+  const step = (k, title, body) => `<li class="mxStep ${ticks.has(k) ? "done" : ""}"><label class="mxStepHead"><input type="checkbox" data-step="${k}" ${ticks.has(k) ? "checked" : ""}><b>${title}</b></label><div class="mxStepBody">${body}</div></li>`;
+  const n = cp.outfits.length, filled = mine.filter(x => x.photos.length).length, vid = tiktokId(s.example);
+  el.innerHTML = `
+    <div class="mxBar"><button data-go="shootback">‹ ${esc(dayName(PL.day, { weekday: "long", month: "short", day: "numeric" }))}</button></div>
+    <div class="mxDayHead"><h2>${esc(s.label)}</h2>
+      <div class="mxStats"><span>${esc(s.setup)}</span><span><b>${cp.products.length}</b> carousels × <b>${n}</b> outfits = <b>${cp.products.length * n}</b> photos</span><span><b>${mins(s.minutes)}</b></span><span><b>${filled}</b> of ${mine.length} started</span></div></div>
+    <div class="mxRules"><b>Stay on track</b><ul>${cp.rules.map(r => `<li>${esc(r)}</li>`).join("")}</ul></div>
+    <ol class="mxSteps">
+      ${step("setup", "Set up", `<p class="mxNote">${esc(s.setup)}. Tape a rectangle on the floor where every item goes, so each photo is framed the same.</p>`)}
+      ${step("light", `Light it <span class="muted">· ${s.light_min} min</span>`, lightTable(s.light))}
+      ${step("example", "Watch the example", `<div class="mxSplit"><div>${vid ? `<div class="mxEmbed small"><iframe src="https://www.tiktok.com/embed/v2/${vid}" allow="encrypted-media; fullscreen" loading="lazy" title="Example"></iframe></div>` : ""}</div>
+        <div><p class="mxNote">Copy how the item sits in the frame and the size and place of the text.</p>
+        ${s.example ? `<p class="mxNote"><a href="${esc(s.example)}" target="_blank" rel="noopener">Open the example on TikTok ↗</a></p>` : ""}
+        <div class="row"><input id="exampleUrl" placeholder="Paste a different TikTok link for this shoot" value="${s.example_set ? esc(s.example) : ""}"><button data-go="example">Use</button></div></div></div>`)}
+      ${step("outfits", `The outfits <span class="muted">· decided now, the same for every product</span>`, `
+        <p class="mxNote muted">Each product is shot once in each outfit. The product takes its own place in the look: a top replaces the outfit's top, pants replace its bottom.</p>
+        <table class="mxList mxOutfits"><thead><tr><th></th><th>Name</th><th>Top</th><th>Bottom</th><th>Shoes</th><th>Layer</th></tr></thead><tbody>
+          ${cp.outfits.map((o, i) => `<tr data-oi="${i}"><td class="num">${i + 1}</td>${["name", "top", "bottom", "shoes", "layer"].map(k => `<td><input data-of="${k}" value="${esc(o[k] || "")}" placeholder="${k === "layer" ? "optional" : ""}"></td>`).join("")}</tr>`).join("")}</tbody></table>
+        <div class="row"><button data-go="outfitless" ${n <= 2 ? "disabled" : ""}>Fewer</button><button data-go="outfitmore" ${n >= 5 ? "disabled" : ""}>More</button><span class="spacer"></span><button class="primary" data-go="outfitsave">Save Outfits</button></div>`)}
+      ${step("text", "The on-screen text", `<p class="mxNote muted">One line on the first photo of each carousel. Varied on purpose so the day's carousels don't all say the same thing.</p>
+        <table class="mxList"><tbody>${cp.products.map(r => `<tr><td translate="no" class="muted" style="width:34%">${esc(r.name)}</td><td><input data-ctext="${r.product}" value="${esc(r.text)}" translate="no"></td></tr>`).join("")}</tbody></table>
+        <div class="row"><span class="spacer"></span><button class="primary" data-go="textsave">Save Text</button></div>`)}
+      ${step("film", "Shoot", `<p class="mxNote">In Ad Camera tap <b>Shoot carousels</b>, pick these carousels and <b>${n}</b> outfits. It shows the outfit and what to lay out with each product, and moves through every combination. Say <b>“Ad Camera, action”</b> for each photo.</p>
+        <p class="mxNote muted">The previews below fill in as the photos arrive. Photos taken another way: drop them on their carousel.</p>`)}
+      ${step("after", "When the photos are in", `<p class="mxNote">Check each preview, then <b>Posting Kit</b> → <b>Prepare Posting Kit</b>. Each carousel's folder has its photos in order and its text and description.</p>`)}
+    </ol>
+    <h3 class="secHead">Carousels <span class="muted">live preview, updates as photos come in</span></h3>
+    <div class="mxCarousels" id="carouselPreviews">${carouselPreviews(cp, mine)}</div>`;
+  clearInterval(PL.poll);
+  PL.poll = setInterval(async () => {  // new photos pop in while Ad Camera is shooting
+    const box = $("#carouselPreviews");
+    if (!box || LS.get("planOpen", "") !== s.id) return clearInterval(PL.poll);
+    const k = await api(`/api/shop/planner/day/${PL.day}/kit`).catch(() => null); if (!k) return;
+    const now = k.posts.filter(x => x.set === s.id), sig = JSON.stringify(now.map(x => x.photos));
+    if (sig !== PL.photoSig) { PL.photoSig = sig; PL.kit = k.posts; box.innerHTML = carouselPreviews(PL.cp, now); }
+  }, 5000);
+  PL.photoSig = JSON.stringify(mine.map(x => x.photos));
+}
+function carouselPreviews(cp, mine) {
+  return mine.map(x => {
+    const r = cp.products.find(y => y.product === x.product) || { text: "", with: [] };
+    const byOutfit = i => x.photos.find(f => f.startsWith(`outfit-${i + 1}.`));
+    const extra = x.photos.filter(f => !f.startsWith("outfit-"));
+    const slides = cp.outfits.map((o, i) => ({ photo: byOutfit(i), label: `${i + 1}. ${o.name || "Outfit " + (i + 1)}`, with: r.with[i] || "" }))
+      .concat(extra.map(f => ({ photo: f, label: "Added", with: "" })));
+    const got = slides.filter(z => z.photo).length;
+    return `<div class="mxCar" data-photo-k="${x.k}">
+      <div class="mxCarHead"><b translate="no">${esc(colorOf(x.name) || x.name)}</b><span class="muted">${x.time} · ${got} of ${cp.outfits.length}</span></div>
+      <div class="mxCarStrip">${slides.map((z, i) => `<div class="mxSlide ${z.photo ? "has" : ""}">
+        ${z.photo ? `<img src="/api/shop/planner/day/${PL.day}/kit/${x.k}/file/${encodeURIComponent(z.photo)}" alt="" loading="lazy">` : `<div class="mxSlot"><b>${esc(z.label)}</b><span>with ${esc(z.with)}</span></div>`}
+        ${i === 0 && r.text ? `<div class="mxOnText" translate="no">${esc(r.text)}</div>` : ""}<span class="mxSlideN">${i + 1}</span></div>`).join("")}</div>
+      <div class="mxCarFoot muted">${baseOf(x.name) ? `<span translate="no">${esc(baseOf(x.name))}</span> · ` : ""}<label class="linkish">add photos<input type="file" accept="image/*" multiple hidden data-photo-pick="${x.k}"></label></div></div>`;
+  }).join("");
+}
+async function carouselClick(e) {
+  const go = e.target.closest("[data-go]")?.dataset.go, sid = LS.get("planOpen", "");
+  const read = () => $$(".mxOutfits tbody tr").map(tr => Object.fromEntries($$("[data-of]", tr).map(i => [i.dataset.of, i.value])));
+  if (go === "outfitmore" || go === "outfitless") {
+    const o = read(), base = ["Clean and light", "All dark", "Cozy grey", "Earth tones", "Layered"];
+    if (go === "outfitmore") o.push({ name: base[o.length] || `Outfit ${o.length + 1}`, top: "", bottom: "", shoes: "", layer: "" }); else o.pop();
+    await api(`/api/shop/planner/day/${PL.day}/carousel/${sid}`, { json: { outfits: o } }); renderPlanner(); return true;
+  }
+  if (go === "outfitsave") { await api(`/api/shop/planner/day/${PL.day}/carousel/${sid}`, { json: { outfits: read() } }); toast("Outfits saved: Ad Camera shows them while shooting"); renderPlanner(); return true; }
+  if (go === "textsave") {
+    const texts = Object.fromEntries($$("[data-ctext]").map(i => [i.dataset.ctext, i.value]));
+    await api(`/api/shop/planner/day/${PL.day}/carousel/${sid}`, { json: { texts } }); toast("On-screen text saved"); renderPlanner(); return true;
+  }
+  return false;
+}
 
 // ---------- posting kit: one folder per post, progress from footage to scheduled ----------
 async function renderKit(box, day) {

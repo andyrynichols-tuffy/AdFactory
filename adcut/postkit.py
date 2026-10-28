@@ -108,7 +108,7 @@ def write_text(item, day: str):
     if item["carousel"]:
         lines += ["CAROUSEL: the 2-5 photos in this folder, in order (each a different outfit around the item).",
                   "On-image text, one line on the first photo:",
-                  f"  {planner.season(date.fromisoformat(day)).capitalize()} essential: {item['name'].split(' - ')[0]}", ""]
+                  f"  {carousel_text(day, item)}", ""]
     lines += ["Tag the product: Add link → Products → search it, or paste the link above."]
     (f / "description.txt").write_text("\n".join(lines), encoding="utf-8")
 
@@ -195,3 +195,13 @@ def add_outfit_photo(sid: str, outfit: int, name: str, data: bytes) -> dict:
     if not (f / "description.txt").exists():
         write_text(it, day)
     return {"saved": f"outfit-{outfit}{ext}", "outfits": outfits_for(sid)}
+
+
+def carousel_text(day: str, item: dict) -> str:
+    """The planned on-screen text for this carousel (adcut/carouselplan.py)."""
+    from . import carouselplan
+    s = next((x for x in planner.get(day)["sets"] if x["id"] == item["set"]), None)
+    if not s:
+        return ""
+    row = next((r for r in carouselplan.for_set(day, s)["products"] if r["product"] == item["product"]), None)
+    return row["text"] if row else ""
