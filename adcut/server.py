@@ -292,7 +292,7 @@ def studio_theme():
 def busy():
     """For Studio (studio/): don't restart this app for an update while it's mid-job."""
     why = [j["kind"] for j in JOBS.values() if j.get("state") in ("queued", "running")]
-    why += shopapi.scriptgen.busy() + shopapi.competitors.busy() + shopapi.postkit.busy()  # downloading / transcribing a TikTok for the script builder
+    why += shopapi.scriptgen.busy() + shopapi.competitors.busy() + shopapi.postkit.busy() + __import__('adcut.deals', fromlist=['busy']).busy()  # downloading / transcribing a TikTok for the script builder
     why += ["upload"] * bool(UPLOADS)  # a phone sending videos (a restart would cut it off)
     return {"busy": bool(why), "why": why}
 
@@ -437,6 +437,8 @@ def _start_inbox():
     threading.Thread(target=loop, daemon=True, name="inbox").start()
     shop.start_background()  # TikTok numbers for the accounts + posted videos, every few hours
     shopapi.competitors.start_background()  # other creators' videos + their products' sold counts, daily
+    from . import deals
+    deals.start_background()  # real discounts / free shipping on our TikTok listings, twice a day (scripts follow)
     tunnel.start(int(os.environ.get("ADCUT_PORT", "8770")))  # the web link (adcut/tunnel.py)
 
 

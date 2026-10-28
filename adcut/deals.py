@@ -1,7 +1,8 @@
 """Deal check (user, 2026-10-27: "I'm not going to the effort to look"): twice a day, each product's public TikTok
 Shop page is read for a real discount (a crossed-out original price above the sale price) and free shipping. When
 there is one, the product's fills get `deal` ("40% off with free shipping") and `store price` (the original), so the
-planner's scripts use @sully.finds' sale lines; when it ends they go back to the no-sale lines. Only deals this
+planner's scripts use @sully.finds' sale lines; when it ends they go back to the no-sale lines. Free shipping on its
+own (`free shipping` = "1") isn't a deal: it only adds his "with free shipping" where it fits. Only deals this
 check set are ever cleared (a deal typed in by hand is left alone). One page at a time, with pauses."""
 import re
 import threading
@@ -33,8 +34,8 @@ def deal_text(info: dict) -> tuple:
         pct = round(100 * (1 - s / o))
         parts.append("over half off" if pct >= 50 else f"{pct}% off")
         store = f"${o:.0f}" if o == int(o) else f"${o:.2f}"
-    if info.get("free_shipping"):
-        parts.append("with free shipping" if parts else "free shipping")
+    if parts and info.get("free_shipping"):
+        parts.append("with free shipping")
     return " ".join(parts), store
 
 
@@ -57,7 +58,7 @@ def check(pause=(4, 8)):
             info = seen[url]
             if info.get("error"):
                 continue
-            text, store = deal_text(info)
+            text, store = deal_text(info)  # a deal = a real discount; free shipping alone isn't one
             f = dict(p.get("fills") or {})
             auto = f.get("deal_auto") == "1"
             if text:
@@ -65,8 +66,10 @@ def check(pause=(4, 8)):
             elif auto:  # the deal this check found has ended
                 for k in ("deal", "store price", "deal_auto"):
                     f.pop(k, None)
+            if info.get("free_shipping"):
+                f["free shipping"] = "1"
             else:
-                continue
+                f.pop("free shipping", None)
             if f != (p.get("fills") or {}):
                 shop.upsert("products", {"id": p["id"], "fills": f})
             STATE["found"][p["id"]] = text

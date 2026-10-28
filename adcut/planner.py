@@ -363,6 +363,8 @@ def _vars(plan, s, chan, p) -> dict:
             "height": chan.get("height") or "", "size": size, "fit note": fit_note, "feature 1": feature,
             "feature 2": second, "the feature": f"that {feature}", "brand": brand or "this brand",
             "color": (color or f.get("color") or "").lower() or "new", "deal": f.get("deal") or "", "store price": f.get("store price") or "way more",
+            "with free shipping": " with free shipping" if f.get("free shipping") == "1" else " ",
+            "and shipping is free": ", and shipping is free right now" if f.get("free shipping") == "1" else " ",
             "this pair": "this pair" if plural else "this one", "that item": f"{'those' if plural else 'that'} {noun}",
             "those must have been": "Those must have been" if plural else "That must have been",
             "this is": "These are" if plural else "This is",
@@ -437,7 +439,7 @@ TEMPLATES = [  # @sully.finds' own scripts, copied from the example each format 
      "You're gonna get that super nice {feature 1} as well as the {feature 2}, and I just love this {color} colorway, it's gonna be perfect for this {season} season.\n"
      "{who} {height}, rocking a size {size}.\n"
      "[deal] These are selling out quick since they're {deal}, so if you wanna see if your size is still available, I'll leave a link down below.\n"
-     "[nodeal] These are selling out quick, so if you wanna see if your size is still available, I'll leave a link down below."),
+     "[nodeal] These are selling out quick{and shipping is free}, so if you wanna see if your size is still available, I'll leave a link down below."),
     ("worn", "Height + size (worn, faceless)",  # example 7697808464344648991, 79K views
      "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n"
      "[nodeal] {brand} finally put their {item} on their TikTok shop.\n"
@@ -458,7 +460,7 @@ TEMPLATES = [  # @sully.finds' own scripts, copied from the example each format 
      "B: Oh, I just got {this pair} from {brand}, why?\n"
      "A: {brand}? {those must have been} so expensive, though.\n"
      "[deal] B: No, no, no, I got {it} on their TikTok shop, they're {deal} right now.\n"
-     "[nodeal] B: No, no, no, I got {it} on their TikTok shop for {price}.\n"
+     "[nodeal] B: No, no, no, I got {it} on their TikTok shop for {price}{with free shipping}.\n"
      "A: Wait, that's actually such a good deal.\n"
      "B: Just check out {the feature} and the {feature 2}.\n"
      "A: Yeah, I actually love {that item}. You gotta drop the link.\n"
@@ -468,7 +470,7 @@ TEMPLATES = [  # @sully.finds' own scripts, copied from the example each format 
      "{this is} definitely my new favorite {item} from {brand}.\n"
      "You get that super nice {feature 1} you can pair with any outfit, as well as the {feature 2}.\n"
      "[deal] These are selling out quick, though, so if you want to get yours {deal}, I'll leave a link down below.\n"
-     "[nodeal] These are selling out quick, though, so if you want to get yours, I'll leave a link down below."),
+     "[nodeal] These are selling out quick, though, so if you want to get yours{with free shipping}, I'll leave a link down below."),
     ("carousel", "On-image text (carousel)",
      "{season} essential: {item}\n"
      "[or] POV: you found the perfect {item} for any fit\n"
