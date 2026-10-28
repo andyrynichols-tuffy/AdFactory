@@ -289,6 +289,16 @@ def set_example(day_iso: str, set_id: str, url: str) -> dict:
     return s
 
 
+def project_index() -> dict:
+    """{shoot id: {day, set, format}} for every project the planner made (Ad Camera's carousel mode)."""
+    out = {}
+    for day, plan in load()["days"].items():
+        for s in plan.get("sets") or []:
+            for pr in s.get("projects") or []:
+                out[pr["sid"]] = {"day": day, "set": s["id"], "format": s["format"], "product": pr["product"]}
+    return out
+
+
 def days() -> list:
     """Every planned day, oldest first: posts, sets, Ad Camera projects made, what's ticked off."""
     out = []

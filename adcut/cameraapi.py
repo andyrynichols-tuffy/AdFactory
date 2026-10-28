@@ -3,10 +3,13 @@ making a new one. Footage comes back through the inbox upload (/api/inbox/upload
 so the camera's clips land in the shoot's own OneDrive folder and get pre-cut like any drop."""
 from fastapi import APIRouter, Body, HTTPException
 
-from . import layout, shop, store
+from fastapi import Request
+
+from . import layout, planner, postkit, shop, store
 
 router = APIRouter(prefix="/api/camera")
 BUSY = lambda: set()  # server.py points this at the shoots with a job running
+CAROUSELS = {}  # shoot id -> planner info, refreshed with each project list
 LAST = {"seen": 0.0, "upload": 0.0, "shoot": ""}  # when the phone last asked for projects / sent a take (shown in the sidebar)
 
 
@@ -23,7 +26,9 @@ def _project(d, sid, s, busy):
             "stage": "posted" if pl.get("done") else shop.stage(s, sid in busy),
             "product": pl["product"], "product_name": p["name"] if p else s["product"]["name"],
             "tags": [tags[t] for t in pl["tags"] if t in tags], "due": pl["due"],
-            "lines": [ln["text"] for ln in s["script"]], "clips": len(s["sources"])}
+            "lines": [ln["text"] for ln in s["script"]], "clips": len(s["sources"]),
+            "carousel": (CAROUSELS.get(sid) or {}).get("format") == "carousel",
+            "outfits": postkit.outfits_for(sid) if (CAROUSELS.get(sid) or {}).get("format") == "carousel" else []}
 
 
 @router.get("/projects")
@@ -34,6 +39,8 @@ def projects():
     import time
     LAST["seen"] = time.time()
     d, busy = shop.load(), BUSY()
+    CAROUSELS.clear()
+    CAROUSELS.update(planner.project_index())
     return {
         "projects": [_project(d, sid, s, busy) for sid, s, _ in shop._all_shoots()],
         "products": [{"id": p["id"], "name": p["name"], "brand": p["brand"]}
@@ -74,3 +81,15 @@ def new_project(body: dict = Body(...)):
     d = shop.load()
     s = next(s for sid, s, _ in shop._all_shoots() if sid == r["id"])
     return _project(d, r["id"], s, BUSY())
+
+
+@router.put("/photo")
+async def photo(request: Request, shoot: str, outfit: int, name: str = "photo.jpg"):
+    """Carousel mode: one photo = one outfit with one product; it goes into that product's carousel
+    folder in the day's posting kit (adcut/postkit.py) as outfit-N."""
+    import time
+    LAST.update(upload=time.time(), shoot=shoot)
+    try:
+        return postkit.add_outfit_photo(shoot, outfit, name, await request.body())
+    except LookupError as e:
+        raise HTTPException(404, str(e))

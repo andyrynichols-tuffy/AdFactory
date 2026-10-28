@@ -160,3 +160,38 @@ def file_path(day: str, k: int, name: str) -> Path:
     if not f.is_file():
         raise FileNotFoundError(name)
     return f
+
+
+def _carousel_post(sid: str):
+    ix = planner.project_index().get(sid)
+    if not ix or ix["format"] != "carousel":
+        return None, None
+    day = ix["day"]
+    for it in posts(day):
+        if it["sid"] == sid and it["carousel"]:
+            return day, it
+    return day, None
+
+
+def outfits_for(sid: str) -> list:
+    """Which outfit numbers already have a photo for this carousel project (Ad Camera shows them done)."""
+    _, it = _carousel_post(sid)
+    if not it:
+        return []
+    return sorted(int(n[7:].split(".")[0]) for n in it["photos"] if n.startswith("outfit-") and n[7:].split(".")[0].isdigit())
+
+
+def add_outfit_photo(sid: str, outfit: int, name: str, data: bytes) -> dict:
+    """Ad Camera's carousel mode: the photo of outfit N for this product's carousel (a retake replaces it)."""
+    day, it = _carousel_post(sid)
+    if not it:
+        raise LookupError("not a planned carousel project")
+    f = Path(it["folder"])
+    f.mkdir(parents=True, exist_ok=True)
+    for old in f.glob(f"outfit-{outfit}.*"):
+        old.unlink()
+    ext = Path(name).suffix.lower() if Path(name).suffix.lower() in PHOTO_EXT else ".jpg"
+    (f / f"outfit-{outfit}{ext}").write_bytes(data)
+    if not (f / "description.txt").exists():
+        write_text(it, day)
+    return {"saved": f"outfit-{outfit}{ext}", "outfits": outfits_for(sid)}
