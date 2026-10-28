@@ -354,6 +354,8 @@ def _vars(plan, s, chan, p) -> dict:
     brand = p.get("brand") or ""
     spoken = base[len(brand):].strip() if brand and base.startswith(brand) else base  # the brand is said on its own
     feature = f.get("feature 1") or f.get("material") or f.get("fit") or f.get("style") or "fit"
+    noun = (f.get("style") or "").lower().split()[-1:] or [(p.get("category") or "piece").lower().split()[-1]]
+    noun = " ".join((f.get("style") or "").lower().split()[-2:]) if plural or len((f.get("style") or "").split()) > 1 else noun[0]
     second = next((c for c in (f.get("feature 2"), f.get("fit"), f.get("material"), f.get("style"))
                    if c and c.lower() not in feature.lower() and feature.lower() not in c.lower()), "easy fit")
     return {**shop.product_fills(p), "season": plan["season"], "who": "I'm" if s["pov"] == "me" else "He's",
@@ -361,8 +363,9 @@ def _vars(plan, s, chan, p) -> dict:
             "height": chan.get("height") or "", "size": size, "fit note": fit_note, "feature 1": feature,
             "feature 2": second, "the feature": f"that {feature}", "brand": brand or "this brand",
             "color": (color or f.get("color") or "").lower() or "new", "deal": f.get("deal") or "", "store price": f.get("store price") or "way more",
-            "these": "these" if plural else "this one", "These are": "These are" if plural else "This one is", "those": "those" if plural else "that",
-            "Those": "Those" if plural else "That", "this pair": "this pair" if plural else "this one", "they're": "they're" if plural else "it's",
+            "this pair": "this pair" if plural else "this one", "that item": f"{'those' if plural else 'that'} {noun}",
+            "those must have been": "Those must have been" if plural else "That must have been",
+            "this is": "These are" if plural else "This is",
             "price": p.get("price") or "a great price",
             "it": "them" if plural else "it", "it fits": "they fit" if plural else "it fits", "It is": "They're" if plural else "It's",
             "It has": "They've got" if plural else "It's got", "This is": "These are" if plural else "This is"}
@@ -433,13 +436,13 @@ TEMPLATES = [  # @sully.finds' own scripts, copied from the example each format 
      "[nodeal] {brand} finally put their {item} on their TikTok shop.\n"
      "You're gonna get that super nice {feature 1} as well as {feature 2}, and I just love this {color} colorway, it's gonna be perfect for this {season} season.\n"
      "{who} {height}, rocking a size {size}.\n"
-     "[deal] {These are} selling out quick since {they're} {deal}, so if you wanna see if your size is still available, I'll leave a link down below.\n"
-     "[nodeal] {These are} selling out quick, so if you wanna see if your size is still available, I'll leave a link down below."),
+     "[deal] These are selling out quick since they're {deal}, so if you wanna see if your size is still available, I'll leave a link down below.\n"
+     "[nodeal] These are selling out quick, so if you wanna see if your size is still available, I'll leave a link down below."),
     ("worn", "Height + size (worn, faceless)",  # example 7697808464344648991, 79K views
      "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n"
      "[nodeal] {brand} finally put their {item} on their TikTok shop.\n"
      "[deal] Just don't drop {store price} in store when you can pick {them} up for {deal} on TikTok.\n"
-     "{This is} their {product}, so you're definitely going to get {feature 1} with {these}.\n"
+     "{This is} their {product}, so you're definitely going to get that {feature 1} with {this pair}.\n"
      "{who} {height}, rocking a size {size} in {this pair} {fit note}.\n"
      "So I'd definitely recommend going true to size, but their most popular sizes are going quick.\n"
      "So if you're seeing this in time and your size is still available, I definitely wouldn't miss out on {this pair}."),
@@ -449,23 +452,23 @@ TEMPLATES = [  # @sully.finds' own scripts, copied from the example each format 
      "[deal] Just don't drop {store price} in store when you can pick {them} up for way cheaper on here.\n"
      "You get that super nice {feature 1} as well as that {feature 2}.\n"
      "There are multiple different colors to choose from.\n"
-     "So if you want to see if your size is still available in {these}, I'll leave a link down below."),
+     "So if you want to see if your size is still available in {this pair}, I'll leave a link down below."),
     ("skit", "Where'd you get those? (two-person skit)",  # example 7699977637917183263
-     "A: Wait, I love {those}, where'd you get {them} from?\n"
-     "B: Oh, I just got {these} from {brand}, why?\n"
-     "A: {brand}? {Those} must have been so expensive, though.\n"
-     "[deal] B: No, no, no, I got {them} on their TikTok shop, {they're} {deal} right now.\n"
-     "[nodeal] B: No, no, no, I got {them} on their TikTok shop for {price}.\n"
+     "A: Wait, I love {that item}, where'd you get {it} from?\n"
+     "B: Oh, I just got {this pair} from {brand}, why?\n"
+     "A: {brand}? {those must have been} so expensive, though.\n"
+     "[deal] B: No, no, no, I got {it} on their TikTok shop, they're {deal} right now.\n"
+     "[nodeal] B: No, no, no, I got {it} on their TikTok shop for {price}.\n"
      "A: Wait, that's actually such a good deal.\n"
      "B: Just check out {the feature} and that {feature 2}.\n"
-     "A: Yeah, I actually love {those}. You gotta drop the link.\n"
+     "A: Yeah, I actually love {that item}. You gotta drop the link.\n"
      "B: If you guys want to get yours, I'll leave a link down below.\n"
      "A: Bet, thank you."),
     ("other", "My new favorite (extra slot)",  # example 7700043209048739103
-     "{These are} definitely my new favorite {item} from {brand}.\n"
+     "{this is} definitely my new favorite {item} from {brand}.\n"
      "You get that super nice {feature 1} you can pair with any outfit, as well as that {feature 2}.\n"
-     "[deal] {These are} selling out quick, though, so if you want to get yours {deal}, I'll leave a link down below.\n"
-     "[nodeal] {These are} selling out quick, though, so if you want to get yours, I'll leave a link down below."),
+     "[deal] These are selling out quick, though, so if you want to get yours {deal}, I'll leave a link down below.\n"
+     "[nodeal] These are selling out quick, though, so if you want to get yours, I'll leave a link down below."),
     ("carousel", "On-image text (carousel)",
      "{season} essential: {item}\n"
      "[or] POV: you found the perfect {item} for any fit\n"
