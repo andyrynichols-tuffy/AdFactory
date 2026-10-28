@@ -1532,7 +1532,11 @@ window.I18N_PT = {
   "Cover": "Capa",
   "the item on its own": "só a peça",
   "The scripts": "Os roteiros",
-  "· complete, one per colour, the same lines every take": "· completos, um por cor, as mesmas falas em toda tomada"
+  "· complete, one per colour, the same lines every take": "· completos, um por cor, as mesmas falas em toda tomada",
+  "When": "Quando",
+  "Going live today": "No ar hoje",
+  "· scheduled from earlier batches": "· agendados de lotes anteriores",
+  "Not scheduled": "Não agendado"
  },
  "patterns": [
   [
@@ -1754,6 +1758,10 @@ window.I18N_PT = {
   [
    "^(\\d+) carousels × \\(cover \\+ (\\d+) outfits\\) = (\\d+) photos$",
    "$1 carrosséis × (capa + $2 looks) = $3 fotos"
+  ],
+  [
+   "· version (\\d+)",
+   "· versão $1"
   ]
  ]
 };

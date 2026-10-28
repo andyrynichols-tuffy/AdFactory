@@ -17,6 +17,7 @@ function shortTitle(b, p) {  // the agenda line: what it is, without the plan's 
   return { prep: "Prep", edit: "Edit and review", research: "Research", live: "Posts go live" }[b.kind]
     || (b.kind === "post" ? `Schedule ${p.posts.length} posts` : b.title);
 }
+const whenOf = x => x.date && x.date !== PL.day ? `${esc(dayName(x.date, { weekday: "short", month: "short", day: "numeric" }))} ${x.time}` : x.time;
 const colorOf = name => (name || "").split(" - ")[1] || "";
 const baseOf = name => (name || "").split(" - ")[0];
 
@@ -88,7 +89,7 @@ async function renderPlanner() {
           <span class="t">${b.start}</span><span class="w">${esc(shortTitle(b, p))}</span><span class="d muted">${mins(span(b))}</span></li>`).join("")}</ol>
         <details class="mxPosts"><summary>Posting times <span class="muted">${p.posts.length} posts, ${set.day.post_from}–${set.day.post_to}</span></summary>
           <table class="mxList"><tbody>${p.posts.map((x, k) => `<tr class="${x.done ? "closed" : ""}"><td><input type="checkbox" data-mark="${k}" ${x.done ? "checked" : ""} title="${set.day.schedule !== false ? "Scheduled" : "Posted"}"></td>
-            <td class="num">${x.time}</td><td>${esc((PL.cfg.formats.find(f => f.key === x.format) || {}).label || x.format)}</td><td translate="no" class="muted">${esc(x.name)}</td></tr>`).join("")}</tbody></table></details>
+            <td class="num">${whenOf(x)}</td><td>${esc((PL.cfg.formats.find(f => f.key === x.format) || {}).label || x.format)}</td><td translate="no" class="muted">${esc(x.name)}</td></tr>`).join("")}</tbody></table></details>
       </div>
       <div class="mxMain">${p.sets.map(s => setCard(s)).join("") || `<div class="mxEmpty">Nothing planned this day. Posts per channel for this weekday are set to 0 in Settings.</div>`}</div>
     </div>`}`;
@@ -157,8 +158,9 @@ async function renderShoot(setId) {
               <p class="mxNote muted">Photos taken another way: drop them on their carousel below, in order.</p>
               ${mine.map(x => kitPhotoRow(x)).join("")}`)
           : step("film", "Film in Ad Camera", `<p class="mxNote">On the iPhone open each project below in Ad Camera. Say <b>“Ad Camera, action”</b> to start and <b>“Ad Camera, cut”</b> to stop, or use the Apple Watch. Film the takes back to back, then swap to the next colour.</p>
-              ${s.projects?.length ? `<table class="mxList"><tbody>${s.projects.map(pr => { const ps = mine.filter(x => x.sid === pr.sid), it = s.items.find(i => i.product === pr.product) || { takes: 0 }, have = ps[0]?.takes || 0;
-                return `<tr><td translate="no">${esc(colorOf(prodName(pr.product)) || prodName(pr.product))}</td><td class="num">${have} of ${it.takes} <span>takes in</span></td><td>${have >= it.takes ? `<span class="mxPill ok">Filmed</span>` : have ? `<span class="mxPill wait">Filming</span>` : `<span class="mxPill">To film</span>`}</td><td class="num"><button data-open="${esc(pr.sid)}">Open</button></td></tr>`; }).join("")}</tbody></table>`
+              ${s.projects?.length ? `<table class="mxList"><tbody>${s.projects.map(pr => { const ps = mine.filter(x => x.sid === pr.sid), need = ps.length || 1, have = ps[0]?.takes || 0;
+                const ver = s.projects.filter(q => q.product === pr.product).length > 1 ? ` <span class="muted">· version ${(pr.variant || 0) + 1}</span>` : "";
+                return `<tr><td><span translate="no">${esc(colorOf(prodName(pr.product)) || prodName(pr.product))}</span>${ver}</td><td class="num">${have} of ${need} <span>${need === 1 ? "take" : "takes"} in</span></td><td>${have >= need ? `<span class="mxPill ok">Filmed</span>` : have ? `<span class="mxPill wait">Filming</span>` : `<span class="mxPill">To film</span>`}</td><td class="num"><button data-open="${esc(pr.sid)}">Open</button></td></tr>`; }).join("")}</tbody></table>`
                 : `<p class="mxNote muted">Send this setup to Ad Camera first (button at the top).</p>`}
               <div class="mxLabel">The scripts <span class="muted">· complete, one per colour, the same lines every take</span></div>
               <div id="scriptBox" class="mxScripts" data-set="${s.id}"></div>`)}
@@ -177,7 +179,7 @@ async function renderShoot(setId) {
 async function showScripts() {  // each product's full script, as Ad Camera's teleprompter will show it
   const box = $("#scriptBox"); if (!box) return;
   const rows = await api(`/api/shop/planner/day/${PL.day}/scripts/${box.dataset.set}`).catch(() => []);
-  box.innerHTML = rows.map(r => `<div class="mxScriptCard"><div class="mxCarHead"><b translate="no">${esc(colorOf(r.name) || r.name)}</b><span class="muted">${r.takes} ${r.takes === 1 ? "take" : "takes"}</span></div>
+  box.innerHTML = rows.map(r => `<div class="mxScriptCard"><div class="mxCarHead"><b><span translate="no">${esc(colorOf(r.name) || r.name)}</span>${r.versions > 1 ? ` <span class="muted">· version ${r.variant + 1}</span>` : ""}</b><span class="muted">${r.takes} ${r.takes === 1 ? "take" : "takes"}</span></div>
     <ol translate="no">${r.lines.map(l => `<li>${esc(l)}</li>`).join("")}</ol></div>`).join("");
 }
 // the example to copy, as itself: a photo post's photos side by side, or a video in TikTok's resizable player
@@ -290,9 +292,9 @@ async function renderKit(box, day) {
       <span class="muted">folder: <span translate="no">${esc(kit.folder)}</span></span></div>
     <div class="mxBar"><button class="primary" data-go="kitbuild" ${job.running ? "disabled" : ""} title="A folder + description for every post; renders and copies each video whose footage is in">Prepare Posting Kit</button>
       ${job.running || job.msg ? `<span class="muted">${esc(job.msg || "")}</span>` : ""}</div>
-    <div class="tblWrap"><table class="tbl mxKit"><thead><tr><th></th><th>Time</th><th>Post</th><th>Status</th><th>Description</th><th></th></tr></thead><tbody>
+    <div class="tblWrap"><table class="tbl mxKit"><thead><tr><th></th><th>When</th><th>Post</th><th>Status</th><th>Description</th><th></th></tr></thead><tbody>
       ${ps.map(x => `<tr class="${x.scheduled ? "closed" : ""}"><td><input type="checkbox" data-mark="${x.k}" ${x.scheduled ? "checked" : ""} title="Scheduled"></td>
-        <td class="num">${x.time}</td><td><b>${esc(x.label)}</b><div class="muted" translate="no">${esc(x.name)}</div></td><td>${stepPill(x.step)}</td>
+        <td class="num">${whenOf(x)}</td><td><b>${esc(x.label)}</b><div class="muted" translate="no">${esc(x.name)}</div></td><td>${stepPill(x.step)}</td>
         <td class="desc" translate="no">${esc(x.description)}</td>
         <td class="num acts"><button data-copy="${x.k}" title="Copy the description">Copy</button>
           ${x.video_file ? `<a class="btnlike" href="/api/shop/planner/day/${day}/kit/${x.k}/file/video.mp4" download>Video</a>` : ""}
@@ -350,6 +352,7 @@ async function renderToday() {
     return;
   }
   PL.day = day; PL.plan = await api(`/api/shop/planner/day/${day}`);
+  const live = await api(`/api/shop/planner/live/${today}`).catch(() => []);
   const p = PL.plan, done = new Set(p.blocks_done || []);
   const isToday = day === today, now = new Date().getHours() * 60 + new Date().getMinutes();
   const work = p.blocks.filter(b => b.kind !== "live");
@@ -367,6 +370,8 @@ async function renderToday() {
           return `<li class="k-${b.kind} ${done.has(k) ? "done" : ""} ${b === current ? "now" : ""} ${b === sel ? "sel" : ""}" data-sel="${esc(k)}">
             ${t ? `<input type="checkbox" data-block="${esc(k)}" ${done.has(k) ? "checked" : ""} aria-label="Done">` : `<span class="nob"></span>`}
             <span class="t">${b.start}</span><span class="w">${esc(shortTitle(b, p))}</span><span class="d muted">${mins(span(b))}</span></li>`; }).join("")}</ol>
+        ${live.length ? `<div class="mxGroup"><div class="mxLabel">Going live today <span class="muted">· scheduled from earlier batches</span></div>
+          <ul class="mxRows">${live.map(x => `<li class="nohover"><span class="num">${x.time}</span> <span>${esc((PL.cfg.formats.find(f => f.key === x.format) || {}).label || x.format)}</span> <span class="muted" translate="no">${esc(colorOf(x.name) || x.name)}</span>${x.done ? `<span class="mxPill done">Scheduled</span>` : `<span class="mxPill">Not scheduled</span>`}</li>`).join("")}</ul></div>` : ""}
         ${alertBox}
       </div>
       <div class="mxMain">${sel ? blockDetail(sel, p) : ""}</div>

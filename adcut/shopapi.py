@@ -308,13 +308,23 @@ def planner_scripts(day: str, set_id: str):
     plan = planner.get(day)
     s = next(x for x in plan["sets"] if x["id"] == set_id)
     out = []
+    posts = [x for x in plan["posts"] if x["set"] == s["id"]]
     for it in s["items"]:
         if not it["product"]:
             continue
-        pr = next((x for x in s.get("projects") or [] if x["product"] == it["product"]), None)
-        lines = [ln["text"] for ln in store.load(pr["sid"])["script"]] if pr else planner.script_for(day, s, it["product"], plan)
-        out.append({"product": it["product"], "name": it["name"], "takes": it["takes"], "lines": lines})
+        vs = sorted({x.get("variant", 0) for x in posts if x["product"] == it["product"]}) or [0]
+        for v in vs:
+            pr = next((x for x in s.get("projects") or [] if x["product"] == it["product"] and x.get("variant", 0) == v), None)
+            lines = [ln["text"] for ln in store.load(pr["sid"])["script"]] if pr else planner.script_for(day, s, it["product"], plan, variant=v)
+            takes = sum(1 for x in posts if x["product"] == it["product"] and x.get("variant", 0) == v) or it["takes"]
+            out.append({"product": it["product"], "name": it["name"], "variant": v, "versions": len(vs), "takes": takes, "lines": lines})
     return out
+
+
+@router.get("/planner/live/{day}")
+def planner_live(day: str):
+    """Posts from any batch that go live on this date."""
+    return planner.going_live(day)
 
 
 @router.get("/planner/day/{day}/carousel/{set_id}")
