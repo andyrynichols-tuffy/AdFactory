@@ -179,7 +179,7 @@ async function showExample() {
   const ex = await api(`/api/shop/example?url=${encodeURIComponent(box.dataset.ex)}`).catch(() => null);
   if (!ex) { box.innerHTML = `<p class="mxNote muted">Couldn't load the example here: open it on TikTok.</p>`; return; }
   box.innerHTML = ex.kind === "photos"
-    ? `<div class="mxExStrip">${ex.images.map((f, i) => `<a href="/api/shop/example/${ex.id}/${f}" target="_blank" rel="noopener"><img src="/api/shop/example/${ex.id}/${f}" alt="Photo ${i + 1}" loading="lazy"><span>${i + 1}</span></a>`).join("")}</div>
+    ? `<div class="mxExStrip">${ex.images.map((f, i) => `<a href="/api/shop/example/${ex.id}/${f}" data-lb="ex${ex.id}"><img src="/api/shop/example/${ex.id}/${f}" alt="Photo ${i + 1}" loading="lazy"><span>${i + 1}</span></a>`).join("")}</div>
        <p class="mxNote muted">${ex.images.length} photos${ex.author ? ` · @${esc(ex.author)}` : ""}</p>`
     : `<div class="mxPlayer"><iframe src="https://www.tiktok.com/player/v1/${ex.id}?description=0&music_info=0&rel=0&native_context_menu=0&closed_caption=0" allow="fullscreen; encrypted-media" loading="lazy" title="Example video"></iframe></div>`;
 }
@@ -247,7 +247,7 @@ function carouselPreviews(cp, mine) {
     return `<div class="mxCar" data-photo-k="${x.k}">
       <div class="mxCarHead"><b translate="no">${esc(colorOf(x.name) || x.name)}</b><span class="muted">${x.time} · ${got} of ${want}</span></div>
       <div class="mxCarStrip">${slides.map((z, i) => `<div class="mxSlide ${z.photo ? "has" : ""}">
-        ${z.photo ? `<img src="/api/shop/planner/day/${PL.day}/kit/${x.k}/file/${encodeURIComponent(z.photo)}" alt="" loading="lazy">` : `<div class="mxSlot"><b>${esc(z.label)}</b><span>${z.cover ? "the item on its own" : "with " + esc(z.with)}</span></div>`}
+        ${z.photo ? `<a href="/api/shop/planner/day/${PL.day}/kit/${x.k}/file/${encodeURIComponent(z.photo)}" data-lb="car${x.k}"><img src="/api/shop/planner/day/${PL.day}/kit/${x.k}/file/${encodeURIComponent(z.photo)}" alt="" loading="lazy"></a>` : `<div class="mxSlot"><b>${esc(z.label)}</b><span>${z.cover ? "the item on its own" : "with " + esc(z.with)}</span></div>`}
         ${i === 0 && r.text ? `<div class="mxOnText" translate="no">${esc(r.text)}</div>` : ""}<span class="mxSlideN">${i + 1}</span></div>`).join("")}</div>
       <div class="mxCarFoot muted">${baseOf(x.name) ? `<span translate="no">${esc(baseOf(x.name))}</span> · ` : ""}<label class="linkish">add photos<input type="file" accept="image/*" multiple hidden data-photo-pick="${x.k}"></label></div></div>`;
   }).join("");

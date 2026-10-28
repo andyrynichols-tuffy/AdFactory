@@ -319,3 +319,10 @@ label.linkish { color: var(--mx-accent-hi); cursor: pointer; }
 html button.linkish { display: inline; min-height: 0; padding: 0 !important; font-size: inherit; }
 .mxSteps, .mxStep, .mxStepBody, .mxStepBody > *, .mxSplit > *, .mxCarousels, .mxCar, .shopPane { min-width: 0; }
 .mxSplit { grid-template-columns: minmax(0, 1fr); }
+
+.lightbox { position: fixed; inset: 0; z-index: 3000; background: rgba(0, 0, 0, .82); display: grid; place-items: center; }
+.lightbox img { max-width: min(92vw, 900px); max-height: 88vh; border-radius: 8px; box-shadow: 0 20px 60px rgba(0, 0, 0, .6); }
+html .lightbox button { position: absolute; background: rgba(255, 255, 255, .12) !important; color: #fff !important; font-size: 22px; min-height: 40px; width: 40px; border-radius: 50% !important; box-shadow: none !important; }
+.lightbox .lbX { top: 18px; right: 18px; font-size: 16px; } .lightbox .lbP { left: 18px; top: 50%; } .lightbox .lbNx { right: 18px; top: 50%; }
+.lightbox .lbN { position: absolute; bottom: 18px; color: rgba(255, 255, 255, .7); font-size: 12px; }
+.mxSlide a { display: block; width: 100%; height: 100%; }

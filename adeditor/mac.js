@@ -47,3 +47,38 @@
   };
   if (document.readyState !== "loading") init(); else document.addEventListener("DOMContentLoaded", init);
 })();
+
+// photos open in a viewer over the page, never in place of the app (data-lb = a group to step through);
+// links to other sites always open in a new tab (the Ad Factory window sends them to the browser)
+(function () {
+  let box = null, list = [], at = 0;
+  const show = () => { box.querySelector("img").src = list[at]; box.querySelector(".lbN").textContent = `${at + 1} / ${list.length}`; };
+  const close = () => { box?.remove(); box = null; };
+  document.addEventListener("click", e => {
+    const a = e.target.closest?.("a[data-lb]");
+    if (a) {
+      e.preventDefault();
+      list = [...document.querySelectorAll(`a[data-lb="${a.dataset.lb}"]`)].map(x => x.href);
+      at = Math.max(0, list.indexOf(a.href));
+      box = document.createElement("div");
+      box.className = "lightbox";
+      box.innerHTML = `<button class="lbX" aria-label="Close">✕</button><button class="lbP" aria-label="Previous">‹</button><img alt=""><button class="lbNx" aria-label="Next">›</button><span class="lbN"></span>`;
+      box.onclick = ev => {
+        if (ev.target.closest(".lbP")) { at = (at - 1 + list.length) % list.length; return show(); }
+        if (ev.target.closest(".lbNx")) { at = (at + 1) % list.length; return show(); }
+        if (ev.target === box || ev.target.closest(".lbX")) close();
+      };
+      document.body.appendChild(box);
+      show();
+      return;
+    }
+    const ext = e.target.closest?.("a[href^='http']");
+    if (ext && new URL(ext.href).host !== location.host && ext.target !== "_blank") { ext.target = "_blank"; ext.rel = "noopener"; }
+  }, true);
+  document.addEventListener("keydown", e => {
+    if (!box) return;
+    if (e.key === "Escape") close();
+    if (e.key === "ArrowLeft") { at = (at - 1 + list.length) % list.length; show(); }
+    if (e.key === "ArrowRight") { at = (at + 1) % list.length; show(); }
+  });
+})();
