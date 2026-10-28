@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 18,
+ "rev": 34,
  "title": "Oct 30 · Holding the item · Old Navy Long-Sleeve Waffle · v1",
  "created": 1793152208.8897576,
  "product": {
@@ -184,6 +184,7 @@
  "overlays": [],
  "renders": {},
  "saved": {},
+ "phone_off": [],
  "sheet": {
   "sig": "41abeff0dc10",
   "lines": [

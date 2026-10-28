@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 4,
+ "rev": 13,
  "title": "Oct 30 · Holding the item · Old Navy 90s Double-Knee Car",
  "created": 1793153282.6534393,
  "product": {
@@ -170,13 +170,14 @@
  "overlays": [],
  "renders": {},
  "saved": {},
+ "phone_off": [],
  "shop": {
   "product": "c8cebc",
   "account": "c4a9a3",
   "creator": "9d770c",
   "editor": null,
   "tags": [],
-  "script": "fed014",
+  "script": "073278",
   "due": "2026-10-30",
   "notes": "Hand-held close-up (shoes, gadgets, tags). 1 take, near-identical. \"I think I just found the perfect…\" Good for side products.\nLighting: Key (circle) close and low to one side, grazing across the item, ~50%, so the knit or waffle texture pops. Fill panel 1 opposite, ~20%. Fill panel 2 off. Keep your hand and phone from shadowing the item; plain background.",
   "assigned": 1793153282.666001,

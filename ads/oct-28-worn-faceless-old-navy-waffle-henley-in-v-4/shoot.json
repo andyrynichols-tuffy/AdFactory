@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 16,
+ "rev": 24,
  "title": "Oct 28 · Worn, faceless · Old Navy Waffle Henley - In · v3",
  "created": 1793152209.9470644,
  "product": {
@@ -156,6 +156,7 @@
  "overlays": [],
  "renders": {},
  "saved": {},
+ "phone_off": [],
  "sheet": {
   "sig": "6831a7903e5b",
   "lines": [

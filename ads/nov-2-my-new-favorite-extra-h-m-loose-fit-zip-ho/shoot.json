@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 33,
+ "rev": 49,
  "title": "Nov 2 · My new favorite (extra) · H&M Loose-Fit Zip Hoodie - D",
  "created": 1793151908.4845839,
  "product": {
@@ -156,6 +156,7 @@
  "overlays": [],
  "renders": {},
  "saved": {},
+ "phone_off": [],
  "shop": {
   "product": "f1fed3",
   "account": "c4a9a3",

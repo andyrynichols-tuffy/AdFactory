@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 33,
+ "rev": 57,
  "title": "Oct 30 · Holding the item · H&M Loose-Fit Zip Hoodie - D",
  "created": 1793151907.6281128,
  "product": {
@@ -12,13 +12,13 @@
  "reference": {
   "url": "",
   "file": "",
-  "notes": ""
+  "notes": "Directions from the script:\n• deal\n• nodeal\n• deal\n• single\n• multi"
  },
  "sources": [],
  "script": [
   {
-   "id": "a1050e",
-   "text": "H&M's official shop is finally on TikTok and they just put their loose-fit zip-through hoodie on there, just in time for this fall season.",
+   "id": "f32788",
+   "text": "{brand}'s official shop is finally on TikTok and they're dumping all of their {item} just in time for this {season} season. {brand}'s official shop is finally on TikTok and they just put their {item} on there, just in time for this {season} season.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -31,8 +31,22 @@
    "cut_offset": null
   },
   {
-   "id": "8bd4d8",
-   "text": "You get that super nice drawstring hood as well as the two front pockets.",
+   "id": "1d5f9f",
+   "text": "Just don't drop {store price} in store when you can pick {them} up for way cheaper on here.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "925721",
+   "text": "You get that super nice {feature 1} as well as the {feature 2}.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -59,8 +73,22 @@
    "cut_offset": null
   },
   {
-   "id": "99bdd3",
-   "text": "So if you want to see if your size is still available in this one, I'll leave a link down below.",
+   "id": "ff9542",
+   "text": "I've got the {colors} here, so you can pick your favorite.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "1b268f",
+   "text": "So if you want to see if your size is still available in {this pair}, I'll leave a link down below.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -170,6 +198,7 @@
  "overlays": [],
  "renders": {},
  "saved": {},
+ "phone_off": [],
  "shop": {
   "product": "f1fed3",
   "account": "c4a9a3",
@@ -184,12 +213,14 @@
  },
  "sheet": {
   "row": "Oct 30 · Holding the item · H&M Loose-Fit Zip Hoodie - D",
-  "sig": "41abeff0dc10",
+  "sig": "6006a38d1177",
   "lines": [
-   "H&M's official shop is finally on TikTok and they just put their loose-fit zip-through hoodie on there, just in time for this fall season.",
-   "You get that super nice drawstring hood as well as the two front pockets.",
+   "{brand}'s official shop is finally on TikTok and they're dumping all of their {item} just in time for this {season} season. {brand}'s official shop is finally on TikTok and they just put their {item} on there, just in time for this {season} season.",
+   "Just don't drop {store price} in store when you can pick {them} up for way cheaper on here.",
+   "You get that super nice {feature 1} as well as the {feature 2}.",
    "There are multiple different colors to choose from.",
-   "So if you want to see if your size is still available in this one, I'll leave a link down below."
+   "I've got the {colors} here, so you can pick your favorite.",
+   "So if you want to see if your size is still available in {this pair}, I'll leave a link down below."
   ]
  }
 }

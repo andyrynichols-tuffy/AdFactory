@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 20,
+ "rev": 28,
  "title": "Nov 2 · My new favorite (extra) · H&M Loose Fit Sweatpants - B",
  "created": 1793151908.3878365,
  "product": {
@@ -156,6 +156,7 @@
  "overlays": [],
  "renders": {},
  "saved": {},
+ "phone_off": [],
  "shop": {
   "product": "7e1c60",
   "account": "c4a9a3",

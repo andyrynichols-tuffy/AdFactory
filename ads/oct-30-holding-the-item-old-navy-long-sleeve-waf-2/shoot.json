@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 4,
+ "rev": 22,
  "title": "Oct 30 · Holding the item · Old Navy Long-Sleeve Waffle",
  "created": 1793153282.4609559,
  "product": {
@@ -12,13 +12,13 @@
  "reference": {
   "url": "",
   "file": "",
-  "notes": ""
+  "notes": "Directions from the script:\n• deal\n• nodeal\n• deal\n• single\n• multi"
  },
  "sources": [],
  "script": [
   {
-   "id": "9395a9",
-   "text": "Old Navy's official shop is finally on TikTok and they just put their long-sleeve crew neck on there, just in time for this fall season.",
+   "id": "051e96",
+   "text": "{brand}'s official shop is finally on TikTok and they're dumping all of their {item} just in time for this {season} season. {brand}'s official shop is finally on TikTok and they just put their {item} on there, just in time for this {season} season.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -31,8 +31,8 @@
    "cut_offset": null
   },
   {
-   "id": "8563db",
-   "text": "You get that super nice soft waffle knit as well as the easy relaxed fit.",
+   "id": "ecf321",
+   "text": "Just don't drop {store price} in store when you can pick {them} up for way cheaper on here.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -45,8 +45,8 @@
    "cut_offset": null
   },
   {
-   "id": "766241",
-   "text": "I've got the heritage green and sea salt here, so you can pick your favorite.",
+   "id": "8bb0ba",
+   "text": "You get that super nice {feature 1} as well as the {feature 2}.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -59,8 +59,36 @@
    "cut_offset": null
   },
   {
-   "id": "689900",
-   "text": "So if you want to see if your size is still available in this one, I'll leave a link down below.",
+   "id": "8cffc6",
+   "text": "There are multiple different colors to choose from.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "992ff9",
+   "text": "I've got the {colors} here, so you can pick your favorite.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "52f294",
+   "text": "So if you want to see if your size is still available in {this pair}, I'll leave a link down below.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -170,13 +198,14 @@
  "overlays": [],
  "renders": {},
  "saved": {},
+ "phone_off": [],
  "shop": {
   "product": "70db4e",
   "account": "c4a9a3",
   "creator": "9d770c",
   "editor": null,
   "tags": [],
-  "script": "fed014",
+  "script": "e9fa2c",
   "due": "2026-10-30",
   "notes": "Hand-held close-up (shoes, gadgets, tags). 1 take, near-identical. \"I think I just found the perfect…\" Good for side products.\nLighting: Key (circle) close and low to one side, grazing across the item, ~50%, so the knit or waffle texture pops. Fill panel 1 opposite, ~20%. Fill panel 2 off. Keep your hand and phone from shadowing the item; plain background.",
   "assigned": 1793153282.4797125,
@@ -186,10 +215,12 @@
   "row": "Oct 30 · Holding the item · Old Navy Long-Sleeve Waffle",
   "sig": "6006a38d1177",
   "lines": [
-   "Old Navy's official shop is finally on TikTok and they just put their long-sleeve crew neck on there, just in time for this fall season.",
-   "You get that super nice soft waffle knit as well as the easy relaxed fit.",
-   "I've got the heritage green and sea salt here, so you can pick your favorite.",
-   "So if you want to see if your size is still available in this one, I'll leave a link down below."
+   "{brand}'s official shop is finally on TikTok and they're dumping all of their {item} just in time for this {season} season. {brand}'s official shop is finally on TikTok and they just put their {item} on there, just in time for this {season} season.",
+   "Just don't drop {store price} in store when you can pick {them} up for way cheaper on here.",
+   "You get that super nice {feature 1} as well as the {feature 2}.",
+   "There are multiple different colors to choose from.",
+   "I've got the {colors} here, so you can pick your favorite.",
+   "So if you want to see if your size is still available in {this pair}, I'll leave a link down below."
   ]
  }
 }

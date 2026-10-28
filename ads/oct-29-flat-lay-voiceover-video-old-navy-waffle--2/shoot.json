@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 20,
+ "rev": 36,
  "title": "Oct 29 · Flat-lay voiceover video · Old Navy Waffle Henley - Kic",
  "created": 1793151906.7441912,
  "product": {
@@ -12,13 +12,13 @@
  "reference": {
   "url": "",
   "file": "",
-  "notes": ""
+  "notes": "Directions from the script:\n• deal\n• nodeal\n• single\n• multi\n• deal\n• nodeal"
  },
  "sources": [],
  "script": [
   {
-   "id": "e20bb1",
-   "text": "Old Navy finally put their long-sleeve henley on their TikTok shop.",
+   "id": "c9b4d6",
+   "text": "{brand} is finally dumping their {item} on their TikTok shop. {brand} finally put their {item} on their TikTok shop.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -31,8 +31,8 @@
    "cut_offset": null
   },
   {
-   "id": "8078f4",
-   "text": "You're gonna get that super nice soft waffle knit as well as the button-up henley neckline, and I just love this kicking up dust colorway, it's gonna be perfect for this fall season.",
+   "id": "a5cacf",
+   "text": "You're gonna get that super nice {feature 1} as well as the {feature 2}, and I just love this {color} colorway, it's gonna be perfect for this {season} season.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -45,8 +45,8 @@
    "cut_offset": null
   },
   {
-   "id": "860585",
-   "text": "I'm 6'2 185, rocking a size M.",
+   "id": "f84417",
+   "text": "You're gonna get that super nice {feature 1} as well as the {feature 2}, and I've got the {colors} here, so you can pick your favorite for this {season} season. {who} {height}, rocking a size {size}.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -59,8 +59,22 @@
    "cut_offset": null
   },
   {
-   "id": "4afe37",
-   "text": "These are selling out quick, so if you wanna see if your size is still available, I'll leave a link down below.",
+   "id": "5b1380",
+   "text": "These are selling out quick since they're {deal}, so if you wanna see if your size is still available, I'll leave a link down below.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "22dcea",
+   "text": "These are selling out quick{and shipping is free}, so if you wanna see if your size is still available, I'll leave a link down below.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -170,6 +184,7 @@
  "overlays": [],
  "renders": {},
  "saved": {},
+ "phone_off": [],
  "shop": {
   "product": "aad169",
   "account": "c4a9a3",
@@ -184,12 +199,13 @@
  },
  "sheet": {
   "row": "Oct 29 · Flat-lay voiceover video · Old Navy Waffle Henley - Kic",
-  "sig": "8ea7f0bce6f9",
+  "sig": "13fd38212cc5",
   "lines": [
-   "Old Navy finally put their long-sleeve henley on their TikTok shop.",
-   "You're gonna get that super nice soft waffle knit as well as the button-up henley neckline, and I just love this kicking up dust colorway, it's gonna be perfect for this fall season.",
-   "I'm 6'2 185, rocking a size M.",
-   "These are selling out quick, so if you wanna see if your size is still available, I'll leave a link down below."
+   "{brand} is finally dumping their {item} on their TikTok shop. {brand} finally put their {item} on their TikTok shop.",
+   "You're gonna get that super nice {feature 1} as well as the {feature 2}, and I just love this {color} colorway, it's gonna be perfect for this {season} season.",
+   "You're gonna get that super nice {feature 1} as well as the {feature 2}, and I've got the {colors} here, so you can pick your favorite for this {season} season. {who} {height}, rocking a size {size}.",
+   "These are selling out quick since they're {deal}, so if you wanna see if your size is still available, I'll leave a link down below.",
+   "These are selling out quick{and shipping is free}, so if you wanna see if your size is still available, I'll leave a link down below."
   ]
  }
 }

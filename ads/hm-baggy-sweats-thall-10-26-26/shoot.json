@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 116,
+ "rev": 126,
  "title": "HM Baggy Sweats THall 10.26.26",
  "created": 1793056500.1949503,
  "product": {
@@ -533,7 +533,8 @@
    "score": 0.0,
    "status": "unmatched",
    "flags": [
-    "not a script line"
+    "not a script line",
+    "removed on the phone"
    ],
    "missing": [],
    "extra": [],
@@ -556,7 +557,9 @@
    "title": "",
    "game": null,
    "spice": null,
-   "user": {}
+   "user": {
+    "usable": true
+   }
   },
   {
    "id": "e1c98d",
@@ -863,7 +866,8 @@
    "score": 0.0,
    "status": "unmatched",
    "flags": [
-    "not a script line"
+    "not a script line",
+    "removed on the phone"
    ],
    "missing": [],
    "extra": [],
@@ -886,7 +890,9 @@
    "title": "",
    "game": null,
    "spice": null,
-   "user": {}
+   "user": {
+    "usable": true
+   }
   }
  ],
  "hooks": [],
@@ -984,6 +990,10 @@
  "overlays": [],
  "renders": {},
  "saved": {},
+ "phone_off": [
+  "hmbaggysweatsthall10262620261026182601mov",
+  "hmbaggysweatsthall10262620261026184717mov"
+ ],
  "shop": {
   "product": "c9a20a",
   "account": null,

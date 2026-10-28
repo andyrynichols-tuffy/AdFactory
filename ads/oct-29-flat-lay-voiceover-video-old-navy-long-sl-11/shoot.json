@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 27,
+ "rev": 35,
  "title": "Oct 29 · Flat-lay voiceover video · Old Navy Long-Sleeve Waffle · v2",
  "created": 1793152209.0438435,
  "product": {
@@ -170,6 +170,7 @@
  "overlays": [],
  "renders": {},
  "saved": {},
+ "phone_off": [],
  "sheet": {
   "sig": "03080d14b46b",
   "lines": [

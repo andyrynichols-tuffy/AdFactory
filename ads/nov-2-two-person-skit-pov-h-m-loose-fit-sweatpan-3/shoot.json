@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 16,
+ "rev": 24,
  "title": "Nov 2 · Two-person skit / POV · H&M Loose Fit Sweatpants - L",
  "created": 1793152156.8539138,
  "product": {
@@ -226,6 +226,7 @@
  "overlays": [],
  "renders": {},
  "saved": {},
+ "phone_off": [],
  "shop": {
   "product": "adb964",
   "account": "c4a9a3",

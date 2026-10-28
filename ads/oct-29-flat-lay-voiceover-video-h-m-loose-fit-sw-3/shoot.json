@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 20,
+ "rev": 28,
  "title": "Oct 29 · Flat-lay voiceover video · H&M Loose Fit Sweatpants - D",
  "created": 1793151906.525308,
  "product": {
@@ -170,6 +170,7 @@
  "overlays": [],
  "renders": {},
  "saved": {},
+ "phone_off": [],
  "shop": {
   "product": "97d0e6",
   "account": "c4a9a3",

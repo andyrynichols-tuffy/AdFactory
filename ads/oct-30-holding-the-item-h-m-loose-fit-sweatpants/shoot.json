@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 75,
+ "rev": 83,
  "title": "Oct 30 · Holding the item · H&M Loose Fit Sweatpants - D",
  "created": 1793144253.6590555,
  "product": {
@@ -170,6 +170,7 @@
  "overlays": [],
  "renders": {},
  "saved": {},
+ "phone_off": [],
  "shop": {
   "product": "97d0e6",
   "account": "c4a9a3",

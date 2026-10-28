@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 15,
+ "rev": 23,
  "title": "Oct 29 · Flat-lay voiceover video · Old Navy Waffle Henley - In · v3",
  "created": 1793152209.2874415,
  "product": {
@@ -170,6 +170,7 @@
  "overlays": [],
  "renders": {},
  "saved": {},
+ "phone_off": [],
  "sheet": {
   "sig": "fb42d463c2ee",
   "lines": [

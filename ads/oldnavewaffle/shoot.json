@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 206,
+ "rev": 214,
  "title": "OldNavyWaffle",
  "created": 1792342945.3705559,
  "product": {
@@ -27290,6 +27290,7 @@
   }
  },
  "saved": {},
+ "phone_off": [],
  "shop": {
   "product": "039a4d",
   "account": null,

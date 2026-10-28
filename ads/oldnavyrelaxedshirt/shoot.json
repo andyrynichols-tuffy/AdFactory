@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 178,
+ "rev": 186,
  "title": "OldNavyRelaxedShirt",
  "created": 1792343374.2037246,
  "product": {
@@ -2334,6 +2334,7 @@
  "overlays": [],
  "renders": {},
  "saved": {},
+ "phone_off": [],
  "shop": {
   "product": "86ba8f",
   "account": null,

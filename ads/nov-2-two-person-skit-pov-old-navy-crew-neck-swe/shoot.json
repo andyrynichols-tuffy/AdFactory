@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 4,
+ "rev": 29,
  "title": "Nov 2 · Two-person skit / POV · Old Navy Crew-Neck Sweater -",
  "created": 1793153283.1149278,
  "product": {
@@ -226,13 +226,14 @@
  "overlays": [],
  "renders": {},
  "saved": {},
+ "phone_off": [],
  "shop": {
   "product": "772dcf",
   "account": "c4a9a3",
   "creator": "9d770c",
   "editor": null,
   "tags": [],
-  "script": "257e49",
+  "script": "679fe1",
   "due": "2026-11-02",
   "notes": "Outside or by the car, both of you. 1 take, near-identical. \"Wait, where'd you get those?\" The same exchange for each product.\nLighting: Outside: no lights; open shade (the shady side of the house or car) or golden hour, both of you facing the light. Inside: key (circle) in front between you, ~70%; one fill panel at 45° on each side, ~35%, so both of you are lit the same.",
   "assigned": 1793153283.1322317,

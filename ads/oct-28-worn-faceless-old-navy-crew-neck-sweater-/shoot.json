@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 34,
+ "rev": 58,
  "title": "Oct 28 · Worn, faceless · Old Navy Crew-Neck Sweater -",
  "created": 1793152152.9977233,
  "product": {
@@ -184,6 +184,7 @@
  "overlays": [],
  "renders": {},
  "saved": {},
+ "phone_off": [],
  "shop": {
   "product": "772dcf",
   "account": "c4a9a3",

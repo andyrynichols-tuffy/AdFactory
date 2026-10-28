@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 4,
+ "rev": 37,
  "title": "Oct 28 · Worn, faceless · H&M Loose-Fit Zip Hoodie - D",
  "created": 1793153280.2759764,
  "product": {
@@ -184,13 +184,14 @@
  "overlays": [],
  "renders": {},
  "saved": {},
+ "phone_off": [],
  "shop": {
   "product": "f1fed3",
   "account": "c4a9a3",
   "creator": "9d770c",
   "editor": null,
   "tags": [],
-  "script": "75f67d",
+  "script": "98ac1a",
   "due": "2026-10-28",
   "notes": "Bedroom, waist-down. 1 take, near-identical. Wear it, film waist-down, say your height and size.\nLighting: Key (circle) in front at 45°, center at chest height, tilted down toward the waist, ~70%. Fill panel 1 on the other side, ~35%, so the fabric shows. Fill panel 2 behind and to the side, low, as a rim light that outlines the fit against the background. Never a window behind you. Tape a mark on the floor so every take matches.",
   "assigned": 1793153280.3000467,

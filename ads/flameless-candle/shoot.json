@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 247,
+ "rev": 255,
  "title": "Flameless candle",
  "created": 1792270633.981801,
  "product": {
@@ -7737,6 +7737,7 @@
    ]
   }
  },
+ "phone_off": [],
  "shop": {
   "product": "f28369",
   "account": null,

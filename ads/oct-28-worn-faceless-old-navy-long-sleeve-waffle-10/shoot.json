@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 27,
+ "rev": 35,
  "title": "Oct 28 · Worn, faceless · Old Navy Long-Sleeve Waffle · v3",
  "created": 1793152209.7027247,
  "product": {
@@ -156,6 +156,7 @@
  "overlays": [],
  "renders": {},
  "saved": {},
+ "phone_off": [],
  "sheet": {
   "sig": "6831a7903e5b",
   "lines": [

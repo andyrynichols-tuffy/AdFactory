@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 172,
+ "rev": 180,
  "title": "OldNavyCarpenterPants",
  "created": 1792343067.009776,
  "product": {
@@ -4953,6 +4953,7 @@
  "overlays": [],
  "renders": {},
  "saved": {},
+ "phone_off": [],
  "shop": {
   "product": "916af2",
   "account": null,

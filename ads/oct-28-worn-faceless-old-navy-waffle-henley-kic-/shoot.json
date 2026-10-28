@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 16,
+ "rev": 24,
  "title": "Oct 28 · Worn, faceless · Old Navy Waffle Henley - Kic",
  "created": 1793152152.5009449,
  "product": {
@@ -184,6 +184,7 @@
  "overlays": [],
  "renders": {},
  "saved": {},
+ "phone_off": [],
  "shop": {
   "product": "aad169",
   "account": "c4a9a3",

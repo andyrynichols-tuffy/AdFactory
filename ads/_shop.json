@@ -206,7 +206,7 @@
    "archived": false,
    "id": "58c082",
    "created": 1793142774.0862663,
-   "updated": 1793151133.0084636
+   "updated": 1793153652.6657646
   },
   {
    "name": "Old Navy Waffle Henley - Kicking Up Dust",
@@ -228,7 +228,7 @@
    "archived": false,
    "id": "aad169",
    "created": 1793142774.1169302,
-   "updated": 1793151133.0368025
+   "updated": 1793153652.6988971
   },
   {
    "name": "Old Navy Waffle Henley - In The Navy",
@@ -250,7 +250,7 @@
    "archived": false,
    "id": "8e26fd",
    "created": 1793142774.1432064,
-   "updated": 1793151133.0650132
+   "updated": 1793153652.7271235
   },
   {
    "name": "Old Navy Long-Sleeve Waffle Crew - Heritage Green",
@@ -1967,7 +1967,7 @@
   },
   {
    "title": "Oct 28 · Worn, faceless · H&M Loose-Fit Zip Hoodie - D",
-   "text": "Just in time for this {season}: the {brand} {product}.\n{who} {height}, wearing a size {size} {fit note}, and this is exactly how {it fits}.\nThe {feature 1} goes with everything.\n{It is} on TikTok Shop right now, link's right here.",
+   "text": "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n[nodeal] {brand} finally put their {item} on their TikTok shop.\n[deal] Just don't drop {store price} in store when you can pick {them} up for {deal} on TikTok.\n{This is} their {product}, so you're definitely going to get that {feature 1} with {this pair}.\n[multi] I'm rocking the {color} here, but they also come in {other colors}.\n{who} {height}, rocking a size {size} in {this pair} {fit note}.\nSo I'd definitely recommend going true to size, but their most popular sizes are going quick.\nSo if you're seeing this in time and your size is still available, I definitely wouldn't miss out on {this pair}.",
    "tags": [],
    "product": "5a73a3",
    "notes": "From the Scripts & Links sheet",
@@ -1980,11 +1980,11 @@
    "from_template": null,
    "id": "98ac1a",
    "created": 1793144302.0616443,
-   "updated": 1793144302.0616443
+   "updated": 1793153338.215189
   },
   {
    "title": "Oct 28 · Worn, faceless · H&M Loose-Fit Zip Hoodie - G",
-   "text": "Just in time for this {season}: the {brand} {product}.\n{who} {height}, wearing a size {size} {fit note}, and this is exactly how {it fits}.\nThe {feature 1} goes with everything.\n{It is} on TikTok Shop right now, link's right here.",
+   "text": "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n[nodeal] {brand} finally put their {item} on their TikTok shop.\n[deal] Just don't drop {store price} in store when you can pick {them} up for {deal} on TikTok.\n{This is} their {product}, so you're definitely going to get that {feature 1} with {this pair}.\n[multi] I'm rocking the {color} here, but they also come in {other colors}.\n{who} {height}, rocking a size {size} in {this pair} {fit note}.\nSo I'd definitely recommend going true to size, but their most popular sizes are going quick.\nSo if you're seeing this in time and your size is still available, I definitely wouldn't miss out on {this pair}.",
    "tags": [],
    "product": "239664",
    "notes": "From the Scripts & Links sheet",
@@ -1997,7 +1997,7 @@
    "from_template": null,
    "id": "0caa98",
    "created": 1793144302.0853302,
-   "updated": 1793144302.0853302
+   "updated": 1793153338.2465491
   },
   {
    "title": "Oct 28 · Flat-lay voiceover video · H&M Loose-Fit Zip Hoodie - D",
@@ -2377,7 +2377,7 @@
   },
   {
    "title": "Nov 2 · Two-person skit / POV · H&M Loose Fit Sweatpants - L",
-   "text": "A: Wait, I love {that item}, where'd you get {it} from?\nB: Oh, I just got {this pair} from {brand}, why?\nA: {brand}? {those must have been} so expensive, though.\n[deal] B: No, no, no, I got {it} on their TikTok shop, they're {deal} right now.\n[nodeal] B: No, no, no, I got {it} on their TikTok shop for {price}{with free shipping}.\nA: Wait, that's actually such a good deal.\nB: Just check out {the feature} and the {feature 2}.\nA: Yeah, I actually love {that item}. You gotta drop the link.\nB: If you guys want to get yours, I'll leave a link down below.\nA: Bet, thank you.",
+   "text": "A: Wait, I love {that item}, but does that tag say {brand}?\nB: Yeah, it does, why?\nA: You spent that much in store?\nB: No, I got {it} for {price}{with free shipping} on their TikTok shop.\nA: No way, that's actually such a good deal.\nB: Right, and look at the {feature 1}, I had to get {it}.\nA: Okay, you gotta drop the link.\nB: I'll leave a link down below for you guys.",
    "tags": [],
    "product": "adb964",
    "notes": "From the Scripts & Links sheet",
@@ -2390,7 +2390,7 @@
    "from_template": null,
    "id": "ce416a",
    "created": 1793151976.967371,
-   "updated": 1793151976.967371
+   "updated": 1793153337.5031273
   },
   {
    "title": "Oct 30 · Holding the item · Old Navy Waffle Henley - Kic",
@@ -2411,7 +2411,7 @@
   },
   {
    "title": "Oct 30 · Holding the item · Old Navy Waffle Henley - Jur",
-   "text": "[deal] {brand}'s official shop is finally on TikTok and they're dumping all of their {item} just in time for this {season} season.\n[nodeal] {brand}'s official shop is finally on TikTok and they just put their {item} on there, just in time for this {season} season.\n[deal] Just don't drop {store price} in store when you can pick {them} up for way cheaper on here.\nYou get that super nice {feature 1} as well as the {feature 2}.\nThere are multiple different colors to choose from.\nSo if you want to see if your size is still available in {this pair}, I'll leave a link down below.",
+   "text": "[deal] {brand}'s official shop is finally on TikTok and they're dumping all of their {item} just in time for this {season} season.\n[nodeal] {brand}'s official shop is finally on TikTok and they just put their {item} on there, just in time for this {season} season.\n[deal] Just don't drop {store price} in store when you can pick {them} up for way cheaper on here.\nYou get that super nice {feature 1} as well as the {feature 2}.\n[single] There are multiple different colors to choose from.\n[multi] I've got the {colors} here, so you can pick your favorite.\nSo if you want to see if your size is still available in {this pair}, I'll leave a link down below.",
    "tags": [],
    "product": "58c082",
    "notes": "From the Scripts & Links sheet",
@@ -2424,11 +2424,11 @@
    "from_template": null,
    "id": "a06328",
    "created": 1793151977.0287056,
-   "updated": 1793151977.0287056
+   "updated": 1793154897.2324557
   },
   {
    "title": "Oct 30 · Holding the item · H&M Loose-Fit Zip Hoodie - D",
-   "text": "[deal] {brand}'s official shop is finally on TikTok and they're dumping all of their {item} just in time for this {season} season.\n[nodeal] {brand}'s official shop is finally on TikTok and they just put their {item} on there, just in time for this {season} season.\n[deal] Just don't drop {store price} in store when you can pick {them} up for way cheaper on here.\nYou get that super nice {feature 1} as well as the {feature 2}.\nThere are multiple different colors to choose from.\nSo if you want to see if your size is still available in {this pair}, I'll leave a link down below.",
+   "text": "[deal] {brand}'s official shop is finally on TikTok and they're dumping all of their {item} just in time for this {season} season.\n[nodeal] {brand}'s official shop is finally on TikTok and they just put their {item} on there, just in time for this {season} season.\n[deal] Just don't drop {store price} in store when you can pick {them} up for way cheaper on here.\nYou get that super nice {feature 1} as well as the {feature 2}.\n[single] There are multiple different colors to choose from.\n[multi] I've got the {colors} here, so you can pick your favorite.\nSo if you want to see if your size is still available in {this pair}, I'll leave a link down below.",
    "tags": [],
    "product": "f1fed3",
    "notes": "From the Scripts & Links sheet",
@@ -2441,7 +2441,7 @@
    "from_template": null,
    "id": "63b26b",
    "created": 1793151977.0713818,
-   "updated": 1793151977.0713818
+   "updated": 1793154897.1270108
   },
   {
    "title": "Oct 30 · Holding the item · H&M Loose-Fit Zip Hoodie - G",
@@ -2462,7 +2462,7 @@
   },
   {
    "title": "Oct 30 · Holding the item · H&M Loose Fit Sweatpants - L",
-   "text": "[deal] {brand}'s official shop is finally on TikTok and they're dumping all of their {item} just in time for this {season} season.\n[nodeal] {brand}'s official shop is finally on TikTok and they just put their {item} on there, just in time for this {season} season.\n[deal] Just don't drop {store price} in store when you can pick {them} up for way cheaper on here.\nYou get that super nice {feature 1} as well as the {feature 2}.\nThere are multiple different colors to choose from.\nSo if you want to see if your size is still available in {this pair}, I'll leave a link down below.",
+   "text": "[deal] {brand}'s official shop is finally on TikTok and they're dumping all of their {item} just in time for this {season} season.\n[nodeal] {brand}'s official shop is finally on TikTok and they just put their {item} on there, just in time for this {season} season.\n[deal] Just don't drop {store price} in store when you can pick {them} up for way cheaper on here.\nYou get that super nice {feature 1} as well as the {feature 2}.\n[single] There are multiple different colors to choose from.\n[multi] I've got the {colors} here, so you can pick your favorite.\nSo if you want to see if your size is still available in {this pair}, I'll leave a link down below.",
    "tags": [],
    "product": "adb964",
    "notes": "From the Scripts & Links sheet",
@@ -2475,7 +2475,7 @@
    "from_template": null,
    "id": "39273e",
    "created": 1793151977.1199005,
-   "updated": 1793151977.1199005
+   "updated": 1793154897.156006
   },
   {
    "title": "Oct 30 · Worn, faceless · Old Navy Long-Sleeve Waffle",
@@ -2581,7 +2581,7 @@
   },
   {
    "title": "Oct 29 · Flat-lay voiceover video · Old Navy Waffle Henley - Kic",
-   "text": "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n[nodeal] {brand} finally put their {item} on their TikTok shop.\nYou're gonna get that super nice {feature 1} as well as the {feature 2}, and I just love this {color} colorway, it's gonna be perfect for this {season} season.\n{who} {height}, rocking a size {size}.\n[deal] These are selling out quick since they're {deal}, so if you wanna see if your size is still available, I'll leave a link down below.\n[nodeal] These are selling out quick{and shipping is free}, so if you wanna see if your size is still available, I'll leave a link down below.",
+   "text": "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n[nodeal] {brand} finally put their {item} on their TikTok shop.\n[single] You're gonna get that super nice {feature 1} as well as the {feature 2}, and I just love this {color} colorway, it's gonna be perfect for this {season} season.\n[multi] You're gonna get that super nice {feature 1} as well as the {feature 2}, and I've got the {colors} here, so you can pick your favorite for this {season} season.\n{who} {height}, rocking a size {size}.\n[deal] These are selling out quick since they're {deal}, so if you wanna see if your size is still available, I'll leave a link down below.\n[nodeal] These are selling out quick{and shipping is free}, so if you wanna see if your size is still available, I'll leave a link down below.",
    "tags": [],
    "product": "aad169",
    "notes": "From the Scripts & Links sheet",
@@ -2594,11 +2594,11 @@
    "from_template": null,
    "id": "802e2c",
    "created": 1793151977.3816347,
-   "updated": 1793151977.3816347
+   "updated": 1793154897.27772
   },
   {
    "title": "Oct 29 · Flat-lay voiceover video · Old Navy Waffle Henley - Jur",
-   "text": "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n[nodeal] {brand} finally put their {item} on their TikTok shop.\nYou're gonna get that super nice {feature 1} as well as the {feature 2}, and I just love this {color} colorway, it's gonna be perfect for this {season} season.\n{who} {height}, rocking a size {size}.\n[deal] These are selling out quick since they're {deal}, so if you wanna see if your size is still available, I'll leave a link down below.\n[nodeal] These are selling out quick{and shipping is free}, so if you wanna see if your size is still available, I'll leave a link down below.",
+   "text": "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n[nodeal] {brand} finally put their {item} on their TikTok shop.\n[single] You're gonna get that super nice {feature 1} as well as the {feature 2}, and I just love this {color} colorway, it's gonna be perfect for this {season} season.\n[multi] You're gonna get that super nice {feature 1} as well as the {feature 2}, and I've got the {colors} here, so you can pick your favorite for this {season} season.\n{who} {height}, rocking a size {size}.\n[deal] These are selling out quick since they're {deal}, so if you wanna see if your size is still available, I'll leave a link down below.\n[nodeal] These are selling out quick{and shipping is free}, so if you wanna see if your size is still available, I'll leave a link down below.",
    "tags": [],
    "product": "58c082",
    "notes": "From the Scripts & Links sheet",
@@ -2611,11 +2611,11 @@
    "from_template": null,
    "id": "36e53a",
    "created": 1793151977.4440768,
-   "updated": 1793151977.4440768
+   "updated": 1793154897.4032183
   },
   {
    "title": "Oct 29 · Flat-lay voiceover video · H&M Loose-Fit Zip Hoodie - D",
-   "text": "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n[nodeal] {brand} finally put their {item} on their TikTok shop.\nYou're gonna get that super nice {feature 1} as well as the {feature 2}, and I just love this {color} colorway, it's gonna be perfect for this {season} season.\n{who} {height}, rocking a size {size}.\n[deal] These are selling out quick since they're {deal}, so if you wanna see if your size is still available, I'll leave a link down below.\n[nodeal] These are selling out quick{and shipping is free}, so if you wanna see if your size is still available, I'll leave a link down below.",
+   "text": "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n[nodeal] {brand} finally put their {item} on their TikTok shop.\n[single] You're gonna get that super nice {feature 1} as well as the {feature 2}, and I just love this {color} colorway, it's gonna be perfect for this {season} season.\n[multi] You're gonna get that super nice {feature 1} as well as the {feature 2}, and I've got the {colors} here, so you can pick your favorite for this {season} season.\n{who} {height}, rocking a size {size}.\n[deal] These are selling out quick since they're {deal}, so if you wanna see if your size is still available, I'll leave a link down below.\n[nodeal] These are selling out quick{and shipping is free}, so if you wanna see if your size is still available, I'll leave a link down below.",
    "tags": [],
    "product": "f1fed3",
    "notes": "From the Scripts & Links sheet",
@@ -2628,11 +2628,11 @@
    "from_template": null,
    "id": "3d4a62",
    "created": 1793151977.4829187,
-   "updated": 1793151977.4829187
+   "updated": 1793154897.4342797
   },
   {
    "title": "Oct 29 · Flat-lay voiceover video · H&M Loose-Fit Zip Hoodie - G",
-   "text": "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n[nodeal] {brand} finally put their {item} on their TikTok shop.\nYou're gonna get that super nice {feature 1} as well as the {feature 2}, and I just love this {color} colorway, it's gonna be perfect for this {season} season.\n{who} {height}, rocking a size {size}.\n[deal] These are selling out quick since they're {deal}, so if you wanna see if your size is still available, I'll leave a link down below.\n[nodeal] These are selling out quick{and shipping is free}, so if you wanna see if your size is still available, I'll leave a link down below.",
+   "text": "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n[nodeal] {brand} finally put their {item} on their TikTok shop.\n[single] You're gonna get that super nice {feature 1} as well as the {feature 2}, and I just love this {color} colorway, it's gonna be perfect for this {season} season.\n[multi] You're gonna get that super nice {feature 1} as well as the {feature 2}, and I've got the {colors} here, so you can pick your favorite for this {season} season.\n{who} {height}, rocking a size {size}.\n[deal] These are selling out quick since they're {deal}, so if you wanna see if your size is still available, I'll leave a link down below.\n[nodeal] These are selling out quick{and shipping is free}, so if you wanna see if your size is still available, I'll leave a link down below.",
    "tags": [],
    "product": "239664",
    "notes": "From the Scripts & Links sheet",
@@ -2645,7 +2645,7 @@
    "from_template": null,
    "id": "b923c5",
    "created": 1793151977.5054088,
-   "updated": 1793151977.5054088
+   "updated": 1793154897.3083766
   },
   {
    "title": "Oct 29 · Flat-lay voiceover video · H&M Loose Fit Sweatpants - D",
@@ -2666,7 +2666,7 @@
   },
   {
    "title": "Oct 29 · Flat-lay voiceover video · H&M Loose Fit Sweatpants - L",
-   "text": "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n[nodeal] {brand} finally put their {item} on their TikTok shop.\nYou're gonna get that super nice {feature 1} as well as the {feature 2}, and I just love this {color} colorway, it's gonna be perfect for this {season} season.\n{who} {height}, rocking a size {size}.\n[deal] These are selling out quick since they're {deal}, so if you wanna see if your size is still available, I'll leave a link down below.\n[nodeal] These are selling out quick{and shipping is free}, so if you wanna see if your size is still available, I'll leave a link down below.",
+   "text": "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n[nodeal] {brand} finally put their {item} on their TikTok shop.\n[single] You're gonna get that super nice {feature 1} as well as the {feature 2}, and I just love this {color} colorway, it's gonna be perfect for this {season} season.\n[multi] You're gonna get that super nice {feature 1} as well as the {feature 2}, and I've got the {colors} here, so you can pick your favorite for this {season} season.\n{who} {height}, rocking a size {size}.\n[deal] These are selling out quick since they're {deal}, so if you wanna see if your size is still available, I'll leave a link down below.\n[nodeal] These are selling out quick{and shipping is free}, so if you wanna see if your size is still available, I'll leave a link down below.",
    "tags": [],
    "product": "adb964",
    "notes": "From the Scripts & Links sheet",
@@ -2679,11 +2679,11 @@
    "from_template": null,
    "id": "c52cd3",
    "created": 1793151977.5597064,
-   "updated": 1793151977.5597064
+   "updated": 1793154897.3341835
   },
   {
    "title": "Oct 29 · Flat-lay voiceover video · H&M Loose Fit Sweatpants - B",
-   "text": "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n[nodeal] {brand} finally put their {item} on their TikTok shop.\nYou're gonna get that super nice {feature 1} as well as the {feature 2}, and I just love this {color} colorway, it's gonna be perfect for this {season} season.\n{who} {height}, rocking a size {size}.\n[deal] These are selling out quick since they're {deal}, so if you wanna see if your size is still available, I'll leave a link down below.\n[nodeal] These are selling out quick{and shipping is free}, so if you wanna see if your size is still available, I'll leave a link down below.",
+   "text": "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n[nodeal] {brand} finally put their {item} on their TikTok shop.\n[single] You're gonna get that super nice {feature 1} as well as the {feature 2}, and I just love this {color} colorway, it's gonna be perfect for this {season} season.\n[multi] You're gonna get that super nice {feature 1} as well as the {feature 2}, and I've got the {colors} here, so you can pick your favorite for this {season} season.\n{who} {height}, rocking a size {size}.\n[deal] These are selling out quick since they're {deal}, so if you wanna see if your size is still available, I'll leave a link down below.\n[nodeal] These are selling out quick{and shipping is free}, so if you wanna see if your size is still available, I'll leave a link down below.",
    "tags": [],
    "product": "7e1c60",
    "notes": "From the Scripts & Links sheet",
@@ -2696,7 +2696,7 @@
    "from_template": null,
    "id": "5b4b51",
    "created": 1793151977.58818,
-   "updated": 1793151977.58818
+   "updated": 1793154897.4656467
   },
   {
    "title": "Oct 29 · Flat-lay voiceover video · Old Navy 90s Double-Knee Car",
@@ -2717,7 +2717,7 @@
   },
   {
    "title": "Oct 29 · Flat-lay voiceover video · Old Navy Crew-Neck Sweater -",
-   "text": "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n[nodeal] {brand} finally put their {item} on their TikTok shop.\nYou're gonna get that super nice {feature 1} as well as the {feature 2}, and I just love this {color} colorway, it's gonna be perfect for this {season} season.\n{who} {height}, rocking a size {size}.\n[deal] These are selling out quick since they're {deal}, so if you wanna see if your size is still available, I'll leave a link down below.\n[nodeal] These are selling out quick{and shipping is free}, so if you wanna see if your size is still available, I'll leave a link down below.",
+   "text": "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n[nodeal] {brand} finally put their {item} on their TikTok shop.\n[single] You're gonna get that super nice {feature 1} as well as the {feature 2}, and I just love this {color} colorway, it's gonna be perfect for this {season} season.\n[multi] You're gonna get that super nice {feature 1} as well as the {feature 2}, and I've got the {colors} here, so you can pick your favorite for this {season} season.\n{who} {height}, rocking a size {size}.\n[deal] These are selling out quick since they're {deal}, so if you wanna see if your size is still available, I'll leave a link down below.\n[nodeal] These are selling out quick{and shipping is free}, so if you wanna see if your size is still available, I'll leave a link down below.",
    "tags": [],
    "product": "772dcf",
    "notes": "From the Scripts & Links sheet",
@@ -2730,7 +2730,7 @@
    "from_template": null,
    "id": "31a695",
    "created": 1793151977.643121,
-   "updated": 1793151977.643121
+   "updated": 1793154897.3668032
   },
   {
    "title": "Oct 28 · Flat-lay carousel · bottoms · H&M Loose Fit Sweatpants - D",
@@ -3038,7 +3038,7 @@
   },
   {
    "title": "Nov 2 · Two-person skit / POV · Old Navy Long-Sleeve Waffle",
-   "text": "A: Wait, I love {that item}, where'd you get {it} from?\nB: Oh, I just got {this pair} from {brand}, why?\nA: {brand}? {those must have been} so expensive, though.\n[deal] B: No, no, no, I got {it} on their TikTok shop, they're {deal} right now.\n[nodeal] B: No, no, no, I got {it} on their TikTok shop for {price}{with free shipping}.\nA: Wait, that's actually such a good deal.\nB: Just check out {the feature} and the {feature 2}.\nA: Yeah, I actually love {that item}. You gotta drop the link.\nB: If you guys want to get yours, I'll leave a link down below.\nA: Bet, thank you.",
+   "text": "A: Wait, I love {that item}, but does that tag say {brand}?\nB: Yeah, it does, why?\nA: You spent that much in store?\nB: No, I got {it} for {price}{with free shipping} on their TikTok shop.\nA: No way, that's actually such a good deal.\nB: Right, and look at the {feature 1}, I had to get {it}.\nA: Okay, you gotta drop the link.\nB: I'll leave a link down below for you guys.",
    "tags": [],
    "product": "9bbabf",
    "notes": "From the Scripts & Links sheet",
@@ -3051,7 +3051,7 @@
    "from_template": null,
    "id": "5b3267",
    "created": 1793152212.5409322,
-   "updated": 1793152212.5409322
+   "updated": 1793153337.4745095
   },
   {
    "title": "Nov 2 · Two-person skit / POV · Old Navy Long-Sleeve Waffle · v2",
@@ -4140,6 +4140,193 @@
    "id": "5e3a45",
    "created": 1793152223.3696878,
    "updated": 1793152223.3696878
+  },
+  {
+   "title": "Oct 30 · Holding the item · Old Navy Long-Sleeve Waffle",
+   "text": "[deal] {brand}'s official shop is finally on TikTok and they're dumping all of their {item} just in time for this {season} season.\n[nodeal] {brand}'s official shop is finally on TikTok and they just put their {item} on there, just in time for this {season} season.\n[deal] Just don't drop {store price} in store when you can pick {them} up for way cheaper on here.\nYou get that super nice {feature 1} as well as the {feature 2}.\n[single] There are multiple different colors to choose from.\n[multi] I've got the {colors} here, so you can pick your favorite.\nSo if you want to see if your size is still available in {this pair}, I'll leave a link down below.",
+   "tags": [],
+   "product": "70db4e",
+   "notes": "From the Scripts & Links sheet",
+   "from_shoot": "oct-30-holding-the-item-old-navy-long-sleeve-waf-2",
+   "edited": false,
+   "lines": [],
+   "marks": [],
+   "shots": [],
+   "source": null,
+   "from_template": null,
+   "id": "e9fa2c",
+   "created": 1793153337.3335135,
+   "updated": 1793154897.2027688
+  },
+  {
+   "title": "Nov 2 · Two-person skit / POV · Old Navy Crew-Neck Sweater -",
+   "text": "A: Wait, I love {that item}, but does that tag say {brand}?\nB: Yeah, it does, why?\nA: You spent that much in store?\nB: No, I got {it} for {price}{with free shipping} on their TikTok shop.\nA: No way, that's actually such a good deal.\nB: Right, and look at the {feature 1}, I had to get {it}.\nA: Okay, you gotta drop the link.\nB: I'll leave a link down below for you guys.",
+   "tags": [],
+   "product": "772dcf",
+   "notes": "From the Scripts & Links sheet",
+   "from_shoot": "nov-2-two-person-skit-pov-old-navy-crew-neck-swe",
+   "edited": false,
+   "lines": [],
+   "marks": [],
+   "shots": [],
+   "source": null,
+   "from_template": null,
+   "id": "679fe1",
+   "created": 1793153337.4438877,
+   "updated": 1793153337.4438877
+  },
+  {
+   "title": "Oct 30 · Holding the item · Old Navy 90s Double-Knee Car",
+   "text": "[deal] {brand}'s official shop is finally on TikTok and they're dumping all of their {item} just in time for this {season} season.\n[nodeal] {brand}'s official shop is finally on TikTok and they just put their {item} on there, just in time for this {season} season.\n[deal] Just don't drop {store price} in store when you can pick {them} up for way cheaper on here.\nYou get that super nice {feature 1} as well as the {feature 2}.\n[single] There are multiple different colors to choose from.\n[multi] I've got the {colors} here, so you can pick your favorite.\nSo if you want to see if your size is still available in {this pair}, I'll leave a link down below.",
+   "tags": [],
+   "product": "c8cebc",
+   "notes": "From the Scripts & Links sheet",
+   "from_shoot": "oct-30-holding-the-item-old-navy-90s-double-knee",
+   "edited": false,
+   "lines": [],
+   "marks": [],
+   "shots": [],
+   "source": null,
+   "from_template": null,
+   "id": "073278",
+   "created": 1793153337.6213725,
+   "updated": 1793153337.6213725
+  },
+  {
+   "title": "Oct 30 · Holding the item · Old Navy Crew-Neck Sweater -",
+   "text": "[deal] {brand}'s official shop is finally on TikTok and they're dumping all of their {item} just in time for this {season} season.\n[nodeal] {brand}'s official shop is finally on TikTok and they just put their {item} on there, just in time for this {season} season.\n[deal] Just don't drop {store price} in store when you can pick {them} up for way cheaper on here.\nYou get that super nice {feature 1} as well as the {feature 2}.\n[single] There are multiple different colors to choose from.\n[multi] I've got the {colors} here, so you can pick your favorite.\nSo if you want to see if your size is still available in {this pair}, I'll leave a link down below.",
+   "tags": [],
+   "product": "772dcf",
+   "notes": "From the Scripts & Links sheet",
+   "from_shoot": "oct-30-holding-the-item-old-navy-crew-neck-sweat",
+   "edited": false,
+   "lines": [],
+   "marks": [],
+   "shots": [],
+   "source": null,
+   "from_template": null,
+   "id": "6bfbac",
+   "created": 1793153337.6531048,
+   "updated": 1793153337.6531048
+  },
+  {
+   "title": "Oct 29 · Flat-lay voiceover video · Old Navy Long-Sleeve Waffle",
+   "text": "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n[nodeal] {brand} finally put their {item} on their TikTok shop.\n[single] You're gonna get that super nice {feature 1} as well as the {feature 2}, and I just love this {color} colorway, it's gonna be perfect for this {season} season.\n[multi] You're gonna get that super nice {feature 1} as well as the {feature 2}, and I've got the {colors} here, so you can pick your favorite for this {season} season.\n{who} {height}, rocking a size {size}.\n[deal] These are selling out quick since they're {deal}, so if you wanna see if your size is still available, I'll leave a link down below.\n[nodeal] These are selling out quick{and shipping is free}, so if you wanna see if your size is still available, I'll leave a link down below.",
+   "tags": [],
+   "product": "70db4e",
+   "notes": "From the Scripts & Links sheet",
+   "from_shoot": "oct-29-flat-lay-voiceover-video-old-navy-long-sl-2",
+   "edited": false,
+   "lines": [],
+   "marks": [],
+   "shots": [],
+   "source": null,
+   "from_template": null,
+   "id": "fd9a4d",
+   "created": 1793153337.7701447,
+   "updated": 1793153337.7701447
+  },
+  {
+   "title": "Oct 28 · Worn, faceless · Old Navy Crew-Neck Sweater -",
+   "text": "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n[nodeal] {brand} finally put their {item} on their TikTok shop.\n[deal] Just don't drop {store price} in store when you can pick {them} up for {deal} on TikTok.\n{This is} their {product}, so you're definitely going to get that {feature 1} with {this pair}.\n[multi] I'm rocking the {color} here, but they also come in {other colors}.\n{who} {height}, rocking a size {size} in {this pair} {fit note}.\nSo I'd definitely recommend going true to size, but their most popular sizes are going quick.\nSo if you're seeing this in time and your size is still available, I definitely wouldn't miss out on {this pair}.",
+   "tags": [],
+   "product": "772dcf",
+   "notes": "From the Scripts & Links sheet",
+   "from_shoot": "oct-28-worn-faceless-old-navy-crew-neck-sweater",
+   "edited": false,
+   "lines": [],
+   "marks": [],
+   "shots": [],
+   "source": null,
+   "from_template": null,
+   "id": "90131a",
+   "created": 1793153338.0817308,
+   "updated": 1793153338.0817308
+  },
+  {
+   "title": "Oct 28 · Worn, faceless · Old Navy Long-Sleeve Waffle",
+   "text": "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n[nodeal] {brand} finally put their {item} on their TikTok shop.\n[deal] Just don't drop {store price} in store when you can pick {them} up for {deal} on TikTok.\n{This is} their {product}, so you're definitely going to get that {feature 1} with {this pair}.\n[multi] I'm rocking the {color} here, but they also come in {other colors}.\n{who} {height}, rocking a size {size} in {this pair} {fit note}.\nSo I'd definitely recommend going true to size, but their most popular sizes are going quick.\nSo if you're seeing this in time and your size is still available, I definitely wouldn't miss out on {this pair}.",
+   "tags": [],
+   "product": "70db4e",
+   "notes": "From the Scripts & Links sheet",
+   "from_shoot": "oct-28-worn-faceless-old-navy-long-sleeve-waffle-2",
+   "edited": false,
+   "lines": [],
+   "marks": [],
+   "shots": [],
+   "source": null,
+   "from_template": null,
+   "id": "6694f9",
+   "created": 1793153338.1227672,
+   "updated": 1793153338.1227672
+  },
+  {
+   "title": "Oct 28 · Worn, faceless · Old Navy Waffle Henley - In",
+   "text": "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n[nodeal] {brand} finally put their {item} on their TikTok shop.\n[deal] Just don't drop {store price} in store when you can pick {them} up for {deal} on TikTok.\n{This is} their {product}, so you're definitely going to get that {feature 1} with {this pair}.\n[multi] I'm rocking the {color} here, but they also come in {other colors}.\n{who} {height}, rocking a size {size} in {this pair} {fit note}.\nSo I'd definitely recommend going true to size, but their most popular sizes are going quick.\nSo if you're seeing this in time and your size is still available, I definitely wouldn't miss out on {this pair}.",
+   "tags": [],
+   "product": "8e26fd",
+   "notes": "From the Scripts & Links sheet",
+   "from_shoot": "oct-28-worn-faceless-old-navy-waffle-henley-in",
+   "edited": false,
+   "lines": [],
+   "marks": [],
+   "shots": [],
+   "source": null,
+   "from_template": null,
+   "id": "011c22",
+   "created": 1793153338.1523192,
+   "updated": 1793153338.1523192
+  },
+  {
+   "title": "Oct 28 · Worn, faceless · Old Navy Waffle Henley - Jur",
+   "text": "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n[nodeal] {brand} finally put their {item} on their TikTok shop.\n[deal] Just don't drop {store price} in store when you can pick {them} up for {deal} on TikTok.\n{This is} their {product}, so you're definitely going to get that {feature 1} with {this pair}.\n[multi] I'm rocking the {color} here, but they also come in {other colors}.\n{who} {height}, rocking a size {size} in {this pair} {fit note}.\nSo I'd definitely recommend going true to size, but their most popular sizes are going quick.\nSo if you're seeing this in time and your size is still available, I definitely wouldn't miss out on {this pair}.",
+   "tags": [],
+   "product": "58c082",
+   "notes": "From the Scripts & Links sheet",
+   "from_shoot": "oct-28-worn-faceless-old-navy-waffle-henley-jur",
+   "edited": false,
+   "lines": [],
+   "marks": [],
+   "shots": [],
+   "source": null,
+   "from_template": null,
+   "id": "5e8a74",
+   "created": 1793153338.184778,
+   "updated": 1793153338.184778
+  },
+  {
+   "title": "Oct 28 · Worn, faceless · H&M Loose Fit Sweatpants - B",
+   "text": "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n[nodeal] {brand} finally put their {item} on their TikTok shop.\n[deal] Just don't drop {store price} in store when you can pick {them} up for {deal} on TikTok.\n{This is} their {product}, so you're definitely going to get that {feature 1} with {this pair}.\n[multi] I'm rocking the {color} here, but they also come in {other colors}.\n{who} {height}, rocking a size {size} in {this pair} {fit note}.\nSo I'd definitely recommend going true to size, but their most popular sizes are going quick.\nSo if you're seeing this in time and your size is still available, I definitely wouldn't miss out on {this pair}.",
+   "tags": [],
+   "product": "7e1c60",
+   "notes": "From the Scripts & Links sheet",
+   "from_shoot": "oct-28-worn-faceless-h-m-loose-fit-sweatpants-b",
+   "edited": false,
+   "lines": [],
+   "marks": [],
+   "shots": [],
+   "source": null,
+   "from_template": null,
+   "id": "458101",
+   "created": 1793153338.2817202,
+   "updated": 1793153338.2817202
+  },
+  {
+   "title": "Oct 28 · Worn, faceless · Old Navy Waffle Henley - Kic",
+   "text": "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n[nodeal] {brand} finally put their {item} on their TikTok shop.\n[deal] Just don't drop {store price} in store when you can pick {them} up for {deal} on TikTok.\n{This is} their {product}, so you're definitely going to get that {feature 1} with {this pair}.\n[multi] I'm rocking the {color} here, but they also come in {other colors}.\n{who} {height}, rocking a size {size} in {this pair} {fit note}.\nSo I'd definitely recommend going true to size, but their most popular sizes are going quick.\nSo if you're seeing this in time and your size is still available, I definitely wouldn't miss out on {this pair}.",
+   "tags": [],
+   "product": "aad169",
+   "notes": "From the Scripts & Links sheet",
+   "from_shoot": "oct-28-worn-faceless-old-navy-waffle-henley-kic",
+   "edited": false,
+   "lines": [],
+   "marks": [],
+   "shots": [],
+   "source": null,
+   "from_template": null,
+   "id": "1abe70",
+   "created": 1793153338.3489923,
+   "updated": 1793153338.3489923
   }
  ],
  "trash": {},

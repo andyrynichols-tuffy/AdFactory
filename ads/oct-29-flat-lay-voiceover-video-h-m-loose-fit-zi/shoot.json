@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 33,
+ "rev": 73,
  "title": "Oct 29 · Flat-lay voiceover video · H&M Loose-Fit Zip Hoodie - D",
  "created": 1793151906.568561,
  "product": {
@@ -12,13 +12,13 @@
  "reference": {
   "url": "",
   "file": "",
-  "notes": ""
+  "notes": "Directions from the script:\n• deal\n• nodeal\n• single\n• multi\n• deal\n• nodeal"
  },
  "sources": [],
  "script": [
   {
-   "id": "3d51e7",
-   "text": "H&M finally put their loose-fit zip-through hoodie on their TikTok shop.",
+   "id": "44f9dc",
+   "text": "{brand} is finally dumping their {item} on their TikTok shop. {brand} finally put their {item} on their TikTok shop.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -31,8 +31,8 @@
    "cut_offset": null
   },
   {
-   "id": "8b05df",
-   "text": "You're gonna get that super nice drawstring hood as well as the two front pockets, and I just love this dark brown colorway, it's gonna be perfect for this fall season.",
+   "id": "4595c2",
+   "text": "You're gonna get that super nice {feature 1} as well as the {feature 2}, and I just love this {color} colorway, it's gonna be perfect for this {season} season.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -45,8 +45,8 @@
    "cut_offset": null
   },
   {
-   "id": "c4e1ce",
-   "text": "I'm 6'2 185, rocking a size L.",
+   "id": "77c097",
+   "text": "You're gonna get that super nice {feature 1} as well as the {feature 2}, and I've got the {colors} here, so you can pick your favorite for this {season} season. {who} {height}, rocking a size {size}.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -59,8 +59,22 @@
    "cut_offset": null
   },
   {
-   "id": "03de4f",
-   "text": "These are selling out quick, and shipping is free right now, so if you wanna see if your size is still available, I'll leave a link down below.",
+   "id": "3feade",
+   "text": "These are selling out quick since they're {deal}, so if you wanna see if your size is still available, I'll leave a link down below.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "82ee00",
+   "text": "These are selling out quick{and shipping is free}, so if you wanna see if your size is still available, I'll leave a link down below.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -170,6 +184,7 @@
  "overlays": [],
  "renders": {},
  "saved": {},
+ "phone_off": [],
  "shop": {
   "product": "f1fed3",
   "account": "c4a9a3",
@@ -184,12 +199,13 @@
  },
  "sheet": {
   "row": "Oct 29 · Flat-lay voiceover video · H&M Loose-Fit Zip Hoodie - D",
-  "sig": "8ea7f0bce6f9",
+  "sig": "13fd38212cc5",
   "lines": [
-   "H&M finally put their loose-fit zip-through hoodie on their TikTok shop.",
-   "You're gonna get that super nice drawstring hood as well as the two front pockets, and I just love this dark brown colorway, it's gonna be perfect for this fall season.",
-   "I'm 6'2 185, rocking a size L.",
-   "These are selling out quick, and shipping is free right now, so if you wanna see if your size is still available, I'll leave a link down below."
+   "{brand} is finally dumping their {item} on their TikTok shop. {brand} finally put their {item} on their TikTok shop.",
+   "You're gonna get that super nice {feature 1} as well as the {feature 2}, and I just love this {color} colorway, it's gonna be perfect for this {season} season.",
+   "You're gonna get that super nice {feature 1} as well as the {feature 2}, and I've got the {colors} here, so you can pick your favorite for this {season} season. {who} {height}, rocking a size {size}.",
+   "These are selling out quick since they're {deal}, so if you wanna see if your size is still available, I'll leave a link down below.",
+   "These are selling out quick{and shipping is free}, so if you wanna see if your size is still available, I'll leave a link down below."
   ]
  }
 }

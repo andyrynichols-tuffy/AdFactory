@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 4,
+ "rev": 37,
  "title": "Oct 29 · Flat-lay voiceover video · Old Navy Long-Sleeve Waffle",
  "created": 1793153281.5037982,
  "product": {
@@ -170,13 +170,14 @@
  "overlays": [],
  "renders": {},
  "saved": {},
+ "phone_off": [],
  "shop": {
   "product": "70db4e",
   "account": "c4a9a3",
   "creator": "9d770c",
   "editor": null,
   "tags": [],
-  "script": "912ed1",
+  "script": "fd9a4d",
   "due": "2026-10-29",
   "notes": "White bed or couch, hand pointing. 2 takes, near-identical. One take, ~20 s, read the sale script while pointing at the item.\nLighting: Key (circle) at 45° to one side of the bed, above it, ~60%. Fill panel 1 on the other side, ~30%. Fill panel 2 above or behind the bed, low, so the white sheets light evenly. Tap to lock, then drop exposure a touch so the whites don't blow out. Don't move anything between takes.",
   "assigned": 1793153281.527398,

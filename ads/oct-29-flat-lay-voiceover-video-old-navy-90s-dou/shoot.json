@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 20,
+ "rev": 28,
  "title": "Oct 29 · Flat-lay voiceover video · Old Navy 90s Double-Knee Car",
  "created": 1793151906.3830864,
  "product": {
@@ -170,6 +170,7 @@
  "overlays": [],
  "renders": {},
  "saved": {},
+ "phone_off": [],
  "shop": {
   "product": "c8cebc",
   "account": "c4a9a3",
