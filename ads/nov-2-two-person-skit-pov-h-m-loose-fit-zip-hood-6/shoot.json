@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 5,
+ "rev": 6,
  "title": "Nov 2 · Two-person skit / POV · H&M Loose-Fit Zip Hoodie - D",
  "created": 1793152157.0369377,
  "product": {
@@ -17,7 +17,7 @@
  "sources": [],
  "script": [
   {
-   "id": "e4d7ca",
+   "id": "4eb25e",
    "text": "A: Wait, I love that zip-through hoodie, but does that tag say H&M?",
    "alts": [],
    "optional": false,
@@ -31,7 +31,7 @@
    "cut_offset": null
   },
   {
-   "id": "c0f6c5",
+   "id": "930c33",
    "text": "B: Yeah, it does, why?",
    "alts": [],
    "optional": false,
@@ -45,7 +45,7 @@
    "cut_offset": null
   },
   {
-   "id": "334f0b",
+   "id": "60976c",
    "text": "A: You spent that much in store?",
    "alts": [],
    "optional": false,
@@ -59,7 +59,7 @@
    "cut_offset": null
   },
   {
-   "id": "5978f0",
+   "id": "7cb31a",
    "text": "B: No, I got it for $35.98 with free shipping on their TikTok shop.",
    "alts": [],
    "optional": false,
@@ -73,7 +73,7 @@
    "cut_offset": null
   },
   {
-   "id": "f952cb",
+   "id": "6f666e",
    "text": "A: No way, that's actually such a good deal.",
    "alts": [],
    "optional": false,
@@ -87,7 +87,7 @@
    "cut_offset": null
   },
   {
-   "id": "a0dd93",
+   "id": "d519a2",
    "text": "B: Right, and look at the drawstring hood, I had to get it.",
    "alts": [],
    "optional": false,
@@ -101,7 +101,7 @@
    "cut_offset": null
   },
   {
-   "id": "10a680",
+   "id": "399200",
    "text": "A: Okay, you gotta drop the link.",
    "alts": [],
    "optional": false,
@@ -115,7 +115,7 @@
    "cut_offset": null
   },
   {
-   "id": "a8899f",
+   "id": "c6b6d0",
    "text": "B: I'll leave a link down below for you guys.",
    "alts": [],
    "optional": false,
@@ -234,7 +234,7 @@
   "tags": [],
   "script": "257e49",
   "due": "2026-11-02",
-  "notes": "Outside or by the car, both of you. 2 takes, near-identical. \"Wait, where'd you get those?\" The same exchange for each product.\nLighting: Outside: no lights; open shade (the shady side of the house or car) or golden hour, both of you facing the light. Inside: key (circle) in front between you, ~70%; one fill panel at 45° on each side, ~35%, so both of you are lit the same.",
+  "notes": "Outside or by the car, both of you. 1 take, near-identical. \"Wait, where'd you get those?\" The same exchange for each product.\nLighting: Outside: no lights; open shade (the shady side of the house or car) or golden hour, both of you facing the light. Inside: key (circle) in front between you, ~70%; one fill panel at 45° on each side, ~35%, so both of you are lit the same.",
   "assigned": 1793152157.0570874,
   "done": false
  },

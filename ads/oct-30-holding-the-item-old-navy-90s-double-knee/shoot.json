@@ -1,11 +1,11 @@
 {
  "version": 1,
- "rev": 18,
- "title": "Oct 30 · Holding the item · Old Navy Waffle Henley - Kic",
- "created": 1793151907.8052585,
+ "rev": 4,
+ "title": "Oct 30 · Holding the item · Old Navy 90s Double-Knee Car",
+ "created": 1793153282.6534393,
  "product": {
-  "name": "Old Navy Waffle Henley - Kicking Up Dust",
-  "link": "https://shop.tiktok.com/us/pdp/1732577449617167015",
+  "name": "Old Navy 90s Double-Knee Carpenter Jeans - Black Rinse",
+  "link": "https://shop.tiktok.com/us/pdp/1732422567656854183",
   "description": "",
   "hashtags": "#tiktokshop #tiktokmademebuyit"
  },
@@ -17,8 +17,8 @@
  "sources": [],
  "script": [
   {
-   "id": "9e758b",
-   "text": "Old Navy's official shop is finally on TikTok and they just put their long-sleeve henley on there, just in time for this fall season.",
+   "id": "17fa99",
+   "text": "Old Navy's official shop is finally on TikTok and they just put their 90s straight double-knee carpenter jeans on there, just in time for this fall season.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -31,8 +31,8 @@
    "cut_offset": null
   },
   {
-   "id": "8f21dd",
-   "text": "You get that super nice soft waffle knit as well as the button-up henley neckline.",
+   "id": "2346ff",
+   "text": "You get that super nice double-knee detail as well as the relaxed straight leg.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -45,7 +45,7 @@
    "cut_offset": null
   },
   {
-   "id": "8016ee",
+   "id": "6f5a09",
    "text": "There are multiple different colors to choose from.",
    "alts": [],
    "optional": false,
@@ -59,8 +59,8 @@
    "cut_offset": null
   },
   {
-   "id": "4186d1",
-   "text": "So if you want to see if your size is still available in this one, I'll leave a link down below.",
+   "id": "bbc410",
+   "text": "So if you want to see if your size is still available in this pair, I'll leave a link down below.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -171,25 +171,25 @@
  "renders": {},
  "saved": {},
  "shop": {
-  "product": "aad169",
+  "product": "c8cebc",
   "account": "c4a9a3",
   "creator": "9d770c",
   "editor": null,
   "tags": [],
-  "script": "e783a8",
+  "script": "fed014",
   "due": "2026-10-30",
-  "notes": "Hand-held close-up (shoes, gadgets, tags). 2 takes, near-identical. \"I think I just found the perfect…\" Good for side products.\nLighting: Key (circle) close and low to one side, grazing across the item, ~50%, so the knit or waffle texture pops. Fill panel 1 opposite, ~20%. Fill panel 2 off. Keep your hand and phone from shadowing the item; plain background.",
-  "assigned": 1793151907.8256755,
+  "notes": "Hand-held close-up (shoes, gadgets, tags). 1 take, near-identical. \"I think I just found the perfect…\" Good for side products.\nLighting: Key (circle) close and low to one side, grazing across the item, ~50%, so the knit or waffle texture pops. Fill panel 1 opposite, ~20%. Fill panel 2 off. Keep your hand and phone from shadowing the item; plain background.",
+  "assigned": 1793153282.666001,
   "done": false
  },
  "sheet": {
-  "row": "Oct 30 · Holding the item · Old Navy Waffle Henley - Kic",
-  "sig": "41abeff0dc10",
+  "row": "Oct 30 · Holding the item · Old Navy 90s Double-Knee Car",
+  "sig": "6006a38d1177",
   "lines": [
-   "Old Navy's official shop is finally on TikTok and they just put their long-sleeve henley on there, just in time for this fall season.",
-   "You get that super nice soft waffle knit as well as the button-up henley neckline.",
+   "Old Navy's official shop is finally on TikTok and they just put their 90s straight double-knee carpenter jeans on there, just in time for this fall season.",
+   "You get that super nice double-knee detail as well as the relaxed straight leg.",
    "There are multiple different colors to choose from.",
-   "So if you want to see if your size is still available in this one, I'll leave a link down below."
+   "So if you want to see if your size is still available in this pair, I'll leave a link down below."
   ]
  }
 }

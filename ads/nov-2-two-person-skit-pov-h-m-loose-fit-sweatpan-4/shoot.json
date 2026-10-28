@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 13,
+ "rev": 16,
  "title": "Nov 2 · Two-person skit / POV · H&M Loose Fit Sweatpants - D",
  "created": 1793152156.896391,
  "product": {
@@ -17,7 +17,7 @@
  "sources": [],
  "script": [
   {
-   "id": "bdd4b4",
+   "id": "2d650b",
    "text": "A: Wait, I love those sweatpants, but does that tag say H&M?",
    "alts": [],
    "optional": false,
@@ -31,7 +31,7 @@
    "cut_offset": null
   },
   {
-   "id": "d8898c",
+   "id": "11c7f9",
    "text": "B: Yeah, it does, why?",
    "alts": [],
    "optional": false,
@@ -45,7 +45,7 @@
    "cut_offset": null
   },
   {
-   "id": "cbe1c7",
+   "id": "e8fddd",
    "text": "A: You spent that much in store?",
    "alts": [],
    "optional": false,
@@ -59,7 +59,7 @@
    "cut_offset": null
   },
   {
-   "id": "76c787",
+   "id": "9fb266",
    "text": "B: No, I got them for $35.98 with free shipping on their TikTok shop.",
    "alts": [],
    "optional": false,
@@ -73,7 +73,7 @@
    "cut_offset": null
   },
   {
-   "id": "c9fc97",
+   "id": "51933a",
    "text": "A: No way, that's actually such a good deal.",
    "alts": [],
    "optional": false,
@@ -87,7 +87,7 @@
    "cut_offset": null
   },
   {
-   "id": "0275bf",
+   "id": "2f11e4",
    "text": "B: Right, and look at the soft brushed inside, I had to get them.",
    "alts": [],
    "optional": false,
@@ -101,7 +101,7 @@
    "cut_offset": null
   },
   {
-   "id": "8de3ee",
+   "id": "a5433e",
    "text": "A: Okay, you gotta drop the link.",
    "alts": [],
    "optional": false,
@@ -115,7 +115,7 @@
    "cut_offset": null
   },
   {
-   "id": "77ccc9",
+   "id": "b617cd",
    "text": "B: I'll leave a link down below for you guys.",
    "alts": [],
    "optional": false,
@@ -234,7 +234,7 @@
   "tags": [],
   "script": "4828c6",
   "due": "2026-11-02",
-  "notes": "Outside or by the car, both of you. 2 takes, near-identical. \"Wait, where'd you get those?\" The same exchange for each product.\nLighting: Outside: no lights; open shade (the shady side of the house or car) or golden hour, both of you facing the light. Inside: key (circle) in front between you, ~70%; one fill panel at 45° on each side, ~35%, so both of you are lit the same.",
+  "notes": "Outside or by the car, both of you. 1 take, near-identical. \"Wait, where'd you get those?\" The same exchange for each product.\nLighting: Outside: no lights; open shade (the shady side of the house or car) or golden hour, both of you facing the light. Inside: key (circle) in front between you, ~70%; one fill panel at 45° on each side, ~35%, so both of you are lit the same.",
   "assigned": 1793152156.9156892,
   "done": false
  },

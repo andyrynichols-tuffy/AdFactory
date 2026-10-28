@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 5,
+ "rev": 6,
  "title": "Oct 28 · Worn, faceless · Old Navy Long-Sleeve Waffle ",
  "created": 1793152152.674397,
  "product": {
@@ -17,7 +17,7 @@
  "sources": [],
  "script": [
   {
-   "id": "3806a4",
+   "id": "15dfca",
    "text": "Old Navy finally put their long-sleeve crew neck on their TikTok shop.",
    "alts": [],
    "optional": false,
@@ -31,7 +31,7 @@
    "cut_offset": null
   },
   {
-   "id": "adbf61",
+   "id": "9d5220",
    "text": "This is their Long-Sleeve Waffle Crew in heritage green, so you're definitely going to get that soft waffle knit with this one.",
    "alts": [],
    "optional": false,
@@ -45,7 +45,7 @@
    "cut_offset": null
   },
   {
-   "id": "8f60b7",
+   "id": "b5cc3f",
    "text": "I'm 6'2 185, rocking a size M in this one for a more fitted look.",
    "alts": [],
    "optional": false,
@@ -59,7 +59,7 @@
    "cut_offset": null
   },
   {
-   "id": "b2bbb7",
+   "id": "f3f7b5",
    "text": "So I'd definitely recommend going true to size, but their most popular sizes are going quick.",
    "alts": [],
    "optional": false,
@@ -73,7 +73,7 @@
    "cut_offset": null
   },
   {
-   "id": "d63398",
+   "id": "4ec50d",
    "text": "So if you're seeing this in time and your size is still available, I definitely wouldn't miss out on this one.",
    "alts": [],
    "optional": false,
@@ -192,7 +192,7 @@
   "tags": [],
   "script": "75f67d",
   "due": "2026-10-28",
-  "notes": "Bedroom, waist-down. 3 takes, near-identical. Wear it, film waist-down, say your height and size.\nLighting: Key (circle) in front at 45°, center at chest height, tilted down toward the waist, ~70%. Fill panel 1 on the other side, ~35%, so the fabric shows. Fill panel 2 behind and to the side, low, as a rim light that outlines the fit against the background. Never a window behind you. Tape a mark on the floor so every take matches.",
+  "notes": "Bedroom, waist-down. 1 take, near-identical. Wear it, film waist-down, say your height and size.\nLighting: Key (circle) in front at 45°, center at chest height, tilted down toward the waist, ~70%. Fill panel 1 on the other side, ~35%, so the fabric shows. Fill panel 2 behind and to the side, low, as a rim light that outlines the fit against the background. Never a window behind you. Tape a mark on the floor so every take matches.",
   "assigned": 1793152152.6839328,
   "done": false
  },

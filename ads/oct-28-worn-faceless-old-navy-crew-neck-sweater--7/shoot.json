@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 5,
+ "rev": 6,
  "title": "Oct 28 · Worn, faceless · Old Navy Crew-Neck Sweater -",
  "created": 1793152153.2028527,
  "product": {
@@ -17,7 +17,7 @@
  "sources": [],
  "script": [
   {
-   "id": "bec14f",
+   "id": "7b1c7b",
    "text": "Old Navy finally put their crew-neck sweater on their TikTok shop.",
    "alts": [],
    "optional": false,
@@ -31,7 +31,7 @@
    "cut_offset": null
   },
   {
-   "id": "484c5c",
+   "id": "e51af8",
    "text": "This is their Crew-Neck Sweater in forest canopy, so you're definitely going to get that chunky rib knit with this one.",
    "alts": [],
    "optional": false,
@@ -45,7 +45,7 @@
    "cut_offset": null
   },
   {
-   "id": "08783c",
+   "id": "ce35fd",
    "text": "I'm 6'2 185, rocking a size M in this one for a more fitted look.",
    "alts": [],
    "optional": false,
@@ -59,7 +59,7 @@
    "cut_offset": null
   },
   {
-   "id": "e798fb",
+   "id": "535543",
    "text": "So I'd definitely recommend going true to size, but their most popular sizes are going quick.",
    "alts": [],
    "optional": false,
@@ -73,7 +73,7 @@
    "cut_offset": null
   },
   {
-   "id": "25e88b",
+   "id": "377cf7",
    "text": "So if you're seeing this in time and your size is still available, I definitely wouldn't miss out on this one.",
    "alts": [],
    "optional": false,
@@ -192,7 +192,7 @@
   "tags": [],
   "script": "75f67d",
   "due": "2026-10-28",
-  "notes": "Bedroom, waist-down. 3 takes, near-identical. Wear it, film waist-down, say your height and size.\nLighting: Key (circle) in front at 45°, center at chest height, tilted down toward the waist, ~70%. Fill panel 1 on the other side, ~35%, so the fabric shows. Fill panel 2 behind and to the side, low, as a rim light that outlines the fit against the background. Never a window behind you. Tape a mark on the floor so every take matches.",
+  "notes": "Bedroom, waist-down. 1 take, near-identical. Wear it, film waist-down, say your height and size.\nLighting: Key (circle) in front at 45°, center at chest height, tilted down toward the waist, ~70%. Fill panel 1 on the other side, ~35%, so the fabric shows. Fill panel 2 behind and to the side, low, as a rim light that outlines the fit against the background. Never a window behind you. Tape a mark on the floor so every take matches.",
   "assigned": 1793152153.2237122,
   "done": false
  },

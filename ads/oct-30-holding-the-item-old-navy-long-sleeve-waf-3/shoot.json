@@ -1,10 +1,10 @@
 {
  "version": 1,
- "rev": 12,
+ "rev": 3,
  "title": "Oct 30 · Holding the item · Old Navy Long-Sleeve Waffle",
- "created": 1793152156.5721545,
+ "created": 1793153282.5050068,
  "product": {
-  "name": "Old Navy Long-Sleeve Waffle Crew - Sea Salt",
+  "name": "Old Navy Long-Sleeve Waffle Crew - Heritage Green",
   "link": "https://shop.tiktok.com/us/pdp/1732595338038186663",
   "description": "",
   "hashtags": "#tiktokshop #tiktokmademebuyit"
@@ -17,7 +17,7 @@
  "sources": [],
  "script": [
   {
-   "id": "19dcea",
+   "id": "485c02",
    "text": "Old Navy's official shop is finally on TikTok and they just put their long-sleeve crew neck on there, just in time for this fall season.",
    "alts": [],
    "optional": false,
@@ -31,7 +31,7 @@
    "cut_offset": null
   },
   {
-   "id": "f47fb4",
+   "id": "3ba1e0",
    "text": "You get that super nice soft waffle knit as well as the easy relaxed fit.",
    "alts": [],
    "optional": false,
@@ -45,8 +45,8 @@
    "cut_offset": null
   },
   {
-   "id": "2f30ea",
-   "text": "There are multiple different colors to choose from.",
+   "id": "1e2234",
+   "text": "I've got the heritage green, sea salt and dark walnut here, so you can pick your favorite.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -59,7 +59,7 @@
    "cut_offset": null
   },
   {
-   "id": "54e380",
+   "id": "e2d827",
    "text": "So if you want to see if your size is still available in this one, I'll leave a link down below.",
    "alts": [],
    "optional": false,
@@ -171,25 +171,15 @@
  "renders": {},
  "saved": {},
  "shop": {
-  "product": "9bbabf",
+  "product": "70db4e",
   "account": "c4a9a3",
   "creator": "9d770c",
   "editor": null,
   "tags": [],
-  "script": "f923b9",
+  "script": "fed014",
   "due": "2026-10-30",
   "notes": "Hand-held close-up (shoes, gadgets, tags). 1 take, near-identical. \"I think I just found the perfect…\" Good for side products.\nLighting: Key (circle) close and low to one side, grazing across the item, ~50%, so the knit or waffle texture pops. Fill panel 1 opposite, ~20%. Fill panel 2 off. Keep your hand and phone from shadowing the item; plain background.",
-  "assigned": 1793152156.581723,
+  "assigned": 1793153282.523713,
   "done": false
- },
- "sheet": {
-  "row": "Oct 30 · Holding the item · Old Navy Long-Sleeve Waffle",
-  "sig": "41abeff0dc10",
-  "lines": [
-   "Old Navy's official shop is finally on TikTok and they just put their long-sleeve crew neck on there, just in time for this fall season.",
-   "You get that super nice soft waffle knit as well as the easy relaxed fit.",
-   "There are multiple different colors to choose from.",
-   "So if you want to see if your size is still available in this one, I'll leave a link down below."
-  ]
  }
 }

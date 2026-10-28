@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 20,
+ "rev": 25,
  "title": "Nov 2 · Two-person skit / POV · H&M Loose-Fit Zip Hoodie - D",
  "created": 1793152156.946589,
  "product": {
@@ -17,7 +17,7 @@
  "sources": [],
  "script": [
   {
-   "id": "73c0e1",
+   "id": "0f5483",
    "text": "A: Wait, I love that zip-through hoodie, but does that tag say H&M?",
    "alts": [],
    "optional": false,
@@ -31,7 +31,7 @@
    "cut_offset": null
   },
   {
-   "id": "5c4565",
+   "id": "7a1c8f",
    "text": "B: Yeah, it does, why?",
    "alts": [],
    "optional": false,
@@ -45,7 +45,7 @@
    "cut_offset": null
   },
   {
-   "id": "1700a7",
+   "id": "54c52e",
    "text": "A: You spent that much in store?",
    "alts": [],
    "optional": false,
@@ -59,7 +59,7 @@
    "cut_offset": null
   },
   {
-   "id": "46d487",
+   "id": "166b28",
    "text": "B: No, I got it for $35.98 with free shipping on their TikTok shop.",
    "alts": [],
    "optional": false,
@@ -73,7 +73,7 @@
    "cut_offset": null
   },
   {
-   "id": "cf953a",
+   "id": "a8e1f6",
    "text": "A: No way, that's actually such a good deal.",
    "alts": [],
    "optional": false,
@@ -87,7 +87,7 @@
    "cut_offset": null
   },
   {
-   "id": "b6aeaa",
+   "id": "ba8e54",
    "text": "B: Right, and look at the drawstring hood, I had to get it.",
    "alts": [],
    "optional": false,
@@ -101,7 +101,7 @@
    "cut_offset": null
   },
   {
-   "id": "ee1df5",
+   "id": "1ede0b",
    "text": "A: Okay, you gotta drop the link.",
    "alts": [],
    "optional": false,
@@ -115,7 +115,7 @@
    "cut_offset": null
   },
   {
-   "id": "fb8e64",
+   "id": "29b1b4",
    "text": "B: I'll leave a link down below for you guys.",
    "alts": [],
    "optional": false,

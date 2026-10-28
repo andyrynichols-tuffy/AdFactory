@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 13,
+ "rev": 16,
  "title": "Nov 2 · Two-person skit / POV · H&M Loose Fit Sweatpants - L",
  "created": 1793152156.8539138,
  "product": {
@@ -17,7 +17,7 @@
  "sources": [],
  "script": [
   {
-   "id": "57120a",
+   "id": "8eac52",
    "text": "A: Wait, I love those sweatpants, but does that tag say H&M?",
    "alts": [],
    "optional": false,
@@ -31,7 +31,7 @@
    "cut_offset": null
   },
   {
-   "id": "e5e03e",
+   "id": "26ed3c",
    "text": "B: Yeah, it does, why?",
    "alts": [],
    "optional": false,
@@ -45,7 +45,7 @@
    "cut_offset": null
   },
   {
-   "id": "58c305",
+   "id": "31d6fe",
    "text": "A: You spent that much in store?",
    "alts": [],
    "optional": false,
@@ -59,7 +59,7 @@
    "cut_offset": null
   },
   {
-   "id": "3187e5",
+   "id": "03efff",
    "text": "B: No, I got them for $35.98 with free shipping on their TikTok shop.",
    "alts": [],
    "optional": false,
@@ -73,7 +73,7 @@
    "cut_offset": null
   },
   {
-   "id": "cd569a",
+   "id": "7ca75b",
    "text": "A: No way, that's actually such a good deal.",
    "alts": [],
    "optional": false,
@@ -87,7 +87,7 @@
    "cut_offset": null
   },
   {
-   "id": "005e4c",
+   "id": "ed4977",
    "text": "B: Right, and look at the soft brushed inside, I had to get them.",
    "alts": [],
    "optional": false,
@@ -101,7 +101,7 @@
    "cut_offset": null
   },
   {
-   "id": "ad0d70",
+   "id": "380d56",
    "text": "A: Okay, you gotta drop the link.",
    "alts": [],
    "optional": false,
@@ -115,7 +115,7 @@
    "cut_offset": null
   },
   {
-   "id": "f8b4fe",
+   "id": "9e4d8a",
    "text": "B: I'll leave a link down below for you guys.",
    "alts": [],
    "optional": false,

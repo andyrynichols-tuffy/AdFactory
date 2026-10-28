@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 17,
+ "rev": 20,
  "title": "Oct 29 · Flat-lay voiceover video · H&M Loose Fit Sweatpants - D",
  "created": 1793151906.525308,
  "product": {
@@ -17,7 +17,7 @@
  "sources": [],
  "script": [
   {
-   "id": "e0ef00",
+   "id": "089486",
    "text": "H&M finally put their sweatpants on their TikTok shop.",
    "alts": [],
    "optional": false,
@@ -31,7 +31,7 @@
    "cut_offset": null
   },
   {
-   "id": "336e35",
+   "id": "0ef25a",
    "text": "You're gonna get that super nice soft brushed inside as well as the drawstring waist and side pockets, and I just love this dark grey colorway, it's gonna be perfect for this fall season.",
    "alts": [],
    "optional": false,
@@ -45,7 +45,7 @@
    "cut_offset": null
   },
   {
-   "id": "d12566",
+   "id": "3a685e",
    "text": "I'm 6'2 185, rocking a size M.",
    "alts": [],
    "optional": false,
@@ -59,7 +59,7 @@
    "cut_offset": null
   },
   {
-   "id": "98bbf6",
+   "id": "a99161",
    "text": "These are selling out quick, and shipping is free right now, so if you wanna see if your size is still available, I'll leave a link down below.",
    "alts": [],
    "optional": false,
@@ -178,7 +178,7 @@
   "tags": [],
   "script": "db42b3",
   "due": "2026-10-29",
-  "notes": "White bed or couch, hand pointing. 3 takes, near-identical. One take, ~20 s, read the sale script while pointing at the item.\nLighting: Key (circle) at 45° to one side of the bed, above it, ~60%. Fill panel 1 on the other side, ~30%. Fill panel 2 above or behind the bed, low, so the white sheets light evenly. Tap to lock, then drop exposure a touch so the whites don't blow out. Don't move anything between takes.",
+  "notes": "White bed or couch, hand pointing. 1 take, near-identical. One take, ~20 s, read the sale script while pointing at the item.\nLighting: Key (circle) at 45° to one side of the bed, above it, ~60%. Fill panel 1 on the other side, ~30%. Fill panel 2 above or behind the bed, low, so the white sheets light evenly. Tap to lock, then drop exposure a touch so the whites don't blow out. Don't move anything between takes.",
   "assigned": 1793151906.5478015,
   "done": false
  },

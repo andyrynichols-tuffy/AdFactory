@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 28,
+ "rev": 33,
  "title": "Nov 2 · My new favorite (extra) · H&M Loose-Fit Zip Hoodie - D",
  "created": 1793151908.4845839,
  "product": {
@@ -17,7 +17,7 @@
  "sources": [],
  "script": [
   {
-   "id": "553144",
+   "id": "e076da",
    "text": "This is definitely my new favorite loose-fit zip-through hoodie from H&M.",
    "alts": [],
    "optional": false,
@@ -31,7 +31,7 @@
    "cut_offset": null
   },
   {
-   "id": "b868cb",
+   "id": "49fc71",
    "text": "You get that super nice drawstring hood you can pair with any outfit, as well as the two front pockets.",
    "alts": [],
    "optional": false,
@@ -45,7 +45,7 @@
    "cut_offset": null
   },
   {
-   "id": "61e008",
+   "id": "260929",
    "text": "These are selling out quick, though, so if you want to get yours with free shipping, I'll leave a link down below.",
    "alts": [],
    "optional": false,

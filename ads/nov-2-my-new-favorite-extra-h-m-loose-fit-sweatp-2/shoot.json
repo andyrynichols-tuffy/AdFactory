@@ -1,10 +1,10 @@
 {
  "version": 1,
- "rev": 17,
- "title": "Nov 2 · My new favorite (extra) · H&M Loose Fit Sweatpants - L",
- "created": 1793151908.4077704,
+ "rev": 3,
+ "title": "Nov 2 · My new favorite (extra) · H&M Loose Fit Sweatpants - B",
+ "created": 1793153283.4219902,
  "product": {
-  "name": "H&M Loose Fit Sweatpants - Light Grey Marl",
+  "name": "H&M Loose Fit Sweatpants - Black",
   "link": "https://shop.tiktok.com/us/pdp/1732146858012217649",
   "description": "",
   "hashtags": "#tiktokshop #tiktokmademebuyit"
@@ -17,7 +17,7 @@
  "sources": [],
  "script": [
   {
-   "id": "8569ec",
+   "id": "8ac52d",
    "text": "These are definitely my new favorite sweatpants from H&M.",
    "alts": [],
    "optional": false,
@@ -31,7 +31,7 @@
    "cut_offset": null
   },
   {
-   "id": "843a7c",
+   "id": "e7d173",
    "text": "You get that super nice soft brushed inside you can pair with any outfit, as well as the drawstring waist and side pockets.",
    "alts": [],
    "optional": false,
@@ -45,7 +45,21 @@
    "cut_offset": null
   },
   {
-   "id": "4677ca",
+   "id": "334ccc",
+   "text": "I got them in black and light grey marl, and honestly I can't pick a favorite.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "17f62a",
    "text": "These are selling out quick, though, so if you want to get yours with free shipping, I'll leave a link down below.",
    "alts": [],
    "optional": false,
@@ -157,24 +171,15 @@
  "renders": {},
  "saved": {},
  "shop": {
-  "product": "adb964",
+  "product": "7e1c60",
   "account": "c4a9a3",
   "creator": "9d770c",
   "editor": null,
   "tags": [],
-  "script": "c7cb62",
+  "script": "fcfb1a",
   "due": "2026-11-02",
   "notes": "Anything. 1 take, near-identical. His 'new favorite' script on one product, the fifth kind of post in the mix.\nLighting: Match the setup it borrows: key (circle) at 45°, fill panel opposite at about half power, second panel as rim or off. All at 5600K, room lights off.",
-  "assigned": 1793151908.425141,
+  "assigned": 1793153283.4414365,
   "done": false
- },
- "sheet": {
-  "row": "Nov 2 · My new favorite (extra) · H&M Loose Fit Sweatpants - L",
-  "sig": "593d1bd81a4e",
-  "lines": [
-   "These are definitely my new favorite sweatpants from H&M.",
-   "You get that super nice soft brushed inside you can pair with any outfit, as well as the drawstring waist and side pockets.",
-   "These are selling out quick, though, so if you want to get yours with free shipping, I'll leave a link down below."
-  ]
  }
 }

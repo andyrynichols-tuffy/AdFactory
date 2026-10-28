@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 17,
+ "rev": 20,
  "title": "Oct 29 · Flat-lay voiceover video · H&M Loose-Fit Zip Hoodie - G",
  "created": 1793151906.6124296,
  "product": {
@@ -17,7 +17,7 @@
  "sources": [],
  "script": [
   {
-   "id": "f7d5a3",
+   "id": "236e44",
    "text": "H&M finally put their loose-fit zip-through hoodie on their TikTok shop.",
    "alts": [],
    "optional": false,
@@ -31,7 +31,7 @@
    "cut_offset": null
   },
   {
-   "id": "ebb0a2",
+   "id": "f4e6d5",
    "text": "You're gonna get that super nice drawstring hood as well as the two front pockets, and I just love this grey marl colorway, it's gonna be perfect for this fall season.",
    "alts": [],
    "optional": false,
@@ -45,7 +45,7 @@
    "cut_offset": null
   },
   {
-   "id": "a7a963",
+   "id": "e8dcbb",
    "text": "I'm 6'2 185, rocking a size L.",
    "alts": [],
    "optional": false,
@@ -59,7 +59,7 @@
    "cut_offset": null
   },
   {
-   "id": "165bb5",
+   "id": "72e164",
    "text": "These are selling out quick, and shipping is free right now, so if you wanna see if your size is still available, I'll leave a link down below.",
    "alts": [],
    "optional": false,
@@ -178,7 +178,7 @@
   "tags": [],
   "script": "b923c5",
   "due": "2026-10-29",
-  "notes": "White bed or couch, hand pointing. 3 takes, near-identical. One take, ~20 s, read the sale script while pointing at the item.\nLighting: Key (circle) at 45° to one side of the bed, above it, ~60%. Fill panel 1 on the other side, ~30%. Fill panel 2 above or behind the bed, low, so the white sheets light evenly. Tap to lock, then drop exposure a touch so the whites don't blow out. Don't move anything between takes.",
+  "notes": "White bed or couch, hand pointing. 1 take, near-identical. One take, ~20 s, read the sale script while pointing at the item.\nLighting: Key (circle) at 45° to one side of the bed, above it, ~60%. Fill panel 1 on the other side, ~30%. Fill panel 2 above or behind the bed, low, so the white sheets light evenly. Tap to lock, then drop exposure a touch so the whites don't blow out. Don't move anything between takes.",
   "assigned": 1793151906.6354537,
   "done": false
  },

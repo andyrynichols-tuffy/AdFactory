@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 17,
+ "rev": 20,
  "title": "Oct 29 · Flat-lay voiceover video · Old Navy 90s Double-Knee Car",
  "created": 1793151906.3830864,
  "product": {
@@ -17,7 +17,7 @@
  "sources": [],
  "script": [
   {
-   "id": "40cba8",
+   "id": "4efab8",
    "text": "Old Navy finally put their 90s straight double-knee carpenter jeans on their TikTok shop.",
    "alts": [],
    "optional": false,
@@ -31,7 +31,7 @@
    "cut_offset": null
   },
   {
-   "id": "d4c8d5",
+   "id": "12b6bf",
    "text": "You're gonna get that super nice double-knee detail as well as the relaxed straight leg, and I just love this black rinse colorway, it's gonna be perfect for this fall season.",
    "alts": [],
    "optional": false,
@@ -45,7 +45,7 @@
    "cut_offset": null
   },
   {
-   "id": "08b187",
+   "id": "fe6c37",
    "text": "I'm 6'2 185, rocking a size 34x30.",
    "alts": [],
    "optional": false,
@@ -59,7 +59,7 @@
    "cut_offset": null
   },
   {
-   "id": "6c9573",
+   "id": "4ec56b",
    "text": "These are selling out quick, so if you wanna see if your size is still available, I'll leave a link down below.",
    "alts": [],
    "optional": false,
@@ -178,7 +178,7 @@
   "tags": [],
   "script": "7a5c09",
   "due": "2026-10-29",
-  "notes": "White bed or couch, hand pointing. 3 takes, near-identical. One take, ~20 s, read the sale script while pointing at the item.\nLighting: Key (circle) at 45° to one side of the bed, above it, ~60%. Fill panel 1 on the other side, ~30%. Fill panel 2 above or behind the bed, low, so the white sheets light evenly. Tap to lock, then drop exposure a touch so the whites don't blow out. Don't move anything between takes.",
+  "notes": "White bed or couch, hand pointing. 2 takes, near-identical. One take, ~20 s, read the sale script while pointing at the item.\nLighting: Key (circle) at 45° to one side of the bed, above it, ~60%. Fill panel 1 on the other side, ~30%. Fill panel 2 above or behind the bed, low, so the white sheets light evenly. Tap to lock, then drop exposure a touch so the whites don't blow out. Don't move anything between takes.",
   "assigned": 1793151906.4082806,
   "done": false
  },

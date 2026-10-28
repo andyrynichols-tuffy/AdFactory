@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 72,
+ "rev": 75,
  "title": "Oct 30 · Holding the item · H&M Loose Fit Sweatpants - D",
  "created": 1793144253.6590555,
  "product": {
@@ -17,7 +17,7 @@
  "sources": [],
  "script": [
   {
-   "id": "b28b36",
+   "id": "a64ff0",
    "text": "H&M's official shop is finally on TikTok and they just put their sweatpants on there, just in time for this fall season.",
    "alts": [],
    "optional": false,
@@ -31,7 +31,7 @@
    "cut_offset": null
   },
   {
-   "id": "7de21f",
+   "id": "09951a",
    "text": "You get that super nice soft brushed inside as well as the drawstring waist and side pockets.",
    "alts": [],
    "optional": false,
@@ -45,7 +45,7 @@
    "cut_offset": null
   },
   {
-   "id": "39c3c0",
+   "id": "da9e72",
    "text": "There are multiple different colors to choose from.",
    "alts": [],
    "optional": false,
@@ -59,7 +59,7 @@
    "cut_offset": null
   },
   {
-   "id": "1fedb4",
+   "id": "7b428a",
    "text": "So if you want to see if your size is still available in this pair, I'll leave a link down below.",
    "alts": [],
    "optional": false,
@@ -178,7 +178,7 @@
   "tags": [],
   "script": "a63bbd",
   "due": "2026-10-30",
-  "notes": "Hand-held close-up (shoes, gadgets, tags). 2 takes, near-identical. \"I think I just found the perfect…\" Good for side products.\nLighting: Key (circle) close and low to one side, grazing across the item, ~50%, so the knit or waffle texture pops. Fill panel 1 opposite, ~20%. Fill panel 2 off. Keep your hand and phone from shadowing the item; plain background.",
+  "notes": "Hand-held close-up (shoes, gadgets, tags). 1 take, near-identical. \"I think I just found the perfect…\" Good for side products.\nLighting: Key (circle) close and low to one side, grazing across the item, ~50%, so the knit or waffle texture pops. Fill panel 1 opposite, ~20%. Fill panel 2 off. Keep your hand and phone from shadowing the item; plain background.",
   "assigned": 1793144253.6681192,
   "done": false
  },

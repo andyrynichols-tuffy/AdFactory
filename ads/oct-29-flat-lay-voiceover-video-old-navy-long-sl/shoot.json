@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 5,
+ "rev": 6,
  "title": "Oct 29 · Flat-lay voiceover video · Old Navy Long-Sleeve Waffle ",
  "created": 1793152155.1243844,
  "product": {
@@ -17,7 +17,7 @@
  "sources": [],
  "script": [
   {
-   "id": "86ec18",
+   "id": "3a536a",
    "text": "Old Navy finally put their long-sleeve crew neck on their TikTok shop.",
    "alts": [],
    "optional": false,
@@ -31,7 +31,7 @@
    "cut_offset": null
   },
   {
-   "id": "f9847f",
+   "id": "4371ea",
    "text": "You're gonna get that super nice soft waffle knit as well as the easy relaxed fit, and I just love this heritage green colorway, it's gonna be perfect for this fall season.",
    "alts": [],
    "optional": false,
@@ -45,7 +45,7 @@
    "cut_offset": null
   },
   {
-   "id": "79d2d7",
+   "id": "2771fd",
    "text": "I'm 6'2 185, rocking a size M.",
    "alts": [],
    "optional": false,
@@ -59,7 +59,7 @@
    "cut_offset": null
   },
   {
-   "id": "072780",
+   "id": "aea336",
    "text": "These are selling out quick, so if you wanna see if your size is still available, I'll leave a link down below.",
    "alts": [],
    "optional": false,
@@ -178,7 +178,7 @@
   "tags": [],
   "script": "912ed1",
   "due": "2026-10-29",
-  "notes": "White bed or couch, hand pointing. 3 takes, near-identical. One take, ~20 s, read the sale script while pointing at the item.\nLighting: Key (circle) at 45° to one side of the bed, above it, ~60%. Fill panel 1 on the other side, ~30%. Fill panel 2 above or behind the bed, low, so the white sheets light evenly. Tap to lock, then drop exposure a touch so the whites don't blow out. Don't move anything between takes.",
+  "notes": "White bed or couch, hand pointing. 1 take, near-identical. One take, ~20 s, read the sale script while pointing at the item.\nLighting: Key (circle) at 45° to one side of the bed, above it, ~60%. Fill panel 1 on the other side, ~30%. Fill panel 2 above or behind the bed, low, so the white sheets light evenly. Tap to lock, then drop exposure a touch so the whites don't blow out. Don't move anything between takes.",
   "assigned": 1793152155.1417503,
   "done": false
  },

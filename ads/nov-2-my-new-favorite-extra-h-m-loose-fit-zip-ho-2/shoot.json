@@ -1,10 +1,10 @@
 {
  "version": 1,
- "rev": 17,
- "title": "Nov 2 · My new favorite (extra) · H&M Loose-Fit Zip Hoodie - G",
- "created": 1793151908.520341,
+ "rev": 3,
+ "title": "Nov 2 · My new favorite (extra) · H&M Loose-Fit Zip Hoodie - D",
+ "created": 1793153283.5013685,
  "product": {
-  "name": "H&M Loose-Fit Zip Hoodie - Grey Marl",
+  "name": "H&M Loose-Fit Zip Hoodie - Dark Brown",
   "link": "https://shop.tiktok.com/us/pdp/1732085413314597169",
   "description": "",
   "hashtags": "#tiktokshop #tiktokmademebuyit"
@@ -17,7 +17,7 @@
  "sources": [],
  "script": [
   {
-   "id": "000e12",
+   "id": "c2a21b",
    "text": "This is definitely my new favorite loose-fit zip-through hoodie from H&M.",
    "alts": [],
    "optional": false,
@@ -31,7 +31,7 @@
    "cut_offset": null
   },
   {
-   "id": "fb1b47",
+   "id": "7f2d11",
    "text": "You get that super nice drawstring hood you can pair with any outfit, as well as the two front pockets.",
    "alts": [],
    "optional": false,
@@ -45,7 +45,21 @@
    "cut_offset": null
   },
   {
-   "id": "91765b",
+   "id": "63a7bd",
+   "text": "I got it in dark brown and grey marl, and honestly I can't pick a favorite.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "a36ca5",
    "text": "These are selling out quick, though, so if you want to get yours with free shipping, I'll leave a link down below.",
    "alts": [],
    "optional": false,
@@ -157,24 +171,15 @@
  "renders": {},
  "saved": {},
  "shop": {
-  "product": "239664",
+  "product": "f1fed3",
   "account": "c4a9a3",
   "creator": "9d770c",
   "editor": null,
   "tags": [],
-  "script": "8ee6cc",
+  "script": "fcfb1a",
   "due": "2026-11-02",
   "notes": "Anything. 1 take, near-identical. His 'new favorite' script on one product, the fifth kind of post in the mix.\nLighting: Match the setup it borrows: key (circle) at 45°, fill panel opposite at about half power, second panel as rim or off. All at 5600K, room lights off.",
-  "assigned": 1793151908.5377507,
+  "assigned": 1793153283.52645,
   "done": false
- },
- "sheet": {
-  "row": "Nov 2 · My new favorite (extra) · H&M Loose-Fit Zip Hoodie - G",
-  "sig": "593d1bd81a4e",
-  "lines": [
-   "This is definitely my new favorite loose-fit zip-through hoodie from H&M.",
-   "You get that super nice drawstring hood you can pair with any outfit, as well as the two front pockets.",
-   "These are selling out quick, though, so if you want to get yours with free shipping, I'll leave a link down below."
-  ]
  }
 }

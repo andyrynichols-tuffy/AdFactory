@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 39,
+ "rev": 46,
  "title": "Oct 29 · Flat-lay voiceover video · Old Navy Crew-Neck Sweater -",
  "created": 1793151906.26212,
  "product": {
@@ -17,7 +17,7 @@
  "sources": [],
  "script": [
   {
-   "id": "a4c030",
+   "id": "8ea615",
    "text": "Old Navy finally put their crew-neck sweater on their TikTok shop.",
    "alts": [],
    "optional": false,
@@ -31,7 +31,7 @@
    "cut_offset": null
   },
   {
-   "id": "a5d366",
+   "id": "2e9f4c",
    "text": "You're gonna get that super nice chunky rib knit as well as the relaxed raglan sleeves, and I just love this brown heather colorway, it's gonna be perfect for this fall season.",
    "alts": [],
    "optional": false,
@@ -45,7 +45,7 @@
    "cut_offset": null
   },
   {
-   "id": "b1047d",
+   "id": "4b1065",
    "text": "I'm 6'2 185, rocking a size L.",
    "alts": [],
    "optional": false,
@@ -59,7 +59,7 @@
    "cut_offset": null
   },
   {
-   "id": "873e7e",
+   "id": "90a1f5",
    "text": "These are selling out quick, so if you wanna see if your size is still available, I'll leave a link down below.",
    "alts": [],
    "optional": false,
@@ -178,7 +178,7 @@
   "tags": [],
   "script": "31a695",
   "due": "2026-10-29",
-  "notes": "White bed or couch, hand pointing. 4 takes, near-identical. One take, ~20 s, read the sale script while pointing at the item.\nLighting: Key (circle) at 45° to one side of the bed, above it, ~60%. Fill panel 1 on the other side, ~30%. Fill panel 2 above or behind the bed, low, so the white sheets light evenly. Tap to lock, then drop exposure a touch so the whites don't blow out. Don't move anything between takes.",
+  "notes": "White bed or couch, hand pointing. 2 takes, near-identical. One take, ~20 s, read the sale script while pointing at the item.\nLighting: Key (circle) at 45° to one side of the bed, above it, ~60%. Fill panel 1 on the other side, ~30%. Fill panel 2 above or behind the bed, low, so the white sheets light evenly. Tap to lock, then drop exposure a touch so the whites don't blow out. Don't move anything between takes.",
   "assigned": 1793151906.2692652,
   "done": false
  },

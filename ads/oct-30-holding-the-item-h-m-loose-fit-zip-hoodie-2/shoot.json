@@ -1,10 +1,10 @@
 {
  "version": 1,
- "rev": 17,
- "title": "Oct 30 · Holding the item · H&M Loose-Fit Zip Hoodie - G",
- "created": 1793151907.6761549,
+ "rev": 3,
+ "title": "Oct 30 · Holding the item · H&M Loose-Fit Zip Hoodie - D",
+ "created": 1793153282.3584216,
  "product": {
-  "name": "H&M Loose-Fit Zip Hoodie - Grey Marl",
+  "name": "H&M Loose-Fit Zip Hoodie - Dark Brown",
   "link": "https://shop.tiktok.com/us/pdp/1732085413314597169",
   "description": "",
   "hashtags": "#tiktokshop #tiktokmademebuyit"
@@ -17,7 +17,7 @@
  "sources": [],
  "script": [
   {
-   "id": "952fbf",
+   "id": "7e18f2",
    "text": "H&M's official shop is finally on TikTok and they just put their loose-fit zip-through hoodie on there, just in time for this fall season.",
    "alts": [],
    "optional": false,
@@ -31,7 +31,7 @@
    "cut_offset": null
   },
   {
-   "id": "cff2b4",
+   "id": "c8eb8b",
    "text": "You get that super nice drawstring hood as well as the two front pockets.",
    "alts": [],
    "optional": false,
@@ -45,8 +45,8 @@
    "cut_offset": null
   },
   {
-   "id": "fd3dcf",
-   "text": "There are multiple different colors to choose from.",
+   "id": "a4a1c1",
+   "text": "I've got the dark brown and grey marl here, so you can pick your favorite.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -59,7 +59,7 @@
    "cut_offset": null
   },
   {
-   "id": "609df9",
+   "id": "2428d4",
    "text": "So if you want to see if your size is still available in this one, I'll leave a link down below.",
    "alts": [],
    "optional": false,
@@ -171,25 +171,15 @@
  "renders": {},
  "saved": {},
  "shop": {
-  "product": "239664",
+  "product": "f1fed3",
   "account": "c4a9a3",
   "creator": "9d770c",
   "editor": null,
   "tags": [],
-  "script": "081f39",
+  "script": "fed014",
   "due": "2026-10-30",
-  "notes": "Hand-held close-up (shoes, gadgets, tags). 2 takes, near-identical. \"I think I just found the perfect…\" Good for side products.\nLighting: Key (circle) close and low to one side, grazing across the item, ~50%, so the knit or waffle texture pops. Fill panel 1 opposite, ~20%. Fill panel 2 off. Keep your hand and phone from shadowing the item; plain background.",
-  "assigned": 1793151907.6953568,
+  "notes": "Hand-held close-up (shoes, gadgets, tags). 1 take, near-identical. \"I think I just found the perfect…\" Good for side products.\nLighting: Key (circle) close and low to one side, grazing across the item, ~50%, so the knit or waffle texture pops. Fill panel 1 opposite, ~20%. Fill panel 2 off. Keep your hand and phone from shadowing the item; plain background.",
+  "assigned": 1793153282.3769493,
   "done": false
- },
- "sheet": {
-  "row": "Oct 30 · Holding the item · H&M Loose-Fit Zip Hoodie - G",
-  "sig": "41abeff0dc10",
-  "lines": [
-   "H&M's official shop is finally on TikTok and they just put their loose-fit zip-through hoodie on there, just in time for this fall season.",
-   "You get that super nice drawstring hood as well as the two front pockets.",
-   "There are multiple different colors to choose from.",
-   "So if you want to see if your size is still available in this one, I'll leave a link down below."
-  ]
  }
 }

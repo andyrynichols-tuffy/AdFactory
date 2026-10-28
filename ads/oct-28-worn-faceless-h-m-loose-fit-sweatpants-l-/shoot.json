@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 13,
+ "rev": 16,
  "title": "Oct 28 · Worn, faceless · H&M Loose Fit Sweatpants - L",
  "created": 1793152153.4587066,
  "product": {
@@ -17,7 +17,7 @@
  "sources": [],
  "script": [
   {
-   "id": "b6c476",
+   "id": "f173ba",
    "text": "H&M finally put their sweatpants on their TikTok shop.",
    "alts": [],
    "optional": false,
@@ -31,7 +31,7 @@
    "cut_offset": null
   },
   {
-   "id": "46474c",
+   "id": "55833d",
    "text": "These are their Loose Fit Sweatpants in light grey marl, so you're definitely going to get that soft brushed inside with this pair.",
    "alts": [],
    "optional": false,
@@ -45,7 +45,7 @@
    "cut_offset": null
   },
   {
-   "id": "6a6f1c",
+   "id": "179e94",
    "text": "I'm 6'2 185, rocking a size M in this pair for a more fitted look.",
    "alts": [],
    "optional": false,
@@ -59,7 +59,7 @@
    "cut_offset": null
   },
   {
-   "id": "9b8888",
+   "id": "b2612c",
    "text": "So I'd definitely recommend going true to size, but their most popular sizes are going quick.",
    "alts": [],
    "optional": false,
@@ -73,7 +73,7 @@
    "cut_offset": null
   },
   {
-   "id": "34b90e",
+   "id": "474a31",
    "text": "So if you're seeing this in time and your size is still available, I definitely wouldn't miss out on this pair.",
    "alts": [],
    "optional": false,
@@ -192,7 +192,7 @@
   "tags": [],
   "script": "0d0687",
   "due": "2026-10-28",
-  "notes": "Bedroom, waist-down. 2 takes, near-identical. Wear it, film waist-down, say your height and size.\nLighting: Key (circle) in front at 45°, center at chest height, tilted down toward the waist, ~70%. Fill panel 1 on the other side, ~35%, so the fabric shows. Fill panel 2 behind and to the side, low, as a rim light that outlines the fit against the background. Never a window behind you. Tape a mark on the floor so every take matches.",
+  "notes": "Bedroom, waist-down. 1 take, near-identical. Wear it, film waist-down, say your height and size.\nLighting: Key (circle) in front at 45°, center at chest height, tilted down toward the waist, ~70%. Fill panel 1 on the other side, ~35%, so the fabric shows. Fill panel 2 behind and to the side, low, as a rim light that outlines the fit against the background. Never a window behind you. Tape a mark on the floor so every take matches.",
   "assigned": 1793152153.4744506,
   "done": false
  },

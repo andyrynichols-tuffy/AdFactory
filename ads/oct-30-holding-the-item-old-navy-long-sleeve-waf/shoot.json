@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 5,
+ "rev": 7,
  "title": "Oct 30 · Holding the item · Old Navy Long-Sleeve Waffle ",
  "created": 1793152156.4787815,
  "product": {
@@ -17,7 +17,7 @@
  "sources": [],
  "script": [
   {
-   "id": "41a0f1",
+   "id": "5b3b8a",
    "text": "Old Navy's official shop is finally on TikTok and they just put their long-sleeve crew neck on there, just in time for this fall season.",
    "alts": [],
    "optional": false,
@@ -31,7 +31,7 @@
    "cut_offset": null
   },
   {
-   "id": "0af3d9",
+   "id": "4dd8a3",
    "text": "You get that super nice soft waffle knit as well as the easy relaxed fit.",
    "alts": [],
    "optional": false,
@@ -45,7 +45,7 @@
    "cut_offset": null
   },
   {
-   "id": "1448ad",
+   "id": "b85a05",
    "text": "There are multiple different colors to choose from.",
    "alts": [],
    "optional": false,
@@ -59,7 +59,7 @@
    "cut_offset": null
   },
   {
-   "id": "6d4f0c",
+   "id": "e728dc",
    "text": "So if you want to see if your size is still available in this one, I'll leave a link down below.",
    "alts": [],
    "optional": false,
@@ -178,7 +178,7 @@
   "tags": [],
   "script": "fed014",
   "due": "2026-10-30",
-  "notes": "Hand-held close-up (shoes, gadgets, tags). 2 takes, near-identical. \"I think I just found the perfect…\" Good for side products.\nLighting: Key (circle) close and low to one side, grazing across the item, ~50%, so the knit or waffle texture pops. Fill panel 1 opposite, ~20%. Fill panel 2 off. Keep your hand and phone from shadowing the item; plain background.",
+  "notes": "Hand-held close-up (shoes, gadgets, tags). 1 take, near-identical. \"I think I just found the perfect…\" Good for side products.\nLighting: Key (circle) close and low to one side, grazing across the item, ~50%, so the knit or waffle texture pops. Fill panel 1 opposite, ~20%. Fill panel 2 off. Keep your hand and phone from shadowing the item; plain background.",
   "assigned": 1793152156.4986973,
   "done": false
  },

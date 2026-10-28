@@ -1530,7 +1530,7 @@
   },
   {
    "title": "Sale news (flat-lay voiceover)",
-   "text": "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n[nodeal] {brand} finally put their {item} on their TikTok shop.\nYou're gonna get that super nice {feature 1} as well as the {feature 2}, and I just love this {color} colorway, it's gonna be perfect for this {season} season.\n{who} {height}, rocking a size {size}.\n[deal] These are selling out quick since they're {deal}, so if you wanna see if your size is still available, I'll leave a link down below.\n[nodeal] These are selling out quick{and shipping is free}, so if you wanna see if your size is still available, I'll leave a link down below.",
+   "text": "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n[nodeal] {brand} finally put their {item} on their TikTok shop.\n[single] You're gonna get that super nice {feature 1} as well as the {feature 2}, and I just love this {color} colorway, it's gonna be perfect for this {season} season.\n[multi] You're gonna get that super nice {feature 1} as well as the {feature 2}, and I've got the {colors} here, so you can pick your favorite for this {season} season.\n{who} {height}, rocking a size {size}.\n[deal] These are selling out quick since they're {deal}, so if you wanna see if your size is still available, I'll leave a link down below.\n[nodeal] These are selling out quick{and shipping is free}, so if you wanna see if your size is still available, I'll leave a link down below.",
    "tags": [
     "8d126a",
     "eeb4ae"
@@ -1546,11 +1546,11 @@
    "from_template": null,
    "id": "912ed1",
    "created": 1793127373.3204288,
-   "updated": 1793152132.6645114
+   "updated": 1793153261.0508542
   },
   {
    "title": "Height + size (worn, faceless)",
-   "text": "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n[nodeal] {brand} finally put their {item} on their TikTok shop.\n[deal] Just don't drop {store price} in store when you can pick {them} up for {deal} on TikTok.\n{This is} their {product}, so you're definitely going to get that {feature 1} with {this pair}.\n{who} {height}, rocking a size {size} in {this pair} {fit note}.\nSo I'd definitely recommend going true to size, but their most popular sizes are going quick.\nSo if you're seeing this in time and your size is still available, I definitely wouldn't miss out on {this pair}.",
+   "text": "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n[nodeal] {brand} finally put their {item} on their TikTok shop.\n[deal] Just don't drop {store price} in store when you can pick {them} up for {deal} on TikTok.\n{This is} their {product}, so you're definitely going to get that {feature 1} with {this pair}.\n[multi] I'm rocking the {color} here, but they also come in {other colors}.\n{who} {height}, rocking a size {size} in {this pair} {fit note}.\nSo I'd definitely recommend going true to size, but their most popular sizes are going quick.\nSo if you're seeing this in time and your size is still available, I definitely wouldn't miss out on {this pair}.",
    "tags": [
     "c77940"
    ],
@@ -1565,7 +1565,7 @@
    "from_template": null,
    "id": "75f67d",
    "created": 1793127373.3440218,
-   "updated": 1793152132.7245939
+   "updated": 1793153261.1453323
   },
   {
    "title": "I just found the perfect one (held item)",
@@ -1604,7 +1604,7 @@
    "from_template": null,
    "id": "1a7555",
    "created": 1793127373.3875465,
-   "updated": 1793152132.8419461
+   "updated": 1793153261.2728508
   },
   {
    "title": "On-image text (carousel)",
@@ -1623,7 +1623,7 @@
    "from_template": null,
    "id": "b289a0",
    "created": 1793127373.4052935,
-   "updated": 1793152132.9203315
+   "updated": 1793153261.3439105
   },
   {
    "title": "Oct 30 · Two-person skit / POV · H&M Loose-Fit Zip Hoodie - G",
@@ -2188,7 +2188,7 @@
   },
   {
    "title": "Official shop is on TikTok (held item)",
-   "text": "[deal] {brand}'s official shop is finally on TikTok and they're dumping all of their {item} just in time for this {season} season.\n[nodeal] {brand}'s official shop is finally on TikTok and they just put their {item} on there, just in time for this {season} season.\n[deal] Just don't drop {store price} in store when you can pick {them} up for way cheaper on here.\nYou get that super nice {feature 1} as well as the {feature 2}.\nThere are multiple different colors to choose from.\nSo if you want to see if your size is still available in {this pair}, I'll leave a link down below.",
+   "text": "[deal] {brand}'s official shop is finally on TikTok and they're dumping all of their {item} just in time for this {season} season.\n[nodeal] {brand}'s official shop is finally on TikTok and they just put their {item} on there, just in time for this {season} season.\n[deal] Just don't drop {store price} in store when you can pick {them} up for way cheaper on here.\nYou get that super nice {feature 1} as well as the {feature 2}.\n[single] There are multiple different colors to choose from.\n[multi] I've got the {colors} here, so you can pick your favorite.\nSo if you want to see if your size is still available in {this pair}, I'll leave a link down below.",
    "tags": [
     "8d126a"
    ],
@@ -2203,11 +2203,11 @@
    "from_template": null,
    "id": "fed014",
    "created": 1793151087.4121134,
-   "updated": 1793152132.7940233
+   "updated": 1793153261.2221653
   },
   {
    "title": "My new favorite (extra slot)",
-   "text": "{this is} definitely my new favorite {item} from {brand}.\nYou get that super nice {feature 1} you can pair with any outfit, as well as the {feature 2}.\n[deal] These are selling out quick, though, so if you want to get yours {deal}, I'll leave a link down below.\n[nodeal] These are selling out quick, though, so if you want to get yours{with free shipping}, I'll leave a link down below.",
+   "text": "{this is} definitely my new favorite {item} from {brand}.\nYou get that super nice {feature 1} you can pair with any outfit, as well as the {feature 2}.\n[multi] I got {it} in {colors}, and honestly I can't pick a favorite.\n[deal] These are selling out quick, though, so if you want to get yours {deal}, I'll leave a link down below.\n[nodeal] These are selling out quick, though, so if you want to get yours{with free shipping}, I'll leave a link down below.",
    "tags": [],
    "product": null,
    "notes": "Planner template, modelled on @sully.finds (docs/sully-finds-study.md)",
@@ -2220,7 +2220,7 @@
    "from_template": null,
    "id": "fcfb1a",
    "created": 1793151087.4545634,
-   "updated": 1793152132.8908794
+   "updated": 1793153261.3172402
   },
   {
    "title": "Nov 2 · My new favorite (extra) · H&M Loose-Fit Zip Hoodie - D",
@@ -2921,7 +2921,7 @@
   },
   {
    "title": "Sale news (flat-lay voiceover) · B",
-   "text": "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n[nodeal] {brand} finally put their {item} on their TikTok shop.\nYou're gonna get that {feature 1} that pairs perfectly with any outfit and that {feature 2}.\n{who} {height}, rocking a size {size}.\n[deal] The only problem is these are selling out quick since they're {deal}, so if you wanna see if your size is still available, I'll leave a link below.\n[nodeal] The only problem is these are selling out quick, so if you wanna see if your size is still available, I'll leave a link below.",
+   "text": "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n[nodeal] {brand} finally put their {item} on their TikTok shop.\nYou're gonna get that {feature 1} that pairs perfectly with any outfit and that {feature 2}.\n[multi] I've got the {colors} here, and they go with pretty much anything.\n{who} {height}, rocking a size {size}.\n[deal] The only problem is these are selling out quick since they're {deal}, so if you wanna see if your size is still available, I'll leave a link below.\n[nodeal] The only problem is these are selling out quick, so if you wanna see if your size is still available, I'll leave a link below.",
    "tags": [
     "8d126a",
     "eeb4ae"
@@ -2937,11 +2937,11 @@
    "from_template": null,
    "id": "604ebe",
    "created": 1793152132.687386,
-   "updated": 1793152132.687386
+   "updated": 1793153261.081597
   },
   {
    "title": "Sale news (flat-lay voiceover) · C",
-   "text": "These are easily my new favorite {item} from {brand}.\nYou get that {feature 1} you can match with almost any outfit, as well as the {feature 2}.\n{who} {height}, rocking a size {size} in {this pair} for reference.\n[deal] They are selling out quick though, since they're {deal}, so if you want to see if your size is still available, I'll leave a link down below.\n[nodeal] They are selling out quick though, so if you want to see if your size is still available, I'll leave a link down below.",
+   "text": "These are easily my new favorite {item} from {brand}.\nYou get that {feature 1} you can match with almost any outfit, as well as the {feature 2}.\n[multi] I've got the {colors} here so you can see them side by side.\n{who} {height}, rocking a size {size} in {this pair} for reference.\n[deal] They are selling out quick though, since they're {deal}, so if you want to see if your size is still available, I'll leave a link down below.\n[nodeal] They are selling out quick though, so if you want to see if your size is still available, I'll leave a link down below.",
    "tags": [
     "8d126a",
     "eeb4ae"
@@ -2957,11 +2957,11 @@
    "from_template": null,
    "id": "3e7f42",
    "created": 1793152132.7137358,
-   "updated": 1793152132.7137358
+   "updated": 1793153261.1136725
   },
   {
    "title": "Height + size (worn, faceless) · B",
-   "text": "The {color} on {this pair} from {brand} is honestly so clean.\n{This is} their {product}, and with that {feature 1}, you can mix and match with any outfit.\n{this is} the perfect {item} for this {season} season.\n{who} {height}, rocking a size {size} {fit note}, but a lot of their top selling sizes are going quick.\nSo if you're seeing this and your size is still available, I definitely wouldn't miss out on {this pair}.",
+   "text": "The {color} on {this pair} from {brand} is honestly so clean.\n{This is} their {product}, and with that {feature 1}, you can mix and match with any outfit.\n{this is} the perfect {item} for this {season} season.\n[multi] They also come in {other colors} if you want to switch it up.\n{who} {height}, rocking a size {size} {fit note}, but a lot of their top selling sizes are going quick.\nSo if you're seeing this and your size is still available, I definitely wouldn't miss out on {this pair}.",
    "tags": [
     "c77940"
    ],
@@ -2976,11 +2976,11 @@
    "from_template": null,
    "id": "c81087",
    "created": 1793152132.7464142,
-   "updated": 1793152132.7464142
+   "updated": 1793153261.170316
   },
   {
    "title": "Height + size (worn, faceless) · C",
-   "text": "{this is} probably my new favorite {item} from {brand}.\n{This is} their {product}, so you get that {feature 2} without it looking sloppy.\nAnd I just love the {feature 1}, and this {color} colorway is gonna be perfect for this {season} season.\n{who} {height}, rocking a size {size}, so you could definitely go true to size.\nI'll leave a link down below.",
+   "text": "{this is} probably my new favorite {item} from {brand}.\n{This is} their {product}, so you get that {feature 2} without it looking sloppy.\nAnd I just love the {feature 1}, and this {color} colorway is gonna be perfect for this {season} season.\n[multi] And if {color} isn't your thing, they also come in {other colors}.\n{who} {height}, rocking a size {size}, so you could definitely go true to size.\nI'll leave a link down below.",
    "tags": [
     "c77940"
    ],
@@ -2995,11 +2995,11 @@
    "from_template": null,
    "id": "7a7662",
    "created": 1793152132.7696252,
-   "updated": 1793152132.7696252
+   "updated": 1793153261.193503
   },
   {
    "title": "Official shop is on TikTok (held item) · B",
-   "text": "I think I just found the perfect {item} for this {season}.\n{This is} the {brand} {product}, and the {feature 1} is honestly so good.\nYou also get the {feature 2}, and there are multiple colors to choose from.\nIt's on their TikTok shop, I'll leave a link right here.",
+   "text": "I think I just found the perfect {item} for this {season}.\n{This is} the {brand} {product}, and the {feature 1} is honestly so good.\n[single] You also get the {feature 2}, and there are multiple colors to choose from.\n[multi] You also get the {feature 2}, and I've got the {colors} here for you.\nIt's on their TikTok shop, I'll leave a link right here.",
    "tags": [
     "8d126a"
    ],
@@ -3014,7 +3014,7 @@
    "from_template": null,
    "id": "d94787",
    "created": 1793152132.8191152,
-   "updated": 1793152132.8191152
+   "updated": 1793153261.2498116
   },
   {
    "title": "Where'd you get those? (two-person skit) · B",
@@ -3034,7 +3034,7 @@
    "from_template": null,
    "id": "257e49",
    "created": 1793152132.869416,
-   "updated": 1793152132.869416
+   "updated": 1793153261.2971582
   },
   {
    "title": "Nov 2 · Two-person skit / POV · Old Navy Long-Sleeve Waffle",
