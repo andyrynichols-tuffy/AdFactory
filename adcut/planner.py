@@ -149,6 +149,13 @@ def generate(day_iso: str) -> dict:
         counts = _split(n, st["mix"])
         skip = set(ch.get("cant_wear") or [])  # products this channel's person can't wear (too big…)
         wearable = [p for p in lineup if p["id"] not in skip] or lineup
+        if counts.get("carousel") and lineup:  # one carousel per product (they're shot together, one clothing type)
+            from .carouselplan import kind
+            s0 = (offset + ci * 3) % len(lineup)
+            types = sum(1 for x in lineup if kind(x) == kind(lineup[s0]))
+            if counts["carousel"] > types:
+                counts["flatlay_vo"] = counts.get("flatlay_vo", 0) + counts["carousel"] - types
+                counts["carousel"] = types
         for key, cnt in counts.items():
             if not cnt:
                 continue
