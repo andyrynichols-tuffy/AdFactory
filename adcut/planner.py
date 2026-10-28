@@ -248,9 +248,8 @@ def _finish(d, st, day_iso, day, sets, posts, window, fmts):
     plan["blocks_done"] = [k for k in old.get("blocks_done") or [] if any(block_key(b) == k for b in plan["blocks"])]
     for s in sets:  # projects made earlier for this set stay linked, and an example picked for this day
         prev = next((x for x in old.get("sets") or [] if x["id"] == s["id"]), {})
-        nv = len([x for x in s.get("scripts") or [] if x]) or 1
-        have = {(it["product"], v) for it in s["items"] for v in range(min(nv, it["takes"]) if s["format"] != "carousel" else 1)}
-        s["projects"] = [pr for pr in prev.get("projects", []) if (pr["product"], pr.get("variant", 0)) in have]  # this set's products + versions
+        have = {(it["product"], s.get("variant", 0)) for it in s["items"]}
+        s["projects"] = [pr for pr in prev.get("projects", []) if (pr["product"], pr.get("variant", 0)) in have]  # this set's products, this version
         if prev.get("example_set"):
             s["example"], s["example_set"] = prev["example"], True
         for k in ("outfits", "texts"):  # the carousel plan (adcut/carouselplan.py) survives a rebuild
@@ -437,30 +436,25 @@ def script_for(day_iso: str, s: dict, product_id: str, plan=None, variant: int =
 
 
 def make_projects(day_iso: str, set_id: str) -> list:
-    """Ad Camera projects for a set: one per product and script version (its takes = that version, filmed as many
-    times as the plan needs), so the teleprompter always shows the right lines."""
+    """Ad Camera projects for a set: one per product, with this week's version of the script, filmed as many times
+    as the product posts (near-identical takes, posted on different days)."""
     d = load()
     plan = d["days"].get(day_iso) or generate(day_iso)
     s = next(x for x in plan["sets"] if x["id"] == set_id)
     label = datetime.fromisoformat(day_iso).strftime("%b %d").replace(" 0", " ")
     ids = [x for x in s.get("scripts") or [] if x] or [s.get("script")]
     made = []
-    done = {(pr["product"], pr.get("variant", 0)) for pr in s.get("projects") or []}
+    v = s.get("variant", 0)
+    done = {pr["product"] for pr in s.get("projects") or [] if pr.get("variant", 0) == v}
     for it in s["items"]:
-        if not it["product"]:
+        if not it["product"] or it["product"] in done:
             continue
-        nv = 1 if s["format"] == "carousel" else min(len(ids), it["takes"])
-        for v in range(nv):
-            if (it["product"], v) in done:
-                continue
-            takes = len(range(v, it["takes"], nv)) if s["format"] != "carousel" else it["takes"]
-            lines = script_for(day_iso, s, it["product"], plan, variant=v)
-            tag = f" · v{v + 1}" if nv > 1 else ""
-            r = shop.new_video({"product": it["product"], "account": s["channel"], "script": ids[v % len(ids)],
-                                "script_text": "\n".join(lines), "assign": True,
-                                "title": f"{label} · {s['label']} · {it['name'][:28]}{tag}",
-                                "notes": f"{s['setup']}. {takes} take{'s' if takes != 1 else ''}, near-identical. {s['tip']}\nLighting: {s.get('light', '')}"})
-            made.append({"sid": r["id"], "title": r["title"], "product": it["product"], "variant": v})
+        lines = script_for(day_iso, s, it["product"], plan, variant=v)
+        r = shop.new_video({"product": it["product"], "account": s["channel"], "script": ids[v % len(ids)],
+                            "script_text": "\n".join(lines), "assign": True,
+                            "title": f"{label} · {s['label']} · {it['name'][:28]}",
+                            "notes": f"{s['setup']}. {it['takes']} take{'s' if it['takes'] != 1 else ''}, near-identical. {s['tip']}\nLighting: {s.get('light', '')}"})
+        made.append({"sid": r["id"], "title": r["title"], "product": it["product"], "variant": v})
     s["projects"] = s.get("projects", []) + made
     d["days"][day_iso] = plan
     save(d)
@@ -627,6 +621,15 @@ def day_slots(st, day: date, chan: dict) -> list:
     return [(_s(a + gap * k + gap / 2), f) for k, f in enumerate(dealt)]
 
 
+VERSION_START = date(2026, 10, 26)  # the week version A is used; then B, C, A…
+
+
+def week_version(day: date, n: int) -> int:
+    """Which version of a format's script a batch uses: one per week, rotating (user, 2026-10-27: one project per
+    product, filmed as many times as it posts; the wording changes week to week, not take to take)."""
+    return ((day - VERSION_START).days // 7) % max(1, n)
+
+
 def carousel_combo(i: int, n_outfits: int) -> list:
     """The photos of a product's i-th carousel: a cover pose, then outfits rotated so no two are alike."""
     size = min(CAROUSEL_SIZES[i % len(CAROUSEL_SIZES)], 1 + n_outfits)
@@ -705,15 +708,14 @@ def _batch(st, sh, day: date, old: dict):
             items = [{"product": pool[j]["id"], "name": pool[j]["name"], "takes": cnt // k_products + (1 if j < cnt % k_products else 0)}
                      for j in range(k_products)]
             sid = f"{key}-{ci}"
-            sets.append({**base, "id": sid, "label": f["label"], "items": items, "posts": cnt,
+            ver = week_version(day, len([x for x in base["scripts"] if x]) or 1)
+            sets.append({**base, "id": sid, "label": f["label"], "items": items, "posts": cnt, "variant": ver,
                          "minutes": round(_mins(st, key, "light_min") + cnt * _mins(st, key, "take_min")),
                          "edit_minutes": round(cnt * _mins(st, key, "edit_min"))})
-            nv = len([x for x in base["scripts"] if x]) or 1
             entries = [(it, r) for r in range(max(i["takes"] for i in items)) for it in items if r < it["takes"]]
-            for (dd, t), (it, r) in zip(slots, entries):
-                v = min(nv, it["takes"])  # take r of a product uses version r % v of the script (video r // v + 1 of that project)
+            for (dd, t), (it, r) in zip(slots, entries):  # take r of a product = video r + 1 of its project
                 posts.append({"set": sid, "format": key, "channel": ch.get("account"), "product": it["product"], "name": it["name"],
-                              "date": dd.isoformat(), "time": t, "variant": r % v, "take": r // v + 1, "done": False})
+                              "date": dd.isoformat(), "time": t, "variant": ver, "take": r + 1, "done": False})
     posts.sort(key=lambda p: (p["date"], p["time"], p["channel"] or ""))
     return sets, posts, (window[0].isoformat(), window[-1].isoformat()), fmts
 
