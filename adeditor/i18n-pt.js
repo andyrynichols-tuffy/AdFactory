@@ -72,7 +72,7 @@ window.I18N_PT = {
   "Add the script": "Adicionar o roteiro",
   "Add the script first": "Adicione o roteiro primeiro",
   "Add the TikTok accounts he manages and the people who film, then products and orders. Logins stay with you: only the handle and login email are kept here, never passwords.": "Adicione as contas do TikTok que ele administra e as pessoas que filmam, depois produtos e pedidos. Os logins ficam com você: aqui só ficam o usuário e o e-mail de login, nunca senhas.",
-  "Added": "Adicionado",
+  "Added": "Adicionada",
   "added at": "adicionado em",
   "Added to the shoot. Pre-cutting starts in a moment.": "Adicionado à gravação. O pré-corte começa em instantes.",
   "Added. Hit Find takes when everything's in.": "Adicionado. Clique em Encontrar takes quando tudo estiver aqui.",
@@ -1304,7 +1304,7 @@ window.I18N_PT = {
   "waiting": "aguardando",
   "needs a look": "precisa de atenção",
   "Meal": "Refeição",
-  "Shoot": "Gravar",
+  "Shoot": "Fotografar",
   "Schedule": "Agenda",
   "Live": "No ar",
   "Prep": "Preparo",
@@ -1421,7 +1421,45 @@ window.I18N_PT = {
   "Example saved for this shoot": "Exemplo salvo para esta gravação",
   "Back to the default example": "De volta ao exemplo padrão",
   "choose": "escolher",
-  "Photos taken another way: drop them on their carousel below, in order.": "Fotos tiradas de outro jeito: solte-as no carrossel delas abaixo, em ordem."
+  "Photos taken another way: drop them on their carousel below, in order.": "Fotos tiradas de outro jeito: solte-as no carrossel delas abaixo, em ordem.",
+  "Decide the outfits before the first photo: they're listed here. Swap a piece only if you don't own it.": "Decida os looks antes da primeira foto: eles estão aqui. Troque uma peça só se você não tiver.",
+  "Same outfits for every product: outfit 2 is outfit 2 for all of them. Don't restyle per product.": "Os mesmos looks para todos os produtos: o look 2 é o look 2 para todos. Não monte de novo para cada produto.",
+  "The item for sale is the star: center it, lay it flat and smooth, companions in quieter colours.": "A peça à venda é a estrela: no centro, estendida e lisa, as outras peças em cores mais discretas.",
+  "Two minutes per photo. If a look isn't working, shoot it anyway and move on: the next take is the fix.": "Dois minutos por foto. Se um look não está funcionando, fotografe assim mesmo e siga: a próxima foto é a correção.",
+  "Same spot, same height, same light for every photo (tape the floor), so the carousel looks like one set.": "Mesmo lugar, mesma altura, mesma luz em toda foto (marque o chão com fita), para o carrossel parecer um conjunto só.",
+  "Shoot in order: all outfits for one product, or one outfit across the products, whichever means less unpacking.": "Fotografe em ordem: todos os looks de um produto, ou um look passando pelos produtos, o que der menos trabalho.",
+  "Stay on track": "Mantenha o foco",
+  "carousels ×": "carrosséis ×",
+  "outfits =": "looks =",
+  "photos": "fotos",
+  "started": "começados",
+  "Tape a rectangle on the floor where every item goes, so each photo is framed the same.": "Marque um retângulo no chão com fita onde cada peça vai, para toda foto ter o mesmo enquadramento.",
+  "Copy how the item sits in the frame and the size and place of the text.": "Copie como a peça fica no quadro e o tamanho e lugar do texto.",
+  "The outfits": "Os looks",
+  "· decided now, the same for every product": "· decididos agora, os mesmos para todos os produtos",
+  "Each product is shot once in each outfit. The product takes its own place in the look: a top replaces the outfit's top, pants replace its bottom.": "Cada produto é fotografado uma vez em cada look. O produto toma o seu lugar no look: uma parte de cima substitui a parte de cima do look, uma calça substitui a de baixo.",
+  "Top": "Parte de cima",
+  "Bottom": "Parte de baixo",
+  "Shoes": "Sapatos",
+  "Layer": "Camada",
+  "optional": "opcional",
+  "Fewer": "Menos",
+  "More": "Mais",
+  "Save Outfits": "Salvar Looks",
+  "The on-screen text": "O texto na tela",
+  "One line on the first photo of each carousel. Varied on purpose so the day's carousels don't all say the same thing.": "Uma linha na primeira foto de cada carrossel. Variada de propósito para os carrosséis do dia não dizerem todos a mesma coisa.",
+  "Save Text": "Salvar Texto",
+  "The previews below fill in as the photos arrive. Photos taken another way: drop them on their carousel.": "As prévias abaixo se completam conforme as fotos chegam. Fotos tiradas de outro jeito: solte-as no carrossel delas.",
+  "Carousels": "Carrosséis",
+  "live preview, updates as photos come in": "prévia ao vivo, atualiza conforme as fotos chegam",
+  "add photos": "adicionar fotos",
+  "Outfits saved: Ad Camera shows them while shooting": "Looks salvos: o Ad Camera mostra durante a gravação",
+  "On-screen text saved": "Texto na tela salvo",
+  "Clean and light": "Claro e limpo",
+  "All dark": "Todo escuro",
+  "Cozy grey": "Cinza aconchegante",
+  "Earth tones": "Tons terrosos",
+  "Layered": "Em camadas"
  },
  "patterns": [
   [
@@ -1631,6 +1669,14 @@ window.I18N_PT = {
   [
    "\\b(\\d+) of (\\d+) takes in",
    "$1 de $2 tomadas recebidas"
+  ],
+  [
+   "\bwith (.+)$",
+   "com $1"
+  ],
+  [
+   "(\\d+) of (\\d+)$",
+   "$1 de $2"
   ]
  ]
 };

@@ -14,8 +14,15 @@ struct Project: Codable, Identifiable, Hashable {
     var clips: Int             // videos Ad Factory already has for it
     var carousel: Bool?        // a planned flat-lay carousel: photos, not takes (CarouselView)
     var outfits: [Int]?        // carousel: which outfit numbers already have a photo in Ad Factory
+    var carouselText: String?  // carousel: the planned on-screen text (adcut/carouselplan.py)
+    var outfitPlan: [OutfitPlan]?   // carousel: the session's outfits, and what to lay with this product in each
 
     var id: String { sid }
+}
+
+struct OutfitPlan: Codable, Hashable {
+    var name: String
+    var with: String
 }
 
 struct Product: Codable, Identifiable, Hashable {

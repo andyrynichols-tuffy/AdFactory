@@ -2311,6 +2311,36 @@
           }
         }
       }
+    },
+    "Outfit %lld: %@": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Look %1$lld: %2$@"
+          }
+        }
+      }
+    },
+    "Lay %@ with %@": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coloque %1$@ com %2$@"
+          }
+        }
+      }
+    },
+    "On-screen text: %@": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Texto na tela: %@"
+          }
+        }
+      }
     }
   }
 }

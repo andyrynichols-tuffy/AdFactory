@@ -58,9 +58,11 @@ struct CarouselSetup: View {
                     .disabled(picked.isEmpty)
                 }
             }
-            .onAppear {   // the soonest day's carousels, picked to start with
+            .onAppear {   // the soonest day's carousels, picked to start with, and that day's planned outfit count
                 let first = projects.compactMap(\.due).filter { !$0.isEmpty }.min()
-                picked = Set(projects.filter { first == nil || $0.due == first }.map(\.sid))
+                let soon = projects.filter { first == nil || $0.due == first }
+                picked = Set(soon.map(\.sid))
+                if let n = soon.first?.outfitPlan?.count, (2...5).contains(n) { outfits = n }
             }
         }
     }
@@ -114,6 +116,7 @@ struct CarouselView: View {
                 VoiceBadge(voice)
                 if let problem { Text(verbatim: problem).font(.caption).foregroundStyle(.orange).padding(6).background(.black.opacity(0.6), in: Capsule()) }
                 Spacer()
+                guide
                 grid
                 picker(title: "Product", count: projects.count, sel: $product) { i in
                     Text(verbatim: Self.short(projects[i])).lineLimit(1)
@@ -151,6 +154,27 @@ struct CarouselView: View {
             camera.stop()
             UIApplication.shared.isIdleTimerDisabled = false
         }
+    }
+
+    /// What to lay out right now: the planned outfit for this product, and (outfit 1) the carousel's text.
+    @ViewBuilder private var guide: some View {
+        let plan = current.outfitPlan ?? []
+        VStack(alignment: .leading, spacing: 4) {
+            if outfit <= plan.count {
+                let o = plan[outfit - 1]
+                Text("Outfit \(outfit): \(o.name)").font(.subheadline.weight(.semibold))
+                Text("Lay \(Self.short(current)) with \(o.with)").font(.footnote)
+            } else {
+                Text("Outfit \(outfit)").font(.subheadline.weight(.semibold))
+            }
+            if let text = current.carouselText, !text.isEmpty {
+                Text("On-screen text: \(text)").font(.caption).foregroundStyle(.secondary)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(10)
+        .background(.black.opacity(0.6), in: RoundedRectangle(cornerRadius: 10))
+        .padding(.horizontal, 14)
     }
 
     /// Which combos are shot: products down, outfits across; tap a cell to go to it.

@@ -301,14 +301,13 @@ final class CameraController: NSObject, ObservableObject, AVCaptureFileOutputRec
         }
     }
 
-    /// One still for a carousel (HEIC when the phone can, else JPEG), straight from the live session.
+    /// One still for a carousel (JPEG), straight from the live session.
     func takePhoto(done: @escaping (Data?) -> Void) {
         queue.async {
             guard !self.output.isRecording else { return DispatchQueue.main.async { done(nil) } }
             self.photoDone = done
-            let fmt: [String: Any] = self.photoOutput.availablePhotoCodecTypes.contains(.hevc)
-                ? [AVVideoCodecKey: AVVideoCodecType.hevc] : [AVVideoCodecKey: AVVideoCodecType.jpeg]
-            let s = AVCapturePhotoSettings(format: fmt)
+            // JPEG, not HEIC: the carousel preview in Ad Factory shows it in any browser (Windows can't show HEIC)
+            let s = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
             s.photoQualityPrioritization = .balanced
             if let c = self.photoOutput.connection(with: .video), c.isVideoRotationAngleSupported(90) {
                 c.videoRotationAngle = 90   // portrait, like the takes
