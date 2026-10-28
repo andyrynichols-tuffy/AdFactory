@@ -1,0 +1,1021 @@
+{
+ "version": 1,
+ "rev": 116,
+ "title": "HM Baggy Sweats THall 10.26.26",
+ "created": 1793056500.1949503,
+ "product": {
+  "name": "H&M Loose Fit Sweatpants",
+  "link": "https://shop.tiktok.com/us/pdp/1732146858012217649",
+  "description": "",
+  "hashtags": "#tiktokshop #tiktokmademebuyit"
+ },
+ "reference": {
+  "url": "https://www.tiktok.com/@thallsupply/video/7692813589702397214",
+  "file": "",
+  "notes": ""
+ },
+ "sources": [
+  {
+   "id": "bc4c83",
+   "file": "C:\\Users\\thecc\\MemeSupercutData\\ads\\uploads\\hm-baggy-sweats-thall-10-26-26\\HM Baggy Sweats THall 10.26.26 2026-10-26 18.26.01.mov",
+   "name": "HM Baggy Sweats THall 10.26.26 2026-10-26 18.26.01.mov",
+   "status": "ready",
+   "error": null,
+   "batch": 1,
+   "looks": [],
+   "key": "b285217bb21134",
+   "duration": 12.883333,
+   "width": 3840,
+   "height": 2160
+  },
+  {
+   "id": "93a5cb",
+   "file": "C:\\Users\\thecc\\MemeSupercutData\\ads\\uploads\\hm-baggy-sweats-thall-10-26-26\\HM Baggy Sweats THall 10.26.26 2026-10-26 18.47.17.mov",
+   "name": "HM Baggy Sweats THall 10.26.26 2026-10-26 18.47.17.mov",
+   "status": "ready",
+   "error": null,
+   "batch": 2,
+   "looks": [],
+   "key": "135f84898b5a1e",
+   "duration": 3.148333,
+   "width": 3840,
+   "height": 2160
+  },
+  {
+   "id": "0527aa",
+   "file": "C:\\Users\\thecc\\MemeSupercutData\\ads\\uploads\\hm-baggy-sweats-thall-10-26-26\\HM Baggy Sweats THall 10.26.26 2026-10-26 18.59.10.mov",
+   "name": "HM Baggy Sweats THall 10.26.26 2026-10-26 18.59.10.mov",
+   "status": "ready",
+   "error": null,
+   "batch": 3,
+   "looks": [],
+   "key": "5d16407096ecba",
+   "duration": 1.681667,
+   "width": 3840,
+   "height": 2160
+  },
+  {
+   "id": "4a79c1",
+   "file": "C:\\Users\\thecc\\MemeSupercutData\\ads\\uploads\\hm-baggy-sweats-thall-10-26-26\\HM Baggy Sweats THall 10.26.26 2026-10-26 19.03.55.mov",
+   "name": "HM Baggy Sweats THall 10.26.26 2026-10-26 19.03.55.mov",
+   "status": "ready",
+   "error": null,
+   "batch": 4,
+   "looks": [],
+   "key": "023276dce45625",
+   "duration": 18.848333,
+   "width": 3840,
+   "height": 2160
+  },
+  {
+   "id": "b4504f",
+   "file": "C:\\Users\\thecc\\MemeSupercutData\\ads\\uploads\\hm-baggy-sweats-thall-10-26-26\\HM Baggy Sweats THall 10.26.26 2026-10-26 19.05.01.mov",
+   "name": "HM Baggy Sweats THall 10.26.26 2026-10-26 19.05.01.mov",
+   "status": "ready",
+   "error": null,
+   "batch": 5,
+   "looks": [],
+   "key": "3de28d298c0189",
+   "duration": 15.165,
+   "width": 3840,
+   "height": 2160
+  },
+  {
+   "id": "31cc42",
+   "file": "C:\\Users\\thecc\\MemeSupercutData\\ads\\uploads\\hm-baggy-sweats-thall-10-26-26\\HM Baggy Sweats THall 10.26.26 2026-10-26 19.05.18.mov",
+   "name": "HM Baggy Sweats THall 10.26.26 2026-10-26 19.05.18.mov",
+   "status": "ready",
+   "error": null,
+   "batch": 5,
+   "looks": [],
+   "key": "4e03e3a2d61891",
+   "duration": 0.365,
+   "width": 3840,
+   "height": 2160
+  }
+ ],
+ "script": [
+  {
+   "id": "d7c100",
+   "text": "So H &M",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "f96e26",
+   "text": "just dropped gray and black",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "923e3a",
+   "text": "baggy relaxed fit sweatpants on their Christmas sale.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "e19d90",
+   "text": "And now you don't just get one,",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "421e36",
+   "text": "but you can actually get two pairs of the relaxed baggy fit sweatpants for less than what one usually costs by itself.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "f99480",
+   "text": "Obviously H &M is a known brand for their quality.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "056e53",
+   "text": "You get an elastic waistband, drawstrings in the front in case you need to adjust,",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "cde225",
+   "text": "two super deep pockets in the front, and the super relaxed baggy fit with the wide leg openings.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "ff6092",
+   "text": "The best part is that these fit pretty true to size.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "b01515",
+   "text": "I'm 5 '8\", 145, and this is what an extra small looks like on me.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "505d71",
+   "text": "But if you need any help on sizing, let me know down in the comments below.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "842f66",
+   "text": "In stores, these sweatpants are over $60 a piece.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "a2707c",
+   "text": "But on TikTok, you can get them for less than $30 and you get free shipping.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "972489",
+   "text": "So if you guys are wanting some good blank baggy sweatpants for this fall and winter, I'm going to drop the best",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "327635",
+   "text": "link for it at the bottom of this video.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "69cbc7",
+   "text": "But I'd be quick before they sell out.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  }
+ ],
+ "script_guessed": false,
+ "takes": [
+  {
+   "id": "319fb9",
+   "line": null,
+   "src": "31cc42",
+   "in": 0.02,
+   "out": 0.345,
+   "look": null,
+   "alt": 0,
+   "text": "Thanks for you.",
+   "for_text": null,
+   "words": [
+    [
+     "Thanks",
+     0.02,
+     0.14
+    ],
+    [
+     "for",
+     0.14,
+     0.26
+    ],
+    [
+     "you.",
+     0.26,
+     0.34
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 4,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "497dc9",
+   "line": "d7c100",
+   "src": "4a79c1",
+   "in": 9.48,
+   "out": 10.68,
+   "look": null,
+   "alt": 0,
+   "text": "So, H &M.",
+   "for_text": "So H &M",
+   "words": [
+    [
+     "So",
+     9.56,
+     9.82
+    ],
+    [
+     "H",
+     9.96,
+     10.14
+    ],
+    [
+     "&M",
+     10.14,
+     10.5
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.685,
+   "eye": 0.1,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "c7c45b",
+   "line": "d7c100",
+   "src": "4a79c1",
+   "in": 15.18,
+   "out": 16.36,
+   "look": null,
+   "alt": 0,
+   "text": "So, H &M.",
+   "for_text": "So H &M",
+   "words": [
+    [
+     "So",
+     15.26,
+     15.54
+    ],
+    [
+     "H",
+     15.72,
+     15.8
+    ],
+    [
+     "&M",
+     15.8,
+     16.18
+    ]
+   ],
+   "score": 1.0,
+   "status": "good",
+   "flags": [],
+   "missing": [],
+   "extra": [],
+   "usable": true,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": 0.895,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "41c1df",
+   "line": null,
+   "src": "93a5cb",
+   "in": 0.97,
+   "out": 2.79,
+   "look": null,
+   "alt": 0,
+   "text": "Ba -ba -ba -ba -ba -ba -ba.",
+   "for_text": null,
+   "words": [
+    [
+     "Ba",
+     1.05,
+     1.33
+    ],
+    [
+     "-ba",
+     1.33,
+     1.47
+    ],
+    [
+     "-ba",
+     1.47,
+     1.75
+    ],
+    [
+     "-ba",
+     1.75,
+     2.07
+    ],
+    [
+     "-ba",
+     2.07,
+     2.31
+    ],
+    [
+     "-ba",
+     2.31,
+     2.49
+    ],
+    [
+     "-ba.",
+     2.49,
+     2.61
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "e1c98d",
+   "line": "f96e26",
+   "src": "b4504f",
+   "in": 2.18,
+   "out": 4.6,
+   "look": null,
+   "alt": 0,
+   "text": "Just stop gray. No.",
+   "for_text": "just dropped gray and black",
+   "words": [
+    [
+     "just",
+     2.26,
+     2.62
+    ],
+    [
+     "dropped",
+     2.62,
+     2.92
+    ],
+    [
+     "gray",
+     2.92,
+     3.28
+    ],
+    [
+     "No.",
+     4.12,
+     4.42
+    ]
+   ],
+   "score": 0.444,
+   "status": "incomplete",
+   "flags": [
+    "stopped before the end of the line"
+   ],
+   "missing": [
+    "dropped",
+    "and",
+    "black"
+   ],
+   "extra": [
+    "stop",
+    "no"
+   ],
+   "usable": false,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "e1364e",
+   "line": null,
+   "src": "b4504f",
+   "in": 9.06,
+   "out": 10.2,
+   "look": null,
+   "alt": 0,
+   "text": "Just stop greeting.",
+   "for_text": null,
+   "words": [
+    [
+     "Just",
+     9.14,
+     9.44
+    ],
+    [
+     "stop",
+     9.44,
+     9.68
+    ],
+    [
+     "greeting.",
+     9.68,
+     10.02
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 2,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "495778",
+   "line": "f96e26",
+   "src": "b4504f",
+   "in": 11.27,
+   "out": 12.45,
+   "look": null,
+   "alt": 0,
+   "text": "Just drop green.",
+   "for_text": "just dropped gray and black",
+   "words": [
+    [
+     "just",
+     11.35,
+     11.67
+    ],
+    [
+     "drop",
+     11.67,
+     11.93
+    ],
+    [
+     "green.",
+     11.93,
+     12.27
+    ]
+   ],
+   "score": 0.25,
+   "status": "incomplete",
+   "flags": [
+    "stopped before the end of the line"
+   ],
+   "missing": [
+    "dropped",
+    "gray",
+    "and",
+    "black"
+   ],
+   "extra": [
+    "drop",
+    "green"
+   ],
+   "usable": false,
+   "order": 1,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "75cc7b",
+   "line": null,
+   "src": "b4504f",
+   "in": 13.67,
+   "out": 15.145,
+   "look": null,
+   "alt": 0,
+   "text": "I don't really feel like doing this right now.",
+   "for_text": null,
+   "words": [
+    [
+     "I",
+     13.75,
+     13.99
+    ],
+    [
+     "don't",
+     13.99,
+     14.15
+    ],
+    [
+     "really",
+     14.15,
+     14.43
+    ],
+    [
+     "feel",
+     14.43,
+     14.59
+    ],
+    [
+     "like",
+     14.59,
+     14.71
+    ],
+    [
+     "doing",
+     14.71,
+     14.87
+    ],
+    [
+     "this",
+     14.87,
+     15.09
+    ],
+    [
+     "right",
+     15.09,
+     15.13
+    ],
+    [
+     "now.",
+     15.13,
+     15.13
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 3,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  },
+  {
+   "id": "f63179",
+   "line": null,
+   "src": "bc4c83",
+   "in": 9.54,
+   "out": 12.04,
+   "look": null,
+   "alt": 0,
+   "text": "Hello, hello, hello, hello.",
+   "for_text": null,
+   "words": [
+    [
+     "Hello,",
+     9.62,
+     9.96
+    ],
+    [
+     "hello,",
+     10.1,
+     10.62
+    ],
+    [
+     "hello,",
+     10.88,
+     11.32
+    ],
+    [
+     "hello.",
+     11.62,
+     11.86
+    ]
+   ],
+   "score": 0.0,
+   "status": "unmatched",
+   "flags": [
+    "not a script line"
+   ],
+   "missing": [],
+   "extra": [],
+   "usable": false,
+   "order": 0,
+   "zoom": 1.0,
+   "pan_x": 0.5,
+   "pan_y": 0.5,
+   "volume": 1.0,
+   "cuts": [],
+   "splits": [],
+   "sfx": [],
+   "fx": [],
+   "quality": null,
+   "eye": null,
+   "variant": null,
+   "speed": null,
+   "bright": 0.0,
+   "freeze": 0.0,
+   "title": "",
+   "game": null,
+   "spice": null,
+   "user": {}
+  }
+ ],
+ "hooks": [],
+ "cta": "",
+ "style": {
+  "subs": {
+   "on": true,
+   "font": "Arial Black",
+   "size": 84,
+   "color": "#FFFFFF",
+   "highlight": "#FFE14D",
+   "outline": "#000000",
+   "outline_w": 6,
+   "uppercase": false,
+   "y": 0.66,
+   "words_per_line": 3,
+   "karaoke": true,
+   "pop": true
+  },
+  "look": {
+   "brightness": 0.0,
+   "smooth": 0.0
+  },
+  "speed": 1.0,
+  "pace": {
+   "auto": true,
+   "wps": 4.8,
+   "max": 1.1,
+   "pauses": true
+  },
+  "title": {
+   "on": true,
+   "y": 0.42,
+   "preset": "meme",
+   "font": "Impact",
+   "size": 150,
+   "color": "#FFFFFF",
+   "box_color": "#000000",
+   "accent": "#FFE14D",
+   "outline_w": 10,
+   "uppercase": true,
+   "rotate": -4,
+   "pop": true
+  },
+  "hook": {
+   "on": true,
+   "seconds": 3.0,
+   "y": 0.2,
+   "preset": "box",
+   "font": "Arial Black",
+   "size": 58,
+   "color": "#000000",
+   "box_color": "#FFFFFF",
+   "accent": "#FE2C55",
+   "outline_w": 0,
+   "uppercase": false,
+   "rotate": 0,
+   "pop": true
+  },
+  "cta": {
+   "on": false,
+   "y": 0.8,
+   "preset": "sticker",
+   "font": "Arial Black",
+   "size": 52,
+   "color": "#FFFFFF",
+   "box_color": "#FE2C55",
+   "accent": "#FFE14D",
+   "outline_w": 0,
+   "uppercase": false,
+   "rotate": -2,
+   "pop": true
+  },
+  "product_box": null,
+  "cart_pointer": {
+   "on": true,
+   "words": "orange cart, cart, basket",
+   "seconds": 2.2,
+   "color": "#FF8A00"
+  },
+  "punch_in": 1.12,
+  "pad_before": 0.08,
+  "pad_after": 0.18,
+  "voice_cleanup": false,
+  "loudness": -14
+ },
+ "skip": [],
+ "mix": null,
+ "mix_auto": true,
+ "batch_note": "New footage filled in what the earlier footage was missing, so everything was re-cut together.",
+ "voiceover": null,
+ "voiceovers": [],
+ "from_inbox": false,
+ "assets": [],
+ "overlays": [],
+ "renders": {},
+ "saved": {},
+ "shop": {
+  "product": "c9a20a",
+  "account": null,
+  "creator": null,
+  "editor": null,
+  "tags": [],
+  "script": "e9827e",
+  "due": "2026-10-26",
+  "notes": "",
+  "assigned": 1793056500.2187762,
+  "done": false
+ },
+ "sheet": {
+  "row": "HM Baggy Sweats THall 10.26.26",
+  "sig": "dc43e40095a7",
+  "lines": [
+   "So H &M",
+   "just dropped gray and black",
+   "baggy relaxed fit sweatpants on their Christmas sale.",
+   "And now you don't just get one,",
+   "but you can actually get two pairs of the relaxed baggy fit sweatpants for less than what one usually costs by itself.",
+   "Obviously H &M is a known brand for their quality.",
+   "You get an elastic waistband, drawstrings in the front in case you need to adjust,",
+   "two super deep pockets in the front, and the super relaxed baggy fit with the wide leg openings.",
+   "The best part is that these fit pretty true to size.",
+   "I'm 5 '8\", 145, and this is what an extra small looks like on me.",
+   "But if you need any help on sizing, let me know down in the comments below.",
+   "In stores, these sweatpants are over $60 a piece.",
+   "But on TikTok, you can get them for less than $30 and you get free shipping.",
+   "So if you guys are wanting some good blank baggy sweatpants for this fall and winter, I'm going to drop the best",
+   "link for it at the bottom of this video.",
+   "But I'd be quick before they sell out."
+  ]
+ }
+}

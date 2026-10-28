@@ -37,7 +37,7 @@ cameraapi.BUSY = shopapi.BUSY
 @app.middleware("http")
 async def login_wall(request, call_next):
     """Visitors through the web link sign in once (adcut/auth.py); this PC never has to."""
-    if request.url.path in ("/login", "/favicon.ico") or not auth.remote(request) or auth.signed_in(request):
+    if request.url.path in ("/login", "/favicon.ico", "/manifest.webmanifest", "/app-icon.png") or not auth.remote(request) or auth.signed_in(request):
         return await call_next(request)
     if request.url.path.startswith("/api/"):
         return JSONResponse({"detail": "sign in first"}, status_code=401)
@@ -292,7 +292,7 @@ def studio_theme():
 def busy():
     """For Studio (studio/): don't restart this app for an update while it's mid-job."""
     why = [j["kind"] for j in JOBS.values() if j.get("state") in ("queued", "running")]
-    why += shopapi.scriptgen.busy()  # downloading / transcribing a TikTok for the script builder
+    why += shopapi.scriptgen.busy() + shopapi.competitors.busy() + shopapi.postkit.busy() + __import__('adcut.deals', fromlist=['busy']).busy()  # downloading / transcribing a TikTok for the script builder
     why += ["upload"] * bool(UPLOADS)  # a phone sending videos (a restart would cut it off)
     return {"busy": bool(why), "why": why}
 
@@ -436,6 +436,9 @@ def _start_inbox():
             WAKE.clear()
     threading.Thread(target=loop, daemon=True, name="inbox").start()
     shop.start_background()  # TikTok numbers for the accounts + posted videos, every few hours
+    shopapi.competitors.start_background()  # other creators' videos + their products' sold counts, daily
+    from . import deals
+    deals.start_background()  # real discounts / free shipping on our TikTok listings, twice a day (scripts follow)
     tunnel.start(int(os.environ.get("ADCUT_PORT", "8770")))  # the web link (adcut/tunnel.py)
 
 
@@ -487,6 +490,9 @@ async def inbox_upload(request: Request, name: str, offset: int = 0, total: int 
     (the web link caps a request at 100 MB): each piece is appended at `offset`, and the
     file only gets its real name once all `total` bytes are in, so the inbox never picks
     up half a video. A piece that doesn't line up says where to resume (409)."""
+    if shoot:  # the Ad Camera app sends takes straight into a shoot
+        from . import cameraapi
+        cameraapi.LAST.update(upload=time.time(), shoot=shoot)
     fname, sub = _clean_name(name), _clean_name(folder)
     if Path(fname).suffix.lower() not in VIDEO_EXTS:
         raise HTTPException(400, "only video files go in the inbox")

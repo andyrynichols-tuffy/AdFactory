@@ -3,10 +3,28 @@ making a new one. Footage comes back through the inbox upload (/api/inbox/upload
 so the camera's clips land in the shoot's own OneDrive folder and get pre-cut like any drop."""
 from fastapi import APIRouter, Body, HTTPException
 
-from . import layout, shop, store
+from fastapi import Request
+
+from . import layout, planner, postkit, shop, store
 
 router = APIRouter(prefix="/api/camera")
 BUSY = lambda: set()  # server.py points this at the shoots with a job running
+CAROUSELS = {}  # shoot id -> planner info, refreshed with each project list
+ORDER = {}      # shoot id -> its place in the shoot day (next project, what to lay out)
+LAST = {"seen": 0.0, "upload": 0.0, "shoot": "", "open": "", "open_at": 0.0}  # when the phone last asked for projects / sent a take (shown in the sidebar)
+
+
+@router.get("/status")
+def status():
+    return LAST
+
+
+@router.get("/now")
+def now(shoot: str):
+    """Ad Camera opened this project's camera: the Mac's shoot page shows it as "Now filming"."""
+    import time
+    LAST.update(open=shoot, open_at=time.time())
+    return {"ok": True}
 
 
 def _project(d, sid, s, busy):
@@ -22,7 +40,39 @@ def _project(d, sid, s, busy):
             # the project page's links: the product's TikTok Shop page, and the video being copied
             # (the shoot's reference, else the TikTok its library script was made from)
             "product_link": (p or {}).get("link") or s["product"].get("link") or None,
-            "reference_url": (s.get("reference") or {}).get("url") or ((lib or {}).get("source") or {}).get("url") or None}
+            "reference_url": (s.get("reference") or {}).get("url") or ((lib or {}).get("source") or {}).get("url") or None,
+            "carousel": (CAROUSELS.get(sid) or {}).get("format") == "carousel",
+            "done_slots": postkit.outfits_for(sid) if (CAROUSELS.get(sid) or {}).get("format") == "carousel" else [],
+            "outfits": [int(x[1:]) for x in (postkit.outfits_for(sid) if (CAROUSELS.get(sid) or {}).get("format") == "carousel" else []) if x.startswith("o")],
+            **_carousel_plan(sid), **_order(sid)}
+
+
+def _order(sid):
+    """Where this project sits in its shoot day: the next one, and what to lay out / what changed (planner.shoot_order)."""
+    o = ORDER.get(sid)
+    if not o:
+        return {}
+    return {"next_sid": o["next"], "shoot_n": o["n"], "shoot_of": o["of"], "lay_out": o["lay"], "change": o["change"],
+            "setup_note": o["setup"], "shoot_day": o["day"]}
+
+
+def _carousel_plan(sid):
+    """Carousel mode's guide: the session's outfits (what to lay with this product in each) + its on-screen text."""
+    ix = CAROUSELS.get(sid)
+    if not ix or ix["format"] != "carousel":
+        return {}
+    from . import carouselplan
+    try:
+        s = next(x for x in planner.get(ix["day"])["sets"] if x["id"] == ix["set"])
+        cp = carouselplan.for_set(ix["day"], s)
+        row = next(r for r in cp["products"] if r["product"] == ix["product"])
+    except StopIteration:
+        return {}
+    covers = [{"slot": k, "name": n, "with": "the item on its own"} for k, n in planner.COVERS]
+    outfits = [{"slot": f"o{i + 1}", "name": o.get("name") or f"Outfit {i + 1}", "with": w} for i, (o, w) in enumerate(zip(cp["outfits"], row["with"]))]
+    return {"carousel_text": row["text"], "carousel_set": ix["day"] + "/" + ix["set"],
+            "outfit_plan": [{"name": o["name"], "with": o["with"]} for o in outfits],
+            "photo_slots": covers + outfits}
 
 
 @router.get("/projects")
@@ -30,7 +80,13 @@ def projects():
     """Everything the camera needs in one go: projects (newest first), and what a new
     one can be made from (products, library scripts, tags, accounts). Also TikTok's UI
     zones, so the viewfinder's guides match adcut/layout.py."""
+    import time
+    LAST["seen"] = time.time()
     d, busy = shop.load(), BUSY()
+    CAROUSELS.clear()
+    CAROUSELS.update(planner.project_index())
+    ORDER.clear()
+    ORDER.update(planner.shoot_order())
     return {
         "projects": [_project(d, sid, s, busy) for sid, s, _ in shop._all_shoots()],
         "products": [{"id": p["id"], "name": p["name"], "brand": p["brand"]}
@@ -90,3 +146,15 @@ def new_project(body: dict = Body(...)):
     d = shop.load()
     s = next(s for sid, s, _ in shop._all_shoots() if sid == r["id"])
     return _project(d, r["id"], s, BUSY())
+
+
+@router.put("/photo")
+async def photo(request: Request, shoot: str, outfit: int = -1, slot: str = "", name: str = "photo.jpg"):
+    """Carousel mode: one photo = one outfit with one product; it goes into that product's carousel
+    folder in the day's posting kit (adcut/postkit.py) as outfit-N."""
+    import time
+    LAST.update(upload=time.time(), shoot=shoot)
+    try:
+        return postkit.add_outfit_photo(shoot, slot or outfit, name, await request.body())
+    except LookupError as e:
+        raise HTTPException(404, str(e))

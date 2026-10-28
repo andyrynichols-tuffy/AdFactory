@@ -1,5 +1,35 @@
 {
  "videos": {},
- "accounts": {},
- "last": 1793045044.6793575
+ "accounts": {
+  "andysbestfinds": {
+   "error": null,
+   "snapshots": [
+    {
+     "t": 1793066911,
+     "followers": 4842,
+     "likes": 8820,
+     "videos": 574
+    },
+    {
+     "t": 1793088520,
+     "followers": 4842,
+     "likes": 8821,
+     "videos": 577
+    },
+    {
+     "t": 1793110695,
+     "followers": 4842,
+     "likes": 8823,
+     "videos": 577
+    },
+    {
+     "t": 1793132651,
+     "followers": 4841,
+     "likes": 8825,
+     "videos": 581
+    }
+   ]
+  }
+ },
+ "last": 1793132656.112865
 }

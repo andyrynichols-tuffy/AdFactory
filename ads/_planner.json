@@ -1,0 +1,4657 @@
+{
+ "settings": {
+  "posts": {
+   "mon": 20,
+   "tue": 20,
+   "wed": 20,
+   "thu": 20,
+   "fri": 20,
+   "sat": 5,
+   "sun": 20
+  },
+  "mix": {
+   "carousel": 25,
+   "flatlay_vo": 30,
+   "worn": 20,
+   "held": 10,
+   "skit": 10,
+   "other": 5
+  },
+  "takes": {
+   "carousel": 1,
+   "flatlay_vo": 3,
+   "worn": 3,
+   "held": 2,
+   "skit": 2,
+   "other": 1
+  },
+  "day": {
+   "start": "07:30",
+   "end": "22:00",
+   "post_from": "15:00",
+   "post_to": "20:00",
+   "setup_min": 10,
+   "research_min": 30,
+   "gym": {
+    "at": "08:00",
+    "min": 75
+   },
+   "schedule": true,
+   "schedule_min": 1.5,
+   "prep_min": 30,
+   "meals": [
+    {
+     "name": "Breakfast",
+     "at": "09:20",
+     "min": 20
+    },
+    {
+     "name": "Lunch",
+     "at": "12:30",
+     "min": 30
+    },
+    {
+     "name": "Dinner",
+     "at": "18:30",
+     "min": 40
+    }
+   ]
+  },
+  "channels": [
+   {
+    "account": "c4a9a3",
+    "pov": "me",
+    "height": "6'2 185",
+    "size_top": "",
+    "size_bottom": "",
+    "cant_wear": [
+     "c8cebc"
+    ]
+   }
+  ],
+  "lineup": [
+   "58c082",
+   "aad169",
+   "8e26fd",
+   "70db4e",
+   "9bbabf",
+   "27ab82",
+   "772dcf",
+   "6838c7",
+   "229a70",
+   "c8cebc",
+   "7e1c60",
+   "adb964",
+   "97d0e6",
+   "f1fed3",
+   "239664",
+   "5a73a3"
+  ],
+  "scripts": {
+   "flatlay_vo": "912ed1",
+   "worn": "75f67d",
+   "held": "fed014",
+   "skit": "1a7555",
+   "carousel": "b289a0",
+   "other": "fcfb1a"
+  },
+  "mode": "batch",
+  "carousels": false,
+  "batch_week": null,
+  "script_variants": {
+   "flatlay_vo": [
+    "912ed1",
+    "604ebe",
+    "3e7f42"
+   ],
+   "worn": [
+    "75f67d",
+    "c81087",
+    "7a7662"
+   ],
+   "held": [
+    "fed014",
+    "d94787"
+   ],
+   "skit": [
+    "1a7555",
+    "257e49"
+   ],
+   "other": [
+    "fcfb1a"
+   ],
+   "carousel": [
+    "b289a0"
+   ]
+  }
+ },
+ "days": {
+  "2026-10-28": {
+   "date": "2026-10-28",
+   "season": "fall",
+   "mode": "batch",
+   "window": [
+    "2026-10-29",
+    "2026-11-04"
+   ],
+   "formats": [
+    "worn"
+   ],
+   "posts_per_channel": 20,
+   "channels": 1,
+   "sets": [
+    {
+     "format": "worn",
+     "setup": "Bedroom, waist-down",
+     "tip": "Wear it, film waist-down, say your height and size.",
+     "light": "Key (circle) in front at 45°, center at chest height, tilted down toward the waist, ~70%. Fill panel 1 on the other side, ~35%, so the fabric shows. Fill panel 2 behind and to the side, low, as a rim light that outlines the fit against the background. Never a window behind you. Tape a mark on the floor so every take matches.",
+     "light_min": 15,
+     "example": "https://www.tiktok.com/@sully.finds/video/7697808464344648991",
+     "channel": "c4a9a3",
+     "channel_name": "AndysBestFinds",
+     "pov": "me",
+     "script": "75f67d",
+     "scripts": [
+      "75f67d",
+      "c81087",
+      "7a7662"
+     ],
+     "projects": [
+      {
+       "sid": "oct-28-worn-faceless-old-navy-waffle-henley-kic-",
+       "title": "Oct 28 · Worn, faceless · Old Navy Waffle Henley - Kic · v1",
+       "product": "aad169",
+       "variant": 0
+      },
+      {
+       "sid": "oct-28-worn-faceless-old-navy-waffle-henley-in-v",
+       "title": "Oct 28 · Worn, faceless · Old Navy Waffle Henley - In  · v1",
+       "product": "8e26fd",
+       "variant": 0
+      },
+      {
+       "sid": "oct-28-worn-faceless-old-navy-long-sleeve-waffle",
+       "title": "Oct 28 · Worn, faceless · Old Navy Long-Sleeve Waffle  · v1",
+       "product": "70db4e",
+       "variant": 0
+      },
+      {
+       "sid": "oct-28-worn-faceless-old-navy-long-sleeve-waffle-4",
+       "title": "Oct 28 · Worn, faceless · Old Navy Long-Sleeve Waffle  · v1",
+       "product": "9bbabf",
+       "variant": 0
+      },
+      {
+       "sid": "oct-28-worn-faceless-old-navy-long-sleeve-waffle-7",
+       "title": "Oct 28 · Worn, faceless · Old Navy Long-Sleeve Waffle  · v1",
+       "product": "27ab82",
+       "variant": 0
+      },
+      {
+       "sid": "oct-28-worn-faceless-old-navy-crew-neck-sweater-",
+       "title": "Oct 28 · Worn, faceless · Old Navy Crew-Neck Sweater - · v1",
+       "product": "772dcf",
+       "variant": 0
+      },
+      {
+       "sid": "oct-28-worn-faceless-old-navy-crew-neck-sweater--4",
+       "title": "Oct 28 · Worn, faceless · Old Navy Crew-Neck Sweater - · v1",
+       "product": "6838c7",
+       "variant": 0
+      },
+      {
+       "sid": "oct-28-worn-faceless-old-navy-crew-neck-sweater--7",
+       "title": "Oct 28 · Worn, faceless · Old Navy Crew-Neck Sweater - · v1",
+       "product": "229a70",
+       "variant": 0
+      },
+      {
+       "sid": "oct-28-worn-faceless-h-m-loose-fit-sweatpants-b-",
+       "title": "Oct 28 · Worn, faceless · H&M Loose Fit Sweatpants - B · v1",
+       "product": "7e1c60",
+       "variant": 0
+      },
+      {
+       "sid": "oct-28-worn-faceless-h-m-loose-fit-sweatpants-l-",
+       "title": "Oct 28 · Worn, faceless · H&M Loose Fit Sweatpants - L · v1",
+       "product": "adb964",
+       "variant": 0
+      },
+      {
+       "sid": "oct-28-worn-faceless-old-navy-waffle-henley-kic",
+       "title": "Oct 28 · Worn, faceless · Old Navy Waffle Henley - Kic",
+       "product": "aad169",
+       "variant": 0,
+       "unit": "aad169+8e26fd",
+       "products": [
+        "aad169",
+        "8e26fd"
+       ]
+      },
+      {
+       "sid": "oct-28-worn-faceless-old-navy-waffle-henley-kic-2",
+       "title": "Oct 28 · Worn, faceless · Old Navy Waffle Henley - Kic",
+       "product": "aad169",
+       "variant": 0,
+       "unit": "aad169+8e26fd+58c082",
+       "products": [
+        "aad169",
+        "8e26fd",
+        "58c082"
+       ]
+      },
+      {
+       "sid": "oct-28-worn-faceless-old-navy-long-sleeve-waffle-2",
+       "title": "Oct 28 · Worn, faceless · Old Navy Long-Sleeve Waffle",
+       "product": "70db4e",
+       "variant": 0,
+       "unit": "70db4e+9bbabf",
+       "products": [
+        "70db4e",
+        "9bbabf"
+       ]
+      },
+      {
+       "sid": "oct-28-worn-faceless-old-navy-long-sleeve-waffle-3",
+       "title": "Oct 28 · Worn, faceless · Old Navy Long-Sleeve Waffle",
+       "product": "70db4e",
+       "variant": 0,
+       "unit": "70db4e+9bbabf+27ab82",
+       "products": [
+        "70db4e",
+        "9bbabf",
+        "27ab82"
+       ]
+      },
+      {
+       "sid": "oct-28-worn-faceless-old-navy-crew-neck-sweater",
+       "title": "Oct 28 · Worn, faceless · Old Navy Crew-Neck Sweater -",
+       "product": "772dcf",
+       "variant": 0,
+       "unit": "772dcf+6838c7",
+       "products": [
+        "772dcf",
+        "6838c7"
+       ]
+      },
+      {
+       "sid": "oct-28-worn-faceless-old-navy-crew-neck-sweater-2",
+       "title": "Oct 28 · Worn, faceless · Old Navy Crew-Neck Sweater -",
+       "product": "772dcf",
+       "variant": 0,
+       "unit": "772dcf+6838c7+229a70",
+       "products": [
+        "772dcf",
+        "6838c7",
+        "229a70"
+       ]
+      },
+      {
+       "sid": "oct-28-worn-faceless-h-m-loose-fit-sweatpants-b",
+       "title": "Oct 28 · Worn, faceless · H&M Loose Fit Sweatpants - B",
+       "product": "7e1c60",
+       "variant": 0,
+       "unit": "7e1c60+adb964",
+       "products": [
+        "7e1c60",
+        "adb964"
+       ]
+      },
+      {
+       "sid": "oct-28-worn-faceless-h-m-loose-fit-sweatpants-b-2",
+       "title": "Oct 28 · Worn, faceless · H&M Loose Fit Sweatpants - B",
+       "product": "7e1c60",
+       "variant": 0,
+       "unit": "7e1c60+adb964+97d0e6",
+       "products": [
+        "7e1c60",
+        "adb964",
+        "97d0e6"
+       ]
+      },
+      {
+       "sid": "oct-28-worn-faceless-h-m-loose-fit-zip-hoodie-d",
+       "title": "Oct 28 · Worn, faceless · H&M Loose-Fit Zip Hoodie - D",
+       "product": "f1fed3",
+       "variant": 0,
+       "unit": "f1fed3",
+       "products": [
+        "f1fed3"
+       ]
+      },
+      {
+       "sid": "oct-28-worn-faceless-h-m-loose-fit-zip-hoodie-d-2",
+       "title": "Oct 28 · Worn, faceless · H&M Loose-Fit Zip Hoodie - D",
+       "product": "f1fed3",
+       "variant": 0,
+       "unit": "f1fed3+239664",
+       "products": [
+        "f1fed3",
+        "239664"
+       ]
+      },
+      {
+       "sid": "oct-28-worn-faceless-h-m-loose-fit-zip-hoodie-d-3",
+       "title": "Oct 28 · Worn, faceless · H&M Loose-Fit Zip Hoodie - D",
+       "product": "f1fed3",
+       "variant": 0,
+       "unit": "f1fed3+239664+5a73a3",
+       "products": [
+        "f1fed3",
+        "239664",
+        "5a73a3"
+       ]
+      },
+      {
+       "sid": "oct-28-worn-faceless-old-navy-waffle-henley-kic-3",
+       "title": "Oct 28 · Worn, faceless · Old Navy Waffle Henley - Kic",
+       "product": "aad169",
+       "variant": 0,
+       "unit": "aad169+58c082",
+       "products": [
+        "aad169",
+        "58c082"
+       ]
+      },
+      {
+       "sid": "oct-28-worn-faceless-old-navy-long-sleeve-waffle-5",
+       "title": "Oct 28 · Worn, faceless · Old Navy Long-Sleeve Waffle",
+       "product": "70db4e",
+       "variant": 0,
+       "unit": "70db4e+27ab82",
+       "products": [
+        "70db4e",
+        "27ab82"
+       ]
+      },
+      {
+       "sid": "oct-28-worn-faceless-old-navy-crew-neck-sweater-3",
+       "title": "Oct 28 · Worn, faceless · Old Navy Crew-Neck Sweater -",
+       "product": "772dcf",
+       "variant": 0,
+       "unit": "772dcf+229a70",
+       "products": [
+        "772dcf",
+        "229a70"
+       ]
+      },
+      {
+       "sid": "oct-28-worn-faceless-h-m-loose-fit-sweatpants-b-3",
+       "title": "Oct 28 · Worn, faceless · H&M Loose Fit Sweatpants - B",
+       "product": "7e1c60",
+       "variant": 0,
+       "unit": "7e1c60+97d0e6",
+       "products": [
+        "7e1c60",
+        "97d0e6"
+       ]
+      },
+      {
+       "sid": "oct-28-worn-faceless-h-m-loose-fit-zip-hoodie-g",
+       "title": "Oct 28 · Worn, faceless · H&M Loose-Fit Zip Hoodie - G",
+       "product": "239664",
+       "variant": 0,
+       "unit": "239664",
+       "products": [
+        "239664"
+       ]
+      },
+      {
+       "sid": "oct-28-worn-faceless-h-m-loose-fit-zip-hoodie-d-4",
+       "title": "Oct 28 · Worn, faceless · H&M Loose-Fit Zip Hoodie - D",
+       "product": "f1fed3",
+       "variant": 0,
+       "unit": "f1fed3+5a73a3",
+       "products": [
+        "f1fed3",
+        "5a73a3"
+       ]
+      },
+      {
+       "sid": "oct-28-worn-faceless-old-navy-waffle-henley-jur",
+       "title": "Oct 28 · Worn, faceless · Old Navy Waffle Henley - Jur",
+       "product": "58c082",
+       "variant": 0,
+       "unit": "58c082",
+       "products": [
+        "58c082"
+       ]
+      },
+      {
+       "sid": "oct-28-worn-faceless-old-navy-waffle-henley-in",
+       "title": "Oct 28 · Worn, faceless · Old Navy Waffle Henley - In",
+       "product": "8e26fd",
+       "variant": 0,
+       "unit": "8e26fd+58c082",
+       "products": [
+        "8e26fd",
+        "58c082"
+       ]
+      },
+      {
+       "sid": "oct-28-worn-faceless-old-navy-long-sleeve-waffle-6",
+       "title": "Oct 28 · Worn, faceless · Old Navy Long-Sleeve Waffle",
+       "product": "9bbabf",
+       "variant": 0,
+       "unit": "9bbabf+27ab82",
+       "products": [
+        "9bbabf",
+        "27ab82"
+       ]
+      },
+      {
+       "sid": "oct-28-worn-faceless-old-navy-crew-neck-sweater-4",
+       "title": "Oct 28 · Worn, faceless · Old Navy Crew-Neck Sweater -",
+       "product": "6838c7",
+       "variant": 0,
+       "unit": "6838c7+229a70",
+       "products": [
+        "6838c7",
+        "229a70"
+       ]
+      }
+     ],
+     "id": "worn-0",
+     "label": "Worn, faceless",
+     "items": [
+      {
+       "product": "aad169",
+       "products": [
+        "aad169"
+       ],
+       "unit": "aad169",
+       "name": "Old Navy Waffle Henley - Kicking Up Dust",
+       "takes": 1
+      },
+      {
+       "product": "aad169",
+       "products": [
+        "aad169",
+        "8e26fd"
+       ],
+       "unit": "aad169+8e26fd",
+       "name": "Old Navy Waffle Henley - Kicking Up Dust + In The Navy",
+       "takes": 1
+      },
+      {
+       "product": "aad169",
+       "products": [
+        "aad169",
+        "8e26fd",
+        "58c082"
+       ],
+       "unit": "aad169+8e26fd+58c082",
+       "name": "Old Navy Waffle Henley - Kicking Up Dust + In The Navy + Jurassic Green",
+       "takes": 1
+      },
+      {
+       "product": "70db4e",
+       "products": [
+        "70db4e"
+       ],
+       "unit": "70db4e",
+       "name": "Old Navy Long-Sleeve Waffle Crew - Heritage Green",
+       "takes": 1
+      },
+      {
+       "product": "70db4e",
+       "products": [
+        "70db4e",
+        "9bbabf"
+       ],
+       "unit": "70db4e+9bbabf",
+       "name": "Old Navy Long-Sleeve Waffle Crew - Heritage Green + Sea Salt",
+       "takes": 1
+      },
+      {
+       "product": "70db4e",
+       "products": [
+        "70db4e",
+        "9bbabf",
+        "27ab82"
+       ],
+       "unit": "70db4e+9bbabf+27ab82",
+       "name": "Old Navy Long-Sleeve Waffle Crew - Heritage Green + Sea Salt + Dark Walnut",
+       "takes": 1
+      },
+      {
+       "product": "772dcf",
+       "products": [
+        "772dcf"
+       ],
+       "unit": "772dcf",
+       "name": "Old Navy Crew-Neck Sweater - Brown Heather",
+       "takes": 1
+      },
+      {
+       "product": "772dcf",
+       "products": [
+        "772dcf",
+        "6838c7"
+       ],
+       "unit": "772dcf+6838c7",
+       "name": "Old Navy Crew-Neck Sweater - Brown Heather + Cozy Cashmere",
+       "takes": 1
+      },
+      {
+       "product": "772dcf",
+       "products": [
+        "772dcf",
+        "6838c7",
+        "229a70"
+       ],
+       "unit": "772dcf+6838c7+229a70",
+       "name": "Old Navy Crew-Neck Sweater - Brown Heather + Cozy Cashmere + Forest Canopy",
+       "takes": 1
+      },
+      {
+       "product": "7e1c60",
+       "products": [
+        "7e1c60"
+       ],
+       "unit": "7e1c60",
+       "name": "H&M Loose Fit Sweatpants - Black",
+       "takes": 1
+      },
+      {
+       "product": "7e1c60",
+       "products": [
+        "7e1c60",
+        "adb964"
+       ],
+       "unit": "7e1c60+adb964",
+       "name": "H&M Loose Fit Sweatpants - Black + Light Grey Marl",
+       "takes": 1
+      },
+      {
+       "product": "7e1c60",
+       "products": [
+        "7e1c60",
+        "adb964",
+        "97d0e6"
+       ],
+       "unit": "7e1c60+adb964+97d0e6",
+       "name": "H&M Loose Fit Sweatpants - Black + Light Grey Marl + Dark Grey",
+       "takes": 1
+      },
+      {
+       "product": "f1fed3",
+       "products": [
+        "f1fed3"
+       ],
+       "unit": "f1fed3",
+       "name": "H&M Loose-Fit Zip Hoodie - Dark Brown",
+       "takes": 1
+      },
+      {
+       "product": "f1fed3",
+       "products": [
+        "f1fed3",
+        "239664"
+       ],
+       "unit": "f1fed3+239664",
+       "name": "H&M Loose-Fit Zip Hoodie - Dark Brown + Grey Marl",
+       "takes": 1
+      },
+      {
+       "product": "f1fed3",
+       "products": [
+        "f1fed3",
+        "239664",
+        "5a73a3"
+       ],
+       "unit": "f1fed3+239664+5a73a3",
+       "name": "H&M Loose-Fit Zip Hoodie - Dark Brown + Grey Marl + Dark Khaki Green",
+       "takes": 1
+      },
+      {
+       "product": "8e26fd",
+       "products": [
+        "8e26fd"
+       ],
+       "unit": "8e26fd",
+       "name": "Old Navy Waffle Henley - In The Navy",
+       "takes": 1
+      },
+      {
+       "product": "aad169",
+       "products": [
+        "aad169",
+        "58c082"
+       ],
+       "unit": "aad169+58c082",
+       "name": "Old Navy Waffle Henley - Kicking Up Dust + Jurassic Green",
+       "takes": 1
+      },
+      {
+       "product": "9bbabf",
+       "products": [
+        "9bbabf"
+       ],
+       "unit": "9bbabf",
+       "name": "Old Navy Long-Sleeve Waffle Crew - Sea Salt",
+       "takes": 1
+      },
+      {
+       "product": "70db4e",
+       "products": [
+        "70db4e",
+        "27ab82"
+       ],
+       "unit": "70db4e+27ab82",
+       "name": "Old Navy Long-Sleeve Waffle Crew - Heritage Green + Dark Walnut",
+       "takes": 1
+      },
+      {
+       "product": "6838c7",
+       "products": [
+        "6838c7"
+       ],
+       "unit": "6838c7",
+       "name": "Old Navy Crew-Neck Sweater - Cozy Cashmere",
+       "takes": 1
+      },
+      {
+       "product": "772dcf",
+       "products": [
+        "772dcf",
+        "229a70"
+       ],
+       "unit": "772dcf+229a70",
+       "name": "Old Navy Crew-Neck Sweater - Brown Heather + Forest Canopy",
+       "takes": 1
+      },
+      {
+       "product": "adb964",
+       "products": [
+        "adb964"
+       ],
+       "unit": "adb964",
+       "name": "H&M Loose Fit Sweatpants - Light Grey Marl",
+       "takes": 1
+      },
+      {
+       "product": "7e1c60",
+       "products": [
+        "7e1c60",
+        "97d0e6"
+       ],
+       "unit": "7e1c60+97d0e6",
+       "name": "H&M Loose Fit Sweatpants - Black + Dark Grey",
+       "takes": 1
+      },
+      {
+       "product": "239664",
+       "products": [
+        "239664"
+       ],
+       "unit": "239664",
+       "name": "H&M Loose-Fit Zip Hoodie - Grey Marl",
+       "takes": 1
+      },
+      {
+       "product": "f1fed3",
+       "products": [
+        "f1fed3",
+        "5a73a3"
+       ],
+       "unit": "f1fed3+5a73a3",
+       "name": "H&M Loose-Fit Zip Hoodie - Dark Brown + Dark Khaki Green",
+       "takes": 1
+      },
+      {
+       "product": "58c082",
+       "products": [
+        "58c082"
+       ],
+       "unit": "58c082",
+       "name": "Old Navy Waffle Henley - Jurassic Green",
+       "takes": 1
+      },
+      {
+       "product": "8e26fd",
+       "products": [
+        "8e26fd",
+        "58c082"
+       ],
+       "unit": "8e26fd+58c082",
+       "name": "Old Navy Waffle Henley - In The Navy + Jurassic Green",
+       "takes": 1
+      },
+      {
+       "product": "27ab82",
+       "products": [
+        "27ab82"
+       ],
+       "unit": "27ab82",
+       "name": "Old Navy Long-Sleeve Waffle Crew - Dark Walnut",
+       "takes": 1
+      },
+      {
+       "product": "9bbabf",
+       "products": [
+        "9bbabf",
+        "27ab82"
+       ],
+       "unit": "9bbabf+27ab82",
+       "name": "Old Navy Long-Sleeve Waffle Crew - Sea Salt + Dark Walnut",
+       "takes": 1
+      },
+      {
+       "product": "229a70",
+       "products": [
+        "229a70"
+       ],
+       "unit": "229a70",
+       "name": "Old Navy Crew-Neck Sweater - Forest Canopy",
+       "takes": 1
+      },
+      {
+       "product": "6838c7",
+       "products": [
+        "6838c7",
+        "229a70"
+       ],
+       "unit": "6838c7+229a70",
+       "name": "Old Navy Crew-Neck Sweater - Cozy Cashmere + Forest Canopy",
+       "takes": 1
+      }
+     ],
+     "posts": 31,
+     "variant": 0,
+     "minutes": 77,
+     "edit_minutes": 22
+    }
+   ],
+   "posts": [
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "aad169",
+     "name": "Old Navy Waffle Henley - Kicking Up Dust",
+     "unit": "aad169",
+     "products": [
+      "aad169"
+     ],
+     "date": "2026-10-29",
+     "time": "15:22",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "aad169",
+     "name": "Old Navy Waffle Henley - Kicking Up Dust + In The Navy",
+     "unit": "aad169+8e26fd",
+     "products": [
+      "aad169",
+      "8e26fd"
+     ],
+     "date": "2026-10-29",
+     "time": "16:38",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "aad169",
+     "name": "Old Navy Waffle Henley - Kicking Up Dust + In The Navy + Jurassic Green",
+     "unit": "aad169+8e26fd+58c082",
+     "products": [
+      "aad169",
+      "8e26fd",
+      "58c082"
+     ],
+     "date": "2026-10-29",
+     "time": "17:38",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "70db4e",
+     "name": "Old Navy Long-Sleeve Waffle Crew - Heritage Green",
+     "unit": "70db4e",
+     "products": [
+      "70db4e"
+     ],
+     "date": "2026-10-29",
+     "time": "18:38",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "70db4e",
+     "name": "Old Navy Long-Sleeve Waffle Crew - Heritage Green + Sea Salt",
+     "unit": "70db4e+9bbabf",
+     "products": [
+      "70db4e",
+      "9bbabf"
+     ],
+     "date": "2026-10-29",
+     "time": "19:08",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "70db4e",
+     "name": "Old Navy Long-Sleeve Waffle Crew - Heritage Green + Sea Salt + Dark Walnut",
+     "unit": "70db4e+9bbabf+27ab82",
+     "products": [
+      "70db4e",
+      "9bbabf",
+      "27ab82"
+     ],
+     "date": "2026-10-30",
+     "time": "15:22",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "772dcf",
+     "name": "Old Navy Crew-Neck Sweater - Brown Heather",
+     "unit": "772dcf",
+     "products": [
+      "772dcf"
+     ],
+     "date": "2026-10-30",
+     "time": "16:38",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "772dcf",
+     "name": "Old Navy Crew-Neck Sweater - Brown Heather + Cozy Cashmere",
+     "unit": "772dcf+6838c7",
+     "products": [
+      "772dcf",
+      "6838c7"
+     ],
+     "date": "2026-10-30",
+     "time": "17:38",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "772dcf",
+     "name": "Old Navy Crew-Neck Sweater - Brown Heather + Cozy Cashmere + Forest Canopy",
+     "unit": "772dcf+6838c7+229a70",
+     "products": [
+      "772dcf",
+      "6838c7",
+      "229a70"
+     ],
+     "date": "2026-10-30",
+     "time": "18:38",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "7e1c60",
+     "name": "H&M Loose Fit Sweatpants - Black",
+     "unit": "7e1c60",
+     "products": [
+      "7e1c60"
+     ],
+     "date": "2026-10-30",
+     "time": "19:08",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "7e1c60",
+     "name": "H&M Loose Fit Sweatpants - Black + Light Grey Marl",
+     "unit": "7e1c60+adb964",
+     "products": [
+      "7e1c60",
+      "adb964"
+     ],
+     "date": "2026-10-31",
+     "time": "16:30",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "7e1c60",
+     "name": "H&M Loose Fit Sweatpants - Black + Light Grey Marl + Dark Grey",
+     "unit": "7e1c60+adb964+97d0e6",
+     "products": [
+      "7e1c60",
+      "adb964",
+      "97d0e6"
+     ],
+     "date": "2026-11-01",
+     "time": "15:22",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "f1fed3",
+     "name": "H&M Loose-Fit Zip Hoodie - Dark Brown",
+     "unit": "f1fed3",
+     "products": [
+      "f1fed3"
+     ],
+     "date": "2026-11-01",
+     "time": "16:38",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "f1fed3",
+     "name": "H&M Loose-Fit Zip Hoodie - Dark Brown + Grey Marl",
+     "unit": "f1fed3+239664",
+     "products": [
+      "f1fed3",
+      "239664"
+     ],
+     "date": "2026-11-01",
+     "time": "17:38",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "f1fed3",
+     "name": "H&M Loose-Fit Zip Hoodie - Dark Brown + Grey Marl + Dark Khaki Green",
+     "unit": "f1fed3+239664+5a73a3",
+     "products": [
+      "f1fed3",
+      "239664",
+      "5a73a3"
+     ],
+     "date": "2026-11-01",
+     "time": "18:38",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "8e26fd",
+     "name": "Old Navy Waffle Henley - In The Navy",
+     "unit": "8e26fd",
+     "products": [
+      "8e26fd"
+     ],
+     "date": "2026-11-01",
+     "time": "19:08",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "aad169",
+     "name": "Old Navy Waffle Henley - Kicking Up Dust + Jurassic Green",
+     "unit": "aad169+58c082",
+     "products": [
+      "aad169",
+      "58c082"
+     ],
+     "date": "2026-11-02",
+     "time": "15:22",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "9bbabf",
+     "name": "Old Navy Long-Sleeve Waffle Crew - Sea Salt",
+     "unit": "9bbabf",
+     "products": [
+      "9bbabf"
+     ],
+     "date": "2026-11-02",
+     "time": "16:38",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "70db4e",
+     "name": "Old Navy Long-Sleeve Waffle Crew - Heritage Green + Dark Walnut",
+     "unit": "70db4e+27ab82",
+     "products": [
+      "70db4e",
+      "27ab82"
+     ],
+     "date": "2026-11-02",
+     "time": "17:38",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "6838c7",
+     "name": "Old Navy Crew-Neck Sweater - Cozy Cashmere",
+     "unit": "6838c7",
+     "products": [
+      "6838c7"
+     ],
+     "date": "2026-11-02",
+     "time": "18:38",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "772dcf",
+     "name": "Old Navy Crew-Neck Sweater - Brown Heather + Forest Canopy",
+     "unit": "772dcf+229a70",
+     "products": [
+      "772dcf",
+      "229a70"
+     ],
+     "date": "2026-11-02",
+     "time": "19:08",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "adb964",
+     "name": "H&M Loose Fit Sweatpants - Light Grey Marl",
+     "unit": "adb964",
+     "products": [
+      "adb964"
+     ],
+     "date": "2026-11-03",
+     "time": "15:22",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "7e1c60",
+     "name": "H&M Loose Fit Sweatpants - Black + Dark Grey",
+     "unit": "7e1c60+97d0e6",
+     "products": [
+      "7e1c60",
+      "97d0e6"
+     ],
+     "date": "2026-11-03",
+     "time": "16:38",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "239664",
+     "name": "H&M Loose-Fit Zip Hoodie - Grey Marl",
+     "unit": "239664",
+     "products": [
+      "239664"
+     ],
+     "date": "2026-11-03",
+     "time": "17:38",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "f1fed3",
+     "name": "H&M Loose-Fit Zip Hoodie - Dark Brown + Dark Khaki Green",
+     "unit": "f1fed3+5a73a3",
+     "products": [
+      "f1fed3",
+      "5a73a3"
+     ],
+     "date": "2026-11-03",
+     "time": "18:38",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "58c082",
+     "name": "Old Navy Waffle Henley - Jurassic Green",
+     "unit": "58c082",
+     "products": [
+      "58c082"
+     ],
+     "date": "2026-11-03",
+     "time": "19:08",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "8e26fd",
+     "name": "Old Navy Waffle Henley - In The Navy + Jurassic Green",
+     "unit": "8e26fd+58c082",
+     "products": [
+      "8e26fd",
+      "58c082"
+     ],
+     "date": "2026-11-04",
+     "time": "15:22",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "27ab82",
+     "name": "Old Navy Long-Sleeve Waffle Crew - Dark Walnut",
+     "unit": "27ab82",
+     "products": [
+      "27ab82"
+     ],
+     "date": "2026-11-04",
+     "time": "16:38",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "9bbabf",
+     "name": "Old Navy Long-Sleeve Waffle Crew - Sea Salt + Dark Walnut",
+     "unit": "9bbabf+27ab82",
+     "products": [
+      "9bbabf",
+      "27ab82"
+     ],
+     "date": "2026-11-04",
+     "time": "17:38",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "229a70",
+     "name": "Old Navy Crew-Neck Sweater - Forest Canopy",
+     "unit": "229a70",
+     "products": [
+      "229a70"
+     ],
+     "date": "2026-11-04",
+     "time": "18:38",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "6838c7",
+     "name": "Old Navy Crew-Neck Sweater - Cozy Cashmere + Forest Canopy",
+     "unit": "6838c7+229a70",
+     "products": [
+      "6838c7",
+      "229a70"
+     ],
+     "date": "2026-11-04",
+     "time": "19:08",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    }
+   ],
+   "blocks": [
+    {
+     "kind": "prep",
+     "title": "Prep: pull the day's pieces, steam, de-lint, tags off, set up the floor + bed",
+     "start": "07:30",
+     "end": "08:00"
+    },
+    {
+     "kind": "gym",
+     "title": "Gym",
+     "start": "08:00",
+     "end": "09:15"
+    },
+    {
+     "kind": "meal",
+     "title": "Breakfast",
+     "start": "09:20",
+     "end": "09:40"
+    },
+    {
+     "kind": "shoot",
+     "title": "Shoot: Worn, faceless · AndysBestFinds",
+     "start": "09:40",
+     "end": "10:57",
+     "set": "worn-0"
+    },
+    {
+     "kind": "edit",
+     "title": "Edit + review (31 posts: carousels assembled, videos checked)",
+     "start": "10:57",
+     "end": "11:19"
+    },
+    {
+     "kind": "post",
+     "title": "Schedule this batch: 31 posts in TikTok Studio, Thu Oct 29 to Wed Nov 4 (dates and times in the posting kit)",
+     "start": "11:19",
+     "end": "12:06"
+    },
+    {
+     "kind": "research",
+     "title": "Research: Analytics, competitor tracker, next lineup",
+     "start": "12:06",
+     "end": "12:30"
+    },
+    {
+     "kind": "meal",
+     "title": "Lunch",
+     "start": "12:30",
+     "end": "13:00"
+    },
+    {
+     "kind": "research",
+     "title": "Research: Analytics, competitor tracker, next lineup",
+     "start": "13:00",
+     "end": "13:06"
+    },
+    {
+     "kind": "meal",
+     "title": "Dinner",
+     "start": "18:30",
+     "end": "19:10"
+    }
+   ],
+   "generated": "2026-10-27T21:07",
+   "blocks_done": []
+  },
+  "2026-10-29": {
+   "date": "2026-10-29",
+   "season": "fall",
+   "mode": "batch",
+   "window": [
+    "2026-10-30",
+    "2026-11-05"
+   ],
+   "formats": [
+    "flatlay_vo"
+   ],
+   "posts_per_channel": 20,
+   "channels": 1,
+   "sets": [
+    {
+     "format": "flatlay_vo",
+     "setup": "White bed or couch, hand pointing",
+     "tip": "One take, ~20 s, read the sale script while pointing at the item.",
+     "light": "Key (circle) at 45° to one side of the bed, above it, ~60%. Fill panel 1 on the other side, ~30%. Fill panel 2 above or behind the bed, low, so the white sheets light evenly. Tap to lock, then drop exposure a touch so the whites don't blow out. Don't move anything between takes.",
+     "light_min": 10,
+     "example": "https://www.tiktok.com/@sully.finds/video/7690604593834757407",
+     "channel": "c4a9a3",
+     "channel_name": "AndysBestFinds",
+     "pov": "me",
+     "script": "912ed1",
+     "scripts": [
+      "912ed1",
+      "604ebe",
+      "3e7f42"
+     ],
+     "projects": [
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-old-navy-crew-ne",
+       "title": "Oct 29 · Flat-lay voiceover video · Old Navy Crew-Neck Sweater -",
+       "product": "772dcf"
+      },
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-old-navy-crew-ne-2",
+       "title": "Oct 29 · Flat-lay voiceover video · Old Navy Crew-Neck Sweater -",
+       "product": "6838c7"
+      },
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-old-navy-crew-ne-3",
+       "title": "Oct 29 · Flat-lay voiceover video · Old Navy Crew-Neck Sweater -",
+       "product": "229a70"
+      },
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-old-navy-90s-dou",
+       "title": "Oct 29 · Flat-lay voiceover video · Old Navy 90s Double-Knee Car",
+       "product": "c8cebc"
+      },
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-h-m-loose-fit-sw",
+       "title": "Oct 29 · Flat-lay voiceover video · H&M Loose Fit Sweatpants - B",
+       "product": "7e1c60"
+      },
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-h-m-loose-fit-sw-2",
+       "title": "Oct 29 · Flat-lay voiceover video · H&M Loose Fit Sweatpants - L",
+       "product": "adb964"
+      },
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-h-m-loose-fit-sw-3",
+       "title": "Oct 29 · Flat-lay voiceover video · H&M Loose Fit Sweatpants - D",
+       "product": "97d0e6"
+      },
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-h-m-loose-fit-zi",
+       "title": "Oct 29 · Flat-lay voiceover video · H&M Loose-Fit Zip Hoodie - D",
+       "product": "f1fed3"
+      },
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-h-m-loose-fit-zi-2",
+       "title": "Oct 29 · Flat-lay voiceover video · H&M Loose-Fit Zip Hoodie - G",
+       "product": "239664"
+      },
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-h-m-loose-fit-zi-3",
+       "title": "Oct 29 · Flat-lay voiceover video · H&M Loose-Fit Zip Hoodie - D",
+       "product": "5a73a3"
+      },
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-old-navy-waffle-",
+       "title": "Oct 29 · Flat-lay voiceover video · Old Navy Waffle Henley - Jur",
+       "product": "58c082"
+      },
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-old-navy-waffle--2",
+       "title": "Oct 29 · Flat-lay voiceover video · Old Navy Waffle Henley - Kic",
+       "product": "aad169"
+      },
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-old-navy-waffle--3",
+       "title": "Oct 29 · Flat-lay voiceover video · Old Navy Waffle Henley - In",
+       "product": "8e26fd"
+      },
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-old-navy-long-sl",
+       "title": "Oct 29 · Flat-lay voiceover video · Old Navy Long-Sleeve Waffle  · v1",
+       "product": "70db4e",
+       "variant": 0
+      },
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-old-navy-long-sl-4",
+       "title": "Oct 29 · Flat-lay voiceover video · Old Navy Long-Sleeve Waffle  · v1",
+       "product": "9bbabf",
+       "variant": 0
+      },
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-old-navy-long-sl-7",
+       "title": "Oct 29 · Flat-lay voiceover video · Old Navy Long-Sleeve Waffle  · v1",
+       "product": "27ab82",
+       "variant": 0
+      },
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-old-navy-crew-ne-4",
+       "title": "Oct 29 · Flat-lay voiceover video · Old Navy Crew-Neck Sweater -",
+       "product": "772dcf",
+       "variant": 0,
+       "unit": "772dcf+6838c7",
+       "products": [
+        "772dcf",
+        "6838c7"
+       ]
+      },
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-old-navy-crew-ne-5",
+       "title": "Oct 29 · Flat-lay voiceover video · Old Navy Crew-Neck Sweater -",
+       "product": "772dcf",
+       "variant": 0,
+       "unit": "772dcf+6838c7+229a70",
+       "products": [
+        "772dcf",
+        "6838c7",
+        "229a70"
+       ]
+      },
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-h-m-loose-fit-sw-4",
+       "title": "Oct 29 · Flat-lay voiceover video · H&M Loose Fit Sweatpants - B",
+       "product": "7e1c60",
+       "variant": 0,
+       "unit": "7e1c60+adb964",
+       "products": [
+        "7e1c60",
+        "adb964"
+       ]
+      },
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-h-m-loose-fit-sw-5",
+       "title": "Oct 29 · Flat-lay voiceover video · H&M Loose Fit Sweatpants - B",
+       "product": "7e1c60",
+       "variant": 0,
+       "unit": "7e1c60+adb964+97d0e6",
+       "products": [
+        "7e1c60",
+        "adb964",
+        "97d0e6"
+       ]
+      },
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-h-m-loose-fit-zi-4",
+       "title": "Oct 29 · Flat-lay voiceover video · H&M Loose-Fit Zip Hoodie - D",
+       "product": "f1fed3",
+       "variant": 0,
+       "unit": "f1fed3+239664",
+       "products": [
+        "f1fed3",
+        "239664"
+       ]
+      },
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-h-m-loose-fit-zi-5",
+       "title": "Oct 29 · Flat-lay voiceover video · H&M Loose-Fit Zip Hoodie - D",
+       "product": "f1fed3",
+       "variant": 0,
+       "unit": "f1fed3+239664+5a73a3",
+       "products": [
+        "f1fed3",
+        "239664",
+        "5a73a3"
+       ]
+      },
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-old-navy-waffle--4",
+       "title": "Oct 29 · Flat-lay voiceover video · Old Navy Waffle Henley - Jur",
+       "product": "58c082",
+       "variant": 0,
+       "unit": "58c082+aad169",
+       "products": [
+        "58c082",
+        "aad169"
+       ]
+      },
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-old-navy-waffle--5",
+       "title": "Oct 29 · Flat-lay voiceover video · Old Navy Waffle Henley - Jur",
+       "product": "58c082",
+       "variant": 0,
+       "unit": "58c082+aad169+8e26fd",
+       "products": [
+        "58c082",
+        "aad169",
+        "8e26fd"
+       ]
+      },
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-old-navy-long-sl-2",
+       "title": "Oct 29 · Flat-lay voiceover video · Old Navy Long-Sleeve Waffle",
+       "product": "70db4e",
+       "variant": 0,
+       "unit": "70db4e+9bbabf",
+       "products": [
+        "70db4e",
+        "9bbabf"
+       ]
+      },
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-old-navy-long-sl-3",
+       "title": "Oct 29 · Flat-lay voiceover video · Old Navy Long-Sleeve Waffle",
+       "product": "70db4e",
+       "variant": 0,
+       "unit": "70db4e+9bbabf+27ab82",
+       "products": [
+        "70db4e",
+        "9bbabf",
+        "27ab82"
+       ]
+      },
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-old-navy-crew-ne-6",
+       "title": "Oct 29 · Flat-lay voiceover video · Old Navy Crew-Neck Sweater -",
+       "product": "772dcf",
+       "variant": 0,
+       "unit": "772dcf+229a70",
+       "products": [
+        "772dcf",
+        "229a70"
+       ]
+      },
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-h-m-loose-fit-sw-6",
+       "title": "Oct 29 · Flat-lay voiceover video · H&M Loose Fit Sweatpants - B",
+       "product": "7e1c60",
+       "variant": 0,
+       "unit": "7e1c60+97d0e6",
+       "products": [
+        "7e1c60",
+        "97d0e6"
+       ]
+      },
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-h-m-loose-fit-zi-6",
+       "title": "Oct 29 · Flat-lay voiceover video · H&M Loose-Fit Zip Hoodie - D",
+       "product": "f1fed3",
+       "variant": 0,
+       "unit": "f1fed3+5a73a3",
+       "products": [
+        "f1fed3",
+        "5a73a3"
+       ]
+      },
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-old-navy-waffle--6",
+       "title": "Oct 29 · Flat-lay voiceover video · Old Navy Waffle Henley - Jur",
+       "product": "58c082",
+       "variant": 0,
+       "unit": "58c082+8e26fd",
+       "products": [
+        "58c082",
+        "8e26fd"
+       ]
+      },
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-old-navy-long-sl-5",
+       "title": "Oct 29 · Flat-lay voiceover video · Old Navy Long-Sleeve Waffle",
+       "product": "70db4e",
+       "variant": 0,
+       "unit": "70db4e+27ab82",
+       "products": [
+        "70db4e",
+        "27ab82"
+       ]
+      },
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-old-navy-crew-ne-7",
+       "title": "Oct 29 · Flat-lay voiceover video · Old Navy Crew-Neck Sweater -",
+       "product": "6838c7",
+       "variant": 0,
+       "unit": "6838c7+229a70",
+       "products": [
+        "6838c7",
+        "229a70"
+       ]
+      },
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-h-m-loose-fit-sw-7",
+       "title": "Oct 29 · Flat-lay voiceover video · H&M Loose Fit Sweatpants - L",
+       "product": "adb964",
+       "variant": 0,
+       "unit": "adb964+97d0e6",
+       "products": [
+        "adb964",
+        "97d0e6"
+       ]
+      },
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-h-m-loose-fit-zi-7",
+       "title": "Oct 29 · Flat-lay voiceover video · H&M Loose-Fit Zip Hoodie - G",
+       "product": "239664",
+       "variant": 0,
+       "unit": "239664+5a73a3",
+       "products": [
+        "239664",
+        "5a73a3"
+       ]
+      },
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-old-navy-waffle--7",
+       "title": "Oct 29 · Flat-lay voiceover video · Old Navy Waffle Henley - Kic",
+       "product": "aad169",
+       "variant": 0,
+       "unit": "aad169+8e26fd",
+       "products": [
+        "aad169",
+        "8e26fd"
+       ]
+      },
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-old-navy-long-sl-6",
+       "title": "Oct 29 · Flat-lay voiceover video · Old Navy Long-Sleeve Waffle",
+       "product": "9bbabf",
+       "variant": 0,
+       "unit": "9bbabf+27ab82",
+       "products": [
+        "9bbabf",
+        "27ab82"
+       ]
+      }
+     ],
+     "id": "flatlay_vo-0",
+     "label": "Flat-lay voiceover video",
+     "items": [
+      {
+       "product": "772dcf",
+       "products": [
+        "772dcf"
+       ],
+       "unit": "772dcf",
+       "name": "Old Navy Crew-Neck Sweater - Brown Heather",
+       "takes": 2
+      },
+      {
+       "product": "772dcf",
+       "products": [
+        "772dcf",
+        "6838c7"
+       ],
+       "unit": "772dcf+6838c7",
+       "name": "Old Navy Crew-Neck Sweater - Brown Heather + Cozy Cashmere",
+       "takes": 2
+      },
+      {
+       "product": "772dcf",
+       "products": [
+        "772dcf",
+        "6838c7",
+        "229a70"
+       ],
+       "unit": "772dcf+6838c7+229a70",
+       "name": "Old Navy Crew-Neck Sweater - Brown Heather + Cozy Cashmere + Forest Canopy",
+       "takes": 2
+      },
+      {
+       "product": "c8cebc",
+       "products": [
+        "c8cebc"
+       ],
+       "unit": "c8cebc",
+       "name": "Old Navy 90s Double-Knee Carpenter Jeans - Black Rinse",
+       "takes": 2
+      },
+      {
+       "product": "7e1c60",
+       "products": [
+        "7e1c60",
+        "adb964"
+       ],
+       "unit": "7e1c60+adb964",
+       "name": "H&M Loose Fit Sweatpants - Black + Light Grey Marl",
+       "takes": 2
+      },
+      {
+       "product": "7e1c60",
+       "products": [
+        "7e1c60",
+        "adb964",
+        "97d0e6"
+       ],
+       "unit": "7e1c60+adb964+97d0e6",
+       "name": "H&M Loose Fit Sweatpants - Black + Light Grey Marl + Dark Grey",
+       "takes": 2
+      },
+      {
+       "product": "7e1c60",
+       "products": [
+        "7e1c60"
+       ],
+       "unit": "7e1c60",
+       "name": "H&M Loose Fit Sweatpants - Black",
+       "takes": 2
+      },
+      {
+       "product": "f1fed3",
+       "products": [
+        "f1fed3",
+        "239664"
+       ],
+       "unit": "f1fed3+239664",
+       "name": "H&M Loose-Fit Zip Hoodie - Dark Brown + Grey Marl",
+       "takes": 2
+      },
+      {
+       "product": "f1fed3",
+       "products": [
+        "f1fed3",
+        "239664",
+        "5a73a3"
+       ],
+       "unit": "f1fed3+239664+5a73a3",
+       "name": "H&M Loose-Fit Zip Hoodie - Dark Brown + Grey Marl + Dark Khaki Green",
+       "takes": 2
+      },
+      {
+       "product": "f1fed3",
+       "products": [
+        "f1fed3"
+       ],
+       "unit": "f1fed3",
+       "name": "H&M Loose-Fit Zip Hoodie - Dark Brown",
+       "takes": 2
+      },
+      {
+       "product": "58c082",
+       "products": [
+        "58c082",
+        "aad169"
+       ],
+       "unit": "58c082+aad169",
+       "name": "Old Navy Waffle Henley - Jurassic Green + Kicking Up Dust",
+       "takes": 2
+      },
+      {
+       "product": "58c082",
+       "products": [
+        "58c082",
+        "aad169",
+        "8e26fd"
+       ],
+       "unit": "58c082+aad169+8e26fd",
+       "name": "Old Navy Waffle Henley - Jurassic Green + Kicking Up Dust + In The Navy",
+       "takes": 2
+      },
+      {
+       "product": "58c082",
+       "products": [
+        "58c082"
+       ],
+       "unit": "58c082",
+       "name": "Old Navy Waffle Henley - Jurassic Green",
+       "takes": 2
+      },
+      {
+       "product": "70db4e",
+       "products": [
+        "70db4e",
+        "9bbabf"
+       ],
+       "unit": "70db4e+9bbabf",
+       "name": "Old Navy Long-Sleeve Waffle Crew - Heritage Green + Sea Salt",
+       "takes": 2
+      },
+      {
+       "product": "70db4e",
+       "products": [
+        "70db4e",
+        "9bbabf",
+        "27ab82"
+       ],
+       "unit": "70db4e+9bbabf+27ab82",
+       "name": "Old Navy Long-Sleeve Waffle Crew - Heritage Green + Sea Salt + Dark Walnut",
+       "takes": 1
+      },
+      {
+       "product": "70db4e",
+       "products": [
+        "70db4e"
+       ],
+       "unit": "70db4e",
+       "name": "Old Navy Long-Sleeve Waffle Crew - Heritage Green",
+       "takes": 1
+      },
+      {
+       "product": "772dcf",
+       "products": [
+        "772dcf",
+        "229a70"
+       ],
+       "unit": "772dcf+229a70",
+       "name": "Old Navy Crew-Neck Sweater - Brown Heather + Forest Canopy",
+       "takes": 1
+      },
+      {
+       "product": "6838c7",
+       "products": [
+        "6838c7"
+       ],
+       "unit": "6838c7",
+       "name": "Old Navy Crew-Neck Sweater - Cozy Cashmere",
+       "takes": 1
+      },
+      {
+       "product": "7e1c60",
+       "products": [
+        "7e1c60",
+        "97d0e6"
+       ],
+       "unit": "7e1c60+97d0e6",
+       "name": "H&M Loose Fit Sweatpants - Black + Dark Grey",
+       "takes": 1
+      },
+      {
+       "product": "adb964",
+       "products": [
+        "adb964"
+       ],
+       "unit": "adb964",
+       "name": "H&M Loose Fit Sweatpants - Light Grey Marl",
+       "takes": 1
+      },
+      {
+       "product": "f1fed3",
+       "products": [
+        "f1fed3",
+        "5a73a3"
+       ],
+       "unit": "f1fed3+5a73a3",
+       "name": "H&M Loose-Fit Zip Hoodie - Dark Brown + Dark Khaki Green",
+       "takes": 1
+      },
+      {
+       "product": "239664",
+       "products": [
+        "239664"
+       ],
+       "unit": "239664",
+       "name": "H&M Loose-Fit Zip Hoodie - Grey Marl",
+       "takes": 1
+      },
+      {
+       "product": "58c082",
+       "products": [
+        "58c082",
+        "8e26fd"
+       ],
+       "unit": "58c082+8e26fd",
+       "name": "Old Navy Waffle Henley - Jurassic Green + In The Navy",
+       "takes": 1
+      },
+      {
+       "product": "aad169",
+       "products": [
+        "aad169"
+       ],
+       "unit": "aad169",
+       "name": "Old Navy Waffle Henley - Kicking Up Dust",
+       "takes": 1
+      },
+      {
+       "product": "70db4e",
+       "products": [
+        "70db4e",
+        "27ab82"
+       ],
+       "unit": "70db4e+27ab82",
+       "name": "Old Navy Long-Sleeve Waffle Crew - Heritage Green + Dark Walnut",
+       "takes": 1
+      },
+      {
+       "product": "9bbabf",
+       "products": [
+        "9bbabf"
+       ],
+       "unit": "9bbabf",
+       "name": "Old Navy Long-Sleeve Waffle Crew - Sea Salt",
+       "takes": 1
+      },
+      {
+       "product": "6838c7",
+       "products": [
+        "6838c7",
+        "229a70"
+       ],
+       "unit": "6838c7+229a70",
+       "name": "Old Navy Crew-Neck Sweater - Cozy Cashmere + Forest Canopy",
+       "takes": 1
+      },
+      {
+       "product": "229a70",
+       "products": [
+        "229a70"
+       ],
+       "unit": "229a70",
+       "name": "Old Navy Crew-Neck Sweater - Forest Canopy",
+       "takes": 1
+      },
+      {
+       "product": "adb964",
+       "products": [
+        "adb964",
+        "97d0e6"
+       ],
+       "unit": "adb964+97d0e6",
+       "name": "H&M Loose Fit Sweatpants - Light Grey Marl + Dark Grey",
+       "takes": 1
+      },
+      {
+       "product": "97d0e6",
+       "products": [
+        "97d0e6"
+       ],
+       "unit": "97d0e6",
+       "name": "H&M Loose Fit Sweatpants - Dark Grey",
+       "takes": 1
+      },
+      {
+       "product": "239664",
+       "products": [
+        "239664",
+        "5a73a3"
+       ],
+       "unit": "239664+5a73a3",
+       "name": "H&M Loose-Fit Zip Hoodie - Grey Marl + Dark Khaki Green",
+       "takes": 1
+      },
+      {
+       "product": "5a73a3",
+       "products": [
+        "5a73a3"
+       ],
+       "unit": "5a73a3",
+       "name": "H&M Loose-Fit Zip Hoodie - Dark Khaki Green",
+       "takes": 1
+      },
+      {
+       "product": "aad169",
+       "products": [
+        "aad169",
+        "8e26fd"
+       ],
+       "unit": "aad169+8e26fd",
+       "name": "Old Navy Waffle Henley - Kicking Up Dust + In The Navy",
+       "takes": 1
+      },
+      {
+       "product": "8e26fd",
+       "products": [
+        "8e26fd"
+       ],
+       "unit": "8e26fd",
+       "name": "Old Navy Waffle Henley - In The Navy",
+       "takes": 1
+      },
+      {
+       "product": "9bbabf",
+       "products": [
+        "9bbabf",
+        "27ab82"
+       ],
+       "unit": "9bbabf+27ab82",
+       "name": "Old Navy Long-Sleeve Waffle Crew - Sea Salt + Dark Walnut",
+       "takes": 1
+      },
+      {
+       "product": "27ab82",
+       "products": [
+        "27ab82"
+       ],
+       "unit": "27ab82",
+       "name": "Old Navy Long-Sleeve Waffle Crew - Dark Walnut",
+       "takes": 1
+      }
+     ],
+     "posts": 50,
+     "variant": 0,
+     "minutes": 60,
+     "edit_minutes": 35
+    }
+   ],
+   "posts": [
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "772dcf",
+     "name": "Old Navy Crew-Neck Sweater - Brown Heather",
+     "unit": "772dcf",
+     "products": [
+      "772dcf"
+     ],
+     "date": "2026-10-30",
+     "time": "15:08",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "772dcf",
+     "name": "Old Navy Crew-Neck Sweater - Brown Heather + Cozy Cashmere",
+     "unit": "772dcf+6838c7",
+     "products": [
+      "772dcf",
+      "6838c7"
+     ],
+     "date": "2026-10-30",
+     "time": "16:22",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "772dcf",
+     "name": "Old Navy Crew-Neck Sweater - Brown Heather + Cozy Cashmere + Forest Canopy",
+     "unit": "772dcf+6838c7+229a70",
+     "products": [
+      "772dcf",
+      "6838c7",
+      "229a70"
+     ],
+     "date": "2026-10-30",
+     "time": "17:22",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "c8cebc",
+     "name": "Old Navy 90s Double-Knee Carpenter Jeans - Black Rinse",
+     "unit": "c8cebc",
+     "products": [
+      "c8cebc"
+     ],
+     "date": "2026-10-30",
+     "time": "18:22",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "7e1c60",
+     "name": "H&M Loose Fit Sweatpants - Black + Light Grey Marl",
+     "unit": "7e1c60+adb964",
+     "products": [
+      "7e1c60",
+      "adb964"
+     ],
+     "date": "2026-10-30",
+     "time": "18:52",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "7e1c60",
+     "name": "H&M Loose Fit Sweatpants - Black + Light Grey Marl + Dark Grey",
+     "unit": "7e1c60+adb964+97d0e6",
+     "products": [
+      "7e1c60",
+      "adb964",
+      "97d0e6"
+     ],
+     "date": "2026-10-30",
+     "time": "19:22",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "7e1c60",
+     "name": "H&M Loose Fit Sweatpants - Black",
+     "unit": "7e1c60",
+     "products": [
+      "7e1c60"
+     ],
+     "date": "2026-10-30",
+     "time": "19:38",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "f1fed3",
+     "name": "H&M Loose-Fit Zip Hoodie - Dark Brown + Grey Marl",
+     "unit": "f1fed3+239664",
+     "products": [
+      "f1fed3",
+      "239664"
+     ],
+     "date": "2026-10-30",
+     "time": "19:52",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "f1fed3",
+     "name": "H&M Loose-Fit Zip Hoodie - Dark Brown + Grey Marl + Dark Khaki Green",
+     "unit": "f1fed3+239664+5a73a3",
+     "products": [
+      "f1fed3",
+      "239664",
+      "5a73a3"
+     ],
+     "date": "2026-10-31",
+     "time": "15:30",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "f1fed3",
+     "name": "H&M Loose-Fit Zip Hoodie - Dark Brown",
+     "unit": "f1fed3",
+     "products": [
+      "f1fed3"
+     ],
+     "date": "2026-10-31",
+     "time": "19:30",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "58c082",
+     "name": "Old Navy Waffle Henley - Jurassic Green + Kicking Up Dust",
+     "unit": "58c082+aad169",
+     "products": [
+      "58c082",
+      "aad169"
+     ],
+     "date": "2026-11-01",
+     "time": "15:08",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "58c082",
+     "name": "Old Navy Waffle Henley - Jurassic Green + Kicking Up Dust + In The Navy",
+     "unit": "58c082+aad169+8e26fd",
+     "products": [
+      "58c082",
+      "aad169",
+      "8e26fd"
+     ],
+     "date": "2026-11-01",
+     "time": "16:22",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "58c082",
+     "name": "Old Navy Waffle Henley - Jurassic Green",
+     "unit": "58c082",
+     "products": [
+      "58c082"
+     ],
+     "date": "2026-11-01",
+     "time": "17:22",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "70db4e",
+     "name": "Old Navy Long-Sleeve Waffle Crew - Heritage Green + Sea Salt",
+     "unit": "70db4e+9bbabf",
+     "products": [
+      "70db4e",
+      "9bbabf"
+     ],
+     "date": "2026-11-01",
+     "time": "18:22",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "70db4e",
+     "name": "Old Navy Long-Sleeve Waffle Crew - Heritage Green + Sea Salt + Dark Walnut",
+     "unit": "70db4e+9bbabf+27ab82",
+     "products": [
+      "70db4e",
+      "9bbabf",
+      "27ab82"
+     ],
+     "date": "2026-11-01",
+     "time": "18:52",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "70db4e",
+     "name": "Old Navy Long-Sleeve Waffle Crew - Heritage Green",
+     "unit": "70db4e",
+     "products": [
+      "70db4e"
+     ],
+     "date": "2026-11-01",
+     "time": "19:22",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "772dcf",
+     "name": "Old Navy Crew-Neck Sweater - Brown Heather + Forest Canopy",
+     "unit": "772dcf+229a70",
+     "products": [
+      "772dcf",
+      "229a70"
+     ],
+     "date": "2026-11-01",
+     "time": "19:38",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "6838c7",
+     "name": "Old Navy Crew-Neck Sweater - Cozy Cashmere",
+     "unit": "6838c7",
+     "products": [
+      "6838c7"
+     ],
+     "date": "2026-11-01",
+     "time": "19:52",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "7e1c60",
+     "name": "H&M Loose Fit Sweatpants - Black + Dark Grey",
+     "unit": "7e1c60+97d0e6",
+     "products": [
+      "7e1c60",
+      "97d0e6"
+     ],
+     "date": "2026-11-02",
+     "time": "15:08",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "adb964",
+     "name": "H&M Loose Fit Sweatpants - Light Grey Marl",
+     "unit": "adb964",
+     "products": [
+      "adb964"
+     ],
+     "date": "2026-11-02",
+     "time": "16:22",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "f1fed3",
+     "name": "H&M Loose-Fit Zip Hoodie - Dark Brown + Dark Khaki Green",
+     "unit": "f1fed3+5a73a3",
+     "products": [
+      "f1fed3",
+      "5a73a3"
+     ],
+     "date": "2026-11-02",
+     "time": "17:22",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "239664",
+     "name": "H&M Loose-Fit Zip Hoodie - Grey Marl",
+     "unit": "239664",
+     "products": [
+      "239664"
+     ],
+     "date": "2026-11-02",
+     "time": "18:22",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "58c082",
+     "name": "Old Navy Waffle Henley - Jurassic Green + In The Navy",
+     "unit": "58c082+8e26fd",
+     "products": [
+      "58c082",
+      "8e26fd"
+     ],
+     "date": "2026-11-02",
+     "time": "18:52",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "aad169",
+     "name": "Old Navy Waffle Henley - Kicking Up Dust",
+     "unit": "aad169",
+     "products": [
+      "aad169"
+     ],
+     "date": "2026-11-02",
+     "time": "19:22",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "70db4e",
+     "name": "Old Navy Long-Sleeve Waffle Crew - Heritage Green + Dark Walnut",
+     "unit": "70db4e+27ab82",
+     "products": [
+      "70db4e",
+      "27ab82"
+     ],
+     "date": "2026-11-02",
+     "time": "19:38",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "9bbabf",
+     "name": "Old Navy Long-Sleeve Waffle Crew - Sea Salt",
+     "unit": "9bbabf",
+     "products": [
+      "9bbabf"
+     ],
+     "date": "2026-11-02",
+     "time": "19:52",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "6838c7",
+     "name": "Old Navy Crew-Neck Sweater - Cozy Cashmere + Forest Canopy",
+     "unit": "6838c7+229a70",
+     "products": [
+      "6838c7",
+      "229a70"
+     ],
+     "date": "2026-11-03",
+     "time": "15:08",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "229a70",
+     "name": "Old Navy Crew-Neck Sweater - Forest Canopy",
+     "unit": "229a70",
+     "products": [
+      "229a70"
+     ],
+     "date": "2026-11-03",
+     "time": "16:22",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "adb964",
+     "name": "H&M Loose Fit Sweatpants - Light Grey Marl + Dark Grey",
+     "unit": "adb964+97d0e6",
+     "products": [
+      "adb964",
+      "97d0e6"
+     ],
+     "date": "2026-11-03",
+     "time": "17:22",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "97d0e6",
+     "name": "H&M Loose Fit Sweatpants - Dark Grey",
+     "unit": "97d0e6",
+     "products": [
+      "97d0e6"
+     ],
+     "date": "2026-11-03",
+     "time": "18:22",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "239664",
+     "name": "H&M Loose-Fit Zip Hoodie - Grey Marl + Dark Khaki Green",
+     "unit": "239664+5a73a3",
+     "products": [
+      "239664",
+      "5a73a3"
+     ],
+     "date": "2026-11-03",
+     "time": "18:52",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "5a73a3",
+     "name": "H&M Loose-Fit Zip Hoodie - Dark Khaki Green",
+     "unit": "5a73a3",
+     "products": [
+      "5a73a3"
+     ],
+     "date": "2026-11-03",
+     "time": "19:22",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "aad169",
+     "name": "Old Navy Waffle Henley - Kicking Up Dust + In The Navy",
+     "unit": "aad169+8e26fd",
+     "products": [
+      "aad169",
+      "8e26fd"
+     ],
+     "date": "2026-11-03",
+     "time": "19:38",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "8e26fd",
+     "name": "Old Navy Waffle Henley - In The Navy",
+     "unit": "8e26fd",
+     "products": [
+      "8e26fd"
+     ],
+     "date": "2026-11-03",
+     "time": "19:52",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "9bbabf",
+     "name": "Old Navy Long-Sleeve Waffle Crew - Sea Salt + Dark Walnut",
+     "unit": "9bbabf+27ab82",
+     "products": [
+      "9bbabf",
+      "27ab82"
+     ],
+     "date": "2026-11-04",
+     "time": "15:08",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "27ab82",
+     "name": "Old Navy Long-Sleeve Waffle Crew - Dark Walnut",
+     "unit": "27ab82",
+     "products": [
+      "27ab82"
+     ],
+     "date": "2026-11-04",
+     "time": "16:22",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "772dcf",
+     "name": "Old Navy Crew-Neck Sweater - Brown Heather",
+     "unit": "772dcf",
+     "products": [
+      "772dcf"
+     ],
+     "date": "2026-11-04",
+     "time": "17:22",
+     "variant": 0,
+     "take": 2,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "772dcf",
+     "name": "Old Navy Crew-Neck Sweater - Brown Heather + Cozy Cashmere",
+     "unit": "772dcf+6838c7",
+     "products": [
+      "772dcf",
+      "6838c7"
+     ],
+     "date": "2026-11-04",
+     "time": "18:22",
+     "variant": 0,
+     "take": 2,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "772dcf",
+     "name": "Old Navy Crew-Neck Sweater - Brown Heather + Cozy Cashmere + Forest Canopy",
+     "unit": "772dcf+6838c7+229a70",
+     "products": [
+      "772dcf",
+      "6838c7",
+      "229a70"
+     ],
+     "date": "2026-11-04",
+     "time": "18:52",
+     "variant": 0,
+     "take": 2,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "c8cebc",
+     "name": "Old Navy 90s Double-Knee Carpenter Jeans - Black Rinse",
+     "unit": "c8cebc",
+     "products": [
+      "c8cebc"
+     ],
+     "date": "2026-11-04",
+     "time": "19:22",
+     "variant": 0,
+     "take": 2,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "7e1c60",
+     "name": "H&M Loose Fit Sweatpants - Black + Light Grey Marl",
+     "unit": "7e1c60+adb964",
+     "products": [
+      "7e1c60",
+      "adb964"
+     ],
+     "date": "2026-11-04",
+     "time": "19:38",
+     "variant": 0,
+     "take": 2,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "7e1c60",
+     "name": "H&M Loose Fit Sweatpants - Black + Light Grey Marl + Dark Grey",
+     "unit": "7e1c60+adb964+97d0e6",
+     "products": [
+      "7e1c60",
+      "adb964",
+      "97d0e6"
+     ],
+     "date": "2026-11-04",
+     "time": "19:52",
+     "variant": 0,
+     "take": 2,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "7e1c60",
+     "name": "H&M Loose Fit Sweatpants - Black",
+     "unit": "7e1c60",
+     "products": [
+      "7e1c60"
+     ],
+     "date": "2026-11-05",
+     "time": "15:08",
+     "variant": 0,
+     "take": 2,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "f1fed3",
+     "name": "H&M Loose-Fit Zip Hoodie - Dark Brown + Grey Marl",
+     "unit": "f1fed3+239664",
+     "products": [
+      "f1fed3",
+      "239664"
+     ],
+     "date": "2026-11-05",
+     "time": "16:22",
+     "variant": 0,
+     "take": 2,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "f1fed3",
+     "name": "H&M Loose-Fit Zip Hoodie - Dark Brown + Grey Marl + Dark Khaki Green",
+     "unit": "f1fed3+239664+5a73a3",
+     "products": [
+      "f1fed3",
+      "239664",
+      "5a73a3"
+     ],
+     "date": "2026-11-05",
+     "time": "17:22",
+     "variant": 0,
+     "take": 2,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "f1fed3",
+     "name": "H&M Loose-Fit Zip Hoodie - Dark Brown",
+     "unit": "f1fed3",
+     "products": [
+      "f1fed3"
+     ],
+     "date": "2026-11-05",
+     "time": "18:22",
+     "variant": 0,
+     "take": 2,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "58c082",
+     "name": "Old Navy Waffle Henley - Jurassic Green + Kicking Up Dust",
+     "unit": "58c082+aad169",
+     "products": [
+      "58c082",
+      "aad169"
+     ],
+     "date": "2026-11-05",
+     "time": "18:52",
+     "variant": 0,
+     "take": 2,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "58c082",
+     "name": "Old Navy Waffle Henley - Jurassic Green + Kicking Up Dust + In The Navy",
+     "unit": "58c082+aad169+8e26fd",
+     "products": [
+      "58c082",
+      "aad169",
+      "8e26fd"
+     ],
+     "date": "2026-11-05",
+     "time": "19:22",
+     "variant": 0,
+     "take": 2,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "58c082",
+     "name": "Old Navy Waffle Henley - Jurassic Green",
+     "unit": "58c082",
+     "products": [
+      "58c082"
+     ],
+     "date": "2026-11-05",
+     "time": "19:38",
+     "variant": 0,
+     "take": 2,
+     "done": false
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "70db4e",
+     "name": "Old Navy Long-Sleeve Waffle Crew - Heritage Green + Sea Salt",
+     "unit": "70db4e+9bbabf",
+     "products": [
+      "70db4e",
+      "9bbabf"
+     ],
+     "date": "2026-11-05",
+     "time": "19:52",
+     "variant": 0,
+     "take": 2,
+     "done": false
+    }
+   ],
+   "blocks": [
+    {
+     "kind": "prep",
+     "title": "Prep: pull the day's pieces, steam, de-lint, tags off, set up the floor + bed",
+     "start": "07:30",
+     "end": "08:00"
+    },
+    {
+     "kind": "gym",
+     "title": "Gym",
+     "start": "08:00",
+     "end": "09:15"
+    },
+    {
+     "kind": "meal",
+     "title": "Breakfast",
+     "start": "09:20",
+     "end": "09:40"
+    },
+    {
+     "kind": "shoot",
+     "title": "Shoot: Flat-lay voiceover video · AndysBestFinds",
+     "start": "09:40",
+     "end": "10:40",
+     "set": "flatlay_vo-0"
+    },
+    {
+     "kind": "edit",
+     "title": "Edit + review (50 posts: carousels assembled, videos checked)",
+     "start": "10:40",
+     "end": "11:15"
+    },
+    {
+     "kind": "post",
+     "title": "Schedule this batch: 50 posts in TikTok Studio, Fri Oct 30 to Thu Nov 5 (dates and times in the posting kit)",
+     "start": "11:15",
+     "end": "12:30"
+    },
+    {
+     "kind": "meal",
+     "title": "Lunch",
+     "start": "12:30",
+     "end": "13:00"
+    },
+    {
+     "kind": "research",
+     "title": "Research: Analytics, competitor tracker, next lineup",
+     "start": "13:00",
+     "end": "13:30"
+    },
+    {
+     "kind": "meal",
+     "title": "Dinner",
+     "start": "18:30",
+     "end": "19:10"
+    }
+   ],
+   "generated": "2026-10-27T21:07",
+   "blocks_done": []
+  },
+  "2026-10-30": {
+   "date": "2026-10-30",
+   "season": "fall",
+   "mode": "batch",
+   "window": [
+    "2026-10-31",
+    "2026-11-06"
+   ],
+   "formats": [
+    "held"
+   ],
+   "posts_per_channel": 20,
+   "channels": 1,
+   "sets": [
+    {
+     "format": "held",
+     "setup": "Hand-held close-up (shoes, gadgets, tags)",
+     "tip": "\"I think I just found the perfect…\" Good for side products.",
+     "light": "Key (circle) close and low to one side, grazing across the item, ~50%, so the knit or waffle texture pops. Fill panel 1 opposite, ~20%. Fill panel 2 off. Keep your hand and phone from shadowing the item; plain background.",
+     "light_min": 8,
+     "example": "https://www.tiktok.com/@sully.finds/video/7700700082219339039",
+     "channel": "c4a9a3",
+     "channel_name": "AndysBestFinds",
+     "pov": "me",
+     "script": "fed014",
+     "scripts": [
+      "fed014",
+      "d94787"
+     ],
+     "projects": [
+      {
+       "sid": "oct-30-holding-the-item-h-m-loose-fit-sweatpants",
+       "title": "Oct 30 · Holding the item · H&M Loose Fit Sweatpants - D",
+       "product": "97d0e6"
+      },
+      {
+       "sid": "oct-30-holding-the-item-h-m-loose-fit-sweatpants-2",
+       "title": "Oct 30 · Holding the item · H&M Loose Fit Sweatpants - L",
+       "product": "adb964"
+      },
+      {
+       "sid": "oct-30-holding-the-item-h-m-loose-fit-zip-hoodie",
+       "title": "Oct 30 · Holding the item · H&M Loose-Fit Zip Hoodie - D",
+       "product": "f1fed3"
+      },
+      {
+       "sid": "oct-30-holding-the-item-old-navy-waffle-henley-j",
+       "title": "Oct 30 · Holding the item · Old Navy Waffle Henley - Jur",
+       "product": "58c082"
+      },
+      {
+       "sid": "oct-30-holding-the-item-old-navy-long-sleeve-waf",
+       "title": "Oct 30 · Holding the item · Old Navy Long-Sleeve Waffle  · v1",
+       "product": "70db4e",
+       "variant": 0
+      },
+      {
+       "sid": "oct-30-holding-the-item-h-m-loose-fit-sweatpants-3",
+       "title": "Oct 30 · Holding the item · H&M Loose Fit Sweatpants - L",
+       "product": "adb964",
+       "variant": 0,
+       "unit": "adb964+97d0e6",
+       "products": [
+        "adb964",
+        "97d0e6"
+       ]
+      },
+      {
+       "sid": "oct-30-holding-the-item-h-m-loose-fit-sweatpants-4",
+       "title": "Oct 30 · Holding the item · H&M Loose Fit Sweatpants - L",
+       "product": "adb964",
+       "variant": 0,
+       "unit": "adb964+97d0e6+7e1c60",
+       "products": [
+        "adb964",
+        "97d0e6",
+        "7e1c60"
+       ]
+      },
+      {
+       "sid": "oct-30-holding-the-item-h-m-loose-fit-zip-hoodie-2",
+       "title": "Oct 30 · Holding the item · H&M Loose-Fit Zip Hoodie - D",
+       "product": "f1fed3",
+       "variant": 0,
+       "unit": "f1fed3+239664",
+       "products": [
+        "f1fed3",
+        "239664"
+       ]
+      },
+      {
+       "sid": "oct-30-holding-the-item-h-m-loose-fit-zip-hoodie-3",
+       "title": "Oct 30 · Holding the item · H&M Loose-Fit Zip Hoodie - D",
+       "product": "f1fed3",
+       "variant": 0,
+       "unit": "f1fed3+239664+5a73a3",
+       "products": [
+        "f1fed3",
+        "239664",
+        "5a73a3"
+       ]
+      },
+      {
+       "sid": "oct-30-holding-the-item-old-navy-waffle-henley-j-2",
+       "title": "Oct 30 · Holding the item · Old Navy Waffle Henley - Jur",
+       "product": "58c082",
+       "variant": 0,
+       "unit": "58c082+aad169",
+       "products": [
+        "58c082",
+        "aad169"
+       ]
+      },
+      {
+       "sid": "oct-30-holding-the-item-old-navy-waffle-henley-j-3",
+       "title": "Oct 30 · Holding the item · Old Navy Waffle Henley - Jur",
+       "product": "58c082",
+       "variant": 0,
+       "unit": "58c082+aad169+8e26fd",
+       "products": [
+        "58c082",
+        "aad169",
+        "8e26fd"
+       ]
+      },
+      {
+       "sid": "oct-30-holding-the-item-old-navy-long-sleeve-waf-2",
+       "title": "Oct 30 · Holding the item · Old Navy Long-Sleeve Waffle",
+       "product": "70db4e",
+       "variant": 0,
+       "unit": "70db4e+9bbabf",
+       "products": [
+        "70db4e",
+        "9bbabf"
+       ]
+      },
+      {
+       "sid": "oct-30-holding-the-item-old-navy-long-sleeve-waf-3",
+       "title": "Oct 30 · Holding the item · Old Navy Long-Sleeve Waffle",
+       "product": "70db4e",
+       "variant": 0,
+       "unit": "70db4e+9bbabf+27ab82",
+       "products": [
+        "70db4e",
+        "9bbabf",
+        "27ab82"
+       ]
+      },
+      {
+       "sid": "oct-30-holding-the-item-old-navy-crew-neck-sweat",
+       "title": "Oct 30 · Holding the item · Old Navy Crew-Neck Sweater -",
+       "product": "772dcf",
+       "variant": 0,
+       "unit": "772dcf",
+       "products": [
+        "772dcf"
+       ]
+      },
+      {
+       "sid": "oct-30-holding-the-item-old-navy-crew-neck-sweat-2",
+       "title": "Oct 30 · Holding the item · Old Navy Crew-Neck Sweater -",
+       "product": "772dcf",
+       "variant": 0,
+       "unit": "772dcf+6838c7",
+       "products": [
+        "772dcf",
+        "6838c7"
+       ]
+      },
+      {
+       "sid": "oct-30-holding-the-item-old-navy-crew-neck-sweat-3",
+       "title": "Oct 30 · Holding the item · Old Navy Crew-Neck Sweater -",
+       "product": "772dcf",
+       "variant": 0,
+       "unit": "772dcf+6838c7+229a70",
+       "products": [
+        "772dcf",
+        "6838c7",
+        "229a70"
+       ]
+      },
+      {
+       "sid": "oct-30-holding-the-item-old-navy-90s-double-knee",
+       "title": "Oct 30 · Holding the item · Old Navy 90s Double-Knee Car",
+       "product": "c8cebc",
+       "variant": 0,
+       "unit": "c8cebc",
+       "products": [
+        "c8cebc"
+       ]
+      },
+      {
+       "sid": "oct-30-holding-the-item-h-m-loose-fit-sweatpants-5",
+       "title": "Oct 30 · Holding the item · H&M Loose Fit Sweatpants - L",
+       "product": "adb964",
+       "variant": 0,
+       "unit": "adb964+7e1c60",
+       "products": [
+        "adb964",
+        "7e1c60"
+       ]
+      },
+      {
+       "sid": "oct-30-holding-the-item-h-m-loose-fit-zip-hoodie-4",
+       "title": "Oct 30 · Holding the item · H&M Loose-Fit Zip Hoodie - D",
+       "product": "f1fed3",
+       "variant": 0,
+       "unit": "f1fed3+5a73a3",
+       "products": [
+        "f1fed3",
+        "5a73a3"
+       ]
+      }
+     ],
+     "id": "held-0",
+     "label": "Holding the item",
+     "items": [
+      {
+       "product": "adb964",
+       "products": [
+        "adb964"
+       ],
+       "unit": "adb964",
+       "name": "H&M Loose Fit Sweatpants - Light Grey Marl",
+       "takes": 1
+      },
+      {
+       "product": "adb964",
+       "products": [
+        "adb964",
+        "97d0e6"
+       ],
+       "unit": "adb964+97d0e6",
+       "name": "H&M Loose Fit Sweatpants - Light Grey Marl + Dark Grey",
+       "takes": 1
+      },
+      {
+       "product": "adb964",
+       "products": [
+        "adb964",
+        "97d0e6",
+        "7e1c60"
+       ],
+       "unit": "adb964+97d0e6+7e1c60",
+       "name": "H&M Loose Fit Sweatpants - Light Grey Marl + Dark Grey + Black",
+       "takes": 1
+      },
+      {
+       "product": "f1fed3",
+       "products": [
+        "f1fed3"
+       ],
+       "unit": "f1fed3",
+       "name": "H&M Loose-Fit Zip Hoodie - Dark Brown",
+       "takes": 1
+      },
+      {
+       "product": "f1fed3",
+       "products": [
+        "f1fed3",
+        "239664"
+       ],
+       "unit": "f1fed3+239664",
+       "name": "H&M Loose-Fit Zip Hoodie - Dark Brown + Grey Marl",
+       "takes": 1
+      },
+      {
+       "product": "f1fed3",
+       "products": [
+        "f1fed3",
+        "239664",
+        "5a73a3"
+       ],
+       "unit": "f1fed3+239664+5a73a3",
+       "name": "H&M Loose-Fit Zip Hoodie - Dark Brown + Grey Marl + Dark Khaki Green",
+       "takes": 1
+      },
+      {
+       "product": "58c082",
+       "products": [
+        "58c082"
+       ],
+       "unit": "58c082",
+       "name": "Old Navy Waffle Henley - Jurassic Green",
+       "takes": 1
+      },
+      {
+       "product": "58c082",
+       "products": [
+        "58c082",
+        "aad169"
+       ],
+       "unit": "58c082+aad169",
+       "name": "Old Navy Waffle Henley - Jurassic Green + Kicking Up Dust",
+       "takes": 1
+      },
+      {
+       "product": "58c082",
+       "products": [
+        "58c082",
+        "aad169",
+        "8e26fd"
+       ],
+       "unit": "58c082+aad169+8e26fd",
+       "name": "Old Navy Waffle Henley - Jurassic Green + Kicking Up Dust + In The Navy",
+       "takes": 1
+      },
+      {
+       "product": "70db4e",
+       "products": [
+        "70db4e"
+       ],
+       "unit": "70db4e",
+       "name": "Old Navy Long-Sleeve Waffle Crew - Heritage Green",
+       "takes": 1
+      },
+      {
+       "product": "70db4e",
+       "products": [
+        "70db4e",
+        "9bbabf"
+       ],
+       "unit": "70db4e+9bbabf",
+       "name": "Old Navy Long-Sleeve Waffle Crew - Heritage Green + Sea Salt",
+       "takes": 1
+      },
+      {
+       "product": "70db4e",
+       "products": [
+        "70db4e",
+        "9bbabf",
+        "27ab82"
+       ],
+       "unit": "70db4e+9bbabf+27ab82",
+       "name": "Old Navy Long-Sleeve Waffle Crew - Heritage Green + Sea Salt + Dark Walnut",
+       "takes": 1
+      },
+      {
+       "product": "772dcf",
+       "products": [
+        "772dcf"
+       ],
+       "unit": "772dcf",
+       "name": "Old Navy Crew-Neck Sweater - Brown Heather",
+       "takes": 1
+      },
+      {
+       "product": "772dcf",
+       "products": [
+        "772dcf",
+        "6838c7"
+       ],
+       "unit": "772dcf+6838c7",
+       "name": "Old Navy Crew-Neck Sweater - Brown Heather + Cozy Cashmere",
+       "takes": 1
+      },
+      {
+       "product": "772dcf",
+       "products": [
+        "772dcf",
+        "6838c7",
+        "229a70"
+       ],
+       "unit": "772dcf+6838c7+229a70",
+       "name": "Old Navy Crew-Neck Sweater - Brown Heather + Cozy Cashmere + Forest Canopy",
+       "takes": 1
+      },
+      {
+       "product": "c8cebc",
+       "products": [
+        "c8cebc"
+       ],
+       "unit": "c8cebc",
+       "name": "Old Navy 90s Double-Knee Carpenter Jeans - Black Rinse",
+       "takes": 1
+      },
+      {
+       "product": "adb964",
+       "products": [
+        "adb964",
+        "7e1c60"
+       ],
+       "unit": "adb964+7e1c60",
+       "name": "H&M Loose Fit Sweatpants - Light Grey Marl + Black",
+       "takes": 1
+      },
+      {
+       "product": "97d0e6",
+       "products": [
+        "97d0e6"
+       ],
+       "unit": "97d0e6",
+       "name": "H&M Loose Fit Sweatpants - Dark Grey",
+       "takes": 1
+      },
+      {
+       "product": "f1fed3",
+       "products": [
+        "f1fed3",
+        "5a73a3"
+       ],
+       "unit": "f1fed3+5a73a3",
+       "name": "H&M Loose-Fit Zip Hoodie - Dark Brown + Dark Khaki Green",
+       "takes": 1
+      }
+     ],
+     "posts": 19,
+     "variant": 0,
+     "minutes": 27,
+     "edit_minutes": 13
+    }
+   ],
+   "posts": [
+    {
+     "set": "held-0",
+     "format": "held",
+     "channel": "c4a9a3",
+     "product": "adb964",
+     "name": "H&M Loose Fit Sweatpants - Light Grey Marl",
+     "unit": "adb964",
+     "products": [
+      "adb964"
+     ],
+     "date": "2026-10-31",
+     "time": "17:30",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "held-0",
+     "format": "held",
+     "channel": "c4a9a3",
+     "product": "adb964",
+     "name": "H&M Loose Fit Sweatpants - Light Grey Marl + Dark Grey",
+     "unit": "adb964+97d0e6",
+     "products": [
+      "adb964",
+      "97d0e6"
+     ],
+     "date": "2026-11-01",
+     "time": "15:38",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "held-0",
+     "format": "held",
+     "channel": "c4a9a3",
+     "product": "adb964",
+     "name": "H&M Loose Fit Sweatpants - Light Grey Marl + Dark Grey + Black",
+     "unit": "adb964+97d0e6+7e1c60",
+     "products": [
+      "adb964",
+      "97d0e6",
+      "7e1c60"
+     ],
+     "date": "2026-11-01",
+     "time": "16:52",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "held-0",
+     "format": "held",
+     "channel": "c4a9a3",
+     "product": "f1fed3",
+     "name": "H&M Loose-Fit Zip Hoodie - Dark Brown",
+     "unit": "f1fed3",
+     "products": [
+      "f1fed3"
+     ],
+     "date": "2026-11-01",
+     "time": "17:52",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "held-0",
+     "format": "held",
+     "channel": "c4a9a3",
+     "product": "f1fed3",
+     "name": "H&M Loose-Fit Zip Hoodie - Dark Brown + Grey Marl",
+     "unit": "f1fed3+239664",
+     "products": [
+      "f1fed3",
+      "239664"
+     ],
+     "date": "2026-11-02",
+     "time": "15:38",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "held-0",
+     "format": "held",
+     "channel": "c4a9a3",
+     "product": "f1fed3",
+     "name": "H&M Loose-Fit Zip Hoodie - Dark Brown + Grey Marl + Dark Khaki Green",
+     "unit": "f1fed3+239664+5a73a3",
+     "products": [
+      "f1fed3",
+      "239664",
+      "5a73a3"
+     ],
+     "date": "2026-11-02",
+     "time": "16:52",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "held-0",
+     "format": "held",
+     "channel": "c4a9a3",
+     "product": "58c082",
+     "name": "Old Navy Waffle Henley - Jurassic Green",
+     "unit": "58c082",
+     "products": [
+      "58c082"
+     ],
+     "date": "2026-11-02",
+     "time": "17:52",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "held-0",
+     "format": "held",
+     "channel": "c4a9a3",
+     "product": "58c082",
+     "name": "Old Navy Waffle Henley - Jurassic Green + Kicking Up Dust",
+     "unit": "58c082+aad169",
+     "products": [
+      "58c082",
+      "aad169"
+     ],
+     "date": "2026-11-03",
+     "time": "15:38",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "held-0",
+     "format": "held",
+     "channel": "c4a9a3",
+     "product": "58c082",
+     "name": "Old Navy Waffle Henley - Jurassic Green + Kicking Up Dust + In The Navy",
+     "unit": "58c082+aad169+8e26fd",
+     "products": [
+      "58c082",
+      "aad169",
+      "8e26fd"
+     ],
+     "date": "2026-11-03",
+     "time": "16:52",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "held-0",
+     "format": "held",
+     "channel": "c4a9a3",
+     "product": "70db4e",
+     "name": "Old Navy Long-Sleeve Waffle Crew - Heritage Green",
+     "unit": "70db4e",
+     "products": [
+      "70db4e"
+     ],
+     "date": "2026-11-03",
+     "time": "17:52",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "held-0",
+     "format": "held",
+     "channel": "c4a9a3",
+     "product": "70db4e",
+     "name": "Old Navy Long-Sleeve Waffle Crew - Heritage Green + Sea Salt",
+     "unit": "70db4e+9bbabf",
+     "products": [
+      "70db4e",
+      "9bbabf"
+     ],
+     "date": "2026-11-04",
+     "time": "15:38",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "held-0",
+     "format": "held",
+     "channel": "c4a9a3",
+     "product": "70db4e",
+     "name": "Old Navy Long-Sleeve Waffle Crew - Heritage Green + Sea Salt + Dark Walnut",
+     "unit": "70db4e+9bbabf+27ab82",
+     "products": [
+      "70db4e",
+      "9bbabf",
+      "27ab82"
+     ],
+     "date": "2026-11-04",
+     "time": "16:52",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "held-0",
+     "format": "held",
+     "channel": "c4a9a3",
+     "product": "772dcf",
+     "name": "Old Navy Crew-Neck Sweater - Brown Heather",
+     "unit": "772dcf",
+     "products": [
+      "772dcf"
+     ],
+     "date": "2026-11-04",
+     "time": "17:52",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "held-0",
+     "format": "held",
+     "channel": "c4a9a3",
+     "product": "772dcf",
+     "name": "Old Navy Crew-Neck Sweater - Brown Heather + Cozy Cashmere",
+     "unit": "772dcf+6838c7",
+     "products": [
+      "772dcf",
+      "6838c7"
+     ],
+     "date": "2026-11-05",
+     "time": "15:38",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "held-0",
+     "format": "held",
+     "channel": "c4a9a3",
+     "product": "772dcf",
+     "name": "Old Navy Crew-Neck Sweater - Brown Heather + Cozy Cashmere + Forest Canopy",
+     "unit": "772dcf+6838c7+229a70",
+     "products": [
+      "772dcf",
+      "6838c7",
+      "229a70"
+     ],
+     "date": "2026-11-05",
+     "time": "16:52",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "held-0",
+     "format": "held",
+     "channel": "c4a9a3",
+     "product": "c8cebc",
+     "name": "Old Navy 90s Double-Knee Carpenter Jeans - Black Rinse",
+     "unit": "c8cebc",
+     "products": [
+      "c8cebc"
+     ],
+     "date": "2026-11-05",
+     "time": "17:52",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "held-0",
+     "format": "held",
+     "channel": "c4a9a3",
+     "product": "adb964",
+     "name": "H&M Loose Fit Sweatpants - Light Grey Marl + Black",
+     "unit": "adb964+7e1c60",
+     "products": [
+      "adb964",
+      "7e1c60"
+     ],
+     "date": "2026-11-06",
+     "time": "15:38",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "held-0",
+     "format": "held",
+     "channel": "c4a9a3",
+     "product": "97d0e6",
+     "name": "H&M Loose Fit Sweatpants - Dark Grey",
+     "unit": "97d0e6",
+     "products": [
+      "97d0e6"
+     ],
+     "date": "2026-11-06",
+     "time": "16:52",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "held-0",
+     "format": "held",
+     "channel": "c4a9a3",
+     "product": "f1fed3",
+     "name": "H&M Loose-Fit Zip Hoodie - Dark Brown + Dark Khaki Green",
+     "unit": "f1fed3+5a73a3",
+     "products": [
+      "f1fed3",
+      "5a73a3"
+     ],
+     "date": "2026-11-06",
+     "time": "17:52",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    }
+   ],
+   "blocks": [
+    {
+     "kind": "prep",
+     "title": "Prep: pull the day's pieces, steam, de-lint, tags off, set up the floor + bed",
+     "start": "07:30",
+     "end": "08:00"
+    },
+    {
+     "kind": "gym",
+     "title": "Gym",
+     "start": "08:00",
+     "end": "09:15"
+    },
+    {
+     "kind": "meal",
+     "title": "Breakfast",
+     "start": "09:20",
+     "end": "09:40"
+    },
+    {
+     "kind": "shoot",
+     "title": "Shoot: Holding the item · AndysBestFinds",
+     "start": "09:40",
+     "end": "10:07",
+     "set": "held-0"
+    },
+    {
+     "kind": "edit",
+     "title": "Edit + review (19 posts: carousels assembled, videos checked)",
+     "start": "10:07",
+     "end": "10:20"
+    },
+    {
+     "kind": "post",
+     "title": "Schedule this batch: 19 posts in TikTok Studio, Sat Oct 31 to Fri Nov 6 (dates and times in the posting kit)",
+     "start": "10:20",
+     "end": "10:49"
+    },
+    {
+     "kind": "research",
+     "title": "Research: Analytics, competitor tracker, next lineup",
+     "start": "10:49",
+     "end": "11:19"
+    },
+    {
+     "kind": "meal",
+     "title": "Lunch",
+     "start": "12:30",
+     "end": "13:00"
+    },
+    {
+     "kind": "meal",
+     "title": "Dinner",
+     "start": "18:30",
+     "end": "19:10"
+    }
+   ],
+   "generated": "2026-10-27T21:07",
+   "blocks_done": []
+  },
+  "2026-11-02": {
+   "date": "2026-11-02",
+   "season": "fall",
+   "mode": "batch",
+   "window": [
+    "2026-11-03",
+    "2026-11-09"
+   ],
+   "formats": [
+    "skit",
+    "other"
+   ],
+   "posts_per_channel": 20,
+   "channels": 1,
+   "sets": [
+    {
+     "format": "skit",
+     "setup": "Outside or by the car, both of you",
+     "tip": "\"Wait, where'd you get those?\" The same exchange for each product.",
+     "light": "Outside: no lights; open shade (the shady side of the house or car) or golden hour, both of you facing the light. Inside: key (circle) in front between you, ~70%; one fill panel at 45° on each side, ~35%, so both of you are lit the same.",
+     "light_min": 10,
+     "example": "https://www.tiktok.com/@sully.finds/video/7699977637917183263",
+     "channel": "c4a9a3",
+     "channel_name": "AndysBestFinds",
+     "pov": "me",
+     "script": "1a7555",
+     "scripts": [
+      "1a7555",
+      "257e49"
+     ],
+     "projects": [
+      {
+       "sid": "nov-2-two-person-skit-pov-h-m-loose-fit-sweatpan-3",
+       "title": "Nov 2 · Two-person skit / POV · H&M Loose Fit Sweatpants - L · v2",
+       "product": "adb964",
+       "variant": 1
+      },
+      {
+       "sid": "nov-2-two-person-skit-pov-h-m-loose-fit-sweatpan-4",
+       "title": "Nov 2 · Two-person skit / POV · H&M Loose Fit Sweatpants - D · v2",
+       "product": "97d0e6",
+       "variant": 1
+      },
+      {
+       "sid": "nov-2-two-person-skit-pov-h-m-loose-fit-zip-hood-4",
+       "title": "Nov 2 · Two-person skit / POV · H&M Loose-Fit Zip Hoodie - D · v2",
+       "product": "f1fed3",
+       "variant": 1
+      },
+      {
+       "sid": "nov-2-two-person-skit-pov-h-m-loose-fit-zip-hood-5",
+       "title": "Nov 2 · Two-person skit / POV · H&M Loose-Fit Zip Hoodie - G · v2",
+       "product": "239664",
+       "variant": 1
+      },
+      {
+       "sid": "nov-2-two-person-skit-pov-h-m-loose-fit-zip-hood-6",
+       "title": "Nov 2 · Two-person skit / POV · H&M Loose-Fit Zip Hoodie - D · v2",
+       "product": "5a73a3",
+       "variant": 1
+      },
+      {
+       "sid": "nov-2-two-person-skit-pov-old-navy-waffle-henley-2",
+       "title": "Nov 2 · Two-person skit / POV · Old Navy Waffle Henley - Jur · v2",
+       "product": "58c082",
+       "variant": 1
+      },
+      {
+       "sid": "nov-2-two-person-skit-pov-old-navy-waffle-henley-4",
+       "title": "Nov 2 · Two-person skit / POV · Old Navy Waffle Henley - Kic · v2",
+       "product": "aad169",
+       "variant": 1
+      },
+      {
+       "sid": "nov-2-two-person-skit-pov-old-navy-waffle-henley-6",
+       "title": "Nov 2 · Two-person skit / POV · Old Navy Waffle Henley - In  · v2",
+       "product": "8e26fd",
+       "variant": 1
+      },
+      {
+       "sid": "nov-2-two-person-skit-pov-old-navy-long-sleeve-w-2",
+       "title": "Nov 2 · Two-person skit / POV · Old Navy Long-Sleeve Waffle  · v2",
+       "product": "70db4e",
+       "variant": 1
+      },
+      {
+       "sid": "nov-2-two-person-skit-pov-old-navy-long-sleeve-w",
+       "title": "Nov 2 · Two-person skit / POV · Old Navy Long-Sleeve Waffle",
+       "product": "9bbabf",
+       "variant": 1
+      },
+      {
+       "sid": "nov-2-two-person-skit-pov-old-navy-crew-neck-swe",
+       "title": "Nov 2 · Two-person skit / POV · Old Navy Crew-Neck Sweater -",
+       "product": "772dcf",
+       "variant": 1,
+       "unit": "772dcf",
+       "products": [
+        "772dcf"
+       ]
+      },
+      {
+       "sid": "nov-2-two-person-skit-pov-old-navy-crew-neck-swe-2",
+       "title": "Nov 2 · Two-person skit / POV · Old Navy Crew-Neck Sweater -",
+       "product": "6838c7",
+       "variant": 1,
+       "unit": "6838c7",
+       "products": [
+        "6838c7"
+       ]
+      },
+      {
+       "sid": "nov-2-two-person-skit-pov-h-m-loose-fit-sweatpan",
+       "title": "Nov 2 · Two-person skit / POV · H&M Loose Fit Sweatpants - B",
+       "product": "7e1c60",
+       "variant": 1,
+       "unit": "7e1c60",
+       "products": [
+        "7e1c60"
+       ]
+      },
+      {
+       "sid": "nov-2-two-person-skit-pov-old-navy-long-sleeve-w-3",
+       "title": "Nov 2 · Two-person skit / POV · Old Navy Long-Sleeve Waffle",
+       "product": "27ab82",
+       "variant": 1,
+       "unit": "27ab82",
+       "products": [
+        "27ab82"
+       ]
+      },
+      {
+       "sid": "nov-2-two-person-skit-pov-old-navy-crew-neck-swe-3",
+       "title": "Nov 2 · Two-person skit / POV · Old Navy Crew-Neck Sweater -",
+       "product": "229a70",
+       "variant": 1,
+       "unit": "229a70",
+       "products": [
+        "229a70"
+       ]
+      }
+     ],
+     "id": "skit-0",
+     "label": "Two-person skit / POV",
+     "items": [
+      {
+       "product": "adb964",
+       "products": [
+        "adb964"
+       ],
+       "unit": "adb964",
+       "name": "H&M Loose Fit Sweatpants - Light Grey Marl",
+       "takes": 2
+      },
+      {
+       "product": "f1fed3",
+       "products": [
+        "f1fed3"
+       ],
+       "unit": "f1fed3",
+       "name": "H&M Loose-Fit Zip Hoodie - Dark Brown",
+       "takes": 2
+      },
+      {
+       "product": "58c082",
+       "products": [
+        "58c082"
+       ],
+       "unit": "58c082",
+       "name": "Old Navy Waffle Henley - Jurassic Green",
+       "takes": 2
+      },
+      {
+       "product": "70db4e",
+       "products": [
+        "70db4e"
+       ],
+       "unit": "70db4e",
+       "name": "Old Navy Long-Sleeve Waffle Crew - Heritage Green",
+       "takes": 2
+      },
+      {
+       "product": "772dcf",
+       "products": [
+        "772dcf"
+       ],
+       "unit": "772dcf",
+       "name": "Old Navy Crew-Neck Sweater - Brown Heather",
+       "takes": 1
+      },
+      {
+       "product": "97d0e6",
+       "products": [
+        "97d0e6"
+       ],
+       "unit": "97d0e6",
+       "name": "H&M Loose Fit Sweatpants - Dark Grey",
+       "takes": 1
+      },
+      {
+       "product": "239664",
+       "products": [
+        "239664"
+       ],
+       "unit": "239664",
+       "name": "H&M Loose-Fit Zip Hoodie - Grey Marl",
+       "takes": 1
+      },
+      {
+       "product": "aad169",
+       "products": [
+        "aad169"
+       ],
+       "unit": "aad169",
+       "name": "Old Navy Waffle Henley - Kicking Up Dust",
+       "takes": 1
+      },
+      {
+       "product": "9bbabf",
+       "products": [
+        "9bbabf"
+       ],
+       "unit": "9bbabf",
+       "name": "Old Navy Long-Sleeve Waffle Crew - Sea Salt",
+       "takes": 1
+      },
+      {
+       "product": "6838c7",
+       "products": [
+        "6838c7"
+       ],
+       "unit": "6838c7",
+       "name": "Old Navy Crew-Neck Sweater - Cozy Cashmere",
+       "takes": 1
+      },
+      {
+       "product": "7e1c60",
+       "products": [
+        "7e1c60"
+       ],
+       "unit": "7e1c60",
+       "name": "H&M Loose Fit Sweatpants - Black",
+       "takes": 1
+      },
+      {
+       "product": "5a73a3",
+       "products": [
+        "5a73a3"
+       ],
+       "unit": "5a73a3",
+       "name": "H&M Loose-Fit Zip Hoodie - Dark Khaki Green",
+       "takes": 1
+      },
+      {
+       "product": "8e26fd",
+       "products": [
+        "8e26fd"
+       ],
+       "unit": "8e26fd",
+       "name": "Old Navy Waffle Henley - In The Navy",
+       "takes": 1
+      },
+      {
+       "product": "27ab82",
+       "products": [
+        "27ab82"
+       ],
+       "unit": "27ab82",
+       "name": "Old Navy Long-Sleeve Waffle Crew - Dark Walnut",
+       "takes": 1
+      },
+      {
+       "product": "229a70",
+       "products": [
+        "229a70"
+       ],
+       "unit": "229a70",
+       "name": "Old Navy Crew-Neck Sweater - Forest Canopy",
+       "takes": 1
+      }
+     ],
+     "posts": 19,
+     "variant": 1,
+     "minutes": 58,
+     "edit_minutes": 19
+    },
+    {
+     "format": "other",
+     "setup": "Anything",
+     "tip": "His 'new favorite' script on one product, the fifth kind of post in the mix.",
+     "light": "Match the setup it borrows: key (circle) at 45°, fill panel opposite at about half power, second panel as rim or off. All at 5600K, room lights off.",
+     "light_min": 10,
+     "example": "https://www.tiktok.com/@sully.finds/video/7700043209048739103",
+     "channel": "c4a9a3",
+     "channel_name": "AndysBestFinds",
+     "pov": "me",
+     "script": "fcfb1a",
+     "scripts": [
+      "fcfb1a"
+     ],
+     "projects": [
+      {
+       "sid": "nov-2-my-new-favorite-extra-h-m-loose-fit-sweatp",
+       "title": "Nov 2 · My new favorite (extra) · H&M Loose Fit Sweatpants - B",
+       "product": "7e1c60"
+      },
+      {
+       "sid": "nov-2-my-new-favorite-extra-h-m-loose-fit-zip-ho",
+       "title": "Nov 2 · My new favorite (extra) · H&M Loose-Fit Zip Hoodie - D",
+       "product": "f1fed3"
+      },
+      {
+       "sid": "nov-2-my-new-favorite-extra-h-m-loose-fit-sweatp-2",
+       "title": "Nov 2 · My new favorite (extra) · H&M Loose Fit Sweatpants - B",
+       "product": "7e1c60",
+       "variant": 0,
+       "unit": "7e1c60+adb964",
+       "products": [
+        "7e1c60",
+        "adb964"
+       ]
+      },
+      {
+       "sid": "nov-2-my-new-favorite-extra-h-m-loose-fit-sweatp-3",
+       "title": "Nov 2 · My new favorite (extra) · H&M Loose Fit Sweatpants - B",
+       "product": "7e1c60",
+       "variant": 0,
+       "unit": "7e1c60+adb964+97d0e6",
+       "products": [
+        "7e1c60",
+        "adb964",
+        "97d0e6"
+       ]
+      },
+      {
+       "sid": "nov-2-my-new-favorite-extra-h-m-loose-fit-zip-ho-2",
+       "title": "Nov 2 · My new favorite (extra) · H&M Loose-Fit Zip Hoodie - D",
+       "product": "f1fed3",
+       "variant": 0,
+       "unit": "f1fed3+239664",
+       "products": [
+        "f1fed3",
+        "239664"
+       ]
+      },
+      {
+       "sid": "nov-2-my-new-favorite-extra-h-m-loose-fit-zip-ho-3",
+       "title": "Nov 2 · My new favorite (extra) · H&M Loose-Fit Zip Hoodie - D",
+       "product": "f1fed3",
+       "variant": 0,
+       "unit": "f1fed3+239664+5a73a3",
+       "products": [
+        "f1fed3",
+        "239664",
+        "5a73a3"
+       ]
+      }
+     ],
+     "id": "other-0",
+     "label": "My new favorite (extra)",
+     "items": [
+      {
+       "product": "7e1c60",
+       "products": [
+        "7e1c60"
+       ],
+       "unit": "7e1c60",
+       "name": "H&M Loose Fit Sweatpants - Black",
+       "takes": 1
+      },
+      {
+       "product": "7e1c60",
+       "products": [
+        "7e1c60",
+        "adb964"
+       ],
+       "unit": "7e1c60+adb964",
+       "name": "H&M Loose Fit Sweatpants - Black + Light Grey Marl",
+       "takes": 1
+      },
+      {
+       "product": "7e1c60",
+       "products": [
+        "7e1c60",
+        "adb964",
+        "97d0e6"
+       ],
+       "unit": "7e1c60+adb964+97d0e6",
+       "name": "H&M Loose Fit Sweatpants - Black + Light Grey Marl + Dark Grey",
+       "takes": 1
+      },
+      {
+       "product": "f1fed3",
+       "products": [
+        "f1fed3"
+       ],
+       "unit": "f1fed3",
+       "name": "H&M Loose-Fit Zip Hoodie - Dark Brown",
+       "takes": 1
+      },
+      {
+       "product": "f1fed3",
+       "products": [
+        "f1fed3",
+        "239664"
+       ],
+       "unit": "f1fed3+239664",
+       "name": "H&M Loose-Fit Zip Hoodie - Dark Brown + Grey Marl",
+       "takes": 1
+      },
+      {
+       "product": "f1fed3",
+       "products": [
+        "f1fed3",
+        "239664",
+        "5a73a3"
+       ],
+       "unit": "f1fed3+239664+5a73a3",
+       "name": "H&M Loose-Fit Zip Hoodie - Dark Brown + Grey Marl + Dark Khaki Green",
+       "takes": 1
+      }
+     ],
+     "posts": 6,
+     "variant": 0,
+     "minutes": 40,
+     "edit_minutes": 18
+    }
+   ],
+   "posts": [
+    {
+     "set": "skit-0",
+     "format": "skit",
+     "channel": "c4a9a3",
+     "product": "adb964",
+     "name": "H&M Loose Fit Sweatpants - Light Grey Marl",
+     "unit": "adb964",
+     "products": [
+      "adb964"
+     ],
+     "date": "2026-11-03",
+     "time": "15:52",
+     "variant": 1,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "other-0",
+     "format": "other",
+     "channel": "c4a9a3",
+     "product": "7e1c60",
+     "name": "H&M Loose Fit Sweatpants - Black",
+     "unit": "7e1c60",
+     "products": [
+      "7e1c60"
+     ],
+     "date": "2026-11-03",
+     "time": "16:08",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "skit-0",
+     "format": "skit",
+     "channel": "c4a9a3",
+     "product": "f1fed3",
+     "name": "H&M Loose-Fit Zip Hoodie - Dark Brown",
+     "unit": "f1fed3",
+     "products": [
+      "f1fed3"
+     ],
+     "date": "2026-11-03",
+     "time": "17:08",
+     "variant": 1,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "skit-0",
+     "format": "skit",
+     "channel": "c4a9a3",
+     "product": "58c082",
+     "name": "Old Navy Waffle Henley - Jurassic Green",
+     "unit": "58c082",
+     "products": [
+      "58c082"
+     ],
+     "date": "2026-11-03",
+     "time": "18:08",
+     "variant": 1,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "skit-0",
+     "format": "skit",
+     "channel": "c4a9a3",
+     "product": "70db4e",
+     "name": "Old Navy Long-Sleeve Waffle Crew - Heritage Green",
+     "unit": "70db4e",
+     "products": [
+      "70db4e"
+     ],
+     "date": "2026-11-04",
+     "time": "15:52",
+     "variant": 1,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "other-0",
+     "format": "other",
+     "channel": "c4a9a3",
+     "product": "7e1c60",
+     "name": "H&M Loose Fit Sweatpants - Black + Light Grey Marl",
+     "unit": "7e1c60+adb964",
+     "products": [
+      "7e1c60",
+      "adb964"
+     ],
+     "date": "2026-11-04",
+     "time": "16:08",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "skit-0",
+     "format": "skit",
+     "channel": "c4a9a3",
+     "product": "772dcf",
+     "name": "Old Navy Crew-Neck Sweater - Brown Heather",
+     "unit": "772dcf",
+     "products": [
+      "772dcf"
+     ],
+     "date": "2026-11-04",
+     "time": "17:08",
+     "variant": 1,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "skit-0",
+     "format": "skit",
+     "channel": "c4a9a3",
+     "product": "97d0e6",
+     "name": "H&M Loose Fit Sweatpants - Dark Grey",
+     "unit": "97d0e6",
+     "products": [
+      "97d0e6"
+     ],
+     "date": "2026-11-04",
+     "time": "18:08",
+     "variant": 1,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "skit-0",
+     "format": "skit",
+     "channel": "c4a9a3",
+     "product": "239664",
+     "name": "H&M Loose-Fit Zip Hoodie - Grey Marl",
+     "unit": "239664",
+     "products": [
+      "239664"
+     ],
+     "date": "2026-11-05",
+     "time": "15:52",
+     "variant": 1,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "other-0",
+     "format": "other",
+     "channel": "c4a9a3",
+     "product": "7e1c60",
+     "name": "H&M Loose Fit Sweatpants - Black + Light Grey Marl + Dark Grey",
+     "unit": "7e1c60+adb964+97d0e6",
+     "products": [
+      "7e1c60",
+      "adb964",
+      "97d0e6"
+     ],
+     "date": "2026-11-05",
+     "time": "16:08",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "skit-0",
+     "format": "skit",
+     "channel": "c4a9a3",
+     "product": "aad169",
+     "name": "Old Navy Waffle Henley - Kicking Up Dust",
+     "unit": "aad169",
+     "products": [
+      "aad169"
+     ],
+     "date": "2026-11-05",
+     "time": "17:08",
+     "variant": 1,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "skit-0",
+     "format": "skit",
+     "channel": "c4a9a3",
+     "product": "9bbabf",
+     "name": "Old Navy Long-Sleeve Waffle Crew - Sea Salt",
+     "unit": "9bbabf",
+     "products": [
+      "9bbabf"
+     ],
+     "date": "2026-11-05",
+     "time": "18:08",
+     "variant": 1,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "skit-0",
+     "format": "skit",
+     "channel": "c4a9a3",
+     "product": "6838c7",
+     "name": "Old Navy Crew-Neck Sweater - Cozy Cashmere",
+     "unit": "6838c7",
+     "products": [
+      "6838c7"
+     ],
+     "date": "2026-11-06",
+     "time": "15:52",
+     "variant": 1,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "other-0",
+     "format": "other",
+     "channel": "c4a9a3",
+     "product": "f1fed3",
+     "name": "H&M Loose-Fit Zip Hoodie - Dark Brown",
+     "unit": "f1fed3",
+     "products": [
+      "f1fed3"
+     ],
+     "date": "2026-11-06",
+     "time": "16:08",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "skit-0",
+     "format": "skit",
+     "channel": "c4a9a3",
+     "product": "7e1c60",
+     "name": "H&M Loose Fit Sweatpants - Black",
+     "unit": "7e1c60",
+     "products": [
+      "7e1c60"
+     ],
+     "date": "2026-11-06",
+     "time": "17:08",
+     "variant": 1,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "skit-0",
+     "format": "skit",
+     "channel": "c4a9a3",
+     "product": "5a73a3",
+     "name": "H&M Loose-Fit Zip Hoodie - Dark Khaki Green",
+     "unit": "5a73a3",
+     "products": [
+      "5a73a3"
+     ],
+     "date": "2026-11-06",
+     "time": "18:08",
+     "variant": 1,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "skit-0",
+     "format": "skit",
+     "channel": "c4a9a3",
+     "product": "8e26fd",
+     "name": "Old Navy Waffle Henley - In The Navy",
+     "unit": "8e26fd",
+     "products": [
+      "8e26fd"
+     ],
+     "date": "2026-11-07",
+     "time": "18:30",
+     "variant": 1,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "skit-0",
+     "format": "skit",
+     "channel": "c4a9a3",
+     "product": "27ab82",
+     "name": "Old Navy Long-Sleeve Waffle Crew - Dark Walnut",
+     "unit": "27ab82",
+     "products": [
+      "27ab82"
+     ],
+     "date": "2026-11-08",
+     "time": "15:52",
+     "variant": 1,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "other-0",
+     "format": "other",
+     "channel": "c4a9a3",
+     "product": "f1fed3",
+     "name": "H&M Loose-Fit Zip Hoodie - Dark Brown + Grey Marl",
+     "unit": "f1fed3+239664",
+     "products": [
+      "f1fed3",
+      "239664"
+     ],
+     "date": "2026-11-08",
+     "time": "16:08",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "skit-0",
+     "format": "skit",
+     "channel": "c4a9a3",
+     "product": "229a70",
+     "name": "Old Navy Crew-Neck Sweater - Forest Canopy",
+     "unit": "229a70",
+     "products": [
+      "229a70"
+     ],
+     "date": "2026-11-08",
+     "time": "17:08",
+     "variant": 1,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "skit-0",
+     "format": "skit",
+     "channel": "c4a9a3",
+     "product": "adb964",
+     "name": "H&M Loose Fit Sweatpants - Light Grey Marl",
+     "unit": "adb964",
+     "products": [
+      "adb964"
+     ],
+     "date": "2026-11-08",
+     "time": "18:08",
+     "variant": 1,
+     "take": 2,
+     "done": false
+    },
+    {
+     "set": "skit-0",
+     "format": "skit",
+     "channel": "c4a9a3",
+     "product": "f1fed3",
+     "name": "H&M Loose-Fit Zip Hoodie - Dark Brown",
+     "unit": "f1fed3",
+     "products": [
+      "f1fed3"
+     ],
+     "date": "2026-11-09",
+     "time": "15:52",
+     "variant": 1,
+     "take": 2,
+     "done": false
+    },
+    {
+     "set": "other-0",
+     "format": "other",
+     "channel": "c4a9a3",
+     "product": "f1fed3",
+     "name": "H&M Loose-Fit Zip Hoodie - Dark Brown + Grey Marl + Dark Khaki Green",
+     "unit": "f1fed3+239664+5a73a3",
+     "products": [
+      "f1fed3",
+      "239664",
+      "5a73a3"
+     ],
+     "date": "2026-11-09",
+     "time": "16:08",
+     "variant": 0,
+     "take": 1,
+     "done": false
+    },
+    {
+     "set": "skit-0",
+     "format": "skit",
+     "channel": "c4a9a3",
+     "product": "58c082",
+     "name": "Old Navy Waffle Henley - Jurassic Green",
+     "unit": "58c082",
+     "products": [
+      "58c082"
+     ],
+     "date": "2026-11-09",
+     "time": "17:08",
+     "variant": 1,
+     "take": 2,
+     "done": false
+    },
+    {
+     "set": "skit-0",
+     "format": "skit",
+     "channel": "c4a9a3",
+     "product": "70db4e",
+     "name": "Old Navy Long-Sleeve Waffle Crew - Heritage Green",
+     "unit": "70db4e",
+     "products": [
+      "70db4e"
+     ],
+     "date": "2026-11-09",
+     "time": "18:08",
+     "variant": 1,
+     "take": 2,
+     "done": false
+    }
+   ],
+   "blocks": [
+    {
+     "kind": "prep",
+     "title": "Prep: pull the day's pieces, steam, de-lint, tags off, set up the floor + bed",
+     "start": "07:30",
+     "end": "08:00"
+    },
+    {
+     "kind": "gym",
+     "title": "Gym",
+     "start": "08:00",
+     "end": "09:15"
+    },
+    {
+     "kind": "meal",
+     "title": "Breakfast",
+     "start": "09:20",
+     "end": "09:40"
+    },
+    {
+     "kind": "shoot",
+     "title": "Shoot: Two-person skit / POV · AndysBestFinds",
+     "start": "09:40",
+     "end": "10:38",
+     "set": "skit-0"
+    },
+    {
+     "kind": "shoot",
+     "title": "Shoot: My new favorite (extra) · AndysBestFinds",
+     "start": "10:38",
+     "end": "11:18",
+     "set": "other-0"
+    },
+    {
+     "kind": "edit",
+     "title": "Edit + review (25 posts: carousels assembled, videos checked)",
+     "start": "11:18",
+     "end": "11:55"
+    },
+    {
+     "kind": "post",
+     "title": "Schedule this batch: 25 posts in TikTok Studio, Tue Nov 3 to Mon Nov 9 (dates and times in the posting kit)",
+     "start": "11:55",
+     "end": "12:30"
+    },
+    {
+     "kind": "meal",
+     "title": "Lunch",
+     "start": "12:30",
+     "end": "13:00"
+    },
+    {
+     "kind": "post",
+     "title": "Schedule this batch: 25 posts in TikTok Studio, Tue Nov 3 to Mon Nov 9 (dates and times in the posting kit)",
+     "start": "13:00",
+     "end": "13:03"
+    },
+    {
+     "kind": "research",
+     "title": "Research: Analytics, competitor tracker, next lineup",
+     "start": "13:03",
+     "end": "13:33"
+    },
+    {
+     "kind": "meal",
+     "title": "Dinner",
+     "start": "18:30",
+     "end": "19:10"
+    }
+   ],
+   "generated": "2026-10-27T21:07",
+   "blocks_done": []
+  }
+ }
+}

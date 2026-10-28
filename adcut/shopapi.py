@@ -7,7 +7,7 @@ from pathlib import Path
 from fastapi import APIRouter, Body, HTTPException, Request
 from fastapi.responses import FileResponse
 
-from . import ai, auth, productlink, scriptgen, sheetdb, shop, store
+from . import ai, auth, competitors, productlink, scriptgen, sheetdb, shop, store
 
 router = APIRouter(prefix="/api/shop")
 BUSY = lambda: set()  # server.py points this at the shoots with a job running
@@ -227,3 +227,191 @@ def ai_run(what: str, body: dict = Body(...)):
             raise HTTPException(400, "nothing to rewrite")
         return scriptgen.ai_rewrite(body["text"], body["how"])
     raise HTTPException(404, what)
+
+
+# ---------- competitor tracker (adcut/competitors.py): estimates from public counters ----------
+
+@router.get("/competitors/all")
+def competitors_all():
+    return {"profiles": competitors.summary(), "status": competitors.status}
+
+
+@router.post("/competitors/add")
+def competitors_add(body: dict = Body(...)):
+    try:
+        r = competitors.add(body.get("handle") or "")
+    except ValueError as e:
+        raise HTTPException(400, str(e))
+    threading.Thread(target=competitors.refresh, kwargs={"only": r["handle"]}, daemon=True).start()
+    return r
+
+
+@router.post("/competitors/{handle}/remove")
+def competitors_remove(handle: str):
+    competitors.remove(handle)
+    return {"ok": True}
+
+
+@router.post("/competitors/{handle}/refresh")
+def competitors_refresh(handle: str):
+    threading.Thread(target=competitors.refresh, kwargs={"only": handle}, daemon=True).start()
+    return {"ok": True}
+
+
+@router.get("/competitors/{handle}/view")
+def competitors_view(handle: str, days: int = 7):
+    try:
+        return competitors.view(handle, days)
+    except KeyError:
+        raise HTTPException(404, f"not tracking @{handle}")
+
+
+# ---------- daily planner (adcut/planner.py): a @sully.finds-style day ----------
+from . import planner  # noqa: E402
+
+
+@router.get("/planner/settings")
+def planner_settings():
+    d, sh = planner.load(), shop.load()
+    st = d["settings"]
+    week = st.get("batch_week") or (planner.BATCH_WEEK if st.get("carousels") else planner.BATCH_WEEK_VIDEO)
+    return {"settings": d["settings"], "formats": planner.FORMATS, "weekdays": planner.WEEKDAYS, "week": week,
+            "accounts": [{"id": a["id"], "name": a["name"], "handle": a["handle"]} for a in sh["accounts"]]}
+
+
+@router.post("/planner/settings")
+def planner_save(body: dict = Body(...)):
+    return planner.set_settings(body)
+
+
+@router.get("/planner/day/{day}")
+def planner_day(day: str):
+    return planner.get(day)
+
+
+@router.post("/planner/day/{day}/rebuild")
+def planner_rebuild(day: str):
+    return planner.generate(day)
+
+
+@router.post("/planner/day/{day}/mark")
+def planner_mark(day: str, body: dict = Body(...)):
+    return planner.mark(day, int(body["k"]), bool(body.get("done")))
+
+
+@router.post("/planner/day/{day}/set/{set_id}")
+def planner_set(day: str, set_id: str, body: dict = Body(...)):
+    return planner.set_example(day, set_id, str(body.get("example") or ""))
+
+
+@router.get("/planner/day/{day}/scripts/{set_id}")
+def planner_scripts(day: str, set_id: str):
+    """The complete script for each product in a set: what's in its Ad Camera project, else what it will be."""
+    plan = planner.get(day)
+    s = next(x for x in plan["sets"] if x["id"] == set_id)
+    out = []
+    posts = [x for x in plan["posts"] if x["set"] == s["id"]]
+    for it in s["items"]:
+        if not it["product"]:
+            continue
+        unit = it.get("unit", it["product"])
+        v = s.get("variant", 0)
+        pr = next((x for x in s.get("projects") or [] if x.get("unit", x["product"]) == unit and x.get("variant", 0) == v), None)
+        lines = [ln["text"] for ln in store.load(pr["sid"])["script"]] if pr else planner.script_for(day, s, it["product"], plan, variant=v, products=it.get("products"))
+        out.append({"product": it["product"], "unit": unit, "name": it["name"], "variant": v, "versions": 1, "takes": it["takes"], "lines": lines})
+    return out
+
+
+@router.get("/planner/order/{day}")
+def planner_order(day: str):
+    """The day's projects in filming order, each with what to lay out and what changed (Ad Camera's "Next project")."""
+    return {sid: o for sid, o in planner.shoot_order().items() if o["day"] == day}
+
+
+@router.get("/planner/live/{day}")
+def planner_live(day: str):
+    """Posts from any batch that go live on this date."""
+    return planner.going_live(day)
+
+
+@router.get("/planner/day/{day}/carousel/{set_id}")
+def carousel_plan(day: str, set_id: str):
+    from . import carouselplan
+    s = next(x for x in planner.get(day)["sets"] if x["id"] == set_id)
+    return carouselplan.for_set(day, s)
+
+
+@router.post("/planner/day/{day}/carousel/{set_id}")
+def carousel_plan_save(day: str, set_id: str, body: dict = Body(...)):
+    from . import carouselplan
+    return carouselplan.update(day, set_id, body)
+
+
+@router.get("/example")
+def example(url: str):
+    from . import examples
+    try:
+        return examples.get(url)
+    except ValueError as e:
+        raise HTTPException(400, str(e))
+
+
+@router.get("/example/{vid}/{name}")
+def example_image(vid: str, name: str):
+    from . import examples
+    try:
+        return FileResponse(examples.image(vid, name), headers={"Cache-Control": "max-age=604800"})
+    except FileNotFoundError:
+        raise HTTPException(404, "not there")
+
+
+# ---------- posting kit (adcut/postkit.py): a folder + description per post, videos rendered in ----------
+from . import postkit  # noqa: E402
+
+
+@router.get("/planner/day/{day}/kit")
+def kit(day: str):
+    return {"posts": postkit.posts(day), "job": postkit.JOB, "folder": str(postkit.kit_dir(day))}
+
+
+@router.post("/planner/day/{day}/kit/build")
+def kit_build(day: str):
+    return postkit.build(day)
+
+
+@router.put("/planner/day/{day}/kit/{k}/photo")
+async def kit_photo(day: str, k: int, request: Request, name: str = "photo.jpg"):
+    return {"saved": postkit.add_photo(day, k, name, await request.body())}
+
+
+@router.get("/planner/day/{day}/kit/{k}/file/{name}")
+def kit_file(day: str, k: int, name: str):
+    try:
+        return FileResponse(postkit.file_path(day, k, name), filename=name)
+    except FileNotFoundError:
+        raise HTTPException(404, "not there")
+
+
+@router.post("/planner/day/{day}/kit/{k}/open")
+def kit_open(day: str, k: int):
+    """Open the post's folder on this PC (Explorer)."""
+    import os
+    f = Path(postkit.posts(day)[k]["folder"])
+    f.mkdir(parents=True, exist_ok=True)
+    os.startfile(str(f))
+    return {"ok": True}
+
+
+@router.get("/planner/days")
+def planner_days():
+    return planner.days()
+
+
+@router.post("/planner/day/{day}/block")
+def planner_block(day: str, body: dict = Body(...)):
+    return planner.mark_block(day, str(body["key"]), bool(body.get("done")))
+
+
+@router.post("/planner/day/{day}/projects")
+def planner_projects(day: str, body: dict = Body(...)):
+    return {"made": planner.make_projects(day, body["set"])}

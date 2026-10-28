@@ -14,8 +14,23 @@ struct Project: Codable, Identifiable, Hashable {
     var clips: Int             // videos Ad Factory already has for it
     var productLink: String?   // the product's TikTok Shop page
     var referenceUrl: String?  // the video being replicated
+    var carousel: Bool?        // a planned flat-lay carousel: photos, not takes (CarouselView)
+    var outfits: [Int]?        // carousel: which outfit numbers already have a photo in Ad Factory
+    var carouselText: String?  // carousel: the planned on-screen text (adcut/carouselplan.py)
+    var outfitPlan: [OutfitPlan]?   // carousel: the session's outfits, and what to lay with this product in each
+    var nextSid: String?       // a planned shoot day: the project filmed after this one (planner.shoot_order)
+    var shootN: Int?           // its place in the day: project shootN of shootOf
+    var shootOf: Int?
+    var layOut: String?        // the colours in this video ("Brown Heather + Cozy Cashmere")
+    var change: String?        // what changed since the last project ("Add Cozy Cashmere", "New setup: …")
+    var setupNote: String?     // the set's setup ("White bed or couch, hand pointing")
 
     var id: String { sid }
+}
+
+struct OutfitPlan: Codable, Hashable {
+    var name: String
+    var with: String
 }
 
 struct Product: Codable, Identifiable, Hashable {

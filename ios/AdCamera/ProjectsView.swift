@@ -12,6 +12,8 @@ struct ProjectsView: View {
     @State private var showUploads = false
     @State private var showPosted = false
     @State private var deleting: Project?
+    @State private var showCarousels = false
+    @State private var carouselRun: CarouselRun?
 
     var body: some View {
         NavigationStack(path: $path) {
@@ -43,7 +45,17 @@ struct ProjectsView: View {
                 let all = model.catalog?.projects ?? []
                 let shelf = all.filter { model.archived.contains($0.sid) }
                 let live = all.filter { !model.archived.contains($0.sid) }
-                let toFilm = live.filter { $0.stage == "film" }
+                let carousels = live.filter { $0.carousel == true && $0.stage != "posted" }
+                if !carousels.isEmpty {
+                    Section {
+                        Button { showCarousels = true } label: {
+                            Label("Shoot carousels (\(carousels.count))", systemImage: "square.grid.3x3")
+                        }
+                    } footer: {
+                        Text("Several carousels at once: every outfit with every product.")
+                    }
+                }
+                let toFilm = live.filter { $0.stage == "film" && $0.carousel != true }
                 let going = live.filter { ["precut", "edit", "post"].contains($0.stage) }
                 let posted = live.filter { $0.stage == "posted" }
                 Section {
@@ -148,11 +160,24 @@ struct ProjectsView: View {
         .sheet(isPresented: $showSettings) {
             SettingsView().environmentObject(model)
         }
+        .sheet(isPresented: $showCarousels) {
+            CarouselSetup(projects: (model.catalog?.projects ?? []).filter { $0.carousel == true && $0.stage != "posted" }) { chosen, n in
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { carouselRun = CarouselRun(projects: chosen, outfits: n) }
+            }
+        }
+        .fullScreenCover(item: $carouselRun, onDismiss: { Task { await model.refresh() } }) {
+            CarouselView(projects: $0.projects, outfits: $0.outfits)
+        }
         .sheet(isPresented: $showUploads) {
             UploadsView().environmentObject(clips)
         }
         .fullScreenCover(item: $filming) {
-            CameraView(project: $0).environmentObject(model).environmentObject(clips)
+            CameraView(project: $0) { next in   // "Next project": close this camera, open the next one with its page underneath
+                filming = nil
+                path = [next]
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { filming = next }
+            }
+            .environmentObject(model).environmentObject(clips)
         }
     }
 
@@ -228,4 +253,11 @@ struct UploadSummary: View {
             Image(systemName: "chevron.right").font(.caption).foregroundStyle(.secondary)
         }
     }
+}
+
+
+struct CarouselRun: Identifiable {
+    let id = UUID()
+    let projects: [Project]
+    let outfits: Int
 }

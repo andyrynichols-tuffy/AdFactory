@@ -354,6 +354,9 @@ async function newVideo(pre = {}) {
       <div class="nvCol">
         <label class="fld">Script<select name="script"></select></label>
         <div class="nvFills"></div>
+        <div class="nvKMsg muted small"></div>
+        <div class="nvPreview" translate="no" hidden></div>
+        <button type="button" class="linkish nvEditTxt" hidden>✏️ Edit the wording</button>
         <textarea name="script_text" rows="9" placeholder="Type or paste the script, one line per line. [Directions in brackets] go to the notes, not the captions."></textarea>
         <label class="chk nvSave"><input type="checkbox" name="save_script" checked> <span>Save to the script library</span></label>
         <label class="fld">Raw videos <span class="fhint">optional: or drop them in later</span><input type="file" name="files" multiple accept="video/*,.mov,.mp4,.m4v"></label>
@@ -362,6 +365,7 @@ async function newVideo(pre = {}) {
         <label class="fld">Notes for the creator<textarea name="notes" rows="2" placeholder="angle, outfit, props…"></textarea></label>
       </div>
     </div>
+    <div class="nvWarn" hidden></div>
     <div class="sdBtns"><button type="button" data-close="cancel">Cancel</button><span class="spacer"></span>
       <button value="open" title="Make the shoot now and open the editor">✏️ Create &amp; edit</button>
       <button value="assign" class="primary" title="Put it in the creator's queue and in Ad Camera's projects, ready to film">📷 Ready to shoot</button></div></form>`;
@@ -369,6 +373,23 @@ async function newVideo(pre = {}) {
   const f = $("form", dlg), el = n => f.elements[n];
   $("[data-close]", dlg).onclick = () => dlg.close("cancel");
   f.addEventListener("keydown", e => { if (e.key === "Enter" && e.target.tagName === "INPUT") e.preventDefault(); });
+  // empty blanks: say so here (a pop-up can be blocked inside Studio's window); pressing again makes it anyway
+  let warned = false;
+  f.addEventListener("submit", e => {
+    if (!["assign", "open"].includes(e.submitter?.value)) return;
+    const empty = $$(".nvFills input", dlg).filter(i => !i.value.trim());
+    if (!empty.length || warned) return;
+    e.preventDefault(); warned = true;
+    empty.forEach(i => i.closest(".nvFill")?.classList.add("need"));
+    const w = $(".nvWarn", dlg);
+    w.innerHTML = `⚠ <b>Still empty:</b> <span translate="no">${empty.map(i => `{${esc(i.dataset.ph)}}`).join(", ")}</span>.
+      <span>Fill them in, or press the button again to make it anyway (they show like that on the teleprompter).</span>`;
+    w.hidden = false; w.scrollIntoView({ block: "nearest", behavior: "smooth" }); empty[0].focus();
+  });
+  f.addEventListener("input", e => {
+    if (!e.target.closest(".nvFills")) return;
+    if (!$$(".nvFills input", dlg).some(i => !i.value.trim())) { $(".nvWarn", dlg).hidden = true; warned = false; }
+  });
   const pick = $("[data-tagpick]", dlg);
   tagPicker(pick, pre.tags || [], () => ({ product: el("product").value, script: el("script").value }));
   let lib = null;  // the library script picked (its text as it was)
@@ -383,13 +404,47 @@ async function newVideo(pre = {}) {
     for (const m of lib?.marks || []) out[m.slot] ??= (lib.lines?.[m.line]?.text || "").slice(m.a, m.b);
     return out;
   };
+  let showText = false;  // the raw wording (with {key words}) is tucked away for a script from a video
+  const keyed = () => !!(lib?.marks?.length && el("script_text").value === lib.text);
+  const rowState = i => {
+    const o = was()[i.dataset.ph];
+    i.closest(".nvFill").classList.toggle("need", !i.value.trim());
+    i.closest(".nvFill").classList.toggle("swapped", !!o && i.value.trim() !== o);
+  };
+  const drawPreview = () => {
+    const on = keyed();
+    $(".nvPreview", dlg).hidden = !on;
+    el("script_text").hidden = on && !showText;
+    $(".nvEditTxt", dlg).hidden = !on || showText;
+    if (!on) return;
+    const vals = Object.fromEntries($$(".nvFills input", dlg).map(i => [i.dataset.ph, i.value.trim()])), orig = was();
+    $(".nvPreview", dlg).innerHTML = esc(el("script_text").value).replace(/\{([A-Za-z][\w ]{0,30})\}/g, (m, k) => {
+      k = k.trim().toLowerCase();
+      const v = vals[k];
+      return v ? `<mark class="${v === orig[k] ? "kw" : "kw swapped"}" title="{${esc(k)}}">${esc(v)}</mark>` : `<code class="blank">${m}</code>`;
+    }).replace(/\n/g, "<br>");
+  };
   const drawFills = () => {
     $$(".nvFills input", dlg).forEach(i => (keep[i.dataset.ph] = i.value));
     const phs = [...new Set([...el("script_text").value.matchAll(/\{([A-Za-z][\w ]{0,30})\}/g)].map(m => m[1].trim().toLowerCase()))];
-    const auto = fillsFor(), orig = was();
-    $(".nvFills", dlg).innerHTML = phs.length ? `<div class="nvFHead"><span class="fhint">Fill-ins (from the product where it has them):</span>
-      ${lib && el("product").value ? `<button type="button" class="aiBtn" data-q="aifill" title="Claude writes the empty ones for this product">✨ AI: fill the blanks</button>` : ""}</div>` + phs.map(k =>
-      `<label class="nvFill ${auto[k] || keep[k] ? "" : "need"}"><code>{${esc(k)}}</code><input data-ph="${esc(k)}" value="${esc(keep[k] ?? auto[k] ?? "")}" placeholder="${auto[k] ? "" : orig[k] ? `was: ${esc(orig[k])}` : "type it"}"></label>`).join("") : "";
+    const auto = fillsFor(), orig = was(), on = keyed(), p = byId("products", el("product").value);
+    const sug = [...new Set([p?.name, p?.brand, p?.category, p?.price, ...Object.values(p?.fills || {})].filter(Boolean))];
+    // from a video: every key word starts as the video said it; a typed-in script: from the product where it can
+    const head = on
+      ? `<div class="nvFHead"><span><b>Key words</b> <span class="fhint">as the video says them: change any, or swap them for the product</span>
+            <button type="button" class="linkish" data-q="adjust" title="Mark other words, or unmark wrong ones, in the script builder">🧩 Adjust key words</button></span>
+          <span>${p ? `<button type="button" data-q="swapall" title="Put ${esc(p.name)}'s details in where the app knows them">⇄ Swap for ${esc(p.name)}</button>` : ""}
+          ${p ? `<button type="button" class="aiBtn" data-q="aifill" title="Claude rewrites the key words you haven't changed, for this product">✨ AI: rewrite them for ${esc(p.name)}</button>` : ""}</span></div>`
+      : `<div class="nvFHead"><span class="fhint">Fill-ins (from the product where it has them):</span>
+          ${lib && p ? `<button type="button" class="aiBtn" data-q="aifill" title="Claude writes the empty ones for this product">✨ AI: fill the blanks</button>` : ""}</div>`;
+    $(".nvFills", dlg).innerHTML = phs.length ? head + `<datalist id="nvSug">${sug.map(v => `<option value="${esc(v)}">`).join("")}</datalist>` + phs.map(k => {
+      const v = keep[k] ?? (on ? orig[k] ?? auto[k] : auto[k] ?? orig[k]) ?? "";
+      return `<label class="nvFill"><code>{${esc(k)}}</code><input data-ph="${esc(k)}" list="nvSug" value="${esc(v)}" placeholder="${orig[k] ? `was: ${esc(orig[k])}` : "type it"}">
+        ${orig[k] ? `<button type="button" class="nvReset" data-reset="${esc(k)}" title="Back to the video's words: ${esc(orig[k])}">↺</button>` : ""}
+        ${on && orig[k] ? `<button type="button" class="nvReset" data-unmark="${esc(k)}" title="Not a key word: keep what the video says and stop marking it">✕</button>` : ""}</label>`;
+    }).join("") : "";
+    $$(".nvFills input", dlg).forEach(rowState);
+    drawPreview();
     const changed = !lib || el("script_text").value !== lib.text;
     $(".nvSave", dlg).hidden = !changed || !el("script_text").value.trim();
     $(".nvSave span", dlg).textContent = lib ? "Save as a new script in the library" : "Save to the script library";
@@ -401,6 +456,8 @@ async function newVideo(pre = {}) {
   pick.addEventListener("change", drawScripts);
   el("script").onchange = () => {
     lib = byId("scripts", el("script").value);
+    for (const k of Object.keys(keep)) delete keep[k];  // a new script starts from its own words
+    showText = false;
     if (lib) {
       el("script_text").value = lib.text;
       if (!el("product").value && lib.product) { el("product").value = lib.product; drawScripts(); el("script").value = lib.id; }
@@ -409,7 +466,10 @@ async function newVideo(pre = {}) {
     drawFills(); pick._draw();
   };
   el("script_text").addEventListener("input", drawFills);
+  $(".nvEditTxt", dlg).onclick = () => { showText = true; drawPreview(); el("script_text").focus(); };
+  dlg.addEventListener("input", e => { if (e.target.closest(".nvFills input")) { rowState(e.target); drawPreview(); } });
   // ⚡ links: a product link makes (or finds) the product; a video link makes its script
+  const kmsg = h => ($(".nvKMsg", dlg).innerHTML = h);
   const pmsg = h => ($('.nvQMsg[data-m="product"]', dlg).innerHTML = h), qmsg = h => ($('.nvQMsg[data-m="video"]', dlg).innerHTML = h);
   const qBusy = (which, on) => { const b = $(`[data-q="${which}"]`, dlg); if (b) b.disabled = on; };
   const getProduct = async () => {
@@ -460,14 +520,47 @@ async function newVideo(pre = {}) {
     const q = e.target.closest("[data-q]")?.dataset.q;
     if (q === "product") getProduct();
     if (q === "video") getScript();
+    const um = e.target.closest("[data-unmark]");
+    if (um && lib) {  // not a key word after all ("in case you need to adjust"): back into the script as said
+      const slot = um.dataset.unmark, word = was()[slot];
+      const r = await api(`/api/shop/scriptgen/${lib.id}/marks`, { json: { marks: (lib.marks || []).filter(m => m.slot !== slot) } });
+      Object.assign(lib, r);
+      delete keep[slot];
+      el("script_text").value = lib.text; drawFills();
+      kmsg(`“${esc(word)}” <span>isn't a key word any more.</span>`);
+      return;
+    }
+    if (q === "adjust" && lib) {  // the full editor (select words to mark, click a highlight to unmark)
+      const id = lib.id;
+      return openBuilder(id, async () => {
+        await shopLoad();
+        lib = byId("scripts", id);
+        for (const k of Object.keys(keep)) if (!(lib?.marks || []).some(m => m.slot === k)) delete keep[k];
+        if (lib) el("script_text").value = lib.text;
+        drawFills();
+      });
+    }
+    const rs = e.target.closest("[data-reset]");
+    if (rs) { const i = $(`.nvFills [data-ph="${CSS.escape(rs.dataset.reset)}"]`, dlg); i.value = was()[rs.dataset.reset] || ""; rowState(i); drawPreview(); }
+    if (q === "swapall") {  // the product's own details where the app knows them; the rest stay as the video said
+      const auto = fillsFor();
+      let n = 0;
+      for (const i of $$(".nvFills input", dlg)) if (auto[i.dataset.ph]) { i.value = auto[i.dataset.ph]; rowState(i); n++; }
+      const left = $$(".nvFills input", dlg).filter(i => i.value.trim() === (was()[i.dataset.ph] || "")).map(i => `{${i.dataset.ph}}`);
+      kmsg(`⇄ Swapped ${n} key word${n === 1 ? "" : "s"}.` + (left.length ? ` <span>Still the video's words:</span> <span translate="no">${esc(left.join(", "))}</span>. <span>Type them in, or use ✨ AI.</span>` : ""));
+      drawPreview();
+    }
     if (q === "aifill" && lib && el("product").value) {
       const b = e.target.closest("[data-q]"); b.disabled = true;
       try {
-        const known = Object.fromEntries($$(".nvFills input", dlg).map(i => [i.dataset.ph, i.value.trim()]));
-        const r = await sbJob(await api("/api/shop/ai/fill", { json: { script: lib.id, product: el("product").value, known } }), m => qmsg(esc(m)));
-        for (const [k, v] of Object.entries(r.fills || {})) { const i = $(`.nvFills [data-ph="${CSS.escape(k)}"]`, dlg); if (i && !i.value.trim()) i.value = v; }
-        qmsg("✨ Blanks filled in by Claude: check them.");
-      } catch (err) { qmsg("⚠ " + esc(err.message)); }
+        const orig = was(), ins = $$(".nvFills input", dlg);
+        const same = i => !i.value.trim() || i.value.trim() === (orig[i.dataset.ph] || "");  // not changed by hand
+        const known = Object.fromEntries(ins.filter(i => !same(i)).map(i => [i.dataset.ph, i.value.trim()]));
+        const r = await sbJob(await api("/api/shop/ai/fill", { json: { script: lib.id, product: el("product").value, known } }), m => kmsg(esc(m)));
+        for (const [k, v] of Object.entries(r.fills || {})) { const i = $(`.nvFills [data-ph="${CSS.escape(k)}"]`, dlg); if (i && same(i)) { i.value = v; rowState(i); } }
+        kmsg("✨ Key words rewritten by Claude: check them.");
+        drawPreview();
+      } catch (err) { kmsg("⚠ " + esc(err.message)); }
       b.disabled = false;
     }
   });
@@ -489,13 +582,11 @@ async function newVideo(pre = {}) {
     const how = dlg.returnValue;
     if (how === "keep") return;
     if (how !== "assign" && how !== "open") { dlg.remove(); return; }
-    const empty = $$(".nvFills input", dlg).filter(i => !i.value.trim()).map(i => `{${i.dataset.ph}}`);
-    if (empty.length && !confirm(`${empty.length} blank${empty.length === 1 ? " is" : "s are"} still empty (${empty.join(", ")}): ${empty.length === 1 ? "it shows" : "they show"} like that on the teleprompter. Make it anyway?`)) { dlg.showModal(); return; }
     const vars = Object.fromEntries($$(".nvFills input", dlg).map(i => [i.dataset.ph, i.value.trim()]).filter(x => x[1]));
     const text = el("script_text").value, files = [...el("files").files];
     const body = {
       product: el("product").value || null, account: el("account").value || null, creator: el("creator").value || null,
-      tags: [...pick._sel], reference: el("video_url").value.trim(), script: lib && text === lib.text ? lib.id : null,
+      tags: [...pick._sel], reference: el("video_url").value.trim(), script: lib && text === lib.text ? lib.id : null, base_script: lib?.id || null,
       script_text: text, vars, save_script: !$(".nvSave", dlg).hidden && el("save_script").checked,
       due: el("due").value, notes: el("notes").value.trim(), title: el("title").value.trim(), assign: how === "assign",
     };
@@ -781,8 +872,48 @@ async function renderAnalytics() {
     <h3 class="secHead">Formats &amp; tags</h3>${perfTable(an.tags, "Tag", id => tagChip(id), "Tag videos (New video → Style, or ⋯ on a queue card) to compare formats.")}
     <h3 class="secHead">Creators</h3>${perfTable(an.creators, "Creator", id => who(id), "Set who's in each video to compare.")}
     <div class="sc trackBox"><b>Track a video made elsewhere</b> <span class="muted">it counts toward the account's numbers</span>
-      <div class="row"><input id="trackUrl" type="url" placeholder="https://www.tiktok.com/@…/video/…"><select id="trackAcc">${opts(d.accounts, acc, accLabel, "— account —")}</select><button data-go="track">Track</button></div></div>`;
+      <div class="row"><input id="trackUrl" type="url" placeholder="https://www.tiktok.com/@…/video/…"><select id="trackAcc">${opts(d.accounts, acc, accLabel, "— account —")}</select><button data-go="track">Track</button></div></div>
+`;
 }
+// ---------- competitors: what other creators' videos probably sell (adcut/competitors.py) ----------
+const money = v => v == null ? "–" : "$" + (v >= 1e6 ? (v / 1e6).toFixed(1) + "M" : v >= 1e4 ? Math.round(v / 1e3) + "K" : v >= 1e3 ? (v / 1e3).toFixed(1) + "K" : Math.round(v));
+async function renderCompetitors() {
+  const box = $("#paneCompetitors"); if (!box) return;
+  const all = await api("/api/shop/competitors/all");
+  const cur = LS.get("compHandle", "") || all.profiles[0]?.handle || "", days = LS.get("compDays", 7);
+  const v = cur ? await api(`/api/shop/competitors/${encodeURIComponent(cur)}/view?days=${days}`).catch(() => null) : null;
+  const st = all.status;
+  box.innerHTML = `<div class="tbar"><span class="seg chips">${all.profiles.map(p => `<button data-comp="${esc(p.handle)}" class="${p.handle === cur ? "on" : ""}" translate="no">@${esc(p.handle)}</button>`).join("")}</span>
+      <input id="compAdd" placeholder="@handle to track"><button data-go="compadd">＋ Track</button><span class="spacer"></span>
+      <span class="seg chips">${[1, 7, 30].map(n => `<button data-cdays="${n}" class="${n === days ? "on" : ""}">${n === 1 ? "1 day" : n + " days"}</button>`).join("")}</span>
+      ${cur ? `<button data-go="comprefresh" ${st.running ? "disabled" : ""}>↻ Check now</button>` : ""}</div>
+    <p class="hint">Once a day: each video's views and each tagged product's public "items sold" count. Sales = the count's growth × price, split across his videos by the views each gained. The count includes everyone selling that product, so treat it as an upper bound; there's no history before tracking started, and nothing about clicks or conversion (only the seller sees those).
+      ${st.running ? `<b>Checking: ${esc(st.msg || "")}</b>` : ""}</p>
+    ${!v ? `<p class="muted">Add a creator's handle to start tracking.</p>` : `
+    <div class="kpiRow">
+      <div class="sc skpi"><span>Est. sales · ${days === 1 ? "1 day" : days + " days"}</span><b>${money(v.est_revenue)}</b><em>${v.history_days < 1 ? "needs 2 daily checks first" : `tracking for ${v.history_days} days`}</em></div>
+      <div class="sc skpi"><span>Videos posted · ${days} days</span><b>${v.posted}</b><em>${v.videos_tracked} followed (last 30 days)</em></div>
+      <div class="sc skpi"><span>Products tagged</span><b>${v.products_tracked}</b><em>checked ${ago(v.last)}</em></div></div>
+    <h3 class="secHead">Products <span class="muted">by estimated sales</span></h3>
+    <div class="tblWrap"><table class="tbl"><thead><tr><th>Product</th><th>Price</th><th>His videos</th><th>Views gained</th><th>Sold</th><th>Est. sales</th><th>Sold all time</th></tr></thead><tbody>
+      ${v.products.map(p => `<tr><td translate="no">${p.link ? `<a href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.title)}</a>` : esc(p.title)}</td><td>${esc(p.price || "")}</td><td>${p.videos}</td>
+        <td>${num(p.view_gain)}</td><td>${p.sold == null ? "–" : num(p.sold)}</td><td><b>${money(p.est_revenue)}</b></td><td>${num(p.sold_total)}</td></tr>`).join("") || `<tr><td colspan="7" class="muted">No tagged products yet.</td></tr>`}</tbody></table></div>
+    <h3 class="secHead">Videos <span class="muted">by estimated sales, then views gained</span></h3>
+    <div class="tblWrap"><table class="tbl"><thead><tr><th>Video</th><th>Posted</th><th>Kind</th><th>Views</th><th>Gained</th><th>Est. sales</th></tr></thead><tbody>
+      ${v.videos.map(x => `<tr><td translate="no"><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.desc || x.id)}</a></td><td>${x.created ? new Date(x.created * 1000).toLocaleDateString(undefined, { month: "short", day: "numeric" }) : ""}</td>
+        <td>${x.carousel ? "🖼 carousel" : "🎬 video"}</td><td>${num(x.views)}</td><td>${num(x.view_gain)}</td><td><b>${money(x.est_revenue)}</b></td></tr>`).join("")}</tbody></table></div>`}`;
+}
+$("#paneCompetitors").addEventListener("click", async e => {
+  const c = e.target.closest("[data-comp]"); if (c) { LS.set("compHandle", c.dataset.comp); return renderCompetitors(); }
+  const dd = e.target.closest("[data-cdays]"); if (dd) { LS.set("compDays", +dd.dataset.cdays); return renderCompetitors(); }
+  const go = e.target.closest("[data-go]")?.dataset.go;
+  if (go === "compadd") {
+    const h = $("#compAdd").value.trim(); if (!h) return;
+    try { const r = await api("/api/shop/competitors/add", { json: { handle: h } }); LS.set("compHandle", r.handle); toast(`Tracking @${r.handle}: the first check takes a few minutes`, 5000); renderCompetitors(); }
+    catch (err) { toast(err.message); }
+  }
+  if (go === "comprefresh") { await api(`/api/shop/competitors/${encodeURIComponent(LS.get("compHandle", ""))}/refresh`, { json: {} }); toast("Checking (one page at a time)…"); setTimeout(renderCompetitors, 2000); }
+});
 function matrixTable(an, d) {
   const accs = d.accounts, prods = Object.keys(an.matrix);
   if (!prods.length || !accs.length) return `<p class="muted">Shows which product does best on which account once posted videos have an account, a product and a link.</p>`;
@@ -864,8 +995,7 @@ $("#paneLibrary").addEventListener("change", e => { if (e.target.id === "libProd
 async function sheetStatus() {
   const st = await api("/api/shop/sheet/status").catch(() => null); if (!st) return null;
   const c = $("#sheetChip");
-  const icon = { ok: "📗", waiting: "⏳", error: "⚠", missing: "⚠", starting: "📗" }[st.state] || "📗";
-  c.textContent = `${icon} Sheet${st.state === "ok" ? " ✓" : ""}`;
+  c.innerHTML = `<i class="sdot ${st.state === "ok" || st.state === "starting" ? "ok" : st.state === "waiting" ? "wait" : "bad"}"></i>Spreadsheet <span class="muted">${st.state === "ok" ? "in sync" : st.state === "waiting" ? "waiting" : st.state === "starting" ? "" : "needs a look"}</span>`;
   c.classList.toggle("warnbtn", st.state !== "ok" && st.state !== "starting");
   c.title = st.state === "ok" ? `Spreadsheet in sync (${ago(st.synced)})` : st.msg || "Spreadsheet";
   return st;
@@ -893,7 +1023,7 @@ $("#sheetChip").onclick = async () => {
 sheetStatus();
 setInterval(() => { if (!$("#home").hidden) sheetStatus(); }, 15000);
 
-const PANES = { overview: renderOverview, queue: renderQueue, products: renderProducts, analytics: renderAnalytics, library: renderLibrary };
+const PANES = { competitors: renderCompetitors, overview: renderOverview, queue: renderQueue, products: renderProducts, analytics: renderAnalytics, library: renderLibrary };
 $("#newVideoBtn").onclick = () => newVideo();
 // the Queue keeps up with uploads / pre-cuts finishing
 setInterval(() => { if (!$("#home").hidden && LS.get("homeTab", "overview") === "queue" && !document.querySelector("dialog[open]")) renderQueue().catch(() => { }); }, 15000);

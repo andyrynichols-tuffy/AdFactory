@@ -256,3 +256,40 @@ button.tpMore:hover { color: var(--text) !important; border-color: #4a505b !impo
 .nvQMsg:empty { display: none; } .nvQMsg button { font-size: 12px; padding: 2px 8px; margin: 2px 4px 0 0; }
 .nvFHead { display: flex; gap: 8px; align-items: center; justify-content: space-between; }
 .nvFHead .aiBtn { font-size: 12px; padding: 2px 9px; }
+.nvWarn { margin: 10px 0 0; padding: 8px 10px; border-radius: 9px; background: rgba(252, 196, 25, .12); color: var(--warn); font-size: 13px; }
+
+/* New video: key words from the video (kept as said until changed) */
+.nvPreview { background: var(--panel2); border-radius: 10px; padding: 10px 12px; font-size: 13.5px; line-height: 1.6; max-height: 260px; overflow: auto; margin: 6px 0; }
+.nvPreview mark.kw { background: rgba(255, 169, 77, .18); color: var(--text); border-bottom: 2px solid #ffa94d; border-radius: 3px; padding: 0 2px; }
+.nvPreview mark.kw.swapped { background: rgba(33, 163, 102, .2); border-bottom-color: var(--accent); }
+.nvPreview code.blank { background: rgba(252, 196, 25, .15); color: var(--warn); border-radius: 4px; padding: 0 3px; }
+.nvFill.swapped input { border-color: var(--accent); }
+.nvFill .nvReset { padding: 2px 7px !important; height: auto !important; font-size: 12px; }
+.nvFHead { flex-wrap: wrap; } .nvFHead > span:last-child { display: flex; gap: 6px; flex-wrap: wrap; }
+.nvFHead button { font-size: 12px; padding: 2px 9px; }
+.nvEditTxt { font-size: 12px; margin: 0 0 6px; }
+.nvKMsg { margin: 4px 0; } .nvKMsg:empty { display: none; }
+
+/* 🗓 Planner */
+.plDay { font-size: 15px; margin-left: 6px; }
+.plGrid { display: grid; grid-template-columns: minmax(260px, 1fr) minmax(0, 1.4fr); gap: 16px; align-items: start; }
+.plTime { list-style: none; margin: 0; padding: 0; }
+.plTime li { display: grid; grid-template-columns: 54px 1fr; gap: 10px; padding: 7px 10px; margin-bottom: 4px; border-radius: 9px;
+  background: var(--panel); border-left: 4px solid var(--c); font-size: 13px; }
+.plTime li[data-goto] { cursor: pointer; } .plTime li[data-goto]:hover { background: var(--panel2); }
+.plTime .plT { font-weight: 600; font-size: 12px; line-height: 1.3; }
+.plTime li.k-post { background: rgba(37, 244, 238, .06); }
+.plSet { margin-bottom: 10px; }
+.plItems { margin: 6px 0; padding-left: 18px; font-size: 13px; }
+.okx { color: var(--ok); font-size: 13px; }
+.plDlg { width: min(860px, 96vw); }
+.plDlg h4 { margin: 14px 0 6px; }
+.plRow { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; font-size: 13px; margin: 4px 0; }
+.plRow label { color: var(--muted); } .plRow input, .plRow select { color: var(--text); }
+.plMix td { white-space: normal; }
+.plLineup { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 4px 12px; max-height: 220px; overflow: auto; font-size: 13px; }
+@media (max-width: 800px) { .plGrid { grid-template-columns: 1fr; } }
+.plCant { flex-basis: 100%; } .plCant summary { cursor: pointer; color: var(--muted); }
+.plCant label { display: block; margin: 2px 0 2px 14px; }
+.plTime li.k-live { opacity: .7; }
+.plLight { margin: 6px 0; padding: 6px 9px; border-radius: 8px; background: rgba(255, 212, 59, .08); font-size: 13px; }

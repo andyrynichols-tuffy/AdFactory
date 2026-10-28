@@ -2,12 +2,32 @@
   "sourceLanguage": "en",
   "version": "1.0",
   "strings": {
+    "%@ on its own, centered and smoothed flat. Leave room at the top for the text.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ sozinha, no centro e bem lisa. Deixe espaço em cima para o texto."
+          }
+        }
+      }
+    },
     "%@ s at %@×": {
       "localizations": {
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "%1$@ s a %2$@×"
+          }
+        }
+      }
+    },
+    "%lld done": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld prontas"
           }
         }
       }
@@ -28,6 +48,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld linhas"
+          }
+        }
+      }
+    },
+    "%lld of %lld photos": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld de %2$lld fotos"
+          }
+        }
+      }
+    },
+    "%lld outfits": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld looks"
           }
         }
       }
@@ -92,6 +132,16 @@
         }
       }
     },
+    "Action": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gravando"
+          }
+        }
+      }
+    },
     "Ad Camera films your TikTok Shop videos.": {
       "localizations": {
         "pt-BR": {
@@ -148,6 +198,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Endereço"
+          }
+        }
+      }
+    },
+    "All outfits for one product": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todos os looks de um produto"
           }
         }
       }
@@ -322,6 +382,16 @@
         }
       }
     },
+    "Carousels to shoot": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Carrosséis para fotografar"
+          }
+        }
+      }
+    },
     "Check wording": {
       "localizations": {
         "pt-BR": {
@@ -392,12 +462,42 @@
         }
       }
     },
+    "Couldn't send a photo to Ad Factory. It's in the Ad Studio album; retake it later.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Não deu para enviar uma foto ao Ad Factory. Ela está no álbum Ad Studio; refaça depois."
+          }
+        }
+      }
+    },
     "Countdown": {
       "localizations": {
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Contagem regressiva"
+          }
+        }
+      }
+    },
+    "Cover": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Capa"
+          }
+        }
+      }
+    },
+    "Cut": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Corta"
           }
         }
       }
@@ -488,6 +588,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Arraste a borda da faixa até a borda da garra. Toque duas vezes na faixa para levá-la à outra ponta. A imagem diminui para caber no resto da tela."
+          }
+        }
+      }
+    },
+    "Each carousel: a cover (the item on its own) + every outfit once: %lld photos.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada carrossel: uma capa (só a peça) + cada look uma vez: %lld fotos."
+          }
+        }
+      }
+    },
+    "Each one is a product's carousel.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada um é o carrossel de um produto."
           }
         }
       }
@@ -822,12 +942,32 @@
         }
       }
     },
+    "Keep": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guardar"
+          }
+        }
+      }
+    },
     "Keep this video": {
       "localizations": {
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Manter este vídeo"
+          }
+        }
+      }
+    },
+    "Kept": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guardada"
           }
         }
       }
@@ -852,12 +992,32 @@
         }
       }
     },
+    "Last line": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fala anterior"
+          }
+        }
+      }
+    },
     "Later": {
       "localizations": {
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Depois"
+          }
+        }
+      }
+    },
+    "Lay %@ with %@": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coloque %1$@ com %2$@"
           }
         }
       }
@@ -987,7 +1147,17 @@
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Próxima linha"
+            "value": "Próxima fala"
+          }
+        }
+      }
+    },
+    "Next project": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Próximo projeto"
           }
         }
       }
@@ -1152,6 +1322,16 @@
         }
       }
     },
+    "On-screen text: %@": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Texto na tela: %@"
+          }
+        }
+      }
+    },
     "One line per line of the script…": {
       "localizations": {
         "pt-BR": {
@@ -1162,12 +1342,32 @@
         }
       }
     },
+    "One outfit, swap the products": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Um look, trocando os produtos"
+          }
+        }
+      }
+    },
     "Open a project on the phone and tap Film: the camera and the script show up here.": {
       "localizations": {
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Abra um projeto no celular e toque em Filmar: a câmera e o roteiro aparecem aqui."
+          }
+        }
+      }
+    },
+    "Order": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ordem"
           }
         }
       }
@@ -1188,6 +1388,36 @@
           "stringUnit": {
             "state": "translated",
             "value": "Outros takes desta linha"
+          }
+        }
+      }
+    },
+    "Outfit": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Look"
+          }
+        }
+      }
+    },
+    "Outfit %lld": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Look %lld"
+          }
+        }
+      }
+    },
+    "Outfit %lld: %@": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Look %1$lld: %2$@"
           }
         }
       }
@@ -1312,6 +1542,16 @@
         }
       }
     },
+    "Project %lld of %lld": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Projeto %lld de %lld"
+          }
+        }
+      }
+    },
     "Projects and uploads come from Ad Factory on the PC.": {
       "localizations": {
         "pt-BR": {
@@ -1368,6 +1608,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Resolução"
+          }
+        }
+      }
+    },
+    "Retake replaces it": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Refazer substitui"
           }
         }
       }
@@ -1452,6 +1702,36 @@
         }
       }
     },
+    "Say “Ad Camera, action”": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diga “Ad Camera, action”"
+          }
+        }
+      }
+    },
+    "Scrap": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descartar"
+          }
+        }
+      }
+    },
+    "Scrapped": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descartada"
+          }
+        }
+      }
+    },
     "Script": {
       "localizations": {
         "pt-BR": {
@@ -1518,6 +1798,36 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ajustes"
+          }
+        }
+      }
+    },
+    "Several carousels at once: every outfit with every product.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vários carrosséis de uma vez: cada look com cada produto."
+          }
+        }
+      }
+    },
+    "Shoot carousels": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fotografar carrosséis"
+          }
+        }
+      }
+    },
+    "Shoot carousels (%lld)": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fotografar carrosséis (%lld)"
           }
         }
       }
@@ -1742,6 +2052,16 @@
         }
       }
     },
+    "Take kept · say “Ad Camera, scrap that” to toss it": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tomada guardada · diga “Ad Camera, scrap that” para descartar"
+          }
+        }
+      }
+    },
     "Takes": {
       "localizations": {
         "pt-BR": {
@@ -1772,6 +2092,26 @@
         }
       }
     },
+    "Tap the picture to focus there; hold to lock focus and brightness. Pinch to zoom. The volume buttons start and stop recording. Drag the teleprompter to move it, drag its corner to make it wider, pinch it to change the text size. Takes that come out with no sound are flagged right away. Voice control: “Ad Camera, action” starts a take, “Ad Camera, cut” stops it, and the take is kept unless you say “Ad Camera, scrap that” within a few seconds. Between takes: “Ad Camera, next line”, “last line”, “teleprompter on” or “off”. Every command starts with “Ad Camera”, so words in a script never trigger one.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toque na imagem para focar ali; segure para travar o foco e o brilho. Faça pinça para dar zoom. Os botões de volume começam e param a gravação. Arraste o teleprompter para movê-lo, arraste o canto para deixá-lo mais largo e faça pinça nele para mudar o tamanho do texto. Takes que saem sem som são avisados na hora. Controle por voz: “Ad Camera, action” começa uma tomada, “Ad Camera, cut” para, e a tomada fica, a não ser que você diga “Ad Camera, scrap that” em poucos segundos. Entre as tomadas: “Ad Camera, next line”, “last line”, “teleprompter on” ou “off”. Todo comando começa com “Ad Camera”, então palavras do roteiro nunca disparam um comando."
+          }
+        }
+      }
+    },
+    "Tap to start": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toque para começar"
+          }
+        }
+      }
+    },
     "Teleprompter": {
       "localizations": {
         "pt-BR": {
@@ -1782,12 +2122,42 @@
         }
       }
     },
+    "Teleprompter off": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teleprompter desligado"
+          }
+        }
+      }
+    },
+    "Teleprompter on": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teleprompter ligado"
+          }
+        }
+      }
+    },
     "Teleprompter text size": {
       "localizations": {
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Tamanho do texto do teleprompter"
+          }
+        }
+      }
+    },
+    "That photo didn't take. Try again.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A foto não saiu. Tente de novo."
           }
         }
       }
@@ -2158,6 +2528,36 @@
           "stringUnit": {
             "state": "translated",
             "value": "Vídeo para recriar"
+          }
+        }
+      }
+    },
+    "Voice control": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Controle por voz"
+          }
+        }
+      }
+    },
+    "Voice control isn't available right now.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O controle por voz não está disponível agora."
+          }
+        }
+      }
+    },
+    "Voice control needs Speech Recognition: Settings → Ad Camera.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O controle por voz precisa do Reconhecimento de Fala: Ajustes → Ad Camera."
           }
         }
       }

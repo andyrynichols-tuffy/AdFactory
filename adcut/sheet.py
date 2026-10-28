@@ -110,8 +110,11 @@ def sync(start_process=None) -> dict:
         row_name = (store.load(r["id"]).get("sheet") or {}).get("row")
         if row_name:
             by_title[row_name.strip().lower()] = r["id"]
+    gone = set(store.trashed().values())  # deleted in the app: its row is on its way out, don't make it again
     for row in table:
         sid = by_title.get(row["shoot"].lower())
+        if not sid and row["shoot"].strip().lower() in gone:
+            continue
         if not sid:
             sid = store.create(row["shoot"])
             by_title[row["shoot"].lower()] = sid

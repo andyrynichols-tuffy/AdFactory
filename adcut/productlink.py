@@ -72,9 +72,12 @@ def tiktok_product(url: str) -> dict:
                 and v.lower() not in ("none", "no", "n/a", "na", "other") and len(fills) < MAX_FILLS):
             fills[k] = v
     link = (meta.get("og:url") or final).split("?")[0]
+    sold = re.search(r'"sold_count":"?(\d+)', page)  # items sold since listing, all sellers' creators together
+    low = re.search(r'"min_sku_price":"([\d.]+)"', page)
     return {"name": title, "brand": _title_case(brand) if brand else "", "category": cats[-1].get("category_name", "") if cats else "",
             "price": _json_str(price.group(1)) if price else "", "link": link, "image": meta.get("og:image", ""),
-            "notes": meta.get("og:description") or meta.get("description") or "", "fills": fills, "product_id": pid}
+            "notes": meta.get("og:description") or meta.get("description") or "", "fills": fills, "product_id": pid,
+            "sold": int(sold.group(1)) if sold else None, "min_price": float(low.group(1)) if low else None}
 
 
 def other_product(url: str) -> dict:

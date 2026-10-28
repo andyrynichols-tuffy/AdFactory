@@ -11,10 +11,12 @@ import SwiftUI
 /// back camera, its own countdown, teleprompter off by default.
 struct CameraView: View {
     let project: Project
+    var onNext: ((Project) -> Void)? = nil   // "Next project": the list closes this camera and opens the next one
     @EnvironmentObject private var model: AppModel
     @EnvironmentObject private var clips: ClipStore
     @Environment(\.dismiss) private var dismiss
     @StateObject private var camera = CameraController()
+    @StateObject private var voice = VoiceControl()   // "Ad Camera, action" / "Ad Camera, cut"
     @ObservedObject private var big = BigScreen.shared
 
     @AppStorage("zones") private var showZones = true
@@ -36,14 +38,21 @@ struct CameraView: View {
     @AppStorage("tpW") private var triW = 0.62
 
     @State private var line = 0
+    @State private var pending: PendingTake?        // the take just filmed: kept in a few seconds unless scrapped
+    @State private var keepTask: Task<Void, Never>?
     @State private var counting: Int?
     @State private var countTask: Task<Void, Never>?
     @State private var showBias = false
     @State private var showSettings = false
     @State private var showUploads = false
     @State private var editingClamp = false
+    @State private var showSetup = false             // the "lay this out" card when a planned project opens
 
     private var tripod: Bool { layout == "tripod" }
+    private var nextProject: Project? {
+        guard let n = project.nextSid else { return nil }
+        return model.catalog?.projects.first { $0.sid == n }
+    }
     private var prompterOn: Bool { tripod ? tripodPrompter : handheldPrompter }
     private var showPrompter: Bool { prompterOn && !project.lines.isEmpty && !big.connected }   // on a big screen instead
     private var countdown: Int { tripod ? tripodCountdown : handheldCountdown }
@@ -83,24 +92,80 @@ struct CameraView: View {
                 }
             }
             .ignoresSafeArea()
+
+            VStack(spacing: 8) {
+                Spacer().frame(height: tripod ? 12 : 58)
+                VoiceBadge(voice).allowsHitTesting(false)
+                pendingBanner
+                Spacer()
+                nextBar
+                Spacer().frame(height: tripod ? 12 : 150)
+            }
+            .animation(.easeInOut(duration: 0.2), value: pending == nil)
+
+            if showSetup { setupCard.transition(.opacity) }
         }
+        .animation(.easeInOut(duration: 0.25), value: showSetup)
         .foregroundStyle(.white)
         .statusBarHidden()
         .persistentSystemOverlays(.hidden)
         .onAppear {
             if tripod { camera.position = .back }
             camera.start()
+            voice.start([   // "Ad Camera, …": only what makes sense right now is listened for
+                VoiceCommand(label: "Action", phrases: [["action"], ["actions"]],
+                             when: { !camera.recording && countTask == nil }) { tapRecord() },   // countdown still applies
+                VoiceCommand(label: "Cut", phrases: [["cut"], ["cuts"], ["cart"], ["kut"]],
+                             when: { camera.recording }) { tapRecord() },
+                VoiceCommand(label: "Scrapped", phrases: [["scrap"], ["scrap", "that"], ["scrap", "it"], ["delete", "that"], ["delete", "it"], ["toss", "it"], ["toss", "that"]],
+                             when: { pending != nil && !camera.recording }) { scrap() },
+                VoiceCommand(label: "Kept", phrases: [["keep"], ["keep", "it"], ["keep", "that"]],
+                             when: { pending != nil && !camera.recording }) { keep() },
+                VoiceCommand(label: "Next line", phrases: [["next", "line"]],
+                             when: { !camera.recording && !project.lines.isEmpty }) { line = min(line + 1, project.lines.count - 1) },
+                VoiceCommand(label: "Last line", phrases: [["last", "line"], ["previous", "line"], ["back", "a", "line"]],
+                             when: { !camera.recording && !project.lines.isEmpty }) { line = max(line - 1, 0) },
+                VoiceCommand(label: "Teleprompter on", phrases: [["teleprompter", "on"], ["prompter", "on"], ["teleprompter", "own"]],
+                             when: { !camera.recording }) { setPrompter(true) },
+                VoiceCommand(label: "Teleprompter off", phrases: [["teleprompter", "off"], ["prompter", "off"]],
+                             when: { !camera.recording }) { setPrompter(false) },
+                VoiceCommand(label: "Next project", phrases: [["next", "project"], ["next", "video"]],
+                             when: { !camera.recording && countTask == nil && nextProject != nil }) { goNext() },
+            ])
+            if project.layOut != nil || project.change != nil {   // a planned shoot day: say what to lay out first
+                showSetup = true
+                Task {
+                    try? await Task.sleep(for: .seconds(8))
+                    showSetup = false
+                }
+            }
+            Task { await API.filming(project.sid) }
+            WatchLink.shared.onCommand = { cmd in   // the watch's record button
+                if cmd == "start", !camera.recording, countTask == nil { tapRecord() }
+                if cmd == "stop", camera.recording || countTask != nil { tapRecord() }
+            }
+            sendWatch()
             UIApplication.shared.isIdleTimerDisabled = true
             (big.zones, big.safe, big.showZones, big.line) = (model.zones, model.safe, showZones, line)
             (big.camera, big.project) = (camera, project)
         }
         .onDisappear {
             countTask?.cancel()
+            keep()   // leaving the camera keeps the last take
+            voice.stop()
+            WatchLink.shared.onCommand = nil
+            WatchLink.shared.send(recording: false, project: nil, started: nil, takes: 0, counting: nil)
             camera.stop()
             UIApplication.shared.isIdleTimerDisabled = false
             (big.camera, big.project, big.counting) = (nil, nil, nil)
         }
         .onChange(of: line) { big.line = line }
+        .onChange(of: camera.recording) {
+            sendWatch()
+            if camera.recording { showSetup = false }
+        }
+        .onChange(of: counting) { sendWatch() }
+        .onChange(of: clips.count(for: project.sid)) { sendWatch() }
         .onChange(of: counting) { big.counting = counting }
         .onChange(of: showZones) { big.showZones = showZones }
         .sheet(isPresented: $showSettings, onDismiss: { camera.reconfigure() }) {
@@ -550,6 +615,11 @@ struct CameraView: View {
         }
     }
 
+    private func sendWatch() {
+        WatchLink.shared.send(recording: camera.recording, project: project.title, started: camera.started,
+                              takes: clips.count(for: project.sid), counting: counting)
+    }
+
     private func tapRecord() {
         if editingClamp { return }
         if camera.recording {
@@ -580,11 +650,111 @@ struct CameraView: View {
     private func begin() {
         let at = showPrompter ? line : nil
         let p = project
-        let store = clips
+        keep()   // starting the next take keeps the one before
         camera.record(to: ClipStore.newFile(for: p)) { file, secs in
-            store.add(file: file, project: p, seconds: secs, line: at)
+            pending = PendingTake(file: file, seconds: secs, line: at)
+            keepTask?.cancel()
+            keepTask = Task { @MainActor in   // kept by default: a few seconds to say "Ad Camera, scrap that"
+                try? await Task.sleep(nanoseconds: UInt64(PendingTake.window * 1_000_000_000))
+                if !Task.isCancelled { keep() }
+            }
         }
         UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+    }
+
+    /// The take just filmed goes into the project (Photos + upload).
+    private func keep() {
+        keepTask?.cancel()
+        keepTask = nil
+        guard let t = pending else { return }
+        pending = nil
+        clips.add(file: t.file, project: project, seconds: t.seconds, line: t.line)
+    }
+
+    /// Throw the take just filmed away: never saved to Photos, never uploaded.
+    private func scrap() {
+        keepTask?.cancel()
+        keepTask = nil
+        guard let t = pending else { return }
+        pending = nil
+        try? FileManager.default.removeItem(at: t.file)
+        UINotificationFeedbackGenerator().notificationOccurred(.warning)
+    }
+
+    private func setPrompter(_ on: Bool) {
+        if tripod { tripodPrompter = on } else { handheldPrompter = on }
+    }
+
+    /// Keep the last take and move on to the next project of the shoot day (its setup card says what to change).
+    private func goNext() {
+        guard let n = nextProject, let onNext else { return }
+        keep()
+        onNext(n)
+    }
+
+    /// Between takes on a planned shoot day: the next project, one tap (or "Ad Camera, next project") away.
+    @ViewBuilder private var nextBar: some View {
+        if let n = nextProject, onNext != nil, pending == nil, !camera.recording, countTask == nil,
+           clips.count(for: project.sid) > 0 {
+            Button { goNext() } label: {
+                HStack(spacing: 8) {
+                    VStack(alignment: .leading, spacing: 1) {
+                        Text("Next project").font(.footnote.weight(.semibold))
+                        Text(n.layOut ?? n.title).font(.caption).lineLimit(1).opacity(0.8)
+                    }
+                    Image(systemName: "chevron.right")
+                }
+                .padding(.horizontal, 14).padding(.vertical, 8)
+                .background(.black.opacity(0.65), in: Capsule())
+            }
+            .buttonStyle(.plain)
+            .transition(.opacity)
+        }
+    }
+
+    /// When a planned project opens: what to lay out, what changed since the last project, the setup.
+    private var setupCard: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            if let n = project.shootN, let of = project.shootOf {
+                Text("Project \(n) of \(of)").font(.caption.weight(.semibold)).opacity(0.7)
+            }
+            if let c = project.change {
+                Text(c).font(.title3.weight(.semibold))
+            }
+            if let l = project.layOut {
+                Label { Text(l) } icon: { Image(systemName: "tshirt") }.font(.body)
+            }
+            if let s = project.setupNote, !s.isEmpty {
+                Label { Text(s) } icon: { Image(systemName: "square.on.square") }.font(.footnote).opacity(0.85)
+            }
+            Text("Tap to start").font(.caption).opacity(0.6)
+        }
+        .padding(18)
+        .frame(maxWidth: 360, alignment: .leading)
+        .background(.ultraThinMaterial.opacity(0.9), in: RoundedRectangle(cornerRadius: 16))
+        .environment(\.colorScheme, .dark)
+        .padding(24)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.black.opacity(0.35))
+        .contentShape(Rectangle())
+        .onTapGesture { showSetup = false }
+    }
+
+    /// After "cut": the take is kept in a few seconds unless scrapped (tap or "Ad Camera, scrap that").
+    @ViewBuilder private var pendingBanner: some View {
+        if pending != nil, !camera.recording {
+            HStack(spacing: 10) {
+                Image(systemName: "checkmark.circle")
+                Text("Take kept · say “Ad Camera, scrap that” to toss it").font(.footnote).lineLimit(2)
+                Spacer(minLength: 4)
+                Button("Scrap") { scrap() }.font(.footnote.weight(.semibold)).foregroundStyle(.red)
+                Button("Keep") { keep() }.font(.footnote.weight(.semibold))
+            }
+            .padding(.horizontal, 12).padding(.vertical, 8)
+            .background(.black.opacity(0.65), in: Capsule())
+            .padding(.horizontal, 14)
+            .transition(.opacity)
+        }
     }
 }
 
@@ -738,4 +908,13 @@ struct MicMeter: View {
         .padding(.horizontal, 8).padding(.vertical, 6)
         .background((tint ?? .black).opacity(tint == nil ? 0.45 : 0.85), in: Capsule())
     }
+}
+
+
+/// A take that's been filmed but not handed to the clip store yet (CameraView's keep / scrap window).
+struct PendingTake: Equatable {
+    static let window: Double = 6   // seconds before it's kept on its own
+    let file: URL
+    let seconds: Double
+    let line: Int?
 }

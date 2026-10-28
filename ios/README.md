@@ -12,6 +12,23 @@ the project's OneDrive inbox folder through Ad Factory, where it gets pre-cut li
 - TikTok UI guides (top tabs, like rail, caption block, cart tag) from `adcut/layout.py`.
 - Tap to focus, hold for AE/AF lock, pinch to zoom, ± brightness, mic meter (external mics work).
 - Volume buttons start/stop recording; optional 3/5/10 s countdown.
+- **Hands-free voice control** (`VoiceControl.swift`, on-device speech recognition). Every command starts with
+  "Ad Camera", so words in a script never trigger one: **action** (start; the countdown still applies), **cut**
+  (stop), then the take is kept unless you say **scrap that** within ~6 s (or **keep** to keep it now; starting
+  the next take keeps it too). Between takes: **next line**, **last line**, **teleprompter on / off**. Several
+  reads of a line in one recording are fine: Ad Factory splits them into separate takes and ranks them.
+  Off in Settings → Filming.
+- **Shoot carousels:** pick several carousel projects (one product each) and how many outfits (2–5); every
+  outfit is shot once with every product. Switch product or outfit any time (all outfits for one product, or one
+  outfit across the products); it moves to the next combo not done, shows a done grid, and each photo goes to the
+  Ad Studio album and into that carousel's folder in Ad Factory's posting kit (a retake replaces it).
+- **Big screen while filming** (`BigScreen.swift`): mirror the iPhone to a TV (Apple TV), a Mac or a monitor and
+  Ad Camera shows its own layout there instead of a copy of the phone: the camera picture beside the script in
+  big type, the current line highlighted, the countdown and the TikTok guides. On a Mac: System Settings →
+  General → AirDrop & Handoff → **AirPlay Receiver** on; then on the iPhone, Control Center → **Screen
+  Mirroring** → the Mac. Open a project in Ad Camera and the Mac shows the big layout.
+- **Apple Watch remote:** one big record button, the take timer and the take count (`WatchLink.swift` on
+  the phone, `ios/AdCameraWatch` on the watch). Needs the watch target added once (below).
 - Uploads keep going with the phone locked; with no connection they wait and retry.
 - Interface in English or Portuguese (Brazil), following the phone's language.
 
@@ -43,6 +60,19 @@ are kept. A paid Apple Developer account ($99/yr) removes the 7-day limit and al
 
 In the app: Settings → sign in with the Ad Factory web password (the one in
 `AD_DATA/login.txt` on the PC). Allow Camera, Microphone and Photos when asked.
+
+## Adding the Apple Watch remote (once, on the Mac)
+
+1. In Xcode with `AdCamera.xcodeproj` open: **File → New → Target… → watchOS → App** → Next.
+2. Product Name **AdCameraWatch**, choose **Watch App for Existing iOS App**, companion app **AdCamera** → Finish
+   (say **Activate** if asked about the scheme).
+3. In the new **AdCameraWatch** folder Xcode made, delete its `ContentView.swift` and `AdCameraWatchApp.swift`,
+   then drag `ios/AdCameraWatch/AdCameraWatchApp.swift` from Finder into that folder (tick the AdCameraWatch target).
+4. Signing for the watch target: the same Personal Team as the phone.
+5. Run the **AdCamera** scheme to the iPhone as usual; the watch app installs from the iPhone's Watch app
+   (My Watch → Ad Camera → Install) or by picking the watch as the run destination.
+
+Open a project in Ad Camera on the phone, then the watch's button starts and stops takes.
 
 ## Fixing build errors
 

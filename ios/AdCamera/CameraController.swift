@@ -3,7 +3,7 @@ import UIKit
 
 /// The capture session, set up for TikTok: vertical, SDR (HDR off), 4K or 1080p at a fixed
 /// frame rate, smooth autofocus, white balance held during a take, front camera unmirrored.
-final class CameraController: NSObject, ObservableObject, AVCaptureFileOutputRecordingDelegate {
+final class CameraController: NSObject, ObservableObject, AVCaptureFileOutputRecordingDelegate, AVCapturePhotoCaptureDelegate {
     let session = AVCaptureSession()
     weak var preview: AVCaptureVideoPreviewLayer?
     weak var bigPreview: AVCaptureVideoPreviewLayer?   // the same picture on a TV / Mac (BigScreen)
@@ -28,6 +28,8 @@ final class CameraController: NSObject, ObservableObject, AVCaptureFileOutputRec
 
     private let queue = DispatchQueue(label: "adcamera.session")
     private let output = AVCaptureMovieFileOutput()
+    private let photoOutput = AVCapturePhotoOutput()   // carousel mode (CarouselView)
+    private var photoDone: ((Data?) -> Void)?
     private var device: AVCaptureDevice?
     private var videoInput: AVCaptureDeviceInput?
     private var audioInput: AVCaptureDeviceInput?
@@ -147,6 +149,10 @@ final class CameraController: NSObject, ObservableObject, AVCaptureFileOutputRec
         let config = Config.current()
         session.beginConfiguration()
         session.automaticallyConfiguresCaptureDeviceForWideColor = false   // we pick SDR ourselves
+        // voice control (VoiceControl.swift) listens on the same mic: keep the app's audio session
+        // (play-and-record, mix with others) instead of letting capture take the mic for itself
+        session.usesApplicationAudioSession = true
+        session.automaticallyConfiguresApplicationAudioSession = !VoiceControl.enabled
 
         if let v = videoInput {
             session.removeInput(v)
@@ -171,6 +177,10 @@ final class CameraController: NSObject, ObservableObject, AVCaptureFileOutputRec
         DispatchQueue.main.async { self.micOff = noAudio }
         if !session.outputs.contains(output), session.canAddOutput(output) {
             session.addOutput(output)
+        }
+        if !session.outputs.contains(photoOutput), session.canAddOutput(photoOutput) {
+            session.addOutput(photoOutput)
+            photoOutput.maxPhotoQualityPrioritization = .quality
         }
 
         let want = Double(config.fps)
@@ -294,6 +304,21 @@ final class CameraController: NSObject, ObservableObject, AVCaptureFileOutputRec
         }
     }
 
+    /// One still for a carousel (JPEG), straight from the live session.
+    func takePhoto(done: @escaping (Data?) -> Void) {
+        queue.async {
+            guard !self.output.isRecording else { return DispatchQueue.main.async { done(nil) } }
+            self.photoDone = done
+            // JPEG, not HEIC: the carousel preview in Ad Factory shows it in any browser (Windows can't show HEIC)
+            let s = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
+            s.photoQualityPrioritization = .balanced
+            if let c = self.photoOutput.connection(with: .video), c.isVideoRotationAngleSupported(90) {
+                c.videoRotationAngle = 90   // portrait, like the takes
+            }
+            self.photoOutput.capturePhoto(with: s, delegate: self)
+        }
+    }
+
     func stopRecording() {
         queue.async {
             if self.output.isRecording { self.output.stopRecording() }
@@ -402,5 +427,16 @@ final class CameraController: NSObject, ObservableObject, AVCaptureFileOutputRec
         if last != externalName { externalName = last }
         let fallback = input?.portType == .builtInMic && !last.isEmpty && d.bool(forKey: "warnMic")
         if fallback != externalExpected { externalExpected = fallback }
+    }
+}
+
+
+extension CameraController {
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+        let data = error == nil ? photo.fileDataRepresentation() : nil
+        DispatchQueue.main.async {
+            self.photoDone?(data)
+            self.photoDone = nil
+        }
     }
 }
