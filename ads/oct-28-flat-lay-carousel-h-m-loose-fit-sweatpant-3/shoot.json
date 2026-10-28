@@ -1,11 +1,11 @@
 {
  "version": 1,
- "rev": 27,
- "title": "Oct 28 · Flat-lay carousel · H&M Loose-Fit Zip Hoodie - G",
- "created": 1793144252.089188,
+ "rev": 12,
+ "title": "Oct 28 · Flat-lay carousel · H&M Loose Fit Sweatpants - B",
+ "created": 1793148380.9985907,
  "product": {
-  "name": "H&M Loose-Fit Zip Hoodie - Grey Marl",
-  "link": "https://shop.tiktok.com/us/pdp/1732085413314597169",
+  "name": "H&M Loose Fit Sweatpants - Black",
+  "link": "https://shop.tiktok.com/us/pdp/1732146858012217649",
   "description": "",
   "hashtags": "#tiktokshop #tiktokmademebuyit"
  },
@@ -17,8 +17,8 @@
  "sources": [],
  "script": [
   {
-   "id": "d19088",
-   "text": "fall essential: loose-fit zip-through hoodie POV: you found the perfect loose-fit zip-through hoodie for any fit \"I need a good loose-fit zip-through hoodie for this fall",
+   "id": "d69c2f",
+   "text": "fall essential: sweatpants POV: you found the perfect sweatpants for any fit \"I need a good sweatpants for this fall",
    "alts": [],
    "optional": false,
    "look": null,
@@ -129,22 +129,22 @@
  "renders": {},
  "saved": {},
  "shop": {
-  "product": "239664",
+  "product": "7e1c60",
   "account": "c4a9a3",
   "creator": "9d770c",
   "editor": null,
   "tags": [],
-  "script": "4a92af",
+  "script": "64fe5d",
   "due": "2026-10-28",
-  "notes": "Wood floor, top-down. 1 take, near-identical. 5-7 photos of the item laid flat, one line of on-image text. Brings the reach.\nLighting: Key (circle) high above one end of the outfit, angled down at 45°, ~70%. Fill panel 1 low on the opposite side, ~30%, to soften shadows. Fill panel 2 off, or low across the far end if the floor looks uneven. Room lights off, all three at 5600K. Phone straight above; lock exposure and white balance; same spot every carousel.",
-  "assigned": 1793144252.1105506,
+  "notes": "Wood floor, top-down. 1 take, near-identical. 2-5 photos, each a different outfit laid flat around the item for sale (it's the star of every photo), one line of on-image text. Brings the reach.\nLighting: Key (circle) high above one end of the outfit, angled down at 45°, ~70%. Fill panel 1 low on the opposite side, ~30%, to soften shadows. Fill panel 2 off, or low across the far end if the floor looks uneven. Room lights off, all three at 5600K. Phone straight above; lock exposure and white balance; same spot every carousel.",
+  "assigned": 1793148381.013109,
   "done": false
  },
  "sheet": {
-  "row": "Oct 28 · Flat-lay carousel · H&M Loose-Fit Zip Hoodie - G",
+  "row": "Oct 28 · Flat-lay carousel · H&M Loose Fit Sweatpants - B",
   "sig": "288a7b99a8d8",
   "lines": [
-   "fall essential: loose-fit zip-through hoodie POV: you found the perfect loose-fit zip-through hoodie for any fit \"I need a good loose-fit zip-through hoodie for this fall"
+   "fall essential: sweatpants POV: you found the perfect sweatpants for any fit \"I need a good sweatpants for this fall"
   ]
  }
 }

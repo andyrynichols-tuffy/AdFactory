@@ -1,24 +1,66 @@
 {
  "version": 1,
- "rev": 27,
- "title": "Oct 30 · Flat-lay carousel · H&M Loose-Fit Zip Hoodie - D",
- "created": 1793144253.370442,
+ "rev": 8,
+ "title": "Oct 30 · Flat-lay voiceover video · H&M Loose Fit Sweatpants - D",
+ "created": 1793148675.4952302,
  "product": {
-  "name": "H&M Loose-Fit Zip Hoodie - Dark Brown",
-  "link": "https://shop.tiktok.com/us/pdp/1732085413314597169",
+  "name": "H&M Loose Fit Sweatpants - Dark Grey",
+  "link": "https://shop.tiktok.com/us/pdp/1732146858012217649",
   "description": "",
   "hashtags": "#tiktokshop #tiktokmademebuyit"
  },
  "reference": {
   "url": "",
   "file": "",
-  "notes": "Directions from the script:\n• or\n• or"
+  "notes": ""
  },
  "sources": [],
  "script": [
   {
-   "id": "f3cdfa",
-   "text": "fall essential: loose-fit zip-through hoodie POV: you found the perfect loose-fit zip-through hoodie for any fit \"I need a good loose-fit zip-through hoodie for this fall",
+   "id": "1235bd",
+   "text": "H&M finally has their Loose Fit Sweatpants in dark grey on TikTok Shop.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "a8e983",
+   "text": "They've got that soft brushed inside that goes with literally any fit.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "ddaaf9",
+   "text": "You can grab them for $35.98 right now.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "e9a30d",
+   "text": "I'll leave the link right here before your size sells out.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -129,22 +171,25 @@
  "renders": {},
  "saved": {},
  "shop": {
-  "product": "f1fed3",
+  "product": "97d0e6",
   "account": "c4a9a3",
   "creator": "9d770c",
   "editor": null,
   "tags": [],
-  "script": "5f4f83",
+  "script": "fba21f",
   "due": "2026-10-30",
-  "notes": "Wood floor, top-down. 1 take, near-identical. 5-7 photos of the item laid flat, one line of on-image text. Brings the reach.\nLighting: Key (circle) high above one end of the outfit, angled down at 45°, ~70%. Fill panel 1 low on the opposite side, ~30%, to soften shadows. Fill panel 2 off, or low across the far end if the floor looks uneven. Room lights off, all three at 5600K. Phone straight above; lock exposure and white balance; same spot every carousel.",
-  "assigned": 1793144253.3885252,
+  "notes": "White bed or couch, hand pointing. 1 take, near-identical. One take, ~20 s, read the sale script while pointing at the item.\nLighting: Key (circle) at 45° to one side of the bed, above it, ~60%. Fill panel 1 on the other side, ~30%. Fill panel 2 above or behind the bed, low, so the white sheets light evenly. Tap to lock, then drop exposure a touch so the whites don't blow out. Don't move anything between takes.",
+  "assigned": 1793148675.511509,
   "done": false
  },
  "sheet": {
-  "row": "Oct 30 · Flat-lay carousel · H&M Loose-Fit Zip Hoodie - D",
-  "sig": "288a7b99a8d8",
+  "row": "Oct 30 · Flat-lay voiceover video · H&M Loose Fit Sweatpants - D",
+  "sig": "fc7ecd5045a4",
   "lines": [
-   "fall essential: loose-fit zip-through hoodie POV: you found the perfect loose-fit zip-through hoodie for any fit \"I need a good loose-fit zip-through hoodie for this fall"
+   "H&M finally has their Loose Fit Sweatpants in dark grey on TikTok Shop.",
+   "They've got that soft brushed inside that goes with literally any fit.",
+   "You can grab them for $35.98 right now.",
+   "I'll leave the link right here before your size sells out."
   ]
  }
 }

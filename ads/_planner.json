@@ -126,25 +126,20 @@
        "takes": 1
       },
       {
-       "product": "f1fed3",
-       "name": "H&M Loose-Fit Zip Hoodie - Dark Brown",
+       "product": "c8cebc",
+       "name": "Old Navy 90s Double-Knee Carpenter Jeans - Black Rinse",
        "takes": 1
       },
       {
-       "product": "239664",
-       "name": "H&M Loose-Fit Zip Hoodie - Grey Marl",
-       "takes": 1
-      },
-      {
-       "product": "5a73a3",
-       "name": "H&M Loose-Fit Zip Hoodie - Dark Khaki Green",
+       "product": "7e1c60",
+       "name": "H&M Loose Fit Sweatpants - Black",
        "takes": 1
       }
      ],
-     "posts": 5,
+     "posts": 4,
      "script": "b289a0",
-     "minutes": 90,
-     "edit_minutes": 15,
+     "minutes": 75,
+     "edit_minutes": 12,
      "projects": [
       {
        "sid": "oct-28-flat-lay-carousel-h-m-loose-fit-sweatpant",
@@ -157,19 +152,14 @@
        "product": "97d0e6"
       },
       {
-       "sid": "oct-28-flat-lay-carousel-h-m-loose-fit-zip-hoodi",
-       "title": "Oct 28 · Flat-lay carousel · H&M Loose-Fit Zip Hoodie - D",
-       "product": "f1fed3"
+       "sid": "oct-28-flat-lay-carousel-old-navy-90s-double-kne",
+       "title": "Oct 28 · Flat-lay carousel · Old Navy 90s Double-Knee Car",
+       "product": "c8cebc"
       },
       {
-       "sid": "oct-28-flat-lay-carousel-h-m-loose-fit-zip-hoodi-2",
-       "title": "Oct 28 · Flat-lay carousel · H&M Loose-Fit Zip Hoodie - G",
-       "product": "239664"
-      },
-      {
-       "sid": "oct-28-flat-lay-carousel-h-m-loose-fit-zip-hoodi-3",
-       "title": "Oct 28 · Flat-lay carousel · H&M Loose-Fit Zip Hoodie - D",
-       "product": "5a73a3"
+       "sid": "oct-28-flat-lay-carousel-h-m-loose-fit-sweatpant-3",
+       "title": "Oct 28 · Flat-lay carousel · H&M Loose Fit Sweatpants - B",
+       "product": "7e1c60"
       }
      ],
      "outfits": [
@@ -193,6 +183,20 @@
        "bottom": "grey sweatpants",
        "shoes": "white sneakers",
        "layer": ""
+      },
+      {
+       "name": "Earth tones",
+       "top": "cream knit",
+       "bottom": "brown pants",
+       "shoes": "brown boots",
+       "layer": ""
+      },
+      {
+       "name": "Layered",
+       "top": "white tee",
+       "bottom": "dark jeans",
+       "shoes": "boots",
+       "layer": "open flannel or jacket"
       }
      ]
     },
@@ -218,12 +222,17 @@
        "product": "f1fed3",
        "name": "H&M Loose-Fit Zip Hoodie - Dark Brown",
        "takes": 3
+      },
+      {
+       "product": "239664",
+       "name": "H&M Loose-Fit Zip Hoodie - Grey Marl",
+       "takes": 1
       }
      ],
-     "posts": 6,
+     "posts": 7,
      "script": "912ed1",
-     "minutes": 16,
-     "edit_minutes": 4,
+     "minutes": 17,
+     "edit_minutes": 5,
      "projects": [
       {
        "sid": "oct-28-flat-lay-voiceover-video-h-m-loose-fit-sw",
@@ -234,6 +243,11 @@
        "sid": "oct-28-flat-lay-voiceover-video-h-m-loose-fit-zi",
        "title": "Oct 28 · Flat-lay voiceover video · H&M Loose-Fit Zip Hoodie - D",
        "product": "f1fed3"
+      },
+      {
+       "sid": "oct-28-flat-lay-voiceover-video-h-m-loose-fit-zi-2",
+       "title": "Oct 28 · Flat-lay voiceover video · H&M Loose-Fit Zip Hoodie - G",
+       "product": "239664"
       }
      ]
     },
@@ -476,8 +490,8 @@
      "set": "carousel-0",
      "format": "carousel",
      "channel": "c4a9a3",
-     "product": "f1fed3",
-     "name": "H&M Loose-Fit Zip Hoodie - Dark Brown",
+     "product": "c8cebc",
+     "name": "Old Navy 90s Double-Knee Carpenter Jeans - Black Rinse",
      "done": false,
      "time": "17:52"
     },
@@ -503,8 +517,8 @@
      "set": "carousel-0",
      "format": "carousel",
      "channel": "c4a9a3",
-     "product": "239664",
-     "name": "H&M Loose-Fit Zip Hoodie - Grey Marl",
+     "product": "7e1c60",
+     "name": "H&M Loose Fit Sweatpants - Black",
      "done": false,
      "time": "18:38"
     },
@@ -527,11 +541,11 @@
      "time": "19:08"
     },
     {
-     "set": "carousel-0",
-     "format": "carousel",
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
      "channel": "c4a9a3",
-     "product": "5a73a3",
-     "name": "H&M Loose-Fit Zip Hoodie - Dark Khaki Green",
+     "product": "f1fed3",
+     "name": "H&M Loose-Fit Zip Hoodie - Dark Brown",
      "done": false,
      "time": "19:22"
     },
@@ -548,8 +562,8 @@
      "set": "flatlay_vo-0",
      "format": "flatlay_vo",
      "channel": "c4a9a3",
-     "product": "f1fed3",
-     "name": "H&M Loose-Fit Zip Hoodie - Dark Brown",
+     "product": "239664",
+     "name": "H&M Loose-Fit Zip Hoodie - Grey Marl",
      "done": false,
      "time": "19:52"
     }
@@ -577,42 +591,42 @@
      "kind": "shoot",
      "title": "Shoot: Flat-lay carousel · AndysBestFinds",
      "start": "09:40",
-     "end": "11:10",
+     "end": "10:55",
      "set": "carousel-0"
     },
     {
      "kind": "shoot",
      "title": "Shoot: Flat-lay voiceover video · AndysBestFinds",
-     "start": "11:10",
-     "end": "11:26",
+     "start": "10:55",
+     "end": "11:12",
      "set": "flatlay_vo-0"
     },
     {
      "kind": "shoot",
      "title": "Shoot: Worn, faceless · AndysBestFinds",
-     "start": "11:26",
-     "end": "11:49",
+     "start": "11:12",
+     "end": "11:35",
      "set": "worn-0"
     },
     {
      "kind": "shoot",
      "title": "Shoot: Holding the item · AndysBestFinds",
-     "start": "11:49",
-     "end": "11:59",
+     "start": "11:35",
+     "end": "11:45",
      "set": "held-0"
     },
     {
      "kind": "shoot",
      "title": "Shoot: Two-person skit / POV · AndysBestFinds",
-     "start": "11:59",
-     "end": "12:14",
+     "start": "11:45",
+     "end": "12:00",
      "set": "skit-0"
     },
     {
      "kind": "shoot",
      "title": "Shoot: Brand deal / trend / no-product · AndysBestFinds",
-     "start": "12:14",
-     "end": "12:29",
+     "start": "12:00",
+     "end": "12:15",
      "set": "other-0"
     },
     {
@@ -625,19 +639,19 @@
      "kind": "edit",
      "title": "Edit + review (20 posts: carousels assembled, videos checked)",
      "start": "13:00",
-     "end": "13:28"
+     "end": "13:26"
     },
     {
      "kind": "post",
      "title": "Schedule 20 posts in TikTok Studio (times in the posting schedule)",
-     "start": "13:28",
-     "end": "13:58"
+     "start": "13:26",
+     "end": "13:56"
     },
     {
      "kind": "research",
      "title": "Research: Analytics, competitor tracker, next lineup",
-     "start": "13:58",
-     "end": "14:28"
+     "start": "13:56",
+     "end": "14:26"
     },
     {
      "kind": "live",
@@ -652,7 +666,7 @@
      "end": "19:10"
     }
    ],
-   "generated": "2026-10-27T19:28",
+   "generated": "2026-10-27T19:51",
    "blocks_done": []
   },
   "2026-10-29": {
@@ -1188,7 +1202,7 @@
      "end": "19:10"
     }
    ],
-   "generated": "2026-10-27T19:28",
+   "generated": "2026-10-27T19:51",
    "blocks_done": []
   },
   "2026-10-30": {
@@ -1229,17 +1243,12 @@
        "product": "97d0e6",
        "name": "H&M Loose Fit Sweatpants - Dark Grey",
        "takes": 1
-      },
-      {
-       "product": "f1fed3",
-       "name": "H&M Loose-Fit Zip Hoodie - Dark Brown",
-       "takes": 1
       }
      ],
-     "posts": 5,
+     "posts": 4,
      "script": "b289a0",
-     "minutes": 90,
-     "edit_minutes": 15,
+     "minutes": 75,
+     "edit_minutes": 12,
      "projects": [
       {
        "sid": "oct-30-flat-lay-carousel-old-navy-90s-double-kne",
@@ -1260,11 +1269,6 @@
        "sid": "oct-30-flat-lay-carousel-h-m-loose-fit-sweatpant-3",
        "title": "Oct 30 · Flat-lay carousel · H&M Loose Fit Sweatpants - D",
        "product": "97d0e6"
-      },
-      {
-       "sid": "oct-30-flat-lay-carousel-h-m-loose-fit-zip-hoodi",
-       "title": "Oct 30 · Flat-lay carousel · H&M Loose-Fit Zip Hoodie - D",
-       "product": "f1fed3"
       }
      ]
     },
@@ -1290,12 +1294,17 @@
        "product": "adb964",
        "name": "H&M Loose Fit Sweatpants - Light Grey Marl",
        "takes": 3
+      },
+      {
+       "product": "97d0e6",
+       "name": "H&M Loose Fit Sweatpants - Dark Grey",
+       "takes": 1
       }
      ],
-     "posts": 6,
+     "posts": 7,
      "script": "912ed1",
-     "minutes": 16,
-     "edit_minutes": 4,
+     "minutes": 17,
+     "edit_minutes": 5,
      "projects": [
       {
        "sid": "oct-30-flat-lay-voiceover-video-h-m-loose-fit-sw",
@@ -1306,6 +1315,11 @@
        "sid": "oct-30-flat-lay-voiceover-video-h-m-loose-fit-sw-2",
        "title": "Oct 30 · Flat-lay voiceover video · H&M Loose Fit Sweatpants - L",
        "product": "adb964"
+      },
+      {
+       "sid": "oct-30-flat-lay-voiceover-video-h-m-loose-fit-sw-3",
+       "title": "Oct 30 · Flat-lay voiceover video · H&M Loose Fit Sweatpants - D",
+       "product": "97d0e6"
       }
      ]
     },
@@ -1599,11 +1613,11 @@
      "time": "19:08"
     },
     {
-     "set": "carousel-0",
-     "format": "carousel",
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
      "channel": "c4a9a3",
-     "product": "f1fed3",
-     "name": "H&M Loose-Fit Zip Hoodie - Dark Brown",
+     "product": "adb964",
+     "name": "H&M Loose Fit Sweatpants - Light Grey Marl",
      "done": false,
      "time": "19:22"
     },
@@ -1620,8 +1634,8 @@
      "set": "flatlay_vo-0",
      "format": "flatlay_vo",
      "channel": "c4a9a3",
-     "product": "adb964",
-     "name": "H&M Loose Fit Sweatpants - Light Grey Marl",
+     "product": "97d0e6",
+     "name": "H&M Loose Fit Sweatpants - Dark Grey",
      "done": false,
      "time": "19:52"
     }
@@ -1649,42 +1663,42 @@
      "kind": "shoot",
      "title": "Shoot: Flat-lay carousel · AndysBestFinds",
      "start": "09:40",
-     "end": "11:10",
+     "end": "10:55",
      "set": "carousel-0"
     },
     {
      "kind": "shoot",
      "title": "Shoot: Flat-lay voiceover video · AndysBestFinds",
-     "start": "11:10",
-     "end": "11:26",
+     "start": "10:55",
+     "end": "11:12",
      "set": "flatlay_vo-0"
     },
     {
      "kind": "shoot",
      "title": "Shoot: Worn, faceless · AndysBestFinds",
-     "start": "11:26",
-     "end": "11:49",
+     "start": "11:12",
+     "end": "11:35",
      "set": "worn-0"
     },
     {
      "kind": "shoot",
      "title": "Shoot: Holding the item · AndysBestFinds",
-     "start": "11:49",
-     "end": "11:59",
+     "start": "11:35",
+     "end": "11:45",
      "set": "held-0"
     },
     {
      "kind": "shoot",
      "title": "Shoot: Two-person skit / POV · AndysBestFinds",
-     "start": "11:59",
-     "end": "12:14",
+     "start": "11:45",
+     "end": "12:00",
      "set": "skit-0"
     },
     {
      "kind": "shoot",
      "title": "Shoot: Brand deal / trend / no-product · AndysBestFinds",
-     "start": "12:14",
-     "end": "12:29",
+     "start": "12:00",
+     "end": "12:15",
      "set": "other-0"
     },
     {
@@ -1697,19 +1711,19 @@
      "kind": "edit",
      "title": "Edit + review (20 posts: carousels assembled, videos checked)",
      "start": "13:00",
-     "end": "13:28"
+     "end": "13:26"
     },
     {
      "kind": "post",
      "title": "Schedule 20 posts in TikTok Studio (times in the posting schedule)",
-     "start": "13:28",
-     "end": "13:58"
+     "start": "13:26",
+     "end": "13:56"
     },
     {
      "kind": "research",
      "title": "Research: Analytics, competitor tracker, next lineup",
-     "start": "13:58",
-     "end": "14:28"
+     "start": "13:56",
+     "end": "14:26"
     },
     {
      "kind": "live",
@@ -1724,7 +1738,7 @@
      "end": "19:10"
     }
    ],
-   "generated": "2026-10-27T19:28",
+   "generated": "2026-10-27T19:51",
    "blocks_done": []
   }
  }
