@@ -786,3 +786,35 @@ def going_live(day_iso: str) -> list:
             if x.get("date") == day_iso:
                 out.append({**x, "batch": k, "k": i})
     return sorted(out, key=lambda x: x["time"])
+
+
+def shoot_order() -> dict:
+    """{shoot id: {day, set, n, of, next, prev, setup, lay, change}} for every planned project, in the order a batch
+    is filmed (set by set, the set's videos in plan order), so Ad Camera can step through them ("next project")
+    and tell the person what to lay out and what changed since the last one."""
+    out = {}
+    for day, plan in sorted(load()["days"].items()):
+        seq = []
+        for s in plan.get("sets") or []:
+            by_unit = {pr.get("unit", pr["product"]): pr for pr in s.get("projects") or []}
+            for it in s["items"]:
+                pr = by_unit.get(it.get("unit", it["product"]))
+                if pr:
+                    cols = [c.strip() for c in (it["name"].partition(" - ")[2] or it["name"]).split("+")]
+                    seq.append((s, it, pr, cols))
+        for i, (s, it, pr, cols) in enumerate(seq):
+            prev = seq[i - 1] if i else None
+            base = it["name"].partition(" - ")[0]
+            if not prev or prev[0]["id"] != s["id"]:
+                change = f"New setup: {s.get('setup', '')}"
+            elif prev[1]["name"].partition(" - ")[0] != base:
+                change = f"Swap to the {base}: {' + '.join(cols)}"
+            else:
+                was, now = set(prev[3]), set(cols)
+                bits = ([f"add {' + '.join(c for c in cols if c not in was)}"] if now - was else []) + \
+                       ([f"take out {' + '.join(c for c in prev[3] if c not in now)}"] if was - now else [])
+                change = ", ".join(bits).capitalize() or "Same pieces, film it again"
+            out[pr["sid"]] = {"day": day, "set": s["id"], "set_label": s.get("label", ""), "n": i + 1, "of": len(seq),
+                              "next": seq[i + 1][2]["sid"] if i + 1 < len(seq) else None, "prev": prev[2]["sid"] if prev else None,
+                              "setup": s.get("setup", ""), "lay": " + ".join(cols), "item": base, "change": change}
+    return out

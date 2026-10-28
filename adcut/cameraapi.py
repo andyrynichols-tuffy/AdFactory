@@ -10,12 +10,21 @@ from . import layout, planner, postkit, shop, store
 router = APIRouter(prefix="/api/camera")
 BUSY = lambda: set()  # server.py points this at the shoots with a job running
 CAROUSELS = {}  # shoot id -> planner info, refreshed with each project list
-LAST = {"seen": 0.0, "upload": 0.0, "shoot": ""}  # when the phone last asked for projects / sent a take (shown in the sidebar)
+ORDER = {}      # shoot id -> its place in the shoot day (next project, what to lay out)
+LAST = {"seen": 0.0, "upload": 0.0, "shoot": "", "open": "", "open_at": 0.0}  # when the phone last asked for projects / sent a take (shown in the sidebar)
 
 
 @router.get("/status")
 def status():
     return LAST
+
+
+@router.get("/now")
+def now(shoot: str):
+    """Ad Camera opened this project's camera: the Mac's shoot page shows it as "Now filming"."""
+    import time
+    LAST.update(open=shoot, open_at=time.time())
+    return {"ok": True}
 
 
 def _project(d, sid, s, busy):
@@ -30,7 +39,16 @@ def _project(d, sid, s, busy):
             "carousel": (CAROUSELS.get(sid) or {}).get("format") == "carousel",
             "done_slots": postkit.outfits_for(sid) if (CAROUSELS.get(sid) or {}).get("format") == "carousel" else [],
             "outfits": [int(x[1:]) for x in (postkit.outfits_for(sid) if (CAROUSELS.get(sid) or {}).get("format") == "carousel" else []) if x.startswith("o")],
-            **_carousel_plan(sid)}
+            **_carousel_plan(sid), **_order(sid)}
+
+
+def _order(sid):
+    """Where this project sits in its shoot day: the next one, and what to lay out / what changed (planner.shoot_order)."""
+    o = ORDER.get(sid)
+    if not o:
+        return {}
+    return {"next_sid": o["next"], "shoot_n": o["n"], "shoot_of": o["of"], "lay_out": o["lay"], "change": o["change"],
+            "setup_note": o["setup"], "shoot_day": o["day"]}
 
 
 def _carousel_plan(sid):
@@ -62,6 +80,8 @@ def projects():
     d, busy = shop.load(), BUSY()
     CAROUSELS.clear()
     CAROUSELS.update(planner.project_index())
+    ORDER.clear()
+    ORDER.update(planner.shoot_order())
     return {
         "projects": [_project(d, sid, s, busy) for sid, s, _ in shop._all_shoots()],
         "products": [{"id": p["id"], "name": p["name"], "brand": p["brand"]}
