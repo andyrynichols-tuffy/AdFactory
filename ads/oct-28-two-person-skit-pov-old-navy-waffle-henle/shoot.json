@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 39,
+ "rev": 60,
  "title": "Oct 28 · Two-person skit / POV · Old Navy Waffle Henley - Jur",
  "created": 1793144252.4498334,
  "product": {
@@ -17,8 +17,8 @@
  "sources": [],
  "script": [
   {
-   "id": "c29e51",
-   "text": "A: Wait, I love your long-sleeve henley, where'd you get it?",
+   "id": "0ec0df",
+   "text": "A: Wait, I love that long-sleeve henley, where'd you get it from?",
    "alts": [],
    "optional": false,
    "look": null,
@@ -31,8 +31,8 @@
    "cut_offset": null
   },
   {
-   "id": "c8d1c2",
-   "text": "B: Old Navy, I got it on TikTok Shop.",
+   "id": "44b93c",
+   "text": "B: Oh, I just got this one from Old Navy, why?",
    "alts": [],
    "optional": false,
    "look": null,
@@ -45,8 +45,8 @@
    "cut_offset": null
   },
   {
-   "id": "ba47a6",
-   "text": "A: For real, how much?",
+   "id": "11aa6b",
+   "text": "A: Old Navy? That must have been so expensive, though.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -59,8 +59,8 @@
    "cut_offset": null
   },
   {
-   "id": "ff5ea0",
-   "text": "B: $34.49, the link's right there.",
+   "id": "694c8d",
+   "text": "B: No, no, no, I got it on their TikTok shop for $34.49.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -73,8 +73,64 @@
    "cut_offset": null
   },
   {
-   "id": "422ff8",
-   "text": "A: Okay, send it to me.",
+   "id": "56f420",
+   "text": "A: Wait, that's actually such a good deal.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "612499",
+   "text": "B: Just check out that soft waffle knit and the button-up henley neckline.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "e70727",
+   "text": "A: Yeah, I actually love that long-sleeve henley. You gotta drop the link.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "f53cde",
+   "text": "B: If you guys want to get yours, I'll leave a link down below.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "0ae319",
+   "text": "A: Bet, thank you.",
    "alts": [],
    "optional": false,
    "look": null,

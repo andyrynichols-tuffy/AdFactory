@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 39,
+ "rev": 60,
  "title": "Oct 30 · Two-person skit / POV · H&M Loose-Fit Zip Hoodie - G",
  "created": 1793144253.7180278,
  "product": {
@@ -17,8 +17,8 @@
  "sources": [],
  "script": [
   {
-   "id": "7cf96a",
-   "text": "A: Wait, I love your loose-fit zip-through hoodie, where'd you get it?",
+   "id": "80a571",
+   "text": "A: Wait, I love that zip-through hoodie, where'd you get it from?",
    "alts": [],
    "optional": false,
    "look": null,
@@ -31,8 +31,8 @@
    "cut_offset": null
   },
   {
-   "id": "83da8d",
-   "text": "B: H&M, I got it on TikTok Shop.",
+   "id": "fb4bab",
+   "text": "B: Oh, I just got this one from H&M, why?",
    "alts": [],
    "optional": false,
    "look": null,
@@ -45,8 +45,8 @@
    "cut_offset": null
   },
   {
-   "id": "bba59b",
-   "text": "A: For real, how much?",
+   "id": "e1c24e",
+   "text": "A: H&M? That must have been so expensive, though.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -59,8 +59,8 @@
    "cut_offset": null
   },
   {
-   "id": "09e7c1",
-   "text": "B: $35.98, the link's right there.",
+   "id": "05f748",
+   "text": "B: No, no, no, I got it on their TikTok shop for $35.98 with free shipping.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -73,8 +73,64 @@
    "cut_offset": null
   },
   {
-   "id": "f6dfb4",
-   "text": "A: Okay, send it to me.",
+   "id": "bef14d",
+   "text": "A: Wait, that's actually such a good deal.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "7520cc",
+   "text": "B: Just check out that drawstring hood and the two front pockets.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "333582",
+   "text": "A: Yeah, I actually love that zip-through hoodie. You gotta drop the link.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "bd2d2d",
+   "text": "B: If you guys want to get yours, I'll leave a link down below.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "77d75a",
+   "text": "A: Bet, thank you.",
    "alts": [],
    "optional": false,
    "look": null,

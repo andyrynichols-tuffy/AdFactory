@@ -176,13 +176,15 @@
     "design": "Sweatpants",
     "pattern": "Solid colour",
     "style": "Sweatpants",
-    "feature 1": "soft brushed inside"
+    "feature 1": "soft brushed inside",
+    "feature 2": "drawstring waist and side pockets",
+    "free shipping": "1"
    },
    "notes": "H&M loose fit sweatpants in heavyweight cotton blend with a soft brushed inside. Covered elastication, drawstring waist, and side pockets for casual wear.",
    "archived": false,
    "id": "c9a20a",
    "created": 1793054160.07531,
-   "updated": 1793144206.6981301
+   "updated": 1793151405.5046372
   },
   {
    "name": "Old Navy Waffle Henley - Jurassic Green",
@@ -197,13 +199,14 @@
     "material": "soft-washed waffle knit",
     "style": "long-sleeve henley",
     "size": "M",
-    "feature 1": "soft waffle knit"
+    "feature 1": "soft waffle knit",
+    "feature 2": "button-up henley neckline"
    },
    "notes": "Old Navy Long-Sleeve Waffle Henley T-Shirt, style 909057, colour Jurassic Green. Old Navy page: https://oldnavy.gap.com/browse/product.do?pid=909057062 (on sale $13.49 on 2026-10-27). One TikTok Shop listing covers every colour.",
    "archived": false,
    "id": "58c082",
    "created": 1793142774.0862663,
-   "updated": 1793144206.7203045
+   "updated": 1793151133.0084636
   },
   {
    "name": "Old Navy Waffle Henley - Kicking Up Dust",
@@ -218,13 +221,14 @@
     "material": "soft-washed waffle knit",
     "style": "long-sleeve henley",
     "size": "M",
-    "feature 1": "soft waffle knit"
+    "feature 1": "soft waffle knit",
+    "feature 2": "button-up henley neckline"
    },
    "notes": "Old Navy Long-Sleeve Waffle Henley T-Shirt, style 909057, colour Kicking Up Dust. Old Navy page: https://oldnavy.gap.com/browse/product.do?pid=909057052 (on sale $13.49 on 2026-10-27). One TikTok Shop listing covers every colour.",
    "archived": false,
    "id": "aad169",
    "created": 1793142774.1169302,
-   "updated": 1793144206.7513845
+   "updated": 1793151133.0368025
   },
   {
    "name": "Old Navy Waffle Henley - In The Navy",
@@ -239,13 +243,14 @@
     "material": "soft-washed waffle knit",
     "style": "long-sleeve henley",
     "size": "M",
-    "feature 1": "soft waffle knit"
+    "feature 1": "soft waffle knit",
+    "feature 2": "button-up henley neckline"
    },
    "notes": "Old Navy Long-Sleeve Waffle Henley T-Shirt, style 909057, colour In The Navy. Old Navy page: https://oldnavy.gap.com/browse/product.do?pid=909057002 (on sale $13.49 on 2026-10-27). One TikTok Shop listing covers every colour.",
    "archived": false,
    "id": "8e26fd",
    "created": 1793142774.1432064,
-   "updated": 1793144206.7770073
+   "updated": 1793151133.0650132
   },
   {
    "name": "Old Navy Long-Sleeve Waffle Crew - Heritage Green",
@@ -260,13 +265,14 @@
     "material": "waffle knit",
     "style": "long-sleeve crew neck",
     "size": "M",
-    "feature 1": "waffle knit"
+    "feature 1": "soft waffle knit",
+    "feature 2": "easy relaxed fit"
    },
    "notes": "Old Navy Crew-Neck Waffle T-Shirt (long sleeve), style 909054, colour Heritage Green, size M. Old Navy page: https://oldnavy.gap.com/browse/product.do?pid=909054042 (on sale $12.49 on 2026-10-27). One TikTok Shop listing covers every colour.",
    "archived": false,
    "id": "70db4e",
    "created": 1793142892.9484224,
-   "updated": 1793144206.7955978
+   "updated": 1793151133.0889988
   },
   {
    "name": "Old Navy Long-Sleeve Waffle Crew - Sea Salt",
@@ -281,13 +287,14 @@
     "material": "waffle knit",
     "style": "long-sleeve crew neck",
     "size": "M",
-    "feature 1": "waffle knit"
+    "feature 1": "soft waffle knit",
+    "feature 2": "easy relaxed fit"
    },
    "notes": "Old Navy Crew-Neck Waffle T-Shirt (long sleeve), style 909054, colour Sea Salt, size M. Old Navy page: https://oldnavy.gap.com/browse/product.do?pid=909054062 (on sale $12.49 on 2026-10-27). One TikTok Shop listing covers every colour.",
    "archived": false,
    "id": "9bbabf",
    "created": 1793142892.9783325,
-   "updated": 1793144206.8145633
+   "updated": 1793151133.1050944
   },
   {
    "name": "Old Navy Long-Sleeve Waffle Crew - Dark Walnut",
@@ -302,13 +309,14 @@
     "material": "waffle knit",
     "style": "long-sleeve crew neck",
     "size": "L",
-    "feature 1": "waffle knit"
+    "feature 1": "soft waffle knit",
+    "feature 2": "easy relaxed fit"
    },
    "notes": "Old Navy Crew-Neck Waffle T-Shirt (long sleeve), style 909054, colour Dark Walnut, size L. Old Navy page: https://oldnavy.gap.com/browse/product.do?pid=909054022 (on sale $12.49 on 2026-10-27). One TikTok Shop listing covers every colour.",
    "archived": false,
    "id": "27ab82",
    "created": 1793142893.0007365,
-   "updated": 1793144206.8423827
+   "updated": 1793151133.1255543
   },
   {
    "name": "Old Navy Crew-Neck Sweater - Brown Heather",
@@ -323,13 +331,14 @@
     "material": "chunky rib knit",
     "style": "crew-neck sweater",
     "size": "L",
-    "feature 1": "chunky rib knit"
+    "feature 1": "chunky rib knit",
+    "feature 2": "relaxed raglan sleeves"
    },
    "notes": "Old Navy Crew-Neck Sweater (chunky rib knit, raglan sleeves, machine washable), style 903459, colour Brown Heather, size L. Old Navy page: https://oldnavy.gap.com/browse/product.do?pid=903459022 (on sale $24.99 on 2026-10-27). One TikTok Shop listing covers every colour.",
    "archived": false,
    "id": "772dcf",
    "created": 1793143205.7724617,
-   "updated": 1793144206.8630874
+   "updated": 1793151133.14548
   },
   {
    "name": "Old Navy Crew-Neck Sweater - Cozy Cashmere",
@@ -344,13 +353,14 @@
     "material": "chunky rib knit",
     "style": "crew-neck sweater",
     "size": "L",
-    "feature 1": "chunky rib knit"
+    "feature 1": "chunky rib knit",
+    "feature 2": "relaxed raglan sleeves"
    },
    "notes": "Old Navy Crew-Neck Sweater (chunky rib knit, raglan sleeves, machine washable), style 903459, colour Cozy Cashmere, size L. Old Navy page: https://oldnavy.gap.com/browse/product.do?pid=903459032 (on sale $24.99 on 2026-10-27). One TikTok Shop listing covers every colour.",
    "archived": false,
    "id": "6838c7",
    "created": 1793143205.796598,
-   "updated": 1793144206.8905818
+   "updated": 1793151133.1692536
   },
   {
    "name": "Old Navy Crew-Neck Sweater - Forest Canopy",
@@ -365,13 +375,14 @@
     "material": "chunky rib knit",
     "style": "crew-neck sweater",
     "size": "M",
-    "feature 1": "chunky rib knit"
+    "feature 1": "chunky rib knit",
+    "feature 2": "relaxed raglan sleeves"
    },
    "notes": "Old Navy Crew-Neck Sweater (chunky rib knit, raglan sleeves, machine washable), style 903459, colour Forest Canopy, size M. Old Navy page: https://oldnavy.gap.com/browse/product.do?pid=903459012 (on sale $24.99 on 2026-10-27). One TikTok Shop listing covers every colour.",
    "archived": false,
    "id": "229a70",
    "created": 1793143205.8126922,
-   "updated": 1793144206.9147997
+   "updated": 1793151133.1984074
   },
   {
    "name": "Old Navy 90s Double-Knee Carpenter Jeans - Black Rinse",
@@ -387,14 +398,14 @@
     "style": "90s straight double-knee carpenter jeans",
     "fit": "relaxed through the hip, straight leg",
     "size": "34x30",
-    "feature 1": "double knees",
-    "feature 2": "hammer loop"
+    "feature 1": "double-knee detail",
+    "feature 2": "relaxed straight leg"
    },
    "notes": "Old Navy 90s Straight Double Knee Carpenter Jeans, style 539419, colour Black Rinse, size 34x30. Only he can wear these (too big for her). Old Navy page: https://oldnavy.gap.com/browse/product.do?pid=539419002 (on sale $27.49 on 2026-10-27). One TikTok Shop listing covers every colour.",
    "archived": false,
    "id": "c8cebc",
    "created": 1793143341.865066,
-   "updated": 1793143764.9419665
+   "updated": 1793151531.971089
   },
   {
    "name": "H&M Loose Fit Sweatpants - Black",
@@ -415,13 +426,15 @@
     "style": "Sweatpants",
     "color": "black",
     "size": "L",
-    "feature 1": "soft brushed inside"
+    "feature 1": "soft brushed inside",
+    "feature 2": "drawstring waist and side pockets",
+    "free shipping": "1"
    },
    "notes": "H&M Loose Fit Sweatpants, article 1302372 colour 001 (Black), size L. Tag price $29.99. Brushed inside, drawstring waist, side pockets. One TikTok Shop listing covers every colour.",
    "archived": false,
    "id": "7e1c60",
    "created": 1793143672.2917683,
-   "updated": 1793144206.942837
+   "updated": 1793151429.8222075
   },
   {
    "name": "H&M Loose Fit Sweatpants - Light Grey Marl",
@@ -442,13 +455,15 @@
     "style": "Sweatpants",
     "color": "light grey marl",
     "size": "M",
-    "feature 1": "soft brushed inside"
+    "feature 1": "soft brushed inside",
+    "feature 2": "drawstring waist and side pockets",
+    "free shipping": "1"
    },
    "notes": "H&M Loose Fit Sweatpants, article 1302372 colour 003 (Light Grey Marl), size M. Tag price $29.99. Brushed inside, drawstring waist, side pockets. One TikTok Shop listing covers every colour.",
    "archived": false,
    "id": "adb964",
    "created": 1793143672.3123028,
-   "updated": 1793144206.9677596
+   "updated": 1793151429.8380404
   },
   {
    "name": "H&M Loose Fit Sweatpants - Dark Grey",
@@ -469,13 +484,15 @@
     "style": "Sweatpants",
     "color": "dark grey",
     "size": "M",
-    "feature 1": "soft brushed inside"
+    "feature 1": "soft brushed inside",
+    "feature 2": "drawstring waist and side pockets",
+    "free shipping": "1"
    },
    "notes": "H&M Loose Fit Sweatpants, article 1302372 colour 017 (Dark Grey), size M. Tag price $29.99. Brushed inside, drawstring waist, side pockets. One TikTok Shop listing covers every colour.",
    "archived": false,
    "id": "97d0e6",
    "created": 1793143672.3346534,
-   "updated": 1793144206.992671
+   "updated": 1793151429.8678386
   },
   {
    "name": "H&M Loose-Fit Zip Hoodie - Dark Brown",
@@ -492,13 +509,14 @@
     "fit": "loose fit",
     "size": "L",
     "feature 1": "drawstring hood",
-    "feature 2": "front pockets"
+    "feature 2": "two front pockets",
+    "free shipping": "1"
    },
    "notes": "H&M Loose-Fit Hooded Jacket (zip hoodie), article 1308010 colour 021 Dark Brown (code 021 isn't on H&M US right now; 029 is their current dark brown), size L, tag $29.99. H&M page: https://www2.hm.com/en_us/productpage.1308010021.html. TikTok listing colours: Dark brown 029, Grey marl 008, Dark khaki green 027 (021 not listed).",
    "archived": false,
    "id": "f1fed3",
    "created": 1793143839.7134154,
-   "updated": 1793144087.965145
+   "updated": 1793151435.3582726
   },
   {
    "name": "H&M Loose-Fit Zip Hoodie - Grey Marl",
@@ -515,13 +533,14 @@
     "fit": "loose fit",
     "size": "L",
     "feature 1": "drawstring hood",
-    "feature 2": "front pockets"
+    "feature 2": "two front pockets",
+    "free shipping": "1"
    },
    "notes": "H&M Loose-Fit Hooded Jacket (zip hoodie), article 1308010 colour 008 Gray Melange, size L, tag $29.99. H&M page: https://www2.hm.com/en_us/productpage.1308010008.html. TikTok listing colours: Dark brown 029, Grey marl 008, Dark khaki green 027 (021 not listed).",
    "archived": false,
    "id": "239664",
    "created": 1793143839.7351582,
-   "updated": 1793144087.9905446
+   "updated": 1793151435.3832004
   },
   {
    "name": "H&M Loose-Fit Zip Hoodie - Dark Khaki Green",
@@ -538,13 +557,14 @@
     "fit": "loose fit",
     "size": "L",
     "feature 1": "drawstring hood",
-    "feature 2": "front pockets"
+    "feature 2": "two front pockets",
+    "free shipping": "1"
    },
    "notes": "H&M Loose-Fit Hooded Jacket (zip hoodie), article 1308010 colour 027 Dark Khaki Green, size L, tag $29.99. H&M page: https://www2.hm.com/en_us/productpage.1308010027.html. TikTok listing colours: Dark brown 029, Grey marl 008, Dark khaki green 027 (021 not listed).",
    "archived": false,
    "id": "5a73a3",
    "created": 1793143839.7545085,
-   "updated": 1793144088.0162024
+   "updated": 1793151435.4019182
   },
   {
    "name": "H&M Relaxed-Fit Short-Sleeve Muslin Shirt - Dusty Yellow",
@@ -1510,7 +1530,7 @@
   },
   {
    "title": "Sale news (flat-lay voiceover)",
-   "text": "{brand} finally has their {product} on TikTok Shop.\n{It has} that {feature 1} that goes with literally any fit.\nYou can grab {it} for {price} right now.\nI'll leave the link right here before your size sells out.",
+   "text": "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n[nodeal] {brand} finally put their {item} on their TikTok shop.\nYou're gonna get that super nice {feature 1} as well as the {feature 2}, and I just love this {color} colorway, it's gonna be perfect for this {season} season.\n{who} {height}, rocking a size {size}.\n[deal] These are selling out quick since they're {deal}, so if you wanna see if your size is still available, I'll leave a link down below.\n[nodeal] These are selling out quick{and shipping is free}, so if you wanna see if your size is still available, I'll leave a link down below.",
    "tags": [
     "8d126a",
     "eeb4ae"
@@ -1526,11 +1546,11 @@
    "from_template": null,
    "id": "912ed1",
    "created": 1793127373.3204288,
-   "updated": 1793144297.8764985
+   "updated": 1793151435.4257126
   },
   {
    "title": "Height + size (worn, faceless)",
-   "text": "Just in time for this {season}: the {brand} {product}.\n{who} {height}, wearing a size {size} {fit note}, and this is exactly how {it fits}.\nThe {feature 1} goes with everything.\n{It is} on TikTok Shop right now, link's right here.",
+   "text": "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n[nodeal] {brand} finally put their {item} on their TikTok shop.\n[deal] Just don't drop {store price} in store when you can pick {them} up for {deal} on TikTok.\n{This is} their {product}, so you're definitely going to get that {feature 1} with {this pair}.\n{who} {height}, rocking a size {size} in {this pair} {fit note}.\nSo I'd definitely recommend going true to size, but their most popular sizes are going quick.\nSo if you're seeing this in time and your size is still available, I definitely wouldn't miss out on {this pair}.",
    "tags": [
     "c77940"
    ],
@@ -1545,7 +1565,7 @@
    "from_template": null,
    "id": "75f67d",
    "created": 1793127373.3440218,
-   "updated": 1793144297.8920794
+   "updated": 1793151435.441728
   },
   {
    "title": "I just found the perfect one (held item)",
@@ -1564,11 +1584,11 @@
    "from_template": null,
    "id": "7444a4",
    "created": 1793127373.3705888,
-   "updated": 1793144297.9067192
+   "updated": 1793150169.4567087
   },
   {
    "title": "Where'd you get those? (two-person skit)",
-   "text": "A: Wait, I love your {item}, where'd you get {it}?\nB: {brand}, I got {it} on TikTok Shop.\nA: For real, how much?\nB: {price}, the link's right there.\nA: Okay, send it to me.",
+   "text": "A: Wait, I love {that item}, where'd you get {it} from?\nB: Oh, I just got {this pair} from {brand}, why?\nA: {brand}? {those must have been} so expensive, though.\n[deal] B: No, no, no, I got {it} on their TikTok shop, they're {deal} right now.\n[nodeal] B: No, no, no, I got {it} on their TikTok shop for {price}{with free shipping}.\nA: Wait, that's actually such a good deal.\nB: Just check out {the feature} and the {feature 2}.\nA: Yeah, I actually love {that item}. You gotta drop the link.\nB: If you guys want to get yours, I'll leave a link down below.\nA: Bet, thank you.",
    "tags": [
     "0f0703",
     "d7dcda"
@@ -1584,7 +1604,7 @@
    "from_template": null,
    "id": "1a7555",
    "created": 1793127373.3875465,
-   "updated": 1793144297.9251416
+   "updated": 1793151435.4931047
   },
   {
    "title": "On-image text (carousel)",
@@ -1603,7 +1623,7 @@
    "from_template": null,
    "id": "b289a0",
    "created": 1793127373.4052935,
-   "updated": 1793144297.9461226
+   "updated": 1793151435.540481
   },
   {
    "title": "Oct 30 · Two-person skit / POV · H&M Loose-Fit Zip Hoodie - G",
@@ -2148,6 +2168,59 @@
    "id": "99071c",
    "created": 1793148732.666896,
    "updated": 1793148732.666896
+  },
+  {
+   "title": "Fit check (extra slot)",
+   "text": "Fit check: the {brand} {product}.\n{It has} that {feature 1}, and {it fits} exactly how I wanted.\nWould you wear this? The link's right here.",
+   "tags": [],
+   "product": null,
+   "notes": "Planner template, modelled on @sully.finds (docs/sully-finds-study.md)",
+   "from_shoot": null,
+   "edited": false,
+   "lines": [],
+   "marks": [],
+   "shots": [],
+   "source": null,
+   "from_template": null,
+   "id": "601f51",
+   "created": 1793150169.5037947,
+   "updated": 1793150169.5037947
+  },
+  {
+   "title": "Official shop is on TikTok (held item)",
+   "text": "[deal] {brand}'s official shop is finally on TikTok and they're dumping all of their {item} just in time for this {season} season.\n[nodeal] {brand}'s official shop is finally on TikTok and they just put their {item} on there, just in time for this {season} season.\n[deal] Just don't drop {store price} in store when you can pick {them} up for way cheaper on here.\nYou get that super nice {feature 1} as well as the {feature 2}.\nThere are multiple different colors to choose from.\nSo if you want to see if your size is still available in {this pair}, I'll leave a link down below.",
+   "tags": [
+    "8d126a"
+   ],
+   "product": null,
+   "notes": "Planner template, modelled on @sully.finds (docs/sully-finds-study.md)",
+   "from_shoot": null,
+   "edited": false,
+   "lines": [],
+   "marks": [],
+   "shots": [],
+   "source": null,
+   "from_template": null,
+   "id": "fed014",
+   "created": 1793151087.4121134,
+   "updated": 1793151435.4673622
+  },
+  {
+   "title": "My new favorite (extra slot)",
+   "text": "{this is} definitely my new favorite {item} from {brand}.\nYou get that super nice {feature 1} you can pair with any outfit, as well as the {feature 2}.\n[deal] These are selling out quick, though, so if you want to get yours {deal}, I'll leave a link down below.\n[nodeal] These are selling out quick, though, so if you want to get yours{with free shipping}, I'll leave a link down below.",
+   "tags": [],
+   "product": null,
+   "notes": "Planner template, modelled on @sully.finds (docs/sully-finds-study.md)",
+   "from_shoot": null,
+   "edited": false,
+   "lines": [],
+   "marks": [],
+   "shots": [],
+   "source": null,
+   "from_template": null,
+   "id": "fcfb1a",
+   "created": 1793151087.4545634,
+   "updated": 1793151435.5184894
   }
  ],
  "trash": {},

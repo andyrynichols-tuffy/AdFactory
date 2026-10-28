@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 36,
+ "rev": 57,
  "title": "Oct 28 · Brand deal / trend / no-product · Old Navy Waffle Henley - Jur",
  "created": 1793144252.5141847,
  "product": {
@@ -15,7 +15,50 @@
   "notes": ""
  },
  "sources": [],
- "script": [],
+ "script": [
+  {
+   "id": "272a3d",
+   "text": "This is definitely my new favorite long-sleeve henley from Old Navy.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "e571a5",
+   "text": "You get that super nice soft waffle knit you can pair with any outfit, as well as the button-up henley neckline.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "4f65fb",
+   "text": "These are selling out quick, though, so if you want to get yours, I'll leave a link down below.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  }
+ ],
  "script_guessed": false,
  "takes": [],
  "hooks": [],

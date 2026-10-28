@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 37,
+ "rev": 59,
  "title": "Oct 30 · Flat-lay voiceover video · H&M Loose Fit Sweatpants - L",
  "created": 1793144253.4544456,
  "product": {
@@ -17,8 +17,8 @@
  "sources": [],
  "script": [
   {
-   "id": "97bfbd",
-   "text": "H&M finally has their Loose Fit Sweatpants in light grey marl on TikTok Shop.",
+   "id": "aa3348",
+   "text": "H&M finally put their sweatpants on their TikTok shop.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -31,8 +31,8 @@
    "cut_offset": null
   },
   {
-   "id": "33b501",
-   "text": "They've got that soft brushed inside that goes with literally any fit.",
+   "id": "4144a1",
+   "text": "You're gonna get that super nice soft brushed inside as well as the drawstring waist and side pockets, and I just love this light grey marl colorway, it's gonna be perfect for this fall season.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -45,8 +45,8 @@
    "cut_offset": null
   },
   {
-   "id": "8995de",
-   "text": "You can grab them for $35.98 right now.",
+   "id": "a8acfe",
+   "text": "I'm 6'2 185, rocking a size M.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -59,8 +59,8 @@
    "cut_offset": null
   },
   {
-   "id": "b3940c",
-   "text": "I'll leave the link right here before your size sells out.",
+   "id": "4e8833",
+   "text": "These are selling out quick, and shipping is free right now, so if you wanna see if your size is still available, I'll leave a link down below.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -178,7 +178,7 @@
   "tags": [],
   "script": "5099c2",
   "due": "2026-10-30",
-  "notes": "White bed or couch, hand pointing. 3 takes, near-identical. One take, ~20 s, read the sale script while pointing at the item.\nLighting: Key (circle) at 45° to one side of the bed, above it, ~60%. Fill panel 1 on the other side, ~30%. Fill panel 2 above or behind the bed, low, so the white sheets light evenly. Tap to lock, then drop exposure a touch so the whites don't blow out. Don't move anything between takes.",
+  "notes": "White bed or couch, hand pointing. 2 takes, near-identical. One take, ~20 s, read the sale script while pointing at the item.\nLighting: Key (circle) at 45° to one side of the bed, above it, ~60%. Fill panel 1 on the other side, ~30%. Fill panel 2 above or behind the bed, low, so the white sheets light evenly. Tap to lock, then drop exposure a touch so the whites don't blow out. Don't move anything between takes.",
   "assigned": 1793144253.4761395,
   "done": false
  },

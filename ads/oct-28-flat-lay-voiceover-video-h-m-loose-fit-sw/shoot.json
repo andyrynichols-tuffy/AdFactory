@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 37,
+ "rev": 58,
  "title": "Oct 28 · Flat-lay voiceover video · H&M Loose Fit Sweatpants - D",
  "created": 1793144252.1794417,
  "product": {
@@ -17,8 +17,8 @@
  "sources": [],
  "script": [
   {
-   "id": "9d22e4",
-   "text": "H&M finally has their Loose Fit Sweatpants in dark grey on TikTok Shop.",
+   "id": "7fe0b6",
+   "text": "H&M finally put their sweatpants on their TikTok shop.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -31,8 +31,8 @@
    "cut_offset": null
   },
   {
-   "id": "ca7c2d",
-   "text": "They've got that soft brushed inside that goes with literally any fit.",
+   "id": "f50735",
+   "text": "You're gonna get that super nice soft brushed inside as well as the drawstring waist and side pockets, and I just love this dark grey colorway, it's gonna be perfect for this fall season.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -45,8 +45,8 @@
    "cut_offset": null
   },
   {
-   "id": "ae8d78",
-   "text": "You can grab them for $35.98 right now.",
+   "id": "dad314",
+   "text": "I'm 6'2 185, rocking a size M.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -59,8 +59,8 @@
    "cut_offset": null
   },
   {
-   "id": "f05af7",
-   "text": "I'll leave the link right here before your size sells out.",
+   "id": "98c202",
+   "text": "These are selling out quick, and shipping is free right now, so if you wanna see if your size is still available, I'll leave a link down below.",
    "alts": [],
    "optional": false,
    "look": null,

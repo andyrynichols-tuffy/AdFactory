@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 36,
+ "rev": 57,
  "title": "Oct 30 · Brand deal / trend / no-product · H&M Loose-Fit Zip Hoodie - G",
  "created": 1793144253.7957299,
  "product": {
@@ -15,7 +15,50 @@
   "notes": ""
  },
  "sources": [],
- "script": [],
+ "script": [
+  {
+   "id": "dd80e7",
+   "text": "This is definitely my new favorite loose-fit zip-through hoodie from H&M.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "71293d",
+   "text": "You get that super nice drawstring hood you can pair with any outfit, as well as the two front pockets.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "ffa1a3",
+   "text": "These are selling out quick, though, so if you want to get yours with free shipping, I'll leave a link down below.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  }
+ ],
  "script_guessed": false,
  "takes": [],
  "hooks": [],

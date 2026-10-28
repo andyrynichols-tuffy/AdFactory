@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 67,
+ "rev": 106,
  "title": "Oct 29 · Worn, faceless · Old Navy Long-Sleeve Waffle",
  "created": 1793144252.9002063,
  "product": {
@@ -17,8 +17,8 @@
  "sources": [],
  "script": [
   {
-   "id": "122c39",
-   "text": "Just in time for this fall: the Old Navy Long-Sleeve Waffle Crew in sea salt.",
+   "id": "2dd79d",
+   "text": "Old Navy finally put their long-sleeve crew neck on their TikTok shop.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -31,8 +31,8 @@
    "cut_offset": null
   },
   {
-   "id": "d82cc9",
-   "text": "I'm 6'2 185, wearing a size M for a more fitted look, and this is exactly how it fits.",
+   "id": "8cc41f",
+   "text": "This is their Long-Sleeve Waffle Crew in sea salt, so you're definitely going to get that soft waffle knit with this one.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -45,8 +45,8 @@
    "cut_offset": null
   },
   {
-   "id": "fc1641",
-   "text": "The waffle knit goes with everything.",
+   "id": "b30c33",
+   "text": "I'm 6'2 185, rocking a size M in this one for a more fitted look.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -59,8 +59,22 @@
    "cut_offset": null
   },
   {
-   "id": "ac06e0",
-   "text": "It's on TikTok Shop right now, link's right here.",
+   "id": "0c1976",
+   "text": "So I'd definitely recommend going true to size, but their most popular sizes are going quick.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "5ba1fc",
+   "text": "So if you're seeing this in time and your size is still available, I definitely wouldn't miss out on this one.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -178,7 +192,7 @@
   "tags": [],
   "script": "ff371f",
   "due": "2026-10-29",
-  "notes": "Bedroom, waist-down. 3 takes, near-identical. Wear it, film waist-down, say your height and size.\nLighting: Key (circle) in front at 45°, center at chest height, tilted down toward the waist, ~70%. Fill panel 1 on the other side, ~35%, so the fabric shows. Fill panel 2 behind and to the side, low, as a rim light that outlines the fit against the background. Never a window behind you. Tape a mark on the floor so every take matches.",
+  "notes": "Bedroom, waist-down. 2 takes, near-identical. Wear it, film waist-down, say your height and size.\nLighting: Key (circle) in front at 45°, center at chest height, tilted down toward the waist, ~70%. Fill panel 1 on the other side, ~35%, so the fabric shows. Fill panel 2 behind and to the side, low, as a rim light that outlines the fit against the background. Never a window behind you. Tape a mark on the floor so every take matches.",
   "assigned": 1793144252.9222348,
   "done": false
  },

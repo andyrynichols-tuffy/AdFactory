@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 37,
+ "rev": 59,
  "title": "Oct 28 · Worn, faceless · H&M Loose-Fit Zip Hoodie - G",
  "created": 1793144252.2874284,
  "product": {
@@ -17,8 +17,8 @@
  "sources": [],
  "script": [
   {
-   "id": "3668d5",
-   "text": "Just in time for this fall: the H&M Loose-Fit Zip Hoodie in grey marl.",
+   "id": "b38049",
+   "text": "H&M finally put their loose-fit zip-through hoodie on their TikTok shop.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -31,8 +31,8 @@
    "cut_offset": null
   },
   {
-   "id": "0dd5a4",
-   "text": "I'm 6'2 185, wearing a size L for a looser fit, and this is exactly how it fits.",
+   "id": "0404ce",
+   "text": "This is their Loose-Fit Zip Hoodie in grey marl, so you're definitely going to get that drawstring hood with this one.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -45,8 +45,8 @@
    "cut_offset": null
   },
   {
-   "id": "e8586f",
-   "text": "The drawstring hood goes with everything.",
+   "id": "b6fb32",
+   "text": "I'm 6'2 185, rocking a size L in this one for a looser fit.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -59,8 +59,22 @@
    "cut_offset": null
   },
   {
-   "id": "d4f9d9",
-   "text": "It's on TikTok Shop right now, link's right here.",
+   "id": "442808",
+   "text": "So I'd definitely recommend going true to size, but their most popular sizes are going quick.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "aef837",
+   "text": "So if you're seeing this in time and your size is still available, I definitely wouldn't miss out on this one.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -178,7 +192,7 @@
   "tags": [],
   "script": "0caa98",
   "due": "2026-10-28",
-  "notes": "Bedroom, waist-down. 3 takes, near-identical. Wear it, film waist-down, say your height and size.\nLighting: Key (circle) in front at 45°, center at chest height, tilted down toward the waist, ~70%. Fill panel 1 on the other side, ~35%, so the fabric shows. Fill panel 2 behind and to the side, low, as a rim light that outlines the fit against the background. Never a window behind you. Tape a mark on the floor so every take matches.",
+  "notes": "Bedroom, waist-down. 2 takes, near-identical. Wear it, film waist-down, say your height and size.\nLighting: Key (circle) in front at 45°, center at chest height, tilted down toward the waist, ~70%. Fill panel 1 on the other side, ~35%, so the fabric shows. Fill panel 2 behind and to the side, low, as a rim light that outlines the fit against the background. Never a window behind you. Tape a mark on the floor so every take matches.",
   "assigned": 1793144252.3080246,
   "done": false
  },

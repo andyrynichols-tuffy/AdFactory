@@ -1,6 +1,6 @@
 {
  "version": 1,
- "rev": 37,
+ "rev": 59,
  "title": "Oct 28 · Flat-lay voiceover video · H&M Loose-Fit Zip Hoodie - D",
  "created": 1793144252.2220168,
  "product": {
@@ -17,8 +17,8 @@
  "sources": [],
  "script": [
   {
-   "id": "c4e008",
-   "text": "H&M finally has their Loose-Fit Zip Hoodie in dark brown on TikTok Shop.",
+   "id": "d24fc2",
+   "text": "H&M finally put their loose-fit zip-through hoodie on their TikTok shop.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -31,8 +31,8 @@
    "cut_offset": null
   },
   {
-   "id": "a5fe0c",
-   "text": "It's got that drawstring hood that goes with literally any fit.",
+   "id": "04258c",
+   "text": "You're gonna get that super nice drawstring hood as well as the two front pockets, and I just love this dark brown colorway, it's gonna be perfect for this fall season.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -45,8 +45,8 @@
    "cut_offset": null
   },
   {
-   "id": "5b837e",
-   "text": "You can grab it for $35.98 right now.",
+   "id": "4720b4",
+   "text": "I'm 6'2 185, rocking a size L.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -59,8 +59,8 @@
    "cut_offset": null
   },
   {
-   "id": "7a8f02",
-   "text": "I'll leave the link right here before your size sells out.",
+   "id": "e1085d",
+   "text": "These are selling out quick, and shipping is free right now, so if you wanna see if your size is still available, I'll leave a link down below.",
    "alts": [],
    "optional": false,
    "look": null,
@@ -178,7 +178,7 @@
   "tags": [],
   "script": "934783",
   "due": "2026-10-28",
-  "notes": "White bed or couch, hand pointing. 3 takes, near-identical. One take, ~20 s, read the sale script while pointing at the item.\nLighting: Key (circle) at 45° to one side of the bed, above it, ~60%. Fill panel 1 on the other side, ~30%. Fill panel 2 above or behind the bed, low, so the white sheets light evenly. Tap to lock, then drop exposure a touch so the whites don't blow out. Don't move anything between takes.",
+  "notes": "White bed or couch, hand pointing. 2 takes, near-identical. One take, ~20 s, read the sale script while pointing at the item.\nLighting: Key (circle) at 45° to one side of the bed, above it, ~60%. Fill panel 1 on the other side, ~30%. Fill panel 2 above or behind the bed, low, so the white sheets light evenly. Tap to lock, then drop exposure a touch so the whites don't blow out. Don't move anything between takes.",
   "assigned": 1793144252.2431269,
   "done": false
  },
