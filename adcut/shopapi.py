@@ -297,6 +297,48 @@ def planner_mark(day: str, body: dict = Body(...)):
     return planner.mark(day, int(body["k"]), bool(body.get("done")))
 
 
+@router.post("/planner/day/{day}/set/{set_id}")
+def planner_set(day: str, set_id: str, body: dict = Body(...)):
+    return planner.set_example(day, set_id, str(body.get("example") or ""))
+
+
+# ---------- posting kit (adcut/postkit.py): a folder + description per post, videos rendered in ----------
+from . import postkit  # noqa: E402
+
+
+@router.get("/planner/day/{day}/kit")
+def kit(day: str):
+    return {"posts": postkit.posts(day), "job": postkit.JOB, "folder": str(postkit.kit_dir(day))}
+
+
+@router.post("/planner/day/{day}/kit/build")
+def kit_build(day: str):
+    return postkit.build(day)
+
+
+@router.put("/planner/day/{day}/kit/{k}/photo")
+async def kit_photo(day: str, k: int, request: Request, name: str = "photo.jpg"):
+    return {"saved": postkit.add_photo(day, k, name, await request.body())}
+
+
+@router.get("/planner/day/{day}/kit/{k}/file/{name}")
+def kit_file(day: str, k: int, name: str):
+    try:
+        return FileResponse(postkit.file_path(day, k, name), filename=name)
+    except FileNotFoundError:
+        raise HTTPException(404, "not there")
+
+
+@router.post("/planner/day/{day}/kit/{k}/open")
+def kit_open(day: str, k: int):
+    """Open the post's folder on this PC (Explorer)."""
+    import os
+    f = Path(postkit.posts(day)[k]["folder"])
+    f.mkdir(parents=True, exist_ok=True)
+    os.startfile(str(f))
+    return {"ok": True}
+
+
 @router.get("/planner/days")
 def planner_days():
     return planner.days()
