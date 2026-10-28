@@ -1530,7 +1530,9 @@ window.I18N_PT = {
   "Fill ~35%": "Painel ~35%",
   "Photo 1 is the cover: the item on its own, centered, smoothed flat, with room at the top for the text. Then one photo per outfit.": "A foto 1 é a capa: só a peça, no centro, bem lisa, com espaço em cima para o texto. Depois uma foto por look.",
   "Cover": "Capa",
-  "the item on its own": "só a peça"
+  "the item on its own": "só a peça",
+  "The scripts": "Os roteiros",
+  "· complete, one per colour, the same lines every take": "· completos, um por cor, as mesmas falas em toda tomada"
  },
  "patterns": [
   [

@@ -160,7 +160,8 @@ async function renderShoot(setId) {
               ${s.projects?.length ? `<table class="mxList"><tbody>${s.projects.map(pr => { const ps = mine.filter(x => x.sid === pr.sid), it = s.items.find(i => i.product === pr.product) || { takes: 0 }, have = ps[0]?.takes || 0;
                 return `<tr><td translate="no">${esc(colorOf(prodName(pr.product)) || prodName(pr.product))}</td><td class="num">${have} of ${it.takes} <span>takes in</span></td><td>${have >= it.takes ? `<span class="mxPill ok">Filmed</span>` : have ? `<span class="mxPill wait">Filming</span>` : `<span class="mxPill">To film</span>`}</td><td class="num"><button data-open="${esc(pr.sid)}">Open</button></td></tr>`; }).join("")}</tbody></table>`
                 : `<p class="mxNote muted">Send this setup to Ad Camera first (button at the top).</p>`}
-              ${sc ? `<details class="mxScript"><summary>The script <span class="muted" translate="no">${esc(sc.title)}</span></summary><pre translate="no">${esc(sc.text)}</pre></details>` : ""}`)}
+              <div class="mxLabel">The scripts <span class="muted">· complete, one per colour, the same lines every take</span></div>
+              <div id="scriptBox" class="mxScripts" data-set="${s.id}"></div>`)}
         ${step("after", carousel ? "When the photos are in" : "When the takes are in", carousel
           ? `<p class="mxNote">Open <b>Posting Kit</b> (Shoot Days) and press <b>Prepare Posting Kit</b>: each carousel's folder gets its description and on-image text line next to its photos.</p>`
           : `<p class="mxNote">Ad Factory pre-cuts every take and puts the captions on. Then open <b>Posting Kit</b> (Shoot Days) and press <b>Prepare Posting Kit</b>: each post gets its own folder with the finished video and its description, ready to schedule.</p>`)}
@@ -172,6 +173,13 @@ async function renderShoot(setId) {
       </div>
     </div>`;
   showExample();
+  showScripts();
+}
+async function showScripts() {  // each product's full script, as Ad Camera's teleprompter will show it
+  const box = $("#scriptBox"); if (!box) return;
+  const rows = await api(`/api/shop/planner/day/${PL.day}/scripts/${box.dataset.set}`).catch(() => []);
+  box.innerHTML = rows.map(r => `<div class="mxScriptCard"><div class="mxCarHead"><b translate="no">${esc(colorOf(r.name) || r.name)}</b><span class="muted">${r.takes} ${r.takes === 1 ? "take" : "takes"}</span></div>
+    <ol translate="no">${r.lines.map(l => `<li>${esc(l)}</li>`).join("")}</ol></div>`).join("");
 }
 // the example to copy, as itself: a photo post's photos side by side, or a video in TikTok's resizable player
 async function showExample() {

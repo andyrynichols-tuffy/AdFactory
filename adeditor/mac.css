@@ -326,3 +326,7 @@ html .lightbox button { position: absolute; background: rgba(255, 255, 255, .12)
 .lightbox .lbX { top: 18px; right: 18px; font-size: 16px; } .lightbox .lbP { left: 18px; top: 50%; } .lightbox .lbNx { right: 18px; top: 50%; }
 .lightbox .lbN { position: absolute; bottom: 18px; color: rgba(255, 255, 255, .7); font-size: 12px; }
 .mxSlide a { display: block; width: 100%; height: 100%; }
+
+.mxScripts { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; }
+.mxScriptCard { background: rgba(255, 255, 255, .04); border: .5px solid var(--mx-sep); border-radius: 8px; padding: 10px 12px; }
+.mxScriptCard ol { margin: 0; padding-left: 18px; display: grid; gap: 4px; }

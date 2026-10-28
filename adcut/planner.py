@@ -173,7 +173,7 @@ def generate(day_iso: str) -> dict:
                 pool, start = same or pool, 0
             for j in range(k_products):
                 p = pool[(start + j) % len(pool)] if pool else None
-                t = min(takes, left)
+                t = cnt // k_products + (1 if j < cnt % k_products else 0)  # even split: 4 posts = 2 + 2, not 3 + 1
                 left -= t
                 pid = p["id"] if p else None
                 same = next((it for it in items if it["product"] == pid), None)  # short lineup: more takes, not a repeat row

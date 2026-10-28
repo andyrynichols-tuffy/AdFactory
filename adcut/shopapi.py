@@ -302,6 +302,21 @@ def planner_set(day: str, set_id: str, body: dict = Body(...)):
     return planner.set_example(day, set_id, str(body.get("example") or ""))
 
 
+@router.get("/planner/day/{day}/scripts/{set_id}")
+def planner_scripts(day: str, set_id: str):
+    """The complete script for each product in a set: what's in its Ad Camera project, else what it will be."""
+    plan = planner.get(day)
+    s = next(x for x in plan["sets"] if x["id"] == set_id)
+    out = []
+    for it in s["items"]:
+        if not it["product"]:
+            continue
+        pr = next((x for x in s.get("projects") or [] if x["product"] == it["product"]), None)
+        lines = [ln["text"] for ln in store.load(pr["sid"])["script"]] if pr else planner.script_for(day, s, it["product"], plan)
+        out.append({"product": it["product"], "name": it["name"], "takes": it["takes"], "lines": lines})
+    return out
+
+
 @router.get("/planner/day/{day}/carousel/{set_id}")
 def carousel_plan(day: str, set_id: str):
     from . import carouselplan
