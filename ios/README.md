@@ -22,6 +22,11 @@ the project's OneDrive inbox folder through Ad Factory, where it gets pre-cut li
   outfit is shot once with every product. Switch product or outfit any time (all outfits for one product, or one
   outfit across the products); it moves to the next combo not done, shows a done grid, and each photo goes to the
   Ad Studio album and into that carousel's folder in Ad Factory's posting kit (a retake replaces it).
+- **Big screen while filming** (`BigScreen.swift`): mirror the iPhone to a TV (Apple TV), a Mac or a monitor and
+  Ad Camera shows its own layout there instead of a copy of the phone: the camera picture beside the script in
+  big type, the current line highlighted, the countdown and the TikTok guides. On a Mac: System Settings →
+  General → AirDrop & Handoff → **AirPlay Receiver** on; then on the iPhone, Control Center → **Screen
+  Mirroring** → the Mac. Open a project in Ad Camera and the Mac shows the big layout.
 - **Apple Watch remote:** one big record button, the take timer and the take count (`WatchLink.swift` on
   the phone, `ios/AdCameraWatch` on the watch). Needs the watch target added once (below).
 - Uploads keep going with the phone locked; with no connection they wait and retry.

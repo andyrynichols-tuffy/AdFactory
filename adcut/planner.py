@@ -434,7 +434,7 @@ TEMPLATES = [  # @sully.finds' own scripts, copied from the example each format 
     ("flatlay_vo", "Sale news (flat-lay voiceover)",  # example 7690604593834757407, 387K views
      "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n"
      "[nodeal] {brand} finally put their {item} on their TikTok shop.\n"
-     "You're gonna get that super nice {feature 1} as well as {feature 2}, and I just love this {color} colorway, it's gonna be perfect for this {season} season.\n"
+     "You're gonna get that super nice {feature 1} as well as the {feature 2}, and I just love this {color} colorway, it's gonna be perfect for this {season} season.\n"
      "{who} {height}, rocking a size {size}.\n"
      "[deal] These are selling out quick since they're {deal}, so if you wanna see if your size is still available, I'll leave a link down below.\n"
      "[nodeal] These are selling out quick, so if you wanna see if your size is still available, I'll leave a link down below."),
@@ -450,7 +450,7 @@ TEMPLATES = [  # @sully.finds' own scripts, copied from the example each format 
      "[deal] {brand}'s official shop is finally on TikTok and they're dumping all of their {item} just in time for this {season} season.\n"
      "[nodeal] {brand}'s official shop is finally on TikTok and they just put their {item} on there, just in time for this {season} season.\n"
      "[deal] Just don't drop {store price} in store when you can pick {them} up for way cheaper on here.\n"
-     "You get that super nice {feature 1} as well as that {feature 2}.\n"
+     "You get that super nice {feature 1} as well as the {feature 2}.\n"
      "There are multiple different colors to choose from.\n"
      "So if you want to see if your size is still available in {this pair}, I'll leave a link down below."),
     ("skit", "Where'd you get those? (two-person skit)",  # example 7699977637917183263
@@ -460,13 +460,13 @@ TEMPLATES = [  # @sully.finds' own scripts, copied from the example each format 
      "[deal] B: No, no, no, I got {it} on their TikTok shop, they're {deal} right now.\n"
      "[nodeal] B: No, no, no, I got {it} on their TikTok shop for {price}.\n"
      "A: Wait, that's actually such a good deal.\n"
-     "B: Just check out {the feature} and that {feature 2}.\n"
+     "B: Just check out {the feature} and the {feature 2}.\n"
      "A: Yeah, I actually love {that item}. You gotta drop the link.\n"
      "B: If you guys want to get yours, I'll leave a link down below.\n"
      "A: Bet, thank you."),
     ("other", "My new favorite (extra slot)",  # example 7700043209048739103
      "{this is} definitely my new favorite {item} from {brand}.\n"
-     "You get that super nice {feature 1} you can pair with any outfit, as well as that {feature 2}.\n"
+     "You get that super nice {feature 1} you can pair with any outfit, as well as the {feature 2}.\n"
      "[deal] These are selling out quick, though, so if you want to get yours {deal}, I'll leave a link down below.\n"
      "[nodeal] These are selling out quick, though, so if you want to get yours, I'll leave a link down below."),
     ("carousel", "On-image text (carousel)",
