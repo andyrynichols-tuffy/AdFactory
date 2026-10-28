@@ -489,7 +489,7 @@ struct CameraView: View {
         }
     }
 
-    private var mine: [Clip] { clips.clips.filter { $0.project == project.sid } }
+    private var mine: [Clip] { clips.clips.filter { $0.project == project.sid && $0.archived != true } }
 
     private var takesBadge: some View {
         let left = mine.filter { !$0.uploaded }.count

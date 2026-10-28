@@ -102,6 +102,7 @@ DEFAULT_SHOOT = {
     # posting queue (like Meme Factory's Saved): "1" -> {saved_at, sig (what video 1 was
     # when saved), posted, posted_at}
     "saved": {},
+    "phone_off": [],     # raw files archived or deleted in Ad Camera (file keys): their takes stay out of the videos
 }
 
 TAKE_FIELDS = {
@@ -271,6 +272,48 @@ def posted_videos(s: dict) -> dict:
 def locked_ids(s: dict) -> dict:
     """take id -> the posted video it's locked into."""
     return {i: n for n, ids in posted_videos(s).items() for i in ids}
+
+
+PHONE_OFF = "removed on the phone"
+
+
+def file_key(name: str) -> str:
+    """A file name as letters and digits only, so the phone's name for a take matches the
+    inbox's cleaned-up copy of it."""
+    return "".join(c for c in Path(name or "").name.lower() if c.isalnum())
+
+
+def apply_phone_off(s: dict) -> dict:
+    """Takes from raw files archived or deleted in Ad Camera become rejects flagged PHONE_OFF
+    (takes already in saved/posted videos stay there); takes from files brought back count
+    again, by their own grade. Run after the list changes and after takes are re-matched.
+    Returns {"files": raw files found, "off": takes kept out, "locked": takes left in saved videos}."""
+    keys = set(s.get("phone_off") or [])
+    srcs = {x["id"] for x in s["sources"] if file_key(x.get("name") or x.get("file")) in keys}
+    locked = locked_ids(s)
+    out = {"files": len(srcs), "off": 0, "locked": 0}
+    for t in s["takes"]:
+        if t["src"] in srcs:
+            if t["id"] in locked:
+                out["locked"] += 1
+                continue
+            t["usable"] = False
+            t["user"]["usable"] = True
+            if PHONE_OFF not in t["flags"]:
+                t["flags"] = t["flags"] + [PHONE_OFF]
+            out["off"] += 1
+        elif PHONE_OFF in (t.get("flags") or []):
+            t["flags"] = [f for f in t["flags"] if f != PHONE_OFF]
+            t["user"].pop("usable", None)
+            t["usable"] = t["status"] in ("good", "close")
+    return out
+
+
+def set_phone_off(s: dict, name: str, off: bool) -> dict:
+    keys = set(s.get("phone_off") or [])
+    (keys.add if off else keys.discard)(file_key(name))
+    s["phone_off"] = sorted(keys)
+    return apply_phone_off(s)
 
 
 def dyn_stack(s: dict, line_id: str) -> list:

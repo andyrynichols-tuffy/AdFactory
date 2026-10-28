@@ -212,6 +212,16 @@
         }
       }
     },
+    "Archived takes are kept out of Ad Factory's videos. Swipe from the left to bring one back, from the right to delete it.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Takes arquivados ficam fora dos vídeos do Ad Factory. Deslize da esquerda para trazer de volta, da direita para apagar."
+          }
+        }
+      }
+    },
     "Auto · %@×": {
       "localizations": {
         "pt-BR": {
@@ -352,6 +362,16 @@
         }
       }
     },
+    "Copy link": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copiar link"
+          }
+        }
+      }
+    },
     "Couldn't open that camera.": {
       "localizations": {
         "pt-BR": {
@@ -418,6 +438,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Apagar \"%@\"?"
+          }
+        }
+      }
+    },
+    "Delete this clip?": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apagar este clipe?"
+          }
+        }
+      }
+    },
+    "Delete this take?": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apagar este take?"
           }
         }
       }
@@ -752,12 +792,62 @@
         }
       }
     },
+    "It's removed from this phone and kept out of Ad Factory's videos. The footage itself stays in Ad Factory and in Photos (Ad Studio album).": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ele sai deste celular e fica fora dos vídeos do Ad Factory. A gravação continua no Ad Factory e nas Fotos (álbum Ad Studio)."
+          }
+        }
+      }
+    },
+    "It's removed from this phone and won't be sent. A copy already saved in Photos (Ad Studio album) stays there.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ele sai deste celular e não será enviado. Uma cópia já salva nas Fotos (álbum Ad Studio) continua lá."
+          }
+        }
+      }
+    },
+    "It's removed from this project and kept out of Ad Factory's videos. The footage itself stays in Ad Factory and in Photos.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ele sai deste projeto e fica fora dos vídeos do Ad Factory. A gravação continua no Ad Factory e nas Fotos."
+          }
+        }
+      }
+    },
     "Keep this video": {
       "localizations": {
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Manter este vídeo"
+          }
+        }
+      }
+    },
+    "Kept out of Ad Factory's videos": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fora dos vídeos do Ad Factory"
+          }
+        }
+      }
+    },
+    "Kept out of Ad Factory's videos. Press and hold one to bring it back or delete it.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fora dos vídeos do Ad Factory. Toque e segure um para trazer de volta ou apagar."
           }
         }
       }
@@ -1052,6 +1142,16 @@
         }
       }
     },
+    "On hold while archived": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Em espera enquanto arquivado"
+          }
+        }
+      }
+    },
     "One line per line of the script…": {
       "localizations": {
         "pt-BR": {
@@ -1172,6 +1272,16 @@
         }
       }
     },
+    "Press and hold a clip to archive or delete it.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toque e segure um clipe para arquivar ou apagar."
+          }
+        }
+      }
+    },
     "Previous line": {
       "localizations": {
         "pt-BR": {
@@ -1192,12 +1302,32 @@
         }
       }
     },
+    "Product page": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Página do produto"
+          }
+        }
+      }
+    },
     "Projects and uploads come from Ad Factory on the PC.": {
       "localizations": {
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
             "value": "Os projetos e os envios vêm do Ad Factory no PC."
+          }
+        }
+      }
+    },
+    "Putting it back in Ad Factory's videos…": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Devolvendo aos vídeos do Ad Factory…"
           }
         }
       }
@@ -1572,6 +1702,16 @@
         }
       }
     },
+    "Swipe a take from the right to archive it.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deslize um take da direita para arquivar."
+          }
+        }
+      }
+    },
     "Swipe from the left to bring one back, from the right to delete it.": {
       "localizations": {
         "pt-BR": {
@@ -1608,6 +1748,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Takes"
+          }
+        }
+      }
+    },
+    "Taking it out of Ad Factory's videos…": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tirando dos vídeos do Ad Factory…"
           }
         }
       }
@@ -1998,6 +2148,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Formato do vídeo"
+          }
+        }
+      }
+    },
+    "Video to replicate": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vídeo para recriar"
           }
         }
       }

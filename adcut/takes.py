@@ -602,6 +602,7 @@ def match(s: dict, progress=print) -> dict:
     s["takes"] = new + [t for t in s["takes"] if t["user"].get("manual") and not t.get("_covered")]
     for t in s["takes"]:
         t.pop("_covered", None)
+    store.apply_phone_off(s)  # takes archived or deleted in Ad Camera stay out
     for l in lines:
         _order_line(s, l["id"])
     _order_line(s, None)

@@ -118,10 +118,10 @@ final class ClipStore: NSObject, ObservableObject, URLSessionDataDelegate {
     }
 
     func count(for project: String) -> Int {
-        clips.filter { $0.project == project }.count
+        clips.filter { $0.project == project && $0.archived != true }.count
     }
 
-    var waiting: Int { clips.filter { !$0.uploaded }.count }
+    var waiting: Int { clips.filter { !$0.uploaded && $0.archived != true }.count }
     var sending: Int { progress.count }
 
     /// Forget takes that are done (in Photos and uploaded). Their videos stay in Photos and OneDrive.
@@ -130,7 +130,117 @@ final class ClipStore: NSObject, ObservableObject, URLSessionDataDelegate {
         save()
     }
 
+    /// Set a take aside, or bring it back. One that hasn't been sent yet stays on the phone while
+    /// it's archived (an upload in progress stops) and goes when it's brought back.
+    /// In Ad Factory too: an archived take's footage stays out of the videos until it's brought back.
+    func setArchived(_ id: UUID, _ on: Bool) {
+        update(id) { $0.archived = on ? true : nil }
+        if let c = clip(id) { tell(c, off: on) }
+        if on {
+            stopUpload(id)
+        } else {
+            savePhoto(id)
+            upload(id)
+        }
+    }
+
+    /// Off this phone: the take's file, thumbnail and place in the list, and any upload still going.
+    /// A copy already in Photos (Ad Studio album) or already sent to Ad Factory stays there.
+    func delete(_ id: UUID) {
+        guard let c = clip(id) else { return }
+        tell(c, off: true)   // and its footage stays out of Ad Factory's videos for good
+        hide(project: c.project, name: c.file)
+        stopUpload(id)
+        try? FileManager.default.removeItem(at: Self.folder.appendingPathComponent(c.file))
+        try? FileManager.default.removeItem(at: Self.thumbs.appendingPathComponent("\(id.uuidString).jpg"))
+        clips.removeAll { $0.id == id }
+        save()
+    }
+
+    private func stopUpload(_ id: UUID) {
+        progress[id] = nil
+        session.getAllTasks { tasks in
+            for t in tasks where t.taskDescription == id.uuidString { t.cancel() }
+        }
+    }
+
+    // MARK: - telling Ad Factory (POST /api/camera/projects/<id>/takes)
+
+    /// A take Ad Factory should keep out of the videos (archived or deleted here) or count again
+    /// (brought back). Sent even before the take has been, in case part of it got through; kept
+    /// until the PC has it (no signal, or a PC that hasn't updated yet).
+    struct Mark: Codable, Equatable {
+        var project: String
+        var name: String
+        var off: Bool
+    }
+
+    @Published private(set) var marks: [Mark] = (UserDefaults.standard.data(forKey: "takeMarks"))
+        .flatMap { try? JSONDecoder().decode([Mark].self, from: $0) } ?? []
+    private var telling = false
+
+    /// Ad Factory hasn't heard yet that this take is out (or back).
+    func telling(_ c: Clip) -> Bool { pendingOff(project: c.project, name: c.file) != nil }
+
+    /// What a clip is about to be in Ad Factory (out or back), until the PC has it.
+    func pendingOff(project: String, name: String) -> Bool? {
+        marks.last { $0.project == project && Self.fileKey($0.name) == Self.fileKey(name) }?.off
+    }
+
+    private func tell(_ c: Clip, off: Bool) { tell(project: c.project, name: c.file, off: off) }
+
+    /// Any clip in a project, by its file name (also ones that reached Ad Factory another way).
+    func tell(project: String, name: String, off: Bool) {
+        marks.removeAll { $0.project == project && Self.fileKey($0.name) == Self.fileKey(name) }
+        marks.append(Mark(project: project, name: name, off: off))
+        saveMarks()
+        sendMarks()
+    }
+
+    /// A file name as letters and digits only, as Ad Factory compares them (store.file_key).
+    static func fileKey(_ name: String) -> String {
+        String((name as NSString).lastPathComponent.lowercased().filter { $0.isLetter || $0.isNumber })
+    }
+
+    /// Clips deleted on this phone that are still in Ad Factory (kept out of its videos):
+    /// no longer listed on the project page.
+    @Published private(set) var hidden = Set(UserDefaults.standard.stringArray(forKey: "hiddenClips") ?? [])
+
+    func isHidden(project: String, name: String) -> Bool { hidden.contains("\(project)/\(Self.fileKey(name))") }
+
+    func hide(project: String, name: String) {
+        hidden.insert("\(project)/\(Self.fileKey(name))")
+        UserDefaults.standard.set(hidden.sorted(), forKey: "hiddenClips")
+    }
+
+    private func saveMarks() {
+        UserDefaults.standard.set(try? JSONEncoder().encode(marks), forKey: "takeMarks")
+    }
+
+    func sendMarks() {
+        guard !telling, !marks.isEmpty, Server.token != nil else { return }
+        telling = true
+        let todo = marks
+        Task { @MainActor in
+            for m in todo {
+                do {
+                    _ = try await API.json("api/camera/projects/\(m.project)/takes", method: "POST",
+                                           body: .object([("name", .string(m.name)), ("off", .bool(m.off))]))
+                    marks.removeAll { $0 == m }
+                } catch APIError.http(404, let why) where why.hasPrefix("no shoot") {
+                    marks.removeAll { $0 == m }   // the project itself is gone from Ad Factory
+                } catch {
+                    scheduleRetry()   // offline, or the PC hasn't got this yet: try again later
+                    break
+                }
+            }
+            saveMarks()
+            telling = false
+        }
+    }
+
     func retryWaiting() {
+        sendMarks()
         for c in clips {
             if !c.inPhotos { savePhoto(c.id) }
             if !c.uploaded { upload(c.id) }
@@ -167,7 +277,7 @@ final class ClipStore: NSObject, ObservableObject, URLSessionDataDelegate {
     // MARK: - uploads
 
     private func upload(_ id: UUID) {
-        guard var c = clip(id), !c.uploaded, progress[id] == nil else { return }
+        guard var c = clip(id), !c.uploaded, c.archived != true, progress[id] == nil else { return }
         let url = Self.folder.appendingPathComponent(c.file)
         guard FileManager.default.fileExists(atPath: url.path) else {
             update(id) { $0.error = String(localized: "The video file is missing on this phone.") }
@@ -215,6 +325,7 @@ final class ClipStore: NSObject, ObservableObject, URLSessionDataDelegate {
             cleanUp(id)
             return
         }
+        guard let c = clip(id), c.archived != true else { return }   // stopped on purpose (archived or deleted)
         let why: String
         if let error {
             why = error.localizedDescription

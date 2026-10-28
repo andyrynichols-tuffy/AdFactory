@@ -12,12 +12,61 @@ struct ProjectView: View {
     @State private var showEditor = false
     @State private var showReview = false
     @State private var showScript = false
+    @State private var deleting: ClipName?
 
     private let grid = Array(repeating: GridItem(.flexible(), spacing: 6), count: 3)
     private var stage: String { detail?.stage ?? project.stage }
     private var lines: [String] { detail?.lines ?? project.lines }
     private var editing: Bool { ["edit", "post", "posted"].contains(stage) && (detail?.videos ?? 1) > 0 }
-    private var mine: [Clip] { clips.clips.filter { $0.project == project.sid } }
+    private var mine: [Clip] { clips.clips.filter { $0.project == project.sid && $0.archived != true } }
+
+    // Archive / delete work by file name, so a clip in Ad Factory and the take it came from on
+    // this phone move together (Ad Factory keeps archived and deleted clips out of its videos).
+    private var factory: [SourceClip] {
+        (detail?.sources ?? []).filter { !clips.isHidden(project: project.sid, name: $0.name) }
+    }
+    private var shelfPhone: [Clip] { clips.clips.filter { $0.project == project.sid && $0.archived == true } }
+    private var shelfFactory: [SourceClip] {
+        let shown = Set(shelfPhone.map { ClipStore.fileKey($0.file) })
+        return factory.filter { isOff($0) && !shown.contains(ClipStore.fileKey($0.name)) }
+    }
+
+    private func phoneClip(named name: String) -> Clip? {
+        clips.clips.first { $0.project == project.sid && ClipStore.fileKey($0.file) == ClipStore.fileKey(name) }
+    }
+
+    private func isOff(_ s: SourceClip) -> Bool {
+        if let pending = clips.pendingOff(project: project.sid, name: s.name) { return pending }
+        if phoneClip(named: s.name)?.archived == true { return true }
+        return s.off ?? false
+    }
+
+    private func archive(_ name: String, _ on: Bool) {
+        if let c = phoneClip(named: name) {
+            clips.setArchived(c.id, on)
+        } else {
+            clips.tell(project: project.sid, name: name, off: on)
+        }
+    }
+
+    private func delete(_ name: String) {
+        if let c = phoneClip(named: name) {
+            clips.delete(c.id)   // also tells Ad Factory and hides its copy here
+        } else {
+            clips.tell(project: project.sid, name: name, off: true)
+            clips.hide(project: project.sid, name: name)
+        }
+    }
+
+    @ViewBuilder
+    private func clipMenu(_ name: String, archived: Bool) -> some View {
+        if archived {
+            Button { withAnimation { archive(name, false) } } label: { Label("Unarchive", systemImage: "tray.and.arrow.up") }
+        } else {
+            Button { withAnimation { archive(name, true) } } label: { Label("Archive", systemImage: "archivebox") }
+        }
+        Button(role: .destructive) { deleting = ClipName(name: name) } label: { Label("Delete", systemImage: "trash") }
+    }
 
     var body: some View {
         ScrollView {
@@ -63,19 +112,40 @@ struct ProjectView: View {
                         Text("Script (\(lines.count) lines)").font(.headline)
                     }
                 }
+                let live = factory.filter { !isOff($0) }
                 if !mine.isEmpty {
                     Text("Filmed on this phone").font(.headline).padding(.top, 4)
                     LazyVGrid(columns: grid, spacing: 6) {
-                        ForEach(mine) { c in localTile(c) }
+                        ForEach(mine) { c in
+                            localTile(c).contextMenu { clipMenu(c.file, archived: false) }
+                        }
                     }
                 }
-                if let sources = detail?.sources, !sources.isEmpty {
+                if !live.isEmpty {
                     Text("In Ad Factory").font(.headline).padding(.top, 4)
                     LazyVGrid(columns: grid, spacing: 6) {
-                        ForEach(sources) { s in remoteTile(s) }
+                        ForEach(live) { s in
+                            remoteTile(s).contextMenu { clipMenu(s.name, archived: false) }
+                        }
                     }
                 }
-                if mine.isEmpty && (detail?.sources.isEmpty ?? true) {
+                if !mine.isEmpty || !live.isEmpty {
+                    Text("Press and hold a clip to archive or delete it.").font(.caption).foregroundStyle(.secondary)
+                }
+                if !shelfPhone.isEmpty || !shelfFactory.isEmpty {
+                    Text("Archived").font(.headline).padding(.top, 4)
+                    LazyVGrid(columns: grid, spacing: 6) {
+                        ForEach(shelfPhone) { c in
+                            localTile(c).opacity(0.45).contextMenu { clipMenu(c.file, archived: true) }
+                        }
+                        ForEach(shelfFactory) { s in
+                            remoteTile(s).opacity(0.45).contextMenu { clipMenu(s.name, archived: true) }
+                        }
+                    }
+                    Text("Kept out of Ad Factory's videos. Press and hold one to bring it back or delete it.")
+                        .font(.caption).foregroundStyle(.secondary)
+                }
+                if mine.isEmpty && factory.isEmpty && shelfPhone.isEmpty {
                     Text("No clips yet. Tap Film to start.").foregroundStyle(.secondary).padding(.top, 8)
                 }
                 if let problem {
@@ -91,6 +161,17 @@ struct ProjectView: View {
             while !Task.isCancelled {
                 await load()
                 try? await Task.sleep(nanoseconds: 15_000_000_000)
+            }
+        }
+        .confirmationDialog(Text("Delete this clip?"),
+                            isPresented: Binding(get: { deleting != nil }, set: { if !$0 { deleting = nil } }),
+                            titleVisibility: .visible, presenting: deleting) { ref in
+            Button("Delete", role: .destructive) { withAnimation { delete(ref.name) } }
+        } message: { ref in
+            if let c = phoneClip(named: ref.name), !c.uploaded {
+                Text("It's removed from this phone and won't be sent. A copy already saved in Photos (Ad Studio album) stays there.")
+            } else {
+                Text("It's removed from this project and kept out of Ad Factory's videos. The footage itself stays in Ad Factory and in Photos.")
             }
         }
         .navigationDestination(isPresented: $showEditor) {
@@ -119,7 +200,36 @@ struct ProjectView: View {
             if !project.tags.isEmpty {
                 Text(verbatim: project.tags.joined(separator: " · ")).font(.caption).foregroundStyle(.secondary)
             }
+            let product = Self.web(detail?.productLink ?? project.productLink)
+            let reference = Self.web(detail?.referenceUrl ?? project.referenceUrl)
+            if product != nil || reference != nil {
+                HStack(spacing: 8) {
+                    if let product { linkButton("Product page", "cart", product) }
+                    if let reference { linkButton("Video to replicate", "play.rectangle", reference) }
+                }
+                .padding(.top, 6)
+            }
         }
+    }
+
+    /// Opens in TikTok (or Safari); hold for Copy link.
+    private func linkButton(_ title: LocalizedStringKey, _ icon: String, _ url: URL) -> some View {
+        Link(destination: url) {
+            Label(title, systemImage: icon)
+                .font(.subheadline.bold())
+                .lineLimit(1)
+                .padding(.horizontal, 12).padding(.vertical, 8)
+                .background(Color.white.opacity(0.12), in: Capsule())
+        }
+        .contextMenu {
+            Button { UIPasteboard.general.url = url } label: { Label("Copy link", systemImage: "doc.on.doc") }
+        }
+    }
+
+    static func web(_ s: String?) -> URL? {
+        guard let s = s?.trimmingCharacters(in: .whitespacesAndNewlines), let u = URL(string: s),
+              ["http", "https"].contains(u.scheme?.lowercased() ?? "") else { return nil }
+        return u
     }
 
     private func load() async {
@@ -188,6 +298,11 @@ struct ProjectView: View {
                     .padding(4)
             }
     }
+}
+
+struct ClipName: Identifiable {
+    var name: String
+    var id: String { name }
 }
 
 struct RemoteThumb: View {

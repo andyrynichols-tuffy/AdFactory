@@ -12,12 +12,17 @@ BUSY = lambda: set()  # server.py points this at the shoots with a job running
 def _project(d, sid, s, busy):
     pl = shop.plan_of(s)
     p = shop.by_id(d, "products", pl["product"])
+    lib = shop.by_id(d, "scripts", pl.get("script"))
     tags = {t["id"]: t["name"] for t in d["tags"]}
     return {"sid": sid, "title": s["title"], "created": s["created"],
             "stage": "posted" if pl.get("done") else shop.stage(s, sid in busy),
             "product": pl["product"], "product_name": p["name"] if p else s["product"]["name"],
             "tags": [tags[t] for t in pl["tags"] if t in tags], "due": pl["due"],
-            "lines": [ln["text"] for ln in s["script"]], "clips": len(s["sources"])}
+            "lines": [ln["text"] for ln in s["script"]], "clips": len(s["sources"]),
+            # the project page's links: the product's TikTok Shop page, and the video being copied
+            # (the shoot's reference, else the TikTok its library script was made from)
+            "product_link": (p or {}).get("link") or s["product"].get("link") or None,
+            "reference_url": (s.get("reference") or {}).get("url") or ((lib or {}).get("source") or {}).get("url") or None}
 
 
 @router.get("/projects")
@@ -47,13 +52,32 @@ def project(sid: str):
     except (ValueError, OSError):
         raise HTTPException(404, f"no shoot {sid}")
     clips = []
+    off = set(s.get("phone_off") or [])
     for x in s["sources"]:
         ready = x.get("status") == "ready" and x.get("key")
         t = min(1.0, (x.get("duration") or 2) / 2)
         clips.append({"id": x["id"], "name": x["name"], "status": x.get("status") or "", "duration": x.get("duration") or 0,
-                      "batch": x.get("batch") or 1, "thumb": f"/api/thumb/{x['key']}?t={t:.1f}" if ready else None})
+                      "batch": x.get("batch") or 1, "thumb": f"/api/thumb/{x['key']}?t={t:.1f}" if ready else None,
+                      "off": store.file_key(x.get("name") or x.get("file")) in off})   # archived/deleted on the phone
     return {**_project(shop.load(), sid, s, BUSY()), "sources": clips,
             "videos": len(store.videos(s)["videos"]), "saved": len(s.get("saved") or {})}
+
+
+@router.post("/projects/{sid}/takes")
+def phone_take(sid: str, body: dict = Body(...)):
+    """A take archived or deleted on the phone ({name, off: true}) is kept out of the videos;
+    one brought back ({name, off: false}) counts again. The name is remembered, so it also
+    works for a file the inbox hasn't imported yet."""
+    name = (body.get("name") or "").strip()
+    if not name:
+        raise HTTPException(400, "which take?")
+    out = {}
+    try:
+        store.update(sid, lambda s: out.update(store.set_phone_off(s, name, bool(body.get("off")))))
+    except (ValueError, OSError):
+        raise HTTPException(404, f"no shoot {sid}")
+    shop.changed()
+    return out
 
 
 @router.post("/projects")
