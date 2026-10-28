@@ -302,6 +302,19 @@ def planner_set(day: str, set_id: str, body: dict = Body(...)):
     return planner.set_example(day, set_id, str(body.get("example") or ""))
 
 
+@router.get("/planner/day/{day}/carousel/{set_id}")
+def carousel_plan(day: str, set_id: str):
+    from . import carouselplan
+    s = next(x for x in planner.get(day)["sets"] if x["id"] == set_id)
+    return carouselplan.for_set(day, s)
+
+
+@router.post("/planner/day/{day}/carousel/{set_id}")
+def carousel_plan_save(day: str, set_id: str, body: dict = Body(...)):
+    from . import carouselplan
+    return carouselplan.update(day, set_id, body)
+
+
 # ---------- posting kit (adcut/postkit.py): a folder + description per post, videos rendered in ----------
 from . import postkit  # noqa: E402
 

@@ -212,6 +212,9 @@ def generate(day_iso: str) -> dict:
         s["projects"] = prev.get("projects", [])
         if prev.get("example_set"):
             s["example"], s["example_set"] = prev["example"], True
+        for k in ("outfits", "texts"):  # the carousel plan (adcut/carouselplan.py) survives a rebuild
+            if prev.get(k):
+                s[k] = prev[k]
     d["days"][day_iso] = plan
     save(d)
     return plan

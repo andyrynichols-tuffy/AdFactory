@@ -28,7 +28,24 @@ def _project(d, sid, s, busy):
             "tags": [tags[t] for t in pl["tags"] if t in tags], "due": pl["due"],
             "lines": [ln["text"] for ln in s["script"]], "clips": len(s["sources"]),
             "carousel": (CAROUSELS.get(sid) or {}).get("format") == "carousel",
-            "outfits": postkit.outfits_for(sid) if (CAROUSELS.get(sid) or {}).get("format") == "carousel" else []}
+            "outfits": postkit.outfits_for(sid) if (CAROUSELS.get(sid) or {}).get("format") == "carousel" else [],
+            **_carousel_plan(sid)}
+
+
+def _carousel_plan(sid):
+    """Carousel mode's guide: the session's outfits (what to lay with this product in each) + its on-screen text."""
+    ix = CAROUSELS.get(sid)
+    if not ix or ix["format"] != "carousel":
+        return {}
+    from . import carouselplan
+    try:
+        s = next(x for x in planner.get(ix["day"])["sets"] if x["id"] == ix["set"])
+        cp = carouselplan.for_set(ix["day"], s)
+        row = next(r for r in cp["products"] if r["product"] == ix["product"])
+    except StopIteration:
+        return {}
+    return {"carousel_text": row["text"], "carousel_set": ix["day"] + "/" + ix["set"],
+            "outfit_plan": [{"name": o.get("name") or f"Outfit {i + 1}", "with": w} for i, (o, w) in enumerate(zip(cp["outfits"], row["with"]))]}
 
 
 @router.get("/projects")
