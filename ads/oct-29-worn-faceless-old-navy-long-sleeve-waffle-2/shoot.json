@@ -1,0 +1,195 @@
+{
+ "version": 1,
+ "rev": 6,
+ "title": "Oct 29 · Worn, faceless · Old Navy Long-Sleeve Waffle",
+ "created": 1793144252.9477618,
+ "product": {
+  "name": "Old Navy Long-Sleeve Waffle Crew - Dark Walnut",
+  "link": "https://shop.tiktok.com/us/pdp/1732595338038186663",
+  "description": "",
+  "hashtags": "#tiktokshop #tiktokmademebuyit"
+ },
+ "reference": {
+  "url": "",
+  "file": "",
+  "notes": ""
+ },
+ "sources": [],
+ "script": [
+  {
+   "id": "9d4288",
+   "text": "Just in time for this fall: the Old Navy Long-Sleeve Waffle Crew in dark walnut.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "4be2f2",
+   "text": "I'm 6'2 185, wearing a size L for a looser fit, and this is exactly how it fits.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "479260",
+   "text": "The waffle knit goes with everything.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "699b1b",
+   "text": "It's on TikTok Shop right now, link's right here.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  }
+ ],
+ "script_guessed": false,
+ "takes": [],
+ "hooks": [],
+ "cta": "",
+ "style": {
+  "subs": {
+   "on": true,
+   "font": "Arial Black",
+   "size": 84,
+   "color": "#FFFFFF",
+   "highlight": "#FFE14D",
+   "outline": "#000000",
+   "outline_w": 6,
+   "uppercase": false,
+   "y": 0.66,
+   "words_per_line": 3,
+   "karaoke": true,
+   "pop": true
+  },
+  "look": {
+   "brightness": 0.0,
+   "smooth": 0.0
+  },
+  "speed": 1.0,
+  "pace": {
+   "auto": true,
+   "wps": 4.8,
+   "max": 1.1,
+   "pauses": true
+  },
+  "title": {
+   "on": true,
+   "y": 0.42,
+   "preset": "meme",
+   "font": "Impact",
+   "size": 150,
+   "color": "#FFFFFF",
+   "box_color": "#000000",
+   "accent": "#FFE14D",
+   "outline_w": 10,
+   "uppercase": true,
+   "rotate": -4,
+   "pop": true
+  },
+  "hook": {
+   "on": true,
+   "seconds": 3.0,
+   "y": 0.2,
+   "preset": "box",
+   "font": "Arial Black",
+   "size": 58,
+   "color": "#000000",
+   "box_color": "#FFFFFF",
+   "accent": "#FE2C55",
+   "outline_w": 0,
+   "uppercase": false,
+   "rotate": 0,
+   "pop": true
+  },
+  "cta": {
+   "on": false,
+   "y": 0.8,
+   "preset": "sticker",
+   "font": "Arial Black",
+   "size": 52,
+   "color": "#FFFFFF",
+   "box_color": "#FE2C55",
+   "accent": "#FFE14D",
+   "outline_w": 0,
+   "uppercase": false,
+   "rotate": -2,
+   "pop": true
+  },
+  "product_box": null,
+  "cart_pointer": {
+   "on": true,
+   "words": "orange cart, cart, basket",
+   "seconds": 2.2,
+   "color": "#FF8A00"
+  },
+  "punch_in": 1.12,
+  "pad_before": 0.08,
+  "pad_after": 0.18,
+  "voice_cleanup": false,
+  "loudness": -14
+ },
+ "skip": [],
+ "mix": null,
+ "mix_auto": true,
+ "batch_note": "",
+ "voiceover": null,
+ "voiceovers": [],
+ "from_inbox": false,
+ "assets": [],
+ "overlays": [],
+ "renders": {},
+ "saved": {},
+ "shop": {
+  "product": "27ab82",
+  "account": "c4a9a3",
+  "creator": "9d770c",
+  "editor": null,
+  "tags": [],
+  "script": "75f67d",
+  "due": "2026-10-29",
+  "notes": "Bedroom, waist-down. 1 take, near-identical. Wear it, film waist-down, say your height and size.\nLighting: Key (circle) in front at 45°, center at chest height, tilted down toward the waist, ~70%. Fill panel 1 on the other side, ~35%, so the fabric shows. Fill panel 2 behind and to the side, low, as a rim light that outlines the fit against the background. Never a window behind you. Tape a mark on the floor so every take matches.",
+  "assigned": 1793144252.9690132,
+  "done": false
+ },
+ "sheet": {
+  "row": "Oct 29 · Worn, faceless · Old Navy Long-Sleeve Waffle",
+  "sig": "7ddcc190e468",
+  "lines": [
+   "Just in time for this fall: the Old Navy Long-Sleeve Waffle Crew in dark walnut.",
+   "I'm 6'2 185, wearing a size L for a looser fit, and this is exactly how it fits.",
+   "The waffle knit goes with everything.",
+   "It's on TikTok Shop right now, link's right here."
+  ]
+ }
+}

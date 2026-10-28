@@ -36,6 +36,9 @@
     "at": "08:00",
     "min": 75
    },
+   "schedule": true,
+   "schedule_min": 1.5,
+   "prep_min": 30,
    "meals": [
     {
      "name": "Breakfast",
@@ -58,12 +61,32 @@
    {
     "account": "c4a9a3",
     "pov": "me",
-    "height": "6'0 195",
-    "size_bottom": "34x30",
-    "size_top": "L"
+    "height": "6'2 185",
+    "size_top": "",
+    "size_bottom": "",
+    "cant_wear": [
+     "c8cebc"
+    ]
    }
   ],
-  "lineup": [],
+  "lineup": [
+   "58c082",
+   "aad169",
+   "8e26fd",
+   "70db4e",
+   "9bbabf",
+   "27ab82",
+   "772dcf",
+   "6838c7",
+   "229a70",
+   "c8cebc",
+   "7e1c60",
+   "adb964",
+   "97d0e6",
+   "f1fed3",
+   "239664",
+   "5a73a3"
+  ],
   "scripts": {
    "flatlay_vo": "912ed1",
    "worn": "75f67d",
@@ -84,42 +107,70 @@
      "format": "carousel",
      "label": "Flat-lay carousel",
      "setup": "Wood floor, top-down",
-     "tip": "5-7 photos of the item laid flat, one line of on-image text. Brings the reach.",
+     "tip": "Style one outfit around the item on the floor, 5-7 photos, one line of on-image text. Brings the reach. Keep the outfit and swap only the colourway between carousels.",
+     "light": "Key (circle) high above one end of the outfit, angled down at 45°, ~70%. Fill panel 1 low on the opposite side, ~30%, to soften shadows. Fill panel 2 off, or low across the far end if the floor looks uneven. Room lights off, all three at 5600K. Phone straight above; lock exposure and white balance; same spot every carousel.",
+     "light_min": 15,
      "channel": "c4a9a3",
      "channel_name": "AndysBestFinds",
      "pov": "me",
      "items": [
       {
-       "product": "c9a20a",
-       "name": "H&M Loose Fit Sweatpants",
+       "product": "adb964",
+       "name": "H&M Loose Fit Sweatpants - Light Grey Marl",
        "takes": 1
       },
       {
-       "product": "c9a20a",
-       "name": "H&M Loose Fit Sweatpants",
+       "product": "97d0e6",
+       "name": "H&M Loose Fit Sweatpants - Dark Grey",
        "takes": 1
       },
       {
-       "product": "c9a20a",
-       "name": "H&M Loose Fit Sweatpants",
+       "product": "f1fed3",
+       "name": "H&M Loose-Fit Zip Hoodie - Dark Brown",
        "takes": 1
       },
       {
-       "product": "c9a20a",
-       "name": "H&M Loose Fit Sweatpants",
+       "product": "239664",
+       "name": "H&M Loose-Fit Zip Hoodie - Grey Marl",
        "takes": 1
       },
       {
-       "product": "c9a20a",
-       "name": "H&M Loose Fit Sweatpants",
+       "product": "5a73a3",
+       "name": "H&M Loose-Fit Zip Hoodie - Dark Khaki Green",
        "takes": 1
       }
      ],
      "posts": 5,
      "script": "b289a0",
-     "minutes": 25,
-     "edit_minutes": 10,
-     "projects": []
+     "minutes": 75,
+     "edit_minutes": 15,
+     "projects": [
+      {
+       "sid": "oct-28-flat-lay-carousel-h-m-loose-fit-sweatpant",
+       "title": "Oct 28 · Flat-lay carousel · H&M Loose Fit Sweatpants - L",
+       "product": "adb964"
+      },
+      {
+       "sid": "oct-28-flat-lay-carousel-h-m-loose-fit-sweatpant-2",
+       "title": "Oct 28 · Flat-lay carousel · H&M Loose Fit Sweatpants - D",
+       "product": "97d0e6"
+      },
+      {
+       "sid": "oct-28-flat-lay-carousel-h-m-loose-fit-zip-hoodi",
+       "title": "Oct 28 · Flat-lay carousel · H&M Loose-Fit Zip Hoodie - D",
+       "product": "f1fed3"
+      },
+      {
+       "sid": "oct-28-flat-lay-carousel-h-m-loose-fit-zip-hoodi-2",
+       "title": "Oct 28 · Flat-lay carousel · H&M Loose-Fit Zip Hoodie - G",
+       "product": "239664"
+      },
+      {
+       "sid": "oct-28-flat-lay-carousel-h-m-loose-fit-zip-hoodi-3",
+       "title": "Oct 28 · Flat-lay carousel · H&M Loose-Fit Zip Hoodie - D",
+       "product": "5a73a3"
+      }
+     ]
     },
     {
      "id": "flatlay_vo-0",
@@ -127,18 +178,20 @@
      "label": "Flat-lay voiceover video",
      "setup": "White bed or couch, hand pointing",
      "tip": "One take, ~20 s, read the sale script while pointing at the item.",
+     "light": "Key (circle) at 45° to one side of the bed, above it, ~60%. Fill panel 1 on the other side, ~30%. Fill panel 2 above or behind the bed, low, so the white sheets light evenly. Tap to lock, then drop exposure a touch so the whites don't blow out. Don't move anything between takes.",
+     "light_min": 10,
      "channel": "c4a9a3",
      "channel_name": "AndysBestFinds",
      "pov": "me",
      "items": [
       {
-       "product": "c9a20a",
-       "name": "H&M Loose Fit Sweatpants",
+       "product": "97d0e6",
+       "name": "H&M Loose Fit Sweatpants - Dark Grey",
        "takes": 3
       },
       {
-       "product": "c9a20a",
-       "name": "H&M Loose Fit Sweatpants",
+       "product": "f1fed3",
+       "name": "H&M Loose-Fit Zip Hoodie - Dark Brown",
        "takes": 3
       }
      ],
@@ -146,7 +199,18 @@
      "script": "912ed1",
      "minutes": 16,
      "edit_minutes": 4,
-     "projects": []
+     "projects": [
+      {
+       "sid": "oct-28-flat-lay-voiceover-video-h-m-loose-fit-sw",
+       "title": "Oct 28 · Flat-lay voiceover video · H&M Loose Fit Sweatpants - D",
+       "product": "97d0e6"
+      },
+      {
+       "sid": "oct-28-flat-lay-voiceover-video-h-m-loose-fit-zi",
+       "title": "Oct 28 · Flat-lay voiceover video · H&M Loose-Fit Zip Hoodie - D",
+       "product": "f1fed3"
+      }
+     ]
     },
     {
      "id": "worn-0",
@@ -154,26 +218,39 @@
      "label": "Worn, faceless",
      "setup": "Bedroom, waist-down",
      "tip": "Wear it, film waist-down, say your height and size.",
+     "light": "Key (circle) in front at 45°, center at chest height, tilted down toward the waist, ~70%. Fill panel 1 on the other side, ~35%, so the fabric shows. Fill panel 2 behind and to the side, low, as a rim light that outlines the fit against the background. Never a window behind you. Tape a mark on the floor so every take matches.",
+     "light_min": 15,
      "channel": "c4a9a3",
      "channel_name": "AndysBestFinds",
      "pov": "me",
      "items": [
       {
-       "product": "c9a20a",
-       "name": "H&M Loose Fit Sweatpants",
+       "product": "239664",
+       "name": "H&M Loose-Fit Zip Hoodie - Grey Marl",
        "takes": 3
       },
       {
-       "product": "c9a20a",
-       "name": "H&M Loose Fit Sweatpants",
+       "product": "5a73a3",
+       "name": "H&M Loose-Fit Zip Hoodie - Dark Khaki Green",
        "takes": 1
       }
      ],
      "posts": 4,
      "script": "75f67d",
-     "minutes": 18,
+     "minutes": 23,
      "edit_minutes": 3,
-     "projects": []
+     "projects": [
+      {
+       "sid": "oct-28-worn-faceless-h-m-loose-fit-zip-hoodie-g",
+       "title": "Oct 28 · Worn, faceless · H&M Loose-Fit Zip Hoodie - G",
+       "product": "239664"
+      },
+      {
+       "sid": "oct-28-worn-faceless-h-m-loose-fit-zip-hoodie-d",
+       "title": "Oct 28 · Worn, faceless · H&M Loose-Fit Zip Hoodie - D",
+       "product": "5a73a3"
+      }
+     ]
     },
     {
      "id": "held-0",
@@ -181,21 +258,29 @@
      "label": "Holding the item",
      "setup": "Hand-held close-up (shoes, gadgets, tags)",
      "tip": "\"I think I just found the perfect…\" Good for side products.",
+     "light": "Key (circle) close and low to one side, grazing across the item, ~50%, so the knit or waffle texture pops. Fill panel 1 opposite, ~20%. Fill panel 2 off. Keep your hand and phone from shadowing the item; plain background.",
+     "light_min": 8,
      "channel": "c4a9a3",
      "channel_name": "AndysBestFinds",
      "pov": "me",
      "items": [
       {
-       "product": "c9a20a",
-       "name": "H&M Loose Fit Sweatpants",
+       "product": "239664",
+       "name": "H&M Loose-Fit Zip Hoodie - Grey Marl",
        "takes": 2
       }
      ],
      "posts": 2,
      "script": "7444a4",
-     "minutes": 12,
+     "minutes": 10,
      "edit_minutes": 1,
-     "projects": []
+     "projects": [
+      {
+       "sid": "oct-28-holding-the-item-h-m-loose-fit-zip-hoodie",
+       "title": "Oct 28 · Holding the item · H&M Loose-Fit Zip Hoodie - G",
+       "product": "239664"
+      }
+     ]
     },
     {
      "id": "skit-0",
@@ -203,13 +288,15 @@
      "label": "Two-person skit / POV",
      "setup": "Outside or by the car, both of you",
      "tip": "\"Wait, where'd you get those?\" The same exchange for each product.",
+     "light": "Outside: no lights; open shade (the shady side of the house or car) or golden hour, both of you facing the light. Inside: key (circle) in front between you, ~70%; one fill panel at 45° on each side, ~35%, so both of you are lit the same.",
+     "light_min": 10,
      "channel": "c4a9a3",
      "channel_name": "AndysBestFinds",
      "pov": "me",
      "items": [
       {
-       "product": "c9a20a",
-       "name": "H&M Loose Fit Sweatpants",
+       "product": "58c082",
+       "name": "Old Navy Waffle Henley - Jurassic Green",
        "takes": 2
       }
      ],
@@ -217,7 +304,13 @@
      "script": "1a7555",
      "minutes": 15,
      "edit_minutes": 2,
-     "projects": []
+     "projects": [
+      {
+       "sid": "oct-28-two-person-skit-pov-old-navy-waffle-henle",
+       "title": "Oct 28 · Two-person skit / POV · Old Navy Waffle Henley - Jur",
+       "product": "58c082"
+      }
+     ]
     },
     {
      "id": "other-0",
@@ -225,13 +318,15 @@
      "label": "Brand deal / trend / no-product",
      "setup": "Anything",
      "tip": "A brand deal or a non-product post that can go wide.",
+     "light": "Match the setup it borrows: key (circle) at 45°, fill panel opposite at about half power, second panel as rim or off. All at 5600K, room lights off.",
+     "light_min": 10,
      "channel": "c4a9a3",
      "channel_name": "AndysBestFinds",
      "pov": "me",
      "items": [
       {
-       "product": "c9a20a",
-       "name": "H&M Loose Fit Sweatpants",
+       "product": "58c082",
+       "name": "Old Navy Waffle Henley - Jurassic Green",
        "takes": 1
       }
      ],
@@ -239,7 +334,13 @@
      "script": null,
      "minutes": 15,
      "edit_minutes": 3,
-     "projects": []
+     "projects": [
+      {
+       "sid": "oct-28-brand-deal-trend-no-product-old-navy-waff",
+       "title": "Oct 28 · Brand deal / trend / no-product · Old Navy Waffle Henley - Jur",
+       "product": "58c082"
+      }
+     ]
     }
    ],
    "posts": [
@@ -247,8 +348,8 @@
      "set": "carousel-0",
      "format": "carousel",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "adb964",
+     "name": "H&M Loose Fit Sweatpants - Light Grey Marl",
      "done": false,
      "time": "15:08"
     },
@@ -256,8 +357,8 @@
      "set": "flatlay_vo-0",
      "format": "flatlay_vo",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "97d0e6",
+     "name": "H&M Loose Fit Sweatpants - Dark Grey",
      "done": false,
      "time": "15:22"
     },
@@ -265,8 +366,8 @@
      "set": "worn-0",
      "format": "worn",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "239664",
+     "name": "H&M Loose-Fit Zip Hoodie - Grey Marl",
      "done": false,
      "time": "15:38"
     },
@@ -274,8 +375,8 @@
      "set": "held-0",
      "format": "held",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "239664",
+     "name": "H&M Loose-Fit Zip Hoodie - Grey Marl",
      "done": false,
      "time": "15:52"
     },
@@ -283,8 +384,8 @@
      "set": "skit-0",
      "format": "skit",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "58c082",
+     "name": "Old Navy Waffle Henley - Jurassic Green",
      "done": false,
      "time": "16:08"
     },
@@ -292,8 +393,8 @@
      "set": "other-0",
      "format": "other",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "58c082",
+     "name": "Old Navy Waffle Henley - Jurassic Green",
      "done": false,
      "time": "16:22"
     },
@@ -301,8 +402,8 @@
      "set": "carousel-0",
      "format": "carousel",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "97d0e6",
+     "name": "H&M Loose Fit Sweatpants - Dark Grey",
      "done": false,
      "time": "16:38"
     },
@@ -310,8 +411,8 @@
      "set": "flatlay_vo-0",
      "format": "flatlay_vo",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "97d0e6",
+     "name": "H&M Loose Fit Sweatpants - Dark Grey",
      "done": false,
      "time": "16:52"
     },
@@ -319,8 +420,8 @@
      "set": "worn-0",
      "format": "worn",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "239664",
+     "name": "H&M Loose-Fit Zip Hoodie - Grey Marl",
      "done": false,
      "time": "17:08"
     },
@@ -328,8 +429,8 @@
      "set": "held-0",
      "format": "held",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "239664",
+     "name": "H&M Loose-Fit Zip Hoodie - Grey Marl",
      "done": false,
      "time": "17:22"
     },
@@ -337,8 +438,8 @@
      "set": "skit-0",
      "format": "skit",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "58c082",
+     "name": "Old Navy Waffle Henley - Jurassic Green",
      "done": false,
      "time": "17:38"
     },
@@ -346,8 +447,8 @@
      "set": "carousel-0",
      "format": "carousel",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "f1fed3",
+     "name": "H&M Loose-Fit Zip Hoodie - Dark Brown",
      "done": false,
      "time": "17:52"
     },
@@ -355,8 +456,8 @@
      "set": "flatlay_vo-0",
      "format": "flatlay_vo",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "97d0e6",
+     "name": "H&M Loose Fit Sweatpants - Dark Grey",
      "done": false,
      "time": "18:08"
     },
@@ -364,8 +465,8 @@
      "set": "worn-0",
      "format": "worn",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "239664",
+     "name": "H&M Loose-Fit Zip Hoodie - Grey Marl",
      "done": false,
      "time": "18:22"
     },
@@ -373,8 +474,8 @@
      "set": "carousel-0",
      "format": "carousel",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "239664",
+     "name": "H&M Loose-Fit Zip Hoodie - Grey Marl",
      "done": false,
      "time": "18:38"
     },
@@ -382,8 +483,8 @@
      "set": "flatlay_vo-0",
      "format": "flatlay_vo",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "f1fed3",
+     "name": "H&M Loose-Fit Zip Hoodie - Dark Brown",
      "done": false,
      "time": "18:52"
     },
@@ -391,8 +492,8 @@
      "set": "worn-0",
      "format": "worn",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "5a73a3",
+     "name": "H&M Loose-Fit Zip Hoodie - Dark Khaki Green",
      "done": false,
      "time": "19:08"
     },
@@ -400,8 +501,8 @@
      "set": "carousel-0",
      "format": "carousel",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "5a73a3",
+     "name": "H&M Loose-Fit Zip Hoodie - Dark Khaki Green",
      "done": false,
      "time": "19:22"
     },
@@ -409,8 +510,8 @@
      "set": "flatlay_vo-0",
      "format": "flatlay_vo",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "f1fed3",
+     "name": "H&M Loose-Fit Zip Hoodie - Dark Brown",
      "done": false,
      "time": "19:38"
     },
@@ -418,19 +519,18 @@
      "set": "flatlay_vo-0",
      "format": "flatlay_vo",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "f1fed3",
+     "name": "H&M Loose-Fit Zip Hoodie - Dark Brown",
      "done": false,
      "time": "19:52"
     }
    ],
    "blocks": [
     {
-     "kind": "shoot",
-     "title": "Shoot: Flat-lay carousel · AndysBestFinds",
+     "kind": "prep",
+     "title": "Prep: pull the day's pieces, steam, de-lint, tags off, set up the floor + bed",
      "start": "07:30",
-     "end": "07:55",
-     "set": "carousel-0"
+     "end": "08:00"
     },
     {
      "kind": "gym",
@@ -446,50 +546,45 @@
     },
     {
      "kind": "shoot",
-     "title": "Shoot: Flat-lay voiceover video · AndysBestFinds",
+     "title": "Shoot: Flat-lay carousel · AndysBestFinds",
      "start": "09:40",
-     "end": "09:56",
+     "end": "10:55",
+     "set": "carousel-0"
+    },
+    {
+     "kind": "shoot",
+     "title": "Shoot: Flat-lay voiceover video · AndysBestFinds",
+     "start": "10:55",
+     "end": "11:11",
      "set": "flatlay_vo-0"
     },
     {
      "kind": "shoot",
      "title": "Shoot: Worn, faceless · AndysBestFinds",
-     "start": "09:56",
-     "end": "10:14",
+     "start": "11:11",
+     "end": "11:34",
      "set": "worn-0"
     },
     {
      "kind": "shoot",
      "title": "Shoot: Holding the item · AndysBestFinds",
-     "start": "10:14",
-     "end": "10:26",
+     "start": "11:34",
+     "end": "11:44",
      "set": "held-0"
     },
     {
      "kind": "shoot",
      "title": "Shoot: Two-person skit / POV · AndysBestFinds",
-     "start": "10:26",
-     "end": "10:41",
+     "start": "11:44",
+     "end": "11:59",
      "set": "skit-0"
     },
     {
      "kind": "shoot",
      "title": "Shoot: Brand deal / trend / no-product · AndysBestFinds",
-     "start": "10:41",
-     "end": "10:56",
+     "start": "11:59",
+     "end": "12:14",
      "set": "other-0"
-    },
-    {
-     "kind": "edit",
-     "title": "Edit + review (20 posts: carousels assembled, videos checked)",
-     "start": "10:56",
-     "end": "11:19"
-    },
-    {
-     "kind": "research",
-     "title": "Research: Analytics, competitor tracker, next lineup",
-     "start": "11:19",
-     "end": "11:49"
     },
     {
      "kind": "meal",
@@ -498,8 +593,26 @@
      "end": "13:00"
     },
     {
+     "kind": "edit",
+     "title": "Edit + review (20 posts: carousels assembled, videos checked)",
+     "start": "13:00",
+     "end": "13:28"
+    },
+    {
      "kind": "post",
-     "title": "Posting window: 20 posts, one every ~15 min per channel",
+     "title": "Schedule 20 posts in TikTok Studio (times in the posting schedule)",
+     "start": "13:28",
+     "end": "13:58"
+    },
+    {
+     "kind": "research",
+     "title": "Research: Analytics, competitor tracker, next lineup",
+     "start": "13:58",
+     "end": "14:28"
+    },
+    {
+     "kind": "live",
+     "title": "Scheduled posts go live: 20, nothing to do",
      "start": "15:00",
      "end": "20:00"
     },
@@ -510,10 +623,11 @@
      "end": "19:10"
     }
    ],
-   "generated": "2026-10-27T13:56"
+   "generated": "2026-10-27T19:02",
+   "blocks_done": []
   },
-  "2026-10-27": {
-   "date": "2026-10-27",
+  "2026-10-29": {
+   "date": "2026-10-29",
    "season": "fall",
    "posts_per_channel": 20,
    "channels": 1,
@@ -523,22 +637,70 @@
      "format": "carousel",
      "label": "Flat-lay carousel",
      "setup": "Wood floor, top-down",
-     "tip": "5-7 photos of the item laid flat, one line of on-image text. Brings the reach.",
+     "tip": "Style one outfit around the item on the floor, 5-7 photos, one line of on-image text. Brings the reach. Keep the outfit and swap only the colourway between carousels.",
+     "light": "Key (circle) high above one end of the outfit, angled down at 45°, ~70%. Fill panel 1 low on the opposite side, ~30%, to soften shadows. Fill panel 2 off, or low across the far end if the floor looks uneven. Room lights off, all three at 5600K. Phone straight above; lock exposure and white balance; same spot every carousel.",
+     "light_min": 15,
      "channel": "c4a9a3",
      "channel_name": "AndysBestFinds",
      "pov": "me",
      "items": [
       {
-       "product": "c9a20a",
-       "name": "H&M Loose Fit Sweatpants",
-       "takes": 5
+       "product": "8e26fd",
+       "name": "Old Navy Waffle Henley - In The Navy",
+       "takes": 1
+      },
+      {
+       "product": "70db4e",
+       "name": "Old Navy Long-Sleeve Waffle Crew - Heritage Green",
+       "takes": 1
+      },
+      {
+       "product": "9bbabf",
+       "name": "Old Navy Long-Sleeve Waffle Crew - Sea Salt",
+       "takes": 1
+      },
+      {
+       "product": "27ab82",
+       "name": "Old Navy Long-Sleeve Waffle Crew - Dark Walnut",
+       "takes": 1
+      },
+      {
+       "product": "772dcf",
+       "name": "Old Navy Crew-Neck Sweater - Brown Heather",
+       "takes": 1
       }
      ],
      "posts": 5,
      "script": "b289a0",
-     "minutes": 25,
-     "edit_minutes": 10,
-     "projects": []
+     "minutes": 75,
+     "edit_minutes": 15,
+     "projects": [
+      {
+       "sid": "oct-29-flat-lay-carousel-old-navy-waffle-henley-",
+       "title": "Oct 29 · Flat-lay carousel · Old Navy Waffle Henley - In",
+       "product": "8e26fd"
+      },
+      {
+       "sid": "oct-29-flat-lay-carousel-old-navy-long-sleeve-wa",
+       "title": "Oct 29 · Flat-lay carousel · Old Navy Long-Sleeve Waffle",
+       "product": "70db4e"
+      },
+      {
+       "sid": "oct-29-flat-lay-carousel-old-navy-long-sleeve-wa-2",
+       "title": "Oct 29 · Flat-lay carousel · Old Navy Long-Sleeve Waffle",
+       "product": "9bbabf"
+      },
+      {
+       "sid": "oct-29-flat-lay-carousel-old-navy-long-sleeve-wa-3",
+       "title": "Oct 29 · Flat-lay carousel · Old Navy Long-Sleeve Waffle",
+       "product": "27ab82"
+      },
+      {
+       "sid": "oct-29-flat-lay-carousel-old-navy-crew-neck-swea",
+       "title": "Oct 29 · Flat-lay carousel · Old Navy Crew-Neck Sweater -",
+       "product": "772dcf"
+      }
+     ]
     },
     {
      "id": "flatlay_vo-0",
@@ -546,21 +708,39 @@
      "label": "Flat-lay voiceover video",
      "setup": "White bed or couch, hand pointing",
      "tip": "One take, ~20 s, read the sale script while pointing at the item.",
+     "light": "Key (circle) at 45° to one side of the bed, above it, ~60%. Fill panel 1 on the other side, ~30%. Fill panel 2 above or behind the bed, low, so the white sheets light evenly. Tap to lock, then drop exposure a touch so the whites don't blow out. Don't move anything between takes.",
+     "light_min": 10,
      "channel": "c4a9a3",
      "channel_name": "AndysBestFinds",
      "pov": "me",
      "items": [
       {
-       "product": "c9a20a",
-       "name": "H&M Loose Fit Sweatpants",
-       "takes": 6
+       "product": "70db4e",
+       "name": "Old Navy Long-Sleeve Waffle Crew - Heritage Green",
+       "takes": 3
+      },
+      {
+       "product": "9bbabf",
+       "name": "Old Navy Long-Sleeve Waffle Crew - Sea Salt",
+       "takes": 3
       }
      ],
      "posts": 6,
      "script": "912ed1",
      "minutes": 16,
      "edit_minutes": 4,
-     "projects": []
+     "projects": [
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-old-navy-long-sl",
+       "title": "Oct 29 · Flat-lay voiceover video · Old Navy Long-Sleeve Waffle",
+       "product": "70db4e"
+      },
+      {
+       "sid": "oct-29-flat-lay-voiceover-video-old-navy-long-sl-2",
+       "title": "Oct 29 · Flat-lay voiceover video · Old Navy Long-Sleeve Waffle",
+       "product": "9bbabf"
+      }
+     ]
     },
     {
      "id": "worn-0",
@@ -568,21 +748,39 @@
      "label": "Worn, faceless",
      "setup": "Bedroom, waist-down",
      "tip": "Wear it, film waist-down, say your height and size.",
+     "light": "Key (circle) in front at 45°, center at chest height, tilted down toward the waist, ~70%. Fill panel 1 on the other side, ~35%, so the fabric shows. Fill panel 2 behind and to the side, low, as a rim light that outlines the fit against the background. Never a window behind you. Tape a mark on the floor so every take matches.",
+     "light_min": 15,
      "channel": "c4a9a3",
      "channel_name": "AndysBestFinds",
      "pov": "me",
      "items": [
       {
-       "product": "c9a20a",
-       "name": "H&M Loose Fit Sweatpants",
-       "takes": 4
+       "product": "9bbabf",
+       "name": "Old Navy Long-Sleeve Waffle Crew - Sea Salt",
+       "takes": 3
+      },
+      {
+       "product": "27ab82",
+       "name": "Old Navy Long-Sleeve Waffle Crew - Dark Walnut",
+       "takes": 1
       }
      ],
      "posts": 4,
      "script": "75f67d",
-     "minutes": 18,
+     "minutes": 23,
      "edit_minutes": 3,
-     "projects": []
+     "projects": [
+      {
+       "sid": "oct-29-worn-faceless-old-navy-long-sleeve-waffle",
+       "title": "Oct 29 · Worn, faceless · Old Navy Long-Sleeve Waffle",
+       "product": "9bbabf"
+      },
+      {
+       "sid": "oct-29-worn-faceless-old-navy-long-sleeve-waffle-2",
+       "title": "Oct 29 · Worn, faceless · Old Navy Long-Sleeve Waffle",
+       "product": "27ab82"
+      }
+     ]
     },
     {
      "id": "held-0",
@@ -590,21 +788,29 @@
      "label": "Holding the item",
      "setup": "Hand-held close-up (shoes, gadgets, tags)",
      "tip": "\"I think I just found the perfect…\" Good for side products.",
+     "light": "Key (circle) close and low to one side, grazing across the item, ~50%, so the knit or waffle texture pops. Fill panel 1 opposite, ~20%. Fill panel 2 off. Keep your hand and phone from shadowing the item; plain background.",
+     "light_min": 8,
      "channel": "c4a9a3",
      "channel_name": "AndysBestFinds",
      "pov": "me",
      "items": [
       {
-       "product": "c9a20a",
-       "name": "H&M Loose Fit Sweatpants",
+       "product": "27ab82",
+       "name": "Old Navy Long-Sleeve Waffle Crew - Dark Walnut",
        "takes": 2
       }
      ],
      "posts": 2,
      "script": "7444a4",
-     "minutes": 12,
+     "minutes": 10,
      "edit_minutes": 1,
-     "projects": []
+     "projects": [
+      {
+       "sid": "oct-29-holding-the-item-old-navy-long-sleeve-waf",
+       "title": "Oct 29 · Holding the item · Old Navy Long-Sleeve Waffle",
+       "product": "27ab82"
+      }
+     ]
     },
     {
      "id": "skit-0",
@@ -612,13 +818,15 @@
      "label": "Two-person skit / POV",
      "setup": "Outside or by the car, both of you",
      "tip": "\"Wait, where'd you get those?\" The same exchange for each product.",
+     "light": "Outside: no lights; open shade (the shady side of the house or car) or golden hour, both of you facing the light. Inside: key (circle) in front between you, ~70%; one fill panel at 45° on each side, ~35%, so both of you are lit the same.",
+     "light_min": 10,
      "channel": "c4a9a3",
      "channel_name": "AndysBestFinds",
      "pov": "me",
      "items": [
       {
-       "product": "c9a20a",
-       "name": "H&M Loose Fit Sweatpants",
+       "product": "772dcf",
+       "name": "Old Navy Crew-Neck Sweater - Brown Heather",
        "takes": 2
       }
      ],
@@ -626,7 +834,13 @@
      "script": "1a7555",
      "minutes": 15,
      "edit_minutes": 2,
-     "projects": []
+     "projects": [
+      {
+       "sid": "oct-29-two-person-skit-pov-old-navy-crew-neck-sw",
+       "title": "Oct 29 · Two-person skit / POV · Old Navy Crew-Neck Sweater -",
+       "product": "772dcf"
+      }
+     ]
     },
     {
      "id": "other-0",
@@ -634,13 +848,15 @@
      "label": "Brand deal / trend / no-product",
      "setup": "Anything",
      "tip": "A brand deal or a non-product post that can go wide.",
+     "light": "Match the setup it borrows: key (circle) at 45°, fill panel opposite at about half power, second panel as rim or off. All at 5600K, room lights off.",
+     "light_min": 10,
      "channel": "c4a9a3",
      "channel_name": "AndysBestFinds",
      "pov": "me",
      "items": [
       {
-       "product": "c9a20a",
-       "name": "H&M Loose Fit Sweatpants",
+       "product": "6838c7",
+       "name": "Old Navy Crew-Neck Sweater - Cozy Cashmere",
        "takes": 1
       }
      ],
@@ -648,7 +864,13 @@
      "script": null,
      "minutes": 15,
      "edit_minutes": 3,
-     "projects": []
+     "projects": [
+      {
+       "sid": "oct-29-brand-deal-trend-no-product-old-navy-crew",
+       "title": "Oct 29 · Brand deal / trend / no-product · Old Navy Crew-Neck Sweater -",
+       "product": "6838c7"
+      }
+     ]
     }
    ],
    "posts": [
@@ -656,8 +878,8 @@
      "set": "carousel-0",
      "format": "carousel",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "8e26fd",
+     "name": "Old Navy Waffle Henley - In The Navy",
      "done": false,
      "time": "15:08"
     },
@@ -665,8 +887,8 @@
      "set": "flatlay_vo-0",
      "format": "flatlay_vo",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "70db4e",
+     "name": "Old Navy Long-Sleeve Waffle Crew - Heritage Green",
      "done": false,
      "time": "15:22"
     },
@@ -674,8 +896,8 @@
      "set": "worn-0",
      "format": "worn",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "9bbabf",
+     "name": "Old Navy Long-Sleeve Waffle Crew - Sea Salt",
      "done": false,
      "time": "15:38"
     },
@@ -683,8 +905,8 @@
      "set": "held-0",
      "format": "held",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "27ab82",
+     "name": "Old Navy Long-Sleeve Waffle Crew - Dark Walnut",
      "done": false,
      "time": "15:52"
     },
@@ -692,8 +914,8 @@
      "set": "skit-0",
      "format": "skit",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "772dcf",
+     "name": "Old Navy Crew-Neck Sweater - Brown Heather",
      "done": false,
      "time": "16:08"
     },
@@ -701,8 +923,8 @@
      "set": "other-0",
      "format": "other",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "6838c7",
+     "name": "Old Navy Crew-Neck Sweater - Cozy Cashmere",
      "done": false,
      "time": "16:22"
     },
@@ -710,8 +932,8 @@
      "set": "carousel-0",
      "format": "carousel",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "70db4e",
+     "name": "Old Navy Long-Sleeve Waffle Crew - Heritage Green",
      "done": false,
      "time": "16:38"
     },
@@ -719,8 +941,8 @@
      "set": "flatlay_vo-0",
      "format": "flatlay_vo",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "70db4e",
+     "name": "Old Navy Long-Sleeve Waffle Crew - Heritage Green",
      "done": false,
      "time": "16:52"
     },
@@ -728,8 +950,8 @@
      "set": "worn-0",
      "format": "worn",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "9bbabf",
+     "name": "Old Navy Long-Sleeve Waffle Crew - Sea Salt",
      "done": false,
      "time": "17:08"
     },
@@ -737,8 +959,8 @@
      "set": "held-0",
      "format": "held",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "27ab82",
+     "name": "Old Navy Long-Sleeve Waffle Crew - Dark Walnut",
      "done": false,
      "time": "17:22"
     },
@@ -746,8 +968,8 @@
      "set": "skit-0",
      "format": "skit",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "772dcf",
+     "name": "Old Navy Crew-Neck Sweater - Brown Heather",
      "done": false,
      "time": "17:38"
     },
@@ -755,8 +977,8 @@
      "set": "carousel-0",
      "format": "carousel",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "9bbabf",
+     "name": "Old Navy Long-Sleeve Waffle Crew - Sea Salt",
      "done": false,
      "time": "17:52"
     },
@@ -764,8 +986,8 @@
      "set": "flatlay_vo-0",
      "format": "flatlay_vo",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "70db4e",
+     "name": "Old Navy Long-Sleeve Waffle Crew - Heritage Green",
      "done": false,
      "time": "18:08"
     },
@@ -773,8 +995,8 @@
      "set": "worn-0",
      "format": "worn",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "9bbabf",
+     "name": "Old Navy Long-Sleeve Waffle Crew - Sea Salt",
      "done": false,
      "time": "18:22"
     },
@@ -782,8 +1004,8 @@
      "set": "carousel-0",
      "format": "carousel",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "27ab82",
+     "name": "Old Navy Long-Sleeve Waffle Crew - Dark Walnut",
      "done": false,
      "time": "18:38"
     },
@@ -791,8 +1013,8 @@
      "set": "flatlay_vo-0",
      "format": "flatlay_vo",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "9bbabf",
+     "name": "Old Navy Long-Sleeve Waffle Crew - Sea Salt",
      "done": false,
      "time": "18:52"
     },
@@ -800,8 +1022,8 @@
      "set": "worn-0",
      "format": "worn",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "27ab82",
+     "name": "Old Navy Long-Sleeve Waffle Crew - Dark Walnut",
      "done": false,
      "time": "19:08"
     },
@@ -809,8 +1031,8 @@
      "set": "carousel-0",
      "format": "carousel",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "772dcf",
+     "name": "Old Navy Crew-Neck Sweater - Brown Heather",
      "done": false,
      "time": "19:22"
     },
@@ -818,8 +1040,8 @@
      "set": "flatlay_vo-0",
      "format": "flatlay_vo",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "9bbabf",
+     "name": "Old Navy Long-Sleeve Waffle Crew - Sea Salt",
      "done": false,
      "time": "19:38"
     },
@@ -827,19 +1049,18 @@
      "set": "flatlay_vo-0",
      "format": "flatlay_vo",
      "channel": "c4a9a3",
-     "product": "c9a20a",
-     "name": "H&M Loose Fit Sweatpants",
+     "product": "9bbabf",
+     "name": "Old Navy Long-Sleeve Waffle Crew - Sea Salt",
      "done": false,
      "time": "19:52"
     }
    ],
    "blocks": [
     {
-     "kind": "shoot",
-     "title": "Shoot: Flat-lay carousel · AndysBestFinds",
+     "kind": "prep",
+     "title": "Prep: pull the day's pieces, steam, de-lint, tags off, set up the floor + bed",
      "start": "07:30",
-     "end": "07:55",
-     "set": "carousel-0"
+     "end": "08:00"
     },
     {
      "kind": "gym",
@@ -855,50 +1076,45 @@
     },
     {
      "kind": "shoot",
-     "title": "Shoot: Flat-lay voiceover video · AndysBestFinds",
+     "title": "Shoot: Flat-lay carousel · AndysBestFinds",
      "start": "09:40",
-     "end": "09:56",
+     "end": "10:55",
+     "set": "carousel-0"
+    },
+    {
+     "kind": "shoot",
+     "title": "Shoot: Flat-lay voiceover video · AndysBestFinds",
+     "start": "10:55",
+     "end": "11:11",
      "set": "flatlay_vo-0"
     },
     {
      "kind": "shoot",
      "title": "Shoot: Worn, faceless · AndysBestFinds",
-     "start": "09:56",
-     "end": "10:14",
+     "start": "11:11",
+     "end": "11:34",
      "set": "worn-0"
     },
     {
      "kind": "shoot",
      "title": "Shoot: Holding the item · AndysBestFinds",
-     "start": "10:14",
-     "end": "10:26",
+     "start": "11:34",
+     "end": "11:44",
      "set": "held-0"
     },
     {
      "kind": "shoot",
      "title": "Shoot: Two-person skit / POV · AndysBestFinds",
-     "start": "10:26",
-     "end": "10:41",
+     "start": "11:44",
+     "end": "11:59",
      "set": "skit-0"
     },
     {
      "kind": "shoot",
      "title": "Shoot: Brand deal / trend / no-product · AndysBestFinds",
-     "start": "10:41",
-     "end": "10:56",
+     "start": "11:59",
+     "end": "12:14",
      "set": "other-0"
-    },
-    {
-     "kind": "edit",
-     "title": "Edit + review (20 posts: carousels assembled, videos checked)",
-     "start": "10:56",
-     "end": "11:19"
-    },
-    {
-     "kind": "research",
-     "title": "Research: Analytics, competitor tracker, next lineup",
-     "start": "11:19",
-     "end": "11:49"
     },
     {
      "kind": "meal",
@@ -907,8 +1123,26 @@
      "end": "13:00"
     },
     {
+     "kind": "edit",
+     "title": "Edit + review (20 posts: carousels assembled, videos checked)",
+     "start": "13:00",
+     "end": "13:28"
+    },
+    {
      "kind": "post",
-     "title": "Posting window: 20 posts, one every ~15 min per channel",
+     "title": "Schedule 20 posts in TikTok Studio (times in the posting schedule)",
+     "start": "13:28",
+     "end": "13:58"
+    },
+    {
+     "kind": "research",
+     "title": "Research: Analytics, competitor tracker, next lineup",
+     "start": "13:58",
+     "end": "14:28"
+    },
+    {
+     "kind": "live",
+     "title": "Scheduled posts go live: 20, nothing to do",
      "start": "15:00",
      "end": "20:00"
     },
@@ -919,7 +1153,538 @@
      "end": "19:10"
     }
    ],
-   "generated": "2026-10-27T13:59"
+   "generated": "2026-10-27T19:02",
+   "blocks_done": []
+  },
+  "2026-10-30": {
+   "date": "2026-10-30",
+   "season": "fall",
+   "posts_per_channel": 20,
+   "channels": 1,
+   "sets": [
+    {
+     "id": "carousel-0",
+     "format": "carousel",
+     "label": "Flat-lay carousel",
+     "setup": "Wood floor, top-down",
+     "tip": "Style one outfit around the item on the floor, 5-7 photos, one line of on-image text. Brings the reach. Keep the outfit and swap only the colourway between carousels.",
+     "light": "Key (circle) high above one end of the outfit, angled down at 45°, ~70%. Fill panel 1 low on the opposite side, ~30%, to soften shadows. Fill panel 2 off, or low across the far end if the floor looks uneven. Room lights off, all three at 5600K. Phone straight above; lock exposure and white balance; same spot every carousel.",
+     "light_min": 15,
+     "channel": "c4a9a3",
+     "channel_name": "AndysBestFinds",
+     "pov": "me",
+     "items": [
+      {
+       "product": "c8cebc",
+       "name": "Old Navy 90s Double-Knee Carpenter Jeans - Black Rinse",
+       "takes": 1
+      },
+      {
+       "product": "7e1c60",
+       "name": "H&M Loose Fit Sweatpants - Black",
+       "takes": 1
+      },
+      {
+       "product": "adb964",
+       "name": "H&M Loose Fit Sweatpants - Light Grey Marl",
+       "takes": 1
+      },
+      {
+       "product": "97d0e6",
+       "name": "H&M Loose Fit Sweatpants - Dark Grey",
+       "takes": 1
+      },
+      {
+       "product": "f1fed3",
+       "name": "H&M Loose-Fit Zip Hoodie - Dark Brown",
+       "takes": 1
+      }
+     ],
+     "posts": 5,
+     "script": "b289a0",
+     "minutes": 75,
+     "edit_minutes": 15,
+     "projects": [
+      {
+       "sid": "oct-30-flat-lay-carousel-old-navy-90s-double-kne",
+       "title": "Oct 30 · Flat-lay carousel · Old Navy 90s Double-Knee Car",
+       "product": "c8cebc"
+      },
+      {
+       "sid": "oct-30-flat-lay-carousel-h-m-loose-fit-sweatpant",
+       "title": "Oct 30 · Flat-lay carousel · H&M Loose Fit Sweatpants - B",
+       "product": "7e1c60"
+      },
+      {
+       "sid": "oct-30-flat-lay-carousel-h-m-loose-fit-sweatpant-2",
+       "title": "Oct 30 · Flat-lay carousel · H&M Loose Fit Sweatpants - L",
+       "product": "adb964"
+      },
+      {
+       "sid": "oct-30-flat-lay-carousel-h-m-loose-fit-sweatpant-3",
+       "title": "Oct 30 · Flat-lay carousel · H&M Loose Fit Sweatpants - D",
+       "product": "97d0e6"
+      },
+      {
+       "sid": "oct-30-flat-lay-carousel-h-m-loose-fit-zip-hoodi",
+       "title": "Oct 30 · Flat-lay carousel · H&M Loose-Fit Zip Hoodie - D",
+       "product": "f1fed3"
+      }
+     ]
+    },
+    {
+     "id": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "label": "Flat-lay voiceover video",
+     "setup": "White bed or couch, hand pointing",
+     "tip": "One take, ~20 s, read the sale script while pointing at the item.",
+     "light": "Key (circle) at 45° to one side of the bed, above it, ~60%. Fill panel 1 on the other side, ~30%. Fill panel 2 above or behind the bed, low, so the white sheets light evenly. Tap to lock, then drop exposure a touch so the whites don't blow out. Don't move anything between takes.",
+     "light_min": 10,
+     "channel": "c4a9a3",
+     "channel_name": "AndysBestFinds",
+     "pov": "me",
+     "items": [
+      {
+       "product": "7e1c60",
+       "name": "H&M Loose Fit Sweatpants - Black",
+       "takes": 3
+      },
+      {
+       "product": "adb964",
+       "name": "H&M Loose Fit Sweatpants - Light Grey Marl",
+       "takes": 3
+      }
+     ],
+     "posts": 6,
+     "script": "912ed1",
+     "minutes": 16,
+     "edit_minutes": 4,
+     "projects": [
+      {
+       "sid": "oct-30-flat-lay-voiceover-video-h-m-loose-fit-sw",
+       "title": "Oct 30 · Flat-lay voiceover video · H&M Loose Fit Sweatpants - B",
+       "product": "7e1c60"
+      },
+      {
+       "sid": "oct-30-flat-lay-voiceover-video-h-m-loose-fit-sw-2",
+       "title": "Oct 30 · Flat-lay voiceover video · H&M Loose Fit Sweatpants - L",
+       "product": "adb964"
+      }
+     ]
+    },
+    {
+     "id": "worn-0",
+     "format": "worn",
+     "label": "Worn, faceless",
+     "setup": "Bedroom, waist-down",
+     "tip": "Wear it, film waist-down, say your height and size.",
+     "light": "Key (circle) in front at 45°, center at chest height, tilted down toward the waist, ~70%. Fill panel 1 on the other side, ~35%, so the fabric shows. Fill panel 2 behind and to the side, low, as a rim light that outlines the fit against the background. Never a window behind you. Tape a mark on the floor so every take matches.",
+     "light_min": 15,
+     "channel": "c4a9a3",
+     "channel_name": "AndysBestFinds",
+     "pov": "me",
+     "items": [
+      {
+       "product": "97d0e6",
+       "name": "H&M Loose Fit Sweatpants - Dark Grey",
+       "takes": 3
+      },
+      {
+       "product": "f1fed3",
+       "name": "H&M Loose-Fit Zip Hoodie - Dark Brown",
+       "takes": 1
+      }
+     ],
+     "posts": 4,
+     "script": "75f67d",
+     "minutes": 23,
+     "edit_minutes": 3,
+     "projects": [
+      {
+       "sid": "oct-30-worn-faceless-h-m-loose-fit-sweatpants-d",
+       "title": "Oct 30 · Worn, faceless · H&M Loose Fit Sweatpants - D",
+       "product": "97d0e6"
+      },
+      {
+       "sid": "oct-30-worn-faceless-h-m-loose-fit-zip-hoodie-d",
+       "title": "Oct 30 · Worn, faceless · H&M Loose-Fit Zip Hoodie - D",
+       "product": "f1fed3"
+      }
+     ]
+    },
+    {
+     "id": "held-0",
+     "format": "held",
+     "label": "Holding the item",
+     "setup": "Hand-held close-up (shoes, gadgets, tags)",
+     "tip": "\"I think I just found the perfect…\" Good for side products.",
+     "light": "Key (circle) close and low to one side, grazing across the item, ~50%, so the knit or waffle texture pops. Fill panel 1 opposite, ~20%. Fill panel 2 off. Keep your hand and phone from shadowing the item; plain background.",
+     "light_min": 8,
+     "channel": "c4a9a3",
+     "channel_name": "AndysBestFinds",
+     "pov": "me",
+     "items": [
+      {
+       "product": "97d0e6",
+       "name": "H&M Loose Fit Sweatpants - Dark Grey",
+       "takes": 2
+      }
+     ],
+     "posts": 2,
+     "script": "7444a4",
+     "minutes": 10,
+     "edit_minutes": 1,
+     "projects": [
+      {
+       "sid": "oct-30-holding-the-item-h-m-loose-fit-sweatpants",
+       "title": "Oct 30 · Holding the item · H&M Loose Fit Sweatpants - D",
+       "product": "97d0e6"
+      }
+     ]
+    },
+    {
+     "id": "skit-0",
+     "format": "skit",
+     "label": "Two-person skit / POV",
+     "setup": "Outside or by the car, both of you",
+     "tip": "\"Wait, where'd you get those?\" The same exchange for each product.",
+     "light": "Outside: no lights; open shade (the shady side of the house or car) or golden hour, both of you facing the light. Inside: key (circle) in front between you, ~70%; one fill panel at 45° on each side, ~35%, so both of you are lit the same.",
+     "light_min": 10,
+     "channel": "c4a9a3",
+     "channel_name": "AndysBestFinds",
+     "pov": "me",
+     "items": [
+      {
+       "product": "239664",
+       "name": "H&M Loose-Fit Zip Hoodie - Grey Marl",
+       "takes": 2
+      }
+     ],
+     "posts": 2,
+     "script": "1a7555",
+     "minutes": 15,
+     "edit_minutes": 2,
+     "projects": [
+      {
+       "sid": "oct-30-two-person-skit-pov-h-m-loose-fit-zip-hoo",
+       "title": "Oct 30 · Two-person skit / POV · H&M Loose-Fit Zip Hoodie - G",
+       "product": "239664"
+      }
+     ]
+    },
+    {
+     "id": "other-0",
+     "format": "other",
+     "label": "Brand deal / trend / no-product",
+     "setup": "Anything",
+     "tip": "A brand deal or a non-product post that can go wide.",
+     "light": "Match the setup it borrows: key (circle) at 45°, fill panel opposite at about half power, second panel as rim or off. All at 5600K, room lights off.",
+     "light_min": 10,
+     "channel": "c4a9a3",
+     "channel_name": "AndysBestFinds",
+     "pov": "me",
+     "items": [
+      {
+       "product": "239664",
+       "name": "H&M Loose-Fit Zip Hoodie - Grey Marl",
+       "takes": 1
+      }
+     ],
+     "posts": 1,
+     "script": null,
+     "minutes": 15,
+     "edit_minutes": 3,
+     "projects": [
+      {
+       "sid": "oct-30-brand-deal-trend-no-product-h-m-loose-fit",
+       "title": "Oct 30 · Brand deal / trend / no-product · H&M Loose-Fit Zip Hoodie - G",
+       "product": "239664"
+      }
+     ]
+    }
+   ],
+   "posts": [
+    {
+     "set": "carousel-0",
+     "format": "carousel",
+     "channel": "c4a9a3",
+     "product": "c8cebc",
+     "name": "Old Navy 90s Double-Knee Carpenter Jeans - Black Rinse",
+     "done": false,
+     "time": "15:08"
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "7e1c60",
+     "name": "H&M Loose Fit Sweatpants - Black",
+     "done": false,
+     "time": "15:22"
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "97d0e6",
+     "name": "H&M Loose Fit Sweatpants - Dark Grey",
+     "done": false,
+     "time": "15:38"
+    },
+    {
+     "set": "held-0",
+     "format": "held",
+     "channel": "c4a9a3",
+     "product": "97d0e6",
+     "name": "H&M Loose Fit Sweatpants - Dark Grey",
+     "done": false,
+     "time": "15:52"
+    },
+    {
+     "set": "skit-0",
+     "format": "skit",
+     "channel": "c4a9a3",
+     "product": "239664",
+     "name": "H&M Loose-Fit Zip Hoodie - Grey Marl",
+     "done": false,
+     "time": "16:08"
+    },
+    {
+     "set": "other-0",
+     "format": "other",
+     "channel": "c4a9a3",
+     "product": "239664",
+     "name": "H&M Loose-Fit Zip Hoodie - Grey Marl",
+     "done": false,
+     "time": "16:22"
+    },
+    {
+     "set": "carousel-0",
+     "format": "carousel",
+     "channel": "c4a9a3",
+     "product": "7e1c60",
+     "name": "H&M Loose Fit Sweatpants - Black",
+     "done": false,
+     "time": "16:38"
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "7e1c60",
+     "name": "H&M Loose Fit Sweatpants - Black",
+     "done": false,
+     "time": "16:52"
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "97d0e6",
+     "name": "H&M Loose Fit Sweatpants - Dark Grey",
+     "done": false,
+     "time": "17:08"
+    },
+    {
+     "set": "held-0",
+     "format": "held",
+     "channel": "c4a9a3",
+     "product": "97d0e6",
+     "name": "H&M Loose Fit Sweatpants - Dark Grey",
+     "done": false,
+     "time": "17:22"
+    },
+    {
+     "set": "skit-0",
+     "format": "skit",
+     "channel": "c4a9a3",
+     "product": "239664",
+     "name": "H&M Loose-Fit Zip Hoodie - Grey Marl",
+     "done": false,
+     "time": "17:38"
+    },
+    {
+     "set": "carousel-0",
+     "format": "carousel",
+     "channel": "c4a9a3",
+     "product": "adb964",
+     "name": "H&M Loose Fit Sweatpants - Light Grey Marl",
+     "done": false,
+     "time": "17:52"
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "7e1c60",
+     "name": "H&M Loose Fit Sweatpants - Black",
+     "done": false,
+     "time": "18:08"
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "97d0e6",
+     "name": "H&M Loose Fit Sweatpants - Dark Grey",
+     "done": false,
+     "time": "18:22"
+    },
+    {
+     "set": "carousel-0",
+     "format": "carousel",
+     "channel": "c4a9a3",
+     "product": "97d0e6",
+     "name": "H&M Loose Fit Sweatpants - Dark Grey",
+     "done": false,
+     "time": "18:38"
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "adb964",
+     "name": "H&M Loose Fit Sweatpants - Light Grey Marl",
+     "done": false,
+     "time": "18:52"
+    },
+    {
+     "set": "worn-0",
+     "format": "worn",
+     "channel": "c4a9a3",
+     "product": "f1fed3",
+     "name": "H&M Loose-Fit Zip Hoodie - Dark Brown",
+     "done": false,
+     "time": "19:08"
+    },
+    {
+     "set": "carousel-0",
+     "format": "carousel",
+     "channel": "c4a9a3",
+     "product": "f1fed3",
+     "name": "H&M Loose-Fit Zip Hoodie - Dark Brown",
+     "done": false,
+     "time": "19:22"
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "adb964",
+     "name": "H&M Loose Fit Sweatpants - Light Grey Marl",
+     "done": false,
+     "time": "19:38"
+    },
+    {
+     "set": "flatlay_vo-0",
+     "format": "flatlay_vo",
+     "channel": "c4a9a3",
+     "product": "adb964",
+     "name": "H&M Loose Fit Sweatpants - Light Grey Marl",
+     "done": false,
+     "time": "19:52"
+    }
+   ],
+   "blocks": [
+    {
+     "kind": "prep",
+     "title": "Prep: pull the day's pieces, steam, de-lint, tags off, set up the floor + bed",
+     "start": "07:30",
+     "end": "08:00"
+    },
+    {
+     "kind": "gym",
+     "title": "Gym",
+     "start": "08:00",
+     "end": "09:15"
+    },
+    {
+     "kind": "meal",
+     "title": "Breakfast",
+     "start": "09:20",
+     "end": "09:40"
+    },
+    {
+     "kind": "shoot",
+     "title": "Shoot: Flat-lay carousel · AndysBestFinds",
+     "start": "09:40",
+     "end": "10:55",
+     "set": "carousel-0"
+    },
+    {
+     "kind": "shoot",
+     "title": "Shoot: Flat-lay voiceover video · AndysBestFinds",
+     "start": "10:55",
+     "end": "11:11",
+     "set": "flatlay_vo-0"
+    },
+    {
+     "kind": "shoot",
+     "title": "Shoot: Worn, faceless · AndysBestFinds",
+     "start": "11:11",
+     "end": "11:34",
+     "set": "worn-0"
+    },
+    {
+     "kind": "shoot",
+     "title": "Shoot: Holding the item · AndysBestFinds",
+     "start": "11:34",
+     "end": "11:44",
+     "set": "held-0"
+    },
+    {
+     "kind": "shoot",
+     "title": "Shoot: Two-person skit / POV · AndysBestFinds",
+     "start": "11:44",
+     "end": "11:59",
+     "set": "skit-0"
+    },
+    {
+     "kind": "shoot",
+     "title": "Shoot: Brand deal / trend / no-product · AndysBestFinds",
+     "start": "11:59",
+     "end": "12:14",
+     "set": "other-0"
+    },
+    {
+     "kind": "meal",
+     "title": "Lunch",
+     "start": "12:30",
+     "end": "13:00"
+    },
+    {
+     "kind": "edit",
+     "title": "Edit + review (20 posts: carousels assembled, videos checked)",
+     "start": "13:00",
+     "end": "13:28"
+    },
+    {
+     "kind": "post",
+     "title": "Schedule 20 posts in TikTok Studio (times in the posting schedule)",
+     "start": "13:28",
+     "end": "13:58"
+    },
+    {
+     "kind": "research",
+     "title": "Research: Analytics, competitor tracker, next lineup",
+     "start": "13:58",
+     "end": "14:28"
+    },
+    {
+     "kind": "live",
+     "title": "Scheduled posts go live: 20, nothing to do",
+     "start": "15:00",
+     "end": "20:00"
+    },
+    {
+     "kind": "meal",
+     "title": "Dinner",
+     "start": "18:30",
+     "end": "19:10"
+    }
+   ],
+   "generated": "2026-10-27T19:02",
+   "blocks_done": []
   }
  }
 }
