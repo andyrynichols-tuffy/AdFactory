@@ -23,8 +23,8 @@ const DG = (() => {
       <rect x="110" y="70" width="140" height="110" rx="4" fill="none" stroke="${C.tape}" stroke-dasharray="6 5" stroke-width="1.6"/>
       ${T(180, 64, "tape mark", { c: C.tape, size: 10 })}
       <rect x="150" y="98" width="60" height="54" rx="6" fill="${C.item}" fill-opacity=".3" stroke="${C.item}" stroke-width="2"/>${T(180, 129, "item", { c: C.item })}
-      ${key(70, 70, "Key ~70%, high", 150, 110)}${panel(300, 190, -30, "Fill 1 ~30%, low", 210, 140)}${panel(300, 60, 30, "Fill 2 off / low", 240, 80, true)}
-      ${phone(180, 125, 0, "", false)}${T(180, 220, "phone straight above the item (see side view)", { c: C.dim, size: 10 })}`, "Lights, from above"),
+      ${key(70, 70, "Key ~70%, high", 150, 110)}${panel(300, 178, -30, "Fill 1 ~30%, low", 210, 140)}${panel(300, 60, 30, "Fill 2 off / low", 240, 80, true)}
+      ${phone(180, 125, 0, "", false)}${T(180, 240, "phone straight above the item (see side view)", { c: C.dim, size: 10 })}`, "Lights, from above"),
     flatlay_vo: () => svg(360, 250, `
       <rect x="95" y="40" width="170" height="150" rx="10" fill="#fff" fill-opacity=".06" stroke="${C.line}"/>${T(180, 34, "white bed", { c: C.dim, size: 10 })}
       <rect x="150" y="90" width="60" height="50" rx="6" fill="${C.item}" fill-opacity=".3" stroke="${C.item}" stroke-width="2"/>${T(180, 120, "item", { c: C.item })}
