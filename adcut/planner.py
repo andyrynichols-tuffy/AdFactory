@@ -9,6 +9,7 @@ Data: ads/_planner.json {settings, days: {date: plan}}."""
 import copy
 import json
 import math
+import re
 import threading
 from datetime import date, datetime, timedelta
 
@@ -341,12 +342,55 @@ def mark(day_iso: str, k: int, done: bool) -> dict:
     return plan
 
 
+def _vars(plan, s, chan, p) -> dict:
+    """Everything a script template can ask for, for one product on one channel."""
+    own = chan.get("size_bottom") if WEARS.get(p.get("category"), "top") == "bottom" else chan.get("size_top")
+    size = own or (p.get("fills") or {}).get("size") or ""
+    fit_note = "" if own else {"S": "for a more fitted look", "M": "for a more fitted look", "L": "for a looser fit", "XL": "for a looser fit"}.get(size.upper(), "")
+    f = p.get("fills") or {}
+    base, _, color = (p.get("name") or "").partition(" - ")  # "H&M Zip Hoodie - Grey Marl" -> said as "… in grey marl"
+    plural = WEARS.get(p.get("category"), "top") == "bottom"
+    brand = p.get("brand") or ""
+    spoken = base[len(brand):].strip() if brand and base.startswith(brand) else base  # the brand is said on its own
+    feature = f.get("feature 1") or f.get("material") or f.get("fit") or f.get("style") or "fit"
+    return {**shop.product_fills(p), "season": plan["season"], "who": "I'm" if s["pov"] == "me" else "He's",
+            "product": (f"{spoken} in {color.lower()}" if color else spoken), "item": (f.get("style") or p.get("category") or "piece").lower(),
+            "height": chan.get("height") or "", "size": size, "fit note": fit_note, "feature 1": feature,
+            "feature 2": f.get("feature 2") or f.get("fit") or feature, "brand": brand or "this brand",
+            "price": p.get("price") or "a great price",
+            "it": "them" if plural else "it", "it fits": "they fit" if plural else "it fits", "It is": "They're" if plural else "It's",
+            "It has": "They've got" if plural else "It's got", "This is": "These are" if plural else "This is"}
+
+
+def _tidy(line: str) -> str:
+    """Last resort for a blank nothing could fill: drop it and the gap it leaves (never hand over '{…}')."""
+    line = shop.PH_RX.sub("", line)
+    line = re.sub(r"\s+([,.!?])", r"\1", re.sub(r"\s{2,}", " ", line)).strip()
+    return re.sub(r"^(wearing a size|in|the)\s*[,.]", "", line).strip()
+
+
+def script_for(day_iso: str, s: dict, product_id: str, plan=None) -> list:
+    """The complete script for one product in one set, line by line, nothing left to fill in.
+    Carousels: the carousel's one line of on-screen text (adcut/carouselplan.py)."""
+    d, sh = load(), shop.load()
+    plan = plan or d["days"].get(day_iso) or generate(day_iso)
+    p = shop.by_id(sh, "products", product_id) or {}
+    if s["format"] == "carousel":
+        from . import carouselplan
+        row = next((r for r in carouselplan.for_set(day_iso, s)["products"] if r["product"] == product_id), None)
+        return [row["text"]] if row else []
+    chan = next((c for c in _channels(d["settings"], sh) if c.get("account") == s["channel"]), {})
+    sc = shop.by_id(sh, "scripts", s.get("script"))
+    text = shop.fill(sc["text"] if sc else "", _vars(plan, s, chan, p))
+    lines = [ln.strip() for ln in text.splitlines() if ln.strip() and not ln.strip().startswith("[or]")]
+    return [_tidy(ln) for ln in lines if _tidy(ln)]
+
+
 def make_projects(day_iso: str, set_id: str) -> list:
     """One Ad Camera project per product in the set (its takes = the script, filmed that many times)."""
     d, sh = load(), shop.load()
     plan = d["days"].get(day_iso) or generate(day_iso)
     s = next(x for x in plan["sets"] if x["id"] == set_id)
-    chan = next((c for c in _channels(d["settings"], sh) if c.get("account") == s["channel"]), {})
     sc = shop.by_id(sh, "scripts", s.get("script"))
     label = datetime.fromisoformat(day_iso).strftime("%b %d").replace(" 0", " ")
     made = []
@@ -354,23 +398,9 @@ def make_projects(day_iso: str, set_id: str) -> list:
     for it in s["items"]:
         if not it["product"] or it["product"] in done:  # already has its project
             continue
-        p = shop.by_id(sh, "products", it["product"]) or {}
-        # size: the channel's own (one usual size) or else the sample's tag size, with how it wears (M fitted, L looser)
-        own = chan.get("size_bottom") if WEARS.get(p.get("category"), "top") == "bottom" else chan.get("size_top")
-        size = own or (p.get("fills") or {}).get("size") or ""
-        fit_note = "" if own else {"S": "for a more fitted look", "M": "for a more fitted look", "L": "for a looser fit", "XL": "for a looser fit"}.get(size.upper(), "")
-        f = p.get("fills") or {}
-        base, _, color = (p.get("name") or "").partition(" - ")  # "H&M Zip Hoodie - Grey Marl" -> said as "… in grey marl"
-        plural = WEARS.get(p.get("category"), "top") == "bottom"
-        brand = p.get("brand") or ""
-        spoken = base[len(brand):].strip() if brand and base.startswith(brand) else base  # the brand is said on its own
-        vars_ = {"season": plan["season"], "who": "I'm" if s["pov"] == "me" else "He's",
-                 "product": (f"{spoken} in {color.lower()}" if color else spoken), "item": (f.get("style") or p.get("category") or "").lower(),
-                 "height": chan.get("height") or "", "size": size, "fit note": fit_note,
-                 "it": "them" if plural else "it", "it fits": "they fit" if plural else "it fits", "It is": "They're" if plural else "It's",
-                 "It has": "They've got" if plural else "It's got", "This is": "These are" if plural else "This is"}
+        lines = script_for(day_iso, s, it["product"], plan)
         r = shop.new_video({"product": it["product"], "account": s["channel"], "script": sc["id"] if sc else None,
-                            "script_text": sc["text"] if sc else "", "vars": vars_, "assign": True,
+                            "script_text": "\n".join(lines), "assign": True,
                             "title": f"{label} · {s['label']} · {it['name'][:28]}",
                             "notes": f"{s['setup']}. {it['takes']} take{'s' if it['takes'] != 1 else ''}, near-identical. {s['tip']}\nLighting: {s.get('light', '')}"})
         made.append({"sid": r["id"], "title": r["title"], "product": it["product"]})
@@ -404,6 +434,10 @@ TEMPLATES = [  # {it}/{It is}/{This is}… follow the item: "it" for a top, "the
      "A: For real, how much?\n"
      "B: {price}, the link's right there.\n"
      "A: Okay, send it to me."),
+    ("other", "Fit check (extra slot)",
+     "Fit check: the {brand} {product}.\n"
+     "{It has} that {feature 1}, and {it fits} exactly how I wanted.\n"
+     "Would you wear this? The link's right here."),
     ("carousel", "On-image text (carousel)",
      "{season} essential: {item}\n"
      "[or] POV: you found the perfect {item} for any fit\n"
