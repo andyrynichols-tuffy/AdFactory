@@ -31,52 +31,55 @@ WEB_ICON = ROOT / "adeditor" / "app-icon.png"  # the Mac's Safari "Add to Dock" 
 
 
 def make_icon(force=False):
-    """A macOS-style app icon: a graphite squircle with a white viewfinder (Ad Camera's job) and a
-    blue record dot. The tray gets the glyph alone, white, so it reads on a dark taskbar."""
+    """The app icon (user, 2026-10-27): a white shopping bag with a play triangle (TikTok Shop) on a
+    pink-to-violet squircle. The tray gets the bag alone, white, so it reads on a dark taskbar."""
     if all(p.exists() for p in (ICON_ICO, ICON_PNG, ICON_TRAY, WEB_ICON)) and not force:
         return
+    import math
     from PIL import Image, ImageDraw, ImageFilter
     N = 1024
 
-    def glyph(d, s, off=(0, 0), white=(255, 255, 255, 255)):
-        ox, oy = off
-        w = int(56 * s)
-        L, T, R, B = ox + 300 * s, oy + 300 * s, ox + 724 * s, oy + 724 * s
-        k = 110 * s  # viewfinder corners
-        for (x, y, dx, dy) in ((L, T, 1, 1), (R, T, -1, 1), (L, B, 1, -1), (R, B, -1, -1)):
-            d.line((x, y + dy * k, x, y), fill=white, width=w)
-            d.line((x, y, x + dx * k, y), fill=white, width=w)
-            r = w / 2
-            for px, py in ((x, y + dy * k), (x + dx * k, y), (x, y)):
-                d.ellipse((px - r, py - r, px + r, py + r), fill=white)
-        c, r = ox + 512 * s, 92 * s
-        d.ellipse((c - r, oy + 512 * s - r, c + r, oy + 512 * s + r), fill=(10, 132, 255, 255))
+    def bag(d, color, hole):
+        T, B, r = 404, 808, 54
+        top_l, top_r, bot_l, bot_r = 296, 728, 262, 762
+        d.polygon([(top_l + 8, T), (top_r - 8, T), (bot_r, B - r), (bot_l, B - r)], fill=color)
+        d.rounded_rectangle((bot_l, B - 2 * r, bot_r, B), radius=r, fill=color)
+        d.rounded_rectangle((top_l, T, top_r, T + 40), radius=14, fill=color)
+        w, hx0, hx1 = 34, 404, 620  # one handle, going in through two holes
+        cx, rx, ry = (hx0 + hx1) / 2, (hx1 - hx0) / 2, 132
+        for k in range(181):
+            a = math.radians(180 + k)
+            x, y = cx + rx * math.cos(a), T + 30 + ry * math.sin(a)
+            if y < T + 2:
+                d.ellipse((x - w / 2, y - w / 2, x + w / 2, y + w / 2), fill=color)
+        for x in (hx0, hx1):
+            d.ellipse((x - 21, T + 34, x + 21, T + 76), fill=hole)
+        cx, cy, rr = 522, 620, 100
+        d.polygon([(cx - rr * .55, cy - rr), (cx - rr * .55, cy + rr), (cx + rr, cy)], fill=hole)
 
-    # the squircle, a soft vertical gradient, a hairline highlight and a drop shadow
     img = Image.new("RGBA", (N, N), (0, 0, 0, 0))
     shadow = Image.new("RGBA", (N, N), (0, 0, 0, 0))
-    ImageDraw.Draw(shadow).rounded_rectangle((100, 118, 924, 942), radius=186, fill=(0, 0, 0, 120))
-    img.alpha_composite(shadow.filter(ImageFilter.GaussianBlur(22)))
+    ImageDraw.Draw(shadow).rounded_rectangle((100, 122, 924, 946), radius=186, fill=(0, 0, 0, 90))
+    img.alpha_composite(shadow.filter(ImageFilter.GaussianBlur(24)))
     grad = Image.new("RGBA", (N, N))
     gd = ImageDraw.Draw(grad)
+    c0, c1 = (255, 92, 160), (124, 77, 255)
     for y in range(N):
-        v = int(68 - 40 * y / N)
-        gd.line((0, y, N, y), fill=(v, v, v + 2, 255))
+        t = y / N
+        gd.line((0, y, N, y), fill=tuple(int(c0[i] + (c1[i] - c0[i]) * t) for i in range(3)) + (255,))
     mask = Image.new("L", (N, N), 0)
     ImageDraw.Draw(mask).rounded_rectangle((100, 100, 924, 924), radius=186, fill=255)
     img.paste(grad, (0, 0), mask)
-    d = ImageDraw.Draw(img)
-    d.rounded_rectangle((100, 100, 924, 924), radius=186, outline=(255, 255, 255, 36), width=4)
-    glyph(d, 1.0)
+    bag(ImageDraw.Draw(img), (255, 255, 255, 255), (200, 84, 210, 255))
     big = img.resize((512, 512), Image.LANCZOS)
     big.save(ICON_PNG)
     big.save(WEB_ICON)
     tray = Image.new("RGBA", (N, N), (0, 0, 0, 0))
-    glyph(ImageDraw.Draw(tray), 1.6, off=(-307, -307))
-    tray = tray.resize((64, 64), Image.LANCZOS)
+    bag(ImageDraw.Draw(tray), (255, 255, 255, 255), (0, 0, 0, 0))
+    tray = tray.crop((200, 200, 824, 860)).resize((64, 64), Image.LANCZOS)
     tray.save(ICON_TRAY)
     sizes = [16, 24, 32, 48, 64, 128, 256]
-    frames = [(tray if n <= 24 else big).resize((n, n), Image.LANCZOS) for n in sizes]
+    frames = [big.resize((n, n), Image.LANCZOS) for n in sizes]
     frames[-1].save(ICON_ICO, sizes=[(n, n) for n in sizes], append_images=frames[:-1])
 
 

@@ -24,3 +24,26 @@
   };
   if (document.body) go(); else document.addEventListener("DOMContentLoaded", go);
 })();
+
+// the language picker lives at the bottom of the sidebar (no title bar on the main screens)
+(function () {
+  const move = () => { const lp = document.querySelector("#topbar .langPick"), sheet = document.getElementById("sheetChip");
+    if (lp && sheet) sheet.before(lp); };
+  if (document.readyState !== "loading") move(); else document.addEventListener("DOMContentLoaded", move);
+})();
+
+// collapsible sidebar (remembered on this device)
+(function () {
+  const set = on => {
+    document.getElementById("home")?.classList.toggle("sideCollapsed", on);
+    const b = document.getElementById("sideToggle");
+    if (b) b.title = b.ariaLabel = on ? "Show the sidebar" : "Hide the sidebar";
+    try { localStorage.setItem("sideCollapsed", on ? "1" : ""); } catch (e) { }
+  };
+  const init = () => {
+    let on = false; try { on = !!localStorage.getItem("sideCollapsed"); } catch (e) { }
+    set(on);
+    document.getElementById("sideToggle")?.addEventListener("click", () => set(!document.getElementById("home").classList.contains("sideCollapsed")));
+  };
+  if (document.readyState !== "loading") init(); else document.addEventListener("DOMContentLoaded", init);
+})();

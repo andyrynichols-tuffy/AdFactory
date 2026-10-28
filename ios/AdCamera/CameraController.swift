@@ -144,6 +144,10 @@ final class CameraController: NSObject, ObservableObject, AVCaptureFileOutputRec
         let config = Config.current()
         session.beginConfiguration()
         session.automaticallyConfiguresCaptureDeviceForWideColor = false   // we pick SDR ourselves
+        // voice control (VoiceControl.swift) listens on the same mic: keep the app's audio session
+        // (play-and-record, mix with others) instead of letting capture take the mic for itself
+        session.usesApplicationAudioSession = true
+        session.automaticallyConfiguresApplicationAudioSession = !VoiceControl.enabled
 
         if let v = videoInput {
             session.removeInput(v)

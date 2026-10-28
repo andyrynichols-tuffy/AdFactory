@@ -12,6 +12,7 @@ struct SettingsView: View {
     @AppStorage("mirror") private var mirror = false
     @AppStorage("lockWB") private var lockWB = true
     @AppStorage("countdown") private var countdown = 0
+    @AppStorage("voiceControl") private var voiceControl = true
     @AppStorage("zones") private var zones = true
     @AppStorage("grid") private var grid = false
     @AppStorage("prompterSize") private var prompterSize = 26.0
@@ -94,10 +95,11 @@ struct SettingsView: View {
                         Slider(value: $prompterSize, in: 14...64, step: 1)
                     }
                     Toggle("Warn when the external mic isn't plugged in", isOn: $warnMic)
+                    Toggle("Voice control", isOn: $voiceControl)
                 } header: {
                     Text("Filming")
                 } footer: {
-                    Text("Tap the picture to focus there; hold to lock focus and brightness. Pinch to zoom. The volume buttons start and stop recording. Drag the teleprompter to move it, drag its corner to make it wider, pinch it to change the text size. Takes that come out with no sound are flagged right away.")
+                    Text("Tap the picture to focus there; hold to lock focus and brightness. Pinch to zoom. The volume buttons start and stop recording. Drag the teleprompter to move it, drag its corner to make it wider, pinch it to change the text size. Takes that come out with no sound are flagged right away. Voice control: say “Ad Camera, action” to start a take and “Ad Camera, cut” to stop it (the whole phrase, so “cut” in a script never stops a take).")
                 }
 
                 Section {

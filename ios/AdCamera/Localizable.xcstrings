@@ -2071,6 +2071,76 @@
           }
         }
       }
+    },
+    "Voice control": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Controle por voz"
+          }
+        }
+      }
+    },
+    "Say “Ad Camera, action”": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diga “Ad Camera, action”"
+          }
+        }
+      }
+    },
+    "Action": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gravando"
+          }
+        }
+      }
+    },
+    "Cut": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Corta"
+          }
+        }
+      }
+    },
+    "Voice control needs Speech Recognition: Settings → Ad Camera.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O controle por voz precisa do Reconhecimento de Fala: Ajustes → Ad Camera."
+          }
+        }
+      }
+    },
+    "Voice control isn't available right now.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O controle por voz não está disponível agora."
+          }
+        }
+      }
+    },
+    "Tap the picture to focus there; hold to lock focus and brightness. Pinch to zoom. The volume buttons start and stop recording. Drag the teleprompter to move it, drag its corner to make it wider, pinch it to change the text size. Takes that come out with no sound are flagged right away. Voice control: say “Ad Camera, action” to start a take and “Ad Camera, cut” to stop it (the whole phrase, so “cut” in a script never stops a take).": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toque na imagem para focar ali; segure para travar o foco e o brilho. Faça pinça para dar zoom. Os botões de volume começam e param a gravação. Arraste o teleprompter para movê-lo, arraste o canto para deixá-lo mais largo e faça pinça nele para mudar o tamanho do texto. Takes que saem sem som são avisados na hora. Controle por voz: diga “Ad Camera, action” para começar uma tomada e “Ad Camera, cut” para parar (a frase inteira, então “cut” no roteiro nunca para a tomada)."
+          }
+        }
+      }
     }
   }
 }

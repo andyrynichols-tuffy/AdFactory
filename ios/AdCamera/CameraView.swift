@@ -15,6 +15,7 @@ struct CameraView: View {
     @EnvironmentObject private var clips: ClipStore
     @Environment(\.dismiss) private var dismiss
     @StateObject private var camera = CameraController()
+    @StateObject private var voice = VoiceControl()   // "Ad Camera, action" / "Ad Camera, cut"
     @ObservedObject private var big = BigScreen.shared
 
     @AppStorage("zones") private var showZones = true
@@ -83,6 +84,9 @@ struct CameraView: View {
                 }
             }
             .ignoresSafeArea()
+
+            VStack { Spacer().frame(height: tripod ? 12 : 58); VoiceBadge(voice); Spacer() }
+                .allowsHitTesting(false)
         }
         .foregroundStyle(.white)
         .statusBarHidden()
@@ -90,17 +94,33 @@ struct CameraView: View {
         .onAppear {
             if tripod { camera.position = .back }
             camera.start()
+            voice.start(action: {   // same path as the record button, so the countdown still applies
+                if !camera.recording && countTask == nil { tapRecord() }
+            }, cut: {
+                if camera.recording { tapRecord() }
+            })
+            WatchLink.shared.onCommand = { cmd in   // the watch's record button
+                if cmd == "start", !camera.recording, countTask == nil { tapRecord() }
+                if cmd == "stop", camera.recording || countTask != nil { tapRecord() }
+            }
+            sendWatch()
             UIApplication.shared.isIdleTimerDisabled = true
             (big.zones, big.safe, big.showZones, big.line) = (model.zones, model.safe, showZones, line)
             (big.camera, big.project) = (camera, project)
         }
         .onDisappear {
             countTask?.cancel()
+            voice.stop()
+            WatchLink.shared.onCommand = nil
+            WatchLink.shared.send(recording: false, project: nil, started: nil, takes: 0, counting: nil)
             camera.stop()
             UIApplication.shared.isIdleTimerDisabled = false
             (big.camera, big.project, big.counting) = (nil, nil, nil)
         }
         .onChange(of: line) { big.line = line }
+        .onChange(of: camera.recording) { sendWatch() }
+        .onChange(of: counting) { sendWatch() }
+        .onChange(of: clips.count(for: project.sid)) { sendWatch() }
         .onChange(of: counting) { big.counting = counting }
         .onChange(of: showZones) { big.showZones = showZones }
         .sheet(isPresented: $showSettings, onDismiss: { camera.reconfigure() }) {
@@ -548,6 +568,11 @@ struct CameraView: View {
             editingClamp = false
             camera.use(UserDefaults.standard.string(forKey: "camera") == "front" ? .front : .back)
         }
+    }
+
+    private func sendWatch() {
+        WatchLink.shared.send(recording: camera.recording, project: project.title, started: camera.started,
+                              takes: clips.count(for: project.sid), counting: counting)
     }
 
     private func tapRecord() {

@@ -12,6 +12,7 @@ struct AdCameraApp: App {
 
     init() {
         Prefs.register()
+        Task { @MainActor in WatchLink.shared.activate() }   // the Apple Watch remote (AdCameraWatch)
     }
 
     var body: some Scene {

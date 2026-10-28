@@ -140,6 +140,7 @@
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Ad Camera films your TikTok Shop videos.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Ad Camera records your voice with the video.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Say “Ad Camera, action” and “Ad Camera, cut” to start and stop a take hands-free. Recognition runs on the iPhone.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Ad Camera saves every take to the Ad Studio album.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Ad Camera saves every take to the Ad Studio album.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -175,6 +176,7 @@
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Ad Camera films your TikTok Shop videos.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Ad Camera records your voice with the video.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Say “Ad Camera, action” and “Ad Camera, cut” to start and stop a take hands-free. Recognition runs on the iPhone.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Ad Camera saves every take to the Ad Studio album.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Ad Camera saves every take to the Ad Studio album.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

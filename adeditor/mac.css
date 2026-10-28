@@ -190,7 +190,7 @@ html .mxSeg button.on { background: var(--mx-control-hi) !important; box-shadow:
 #work, #review { font-family: var(--mx-font); }
 
 /* ---- narrow windows / phones: the sidebar becomes a scrolling strip on top ---- */
-@media (max-width: 800px) {
+@media (max-width: 640px) {
   #home { grid-template-columns: 1fr; grid-template-rows: auto minmax(0, 1fr); }
   .sideNav { flex-direction: row; overflow-x: auto; padding: 6px 10px; border-right: 0; border-bottom: 1px solid rgba(0, 0, 0, .5); }
   .sideGroup, .sideNav .spacer { display: none; }
@@ -211,4 +211,35 @@ html .mxSeg button.on { background: var(--mx-control-hi) !important; box-shadow:
 .sideStat { display: flex; align-items: center; gap: 6px; padding: 4px 8px; font-size: 12px; color: var(--mx-text-2); }
 .sideStat:empty { display: none; }
 .sideStat .muted { margin-left: auto; font-size: 11px; white-space: nowrap; }
-@media (max-width: 800px) { .sideStat { display: none; } }
+@media (max-width: 640px) { .sideStat, .sideNav .langPick { display: none; } }
+
+/* the main screens have no title bar: the sidebar holds the language and status (user, 2026-10-27);
+   the bar comes back in the editor and review, where it carries the shoot's name and tools */
+#topbar:has(~ #home:not([hidden])) { display: none; }
+@media (max-width: 640px) { #topbar:has(~ #home:not([hidden])) { display: flex; height: 36px; } }
+.sideNav .langPick { position: relative; padding: 2px 0; }
+html .sideNav .langPick #langBtn { color: var(--mx-text-2) !important; font-size: 12px; justify-content: flex-start; }
+.sideNav .langMenu { position: absolute; bottom: 100%; left: 0; right: auto; top: auto !important; margin-bottom: 4px; }
+@media (min-width: 641px) and (max-width: 900px) {
+  #home { grid-template-columns: 184px minmax(0, 1fr); }
+  .homeBox { padding: 18px 20px 40px; }
+  .mxCols { grid-template-columns: 1fr; }
+  .mxSide { position: static; }
+}
+.sideStat { white-space: nowrap; min-width: 0; }
+.sideStat .muted { overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+
+/* collapsible sidebar: an icon rail, labels as tooltips (the choice is remembered per device) */
+html .sideNav .sideToggle { width: 28px; min-height: 26px; padding: 4px 6px !important; margin: 0 0 4px auto; justify-content: center; }
+.sideToggle .ico { color: var(--mx-text-2) !important; }
+#home.sideCollapsed { grid-template-columns: 52px minmax(0, 1fr); }
+#home.sideCollapsed .sideNav { padding: 10px 6px; align-items: center; }
+#home.sideCollapsed .sideNav button > span, #home.sideCollapsed .sideGroup, #home.sideCollapsed .sideStat .muted,
+#home.sideCollapsed .sideNav .langPick, #home.sideCollapsed #sheetChip .muted { display: none !important; }
+#home.sideCollapsed .sideGroup + button { margin-top: 10px; }
+html #home.sideCollapsed .sideNav button { width: 36px; justify-content: center; padding: 4px !important; }
+#home.sideCollapsed .sideToggle { margin: 0 0 6px; }
+#home.sideCollapsed .sideStat { padding: 4px; justify-content: center; font-size: 0; }
+#home.sideCollapsed #sheetChip { font-size: 0; }
+#home { transition: grid-template-columns .2s ease; }
+@media (max-width: 640px) { .sideToggle { display: none !important; } #home.sideCollapsed { grid-template-columns: 1fr; } }
