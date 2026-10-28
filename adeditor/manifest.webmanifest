@@ -1,0 +1,11 @@
+{
+  "name": "Ad Factory",
+  "short_name": "Ad Factory",
+  "description": "Plan TikTok Shop shoot days, send them to Ad Camera, and track our accounts and competitors.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#1e1e1e",
+  "theme_color": "#1e1e1e",
+  "icons": [{ "src": "/app-icon.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }]
+}

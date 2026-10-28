@@ -37,7 +37,7 @@ cameraapi.BUSY = shopapi.BUSY
 @app.middleware("http")
 async def login_wall(request, call_next):
     """Visitors through the web link sign in once (adcut/auth.py); this PC never has to."""
-    if request.url.path in ("/login", "/favicon.ico") or not auth.remote(request) or auth.signed_in(request):
+    if request.url.path in ("/login", "/favicon.ico", "/manifest.webmanifest", "/app-icon.png") or not auth.remote(request) or auth.signed_in(request):
         return await call_next(request)
     if request.url.path.startswith("/api/"):
         return JSONResponse({"detail": "sign in first"}, status_code=401)
