@@ -267,7 +267,7 @@ struct CarouselView: View {
                 var r = try Server.request("api/camera/photo", query: [("shoot", p.sid), ("outfit", String(o)), ("name", "outfit-\(o).\(ext)")], method: "PUT")
                 r.timeoutInterval = 60
                 r.httpBody = data
-                _ = try await Server.send(r)
+                _ = try await API.send(r)
                 ok = true
                 break
             } catch {

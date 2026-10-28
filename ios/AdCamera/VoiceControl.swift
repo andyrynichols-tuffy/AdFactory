@@ -35,7 +35,7 @@ final class VoiceControl: ObservableObject {
     private var lastFire = Date.distantPast
     private var running = false
 
-    static var enabled: Bool { UserDefaults.standard.object(forKey: "voiceControl") as? Bool ?? true }
+    nonisolated static var enabled: Bool { UserDefaults.standard.object(forKey: "voiceControl") as? Bool ?? true }
 
     func start(action: @escaping () -> Void, cut: @escaping () -> Void) {
         start([VoiceCommand(label: "Action", phrases: [["action"], ["actions"]], run: action),
@@ -160,6 +160,8 @@ final class VoiceControl: ObservableObject {
 /// The little "listening" badge on the viewfinder; shows the command for a moment when heard.
 struct VoiceBadge: View {
     @ObservedObject var voice: VoiceControl
+
+    init(_ voice: VoiceControl) { self.voice = voice }
     var body: some View {
         if let p = voice.problem {
             Label(p, systemImage: "mic.slash").font(.caption).padding(.horizontal, 10).padding(.vertical, 6)

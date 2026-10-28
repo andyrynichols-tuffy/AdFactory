@@ -7,6 +7,8 @@ final class AppModel: ObservableObject {
     @Published var problem: String?
     @Published var offline = false          // showing the list from last time
     @Published var signedIn = Server.token != nil
+    /// Projects put away on this phone (swipe on the list): kept out of "To film", nothing changes in Ad Factory.
+    @Published private(set) var archived = Set(UserDefaults.standard.stringArray(forKey: "archived") ?? [])
 
     private let cacheFile = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         .appendingPathComponent("catalog.json")
@@ -49,6 +51,20 @@ final class AppModel: ObservableObject {
     func signOut() {
         Server.token = nil
         signedIn = false
+    }
+
+    func setArchived(_ sid: String, _ on: Bool) {
+        if on { archived.insert(sid) } else { archived.remove(sid) }
+        UserDefaults.standard.set(archived.sorted(), forKey: "archived")
+    }
+
+    /// Ad Factory's own "Delete this shoot": the project moves to its trash folder on the PC
+    /// (ads/_trash); raw footage and finished videos are kept.
+    @MainActor
+    func delete(_ p: Project) async throws {
+        _ = try await API.json("api/shoots/\(p.sid)/trash", method: "POST", body: .object([]))
+        catalog?.projects.removeAll { $0.sid == p.sid }
+        setArchived(p.sid, false)
     }
 
     @MainActor

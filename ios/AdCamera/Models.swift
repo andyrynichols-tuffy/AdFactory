@@ -12,6 +12,8 @@ struct Project: Codable, Identifiable, Hashable {
     var due: String?
     var lines: [String]        // the script, one teleprompter line each
     var clips: Int             // videos Ad Factory already has for it
+    var productLink: String?   // the product's TikTok Shop page
+    var referenceUrl: String?  // the video being replicated
     var carousel: Bool?        // a planned flat-lay carousel: photos, not takes (CarouselView)
     var outfits: [Int]?        // carousel: which outfit numbers already have a photo in Ad Factory
     var carouselText: String?  // carousel: the planned on-screen text (adcut/carouselplan.py)
@@ -91,6 +93,7 @@ struct SourceClip: Codable, Identifiable, Hashable {
     var duration: Double
     var batch: Int
     var thumb: String?         // /api/thumb/… once it's processed
+    var off: Bool?             // archived or deleted on the phone: kept out of the videos
 }
 
 /// The project page: its clips in Ad Factory and how far the edit is.
@@ -100,6 +103,8 @@ struct ProjectDetail: Codable {
     var sources: [SourceClip]
     var videos: Int            // videos cut from the takes so far
     var saved: Int
+    var productLink: String?
+    var referenceUrl: String?
 }
 
 /// POST /api/camera/projects (the same fields as Ad Factory's "＋ New video").
@@ -126,6 +131,7 @@ struct Clip: Codable, Identifiable, Equatable {
     var uploaded = false
     var error: String?
     var silent: Bool?          // true = no sound got recorded (AudioCheck); nil = not checked
+    var archived: Bool?        // set aside on the takes list: not sent while archived (nil = no)
 }
 
 enum Stage {

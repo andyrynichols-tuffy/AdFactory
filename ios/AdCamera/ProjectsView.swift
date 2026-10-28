@@ -11,6 +11,7 @@ struct ProjectsView: View {
     @State private var showSettings = false
     @State private var showUploads = false
     @State private var showPosted = false
+    @State private var deleting: Project?
     @State private var showCarousels = false
     @State private var carouselRun: CarouselRun?
 
@@ -42,7 +43,9 @@ struct ProjectsView: View {
                     }
                 }
                 let all = model.catalog?.projects ?? []
-                let carousels = all.filter { $0.carousel == true && $0.stage != "posted" }
+                let shelf = all.filter { model.archived.contains($0.sid) }
+                let live = all.filter { !model.archived.contains($0.sid) }
+                let carousels = live.filter { $0.carousel == true && $0.stage != "posted" }
                 if !carousels.isEmpty {
                     Section {
                         Button { showCarousels = true } label: {
@@ -52,23 +55,54 @@ struct ProjectsView: View {
                         Text("Several carousels at once: every outfit with every product.")
                     }
                 }
-                let toFilm = all.filter { $0.stage == "film" && $0.carousel != true }
-                let going = all.filter { ["precut", "edit", "post"].contains($0.stage) }
-                let posted = all.filter { $0.stage == "posted" }
+                let toFilm = live.filter { $0.stage == "film" && $0.carousel != true }
+                let going = live.filter { ["precut", "edit", "post"].contains($0.stage) }
+                let posted = live.filter { $0.stage == "posted" }
                 Section {
-                    ForEach(toFilm) { row($0) }
+                    ForEach(toFilm) { p in
+                        row(p).swipeActions(edge: .trailing) {
+                            Button { withAnimation { model.setArchived(p.sid, true) } } label: {
+                                Label("Archive", systemImage: "archivebox")
+                            }
+                            .tint(.orange)
+                        }
+                    }
                     if toFilm.isEmpty {
                         Text("Nothing waiting to be filmed. Tap ＋ to start a project.")
                             .foregroundStyle(.secondary)
                     }
                 } header: {
                     Text("To film")
+                } footer: {
+                    if !toFilm.isEmpty { Text("Swipe a project from the right to archive it.") }
                 }
                 if !going.isEmpty {
                     Section {
                         ForEach(going) { row($0) }
                     } header: {
                         Text("Filmed: add more takes")
+                    }
+                }
+                if !shelf.isEmpty {
+                    Section {
+                        ForEach(shelf) { p in
+                            row(p)
+                                .swipeActions(edge: .leading) {
+                                    Button { withAnimation { model.setArchived(p.sid, false) } } label: {
+                                        Label("Unarchive", systemImage: "tray.and.arrow.up")
+                                    }
+                                    .tint(.blue)
+                                }
+                                .swipeActions(edge: .trailing) {
+                                    Button(role: .destructive) { deleting = p } label: {
+                                        Label("Delete", systemImage: "trash")
+                                    }
+                                }
+                        }
+                    } header: {
+                        Text("Archived")
+                    } footer: {
+                        Text("Swipe from the left to bring one back, from the right to delete it.")
                     }
                 }
                 if !posted.isEmpty {
@@ -111,6 +145,17 @@ struct ProjectsView: View {
         }) {
             NewProjectView { made = $0 }
                 .environmentObject(model)
+        }
+        .confirmationDialog(Text(verbatim: deleting.map { String(localized: "Delete \"\($0.title)\"?") } ?? ""),
+                            isPresented: Binding(get: { deleting != nil }, set: { if !$0 { deleting = nil } }),
+                            titleVisibility: .visible, presenting: deleting) { p in
+            Button("Delete", role: .destructive) {
+                Task {
+                    do { try await model.delete(p) } catch { model.problem = error.localizedDescription }
+                }
+            }
+        } message: { _ in
+            Text("It moves to Ad Factory's trash folder on the PC. Its raw footage and finished videos are kept.")
         }
         .sheet(isPresented: $showSettings) {
             SettingsView().environmentObject(model)

@@ -143,7 +143,8 @@
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Say “Ad Camera, action” and “Ad Camera, cut” to start and stop a take hands-free. Recognition runs on the iPhone.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Ad Camera saves every take to the Ad Studio album.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Ad Camera saves every take to the Ad Studio album.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "AdCamera-Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
@@ -179,7 +180,8 @@
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Say “Ad Camera, action” and “Ad Camera, cut” to start and stop a take hands-free. Recognition runs on the iPhone.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Ad Camera saves every take to the Ad Studio album.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Ad Camera saves every take to the Ad Studio album.";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "AdCamera-Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;

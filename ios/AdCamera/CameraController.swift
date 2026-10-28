@@ -88,8 +88,11 @@ final class CameraController: NSObject, ObservableObject, AVCaptureFileOutputRec
             }
         }
         levelTimer?.invalidate()
+        var ticks = 0
         levelTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] _ in
             guard let self else { return }
+            ticks += 1
+            if ticks % 10 == 0 { self.updateMic() }
             guard let ch = self.output.connection(with: .audio)?.audioChannels.first else {
                 self.level = 0
                 return
@@ -398,17 +401,32 @@ final class CameraController: NSObject, ObservableObject, AVCaptureFileOutputRec
         DispatchQueue.main.async { self.updateMic() }
     }
 
+    /// Wired and USB mics (a USB-C wireless receiver like the Maono's, a lav on a cable). Bluetooth
+    /// is left out on purpose: headphones' mics are phone-call quality.
+    private static let externalPorts: Set<AVAudioSession.Port> = [.usbAudio, .headsetMic, .lineIn]
+
     /// Which mic iOS is recording from. An external one (USB-C receiver, wired lav) is
     /// remembered, so falling back to the iPhone's own mic later (receiver not plugged in) is flagged.
+    /// Checked on every route change and once a second, since the route can settle after the notice.
     func updateMic() {
         let d = UserDefaults.standard
-        let input = AVAudioSession.sharedInstance().currentRoute.inputs.first
-        mic = input?.portName ?? ""
-        if let input, input.portType != .builtInMic {
+        let audio = AVAudioSession.sharedInstance()
+        // a mic was plugged in but iOS is still on the iPhone's own: ask for it (never mid-take)
+        if !recording, audio.currentRoute.inputs.allSatisfy({ $0.portType == .builtInMic }),
+           let plugged = audio.availableInputs?.first(where: { Self.externalPorts.contains($0.portType) }) {
+            try? audio.setPreferredInput(plugged)
+        }
+        let inputs = audio.currentRoute.inputs
+        let input = inputs.first { $0.portType != .builtInMic } ?? inputs.first
+        let name = input?.portName ?? ""
+        if name != mic { mic = name }
+        if let input, input.portType != .builtInMic, d.string(forKey: "externalMic") != input.portName {
             d.set(input.portName, forKey: "externalMic")
         }
-        externalName = d.string(forKey: "externalMic") ?? ""
-        externalExpected = input?.portType == .builtInMic && !externalName.isEmpty && d.bool(forKey: "warnMic")
+        let last = d.string(forKey: "externalMic") ?? ""
+        if last != externalName { externalName = last }
+        let fallback = input?.portType == .builtInMic && !last.isEmpty && d.bool(forKey: "warnMic")
+        if fallback != externalExpected { externalExpected = fallback }
     }
 }
 
