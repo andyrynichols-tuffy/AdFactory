@@ -207,9 +207,10 @@ async function renderCarouselShoot(el, s, mine) {
         ${s.example ? `<p class="mxNote"><a href="${esc(s.example)}" target="_blank" rel="noopener">Open the example on TikTok ↗</a></p>` : ""}
         <div class="row"><input id="exampleUrl" placeholder="Paste a different TikTok link for this shoot" value="${s.example_set ? esc(s.example) : ""}"><button data-go="example">Use</button></div></div></div>`)}
       ${step("outfits", `The outfits <span class="muted">· already picked, the same for every product</span>`, `
+        ${cp.kind ? `<p class="mxNote">A ${cp.kind === "top" ? "tops" : "bottoms"} shoot: pull these extra pieces once, they stay the same for every product.</p>` : ""}
         <div class="row"><span class="muted">How many</span><div class="mxSeg">${[2, 3, 4, 5].map(k => `<button data-ocount="${k}" class="${k === n ? "on" : ""}">${k}</button>`).join("")}</div></div>
         <div class="mxOutfitCards">${cp.outfits.map((o, i) => `<div class="mxOutfit"><div class="mxOutfitN">${i + 1}</div><div><b>${esc(o.name || "Outfit " + (i + 1))}</b>
-          <div class="muted">${esc([o.top, o.bottom, o.shoes, o.layer].filter(Boolean).join(" · "))}</div></div>
+          <div class="muted">${esc(cp.kind ? cp.extras[i] : [o.top, o.bottom, o.shoes, o.layer].filter(Boolean).join(" · "))}</div></div>
           <button data-oswap="${i}" title="Use a different ready-made outfit here">Swap</button></div>`).join("")}</div>
         <p class="mxNote muted">Each product takes its own place in the look (a top replaces the top, pants replace the bottom); Ad Camera tells you what to lay with each one. Don't own a piece? Swap the outfit, or <button class="linkish" data-go="oedit">change a piece</button>.</p>
         <div id="outfitEdit" hidden><table class="mxList mxOutfits"><thead><tr><th></th><th>Name</th><th>Top</th><th>Bottom</th><th>Shoes</th><th>Layer</th></tr></thead><tbody>
