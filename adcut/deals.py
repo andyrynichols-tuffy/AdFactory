@@ -14,16 +14,18 @@ from . import shop
 
 STATE = {"running": False, "last": 0.0, "msg": "", "found": {}}
 EVERY = 12 * 3600
-ORIG_RX = re.compile(r'"(?:original_price|origin_price|list_price|strike_price|original_sale_price)[a-z_]*"\s*:\s*\{?[^}]{0,80}?"?\$?([\d]+\.?\d*)')
-SALE_RX = re.compile(r'"(?:sale_price_decimal|min_sku_price)"\s*:\s*"?\$?([\d]+\.?\d*)')
+PRICE_RX = re.compile(r'"price":\{([^{}]*"sale_price_decimal"[^{}]*)\}')  # one size option's own price block
+NUM = lambda block, keys: [float(m.group(1)) for k in keys for m in re.finditer(r'"%s"\s*:\s*"?\$?([\d]+\.?\d*)' % k, block)]
 
 
 def read(url: str) -> dict:
-    """{sale, original, free_shipping} from a TikTok Shop product page."""
+    """{sale, original, free_shipping} from a TikTok Shop product page: only the listing's own size options are
+    read (the page also shows other products, with their own prices)."""
     _, html = an._get(url)
-    sale = [float(x) for x in SALE_RX.findall(html)]
-    orig = [float(x) for x in ORIG_RX.findall(html)]
-    free = '"free_shipping":true' in html.replace(" ", "")
+    blocks = PRICE_RX.findall(html)
+    sale = [x for b in blocks for x in NUM(b, ("sale_price_decimal",))]
+    orig = [x for b in blocks for x in NUM(b, ("origin_price_decimal", "original_price_decimal", "origin_price_format", "original_price_format", "original_price"))]
+    free = '"free_shipping":true' in html.replace(" ", "") and '"label_type":"PRODUCT_FREE_SHIPPING"' in html.replace("\\", "")
     return {"sale": min(sale) if sale else None, "original": max(orig) if orig else None, "free_shipping": free}
 
 
