@@ -48,7 +48,8 @@ function setCard(s, opts = {}) {
     </div>
     ${opts.actions === false ? "" : `<footer class="mxCardFoot">${s.projects?.length
       ? `<span class="mxOk">${s.projects.length} ${s.projects.length === 1 ? "project" : "projects"} ready in Ad Camera</span>`
-      : `<button class="primary" data-mkset="${s.id}" ${n ? "" : "disabled"} title="One project per product, with the script and how many takes">Send ${n} to Ad Camera</button>`}</footer>`}
+      : `<button data-mkset="${s.id}" ${n ? "" : "disabled"} title="One project per product, with the script and how many takes">Send ${n} to Ad Camera</button>`}
+      <button class="primary" data-open-set="${s.id}" title="Step-by-step instructions, the example to copy, and how filming is going">Open Shoot ›</button></footer>`}
   </section>`;
 }
 
@@ -61,6 +62,8 @@ async function renderPlanner() {
   PL.day = LS.get("planDay", "") || upcoming[0]?.date || todayIso();
   if (PL.day < todayIso() && upcoming.length) PL.day = upcoming[0].date;
   PL.plan = await api(`/api/shop/planner/day/${PL.day}`);
+  const openSet = LS.get("planOpen", ""), view = LS.get("planView", "plan");
+  if (openSet && PL.plan.sets.some(s => s.id === openSet)) return renderShoot(openSet);
   const p = PL.plan, set = PL.cfg.settings;
   const shoot = p.sets.reduce((a, s) => a + s.minutes, 0), edit = p.sets.reduce((a, s) => a + s.edit_minutes, 0);
   const work = p.blocks.filter(b => !["gym", "meal", "live"].includes(b.kind)), ends = work.length ? work.at(-1).end : "";
@@ -71,13 +74,14 @@ async function renderPlanner() {
         return `<button data-day="${d}" class="${d === PL.day ? "on" : ""}" role="tab"><b>${esc(dayName(d, { weekday: "short" }))}</b> ${esc(dayName(d, { month: "short", day: "numeric" }))}${x?.projects ? `<i class="sdot ok" title="Projects in Ad Camera"></i>` : ""}</button>`; }).join("")}</div>
       <label class="mxAdd">Plan a day <input type="date" id="planDate" min="${todayIso()}" value=""></label>
       <span class="spacer"></span>
+      <div class="mxSeg">${[["plan", "Plan"], ["kit", "Posting Kit"]].map(([k, l]) => `<button data-pview="${k}" class="${view === k ? "on" : ""}">${l}</button>`).join("")}</div>
       <button data-go="plrebuild" title="Make the day again from the settings (ticks and Ad Camera projects are kept)">Rebuild Day</button>
       <button data-go="plsettings">Settings</button>
     </div>
     ${!PL.cfg.accounts.length ? `<div class="mxBanner">Add your TikTok accounts first (Our Accounts → Accounts): the planner makes a day per channel.</div>` : ""}
     <div class="mxDayHead"><h2>${esc(dayName(PL.day))}</h2>
       <div class="mxStats"><span><b>${p.posts.length}</b> posts</span><span><b>${p.sets.length}</b> setups</span><span><b>${mins(shoot)}</b> shooting</span><span><b>${mins(edit)}</b> editing</span>${ends ? `<span>done by <b>${ends}</b></span>` : ""}</div></div>
-    <div class="mxCols">
+    ${view === "kit" ? `<div id="kitBox"></div>` : `<div class="mxCols">
       <div class="mxSide">
         <div class="mxLabel">Schedule</div>
         <ol class="mxAgenda">${p.blocks.map(b => `<li class="k-${b.kind}" ${b.set ? `data-goto="${b.set}"` : ""}>
@@ -87,10 +91,16 @@ async function renderPlanner() {
             <td class="num">${x.time}</td><td>${esc((PL.cfg.formats.find(f => f.key === x.format) || {}).label || x.format)}</td><td translate="no" class="muted">${esc(x.name)}</td></tr>`).join("")}</tbody></table></details>
       </div>
       <div class="mxMain">${p.sets.map(s => setCard(s)).join("") || `<div class="mxEmpty">Nothing planned this day. Posts per channel for this weekday are set to 0 in Settings.</div>`}</div>
-    </div>`;
+    </div>`}`;
+  if (view === "kit") renderKit($("#kitBox"), PL.day);
 }
 $("#panePlanner").addEventListener("click", async e => {
-  const d = e.target.closest("[data-day]"); if (d) { LS.set("planDay", d.dataset.day); return renderPlanner(); }
+  const d = e.target.closest("[data-day]"); if (d) { LS.set("planDay", d.dataset.day); LS.set("planOpen", ""); return renderPlanner(); }
+  const pv = e.target.closest("[data-pview]"); if (pv) { LS.set("planView", pv.dataset.pview); return renderPlanner(); }
+  const os = e.target.closest("[data-open-set]"); if (os) { LS.set("planOpen", os.dataset.openSet); $("#home .homeBox").scrollTop = 0; return renderPlanner(); }
+  if (e.target.closest("[data-go=shootback]")) { LS.set("planOpen", ""); return renderPlanner(); }
+  if (e.target.closest("[data-go=example]")) { const v = $("#exampleUrl")?.value || ""; await api(`/api/shop/planner/day/${PL.day}/set/${LS.get("planOpen", "")}`, { json: { example: v } }); toast(v ? "Example saved for this shoot" : "Back to the default example"); return renderPlanner(); }
+  if (kitClick(e, PL.day, renderPlanner)) return;
   const go = e.target.closest("[data-go]")?.dataset.go;
   if (go === "plrebuild") { await api(`/api/shop/planner/day/${PL.day}/rebuild`, { json: {} }); toast("Day rebuilt"); return renderPlanner(); }
   if (go === "plsettings") return plannerSettings();
