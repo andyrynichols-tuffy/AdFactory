@@ -8,3 +8,5 @@ nvidia-cudnn-cu12==9.*
 opencv-python-headless<5  # Ad Factory eye-contact ranking (4.x ships the face cascades)
 openpyxl  # Ad Factory: the Scripts & Links spreadsheet is the shared database (adcut/sheetdb.py)
 yt-dlp  # Ad Factory: TikTok link -> script builder (adcut/scriptgen.py)
+pywebview==6.2.1  # the desktop app window (adapp/)
+pystray==0.19.5  # its tray icon
