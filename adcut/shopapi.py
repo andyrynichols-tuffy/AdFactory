@@ -315,6 +315,24 @@ def carousel_plan_save(day: str, set_id: str, body: dict = Body(...)):
     return carouselplan.update(day, set_id, body)
 
 
+@router.get("/example")
+def example(url: str):
+    from . import examples
+    try:
+        return examples.get(url)
+    except ValueError as e:
+        raise HTTPException(400, str(e))
+
+
+@router.get("/example/{vid}/{name}")
+def example_image(vid: str, name: str):
+    from . import examples
+    try:
+        return FileResponse(examples.image(vid, name), headers={"Cache-Control": "max-age=604800"})
+    except FileNotFoundError:
+        raise HTTPException(404, "not there")
+
+
 # ---------- posting kit (adcut/postkit.py): a folder + description per post, videos rendered in ----------
 from . import postkit  # noqa: E402
 
