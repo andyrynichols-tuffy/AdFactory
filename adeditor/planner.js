@@ -145,7 +145,7 @@ async function renderShoot(setId) {
       <ol class="mxSteps">
         ${step("setup", "Set up", `<p class="mxNote">${esc(s.setup)}.</p><p class="mxNote muted">${esc(s.tip)}</p><div class="mxDiagrams">${DG.setup(s.format)}</div>`)}
         ${step("light", `Light it <span class="muted">· ${s.light_min} min</span>`, `<div class="mxDiagrams">${DG.light(s.format)}</div>${lightTable(s.light)}`)}
-        ${step("example", "Watch the example", `<p class="mxNote">Copy its framing, pacing and how the item is shown${carousel ? ", and the one line of on-image text" : ""}.</p>
+        ${step("example", "Watch the example", `${vid ? `<div id="exampleBox" data-ex="${esc(s.example)}"></div>` : ""}<p class="mxNote">Copy its framing, pacing and how the item is shown${carousel ? ", and the one line of on-image text" : ""}.</p>
           ${s.example ? `<p class="mxNote"><a href="${esc(s.example)}" target="_blank" rel="noopener">Open the example on TikTok ↗</a></p>` : `<p class="mxNote muted">No example yet: paste a TikTok link below.</p>`}
           <div class="row"><input id="exampleUrl" placeholder="Paste a different TikTok link for this shoot" value="${s.example_set ? esc(s.example) : ""}"><button data-go="example">Use</button></div>`)}
         ${step("pieces", carousel ? "Pull the item and the outfits around it" : "Lay out the pieces", `<table class="mxList"><tbody>${s.items.map(i => { const pr = byId("products", i.product);
@@ -167,7 +167,6 @@ async function renderShoot(setId) {
           : `<p class="mxNote">Ad Factory pre-cuts every take and puts the captions on. Then open <b>Posting Kit</b> (Shoot Days) and press <b>Prepare Posting Kit</b>: each post gets its own folder with the finished video and its description, ready to schedule.</p>`)}
       </ol>
       <div class="mxSide">
-        ${vid ? `<div class="mxLabel">The example</div><div id="exampleBox" data-ex="${esc(s.example)}"></div>` : ""}
         <div class="mxLabel">This shoot's posts</div>
         <ul class="mxRows">${mine.map(x => `<li class="nohover"><span class="num">${x.time}</span> <span translate="no">${esc(colorOf(x.name) || x.name)}</span> ${stepPill(x.step)}</li>`).join("")}</ul>
       </div>
