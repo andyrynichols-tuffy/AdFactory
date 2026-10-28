@@ -85,14 +85,15 @@ def posts(day: str) -> list:
     pools = {}
     for k, x in enumerate(plan["posts"]):
         s = next((y for y in plan["sets"] if y["id"] == x["set"]), None)
-        proj = next((pr for pr in (s or {}).get("projects") or [] if pr["product"] == x["product"]), None)
-        nth = seen[(x["set"], x["product"])] = seen.get((x["set"], x["product"]), 0) + 1
+        proj = next((pr for pr in (s or {}).get("projects") or []
+                     if pr["product"] == x["product"] and pr.get("variant", 0) == x.get("variant", 0)), None)
+        nth = seen[(x["set"], x["product"], x.get("variant", 0))] = seen.get((x["set"], x["product"], x.get("variant", 0)), 0) + 1
         p = shop.by_id(sh, "products", x["product"]) or {}
         carousel = x["format"] == "carousel"
         label = (s or {}).get("label") or x["format"]
         when = x.get("date") or day
         folder = root / _safe(f"{when} {x['time'].replace(':', '.')} {label} - {x['name']}", 110)
-        item = {"k": k, "n": k + 1, "date": when, "time": x["time"], "format": x["format"], "label": label, "name": x["name"],
+        item = {"k": k, "n": k + 1, "date": when, "variant": x.get("variant", 0), "time": x["time"], "format": x["format"], "label": label, "name": x["name"],
                 "product": x["product"], "link": p.get("link") or "", "set": x["set"], "sid": proj["sid"] if proj else None,
                 "video": x.get("take") or nth, "carousel": carousel, "folder": str(folder), "scheduled": bool(x.get("done")),
                 "description": description(x, chans.get(x["channel"], {}), p)}

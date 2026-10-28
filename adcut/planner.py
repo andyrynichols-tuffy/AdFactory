@@ -61,6 +61,7 @@ DEFAULTS = {
     "lineup": [],     # product ids in rotation (blank = every product with a TikTok Shop link)
     "scripts": {},    # format -> library script id
     "mode": "batch",  # "batch": one format per shoot day, its posts scheduled over the next week; "daily": each day shoots its own posts
+    "carousels": False,  # the account can post photo carousels (TikTok's slow rollout): off = videos fill their slots
     "batch_week": None,  # weekday -> formats shot that day (None = BATCH_WEEK)
 }
 
@@ -109,6 +110,15 @@ def season(day: date) -> str:
             6: "summer", 7: "summer", 8: "summer"}.get(day.month, "fall")
 
 
+def _mix(st) -> dict:
+    """The format mix in use: without carousel access (a slow TikTok rollout), carousels get nothing and the
+    video formats share their posts (_split normalises the shares)."""
+    m = dict(st["mix"])
+    if not st.get("carousels", False):
+        m["carousel"] = 0
+    return m
+
+
 def _split(n, mix):
     """n posts by the mix's shares (largest remainders), keys in FORMATS order."""
     tot = sum(max(0, mix.get(f["key"], 0)) for f in FORMATS) or 1
@@ -152,7 +162,7 @@ def generate(day_iso: str) -> dict:
     offset = (day.toordinal() * 7) % max(1, len(lineup))  # a different starting product each day
     for ci, ch in enumerate(chans):
         acc = shop.by_id(sh, "accounts", ch.get("account"))
-        counts = _split(n, st["mix"])
+        counts = _split(n, _mix(st))
         skip = set(ch.get("cant_wear") or [])  # products this channel's person can't wear (too big…)
         wearable = [p for p in lineup if p["id"] not in skip] or lineup
         if counts.get("carousel") and lineup:  # one carousel per product (they're shot together, one clothing type)
@@ -238,8 +248,9 @@ def _finish(d, st, day_iso, day, sets, posts, window, fmts):
     plan["blocks_done"] = [k for k in old.get("blocks_done") or [] if any(block_key(b) == k for b in plan["blocks"])]
     for s in sets:  # projects made earlier for this set stay linked, and an example picked for this day
         prev = next((x for x in old.get("sets") or [] if x["id"] == s["id"]), {})
-        have = {it["product"] for it in s["items"]}
-        s["projects"] = [pr for pr in prev.get("projects", []) if pr["product"] in have]  # only this set's products
+        nv = len([x for x in s.get("scripts") or [] if x]) or 1
+        have = {(it["product"], v) for it in s["items"] for v in range(min(nv, it["takes"]) if s["format"] != "carousel" else 1)}
+        s["projects"] = [pr for pr in prev.get("projects", []) if (pr["product"], pr.get("variant", 0)) in have]  # this set's products + versions
         if prev.get("example_set"):
             s["example"], s["example_set"] = prev["example"], True
         for k in ("outfits", "texts"):  # the carousel plan (adcut/carouselplan.py) survives a rebuild
@@ -401,7 +412,7 @@ def _tidy(line: str) -> str:
     return re.sub(r"^(wearing a size|in|the)\s*[,.]", "", line).strip()
 
 
-def script_for(day_iso: str, s: dict, product_id: str, plan=None) -> list:
+def script_for(day_iso: str, s: dict, product_id: str, plan=None, variant: int = 0) -> list:
     """The complete script for one product in one set, line by line, nothing left to fill in.
     Carousels: the carousel's one line of on-screen text (adcut/carouselplan.py)."""
     d, sh = load(), shop.load()
@@ -412,7 +423,8 @@ def script_for(day_iso: str, s: dict, product_id: str, plan=None) -> list:
         row = next((r for r in carouselplan.for_set(day_iso, s)["products"] if r["product"] == product_id), None)
         return [row["text"]] if row else []
     chan = next((c for c in _channels(d["settings"], sh) if c.get("account") == s["channel"]), {})
-    sc = shop.by_id(sh, "scripts", s.get("script"))
+    ids = [x for x in s.get("scripts") or [] if x] or [s.get("script")]
+    sc = shop.by_id(sh, "scripts", ids[variant % len(ids)])
     v = _vars(plan, s, chan, p)
     deal = bool(v.get("deal"))
     lines = []
@@ -425,23 +437,30 @@ def script_for(day_iso: str, s: dict, product_id: str, plan=None) -> list:
 
 
 def make_projects(day_iso: str, set_id: str) -> list:
-    """One Ad Camera project per product in the set (its takes = the script, filmed that many times)."""
-    d, sh = load(), shop.load()
+    """Ad Camera projects for a set: one per product and script version (its takes = that version, filmed as many
+    times as the plan needs), so the teleprompter always shows the right lines."""
+    d = load()
     plan = d["days"].get(day_iso) or generate(day_iso)
     s = next(x for x in plan["sets"] if x["id"] == set_id)
-    sc = shop.by_id(sh, "scripts", s.get("script"))
     label = datetime.fromisoformat(day_iso).strftime("%b %d").replace(" 0", " ")
+    ids = [x for x in s.get("scripts") or [] if x] or [s.get("script")]
     made = []
-    done = {pr["product"] for pr in s.get("projects") or []}
+    done = {(pr["product"], pr.get("variant", 0)) for pr in s.get("projects") or []}
     for it in s["items"]:
-        if not it["product"] or it["product"] in done:  # already has its project
+        if not it["product"]:
             continue
-        lines = script_for(day_iso, s, it["product"], plan)
-        r = shop.new_video({"product": it["product"], "account": s["channel"], "script": sc["id"] if sc else None,
-                            "script_text": "\n".join(lines), "assign": True,
-                            "title": f"{label} · {s['label']} · {it['name'][:28]}",
-                            "notes": f"{s['setup']}. {it['takes']} take{'s' if it['takes'] != 1 else ''}, near-identical. {s['tip']}\nLighting: {s.get('light', '')}"})
-        made.append({"sid": r["id"], "title": r["title"], "product": it["product"]})
+        nv = 1 if s["format"] == "carousel" else min(len(ids), it["takes"])
+        for v in range(nv):
+            if (it["product"], v) in done:
+                continue
+            takes = len(range(v, it["takes"], nv)) if s["format"] != "carousel" else it["takes"]
+            lines = script_for(day_iso, s, it["product"], plan, variant=v)
+            tag = f" · v{v + 1}" if nv > 1 else ""
+            r = shop.new_video({"product": it["product"], "account": s["channel"], "script": ids[v % len(ids)],
+                                "script_text": "\n".join(lines), "assign": True,
+                                "title": f"{label} · {s['label']} · {it['name'][:28]}{tag}",
+                                "notes": f"{s['setup']}. {takes} take{'s' if takes != 1 else ''}, near-identical. {s['tip']}\nLighting: {s.get('light', '')}"})
+            made.append({"sid": r["id"], "title": r["title"], "product": it["product"], "variant": v})
     s["projects"] = s.get("projects", []) + made
     d["days"][day_iso] = plan
     save(d)
@@ -499,6 +518,57 @@ TEMPLATES = [  # @sully.finds' own scripts, copied from the example each format 
 ]
 
 
+VARIANTS = {  # extra versions of a format's script, each from another of his videos of that kind
+    "flatlay_vo": [
+        ("Sale news (flat-lay voiceover) · B",  # 7691425634404289822
+         "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n"
+         "[nodeal] {brand} finally put their {item} on their TikTok shop.\n"
+         "You're gonna get that {feature 1} that pairs perfectly with any outfit and that {feature 2}.\n"
+         "{who} {height}, rocking a size {size}.\n"
+         "[deal] The only problem is these are selling out quick since they're {deal}, so if you wanna see if your size is still available, I'll leave a link below.\n"
+         "[nodeal] The only problem is these are selling out quick, so if you wanna see if your size is still available, I'll leave a link below."),
+        ("Sale news (flat-lay voiceover) · C",  # 7698164462607453470
+         "These are easily my new favorite {item} from {brand}.\n"
+         "You get that {feature 1} you can match with almost any outfit, as well as the {feature 2}.\n"
+         "{who} {height}, rocking a size {size} in {this pair} for reference.\n"
+         "[deal] They are selling out quick though, since they're {deal}, so if you want to see if your size is still available, I'll leave a link down below.\n"
+         "[nodeal] They are selling out quick though, so if you want to see if your size is still available, I'll leave a link down below."),
+    ],
+    "worn": [
+        ("Height + size (worn, faceless) · B",  # 7697808086051900703
+         "The {color} on {this pair} from {brand} is honestly so clean.\n"
+         "{This is} their {product}, and with that {feature 1}, you can mix and match with any outfit.\n"
+         "{this is} the perfect {item} for this {season} season.\n"
+         "{who} {height}, rocking a size {size} {fit note}, but a lot of their top selling sizes are going quick.\n"
+         "So if you're seeing this and your size is still available, I definitely wouldn't miss out on {this pair}."),
+        ("Height + size (worn, faceless) · C",  # 7696311170466073886
+         "{this is} probably my new favorite {item} from {brand}.\n"
+         "{This is} their {product}, so you get that {feature 2} without it looking sloppy.\n"
+         "And I just love the {feature 1}, and this {color} colorway is gonna be perfect for this {season} season.\n"
+         "{who} {height}, rocking a size {size}, so you could definitely go true to size.\n"
+         "I'll leave a link down below."),
+    ],
+    "held": [
+        ("Official shop is on TikTok (held item) · B",  # his "I think I just found the perfect…" videos
+         "I think I just found the perfect {item} for this {season}.\n"
+         "{This is} the {brand} {product}, and the {feature 1} is honestly so good.\n"
+         "You also get the {feature 2}, and there are multiple colors to choose from.\n"
+         "It's on their TikTok shop, I'll leave a link right here."),
+    ],
+    "skit": [
+        ("Where'd you get those? (two-person skit) · B",  # 7694048488501284127
+         "A: Wait, I love {that item}, but does that tag say {brand}?\n"
+         "B: Yeah, it does, why?\n"
+         "A: You spent that much in store?\n"
+         "B: No, I got {it} for {price}{with free shipping} on their TikTok shop.\n"
+         "A: No way, that's actually such a good deal.\n"
+         "B: Right, and look at the {feature 1}, I had to get {it}.\n"
+         "A: Okay, you gotta drop the link.\n"
+         "B: I'll leave a link down below for you guys."),
+    ],
+}
+
+
 def seed_templates():
     """The planner's scripts, once: in the library (tagged), linked per format."""
     d, sh = load(), shop.load()
@@ -512,6 +582,15 @@ def seed_templates():
         sid = sid or shop.upsert("scripts", {"title": title, "text": text, "tags": [tag[n] for n in tags.get(key, []) if n in tag],
                                                           "notes": "Planner template, modelled on @sully.finds (docs/sully-finds-study.md)"})["id"]
         d["settings"]["scripts"][key] = sid  # the planner's formats always use their current template
+        ids = [sid]
+        for vtitle, vtext in VARIANTS.get(key, []):
+            vid = have.get(vtitle)
+            if vid and (shop.by_id(sh, "scripts", vid) or {}).get("notes", "").startswith("Planner template"):
+                shop.upsert("scripts", {"id": vid, "text": vtext})
+            vid = vid or shop.upsert("scripts", {"title": vtitle, "text": vtext, "tags": [tag[n] for n in tags.get(key, []) if n in tag],
+                                                 "notes": "Planner template (a version), copied from @sully.finds (docs/sully-finds-study.md)"})["id"]
+            ids.append(vid)
+        d["settings"].setdefault("script_variants", {})[key] = ids
     save(d)
     return d["settings"]["scripts"]
 
@@ -525,6 +604,8 @@ def seed_templates():
 WINDOW = 7
 BATCH_WEEK = {"mon": ["skit", "other"], "tue": [], "wed": ["carousel"], "thu": ["flatlay_vo"], "fri": ["worn", "held"],
               "sat": [], "sun": []}
+BATCH_WEEK_VIDEO = {"mon": ["skit", "other"], "tue": [], "wed": ["worn"], "thu": ["flatlay_vo"], "fri": ["held"],
+                    "sat": [], "sun": []}   # no carousel access yet: the videos get the days
 COVERS = [("c1", "Cover: folded, leg to the left"), ("c2", "Cover: folded, leg to the right"), ("c3", "Cover: laid flat")]
 CAROUSEL_SIZES = [6, 2, 5, 6, 7, 6, 2, 5]   # his mix: a quarter are quick 2-photo ones, the rest 5-7
 COVER_MIN, OUTFIT_MIN = 1.0, 3.0            # a cover pose is quick; restyling an outfit isn't
@@ -534,7 +615,7 @@ def day_slots(st, day: date, chan: dict) -> list:
     """[(time, format)] for one channel on one date: the day's posts per channel split by the mix, dealt out
     across the posting window so the formats alternate (the same dealing the daily plan uses)."""
     n = int(st["posts"].get(WEEKDAYS[day.weekday()], 0))
-    counts = _split(n, st["mix"])
+    counts = _split(n, _mix(st))
     groups = {k: [k] * c for k, c in counts.items() if c}
     dealt = []
     while any(groups.values()):
@@ -557,8 +638,9 @@ def carousel_combo(i: int, n_outfits: int) -> list:
 def _batch(st, sh, day: date, old: dict):
     """Sets and dated posts for a batch shoot day."""
     from . import carouselplan
-    week = st.get("batch_week") or BATCH_WEEK
-    fmts = [f for f in week.get(WEEKDAYS[day.weekday()], []) if f in {x["key"] for x in FORMATS}]
+    week = st.get("batch_week") or (BATCH_WEEK if st.get("carousels", False) else BATCH_WEEK_VIDEO)
+    fmts = [f for f in week.get(WEEKDAYS[day.weekday()], []) if f in {x["key"] for x in FORMATS}
+            and (f != "carousel" or st.get("carousels", False))]
     lineup, chans = _lineup(st, sh), _channels(st, sh)
     fmt = {f["key"]: f for f in FORMATS}
     window = [day + timedelta(i) for i in range(1, WINDOW + 1)]
@@ -577,7 +659,8 @@ def _batch(st, sh, day: date, old: dict):
             base = {"format": key, "setup": f["setup"], "tip": f["tip"], "light": f["light"], "light_min": round(_mins(st, key, "light_min")),
                     "example": (st.get("examples") or {}).get(key) or f.get("example", ""), "channel": ch.get("account"),
                     "channel_name": (acc or {}).get("name") or f"Channel {ci + 1}", "pov": ch.get("pov", "me"),
-                    "script": st["scripts"].get(key), "projects": []}
+                    "script": st["scripts"].get(key), "scripts": (st.get("script_variants") or {}).get(key) or [st["scripts"].get(key)],
+                    "projects": []}
             if key == "carousel":  # one set per clothing type (same extra pieces all session), every product in it
                 kinds = []
                 for p in lineup:
@@ -625,10 +708,12 @@ def _batch(st, sh, day: date, old: dict):
             sets.append({**base, "id": sid, "label": f["label"], "items": items, "posts": cnt,
                          "minutes": round(_mins(st, key, "light_min") + cnt * _mins(st, key, "take_min")),
                          "edit_minutes": round(cnt * _mins(st, key, "edit_min"))})
+            nv = len([x for x in base["scripts"] if x]) or 1
             entries = [(it, r) for r in range(max(i["takes"] for i in items)) for it in items if r < it["takes"]]
             for (dd, t), (it, r) in zip(slots, entries):
+                v = min(nv, it["takes"])  # take r of a product uses version r % v of the script (video r // v + 1 of that project)
                 posts.append({"set": sid, "format": key, "channel": ch.get("account"), "product": it["product"], "name": it["name"],
-                              "date": dd.isoformat(), "time": t, "take": r + 1, "done": False})
+                              "date": dd.isoformat(), "time": t, "variant": r % v, "take": r // v + 1, "done": False})
     posts.sort(key=lambda p: (p["date"], p["time"], p["channel"] or ""))
     return sets, posts, (window[0].isoformat(), window[-1].isoformat()), fmts
 
