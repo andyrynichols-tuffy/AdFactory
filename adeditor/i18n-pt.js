@@ -1671,7 +1671,7 @@ window.I18N_PT = {
    "$1 de $2 tomadas recebidas"
   ],
   [
-   "\bwith (.+)$",
+   "^with (.+)$",
    "com $1"
   ],
   [
