@@ -1420,7 +1420,8 @@ window.I18N_PT = {
   "Preparing the posting kit…": "Preparando o kit de postagem…",
   "Example saved for this shoot": "Exemplo salvo para esta gravação",
   "Back to the default example": "De volta ao exemplo padrão",
-  "choose": "escolher"
+  "choose": "escolher",
+  "Photos taken another way: drop them on their carousel below, in order.": "Fotos tiradas de outro jeito: solte-as no carrossel delas abaixo, em ordem."
  },
  "patterns": [
   [

@@ -151,7 +151,8 @@ async function renderShoot(setId) {
           ${carousel ? `<p class="mxNote muted">Each carousel needs 2–5 different outfits that all star its item: have the other pieces (tops, bottoms, shoes, layers) ready to rotate around it.</p>` : ""}`)}
         ${carousel
           ? step("film", "Shoot the carousels", `<p class="mxNote">For each carousel: lay the item flat in an outfit and take the photo straight down (phone parallel to the floor). Restyle it in a different outfit for the next photo, 2–5 photos in all. The item stays the star of every photo; only the pieces around it change.</p>
-              <p class="mxNote muted">Add each carousel's photos below, in order. They go into that post's own folder with its description.</p>
+              <p class="mxNote">In Ad Camera tap <b>Shoot carousels</b>, pick these carousels and how many outfits: it walks you through every outfit with every product (all outfits for one product, or one outfit across the products), and each photo lands in its carousel's folder below. Say <b>“Ad Camera, action”</b> to take a photo hands-free.</p>
+              <p class="mxNote muted">Photos taken another way: drop them on their carousel below, in order.</p>
               ${mine.map(x => kitPhotoRow(x)).join("")}`)
           : step("film", "Film in Ad Camera", `<p class="mxNote">On the iPhone open each project below in Ad Camera. Say <b>“Ad Camera, action”</b> to start and <b>“Ad Camera, cut”</b> to stop, or use the Apple Watch. Film the takes back to back, then swap to the next colour.</p>
               ${s.projects?.length ? `<table class="mxList"><tbody>${s.projects.map(pr => { const ps = mine.filter(x => x.sid === pr.sid), it = s.items.find(i => i.product === pr.product) || { takes: 0 }, have = ps[0]?.takes || 0;
