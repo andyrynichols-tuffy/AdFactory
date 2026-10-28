@@ -531,7 +531,7 @@ window.I18N_PT = {
   "picked": "escolhidas",
   "Picture (image link)": "Foto (link da imagem)",
   "Pipeline": "Andamento",
-  "Plan": "Planejar",
+  "Plan": "Plano",
   "Plan a video: style, script, product, account, creator, raw files": "Planejar um vídeo: estilo, roteiro, produto, conta, criador, vídeos brutos",
   "Play from here": "Tocar daqui",
   "Play the selected clip on a loop": "Tocar o clipe selecionado em loop",
@@ -747,7 +747,7 @@ window.I18N_PT = {
   "Start this line earlier, to show what he does before he speaks (opening, sniffing, a reveal)": "Começar esta fala mais cedo, para mostrar o que ele faz antes de falar (abrir, cheirar, revelar)",
   "Start video": "Recomeçar o vídeo",
   "starting…": "começando…",
-  "Status": "Situação",
+  "Status": "Status",
   "stayed lit": "ficou acesa",
   "Stays": "Fica",
   "still empty (": "ainda vazia(s) (",
@@ -811,7 +811,7 @@ window.I18N_PT = {
   "Tips": "Dicas",
   "Title": "Título",
   "To edit": "Para editar",
-  "To film": "Para filmar",
+  "To film": "Para gravar",
   "to line end": "até o fim da fala",
   "to paste a screenshot": "para colar uma captura de tela",
   "To post": "Para postar",
@@ -1257,7 +1257,6 @@ window.I18N_PT = {
   "🧺 Prep": "🧺 Preparo",
   "% of each channel's posts · takes per product · minutes per post": "% dos posts de cada canal · tomadas por produto · minutos por post",
   "Prep: pull the day's pieces, steam, de-lint, tags off, set up the floor + bed": "Preparo: separar as peças do dia, passar no vapor, tirar fiapos e etiquetas, montar o chão + a cama",
-  "Style one outfit around the item on the floor, 5-7 photos, one line of on-image text. Brings the reach. Keep the outfit and swap only the colourway between carousels.": "Monte um look com a peça no chão, 5-7 fotos, uma linha de texto na imagem. Traz o alcance. Mantenha o look e troque só a cor entre os carrosséis.",
   "Lighting": "Iluminação",
   "min lights": "min de luz",
   "min to set up)": "min para montar)",
@@ -1375,7 +1374,53 @@ window.I18N_PT = {
   "shooting": "gravando",
   "editing": "editando",
   "take": "tomada",
-  "takes": "tomadas"
+  "takes": "tomadas",
+  "2-5 photos, each a different outfit laid flat around the item for sale (it's the star of every photo), one line of on-image text. Brings the reach.": "2-5 fotos, cada uma com um look diferente estendido em volta da peça à venda (ela é a estrela de toda foto), uma linha de texto na imagem. Traz o alcance.",
+  "Open Shoot ›": "Abrir Gravação ›",
+  "Step-by-step instructions, the example to copy, and how filming is going": "Instruções passo a passo, o exemplo para copiar e como está a gravação",
+  "Posting Kit": "Kit de Postagem",
+  "Light it": "Iluminar",
+  "Watch the example": "Veja o exemplo",
+  "Open the example on TikTok ↗": "Abrir o exemplo no TikTok ↗",
+  "No example yet: paste a TikTok link below.": "Ainda sem exemplo: cole um link do TikTok abaixo.",
+  "Paste a different TikTok link for this shoot": "Cole outro link do TikTok para esta gravação",
+  "Use": "Usar",
+  "Lay out the pieces": "Separe as peças",
+  "Pull the item and the outfits around it": "Separe a peça e os looks em volta dela",
+  "Each carousel needs 2–5 different outfits that all star its item: have the other pieces (tops, bottoms, shoes, layers) ready to rotate around it.": "Cada carrossel precisa de 2–5 looks diferentes, todos com a peça como estrela: deixe as outras peças (partes de cima, de baixo, sapatos, camadas) prontas para trocar em volta dela.",
+  "Shoot the carousels": "Fotografe os carrosséis",
+  "For each carousel: lay the item flat in an outfit and take the photo straight down (phone parallel to the floor). Restyle it in a different outfit for the next photo, 2–5 photos in all. The item stays the star of every photo; only the pieces around it change.": "Para cada carrossel: estenda a peça num look e fotografe bem de cima (celular paralelo ao chão). Monte um look diferente para a próxima foto, 2–5 fotos no total. A peça é a estrela de toda foto; só as peças em volta mudam.",
+  "Add each carousel's photos below, in order. They go into that post's own folder with its description.": "Adicione as fotos de cada carrossel abaixo, em ordem. Elas vão para a pasta daquele post com a descrição.",
+  "Film in Ad Camera": "Grave no Ad Camera",
+  "Send this setup to Ad Camera first (button at the top).": "Envie este cenário para o Ad Camera primeiro (botão no topo).",
+  "When the takes are in": "Quando as tomadas chegarem",
+  "When the photos are in": "Quando as fotos chegarem",
+  "This shoot's posts": "Os posts desta gravação",
+  "Needs photos": "Faltam fotos",
+  "Footage in": "Vídeos recebidos",
+  "Ready to post": "Pronto para postar",
+  "Filmed": "Gravado",
+  "Filming": "Gravando",
+  "takes in": "tomadas recebidas",
+  "carousel": "carrossel",
+  "carousels": "carrosséis",
+  "carousels in": "carrosséis prontos",
+  "filmed": "gravados",
+  "Prepare Posting Kit": "Preparar Kit de Postagem",
+  "A folder + description for every post; renders and copies each video whose footage is in": "Uma pasta + descrição para cada post; renderiza e copia cada vídeo que já tem as tomadas",
+  "ready to post": "prontos para postar",
+  "folder:": "pasta:",
+  "Post": "Post",
+  "Copy": "Copiar",
+  "Copy the description": "Copiar a descrição",
+  "Photos": "Fotos",
+  "Folder": "Pasta",
+  "Open this post's folder on the PC": "Abrir a pasta deste post no PC",
+  "Description copied": "Descrição copiada",
+  "Preparing the posting kit…": "Preparando o kit de postagem…",
+  "Example saved for this shoot": "Exemplo salvo para esta gravação",
+  "Back to the default example": "De volta ao exemplo padrão",
+  "choose": "escolher"
  },
  "patterns": [
   [
@@ -1561,6 +1606,30 @@ window.I18N_PT = {
   [
    "\\b(\\d+) h (\\d+) m\\b",
    "$1 h $2 min"
+  ],
+  [
+   "^Post (\\d+)$",
+   "Post $1"
+  ],
+  [
+   "(\\d+) of (\\d+) filmed",
+   "$1 de $2 gravados"
+  ],
+  [
+   "(\\d+) of 2–5 photos in · ",
+   "$1 de 2–5 fotos · "
+  ],
+  [
+   "^Drop 2–5 photos here, or ",
+   "Solte 2–5 fotos aqui, ou "
+  ],
+  [
+   "Photo (\\d+) of (\\d+) saved",
+   "Foto $1 de $2 salva"
+  ],
+  [
+   "\\b(\\d+) of (\\d+) takes in",
+   "$1 de $2 tomadas recebidas"
   ]
  ]
 };

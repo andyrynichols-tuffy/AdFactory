@@ -22,9 +22,9 @@ WEEKDAYS = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
 FORMATS = [  # lighting notes are for the kit: one large round key light + two rectangle fill panels.
     # share = % of a channel's posts; takes = near-identical takes per product; minutes per take
     {"key": "carousel", "label": "Flat-lay carousel", "setup": "Wood floor, top-down", "share": 25, "takes": 1,
-     "take_min": 12.0, "edit_min": 3.0, "light_min": 15, "light": "Key (circle) high above one end of the outfit, angled down at 45°, ~70%. Fill panel 1 low on the opposite side, ~30%, to soften shadows. Fill panel 2 off, or low across the far end if the floor looks uneven. Room lights off, all three at 5600K. Phone straight above; lock exposure and white balance; same spot every carousel.",
+     "take_min": 15.0, "edit_min": 3.0, "light_min": 15, "light": "Key (circle) high above one end of the outfit, angled down at 45°, ~70%. Fill panel 1 low on the opposite side, ~30%, to soften shadows. Fill panel 2 off, or low across the far end if the floor looks uneven. Room lights off, all three at 5600K. Phone straight above; lock exposure and white balance; same spot every carousel.",
      "example": "https://www.tiktok.com/@sully.finds/photo/7690393439048961311",
-     "tip": "Style one outfit around the item on the floor, 5-7 photos, one line of on-image text. Brings the reach. Keep the outfit and swap only the colourway between carousels."},
+     "tip": "2-5 photos, each a different outfit laid flat around the item for sale (it's the star of every photo), one line of on-image text. Brings the reach."},
     {"key": "flatlay_vo", "label": "Flat-lay voiceover video", "setup": "White bed or couch, hand pointing", "share": 30, "takes": 3,
      "take_min": 1.0, "edit_min": 0.7, "light_min": 10, "light": "Key (circle) at 45° to one side of the bed, above it, ~60%. Fill panel 1 on the other side, ~30%. Fill panel 2 above or behind the bed, low, so the white sheets light evenly. Tap to lock, then drop exposure a touch so the whites don't blow out. Don't move anything between takes.",
      "example": "https://www.tiktok.com/@sully.finds/video/7690604593834757407",

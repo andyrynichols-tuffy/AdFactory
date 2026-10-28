@@ -3,7 +3,7 @@ work as possible. Every post in the day's posting schedule gets its own folder,
 
     <Outbox>/<date> posts/NN HH.MM <format> - <product>/
         video.mp4          the finished video (rendered with its captions), for video posts
-        photo-1.jpg …      the carousel's photos, for carousel posts (uploaded from the Mac or phone)
+        photo-1.jpg …      the carousel's 2-5 photos (a different outfit around the item in each), uploaded from the Mac or phone
         description.txt    what to paste into TikTok: the description, the product to tag and its link
 
 and progress is tracked per post: footage in → video ready / photos in → description ready → scheduled.
@@ -106,7 +106,8 @@ def write_text(item, day: str):
     lines = [f"POST {item['n']} · {item['time']} · {item['label']}", f"PRODUCT: {item['name']}",
              f"TIKTOK SHOP LINK: {item['link']}", "", "DESCRIPTION (paste into TikTok):", item["description"], ""]
     if item["carousel"]:
-        lines += ["CAROUSEL: 5-7 photos in this folder, in order. On-image text, one line:",
+        lines += ["CAROUSEL: the 2-5 photos in this folder, in order (each a different outfit around the item).",
+                  "On-image text, one line on the first photo:",
                   f"  {planner.season(date.fromisoformat(day)).capitalize()} essential: {item['name'].split(' - ')[0]}", ""]
     lines += ["Tag the product: Add link → Products → search it, or paste the link above."]
     (f / "description.txt").write_text("\n".join(lines), encoding="utf-8")
