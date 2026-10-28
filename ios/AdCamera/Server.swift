@@ -119,6 +119,11 @@ enum API {
         return try JSON.parse(try await send(r))
     }
 
+    /// The camera is open on this project: Ad Factory's shoot page shows it as "Now filming".
+    static func filming(_ sid: String) async {
+        _ = try? await send(try Server.request("api/camera/now", query: [("shoot", sid)]))
+    }
+
     static func catalog() async throws -> Data {
         try await send(try Server.request("api/camera/projects"))
     }

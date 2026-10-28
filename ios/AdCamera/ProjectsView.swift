@@ -127,7 +127,12 @@ struct ProjectsView: View {
             UploadsView().environmentObject(clips)
         }
         .fullScreenCover(item: $filming) {
-            CameraView(project: $0).environmentObject(model).environmentObject(clips)
+            CameraView(project: $0) { next in   // "Next project": close this camera, open the next one with its page underneath
+                filming = nil
+                path = [next]
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { filming = next }
+            }
+            .environmentObject(model).environmentObject(clips)
         }
     }
 

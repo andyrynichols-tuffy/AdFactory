@@ -852,6 +852,16 @@
         }
       }
     },
+    "Next project": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Próximo projeto"
+          }
+        }
+      }
+    },
     "No clips yet. Tap Film to start.": {
       "localizations": {
         "pt-BR": {
@@ -1138,6 +1148,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Produto"
+          }
+        }
+      }
+    },
+    "Project %lld of %lld": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Projeto %lld de %lld"
           }
         }
       }
@@ -1548,6 +1568,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Toque na imagem para focar ali; segure para travar o foco e o brilho. Faça pinça para dar zoom. Os botões de volume começam e param a gravação. Arraste o teleprompter para movê-lo, arraste o canto para deixá-lo mais largo e faça pinça nele para mudar o tamanho do texto. Takes que saem sem som são avisados na hora."
+          }
+        }
+      }
+    },
+    "Tap to start": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toque para começar"
           }
         }
       }

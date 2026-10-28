@@ -11,6 +11,7 @@ import SwiftUI
 /// back camera, its own countdown, teleprompter off by default.
 struct CameraView: View {
     let project: Project
+    var onNext: ((Project) -> Void)? = nil   // "Next project": the list closes this camera and opens the next one
     @EnvironmentObject private var model: AppModel
     @EnvironmentObject private var clips: ClipStore
     @Environment(\.dismiss) private var dismiss
@@ -45,8 +46,13 @@ struct CameraView: View {
     @State private var showSettings = false
     @State private var showUploads = false
     @State private var editingClamp = false
+    @State private var showSetup = false             // the "lay this out" card when a planned project opens
 
     private var tripod: Bool { layout == "tripod" }
+    private var nextProject: Project? {
+        guard let n = project.nextSid else { return nil }
+        return model.catalog?.projects.first { $0.sid == n }
+    }
     private var prompterOn: Bool { tripod ? tripodPrompter : handheldPrompter }
     private var showPrompter: Bool { prompterOn && !project.lines.isEmpty && !big.connected }   // on a big screen instead
     private var countdown: Int { tripod ? tripodCountdown : handheldCountdown }
@@ -92,9 +98,14 @@ struct CameraView: View {
                 VoiceBadge(voice).allowsHitTesting(false)
                 pendingBanner
                 Spacer()
+                nextBar
+                Spacer().frame(height: tripod ? 12 : 150)
             }
             .animation(.easeInOut(duration: 0.2), value: pending == nil)
+
+            if showSetup { setupCard.transition(.opacity) }
         }
+        .animation(.easeInOut(duration: 0.25), value: showSetup)
         .foregroundStyle(.white)
         .statusBarHidden()
         .persistentSystemOverlays(.hidden)
@@ -118,7 +129,17 @@ struct CameraView: View {
                              when: { !camera.recording }) { setPrompter(true) },
                 VoiceCommand(label: "Teleprompter off", phrases: [["teleprompter", "off"], ["prompter", "off"]],
                              when: { !camera.recording }) { setPrompter(false) },
+                VoiceCommand(label: "Next project", phrases: [["next", "project"], ["next", "video"]],
+                             when: { !camera.recording && countTask == nil && nextProject != nil }) { goNext() },
             ])
+            if project.layOut != nil || project.change != nil {   // a planned shoot day: say what to lay out first
+                showSetup = true
+                Task {
+                    try? await Task.sleep(for: .seconds(8))
+                    showSetup = false
+                }
+            }
+            Task { await API.filming(project.sid) }
             WatchLink.shared.onCommand = { cmd in   // the watch's record button
                 if cmd == "start", !camera.recording, countTask == nil { tapRecord() }
                 if cmd == "stop", camera.recording || countTask != nil { tapRecord() }
@@ -139,7 +160,10 @@ struct CameraView: View {
             (big.camera, big.project, big.counting) = (nil, nil, nil)
         }
         .onChange(of: line) { big.line = line }
-        .onChange(of: camera.recording) { sendWatch() }
+        .onChange(of: camera.recording) {
+            sendWatch()
+            if camera.recording { showSetup = false }
+        }
         .onChange(of: counting) { sendWatch() }
         .onChange(of: clips.count(for: project.sid)) { sendWatch() }
         .onChange(of: counting) { big.counting = counting }
@@ -659,6 +683,61 @@ struct CameraView: View {
 
     private func setPrompter(_ on: Bool) {
         if tripod { tripodPrompter = on } else { handheldPrompter = on }
+    }
+
+    /// Keep the last take and move on to the next project of the shoot day (its setup card says what to change).
+    private func goNext() {
+        guard let n = nextProject, let onNext else { return }
+        keep()
+        onNext(n)
+    }
+
+    /// Between takes on a planned shoot day: the next project, one tap (or "Ad Camera, next project") away.
+    @ViewBuilder private var nextBar: some View {
+        if let n = nextProject, onNext != nil, pending == nil, !camera.recording, countTask == nil,
+           clips.count(for: project.sid) > 0 {
+            Button { goNext() } label: {
+                HStack(spacing: 8) {
+                    VStack(alignment: .leading, spacing: 1) {
+                        Text("Next project").font(.footnote.weight(.semibold))
+                        Text(n.layOut ?? n.title).font(.caption).lineLimit(1).opacity(0.8)
+                    }
+                    Image(systemName: "chevron.right")
+                }
+                .padding(.horizontal, 14).padding(.vertical, 8)
+                .background(.black.opacity(0.65), in: Capsule())
+            }
+            .buttonStyle(.plain)
+            .transition(.opacity)
+        }
+    }
+
+    /// When a planned project opens: what to lay out, what changed since the last project, the setup.
+    private var setupCard: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            if let n = project.shootN, let of = project.shootOf {
+                Text("Project \(n) of \(of)").font(.caption.weight(.semibold)).opacity(0.7)
+            }
+            if let c = project.change {
+                Text(c).font(.title3.weight(.semibold))
+            }
+            if let l = project.layOut {
+                Label { Text(l) } icon: { Image(systemName: "tshirt") }.font(.body)
+            }
+            if let s = project.setupNote, !s.isEmpty {
+                Label { Text(s) } icon: { Image(systemName: "square.on.square") }.font(.footnote).opacity(0.85)
+            }
+            Text("Tap to start").font(.caption).opacity(0.6)
+        }
+        .padding(18)
+        .frame(maxWidth: 360, alignment: .leading)
+        .background(.ultraThinMaterial.opacity(0.9), in: RoundedRectangle(cornerRadius: 16))
+        .environment(\.colorScheme, .dark)
+        .padding(24)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.black.opacity(0.35))
+        .contentShape(Rectangle())
+        .onTapGesture { showSetup = false }
     }
 
     /// After "cut": the take is kept in a few seconds unless scrapped (tap or "Ad Camera, scrap that").
