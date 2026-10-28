@@ -122,6 +122,113 @@ async function markPost(day, box) {
   box.closest("tr")?.classList.toggle("closed", box.checked);
 }
 
+// ---------- one shoot, step by step (for the Mac, next to the phone running Ad Camera) ----------
+const tiktokId = url => (String(url || "").match(/\/(?:video|photo)\/(\d+)/) || [])[1];
+async function renderShoot(setId) {
+  const el = $("#panePlanner"), p = PL.plan, s = p.sets.find(x => x.id === setId);
+  const kit = await api(`/api/shop/planner/day/${PL.day}/kit`).catch(() => ({ posts: [] }));
+  PL.kit = kit.posts;
+  const mine = kit.posts.filter(x => x.set === s.id), sc = byId("scripts", s.script);
+  const carousel = s.format === "carousel", vid = tiktokId(s.example);
+  const ticks = new Set(LS.get(`steps:${PL.day}:${s.id}`, []));
+  const step = (k, title, body) => `<li class="mxStep ${ticks.has(k) ? "done" : ""}"><label class="mxStepHead"><input type="checkbox" data-step="${k}" ${ticks.has(k) ? "checked" : ""}><b>${title}</b></label><div class="mxStepBody">${body}</div></li>`;
+  const filmed = mine.filter(x => !["film", "photos"].includes(x.step)).length;
+  el.innerHTML = `
+    <div class="mxBar"><button data-go="shootback">‹ ${esc(dayName(PL.day, { weekday: "long", month: "short", day: "numeric" }))}</button><span class="spacer"></span>
+      ${s.projects?.length || carousel ? "" : `<button class="primary" data-mkset="${s.id}">Send ${s.items.filter(i => i.product).length} to Ad Camera</button>`}</div>
+    <div class="mxDayHead"><h2>${esc(s.label)}</h2>
+      <div class="mxStats"><span>${esc(s.setup)}</span><span><b>${s.posts}</b> posts</span><span><b>${mins(s.minutes)}</b></span>
+        <span><b>${filmed}</b> of ${mine.length} ${carousel ? "carousels in" : "filmed"}</span></div></div>
+    <div class="mxCols wide">
+      <ol class="mxSteps">
+        ${step("setup", "Set up", `<p class="mxNote">${esc(s.setup)}.</p><p class="mxNote muted">${esc(s.tip)}</p>`)}
+        ${step("light", `Light it <span class="muted">· ${s.light_min} min</span>`, lightTable(s.light))}
+        ${step("example", "Watch the example", `<p class="mxNote">Copy its framing, pacing and how the item is shown${carousel ? ", and the one line of on-image text" : ""}.</p>
+          ${s.example ? `<p class="mxNote"><a href="${esc(s.example)}" target="_blank" rel="noopener">Open the example on TikTok ↗</a></p>` : `<p class="mxNote muted">No example yet: paste a TikTok link below.</p>`}
+          <div class="row"><input id="exampleUrl" placeholder="Paste a different TikTok link for this shoot" value="${s.example_set ? esc(s.example) : ""}"><button data-go="example">Use</button></div>`)}
+        ${step("pieces", carousel ? "Pull the item and the outfits around it" : "Lay out the pieces", `<table class="mxList"><tbody>${s.items.map(i => { const pr = byId("products", i.product);
+          return `<tr><td translate="no">${esc(baseOf(i.name))}</td><td translate="no" class="muted">${esc(colorOf(i.name))}</td><td class="muted">${esc(pr?.fills?.size || "")}</td><td class="num">${i.takes} <span>${carousel ? (i.takes === 1 ? "carousel" : "carousels") : (i.takes === 1 ? "take" : "takes")}</span></td></tr>`; }).join("")}</tbody></table>
+          ${carousel ? `<p class="mxNote muted">Each carousel needs 2–5 different outfits that all star its item: have the other pieces (tops, bottoms, shoes, layers) ready to rotate around it.</p>` : ""}`)}
+        ${carousel
+          ? step("film", "Shoot the carousels", `<p class="mxNote">For each carousel: lay the item flat in an outfit and take the photo straight down (phone parallel to the floor). Restyle it in a different outfit for the next photo, 2–5 photos in all. The item stays the star of every photo; only the pieces around it change.</p>
+              <p class="mxNote muted">Add each carousel's photos below, in order. They go into that post's own folder with its description.</p>
+              ${mine.map(x => kitPhotoRow(x)).join("")}`)
+          : step("film", "Film in Ad Camera", `<p class="mxNote">On the iPhone open each project below in Ad Camera. Say <b>“Ad Camera, action”</b> to start and <b>“Ad Camera, cut”</b> to stop, or use the Apple Watch. Film the takes back to back, then swap to the next colour.</p>
+              ${s.projects?.length ? `<table class="mxList"><tbody>${s.projects.map(pr => { const ps = mine.filter(x => x.sid === pr.sid), it = s.items.find(i => i.product === pr.product) || { takes: 0 }, have = ps[0]?.takes || 0;
+                return `<tr><td translate="no">${esc(colorOf(prodName(pr.product)) || prodName(pr.product))}</td><td class="num">${have} of ${it.takes} <span>takes in</span></td><td>${have >= it.takes ? `<span class="mxPill ok">Filmed</span>` : have ? `<span class="mxPill wait">Filming</span>` : `<span class="mxPill">To film</span>`}</td><td class="num"><button data-open="${esc(pr.sid)}">Open</button></td></tr>`; }).join("")}</tbody></table>`
+                : `<p class="mxNote muted">Send this setup to Ad Camera first (button at the top).</p>`}
+              ${sc ? `<details class="mxScript"><summary>The script <span class="muted" translate="no">${esc(sc.title)}</span></summary><pre translate="no">${esc(sc.text)}</pre></details>` : ""}`)}
+        ${step("after", carousel ? "When the photos are in" : "When the takes are in", carousel
+          ? `<p class="mxNote">Open <b>Posting Kit</b> (Shoot Days) and press <b>Prepare Posting Kit</b>: each carousel's folder gets its description and on-image text line next to its photos.</p>`
+          : `<p class="mxNote">Ad Factory pre-cuts every take and puts the captions on. Then open <b>Posting Kit</b> (Shoot Days) and press <b>Prepare Posting Kit</b>: each post gets its own folder with the finished video and its description, ready to schedule.</p>`)}
+      </ol>
+      <div class="mxSide">
+        ${vid ? `<div class="mxEmbed"><iframe src="https://www.tiktok.com/embed/v2/${vid}" allow="encrypted-media; fullscreen" loading="lazy" title="Example"></iframe></div>` : ""}
+        <div class="mxLabel">This shoot's posts</div>
+        <ul class="mxRows">${mine.map(x => `<li class="nohover"><span class="num">${x.time}</span> <span translate="no">${esc(colorOf(x.name) || x.name)}</span> ${stepPill(x.step)}</li>`).join("")}</ul>
+      </div>
+    </div>`;
+}
+const STEP = { film: ["To film", ""], photos: ["Needs photos", ""], precut: ["Pre-cutting", "wait"], render: ["Footage in", "wait"], ready: ["Ready to post", "ok"], scheduled: ["Scheduled", "done"] };
+const stepPill = s => { const [l, c] = STEP[s] || [s, ""]; return `<span class="mxPill ${c}">${l}</span>`; };
+const kitPhotoRow = x => `<div class="mxDrop" data-photo-k="${x.k}"><div><b>Post ${x.n}</b> <span class="muted">${x.time} · <span translate="no">${esc(colorOf(x.name) || x.name)}</span></span></div>
+  <div class="muted">${x.photos.length ? `${x.photos.length} of 2–5 photos in · ` : "Drop 2–5 photos here, or "}<label class="linkish">choose<input type="file" accept="image/*" multiple hidden data-photo-pick="${x.k}"></label></div></div>`;
+
+// ---------- posting kit: one folder per post, progress from footage to scheduled ----------
+async function renderKit(box, day) {
+  const kit = await api(`/api/shop/planner/day/${day}/kit`), job = kit.job, ps = kit.posts;
+  const n = k => ps.filter(x => x.step === k).length;
+  PL.kit = ps;
+  box.innerHTML = `
+    <div class="mxStats" style="margin-bottom:12px"><span><b>${ps.length - n("film") - n("photos")}</b> of ${ps.length} filmed</span><span><b>${n("ready")}</b> ready to post</span><span><b>${n("scheduled")}</b> scheduled</span>
+      <span class="muted">folder: <span translate="no">${esc(kit.folder)}</span></span></div>
+    <div class="mxBar"><button class="primary" data-go="kitbuild" ${job.running ? "disabled" : ""} title="A folder + description for every post; renders and copies each video whose footage is in">Prepare Posting Kit</button>
+      ${job.running || job.msg ? `<span class="muted">${esc(job.msg || "")}</span>` : ""}</div>
+    <div class="tblWrap"><table class="tbl mxKit"><thead><tr><th></th><th>Time</th><th>Post</th><th>Status</th><th>Description</th><th></th></tr></thead><tbody>
+      ${ps.map(x => `<tr class="${x.scheduled ? "closed" : ""}"><td><input type="checkbox" data-mark="${x.k}" ${x.scheduled ? "checked" : ""} title="Scheduled"></td>
+        <td class="num">${x.time}</td><td><b>${esc(x.label)}</b><div class="muted" translate="no">${esc(x.name)}</div></td><td>${stepPill(x.step)}</td>
+        <td class="desc" translate="no">${esc(x.description)}</td>
+        <td class="num acts"><button data-copy="${x.k}" title="Copy the description">Copy</button>
+          ${x.video_file ? `<a class="btnlike" href="/api/shop/planner/day/${day}/kit/${x.k}/file/video.mp4" download>Video</a>` : ""}
+          ${x.carousel ? `<label class="btnlike">Photos${x.photos.length ? ` (${x.photos.length})` : ""}<input type="file" accept="image/*" multiple hidden data-photo-pick="${x.k}"></label>` : ""}
+          <button data-kitopen="${x.k}" title="Open this post's folder on the PC">Folder</button></td></tr>`).join("")}</tbody></table></div>`;
+  if (job.running) setTimeout(() => { if (document.body.contains(box)) renderKit(box, day); }, 3000);
+}
+function kitClick(e, day, again) {
+  const go = e.target.closest("[data-go]")?.dataset.go;
+  if (go === "kitbuild") { api(`/api/shop/planner/day/${day}/kit/build`, { json: {} }).then(() => { toast("Preparing the posting kit…"); again(); }); return true; }
+  const c = e.target.closest("[data-copy]");
+  if (c) { const x = (PL.kit || []).find(y => y.k === +c.dataset.copy); navigator.clipboard?.writeText(x?.description || "").then(() => toast("Description copied")); return true; }
+  const o = e.target.closest("[data-kitopen]"); if (o) { api(`/api/shop/planner/day/${day}/kit/${o.dataset.kitopen}/open`, { json: {} }).catch(err => toast(err.message)); return true; }
+  const sh = e.target.closest("[data-open]"); if (sh) { openShoot(sh.dataset.open); return true; }
+  return false;
+}
+async function uploadPhotos(day, k, files) {
+  let n = 0;
+  for (const f of files) {
+    await fetch(`/api/shop/planner/day/${day}/kit/${k}/photo?name=${encodeURIComponent(f.name)}`, { method: "PUT", body: f });
+    n++; toast(`Photo ${n} of ${files.length} saved`);
+  }
+}
+document.addEventListener("change", async e => {
+  const k = e.target.dataset?.photoPick; if (k == null || !e.target.files?.length) return;
+  await uploadPhotos(PL.day, +k, [...e.target.files]); PANES[LS.get("homeTab", "today")]?.();
+});
+document.addEventListener("dragover", e => { const z = e.target.closest?.("[data-photo-k]"); if (z) { e.preventDefault(); z.classList.add("over"); } });
+document.addEventListener("dragleave", e => e.target.closest?.("[data-photo-k]")?.classList.remove("over"));
+document.addEventListener("drop", async e => {
+  const z = e.target.closest?.("[data-photo-k]"); if (!z) return;
+  e.preventDefault(); z.classList.remove("over");
+  const files = [...e.dataTransfer.files].filter(f => f.type.startsWith("image/"));
+  if (files.length) { await uploadPhotos(PL.day, +z.dataset.photoK, files); renderPlanner(); }
+});
+$("#panePlanner").addEventListener("change", e => {
+  const st = e.target.dataset.step; if (st == null) return;
+  const key = `steps:${PL.day}:${LS.get("planOpen", "")}`, have = new Set(LS.get(key, []));
+  e.target.checked ? have.add(st) : have.delete(st); LS.set(key, [...have]);
+  e.target.closest(".mxStep")?.classList.toggle("done", e.target.checked);
+});
+
 // ---------- Today: the shoot day as a runbook ----------
 async function renderToday() {
   const el = $("#paneToday");
