@@ -201,3 +201,10 @@ html .mxSeg button.on { background: var(--mx-control-hi) !important; box-shadow:
   .mxCols { grid-template-columns: 1fr; }
   .mxSide { position: static; }
 }
+
+.mxChip { display: inline-flex; gap: 5px; align-items: baseline; padding: 2px 9px; margin: 2px 4px 2px 0; border-radius: 999px; background: rgba(255, 255, 255, .07);
+  border: .5px solid rgba(255, 255, 255, .1); font-size: 12.5px; cursor: pointer; white-space: nowrap; }
+.mxChip:hover { background: rgba(255, 255, 255, .12); }
+.mxChip .muted { font-size: 11.5px; }
+.tbl .num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.mxRot td { vertical-align: top; padding-top: 9px; padding-bottom: 9px; }

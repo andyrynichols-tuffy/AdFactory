@@ -240,5 +240,36 @@ async function plannerSettings() {
   dlg.showModal();
 }
 function tIn(k, v) { return `<input type="time" data-k="${k}" value="${esc(v)}">`; }
+// ---------- Lineup: what's in rotation, item by item with its colourways (the full product list is one click away) ----------
+const lineSeg = v => `<div class="mxBar"><div class="mxSeg">${[["rotation", "In Rotation"], ["all", "All Products and Orders"]].map(([k, l]) => `<button data-lview="${k}" class="${v === k ? "on" : ""}">${l}</button>`).join("")}</div>
+  <span class="spacer"></span>${v === "rotation" ? `<button data-go="plsettings" title="Pick which products the planner rotates through">Edit Rotation</button>` : ""}</div>`;
+async function renderLineup() {
+  const el = $("#paneProducts"), view = LS.get("lineupView", "rotation");
+  if (view !== "rotation") return renderProducts();
+  await shopLoad();
+  PL.cfg = await api("/api/shop/planner/settings");
+  const st = PL.cfg.settings, all = products(), ids = new Set(st.lineup || []);
+  const rot = ids.size ? all.filter(p => ids.has(p.id)) : all.filter(p => isShopLink(p.link));
+  const groups = new Map();
+  for (const p of rot) { const k = baseOf(p.name); if (!groups.has(k)) groups.set(k, []); groups.get(k).push(p); }
+  const cant = pid => (st.channels || []).filter(c => (c.cant_wear || []).includes(pid)).map(c => byId("accounts", c.account)?.name).filter(Boolean);
+  el.innerHTML = lineSeg(view) + `
+    <div class="mxStats" style="margin-bottom:14px"><span><b>${groups.size}</b> items</span><span><b>${rot.length}</b> colourways</span>
+      <span>every colourway gets its own posts, the way @sully.finds lists them</span></div>
+    <div class="tblWrap"><table class="tbl mxRot"><thead><tr><th>Item</th><th>Colourways</th><th>TikTok price</th><th></th></tr></thead><tbody>
+    ${[...groups].map(([name, ps]) => { const p0 = ps[0], no = [...new Set(ps.flatMap(p => cant(p.id)))];
+      return `<tr><td><b translate="no">${esc(name)}</b><div class="muted">${esc(p0.brand || "")}${no.length ? ` · not worn on ${esc(no.join(", "))}` : ""}</div></td>
+        <td>${ps.map(p => `<span class="mxChip" data-edit-prod="${p.id}" translate="no">${esc(colorOf(p.name) || "one colour")} <span class="muted">${esc(p.fills?.size || "")}</span></span>`).join("")}</td>
+        <td class="num">${esc(p0.price || "–")}</td><td class="num">${p0.link ? `<a href="${esc(p0.link)}" target="_blank" rel="noopener">TikTok Shop ↗</a>` : ""}</td></tr>`; }).join("")
+      || `<tr><td colspan="4" class="muted">Nothing in rotation yet: products with a TikTok Shop link rotate automatically, or pick them in Edit Rotation.</td></tr>`}</tbody></table></div>`;
+}
+$("#paneProducts").addEventListener("click", e => {
+  const v = e.target.closest("[data-lview]"); if (v) { LS.set("lineupView", v.dataset.lview); return renderLineup(); }
+  if (e.target.closest("[data-go=plsettings]")) return plannerSettings();
+  const ep = e.target.closest("[data-edit-prod]"); if (ep && LS.get("lineupView", "rotation") === "rotation") editThing("products", byId("products", ep.dataset.editProd));
+});
+const _renderProducts = renderProducts;  // shop.js re-renders the full list itself (filters, tabs): keep the view switch on top
+renderProducts = async function () { await _renderProducts(); if (LS.get("lineupView", "rotation") !== "rotation") $("#paneProducts").insertAdjacentHTML("afterbegin", lineSeg("all")); };
+PANES.products = renderLineup;
 PANES.planner = renderPlanner;
 PANES.today = renderToday;
