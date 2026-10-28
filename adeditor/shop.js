@@ -873,19 +873,17 @@ async function renderAnalytics() {
     <h3 class="secHead">Creators</h3>${perfTable(an.creators, "Creator", id => who(id), "Set who's in each video to compare.")}
     <div class="sc trackBox"><b>Track a video made elsewhere</b> <span class="muted">it counts toward the account's numbers</span>
       <div class="row"><input id="trackUrl" type="url" placeholder="https://www.tiktok.com/@…/video/…"><select id="trackAcc">${opts(d.accounts, acc, accLabel, "— account —")}</select><button data-go="track">Track</button></div></div>
-    <div id="compBox"></div>`;
-  renderCompetitors().catch(() => { });
+`;
 }
 // ---------- competitors: what other creators' videos probably sell (adcut/competitors.py) ----------
 const money = v => v == null ? "–" : "$" + (v >= 1e6 ? (v / 1e6).toFixed(1) + "M" : v >= 1e4 ? Math.round(v / 1e3) + "K" : v >= 1e3 ? (v / 1e3).toFixed(1) + "K" : Math.round(v));
 async function renderCompetitors() {
-  const box = $("#compBox"); if (!box) return;
+  const box = $("#paneCompetitors"); if (!box) return;
   const all = await api("/api/shop/competitors/all");
   const cur = LS.get("compHandle", "") || all.profiles[0]?.handle || "", days = LS.get("compDays", 7);
   const v = cur ? await api(`/api/shop/competitors/${encodeURIComponent(cur)}/view?days=${days}`).catch(() => null) : null;
   const st = all.status;
-  box.innerHTML = `<h3 class="secHead">🕵️ Competitors <span class="muted">estimated sales from public counters, like Kalodata</span></h3>
-    <div class="tbar"><span class="seg chips">${all.profiles.map(p => `<button data-comp="${esc(p.handle)}" class="${p.handle === cur ? "on" : ""}" translate="no">@${esc(p.handle)}</button>`).join("")}</span>
+  box.innerHTML = `<div class="tbar"><span class="seg chips">${all.profiles.map(p => `<button data-comp="${esc(p.handle)}" class="${p.handle === cur ? "on" : ""}" translate="no">@${esc(p.handle)}</button>`).join("")}</span>
       <input id="compAdd" placeholder="@handle to track"><button data-go="compadd">＋ Track</button><span class="spacer"></span>
       <span class="seg chips">${[1, 7, 30].map(n => `<button data-cdays="${n}" class="${n === days ? "on" : ""}">${n === 1 ? "1 day" : n + " days"}</button>`).join("")}</span>
       ${cur ? `<button data-go="comprefresh" ${st.running ? "disabled" : ""}>↻ Check now</button>` : ""}</div>
@@ -905,7 +903,7 @@ async function renderCompetitors() {
       ${v.videos.map(x => `<tr><td translate="no"><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.desc || x.id)}</a></td><td>${x.created ? new Date(x.created * 1000).toLocaleDateString(undefined, { month: "short", day: "numeric" }) : ""}</td>
         <td>${x.carousel ? "🖼 carousel" : "🎬 video"}</td><td>${num(x.views)}</td><td>${num(x.view_gain)}</td><td><b>${money(x.est_revenue)}</b></td></tr>`).join("")}</tbody></table></div>`}`;
 }
-$("#paneAnalytics").addEventListener("click", async e => {
+$("#paneCompetitors").addEventListener("click", async e => {
   const c = e.target.closest("[data-comp]"); if (c) { LS.set("compHandle", c.dataset.comp); return renderCompetitors(); }
   const dd = e.target.closest("[data-cdays]"); if (dd) { LS.set("compDays", +dd.dataset.cdays); return renderCompetitors(); }
   const go = e.target.closest("[data-go]")?.dataset.go;
@@ -997,8 +995,7 @@ $("#paneLibrary").addEventListener("change", e => { if (e.target.id === "libProd
 async function sheetStatus() {
   const st = await api("/api/shop/sheet/status").catch(() => null); if (!st) return null;
   const c = $("#sheetChip");
-  const icon = { ok: "📗", waiting: "⏳", error: "⚠", missing: "⚠", starting: "📗" }[st.state] || "📗";
-  c.textContent = `${icon} Sheet${st.state === "ok" ? " ✓" : ""}`;
+  c.innerHTML = `<i class="sdot ${st.state === "ok" || st.state === "starting" ? "ok" : st.state === "waiting" ? "wait" : "bad"}"></i>Spreadsheet <span class="muted">${st.state === "ok" ? "in sync" : st.state === "waiting" ? "waiting" : st.state === "starting" ? "" : "needs a look"}</span>`;
   c.classList.toggle("warnbtn", st.state !== "ok" && st.state !== "starting");
   c.title = st.state === "ok" ? `Spreadsheet in sync (${ago(st.synced)})` : st.msg || "Spreadsheet";
   return st;
@@ -1026,7 +1023,7 @@ $("#sheetChip").onclick = async () => {
 sheetStatus();
 setInterval(() => { if (!$("#home").hidden) sheetStatus(); }, 15000);
 
-const PANES = { overview: renderOverview, queue: renderQueue, products: renderProducts, analytics: renderAnalytics, library: renderLibrary };
+const PANES = { competitors: renderCompetitors, overview: renderOverview, queue: renderQueue, products: renderProducts, analytics: renderAnalytics, library: renderLibrary };
 $("#newVideoBtn").onclick = () => newVideo();
 // the Queue keeps up with uploads / pre-cuts finishing
 setInterval(() => { if (!$("#home").hidden && LS.get("homeTab", "overview") === "queue" && !document.querySelector("dialog[open]")) renderQueue().catch(() => { }); }, 15000);

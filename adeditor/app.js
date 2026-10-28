@@ -156,7 +156,7 @@ async function flushSave() { clearTimeout(saveT); if (S.dirty) await save(); }
 
 // ---------- home ----------
 async function showHome() {
-  showHomeTab(LS.get("homeTab", "overview"));
+  showHomeTab(LS.get("homeTab", "today"));
   renderInbox();
   S.sid = null; S.shoot = null; pause();
   history.replaceState(null, "", "#");
@@ -2015,17 +2015,28 @@ function setPosted(n, posted) {
 
 // home: Shoots | Saved
 let savedRows = [];
+const PAGE = {  // sidebar section -> page title + one line of what it's for
+  today: ["Today", "The shoot day, block by block"], planner: ["Shoot Days", "Sets, lighting, takes and posting times"],
+  products: ["Lineup", "Products, colourways, orders and samples"], analytics: ["Our Accounts", "Followers, views and what's working"],
+  competitors: ["Competitors", "What other creators post and probably sell"], shoots: ["Shoots", "Raw footage in, finished videos out"],
+  saved: ["Posting", "Saved videos to post, and posted ones"], library: ["Scripts", "Script library, formats and style tags"],
+  queue: ["Queue", "Every video from idea to posted"], overview: ["Overview", ""],
+};
 function showHomeTab(tab) {
-  if (![...$$(".homeTabs button")].some(b => b.dataset.home === tab)) tab = "overview";
+  if (tab === "overview" || ![...$$(".sideNav [data-home]")].some(b => b.dataset.home === tab)) tab = "today";
   LS.set("homeTab", tab);
-  $$(".homeTabs button").forEach(b => b.classList.toggle("on", b.dataset.home === tab));
+  $$(".sideNav [data-home]").forEach(b => b.classList.toggle("on", b.dataset.home === tab));
+  const [title, sub] = PAGE[tab] || [tab, ""];
+  $("#pageTitle").textContent = title; $("#pageSub").textContent = sub; document.title = `${title} · Ad Factory`;
+  $("#newVideoBtn").hidden = !["planner", "products", "queue", "library"].includes(tab);
+  $("#home").scrollTop = 0; $(".homeBox").scrollTop = 0;
   $("#homeShoots").hidden = $("#shootsHead").hidden = tab !== "shoots";
   $("#homeSaved").hidden = $("#savedHead").hidden = tab !== "saved";
   $$(".shopPane").forEach(p => (p.hidden = p.dataset.pane !== tab));  // shop.js: Overview, Queue, Products, Analytics, Library
   if (typeof PANES !== "undefined" && PANES[tab]) PANES[tab]().catch(e => toast("Couldn't load: " + e.message));
   loadSaved();
 }
-$$(".homeTabs button").forEach(b => b.onclick = () => showHomeTab(b.dataset.home));
+$$(".sideNav [data-home]").forEach(b => b.onclick = () => showHomeTab(b.dataset.home));
 const savedFilter = () => LS.get("savedFilter", "todo");
 $$(".savedfilter button").forEach(b => b.onclick = () => { LS.set("savedFilter", b.dataset.f); renderSaved(); });
 async function loadSaved() {
