@@ -248,8 +248,8 @@ def _finish(d, st, day_iso, day, sets, posts, window, fmts):
     plan["blocks_done"] = [k for k in old.get("blocks_done") or [] if any(block_key(b) == k for b in plan["blocks"])]
     for s in sets:  # projects made earlier for this set stay linked, and an example picked for this day
         prev = next((x for x in old.get("sets") or [] if x["id"] == s["id"]), {})
-        have = {(it["product"], s.get("variant", 0)) for it in s["items"]}
-        s["projects"] = [pr for pr in prev.get("projects", []) if (pr["product"], pr.get("variant", 0)) in have]  # this set's products, this version
+        have = {(it.get("unit", it["product"]), s.get("variant", 0)) for it in s["items"]}
+        s["projects"] = [pr for pr in prev.get("projects", []) if (pr.get("unit", pr["product"]), pr.get("variant", 0)) in have]  # this set's videos, this version
         if prev.get("example_set"):
             s["example"], s["example_set"] = prev["example"], True
         for k in ("outfits", "texts"):  # the carousel plan (adcut/carouselplan.py) survives a rebuild
@@ -411,7 +411,7 @@ def _tidy(line: str) -> str:
     return re.sub(r"^(wearing a size|in|the)\s*[,.]", "", line).strip()
 
 
-def script_for(day_iso: str, s: dict, product_id: str, plan=None, variant: int = 0) -> list:
+def script_for(day_iso: str, s: dict, product_id: str, plan=None, variant: int = 0, products=None) -> list:
     """The complete script for one product in one set, line by line, nothing left to fill in.
     Carousels: the carousel's one line of on-screen text (adcut/carouselplan.py)."""
     d, sh = load(), shop.load()
@@ -425,13 +425,24 @@ def script_for(day_iso: str, s: dict, product_id: str, plan=None, variant: int =
     ids = [x for x in s.get("scripts") or [] if x] or [s.get("script")]
     sc = shop.by_id(sh, "scripts", ids[variant % len(ids)])
     v = _vars(plan, s, chan, p)
+    ps = [x for x in (shop.by_id(sh, "products", i) for i in (products or [product_id])) if x]
+    multi = len(ps) > 1
+    if multi:  # a mix: the item said without a colour, the colourways named ("grey marl, dark brown and dark khaki green")
+        cols = [(x["name"].partition(" - ")[2] or "").lower() for x in ps]
+        join = lambda c: c[0] if len(c) == 1 else ", ".join(c[:-1]) + " and " + c[-1]
+        base = (p.get("name") or "").partition(" - ")[0]
+        brand = p.get("brand") or ""
+        v.update({"product": base[len(brand):].strip() if brand and base.startswith(brand) else base,
+                  "colors": join(cols), "other colors": join(cols[1:]), "color count": {2: "two", 3: "three"}.get(len(cols), str(len(cols)))})
     deal = bool(v.get("deal"))
     lines = []
     for ln in (sc["text"] if sc else "").splitlines():
         ln = ln.strip()
         if not ln or ln.startswith("[or]") or (ln.startswith("[deal]") and not deal) or (ln.startswith("[nodeal]") and deal):
             continue
-        lines.append(shop.fill(re.sub(r"^\[(no)?deal\]\s*", "", ln), v))
+        if (ln.startswith("[single]") and multi) or (ln.startswith("[multi]") and not multi):
+            continue
+        lines.append(shop.fill(re.sub(r"^\[(no)?deal\]\s*", "", re.sub(r"^\[(single|multi)\]\s*", "", ln)), v))
     return [_tidy(ln) for ln in lines if _tidy(ln)]
 
 
@@ -445,16 +456,17 @@ def make_projects(day_iso: str, set_id: str) -> list:
     ids = [x for x in s.get("scripts") or [] if x] or [s.get("script")]
     made = []
     v = s.get("variant", 0)
-    done = {pr["product"] for pr in s.get("projects") or [] if pr.get("variant", 0) == v}
+    done = {pr.get("unit", pr["product"]) for pr in s.get("projects") or [] if pr.get("variant", 0) == v}
     for it in s["items"]:
-        if not it["product"] or it["product"] in done:
+        if not it["product"] or it.get("unit", it["product"]) in done:
             continue
-        lines = script_for(day_iso, s, it["product"], plan, variant=v)
+        lines = script_for(day_iso, s, it["product"], plan, variant=v, products=it.get("products"))
         r = shop.new_video({"product": it["product"], "account": s["channel"], "script": ids[v % len(ids)],
                             "script_text": "\n".join(lines), "assign": True,
                             "title": f"{label} · {s['label']} · {it['name'][:28]}",
                             "notes": f"{s['setup']}. {it['takes']} take{'s' if it['takes'] != 1 else ''}, near-identical. {s['tip']}\nLighting: {s.get('light', '')}"})
-        made.append({"sid": r["id"], "title": r["title"], "product": it["product"], "variant": v})
+        made.append({"sid": r["id"], "title": r["title"], "product": it["product"], "variant": v,
+                     "unit": it.get("unit", it["product"]), "products": it.get("products") or [it["product"]]})
     s["projects"] = s.get("projects", []) + made
     d["days"][day_iso] = plan
     save(d)
@@ -470,7 +482,8 @@ TEMPLATES = [  # @sully.finds' own scripts, copied from the example each format 
     ("flatlay_vo", "Sale news (flat-lay voiceover)",  # example 7690604593834757407, 387K views
      "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n"
      "[nodeal] {brand} finally put their {item} on their TikTok shop.\n"
-     "You're gonna get that super nice {feature 1} as well as the {feature 2}, and I just love this {color} colorway, it's gonna be perfect for this {season} season.\n"
+     "[single] You're gonna get that super nice {feature 1} as well as the {feature 2}, and I just love this {color} colorway, it's gonna be perfect for this {season} season.\n"
+     "[multi] You're gonna get that super nice {feature 1} as well as the {feature 2}, and I've got the {colors} here, so you can pick your favorite for this {season} season.\n"
      "{who} {height}, rocking a size {size}.\n"
      "[deal] These are selling out quick since they're {deal}, so if you wanna see if your size is still available, I'll leave a link down below.\n"
      "[nodeal] These are selling out quick{and shipping is free}, so if you wanna see if your size is still available, I'll leave a link down below."),
@@ -479,6 +492,7 @@ TEMPLATES = [  # @sully.finds' own scripts, copied from the example each format 
      "[nodeal] {brand} finally put their {item} on their TikTok shop.\n"
      "[deal] Just don't drop {store price} in store when you can pick {them} up for {deal} on TikTok.\n"
      "{This is} their {product}, so you're definitely going to get that {feature 1} with {this pair}.\n"
+     "[multi] I'm rocking the {color} here, but they also come in {other colors}.\n"
      "{who} {height}, rocking a size {size} in {this pair} {fit note}.\n"
      "So I'd definitely recommend going true to size, but their most popular sizes are going quick.\n"
      "So if you're seeing this in time and your size is still available, I definitely wouldn't miss out on {this pair}."),
@@ -487,7 +501,8 @@ TEMPLATES = [  # @sully.finds' own scripts, copied from the example each format 
      "[nodeal] {brand}'s official shop is finally on TikTok and they just put their {item} on there, just in time for this {season} season.\n"
      "[deal] Just don't drop {store price} in store when you can pick {them} up for way cheaper on here.\n"
      "You get that super nice {feature 1} as well as the {feature 2}.\n"
-     "There are multiple different colors to choose from.\n"
+     "[single] There are multiple different colors to choose from.\n"
+     "[multi] I've got the {colors} here, so you can pick your favorite.\n"
      "So if you want to see if your size is still available in {this pair}, I'll leave a link down below."),
     ("skit", "Where'd you get those? (two-person skit)",  # example 7699977637917183263
      "A: Wait, I love {that item}, where'd you get {it} from?\n"
@@ -503,6 +518,7 @@ TEMPLATES = [  # @sully.finds' own scripts, copied from the example each format 
     ("other", "My new favorite (extra slot)",  # example 7700043209048739103
      "{this is} definitely my new favorite {item} from {brand}.\n"
      "You get that super nice {feature 1} you can pair with any outfit, as well as the {feature 2}.\n"
+     "[multi] I got {it} in {colors}, and honestly I can't pick a favorite.\n"
      "[deal] These are selling out quick, though, so if you want to get yours {deal}, I'll leave a link down below.\n"
      "[nodeal] These are selling out quick, though, so if you want to get yours{with free shipping}, I'll leave a link down below."),
     ("carousel", "On-image text (carousel)",
@@ -518,12 +534,14 @@ VARIANTS = {  # extra versions of a format's script, each from another of his vi
          "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n"
          "[nodeal] {brand} finally put their {item} on their TikTok shop.\n"
          "You're gonna get that {feature 1} that pairs perfectly with any outfit and that {feature 2}.\n"
+     "[multi] I've got the {colors} here, and they go with pretty much anything.\n"
          "{who} {height}, rocking a size {size}.\n"
          "[deal] The only problem is these are selling out quick since they're {deal}, so if you wanna see if your size is still available, I'll leave a link below.\n"
          "[nodeal] The only problem is these are selling out quick, so if you wanna see if your size is still available, I'll leave a link below."),
         ("Sale news (flat-lay voiceover) · C",  # 7698164462607453470
          "These are easily my new favorite {item} from {brand}.\n"
          "You get that {feature 1} you can match with almost any outfit, as well as the {feature 2}.\n"
+     "[multi] I've got the {colors} here so you can see them side by side.\n"
          "{who} {height}, rocking a size {size} in {this pair} for reference.\n"
          "[deal] They are selling out quick though, since they're {deal}, so if you want to see if your size is still available, I'll leave a link down below.\n"
          "[nodeal] They are selling out quick though, so if you want to see if your size is still available, I'll leave a link down below."),
@@ -533,12 +551,14 @@ VARIANTS = {  # extra versions of a format's script, each from another of his vi
          "The {color} on {this pair} from {brand} is honestly so clean.\n"
          "{This is} their {product}, and with that {feature 1}, you can mix and match with any outfit.\n"
          "{this is} the perfect {item} for this {season} season.\n"
+     "[multi] They also come in {other colors} if you want to switch it up.\n"
          "{who} {height}, rocking a size {size} {fit note}, but a lot of their top selling sizes are going quick.\n"
          "So if you're seeing this and your size is still available, I definitely wouldn't miss out on {this pair}."),
         ("Height + size (worn, faceless) · C",  # 7696311170466073886
          "{this is} probably my new favorite {item} from {brand}.\n"
          "{This is} their {product}, so you get that {feature 2} without it looking sloppy.\n"
          "And I just love the {feature 1}, and this {color} colorway is gonna be perfect for this {season} season.\n"
+     "[multi] And if {color} isn't your thing, they also come in {other colors}.\n"
          "{who} {height}, rocking a size {size}, so you could definitely go true to size.\n"
          "I'll leave a link down below."),
     ],
@@ -546,7 +566,8 @@ VARIANTS = {  # extra versions of a format's script, each from another of his vi
         ("Official shop is on TikTok (held item) · B",  # his "I think I just found the perfect…" videos
          "I think I just found the perfect {item} for this {season}.\n"
          "{This is} the {brand} {product}, and the {feature 1} is honestly so good.\n"
-         "You also get the {feature 2}, and there are multiple colors to choose from.\n"
+         "[single] You also get the {feature 2}, and there are multiple colors to choose from.\n"
+     "[multi] You also get the {feature 2}, and I've got the {colors} here for you.\n"
          "It's on their TikTok shop, I'll leave a link right here."),
     ],
     "skit": [
@@ -622,6 +643,43 @@ def day_slots(st, day: date, chan: dict) -> list:
 
 
 VERSION_START = date(2026, 10, 26)  # the week version A is used; then B, C, A…
+
+
+MULTI = {"flatlay_vo", "held", "worn", "other"}  # formats that mix colourways (skits stay one colour: both people wear it)
+
+
+def _units(pool: list, key: str) -> list:
+    """The distinct videos a batch can make from its products: every colourway alone, and (for MULTI formats)
+    every pair and the trio of an item's colourways together (user, 2026-10-27: 3 colours = 7 different videos
+    instead of the same single-colour one again). Ordered so 1-, 2- and 3-colour videos and items alternate."""
+    from itertools import combinations
+    groups = {}
+    for p in pool:
+        groups.setdefault(p["name"].partition(" - ")[0], []).append(p)
+    bases = list(groups.values())
+
+    def rr(lists):  # round-robin across items, so neighbours are different items
+        out = []
+        for i in range(max((len(x) for x in lists), default=0)):
+            out += [x[i] for x in lists if i < len(x)]
+        return out
+    singles = rr([[[p] for p in ps] for ps in bases])
+    pairs = rr([[list(c) for c in combinations(ps, 2)] for ps in bases]) if key in MULTI else []
+    trios = rr([[list(ps[:3])] for ps in bases if len(ps) >= 3]) if key in MULTI else []
+    out = []
+    for i in range(max(len(singles), len(pairs), len(trios))):
+        for lst in (singles, pairs, trios):
+            if i < len(lst):
+                out.append(lst[i])
+    return out
+
+
+def _unit_item(ps: list, takes: int) -> dict:
+    if len(ps) == 1:
+        return {"product": ps[0]["id"], "products": [ps[0]["id"]], "unit": ps[0]["id"], "name": ps[0]["name"], "takes": takes}
+    base = ps[0]["name"].partition(" - ")[0]
+    return {"product": ps[0]["id"], "products": [p["id"] for p in ps], "unit": "+".join(p["id"] for p in ps),
+            "name": f"{base} - " + " + ".join(p["name"].partition(" - ")[2] or p["name"] for p in ps), "takes": takes}
 
 
 def week_version(day: date, n: int) -> int:
@@ -702,11 +760,10 @@ def _batch(st, sh, day: date, old: dict):
                 continue
             pool = wearable if key in WORN else lineup
             pool = pool[offset % len(pool):] + pool[:offset % len(pool)]
-            takes = max(1, int(st["takes"].get(key, f["takes"])))
-            k_products = min(len(pool), max(1, math.ceil(len(slots) / takes)))
+            units = _units(pool, key)
             cnt = len(slots)
-            items = [{"product": pool[j]["id"], "name": pool[j]["name"], "takes": cnt // k_products + (1 if j < cnt % k_products else 0)}
-                     for j in range(k_products)]
+            k_units = min(len(units), cnt)  # as many different videos as there are slots (fewer repeats)
+            items = [_unit_item(units[j], cnt // k_units + (1 if j < cnt % k_units else 0)) for j in range(k_units)]
             sid = f"{key}-{ci}"
             ver = week_version(day, len([x for x in base["scripts"] if x]) or 1)
             sets.append({**base, "id": sid, "label": f["label"], "items": items, "posts": cnt, "variant": ver,
@@ -715,6 +772,7 @@ def _batch(st, sh, day: date, old: dict):
             entries = [(it, r) for r in range(max(i["takes"] for i in items)) for it in items if r < it["takes"]]
             for (dd, t), (it, r) in zip(slots, entries):  # take r of a product = video r + 1 of its project
                 posts.append({"set": sid, "format": key, "channel": ch.get("account"), "product": it["product"], "name": it["name"],
+                              "unit": it["unit"], "products": it["products"],
                               "date": dd.isoformat(), "time": t, "variant": ver, "take": r + 1, "done": False})
     posts.sort(key=lambda p: (p["date"], p["time"], p["channel"] or ""))
     return sets, posts, (window[0].isoformat(), window[-1].isoformat()), fmts

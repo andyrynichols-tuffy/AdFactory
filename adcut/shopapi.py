@@ -314,12 +314,11 @@ def planner_scripts(day: str, set_id: str):
     for it in s["items"]:
         if not it["product"]:
             continue
-        vs = sorted({x.get("variant", 0) for x in posts if x["product"] == it["product"]}) or [0]
-        for v in vs:
-            pr = next((x for x in s.get("projects") or [] if x["product"] == it["product"] and x.get("variant", 0) == v), None)
-            lines = [ln["text"] for ln in store.load(pr["sid"])["script"]] if pr else planner.script_for(day, s, it["product"], plan, variant=v)
-            takes = sum(1 for x in posts if x["product"] == it["product"] and x.get("variant", 0) == v) or it["takes"]
-            out.append({"product": it["product"], "name": it["name"], "variant": v, "versions": len(vs), "takes": takes, "lines": lines})
+        unit = it.get("unit", it["product"])
+        v = s.get("variant", 0)
+        pr = next((x for x in s.get("projects") or [] if x.get("unit", x["product"]) == unit and x.get("variant", 0) == v), None)
+        lines = [ln["text"] for ln in store.load(pr["sid"])["script"]] if pr else planner.script_for(day, s, it["product"], plan, variant=v, products=it.get("products"))
+        out.append({"product": it["product"], "unit": unit, "name": it["name"], "variant": v, "versions": 1, "takes": it["takes"], "lines": lines})
     return out
 
 

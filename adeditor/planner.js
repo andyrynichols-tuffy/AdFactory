@@ -159,8 +159,8 @@ async function renderShoot(setId) {
               ${mine.map(x => kitPhotoRow(x)).join("")}`)
           : step("film", "Film in Ad Camera", `<p class="mxNote">On the iPhone open each project below in Ad Camera. Say <b>“Ad Camera, action”</b> to start and <b>“Ad Camera, cut”</b> to stop, or use the Apple Watch. Film the takes back to back, then swap to the next colour.</p>
               ${s.projects?.length ? `<table class="mxList"><tbody>${s.projects.map(pr => { const ps = mine.filter(x => x.sid === pr.sid), need = ps.length || 1, have = ps[0]?.takes || 0;
-                const ver = s.projects.filter(q => q.product === pr.product).length > 1 ? ` <span class="muted">· version ${(pr.variant || 0) + 1}</span>` : "";
-                return `<tr><td><span translate="no">${esc(colorOf(prodName(pr.product)) || prodName(pr.product))}</span>${ver}</td><td class="num">${have} of ${need} <span>${need === 1 ? "take" : "takes"} in</span></td><td>${have >= need ? `<span class="mxPill ok">Filmed</span>` : have ? `<span class="mxPill wait">Filming</span>` : `<span class="mxPill">To film</span>`}</td><td class="num"><button data-open="${esc(pr.sid)}">Open</button></td></tr>`; }).join("")}</tbody></table>`
+                const it = s.items.find(i => (i.unit || i.product) === (pr.unit || pr.product)), ver = "";
+                return `<tr><td><span translate="no">${esc(colorOf(it?.name || prodName(pr.product)) || prodName(pr.product))}</span>${ver}</td><td class="num">${have} of ${need} <span>${need === 1 ? "take" : "takes"} in</span></td><td>${have >= need ? `<span class="mxPill ok">Filmed</span>` : have ? `<span class="mxPill wait">Filming</span>` : `<span class="mxPill">To film</span>`}</td><td class="num"><button data-open="${esc(pr.sid)}">Open</button></td></tr>`; }).join("")}</tbody></table>`
                 : `<p class="mxNote muted">Send this setup to Ad Camera first (button at the top).</p>`}
               <div class="mxLabel">The scripts <span class="muted">· complete, one per colour, the same lines every take</span></div>
               <div id="scriptBox" class="mxScripts" data-set="${s.id}"></div>`)}

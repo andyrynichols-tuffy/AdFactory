@@ -85,9 +85,10 @@ def posts(day: str) -> list:
     pools = {}
     for k, x in enumerate(plan["posts"]):
         s = next((y for y in plan["sets"] if y["id"] == x["set"]), None)
+        unit = x.get("unit", x["product"])
         proj = next((pr for pr in (s or {}).get("projects") or []
-                     if pr["product"] == x["product"] and pr.get("variant", 0) == x.get("variant", 0)), None)
-        nth = seen[(x["set"], x["product"], x.get("variant", 0))] = seen.get((x["set"], x["product"], x.get("variant", 0)), 0) + 1
+                     if pr.get("unit", pr["product"]) == unit and pr.get("variant", 0) == x.get("variant", 0)), None)
+        nth = seen[(x["set"], unit, x.get("variant", 0))] = seen.get((x["set"], unit, x.get("variant", 0)), 0) + 1
         p = shop.by_id(sh, "products", x["product"]) or {}
         carousel = x["format"] == "carousel"
         label = (s or {}).get("label") or x["format"]
