@@ -2,7 +2,8 @@ import Photos
 import SwiftUI
 
 /// Carousel mode (user, 2026-10-27): shoot several carousel projects in one go. Pick the carousels
-/// (one product each) and how many outfits; every outfit is shot once with every product. Switch the
+/// (one product each) and how many outfits; each carousel is a cover (photo 1: the item on its own, which
+/// carries the on-screen text) and then every outfit shot once with that product. Switch the
 /// product or the outfit freely, so you can do all outfits for one product in a row, or keep one outfit
 /// and swap the products through it. After each photo it moves to the next combo not done yet, in the
 /// order you picked. Each photo goes to the "Ad Studio" album and into that product's carousel folder in
@@ -42,7 +43,7 @@ struct CarouselSetup: View {
                 Section {
                     Stepper(value: $outfits, in: 2...5) { Text("\(outfits) outfits") }
                 } footer: {
-                    Text("Every outfit is shot once with every product you picked: \(picked.count * outfits) photos.")
+                    Text("Each carousel: a cover (the item on its own) + every outfit once: \(picked.count * (outfits + 1)) photos.")
                 }
             }
             .navigationTitle("Shoot carousels")
@@ -75,7 +76,7 @@ struct CarouselView: View {
     @StateObject private var camera = CameraController()
     @StateObject private var voice = VoiceControl()
     @State private var product = 0
-    @State private var outfit = 1
+    @State private var outfit = 0             // 0 = the cover (the item on its own), then outfits 1…N
     @State private var done: [String: Set<Int>] = [:]        // shoot id -> outfits shot
     @State private var sending: Set<String> = []             // "sid#outfit" uploading
     @State private var problem: String?
@@ -84,8 +85,8 @@ struct CarouselView: View {
 
     private var current: Project { projects[product] }
     private func isDone(_ p: Int, _ o: Int) -> Bool { done[projects[p].sid]?.contains(o) ?? false }
-    private var total: Int { projects.count * outfits }
-    private var shot: Int { projects.indices.reduce(0) { n, p in n + (1...outfits).filter { isDone(p, $0) }.count } }
+    private var total: Int { projects.count * (outfits + 1) }   // a cover + one photo per outfit, per carousel
+    private var shot: Int { projects.indices.reduce(0) { n, p in n + (0...outfits).filter { isDone(p, $0) }.count } }
 
     var body: some View {
         ZStack {
@@ -121,8 +122,8 @@ struct CarouselView: View {
                 picker(title: "Product", count: projects.count, sel: $product) { i in
                     Text(verbatim: Self.short(projects[i])).lineLimit(1)
                 }
-                picker(title: "Outfit", count: outfits, sel: Binding(get: { outfit - 1 }, set: { outfit = $0 + 1 })) { i in
-                    Text("Outfit \(i + 1)")
+                picker(title: "Outfit", count: outfits + 1, sel: $outfit) { i in
+                    if i == 0 { Text("Cover") } else { Text("Outfit \(i)") }
                 }
                 HStack {
                     Text(isDone(product, outfit) ? "Retake replaces it" : " ").font(.caption).foregroundStyle(.secondary).frame(width: 110, alignment: .leading)
@@ -156,18 +157,21 @@ struct CarouselView: View {
         }
     }
 
-    /// What to lay out right now: the planned outfit for this product, and (outfit 1) the carousel's text.
+    /// What to lay out right now: the cover (the item alone, with the carousel's text) or the planned outfit.
     @ViewBuilder private var guide: some View {
         let plan = current.outfitPlan ?? []
         VStack(alignment: .leading, spacing: 4) {
-            if outfit <= plan.count {
+            if outfit == 0 {
+                Text("Cover").font(.subheadline.weight(.semibold))
+                Text("\(Self.short(current)) on its own, centered and smoothed flat. Leave room at the top for the text.").font(.footnote)
+            } else if outfit <= plan.count {
                 let o = plan[outfit - 1]
                 Text("Outfit \(outfit): \(o.name)").font(.subheadline.weight(.semibold))
                 Text("Lay \(Self.short(current)) with \(o.with)").font(.footnote)
             } else {
                 Text("Outfit \(outfit)").font(.subheadline.weight(.semibold))
             }
-            if let text = current.carouselText, !text.isEmpty {
+            if outfit == 0, let text = current.carouselText, !text.isEmpty {
                 Text("On-screen text: \(text)").font(.caption).foregroundStyle(.secondary)
             }
         }
@@ -183,13 +187,14 @@ struct CarouselView: View {
             ForEach(projects.indices, id: \.self) { p in
                 HStack(spacing: 4) {
                     Text(verbatim: Self.short(projects[p])).font(.caption2).lineLimit(1).frame(width: 96, alignment: .leading)
-                    ForEach(1...outfits, id: \.self) { o in
+                    ForEach(0...outfits, id: \.self) { o in
                         let here = p == product && o == outfit, key = "\(projects[p].sid)#\(o)"
                         Button { product = p; outfit = o } label: {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 5).fill(isDone(p, o) ? Color.green.opacity(0.75) : Color.white.opacity(0.15))
                                 if sending.contains(key) { ProgressView().scaleEffect(0.6) }
                                 else if isDone(p, o) { Image(systemName: "checkmark").font(.caption2.bold()) }
+                                else if o == 0 { Image(systemName: "textformat").font(.caption2).foregroundStyle(.secondary) }
                             }
                             .frame(width: 30, height: 22)
                             .overlay(RoundedRectangle(cornerRadius: 5).stroke(here ? Color.white : .clear, lineWidth: 2))
@@ -242,9 +247,9 @@ struct CarouselView: View {
     private func next(from start: Bool) {
         var combos: [(Int, Int)] = []
         if order == "product" {
-            for p in projects.indices { for o in 1...outfits { combos.append((p, o)) } }
+            for p in projects.indices { for o in 0...outfits { combos.append((p, o)) } }
         } else {
-            for o in 1...outfits { for p in projects.indices { combos.append((p, o)) } }
+            for o in 0...outfits { for p in projects.indices { combos.append((p, o)) } }
         }
         let here = combos.firstIndex { $0.0 == product && $0.1 == outfit } ?? 0
         let ordered = start ? combos : Array(combos[here...] + combos[..<here])

@@ -2202,16 +2202,6 @@
         }
       }
     },
-    "Every outfit is shot once with every product you picked: %lld photos.": {
-      "localizations": {
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cada look é fotografado uma vez com cada produto escolhido: %lld fotos."
-          }
-        }
-      }
-    },
     "%lld done": {
       "localizations": {
         "pt-BR": {
@@ -2338,6 +2328,36 @@
           "stringUnit": {
             "state": "translated",
             "value": "Texto na tela: %@"
+          }
+        }
+      }
+    },
+    "Cover": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Capa"
+          }
+        }
+      }
+    },
+    "%@ on its own, centered and smoothed flat. Leave room at the top for the text.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ sozinha, no centro e bem lisa. Deixe espaço em cima para o texto."
+          }
+        }
+      }
+    },
+    "Each carousel: a cover (the item on its own) + every outfit once: %lld photos.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada carrossel: uma capa (só a peça) + cada look uma vez: %lld fotos."
           }
         }
       }

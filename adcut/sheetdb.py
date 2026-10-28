@@ -372,8 +372,14 @@ def _merge_videos(book, refs, base):
     key = lambda n: re.sub(r"\s+", " ", _s(n)).lower()
     by_row = {key((s.get("sheet") or {}).get("row")): sid for sid, s in shoots.items() if (s.get("sheet") or {}).get("row")}
     seen, row_of = set(), {}
+    trashed = store.trashed()
+    gone_rows = set(trashed.values())
+    drop = []
     for r, vals in rows:
         rid = _s(vals.get("id"))
+        if rid not in shoots and (rid in trashed or (not rid and key(vals.get("shoot")) in gone_rows)):
+            drop.append(r)  # the shoot was deleted in the app (it's in ads/_trash): its row goes too
+            continue
         sid = rid if rid in shoots else by_row.get(key(vals.get("shoot")))
         if not sid or sid in seen:
             continue  # adcut/sheet.py makes the shoot for a new row; next pass links it
@@ -396,6 +402,11 @@ def _merge_videos(book, refs, base):
             shop.set_plan(sid, patch)
             shoots[sid] = store.load(sid)
             STATUS["changes"] += 1
+    for r in sorted(drop, reverse=True):
+        ws.delete_rows(r)
+        book.dirty += 1
+    for sid in row_of:  # rows below a deleted one moved up
+        row_of[sid] -= sum(1 for r in drop if r < row_of[sid])
     last = ws.max_row
     for sid, s in shoots.items():
         if sid in seen or not s.get("shop") or (s.get("sheet") or {}).get("hidden"):

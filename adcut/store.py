@@ -433,3 +433,17 @@ def vo_time(vo: dict, x: float) -> float:
     for a, b in sorted(vo.get("cuts") or []):
         r -= max(0.0, min(x, b) - a) if x > a else 0.0
     return r
+
+
+def trashed() -> dict:
+    """{shoot id: its sheet row name (or title)} for every shoot moved to ads/_trash, so the spreadsheet sync
+    removes their rows instead of making the shoots again (adcut/sheet.py, adcut/sheetdb.py)."""
+    out = {}
+    for f in (SHOOTS_DIR / "_trash").glob("*/shoot.json"):
+        sid = f.parent.name.rsplit("-", 1)[0]
+        try:
+            d = json.loads(f.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        out[sid] = ((d.get("sheet") or {}).get("row") or d.get("title") or "").strip().lower()
+    return out
