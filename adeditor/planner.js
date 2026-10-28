@@ -81,7 +81,7 @@ async function renderPlanner() {
     </div>
     ${!PL.cfg.accounts.length ? `<div class="mxBanner">Add your TikTok accounts first (Our Accounts → Accounts): the planner makes a day per channel.</div>` : ""}
     <div class="mxDayHead"><h2>${esc(dayName(PL.day))}</h2>
-      <div class="mxStats"><span><b>${p.posts.length}</b> posts</span><span><b>${p.sets.length}</b> setups</span><span><b>${mins(shoot)}</b> shooting</span><span><b>${mins(edit)}</b> editing</span>${ends ? `<span>done by <b>${ends}</b></span>` : ""}</div></div>
+      <div class="mxStats"><span><b>${p.posts.length}</b> posts</span>${p.mode === "batch" && p.window?.[0] !== PL.day ? `<span>going out <b>${esc(dayName(p.window[0], { weekday: "short", month: "short", day: "numeric" }))} – ${esc(dayName(p.window[1], { weekday: "short", month: "short", day: "numeric" }))}</b></span>` : ""}<span><b>${p.sets.length}</b> setups</span><span><b>${mins(shoot)}</b> shooting</span><span><b>${mins(edit)}</b> editing</span>${ends ? `<span>done by <b>${ends}</b></span>` : ""}</div></div>
     ${view === "kit" ? `<div id="kitBox"></div>` : `<div class="mxCols">
       <div class="mxSide">
         <div class="mxLabel">Schedule</div>
@@ -427,6 +427,12 @@ async function plannerSettings() {
   const num = (k, v, w = 60) => `<input type="number" min="0" data-k="${k}" value="${v}" style="width:${w}px">`;
   dlg.innerHTML = `<form><h3>Planner Settings</h3>
     <p class="muted">Defaults follow @sully.finds: ~20 posts a channel on weekdays, Saturday light, posting 3–8 pm, carousels for reach, near-identical takes per product.</p>
+    <h4>How shooting works</h4>
+    <div class="plRow"><label>Mode <select data-k="mode"><option value="batch" ${st.mode !== "daily" ? "selected" : ""}>Batch days: one format per shoot day, scheduled over the next week</option>
+      <option value="daily" ${st.mode === "daily" ? "selected" : ""}>Daily: each day shoots its own posts</option></select></label>
+      <label class="chk"><input type="checkbox" data-k="carousels" ${st.carousels ? "checked" : ""}> Our accounts can post carousels</label></div>
+    <p class="muted small">Without carousel access (TikTok is rolling it out slowly), their posts go to the videos.</p>
+    <div class="plWeek">${cfg.weekdays.map(w => `<div><b>${w}</b>${cfg.formats.filter(f => f.key !== "carousel" || st.carousels).map(f => `<label class="chk"><input type="checkbox" data-week="${w}" value="${f.key}" ${(cfg.week[w] || []).includes(f.key) ? "checked" : ""}> ${esc(f.label)}</label>`).join("")}</div>`).join("")}</div>
     <h4>Posts per channel</h4><div class="plRow">${cfg.weekdays.map(w => `<label>${w}<br>${num("posts." + w, st.posts[w], 52)}</label>`).join("")}</div>
     <h4>Formats <span class="fhint">% of each channel's posts · takes per product · minutes</span></h4>
     <table class="tbl plMix"><thead><tr><th></th><th>Mix</th><th>Takes</th><th>Lights</th><th>Shoot</th><th>Edit</th></tr></thead>${cfg.formats.map(f => `<tr><td><b>${esc(f.label)}</b><div class="muted small">${esc(f.tip)}</div></td><td>${num("mix." + f.key, st.mix[f.key])} %</td><td>× ${num("takes." + f.key, st.takes[f.key], 48)}</td>
@@ -461,6 +467,8 @@ async function plannerSettings() {
     out.channels = $$(".plChan", dlg).filter(r => $("[data-f=on]", r).checked).map(r => ({ account: r.dataset.acc, pov: $("[data-f=pov]", r).value,
       height: $("[data-f=height]", r).value.trim(), size_bottom: $("[data-f=size_bottom]", r).value.trim(), size_top: $("[data-f=size_top]", r).value.trim(), cant_wear: $$("[data-cant]", r).filter(i => i.checked).map(i => i.dataset.cant) }));
     out.lineup = $$("[data-lineup]", dlg).filter(i => i.checked).map(i => i.dataset.lineup);
+    out.mode = $("[data-k=mode]", dlg).value;
+    out.batch_week = Object.fromEntries(cfg.weekdays.map(w => [w, $$(`[data-week="${w}"]`, dlg).filter(i => i.checked).map(i => i.value)]));
     await api("/api/shop/planner/settings", { json: out });
     await api(`/api/shop/planner/day/${PL.day}/rebuild`, { json: {} });
     dlg.close(); toast("Saved: the day is rebuilt"); renderPlanner();

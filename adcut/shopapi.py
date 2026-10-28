@@ -273,7 +273,9 @@ from . import planner  # noqa: E402
 @router.get("/planner/settings")
 def planner_settings():
     d, sh = planner.load(), shop.load()
-    return {"settings": d["settings"], "formats": planner.FORMATS, "weekdays": planner.WEEKDAYS,
+    st = d["settings"]
+    week = st.get("batch_week") or (planner.BATCH_WEEK if st.get("carousels") else planner.BATCH_WEEK_VIDEO)
+    return {"settings": d["settings"], "formats": planner.FORMATS, "weekdays": planner.WEEKDAYS, "week": week,
             "accounts": [{"id": a["id"], "name": a["name"], "handle": a["handle"]} for a in sh["accounts"]]}
 
 

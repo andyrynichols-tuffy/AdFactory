@@ -1536,7 +1536,12 @@ window.I18N_PT = {
   "When": "Quando",
   "Going live today": "No ar hoje",
   "· scheduled from earlier batches": "· agendados de lotes anteriores",
-  "Not scheduled": "Não agendado"
+  "Not scheduled": "Não agendado",
+  "How shooting works": "Como funciona a gravação",
+  "Batch days: one format per shoot day, scheduled over the next week": "Dias de lote: um formato por dia de gravação, agendado para a próxima semana",
+  "Daily: each day shoots its own posts": "Diário: cada dia grava os próprios posts",
+  "Our accounts can post carousels": "Nossas contas podem postar carrosséis",
+  "Without carousel access (TikTok is rolling it out slowly), their posts go to the videos.": "Sem acesso a carrosséis (o TikTok está liberando aos poucos), os posts deles vão para os vídeos."
  },
  "patterns": [
   [

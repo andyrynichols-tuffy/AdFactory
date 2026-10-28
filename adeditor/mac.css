@@ -330,3 +330,8 @@ html .lightbox button { position: absolute; background: rgba(255, 255, 255, .12)
 .mxScripts { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; }
 .mxScriptCard { background: rgba(255, 255, 255, .04); border: .5px solid var(--mx-sep); border-radius: 8px; padding: 10px 12px; }
 .mxScriptCard ol { margin: 0; padding-left: 18px; display: grid; gap: 4px; }
+
+.plWeek { display: grid; grid-template-columns: repeat(7, minmax(110px, 1fr)); gap: 8px; font-size: 12px; margin: 6px 0 4px; }
+.plWeek > div { display: grid; gap: 3px; align-content: start; }
+.plWeek b { text-transform: capitalize; }
+@media (max-width: 760px) { .plWeek { grid-template-columns: repeat(2, 1fr); } }

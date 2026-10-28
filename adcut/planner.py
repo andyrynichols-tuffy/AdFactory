@@ -96,7 +96,7 @@ def save(d):
 def set_settings(changes: dict) -> dict:
     d = load()
     d["settings"] = store.deep_merge(d["settings"], changes)
-    for k in ("lineup", "channels", "meals"):  # lists are replaced, not merged
+    for k in ("lineup", "channels", "meals", "batch_week"):  # replaced whole, not merged
         if k in changes:
             d["settings"][k] = changes[k]
     if "day" in changes and "meals" in changes["day"]:
