@@ -9,7 +9,7 @@ import html as htmlmod
 import json
 import re
 
-from supercut import analytics
+from adkit import analytics
 
 VIDEO_ID_RX = re.compile(r"/video/(\d{8,})")  # short links can land on tiktok.com/@/video/<id>
 PRODUCT_RX = re.compile(r"(?:/pdp/(?:[^/?#]+/)?|/view/product/|product_id=)(\d{12,})")

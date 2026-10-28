@@ -22,7 +22,7 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 sys.path.insert(0, str(ROOT))
 
-from studio.supervisor import LOGS, Supervisor, _listening  # noqa: E402
+from adapp.supervisor import LOGS, Supervisor, _listening  # noqa: E402
 
 PORT, CONTROL_PORT = 8770, 8761
 TITLE, APP_ID = "Ad Factory", "MemeSupercut.AdFactory"
@@ -146,11 +146,11 @@ def main():
         ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(APP_ID)
     except Exception:
         pass
-    from supercut import resources
+    from adkit import resources
     resources.install()
 
     import webview
-    sup = Supervisor(ids=["ads"], versions=False)  # Studio keeps saving code versions for the whole repo
+    sup = Supervisor(ids=["ads"])  # also saves code versions and backs them up to GitHub (adapp/versions.py)
     threading.Thread(target=sup.run, daemon=True, name="supervisor").start()
     if not tray_only:  # open on the app itself, not an error page, when the server is still starting
         for _ in range(60):

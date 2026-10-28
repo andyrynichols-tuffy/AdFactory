@@ -15,7 +15,7 @@ import re
 import threading
 import time
 
-from supercut.config import ROOT
+from adkit.config import ROOT
 
 from . import productlink, store
 
@@ -76,7 +76,7 @@ def seed(handle: str, pages: list):
 
 
 def _video_page(url):
-    from supercut import analytics as an
+    from adkit import analytics as an
     _, html = an._get(url)
     item = an._scope(html).get("webapp.video-detail", {}).get("itemInfo", {}).get("itemStruct", {})
     prods = []
@@ -98,7 +98,7 @@ def _grid(handle, expect):
     import subprocess
     import sys
     flags = getattr(subprocess, "CREATE_NO_WINDOW", 0)
-    out = subprocess.run([sys.executable, "-m", "supercut.tiktok_grid", handle, str(expect), "900"],
+    out = subprocess.run([sys.executable, "-m", "adkit.tiktok_grid", handle, str(expect), "900"],
                          capture_output=True, text=True, timeout=1100, creationflags=flags, cwd=str(ROOT)).stdout
     try:
         return json.loads(out.strip().splitlines()[-1])
@@ -108,7 +108,7 @@ def _grid(handle, expect):
 
 def refresh(only=None, pause=(3.0, 6.0), grid=True):
     """One daily pass (gentle: one page at a time)."""
-    from supercut import analytics as an
+    from adkit import analytics as an
     if status["running"]:
         return
     status.update(running=True, msg="starting…")

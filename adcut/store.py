@@ -12,7 +12,7 @@ import time
 import uuid
 from pathlib import Path
 
-from supercut.config import CFG, DATA_DIR, ROOT
+from adkit.config import CFG, DATA_DIR, ROOT
 
 SHOOTS_DIR = ROOT / "ads"
 AD_DATA = DATA_DIR / "ads"

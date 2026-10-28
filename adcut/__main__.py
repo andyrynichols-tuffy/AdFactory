@@ -20,7 +20,7 @@ def main():
     p = sub.add_parser("serve"); p.add_argument("--port", type=int, default=8770)
     p = sub.add_parser("password"); p.add_argument("pw", nargs="?")
     a = ap.parse_args()
-    from supercut import resources
+    from adkit import resources
     resources.install()  # share the PC politely with PlayOn's real-time recordings (supercut/resources.py)
 
     from . import store

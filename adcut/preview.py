@@ -14,8 +14,8 @@ import threading
 import time
 from pathlib import Path
 
-from supercut.config import FFMPEG, FFPROBE
-from supercut.ingest import video_encoder_args
+from adkit.config import FFMPEG, FFPROBE
+from adkit.ingest import video_encoder_args
 
 from . import store
 from .render import look_vf

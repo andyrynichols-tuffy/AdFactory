@@ -13,10 +13,10 @@ from fastapi import Body, FastAPI, HTTPException, Request
 from fastapi.responses import FileResponse, HTMLResponse, JSONResponse, RedirectResponse, Response
 from fastapi.staticfiles import StaticFiles
 
-from supercut import fonts as fontsmod
-from supercut.caption import PRESETS, render_caption
-from supercut.config import FFMPEG, FONTS_DIR, ROOT
-from supercut.ingest import VIDEO_EXTS
+from adkit import fonts as fontsmod
+from adkit.caption import PRESETS, render_caption
+from adkit.config import FFMPEG, FONTS_DIR, ROOT
+from adkit.ingest import VIDEO_EXTS
 
 from . import assets as assetmod
 from . import inbox

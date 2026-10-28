@@ -126,7 +126,7 @@ def track(body: dict = Body(...)):
 
 @router.get("/cover/{vid}.jpg")
 def cover(vid: str):
-    from supercut import analytics as an
+    from adkit import analytics as an
     f = an.cover_file(vid)
     if not vid.isdigit() or not f.exists():
         raise HTTPException(404, "no cover")

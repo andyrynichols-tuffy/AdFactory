@@ -1,0 +1,182 @@
+/* =========================================================================
+   Studio design system: loaded LAST by every app (Meme Factory, Ad Factory,
+   PlayOn Queue, the phone reviewer) and by the Studio window, so they share one
+   look. Served at /studio-theme.css by each app; edit here, all apps follow.
+
+   Principles (Figma-style system): an 8 pt spacing grid, one type scale, one
+   radius scale, tokens for every colour, components defined once (button,
+   segmented control, menu, picker, input, chip), states for hover / pressed /
+   focus / disabled, and depth from light rather than lines: a soft ambient glow
+   behind everything, frosted-glass surfaces, a 1 px top highlight on each card.
+   ========================================================================= */
+
+html:root {
+  /* palette: a lighter, cooler dark mode */
+  --st-bg: #15171d;
+  --st-bg-2: #1a1d24;
+  --st-surface: rgba(255, 255, 255, .045);
+  --st-surface-2: rgba(255, 255, 255, .075);
+  --st-surface-3: rgba(255, 255, 255, .11);
+  --st-glass: rgba(30, 33, 41, .72);
+  --st-border: rgba(255, 255, 255, .085);
+  --st-border-2: rgba(255, 255, 255, .15);
+  --st-text: #eef0f4;
+  --st-muted: #a3a9b6;
+  --st-faint: #6f7684;
+  --st-accent: #21a366;        /* Excel green: the Studio colour */
+  --st-accent-hi: #33c481;
+  --st-accent-lo: #107c41;
+  --st-accent-soft: rgba(33, 163, 102, .16);
+  --st-danger: #ff6b7a;
+  --st-warn: #f5b84a;
+  --st-info: #5cb8ff;
+  /* scales */
+  --st-r1: 6px; --st-r2: 10px; --st-r3: 14px; --st-r4: 20px;
+  --st-sp1: 4px; --st-sp2: 8px; --st-sp3: 12px; --st-sp4: 16px; --st-sp5: 24px; --st-sp6: 32px;
+  --st-shadow-1: 0 1px 0 rgba(255, 255, 255, .05) inset, 0 1px 2px rgba(0, 0, 0, .25);
+  --st-shadow-2: 0 1px 0 rgba(255, 255, 255, .06) inset, 0 8px 24px rgba(0, 0, 0, .28);
+  --st-shadow-3: 0 1px 0 rgba(255, 255, 255, .08) inset, 0 18px 50px rgba(0, 0, 0, .45);
+  --st-glow: 0 0 0 1px rgba(51, 196, 129, .35), 0 6px 20px rgba(33, 163, 102, .35);
+  --st-blur: saturate(160%) blur(18px);
+  --st-ease: cubic-bezier(.2, .7, .2, 1);
+
+  /* map onto each app's own variables (Meme Factory / Ad Factory / PlayOn Queue / phone page) */
+  --bg: var(--st-bg); --panel: #1d2028; --panel2: #232731; --panel-2: #232731; --raised: #2a2e38;
+  --line: rgba(255, 255, 255, .085); --line2: rgba(255, 255, 255, .15);
+  --text: var(--st-text); --fg: var(--st-text); --muted: var(--st-muted);
+  --accent: var(--st-accent); --accent-2: var(--st-accent-hi); --ink: #ffffff;
+  --danger: var(--st-danger); --bad: var(--st-danger); --warn: var(--st-warn);
+}
+
+/* ---- ambient lighting behind everything ---- */
+html body {
+  background-color: var(--st-bg);
+  background-image:
+    radial-gradient(900px 520px at 8% -8%, rgba(33, 163, 102, .14), transparent 60%),
+    radial-gradient(800px 600px at 105% 110%, rgba(92, 184, 255, .07), transparent 60%),
+    linear-gradient(180deg, var(--st-bg-2), var(--st-bg));
+  background-attachment: fixed;
+}
+
+/* ---- surfaces: cards, panels, KPI tiles get glass + a top highlight ---- */
+.ancard, .kpi, .pcard, .show-row, .night, .qrow, .qnow, .card .art, .ep, .signin-card, .rvcard, .htile, .anmatch {
+  background-color: var(--st-surface);
+  border-color: var(--st-border) !important;
+  box-shadow: var(--st-shadow-1);
+  backdrop-filter: var(--st-blur);
+}
+.pcard:hover, .show-row:hover, .qrow:hover, .ep:hover, .anmatch:hover, .rvcard:hover {
+  background-color: var(--st-surface-2);
+  box-shadow: var(--st-shadow-2);
+}
+
+/* ---- buttons: one system ---- */
+button, .btn, a.editor-btn {
+  border-radius: var(--st-r2);
+  transition: background-color .15s var(--st-ease), border-color .15s var(--st-ease), color .15s,
+              box-shadow .2s var(--st-ease), transform .1s var(--st-ease);
+}
+button:not(.primary):not(.danger):not(.icon):not(.ghost):not(.chan):not(.tab):not(.seg):not(.lchip):not(.svc):not(.fold):not([class*="picon"]) {
+  background-color: var(--st-surface-2);
+  border: 1px solid var(--st-border-2);
+  color: var(--st-text);
+}
+button:not(.primary):not(.danger):hover:not(:disabled) { background-color: var(--st-surface-3); }
+button.primary, .primary, a.editor-btn {
+  background: linear-gradient(180deg, var(--st-accent-hi), var(--st-accent)) !important;
+  border: 1px solid rgba(255, 255, 255, .12) !important;
+  color: #fff !important;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .25) inset, 0 4px 14px rgba(33, 163, 102, .28);
+}
+button.primary:hover:not(:disabled), .primary:hover:not(:disabled), a.editor-btn:hover {
+  background: linear-gradient(180deg, #3fd18d, var(--st-accent-hi)) !important;
+  box-shadow: var(--st-glow);
+}
+button.danger { background: rgba(255, 107, 122, .12); border: 1px solid rgba(255, 107, 122, .35); color: #ffb3bb; }
+button.danger:hover:not(:disabled) { background: rgba(255, 107, 122, .2); }
+button.ghost, .ghost { background: transparent; border: 1px solid transparent; color: var(--st-muted); }
+button.ghost:hover:not(:disabled), .ghost:hover:not(:disabled) { background: var(--st-surface-2); color: var(--st-text); }
+button:active:not(:disabled) { transform: translateY(1px) scale(.99); }
+button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, a:focus-visible {
+  outline: 2px solid var(--st-accent-hi); outline-offset: 2px;
+}
+button:disabled { opacity: .4; cursor: not-allowed; }
+
+/* ---- inputs ---- */
+input:not([type=range]):not([type=checkbox]):not([type=radio]), select, textarea {
+  background: rgba(0, 0, 0, .22); border: 1px solid var(--st-border-2); border-radius: var(--st-r2); color: var(--st-text);
+  transition: border-color .15s, box-shadow .15s;
+}
+input:not([type=range]):not([type=checkbox]):focus, select:focus, textarea:focus {
+  border-color: var(--st-accent); box-shadow: 0 0 0 3px var(--st-accent-soft); outline: none;
+}
+input[type=range], input[type=checkbox] { accent-color: var(--st-accent); }
+
+/* ---- segmented control (filters) ---- */
+.segs { display: inline-flex; gap: 2px; padding: 3px; border-radius: var(--st-r3); background: rgba(0, 0, 0, .25); border: 1px solid var(--st-border); }
+.seg { height: 30px; padding: 0 12px; border-radius: var(--st-r2); background: transparent; border: 0; color: var(--st-muted); font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
+.seg span { font-size: 11px; padding: 1px 7px; border-radius: 999px; background: var(--st-surface-2); color: var(--st-muted); }
+.seg:hover { color: var(--st-text); }
+.seg.on { background: var(--st-surface-3); color: var(--st-text); box-shadow: var(--st-shadow-1); }
+.seg.on span { background: var(--st-accent-soft); color: var(--st-accent-hi); }
+
+/* ---- menus (⋯ menus, status menus, context menus) ---- */
+.uimenu, .anmenu, .dreason, #otherMenu {
+  background: var(--st-glass) !important; backdrop-filter: var(--st-blur);
+  border: 1px solid var(--st-border-2) !important; border-radius: var(--st-r3) !important; box-shadow: var(--st-shadow-3) !important;
+}
+.uimenu { position: fixed; z-index: 2000; min-width: 230px; max-width: 320px; padding: 6px; display: grid; gap: 1px; animation: st-pop .14s var(--st-ease); }
+.uimenu button { display: flex !important; align-items: flex-start; gap: 10px; width: 100%; height: auto !important; min-height: 34px; padding: 7px 10px !important;
+  background: transparent !important; border: 0 !important; border-radius: var(--st-r2) !important; color: var(--st-text) !important; text-align: left; justify-content: flex-start !important; box-shadow: none !important; }
+.uimenu button:hover:not(:disabled) { background: var(--st-surface-3) !important; }
+.uimenu button.on .uico { color: var(--st-accent-hi); }
+.uimenu button.danger, .uimenu button.danger .uico { color: var(--st-danger) !important; }
+.uimenu .uico { width: 18px; display: grid; place-items: center; color: var(--st-muted); padding-top: 1px; }
+.uimenu .uitxt { display: grid; gap: 1px; }
+.uimenu .uitxt b { font-weight: 600; font-size: 13px; }
+.uimenu .uitxt em { font-style: normal; font-size: 11.5px; color: var(--st-muted); font-weight: 400; }
+.uimenu .uisep { height: 1px; margin: 4px 6px; background: var(--st-border); }
+@keyframes st-pop { from { opacity: 0; transform: translateY(-4px) scale(.98); } to { opacity: 1; transform: none; } }
+
+/* ---- picker dialog (search + list) ---- */
+.uipick-wrap { position: fixed; inset: 0; z-index: 2100; display: grid; place-items: center; background: rgba(8, 9, 12, .45); backdrop-filter: blur(6px); animation: st-fade .15s; }
+.uipick { width: min(560px, calc(100vw - 32px)); max-height: min(640px, calc(100vh - 64px)); display: flex; flex-direction: column; gap: 10px; padding: 14px;
+  background: var(--st-glass); backdrop-filter: var(--st-blur); border: 1px solid var(--st-border-2); border-radius: var(--st-r4); box-shadow: var(--st-shadow-3); animation: st-pop .16s var(--st-ease); }
+.uipick-h { display: flex; align-items: center; justify-content: space-between; font-size: 15px; }
+.uipick-q { height: 38px; padding: 0 12px; font-size: 14px; }
+.uipick-list { overflow-y: auto; display: grid; gap: 4px; }
+.uipick-list button { display: grid !important; grid-template-columns: 40px 1fr auto; gap: 12px; align-items: center; height: auto !important; padding: 6px 8px !important;
+  background: transparent !important; border: 1px solid transparent !important; text-align: left; justify-content: stretch !important; box-shadow: none !important; }
+.uipick-list button:hover { background: var(--st-surface-2) !important; border-color: var(--st-border) !important; }
+.uipick-list .pimg { width: 40px; aspect-ratio: 9 / 16; border-radius: var(--st-r1); background: #000; overflow: hidden; }
+.uipick-list .pimg img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.uipick-list .ptxt { display: grid; gap: 2px; min-width: 0; }
+.uipick-list .ptxt b { font-weight: 600; font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.uipick-list .ptxt em { font-style: normal; font-size: 11.5px; color: var(--st-muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.uipick-list .pbadge { font-size: 11px; padding: 2px 8px; border-radius: 999px; background: var(--st-accent-soft); color: var(--st-accent-hi); }
+@keyframes st-fade { from { opacity: 0; } to { opacity: 1; } }
+
+/* ---- dialogs and toasts ---- */
+.dialog, .uidialog, #dialog, .toast, #toast, .action-bar, .hist {
+  background: var(--st-glass) !important; backdrop-filter: var(--st-blur);
+  border: 1px solid var(--st-border-2) !important; box-shadow: var(--st-shadow-3) !important;
+}
+
+/* ---- chips & badges ---- */
+.lchip { display: inline-flex; align-items: center; gap: 6px; height: 24px; padding: 0 10px; border-radius: 999px; font-size: 12px; font-weight: 600;
+  background: var(--st-accent-soft); color: var(--st-accent-hi); border: 1px solid rgba(51, 196, 129, .25); max-width: 100%; }
+.lchip span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lchip.ghost { background: transparent; color: var(--st-muted); border: 1px dashed var(--st-border-2); }
+.lchip:hover { filter: brightness(1.15); }
+
+/* ---- scrollbars ---- */
+* { scrollbar-width: thin; scrollbar-color: transparent transparent; }
+*:hover { scrollbar-color: rgba(255, 255, 255, .18) transparent; }
+::-webkit-scrollbar { width: 9px; height: 9px; }
+::-webkit-scrollbar-track, ::-webkit-scrollbar-corner { background: transparent; }
+::-webkit-scrollbar-thumb { background: transparent; border-radius: 999px; border: 2px solid transparent; background-clip: padding-box; }
+:hover::-webkit-scrollbar-thumb { background-color: rgba(255, 255, 255, .16); }
+::-webkit-scrollbar-thumb:hover { background-color: rgba(255, 255, 255, .28); }
+
+/* ---- motion: respect the system setting ---- */
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }

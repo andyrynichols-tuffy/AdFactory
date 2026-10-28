@@ -584,7 +584,7 @@ def _snap(rec, values, cap=500):
 
 
 def _refresh_one(url, extra=None):
-    from supercut import analytics
+    from adkit import analytics
     try:
         v = analytics.fetch_video(url)
     except Exception as e:
@@ -618,7 +618,7 @@ def track(url: str, account=None) -> dict:
 
 def refresh(pause=(3.0, 7.0)):
     """One gentle pass: each account's public profile, then each linked video's page."""
-    from supercut import analytics
+    from adkit import analytics
     if status["running"]:
         return
     status.update(running=True, msg="checking TikTok…")

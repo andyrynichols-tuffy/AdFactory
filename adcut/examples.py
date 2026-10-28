@@ -6,7 +6,7 @@ import json
 import re
 import urllib.request
 
-from supercut import analytics as an
+from adkit import analytics as an
 
 from . import store
 

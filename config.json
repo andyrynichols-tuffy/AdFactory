@@ -1,0 +1,8 @@
+{
+  "data_dir": "C:\\Users\\thecc\\MemeSupercutData",
+  "whisper_model": "large-v3-turbo",
+  "encoder": "auto",
+  "ad_inbox_dir": "C:\\Users\\thecc\\OneDrive\\Documents\\Andyrynichols OneDrive\\OneDrive\\Ad Factory Inbox",
+  "ad_download_dir": "C:\\Users\\thecc\\OneDrive\\Documents\\Andyrynichols OneDrive\\OneDrive\\Ad Factory Outbox",
+  "download_dir": "C:\\Users\\thecc\\OneDrive\\Documents\\Andyrynichols OneDrive\\OneDrive\\AndyFromBoyStory"
+}

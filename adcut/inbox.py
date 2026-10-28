@@ -15,8 +15,8 @@ import threading
 import time
 from pathlib import Path
 
-from supercut.config import CFG, CONFIG_FILE
-from supercut.ingest import VIDEO_EXTS
+from adkit.config import CFG, CONFIG_FILE
+from adkit.ingest import VIDEO_EXTS
 
 from . import store
 

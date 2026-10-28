@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+_review/
+w.txt
+
+# Xcode (ios/)
+xcuserdata/
+*.xcuserstate
+DerivedData/
+ios/build/

@@ -9,10 +9,10 @@ import subprocess
 import time
 from pathlib import Path
 
-from supercut.caption import caption_frames
-from supercut.config import FFMPEG, FONTS_DIR
-from supercut.ingest import video_encoder_args
-from supercut.render import ass_color, ass_escape, ass_time, filter_path, style_line, video_duration
+from adkit.caption import caption_frames
+from adkit.config import FFMPEG, FONTS_DIR
+from adkit.ingest import video_encoder_args
+from adkit.render import ass_color, ass_escape, ass_time, filter_path, style_line, video_duration
 
 from . import assets, fx, layout, pointer, sounds, store, titlefx
 

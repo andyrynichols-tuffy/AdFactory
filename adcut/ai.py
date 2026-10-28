@@ -6,7 +6,7 @@ import re
 import subprocess
 import time
 
-from supercut import asks
+from adkit import asks
 
 from . import store
 

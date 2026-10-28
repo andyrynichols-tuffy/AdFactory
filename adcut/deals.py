@@ -8,7 +8,7 @@ import re
 import threading
 import time
 
-from supercut import analytics as an
+from adkit import analytics as an
 
 from . import shop
 

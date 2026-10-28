@@ -17,8 +17,8 @@ import time
 import uuid
 from datetime import date
 
-from supercut.config import FFMPEG
-from supercut.ingest import probe
+from adkit.config import FFMPEG
+from adkit.ingest import probe
 
 from . import ai, shop, store
 
@@ -53,7 +53,7 @@ def _direct(url: str, folder):
     which downloads with that page's cookies."""
     import http.cookiejar
     import urllib.request
-    from supercut import analytics
+    from adkit import analytics
     op = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
     hdr = {"User-Agent": analytics.UA, "Accept-Language": "en-US,en;q=0.9", "Referer": "https://www.tiktok.com/"}
     r = op.open(urllib.request.Request(url, headers=hdr), timeout=30)

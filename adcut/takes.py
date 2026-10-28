@@ -10,8 +10,8 @@ import subprocess
 from difflib import SequenceMatcher
 from pathlib import Path
 
-from supercut.config import FFMPEG
-from supercut.ingest import decode_audio, probe, video_encoder_args, whisper_model
+from adkit.config import FFMPEG
+from adkit.ingest import decode_audio, probe, video_encoder_args, whisper_model
 
 from . import store
 
@@ -52,7 +52,7 @@ def speech_chunks(audio, sr: int = 16000) -> list:
 
 def transcribe_words(src: Path, progress=print) -> list:
     audio = decode_audio(src)
-    from supercut import resources
+    from adkit import resources
     sr, model, out = 16000, whisper_model(), []
     chunks = speech_chunks(audio)
     with resources.gpu_slot(progress):  # one GPU job at a time on the PC, never while PlayOn records

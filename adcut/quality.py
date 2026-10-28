@@ -8,7 +8,7 @@ import subprocess
 
 import numpy as np
 
-from supercut.config import FFMPEG, FFPROBE
+from adkit.config import FFMPEG, FFPROBE
 
 from . import store
 

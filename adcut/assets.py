@@ -9,8 +9,8 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFilter
 
-from supercut.config import FFMPEG
-from supercut.ingest import probe
+from adkit.config import FFMPEG
+from adkit.ingest import probe
 
 from . import store
 from .takes import tokens

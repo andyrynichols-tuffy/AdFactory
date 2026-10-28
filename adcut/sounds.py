@@ -7,7 +7,7 @@ from pathlib import Path
 
 import numpy as np
 
-from supercut import sfx as memesfx
+from adkit import sfx as memesfx
 
 from . import store
 

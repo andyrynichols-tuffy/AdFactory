@@ -9,7 +9,7 @@ from functools import lru_cache
 
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
-from supercut.fonts import EMOJI_FONT
+from adkit.fonts import EMOJI_FONT
 
 from . import pointer, store
 from .layout import CART_TAG

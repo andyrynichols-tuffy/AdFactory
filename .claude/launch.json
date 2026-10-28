@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "ad-editor",
+      "runtimeExecutable": ".venv\\Scripts\\python.exe",
+      "runtimeArgs": [
+        "-m",
+        "adcut",
+        "serve",
+        "--port",
+        "8770"
+      ],
+      "port": 8770
+    }
+  ]
+}
