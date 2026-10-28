@@ -1,0 +1,150 @@
+{
+ "version": 1,
+ "rev": 61,
+ "title": "Oct 30 · Flat-lay carousel · H&M Loose Fit Sweatpants - L",
+ "created": 1793144253.2765803,
+ "product": {
+  "name": "H&M Loose Fit Sweatpants - Light Grey Marl",
+  "link": "https://shop.tiktok.com/us/pdp/1732146858012217649",
+  "description": "",
+  "hashtags": "#tiktokshop #tiktokmademebuyit"
+ },
+ "reference": {
+  "url": "",
+  "file": "",
+  "notes": "Directions from the script:\n• or\n• or"
+ },
+ "sources": [],
+ "script": [
+  {
+   "id": "6cdd8d",
+   "text": "“I need a good light grey marl sweatpants for this fall”",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  }
+ ],
+ "script_guessed": false,
+ "takes": [],
+ "hooks": [],
+ "cta": "",
+ "style": {
+  "subs": {
+   "on": true,
+   "font": "Arial Black",
+   "size": 84,
+   "color": "#FFFFFF",
+   "highlight": "#FFE14D",
+   "outline": "#000000",
+   "outline_w": 6,
+   "uppercase": false,
+   "y": 0.66,
+   "words_per_line": 3,
+   "karaoke": true,
+   "pop": true
+  },
+  "look": {
+   "brightness": 0.0,
+   "smooth": 0.0
+  },
+  "speed": 1.0,
+  "pace": {
+   "auto": true,
+   "wps": 4.8,
+   "max": 1.1,
+   "pauses": true
+  },
+  "title": {
+   "on": true,
+   "y": 0.42,
+   "preset": "meme",
+   "font": "Impact",
+   "size": 150,
+   "color": "#FFFFFF",
+   "box_color": "#000000",
+   "accent": "#FFE14D",
+   "outline_w": 10,
+   "uppercase": true,
+   "rotate": -4,
+   "pop": true
+  },
+  "hook": {
+   "on": true,
+   "seconds": 3.0,
+   "y": 0.2,
+   "preset": "box",
+   "font": "Arial Black",
+   "size": 58,
+   "color": "#000000",
+   "box_color": "#FFFFFF",
+   "accent": "#FE2C55",
+   "outline_w": 0,
+   "uppercase": false,
+   "rotate": 0,
+   "pop": true
+  },
+  "cta": {
+   "on": false,
+   "y": 0.8,
+   "preset": "sticker",
+   "font": "Arial Black",
+   "size": 52,
+   "color": "#FFFFFF",
+   "box_color": "#FE2C55",
+   "accent": "#FFE14D",
+   "outline_w": 0,
+   "uppercase": false,
+   "rotate": -2,
+   "pop": true
+  },
+  "product_box": null,
+  "cart_pointer": {
+   "on": true,
+   "words": "orange cart, cart, basket",
+   "seconds": 2.2,
+   "color": "#FF8A00"
+  },
+  "punch_in": 1.12,
+  "pad_before": 0.08,
+  "pad_after": 0.18,
+  "voice_cleanup": false,
+  "loudness": -14
+ },
+ "skip": [],
+ "mix": null,
+ "mix_auto": true,
+ "batch_note": "",
+ "voiceover": null,
+ "voiceovers": [],
+ "from_inbox": false,
+ "assets": [],
+ "overlays": [],
+ "renders": {},
+ "saved": {},
+ "shop": {
+  "product": "adb964",
+  "account": "c4a9a3",
+  "creator": "9d770c",
+  "editor": null,
+  "tags": [],
+  "script": "4b9ccc",
+  "due": "2026-10-30",
+  "notes": "Wood floor, top-down. 1 take, near-identical. 5-7 photos of the item laid flat, one line of on-image text. Brings the reach.\nLighting: Key (circle) high above one end of the outfit, angled down at 45°, ~70%. Fill panel 1 low on the opposite side, ~30%, to soften shadows. Fill panel 2 off, or low across the far end if the floor looks uneven. Room lights off, all three at 5600K. Phone straight above; lock exposure and white balance; same spot every carousel.",
+  "assigned": 1793144253.2957652,
+  "done": false
+ },
+ "sheet": {
+  "row": "Oct 30 · Flat-lay carousel · H&M Loose Fit Sweatpants - L",
+  "sig": "288a7b99a8d8",
+  "lines": [
+   "fall essential: sweatpants POV: you found the perfect sweatpants for any fit \"I need a good sweatpants for this fall"
+  ]
+ }
+}

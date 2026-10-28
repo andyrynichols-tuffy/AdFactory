@@ -1,0 +1,180 @@
+{
+ "version": 1,
+ "rev": 14,
+ "title": "Oct 28 · Worn, faceless · Old Navy Waffle Henley - In · v3",
+ "created": 1793152209.9470644,
+ "product": {
+  "name": "",
+  "link": "",
+  "description": "",
+  "hashtags": "#tiktokshop #tiktokmademebuyit"
+ },
+ "reference": {
+  "url": "",
+  "file": "",
+  "notes": ""
+ },
+ "sources": [],
+ "script": [
+  {
+   "id": "ccf4ef",
+   "text": "{this is} probably my new favorite {item} from {brand}. {This is} their {product}, so you get that {feature 2} without it looking sloppy.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "eb2188",
+   "text": "And I just love the {feature 1}, and this {color} colorway is gonna be perfect for this {season} season. {who} {height}, rocking a size {size}, so you could definitely go true to size.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "532507",
+   "text": "I'll leave a link down below.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  }
+ ],
+ "script_guessed": false,
+ "takes": [],
+ "hooks": [],
+ "cta": "",
+ "style": {
+  "subs": {
+   "on": true,
+   "font": "Arial Black",
+   "size": 84,
+   "color": "#FFFFFF",
+   "highlight": "#FFE14D",
+   "outline": "#000000",
+   "outline_w": 6,
+   "uppercase": false,
+   "y": 0.66,
+   "words_per_line": 3,
+   "karaoke": true,
+   "pop": true
+  },
+  "look": {
+   "brightness": 0.0,
+   "smooth": 0.0
+  },
+  "speed": 1.0,
+  "pace": {
+   "auto": true,
+   "wps": 4.8,
+   "max": 1.1,
+   "pauses": true
+  },
+  "title": {
+   "on": true,
+   "y": 0.42,
+   "preset": "meme",
+   "font": "Impact",
+   "size": 150,
+   "color": "#FFFFFF",
+   "box_color": "#000000",
+   "accent": "#FFE14D",
+   "outline_w": 10,
+   "uppercase": true,
+   "rotate": -4,
+   "pop": true
+  },
+  "hook": {
+   "on": true,
+   "seconds": 3.0,
+   "y": 0.2,
+   "preset": "box",
+   "font": "Arial Black",
+   "size": 58,
+   "color": "#000000",
+   "box_color": "#FFFFFF",
+   "accent": "#FE2C55",
+   "outline_w": 0,
+   "uppercase": false,
+   "rotate": 0,
+   "pop": true
+  },
+  "cta": {
+   "on": false,
+   "y": 0.8,
+   "preset": "sticker",
+   "font": "Arial Black",
+   "size": 52,
+   "color": "#FFFFFF",
+   "box_color": "#FE2C55",
+   "accent": "#FFE14D",
+   "outline_w": 0,
+   "uppercase": false,
+   "rotate": -2,
+   "pop": true
+  },
+  "product_box": null,
+  "cart_pointer": {
+   "on": true,
+   "words": "orange cart, cart, basket",
+   "seconds": 2.2,
+   "color": "#FF8A00"
+  },
+  "punch_in": 1.12,
+  "pad_before": 0.08,
+  "pad_after": 0.18,
+  "voice_cleanup": false,
+  "loudness": -14
+ },
+ "skip": [],
+ "mix": null,
+ "mix_auto": true,
+ "batch_note": "",
+ "voiceover": null,
+ "voiceovers": [],
+ "from_inbox": false,
+ "assets": [],
+ "overlays": [],
+ "renders": {},
+ "saved": {},
+ "sheet": {
+  "sig": "6831a7903e5b",
+  "lines": [
+   "{this is} probably my new favorite {item} from {brand}. {This is} their {product}, so you get that {feature 2} without it looking sloppy.",
+   "And I just love the {feature 1}, and this {color} colorway is gonna be perfect for this {season} season. {who} {height}, rocking a size {size}, so you could definitely go true to size.",
+   "I'll leave a link down below."
+  ],
+  "row": "Oct 28 · Worn, faceless · Old Navy Waffle Henley - In · v3"
+ },
+ "shop": {
+  "product": null,
+  "account": null,
+  "creator": null,
+  "editor": null,
+  "tags": [],
+  "script": "b80496",
+  "due": "",
+  "notes": "",
+  "assigned": null,
+  "done": false
+ }
+}

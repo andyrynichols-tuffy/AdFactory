@@ -1,0 +1,195 @@
+{
+ "version": 1,
+ "rev": 28,
+ "title": "Oct 29 · Flat-lay voiceover video · H&M Loose-Fit Zip Hoodie - D",
+ "created": 1793151906.568561,
+ "product": {
+  "name": "H&M Loose-Fit Zip Hoodie - Dark Brown",
+  "link": "https://shop.tiktok.com/us/pdp/1732085413314597169",
+  "description": "",
+  "hashtags": "#tiktokshop #tiktokmademebuyit"
+ },
+ "reference": {
+  "url": "",
+  "file": "",
+  "notes": ""
+ },
+ "sources": [],
+ "script": [
+  {
+   "id": "fe9ebd",
+   "text": "H&M finally put their loose-fit zip-through hoodie on their TikTok shop.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "06651f",
+   "text": "You're gonna get that super nice drawstring hood as well as the two front pockets, and I just love this dark brown colorway, it's gonna be perfect for this fall season.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "cdd5b3",
+   "text": "I'm 6'2 185, rocking a size L.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "aff575",
+   "text": "These are selling out quick, and shipping is free right now, so if you wanna see if your size is still available, I'll leave a link down below.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  }
+ ],
+ "script_guessed": false,
+ "takes": [],
+ "hooks": [],
+ "cta": "",
+ "style": {
+  "subs": {
+   "on": true,
+   "font": "Arial Black",
+   "size": 84,
+   "color": "#FFFFFF",
+   "highlight": "#FFE14D",
+   "outline": "#000000",
+   "outline_w": 6,
+   "uppercase": false,
+   "y": 0.66,
+   "words_per_line": 3,
+   "karaoke": true,
+   "pop": true
+  },
+  "look": {
+   "brightness": 0.0,
+   "smooth": 0.0
+  },
+  "speed": 1.0,
+  "pace": {
+   "auto": true,
+   "wps": 4.8,
+   "max": 1.1,
+   "pauses": true
+  },
+  "title": {
+   "on": true,
+   "y": 0.42,
+   "preset": "meme",
+   "font": "Impact",
+   "size": 150,
+   "color": "#FFFFFF",
+   "box_color": "#000000",
+   "accent": "#FFE14D",
+   "outline_w": 10,
+   "uppercase": true,
+   "rotate": -4,
+   "pop": true
+  },
+  "hook": {
+   "on": true,
+   "seconds": 3.0,
+   "y": 0.2,
+   "preset": "box",
+   "font": "Arial Black",
+   "size": 58,
+   "color": "#000000",
+   "box_color": "#FFFFFF",
+   "accent": "#FE2C55",
+   "outline_w": 0,
+   "uppercase": false,
+   "rotate": 0,
+   "pop": true
+  },
+  "cta": {
+   "on": false,
+   "y": 0.8,
+   "preset": "sticker",
+   "font": "Arial Black",
+   "size": 52,
+   "color": "#FFFFFF",
+   "box_color": "#FE2C55",
+   "accent": "#FFE14D",
+   "outline_w": 0,
+   "uppercase": false,
+   "rotate": -2,
+   "pop": true
+  },
+  "product_box": null,
+  "cart_pointer": {
+   "on": true,
+   "words": "orange cart, cart, basket",
+   "seconds": 2.2,
+   "color": "#FF8A00"
+  },
+  "punch_in": 1.12,
+  "pad_before": 0.08,
+  "pad_after": 0.18,
+  "voice_cleanup": false,
+  "loudness": -14
+ },
+ "skip": [],
+ "mix": null,
+ "mix_auto": true,
+ "batch_note": "",
+ "voiceover": null,
+ "voiceovers": [],
+ "from_inbox": false,
+ "assets": [],
+ "overlays": [],
+ "renders": {},
+ "saved": {},
+ "shop": {
+  "product": "f1fed3",
+  "account": "c4a9a3",
+  "creator": "9d770c",
+  "editor": null,
+  "tags": [],
+  "script": "3d4a62",
+  "due": "2026-10-29",
+  "notes": "White bed or couch, hand pointing. 3 takes, near-identical. One take, ~20 s, read the sale script while pointing at the item.\nLighting: Key (circle) at 45° to one side of the bed, above it, ~60%. Fill panel 1 on the other side, ~30%. Fill panel 2 above or behind the bed, low, so the white sheets light evenly. Tap to lock, then drop exposure a touch so the whites don't blow out. Don't move anything between takes.",
+  "assigned": 1793151906.5867512,
+  "done": false
+ },
+ "sheet": {
+  "row": "Oct 29 · Flat-lay voiceover video · H&M Loose-Fit Zip Hoodie - D",
+  "sig": "8ea7f0bce6f9",
+  "lines": [
+   "H&M finally put their loose-fit zip-through hoodie on their TikTok shop.",
+   "You're gonna get that super nice drawstring hood as well as the two front pockets, and I just love this dark brown colorway, it's gonna be perfect for this fall season.",
+   "I'm 6'2 185, rocking a size L.",
+   "These are selling out quick, and shipping is free right now, so if you wanna see if your size is still available, I'll leave a link down below."
+  ]
+ }
+}

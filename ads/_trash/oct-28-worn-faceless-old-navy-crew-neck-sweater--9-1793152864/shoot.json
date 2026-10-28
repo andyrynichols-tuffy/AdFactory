@@ -1,0 +1,210 @@
+{
+ "version": 1,
+ "rev": 4,
+ "title": "Oct 28 · Worn, faceless · Old Navy Crew-Neck Sweater - · v3",
+ "created": 1793152153.29369,
+ "product": {
+  "name": "Old Navy Crew-Neck Sweater - Forest Canopy",
+  "link": "https://shop.tiktok.com/us/pdp/1732613947766182567",
+  "description": "",
+  "hashtags": "#tiktokshop #tiktokmademebuyit"
+ },
+ "reference": {
+  "url": "",
+  "file": "",
+  "notes": ""
+ },
+ "sources": [],
+ "script": [
+  {
+   "id": "8925a2",
+   "text": "This is probably my new favorite crew-neck sweater from Old Navy.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "f31787",
+   "text": "This is their Crew-Neck Sweater in forest canopy, so you get that relaxed raglan sleeves without it looking sloppy.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "7374f7",
+   "text": "And I just love the chunky rib knit, and this forest canopy colorway is gonna be perfect for this fall season.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "2606b5",
+   "text": "I'm 6'2 185, rocking a size M, so you could definitely go true to size.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "39427a",
+   "text": "I'll leave a link down below.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  }
+ ],
+ "script_guessed": false,
+ "takes": [],
+ "hooks": [],
+ "cta": "",
+ "style": {
+  "subs": {
+   "on": true,
+   "font": "Arial Black",
+   "size": 84,
+   "color": "#FFFFFF",
+   "highlight": "#FFE14D",
+   "outline": "#000000",
+   "outline_w": 6,
+   "uppercase": false,
+   "y": 0.66,
+   "words_per_line": 3,
+   "karaoke": true,
+   "pop": true
+  },
+  "look": {
+   "brightness": 0.0,
+   "smooth": 0.0
+  },
+  "speed": 1.0,
+  "pace": {
+   "auto": true,
+   "wps": 4.8,
+   "max": 1.1,
+   "pauses": true
+  },
+  "title": {
+   "on": true,
+   "y": 0.42,
+   "preset": "meme",
+   "font": "Impact",
+   "size": 150,
+   "color": "#FFFFFF",
+   "box_color": "#000000",
+   "accent": "#FFE14D",
+   "outline_w": 10,
+   "uppercase": true,
+   "rotate": -4,
+   "pop": true
+  },
+  "hook": {
+   "on": true,
+   "seconds": 3.0,
+   "y": 0.2,
+   "preset": "box",
+   "font": "Arial Black",
+   "size": 58,
+   "color": "#000000",
+   "box_color": "#FFFFFF",
+   "accent": "#FE2C55",
+   "outline_w": 0,
+   "uppercase": false,
+   "rotate": 0,
+   "pop": true
+  },
+  "cta": {
+   "on": false,
+   "y": 0.8,
+   "preset": "sticker",
+   "font": "Arial Black",
+   "size": 52,
+   "color": "#FFFFFF",
+   "box_color": "#FE2C55",
+   "accent": "#FFE14D",
+   "outline_w": 0,
+   "uppercase": false,
+   "rotate": -2,
+   "pop": true
+  },
+  "product_box": null,
+  "cart_pointer": {
+   "on": true,
+   "words": "orange cart, cart, basket",
+   "seconds": 2.2,
+   "color": "#FF8A00"
+  },
+  "punch_in": 1.12,
+  "pad_before": 0.08,
+  "pad_after": 0.18,
+  "voice_cleanup": false,
+  "loudness": -14
+ },
+ "skip": [],
+ "mix": null,
+ "mix_auto": true,
+ "batch_note": "",
+ "voiceover": null,
+ "voiceovers": [],
+ "from_inbox": false,
+ "assets": [],
+ "overlays": [],
+ "renders": {},
+ "saved": {},
+ "shop": {
+  "product": "229a70",
+  "account": "c4a9a3",
+  "creator": "9d770c",
+  "editor": null,
+  "tags": [],
+  "script": "7a7662",
+  "due": "2026-10-28",
+  "notes": "Bedroom, waist-down. 1 take, near-identical. Wear it, film waist-down, say your height and size.\nLighting: Key (circle) in front at 45°, center at chest height, tilted down toward the waist, ~70%. Fill panel 1 on the other side, ~35%, so the fabric shows. Fill panel 2 behind and to the side, low, as a rim light that outlines the fit against the background. Never a window behind you. Tape a mark on the floor so every take matches.",
+  "assigned": 1793152153.3096967,
+  "done": false
+ },
+ "sheet": {
+  "row": "Oct 28 · Worn, faceless · Old Navy Crew-Neck Sweater - · v3",
+  "sig": "6831a7903e5b",
+  "lines": [
+   "This is probably my new favorite crew-neck sweater from Old Navy.",
+   "This is their Crew-Neck Sweater in forest canopy, so you get that relaxed raglan sleeves without it looking sloppy.",
+   "And I just love the chunky rib knit, and this forest canopy colorway is gonna be perfect for this fall season.",
+   "I'm 6'2 185, rocking a size M, so you could definitely go true to size.",
+   "I'll leave a link down below."
+  ]
+ }
+}

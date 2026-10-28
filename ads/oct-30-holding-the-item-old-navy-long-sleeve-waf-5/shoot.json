@@ -1,0 +1,210 @@
+{
+ "version": 1,
+ "rev": 14,
+ "title": "Oct 30 · Holding the item · Old Navy Long-Sleeve Waffle · v1",
+ "created": 1793152208.8897576,
+ "product": {
+  "name": "",
+  "link": "",
+  "description": "",
+  "hashtags": "#tiktokshop #tiktokmademebuyit"
+ },
+ "reference": {
+  "url": "",
+  "file": "",
+  "notes": "Directions from the script:\n• deal\n• nodeal\n• deal"
+ },
+ "sources": [],
+ "script": [
+  {
+   "id": "7e4b74",
+   "text": "{brand}'s official shop is finally on TikTok and they're dumping all of their {item} just in time for this {season} season. {brand}'s official shop is finally on TikTok and they just put their {item} on there, just in time for this {season} season.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "cbce2d",
+   "text": "Just don't drop {store price} in store when you can pick {them} up for way cheaper on here.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "1bc670",
+   "text": "You get that super nice {feature 1} as well as the {feature 2}.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "e39ca2",
+   "text": "There are multiple different colors to choose from.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  },
+  {
+   "id": "607df9",
+   "text": "So if you want to see if your size is still available in {this pair}, I'll leave a link down below.",
+   "alts": [],
+   "optional": false,
+   "look": null,
+   "cut_next": false,
+   "product_box": null,
+   "wait_for": null,
+   "hold_after": null,
+   "lead_in": null,
+   "subs_off": false,
+   "cut_offset": null
+  }
+ ],
+ "script_guessed": false,
+ "takes": [],
+ "hooks": [],
+ "cta": "",
+ "style": {
+  "subs": {
+   "on": true,
+   "font": "Arial Black",
+   "size": 84,
+   "color": "#FFFFFF",
+   "highlight": "#FFE14D",
+   "outline": "#000000",
+   "outline_w": 6,
+   "uppercase": false,
+   "y": 0.66,
+   "words_per_line": 3,
+   "karaoke": true,
+   "pop": true
+  },
+  "look": {
+   "brightness": 0.0,
+   "smooth": 0.0
+  },
+  "speed": 1.0,
+  "pace": {
+   "auto": true,
+   "wps": 4.8,
+   "max": 1.1,
+   "pauses": true
+  },
+  "title": {
+   "on": true,
+   "y": 0.42,
+   "preset": "meme",
+   "font": "Impact",
+   "size": 150,
+   "color": "#FFFFFF",
+   "box_color": "#000000",
+   "accent": "#FFE14D",
+   "outline_w": 10,
+   "uppercase": true,
+   "rotate": -4,
+   "pop": true
+  },
+  "hook": {
+   "on": true,
+   "seconds": 3.0,
+   "y": 0.2,
+   "preset": "box",
+   "font": "Arial Black",
+   "size": 58,
+   "color": "#000000",
+   "box_color": "#FFFFFF",
+   "accent": "#FE2C55",
+   "outline_w": 0,
+   "uppercase": false,
+   "rotate": 0,
+   "pop": true
+  },
+  "cta": {
+   "on": false,
+   "y": 0.8,
+   "preset": "sticker",
+   "font": "Arial Black",
+   "size": 52,
+   "color": "#FFFFFF",
+   "box_color": "#FE2C55",
+   "accent": "#FFE14D",
+   "outline_w": 0,
+   "uppercase": false,
+   "rotate": -2,
+   "pop": true
+  },
+  "product_box": null,
+  "cart_pointer": {
+   "on": true,
+   "words": "orange cart, cart, basket",
+   "seconds": 2.2,
+   "color": "#FF8A00"
+  },
+  "punch_in": 1.12,
+  "pad_before": 0.08,
+  "pad_after": 0.18,
+  "voice_cleanup": false,
+  "loudness": -14
+ },
+ "skip": [],
+ "mix": null,
+ "mix_auto": true,
+ "batch_note": "",
+ "voiceover": null,
+ "voiceovers": [],
+ "from_inbox": false,
+ "assets": [],
+ "overlays": [],
+ "renders": {},
+ "saved": {},
+ "sheet": {
+  "sig": "41abeff0dc10",
+  "lines": [
+   "{brand}'s official shop is finally on TikTok and they're dumping all of their {item} just in time for this {season} season. {brand}'s official shop is finally on TikTok and they just put their {item} on there, just in time for this {season} season.",
+   "Just don't drop {store price} in store when you can pick {them} up for way cheaper on here.",
+   "You get that super nice {feature 1} as well as the {feature 2}.",
+   "There are multiple different colors to choose from.",
+   "So if you want to see if your size is still available in {this pair}, I'll leave a link down below."
+  ],
+  "row": "Oct 30 · Holding the item · Old Navy Long-Sleeve Waffle · v1"
+ },
+ "shop": {
+  "product": null,
+  "account": null,
+  "creator": null,
+  "editor": null,
+  "tags": [],
+  "script": "8d1154",
+  "due": "",
+  "notes": "",
+  "assigned": null,
+  "done": false
+ }
+}
