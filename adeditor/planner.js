@@ -131,7 +131,7 @@ async function renderShoot(setId) {
   PL.kit = kit.posts;
   const mine = kit.posts.filter(x => x.set === s.id), sc = byId("scripts", s.script);
   const carousel = s.format === "carousel", vid = tiktokId(s.example);
-  if (carousel) return renderCarouselShoot(el, s, mine);
+  if (carousel) return renderCarouselShoot(el, s, mine).then(showExample);
   const ticks = new Set(LS.get(`steps:${PL.day}:${s.id}`, []));
   const step = (k, title, body) => `<li class="mxStep ${ticks.has(k) ? "done" : ""}"><label class="mxStepHead"><input type="checkbox" data-step="${k}" ${ticks.has(k) ? "checked" : ""}><b>${title}</b></label><div class="mxStepBody">${body}</div></li>`;
   const filmed = mine.filter(x => !["film", "photos"].includes(x.step)).length;
@@ -143,8 +143,8 @@ async function renderShoot(setId) {
         <span><b>${filmed}</b> of ${mine.length} ${carousel ? "carousels in" : "filmed"}</span></div></div>
     <div class="mxCols wide">
       <ol class="mxSteps">
-        ${step("setup", "Set up", `<p class="mxNote">${esc(s.setup)}.</p><p class="mxNote muted">${esc(s.tip)}</p>`)}
-        ${step("light", `Light it <span class="muted">· ${s.light_min} min</span>`, lightTable(s.light))}
+        ${step("setup", "Set up", `<p class="mxNote">${esc(s.setup)}.</p><p class="mxNote muted">${esc(s.tip)}</p><div class="mxDiagrams">${DG.setup(s.format)}</div>`)}
+        ${step("light", `Light it <span class="muted">· ${s.light_min} min</span>`, `<div class="mxDiagrams">${DG.light(s.format)}</div>${lightTable(s.light)}`)}
         ${step("example", "Watch the example", `<p class="mxNote">Copy its framing, pacing and how the item is shown${carousel ? ", and the one line of on-image text" : ""}.</p>
           ${s.example ? `<p class="mxNote"><a href="${esc(s.example)}" target="_blank" rel="noopener">Open the example on TikTok ↗</a></p>` : `<p class="mxNote muted">No example yet: paste a TikTok link below.</p>`}
           <div class="row"><input id="exampleUrl" placeholder="Paste a different TikTok link for this shoot" value="${s.example_set ? esc(s.example) : ""}"><button data-go="example">Use</button></div>`)}
@@ -166,11 +166,22 @@ async function renderShoot(setId) {
           : `<p class="mxNote">Ad Factory pre-cuts every take and puts the captions on. Then open <b>Posting Kit</b> (Shoot Days) and press <b>Prepare Posting Kit</b>: each post gets its own folder with the finished video and its description, ready to schedule.</p>`)}
       </ol>
       <div class="mxSide">
-        ${vid ? `<div class="mxEmbed"><iframe src="https://www.tiktok.com/embed/v2/${vid}" allow="encrypted-media; fullscreen" loading="lazy" title="Example"></iframe></div>` : ""}
+        ${vid ? `<div class="mxLabel">The example</div><div id="exampleBox" data-ex="${esc(s.example)}"></div>` : ""}
         <div class="mxLabel">This shoot's posts</div>
         <ul class="mxRows">${mine.map(x => `<li class="nohover"><span class="num">${x.time}</span> <span translate="no">${esc(colorOf(x.name) || x.name)}</span> ${stepPill(x.step)}</li>`).join("")}</ul>
       </div>
     </div>`;
+  showExample();
+}
+// the example to copy, as itself: a photo post's photos side by side, or a video in TikTok's resizable player
+async function showExample() {
+  const box = $("#exampleBox"); if (!box) return;
+  const ex = await api(`/api/shop/example?url=${encodeURIComponent(box.dataset.ex)}`).catch(() => null);
+  if (!ex) { box.innerHTML = `<p class="mxNote muted">Couldn't load the example here: open it on TikTok.</p>`; return; }
+  box.innerHTML = ex.kind === "photos"
+    ? `<div class="mxExStrip">${ex.images.map((f, i) => `<a href="/api/shop/example/${ex.id}/${f}" target="_blank" rel="noopener"><img src="/api/shop/example/${ex.id}/${f}" alt="Photo ${i + 1}" loading="lazy"><span>${i + 1}</span></a>`).join("")}</div>
+       <p class="mxNote muted">${ex.images.length} photos${ex.author ? ` · @${esc(ex.author)}` : ""}</p>`
+    : `<div class="mxPlayer"><iframe src="https://www.tiktok.com/player/v1/${ex.id}?description=0&music_info=0&rel=0&native_context_menu=0&closed_caption=0" allow="fullscreen; encrypted-media" loading="lazy" title="Example video"></iframe></div>`;
 }
 const STEP = { film: ["To film", ""], photos: ["Needs photos", ""], precut: ["Pre-cutting", "wait"], render: ["Footage in", "wait"], ready: ["Ready to post", "ok"], scheduled: ["Scheduled", "done"] };
 const stepPill = s => { const [l, c] = STEP[s] || [s, ""]; return `<span class="mxPill ${c}">${l}</span>`; };
@@ -189,17 +200,21 @@ async function renderCarouselShoot(el, s, mine) {
       <div class="mxStats"><span>${esc(s.setup)}</span><span><b>${cp.products.length}</b> carousels × <b>${n}</b> outfits = <b>${cp.products.length * n}</b> photos</span><span><b>${mins(s.minutes)}</b></span><span><b>${filled}</b> of ${mine.length} started</span></div></div>
     <div class="mxRules"><b>Stay on track</b><ul>${cp.rules.map(r => `<li>${esc(r)}</li>`).join("")}</ul></div>
     <ol class="mxSteps">
-      ${step("setup", "Set up", `<p class="mxNote">${esc(s.setup)}. Tape a rectangle on the floor where every item goes, so each photo is framed the same.</p>`)}
-      ${step("light", `Light it <span class="muted">· ${s.light_min} min</span>`, lightTable(s.light))}
-      ${step("example", "Watch the example", `<div class="mxSplit"><div>${vid ? `<div class="mxEmbed small"><iframe src="https://www.tiktok.com/embed/v2/${vid}" allow="encrypted-media; fullscreen" loading="lazy" title="Example"></iframe></div>` : ""}</div>
+      ${step("setup", "Set up", `<p class="mxNote">${esc(s.setup)}. Tape a rectangle on the floor where every item goes, so each photo is framed the same.</p><div class="mxDiagrams">${DG.setup(s.format)}</div>`)}
+      ${step("light", `Light it <span class="muted">· ${s.light_min} min</span>`, `<div class="mxDiagrams">${DG.light(s.format)}</div>${lightTable(s.light)}`)}
+      ${step("example", "Look at the example", `${vid ? `<div id="exampleBox" data-ex="${esc(s.example)}"></div>` : ""}
         <div><p class="mxNote">Copy how the item sits in the frame and the size and place of the text.</p>
         ${s.example ? `<p class="mxNote"><a href="${esc(s.example)}" target="_blank" rel="noopener">Open the example on TikTok ↗</a></p>` : ""}
         <div class="row"><input id="exampleUrl" placeholder="Paste a different TikTok link for this shoot" value="${s.example_set ? esc(s.example) : ""}"><button data-go="example">Use</button></div></div></div>`)}
-      ${step("outfits", `The outfits <span class="muted">· decided now, the same for every product</span>`, `
-        <p class="mxNote muted">Each product is shot once in each outfit. The product takes its own place in the look: a top replaces the outfit's top, pants replace its bottom.</p>
-        <table class="mxList mxOutfits"><thead><tr><th></th><th>Name</th><th>Top</th><th>Bottom</th><th>Shoes</th><th>Layer</th></tr></thead><tbody>
+      ${step("outfits", `The outfits <span class="muted">· already picked, the same for every product</span>`, `
+        <div class="row"><span class="muted">How many</span><div class="mxSeg">${[2, 3, 4, 5].map(k => `<button data-ocount="${k}" class="${k === n ? "on" : ""}">${k}</button>`).join("")}</div></div>
+        <div class="mxOutfitCards">${cp.outfits.map((o, i) => `<div class="mxOutfit"><div class="mxOutfitN">${i + 1}</div><div><b>${esc(o.name || "Outfit " + (i + 1))}</b>
+          <div class="muted">${esc([o.top, o.bottom, o.shoes, o.layer].filter(Boolean).join(" · "))}</div></div>
+          <button data-oswap="${i}" title="Use a different ready-made outfit here">Swap</button></div>`).join("")}</div>
+        <p class="mxNote muted">Each product takes its own place in the look (a top replaces the top, pants replace the bottom); Ad Camera tells you what to lay with each one. Don't own a piece? Swap the outfit, or <button class="linkish" data-go="oedit">change a piece</button>.</p>
+        <div id="outfitEdit" hidden><table class="mxList mxOutfits"><thead><tr><th></th><th>Name</th><th>Top</th><th>Bottom</th><th>Shoes</th><th>Layer</th></tr></thead><tbody>
           ${cp.outfits.map((o, i) => `<tr data-oi="${i}"><td class="num">${i + 1}</td>${["name", "top", "bottom", "shoes", "layer"].map(k => `<td><input data-of="${k}" value="${esc(o[k] || "")}" placeholder="${k === "layer" ? "optional" : ""}"></td>`).join("")}</tr>`).join("")}</tbody></table>
-        <div class="row"><button data-go="outfitless" ${n <= 2 ? "disabled" : ""}>Fewer</button><button data-go="outfitmore" ${n >= 5 ? "disabled" : ""}>More</button><span class="spacer"></span><button class="primary" data-go="outfitsave">Save Outfits</button></div>`)}
+          <div class="row"><span class="spacer"></span><button class="primary" data-go="outfitsave">Save Outfits</button></div></div>`)}
       ${step("text", "The on-screen text", `<p class="mxNote muted">One line on the first photo of each carousel. Varied on purpose so the day's carousels don't all say the same thing.</p>
         <table class="mxList"><tbody>${cp.products.map(r => `<tr><td translate="no" class="muted" style="width:34%">${esc(r.name)}</td><td><input data-ctext="${r.product}" value="${esc(r.text)}" translate="no"></td></tr>`).join("")}</tbody></table>
         <div class="row"><span class="spacer"></span><button class="primary" data-go="textsave">Save Text</button></div>`)}
@@ -243,6 +258,11 @@ async function carouselClick(e) {
     if (go === "outfitmore") o.push({ name: base[o.length] || `Outfit ${o.length + 1}`, top: "", bottom: "", shoes: "", layer: "" }); else o.pop();
     await api(`/api/shop/planner/day/${PL.day}/carousel/${sid}`, { json: { outfits: o } }); renderPlanner(); return true;
   }
+  const oc = e.target.closest("[data-ocount]");
+  if (oc) { await api(`/api/shop/planner/day/${PL.day}/carousel/${sid}`, { json: { count: +oc.dataset.ocount } }); renderPlanner(); return true; }
+  const sw = e.target.closest("[data-oswap]");
+  if (sw) { await api(`/api/shop/planner/day/${PL.day}/carousel/${sid}`, { json: { swap: +sw.dataset.oswap } }); renderPlanner(); return true; }
+  if (go === "oedit") { $("#outfitEdit").hidden = !$("#outfitEdit").hidden; return true; }
   if (go === "outfitsave") { await api(`/api/shop/planner/day/${PL.day}/carousel/${sid}`, { json: { outfits: read() } }); toast("Outfits saved: Ad Camera shows them while shooting"); renderPlanner(); return true; }
   if (go === "textsave") {
     const texts = Object.fromEntries($$("[data-ctext]").map(i => [i.dataset.ctext, i.value]));

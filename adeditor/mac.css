@@ -300,3 +300,20 @@ label.linkish { color: var(--mx-accent-hi); cursor: pointer; }
 .mxSlideN { position: absolute; right: 6px; bottom: 6px; font-size: 10.5px; padding: 0 6px; border-radius: 999px; background: rgba(0, 0, 0, .55); color: #fff; }
 .mxCarFoot { margin-top: 8px; font-size: 12px; }
 @media (max-width: 640px) { .mxSplit { grid-template-columns: 1fr; } .mxSlide { width: 120px; } }
+
+/* diagrams, example, outfit picks */
+.mxDiagrams { display: flex; flex-wrap: wrap; gap: 12px; }
+.mxDiagram { margin: 0; flex: 1 1 260px; max-width: 380px; background: rgba(0, 0, 0, .18); border: .5px solid var(--mx-sep); border-radius: 8px; padding: 6px 8px 8px; }
+.mxDiagram svg { width: 100%; height: auto; display: block; font-family: var(--mx-font); }
+.mxDiagram figcaption { font-size: 11.5px; color: var(--mx-text-2); text-align: center; margin-top: 2px; }
+.mxExStrip { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; }
+.mxExStrip a { position: relative; flex: none; width: 140px; aspect-ratio: 3 / 4; border-radius: 8px; overflow: hidden; background: #111; }
+.mxExStrip img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.mxExStrip span { position: absolute; right: 6px; bottom: 6px; font-size: 10.5px; padding: 0 6px; border-radius: 999px; background: rgba(0, 0, 0, .55); color: #fff; }
+.mxPlayer { width: 100%; max-width: 300px; aspect-ratio: 9 / 16; border-radius: var(--mx-r2); overflow: hidden; background: #000; }
+.mxPlayer iframe { width: 100%; height: 100%; border: 0; display: block; }
+.mxOutfitCards { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 8px; }
+.mxOutfit { display: grid; grid-template-columns: 26px 1fr auto; gap: 10px; align-items: center; padding: 9px 10px; border-radius: 8px; background: rgba(255, 255, 255, .04); border: .5px solid var(--mx-sep); }
+.mxOutfitN { width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; background: var(--mx-accent-soft); color: var(--mx-accent-hi); font-weight: 600; font-size: 12px; }
+.mxOutfit .muted { font-size: 12px; }
+html button.linkish { display: inline; min-height: 0; padding: 0 !important; font-size: inherit; }

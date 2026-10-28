@@ -20,6 +20,9 @@ OUTFITS = [
     {"name": "Cozy grey", "top": "grey hoodie", "bottom": "grey sweatpants", "shoes": "white sneakers", "layer": ""},
     {"name": "Earth tones", "top": "cream knit", "bottom": "brown pants", "shoes": "brown boots", "layer": ""},
     {"name": "Layered", "top": "white tee", "bottom": "dark jeans", "shoes": "boots", "layer": "open flannel or jacket"},
+    {"name": "Sporty", "top": "grey crewneck", "bottom": "black sweatpants", "shoes": "running shoes", "layer": ""},
+    {"name": "Smart casual", "top": "navy knit", "bottom": "khaki chinos", "shoes": "white sneakers", "layer": ""},
+    {"name": "Monochrome cream", "top": "cream tee", "bottom": "cream pants", "shoes": "white sneakers", "layer": ""},
 ]
 TEXTS = ["{Season} essential: {item}", "POV: you found the perfect {item}", "“I need a good {item} for this {season}”",
          "{Season} pick up: {item}", "{brand} {item} on TikTok Shop", "Rate this {item} fit 1-10"]
@@ -80,7 +83,11 @@ def for_set(day: str, s: dict) -> dict:
                      "text": texts.get(it["product"]) or default_text(p, i, day),
                      "text_set": it["product"] in texts,
                      "with": [with_product(o, p) for o in outfits]})
-    return {"outfits": outfits, "products": rows, "rules": RULES, "outfits_set": bool(s.get("outfits"))}
+    kinds = {r["kind"] for r in rows}
+    k = kinds.pop() if len(kinds) == 1 else ""
+    # the extra pieces of each outfit, the same for the whole shoot (the products take their own slot)
+    extras = [", ".join(o.get(sl) for sl in ("top", "bottom", "layer", "shoes") if sl != k and o.get(sl)) for o in outfits]
+    return {"outfits": outfits, "products": rows, "rules": RULES, "outfits_set": bool(s.get("outfits")), "kind": k, "extras": extras}
 
 
 def update(day: str, set_id: str, body: dict) -> dict:
@@ -91,6 +98,23 @@ def update(day: str, set_id: str, body: dict) -> dict:
     s = next(x for x in d["days"][day]["sets"] if x["id"] == set_id)
     if "outfits" in body:
         s["outfits"] = [{k: str(o.get(k) or "").strip() for k in ("name", "top", "bottom", "shoes", "layer")} for o in body["outfits"]][:5] or None
+    cur = s.get("outfits") or default_outfits(3)
+    if "count" in body:  # 2-5: keep the ones there, top up from the ready-made list
+        n = max(2, min(5, int(body["count"])))
+        names = {o.get("name") for o in cur}
+        spare = [dict(o) for o in OUTFITS if o["name"] not in names]
+        s["outfits"] = (cur + spare)[:n]
+    if "swap" in body:  # replace one outfit with the next ready-made one not in use
+        i = int(body["swap"])
+        names = [o.get("name") for o in cur]
+        order = [o["name"] for o in OUTFITS]
+        start = order.index(names[i]) + 1 if names[i] in order else 0
+        for k in range(len(OUTFITS)):
+            o = OUTFITS[(start + k) % len(OUTFITS)]
+            if o["name"] not in names:
+                cur[i] = dict(o)
+                break
+        s["outfits"] = cur
     if "texts" in body:
         s["texts"] = {k: str(v).strip() for k, v in (body["texts"] or {}).items() if str(v).strip()}
     planner.save(d)

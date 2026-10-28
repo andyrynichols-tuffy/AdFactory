@@ -157,8 +157,14 @@ def generate(day_iso: str) -> dict:
             k_products = max(1, math.ceil(cnt / takes))
             items, left = [], cnt
             pool = wearable if key in WORN else lineup
+            start = offset + ci * 3 + len(sets)
+            if key == "carousel" and pool:  # one clothing type per carousel shoot: the same extra pieces all session (user)
+                from .carouselplan import kind
+                k0 = kind(pool[start % len(pool)])
+                same = [x for x in pool[start % len(pool):] + pool[:start % len(pool)] if kind(x) == k0]
+                pool, start = same or pool, 0
             for j in range(k_products):
-                p = pool[(offset + ci * 3 + j + len(sets)) % len(pool)] if pool else None
+                p = pool[(start + j) % len(pool)] if pool else None
                 t = min(takes, left)
                 left -= t
                 pid = p["id"] if p else None
@@ -209,7 +215,8 @@ def generate(day_iso: str) -> dict:
     plan["blocks_done"] = [k for k in old.get("blocks_done") or [] if any(block_key(b) == k for b in plan["blocks"])]
     for s in sets:  # projects made earlier for this set stay linked, and an example picked for this day
         prev = next((x for x in old.get("sets") or [] if x["id"] == s["id"]), {})
-        s["projects"] = prev.get("projects", [])
+        have = {it["product"] for it in s["items"]}
+        s["projects"] = [pr for pr in prev.get("projects", []) if pr["product"] in have]  # only this set's products
         if prev.get("example_set"):
             s["example"], s["example_set"] = prev["example"], True
         for k in ("outfits", "texts"):  # the carousel plan (adcut/carouselplan.py) survives a rebuild
@@ -336,8 +343,9 @@ def make_projects(day_iso: str, set_id: str) -> list:
     sc = shop.by_id(sh, "scripts", s.get("script"))
     label = datetime.fromisoformat(day_iso).strftime("%b %d").replace(" 0", " ")
     made = []
+    done = {pr["product"] for pr in s.get("projects") or []}
     for it in s["items"]:
-        if not it["product"]:
+        if not it["product"] or it["product"] in done:  # already has its project
             continue
         p = shop.by_id(sh, "products", it["product"]) or {}
         # size: the channel's own (one usual size) or else the sample's tag size, with how it wears (M fitted, L looser)
