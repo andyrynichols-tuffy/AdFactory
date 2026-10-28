@@ -2141,6 +2141,176 @@
           }
         }
       }
+    },
+    "Shoot carousels (%lld)": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fotografar carrosséis (%lld)"
+          }
+        }
+      }
+    },
+    "Several carousels at once: every outfit with every product.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vários carrosséis de uma vez: cada look com cada produto."
+          }
+        }
+      }
+    },
+    "Shoot carousels": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fotografar carrosséis"
+          }
+        }
+      }
+    },
+    "Carousels to shoot": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Carrosséis para fotografar"
+          }
+        }
+      }
+    },
+    "Each one is a product's carousel.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada um é o carrossel de um produto."
+          }
+        }
+      }
+    },
+    "%lld outfits": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld looks"
+          }
+        }
+      }
+    },
+    "Every outfit is shot once with every product you picked: %lld photos.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada look é fotografado uma vez com cada produto escolhido: %lld fotos."
+          }
+        }
+      }
+    },
+    "%lld done": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld prontas"
+          }
+        }
+      }
+    },
+    "%lld of %lld photos": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld de %2$lld fotos"
+          }
+        }
+      }
+    },
+    "Order": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ordem"
+          }
+        }
+      }
+    },
+    "All outfits for one product": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todos os looks de um produto"
+          }
+        }
+      }
+    },
+    "One outfit, swap the products": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Um look, trocando os produtos"
+          }
+        }
+      }
+    },
+    "Outfit": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Look"
+          }
+        }
+      }
+    },
+    "Outfit %lld": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Look %lld"
+          }
+        }
+      }
+    },
+    "Retake replaces it": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Refazer substitui"
+          }
+        }
+      }
+    },
+    "That photo didn't take. Try again.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A foto não saiu. Tente de novo."
+          }
+        }
+      }
+    },
+    "Couldn't send a photo to Ad Factory. It's in the Ad Studio album; retake it later.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Não deu para enviar uma foto ao Ad Factory. Ela está no álbum Ad Studio; refaça depois."
+          }
+        }
+      }
     }
   }
 }

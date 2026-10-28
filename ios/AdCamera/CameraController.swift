@@ -3,7 +3,7 @@ import UIKit
 
 /// The capture session, set up for TikTok: vertical, SDR (HDR off), 4K or 1080p at a fixed
 /// frame rate, smooth autofocus, white balance held during a take, front camera unmirrored.
-final class CameraController: NSObject, ObservableObject, AVCaptureFileOutputRecordingDelegate {
+final class CameraController: NSObject, ObservableObject, AVCaptureFileOutputRecordingDelegate, AVCapturePhotoCaptureDelegate {
     let session = AVCaptureSession()
     weak var preview: AVCaptureVideoPreviewLayer?
     weak var bigPreview: AVCaptureVideoPreviewLayer?   // the same picture on a TV / Mac (BigScreen)
@@ -28,6 +28,8 @@ final class CameraController: NSObject, ObservableObject, AVCaptureFileOutputRec
 
     private let queue = DispatchQueue(label: "adcamera.session")
     private let output = AVCaptureMovieFileOutput()
+    private let photoOutput = AVCapturePhotoOutput()   // carousel mode (CarouselView)
+    private var photoDone: ((Data?) -> Void)?
     private var device: AVCaptureDevice?
     private var videoInput: AVCaptureDeviceInput?
     private var audioInput: AVCaptureDeviceInput?
@@ -173,6 +175,10 @@ final class CameraController: NSObject, ObservableObject, AVCaptureFileOutputRec
         if !session.outputs.contains(output), session.canAddOutput(output) {
             session.addOutput(output)
         }
+        if !session.outputs.contains(photoOutput), session.canAddOutput(photoOutput) {
+            session.addOutput(photoOutput)
+            photoOutput.maxPhotoQualityPrioritization = .quality
+        }
 
         let want = Double(config.fps)
         let format = Self.format(dev, width: config.fourK ? 3840 : 1920, fps: want)
@@ -295,6 +301,22 @@ final class CameraController: NSObject, ObservableObject, AVCaptureFileOutputRec
         }
     }
 
+    /// One still for a carousel (HEIC when the phone can, else JPEG), straight from the live session.
+    func takePhoto(done: @escaping (Data?) -> Void) {
+        queue.async {
+            guard !self.output.isRecording else { return DispatchQueue.main.async { done(nil) } }
+            self.photoDone = done
+            let fmt: [String: Any] = self.photoOutput.availablePhotoCodecTypes.contains(.hevc)
+                ? [AVVideoCodecKey: AVVideoCodecType.hevc] : [AVVideoCodecKey: AVVideoCodecType.jpeg]
+            let s = AVCapturePhotoSettings(format: fmt)
+            s.photoQualityPrioritization = .balanced
+            if let c = self.photoOutput.connection(with: .video), c.isVideoRotationAngleSupported(90) {
+                c.videoRotationAngle = 90   // portrait, like the takes
+            }
+            self.photoOutput.capturePhoto(with: s, delegate: self)
+        }
+    }
+
     func stopRecording() {
         queue.async {
             if self.output.isRecording { self.output.stopRecording() }
@@ -388,5 +410,16 @@ final class CameraController: NSObject, ObservableObject, AVCaptureFileOutputRec
         }
         externalName = d.string(forKey: "externalMic") ?? ""
         externalExpected = input?.portType == .builtInMic && !externalName.isEmpty && d.bool(forKey: "warnMic")
+    }
+}
+
+
+extension CameraController {
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+        let data = error == nil ? photo.fileDataRepresentation() : nil
+        DispatchQueue.main.async {
+            self.photoDone?(data)
+            self.photoDone = nil
+        }
     }
 }

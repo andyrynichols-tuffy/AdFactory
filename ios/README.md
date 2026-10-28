@@ -15,6 +15,10 @@ the project's OneDrive inbox folder through Ad Factory, where it gets pre-cut li
 - **Hands-free:** say **“Ad Camera, action”** to start a take and **“Ad Camera, cut”** to stop it
   (`VoiceControl.swift`, on-device speech recognition; only the whole phrase counts, so “cut” in a
   clothing script never stops a take; the countdown still applies to “action”). Off in Settings → Filming.
+- **Shoot carousels:** pick several carousel projects (one product each) and how many outfits (2–5); every
+  outfit is shot once with every product. Switch product or outfit any time (all outfits for one product, or one
+  outfit across the products); it moves to the next combo not done, shows a done grid, and each photo goes to the
+  Ad Studio album and into that carousel's folder in Ad Factory's posting kit (a retake replaces it).
 - **Apple Watch remote:** one big record button, the take timer and the take count (`WatchLink.swift` on
   the phone, `ios/AdCameraWatch` on the watch). Needs the watch target added once (below).
 - Uploads keep going with the phone locked; with no connection they wait and retry.

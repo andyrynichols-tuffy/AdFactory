@@ -12,6 +12,8 @@ struct Project: Codable, Identifiable, Hashable {
     var due: String?
     var lines: [String]        // the script, one teleprompter line each
     var clips: Int             // videos Ad Factory already has for it
+    var carousel: Bool?        // a planned flat-lay carousel: photos, not takes (CarouselView)
+    var outfits: [Int]?        // carousel: which outfit numbers already have a photo in Ad Factory
 
     var id: String { sid }
 }

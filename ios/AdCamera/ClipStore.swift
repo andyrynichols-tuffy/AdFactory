@@ -276,13 +276,13 @@ enum PhotoAlbum {
         }
     }
 
-    static func save(_ file: URL) async throws {
+    static func save(_ file: URL, as type: PHAssetResourceType = .video) async throws {
         let status = await PHPhotoLibrary.requestAuthorization(for: .readWrite)
         guard status == .authorized || status == .limited else { throw Problem.denied }
         let album = try await albumOrMake()
         try await PHPhotoLibrary.shared().performChanges {
             let req = PHAssetCreationRequest.forAsset()
-            req.addResource(with: .video, fileURL: file, options: nil)
+            req.addResource(with: type, fileURL: file, options: nil)
             if let album, let placeholder = req.placeholderForCreatedAsset,
                let add = PHAssetCollectionChangeRequest(for: album) {
                 add.addAssets([placeholder] as NSArray)
