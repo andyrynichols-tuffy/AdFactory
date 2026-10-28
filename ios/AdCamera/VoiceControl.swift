@@ -2,14 +2,24 @@ import AVFoundation
 import Speech
 import SwiftUI
 
-/// Hands-free filming (user, 2026-10-27): say "Ad Camera, action" to start a take and "Ad Camera, cut"
-/// to stop it. Listens with on-device speech recognition (no audio leaves the phone when the phone
-/// supports it) through the same mic the camera records with.
-///
-/// Only the two full phrases count ("Ad Camera action" / "Ad Camera cut"), so a script
-/// line that says "cut" or "action" never stops a take. "Action" goes through the normal record button
-/// path, so the countdown setting still applies (handy for getting into position). The spoken "cut"
-/// lands after the last script line, where pre-cutting in Ad Factory leaves it out anyway.
+/// Hands-free filming (user, 2026-10-27). Every command starts with "Ad Camera", so words in a script
+/// ("cut", "next") never trigger anything:
+///   "Ad Camera, action"            start a take (the countdown setting still applies)
+///   "Ad Camera, cut"               stop it (the take is kept)
+///   "Ad Camera, scrap that"        throw away the take just filmed (also "delete that", "toss it")
+///   "Ad Camera, keep"              keep it now instead of waiting a few seconds
+///   "Ad Camera, next line" / "last line"            move the teleprompter
+///   "Ad Camera, teleprompter on" / "teleprompter off"
+/// The screen decides which commands count right now (only "cut" while recording). Listens with on-device
+/// speech recognition through the same mic the camera records with; the spoken "cut" lands after the last
+/// script line, where pre-cutting in Ad Factory leaves it out anyway.
+struct VoiceCommand {
+    let label: String                 // shown for a moment when heard ("Next line")
+    let phrases: [[String]]           // the words after "Ad Camera", e.g. [["next", "line"]]
+    var when: () -> Bool = { true }   // only listened for when this says so
+    let run: () -> Void
+}
+
 @MainActor
 final class VoiceControl: ObservableObject {
     @Published var listening = false
@@ -20,8 +30,7 @@ final class VoiceControl: ObservableObject {
     private var recognizer: SFSpeechRecognizer?
     private var request: SFSpeechAudioBufferRecognitionRequest?
     private var task: SFSpeechRecognitionTask?
-    private var onAction: (() -> Void)?
-    private var onCut: (() -> Void)?
+    private var commands: [VoiceCommand] = []
     private var restartTimer: Timer?
     private var lastFire = Date.distantPast
     private var running = false
@@ -29,8 +38,12 @@ final class VoiceControl: ObservableObject {
     static var enabled: Bool { UserDefaults.standard.object(forKey: "voiceControl") as? Bool ?? true }
 
     func start(action: @escaping () -> Void, cut: @escaping () -> Void) {
-        onAction = action
-        onCut = cut
+        start([VoiceCommand(label: "Action", phrases: [["action"], ["actions"]], run: action),
+               VoiceCommand(label: "Cut", phrases: [["cut"], ["cuts"], ["cart"], ["kut"]], run: cut)])
+    }
+
+    func start(_ commands: [VoiceCommand]) {
+        self.commands = commands
         guard Self.enabled else { return }
         SFSpeechRecognizer.requestAuthorization { status in
             Task { @MainActor in
@@ -75,7 +88,7 @@ final class VoiceControl: ObservableObject {
             let req = SFSpeechAudioBufferRecognitionRequest()
             req.shouldReportPartialResults = true
             if rec.supportsOnDeviceRecognition { req.requiresOnDeviceRecognition = true }
-            req.contextualStrings = ["Ad Camera action", "Ad Camera cut"]
+            req.contextualStrings = ["Ad Camera action", "Ad Camera cut", "Ad Camera scrap that", "Ad Camera keep", "Ad Camera next line", "Ad Camera last line", "Ad Camera teleprompter on", "Ad Camera teleprompter off"]
             request = req
             let input = engine.inputNode
             input.removeTap(onBus: 0)
@@ -116,17 +129,19 @@ final class VoiceControl: ObservableObject {
         DispatchQueue.main.asyncAfter(deadline: .now() + secs) { [weak self] in self?.begin() }
     }
 
-    /// Looks at the end of what's been heard so far for one of the two phrases.
+    /// Looks at the end of what's been heard so far for "Ad Camera" + one of the commands.
     private func check(_ text: String) {
-        let words = text.lowercased().unicodeScalars.map { CharacterSet.letters.contains($0) ? Character($0) : " " }
-        let w = String(words).split(separator: " ").suffix(3).map(String.init)
-        guard w.count == 3, Date().timeIntervalSince(lastFire) > 1.5 else { return }
-        // the whole phrase, "Ad Camera …": "cut" alone is everywhere in clothing scripts ("the cut on these")
-        guard ["ad", "add", "at", "and"].contains(w[0]), ["camera", "cameras"].contains(w[1]) else { return }
-        if ["action", "actions"].contains(w[2]) {
-            fire("Action", onAction)
-        } else if ["cut", "cuts", "cart", "kut"].contains(w[2]) {
-            fire("Cut", onCut)
+        let letters = text.lowercased().unicodeScalars.map { CharacterSet.letters.contains($0) ? Character($0) : " " }
+        let w = String(letters).split(separator: " ").suffix(6).map(String.init)
+        guard Date().timeIntervalSince(lastFire) > 1.5,
+              let cam = w.lastIndex(where: { $0 == "camera" || $0 == "cameras" }), cam > 0,
+              ["ad", "add", "at", "and"].contains(w[cam - 1]) else { return }
+        let rest = Array(w[(cam + 1)...])
+        for c in commands where c.when() {
+            if c.phrases.contains(where: { $0 == rest }) {
+                fire(c.label, c.run)
+                return
+            }
         }
     }
 

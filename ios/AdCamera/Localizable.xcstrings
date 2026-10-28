@@ -847,7 +847,7 @@
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Próxima linha"
+            "value": "Próxima fala"
           }
         }
       }
@@ -2132,16 +2132,6 @@
         }
       }
     },
-    "Tap the picture to focus there; hold to lock focus and brightness. Pinch to zoom. The volume buttons start and stop recording. Drag the teleprompter to move it, drag its corner to make it wider, pinch it to change the text size. Takes that come out with no sound are flagged right away. Voice control: say “Ad Camera, action” to start a take and “Ad Camera, cut” to stop it (the whole phrase, so “cut” in a script never stops a take).": {
-      "localizations": {
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Toque na imagem para focar ali; segure para travar o foco e o brilho. Faça pinça para dar zoom. Os botões de volume começam e param a gravação. Arraste o teleprompter para movê-lo, arraste o canto para deixá-lo mais largo e faça pinça nele para mudar o tamanho do texto. Takes que saem sem som são avisados na hora. Controle por voz: diga “Ad Camera, action” para começar uma tomada e “Ad Camera, cut” para parar (a frase inteira, então “cut” no roteiro nunca para a tomada)."
-          }
-        }
-      }
-    },
     "Shoot carousels (%lld)": {
       "localizations": {
         "pt-BR": {
@@ -2358,6 +2348,96 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cada carrossel: uma capa (só a peça) + cada look uma vez: %lld fotos."
+          }
+        }
+      }
+    },
+    "Tap the picture to focus there; hold to lock focus and brightness. Pinch to zoom. The volume buttons start and stop recording. Drag the teleprompter to move it, drag its corner to make it wider, pinch it to change the text size. Takes that come out with no sound are flagged right away. Voice control: “Ad Camera, action” starts a take, “Ad Camera, cut” stops it, and the take is kept unless you say “Ad Camera, scrap that” within a few seconds. Between takes: “Ad Camera, next line”, “last line”, “teleprompter on” or “off”. Every command starts with “Ad Camera”, so words in a script never trigger one.": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toque na imagem para focar ali; segure para travar o foco e o brilho. Faça pinça para dar zoom. Os botões de volume começam e param a gravação. Arraste o teleprompter para movê-lo, arraste o canto para deixá-lo mais largo e faça pinça nele para mudar o tamanho do texto. Takes que saem sem som são avisados na hora. Controle por voz: “Ad Camera, action” começa uma tomada, “Ad Camera, cut” para, e a tomada fica, a não ser que você diga “Ad Camera, scrap that” em poucos segundos. Entre as tomadas: “Ad Camera, next line”, “last line”, “teleprompter on” ou “off”. Todo comando começa com “Ad Camera”, então palavras do roteiro nunca disparam um comando."
+          }
+        }
+      }
+    },
+    "Scrapped": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descartada"
+          }
+        }
+      }
+    },
+    "Kept": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guardada"
+          }
+        }
+      }
+    },
+    "Last line": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fala anterior"
+          }
+        }
+      }
+    },
+    "Teleprompter on": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teleprompter ligado"
+          }
+        }
+      }
+    },
+    "Teleprompter off": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teleprompter desligado"
+          }
+        }
+      }
+    },
+    "Take kept · say “Ad Camera, scrap that” to toss it": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tomada guardada · diga “Ad Camera, scrap that” para descartar"
+          }
+        }
+      }
+    },
+    "Scrap": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descartar"
+          }
+        }
+      }
+    },
+    "Keep": {
+      "localizations": {
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guardar"
           }
         }
       }

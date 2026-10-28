@@ -99,7 +99,7 @@ struct SettingsView: View {
                 } header: {
                     Text("Filming")
                 } footer: {
-                    Text("Tap the picture to focus there; hold to lock focus and brightness. Pinch to zoom. The volume buttons start and stop recording. Drag the teleprompter to move it, drag its corner to make it wider, pinch it to change the text size. Takes that come out with no sound are flagged right away. Voice control: say “Ad Camera, action” to start a take and “Ad Camera, cut” to stop it (the whole phrase, so “cut” in a script never stops a take).")
+                    Text("Tap the picture to focus there; hold to lock focus and brightness. Pinch to zoom. The volume buttons start and stop recording. Drag the teleprompter to move it, drag its corner to make it wider, pinch it to change the text size. Takes that come out with no sound are flagged right away. Voice control: “Ad Camera, action” starts a take, “Ad Camera, cut” stops it, and the take is kept unless you say “Ad Camera, scrap that” within a few seconds. Between takes: “Ad Camera, next line”, “last line”, “teleprompter on” or “off”. Every command starts with “Ad Camera”, so words in a script never trigger one.")
                 }
 
                 Section {

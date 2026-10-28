@@ -12,9 +12,12 @@ the project's OneDrive inbox folder through Ad Factory, where it gets pre-cut li
 - TikTok UI guides (top tabs, like rail, caption block, cart tag) from `adcut/layout.py`.
 - Tap to focus, hold for AE/AF lock, pinch to zoom, ± brightness, mic meter (external mics work).
 - Volume buttons start/stop recording; optional 3/5/10 s countdown.
-- **Hands-free:** say **“Ad Camera, action”** to start a take and **“Ad Camera, cut”** to stop it
-  (`VoiceControl.swift`, on-device speech recognition; only the whole phrase counts, so “cut” in a
-  clothing script never stops a take; the countdown still applies to “action”). Off in Settings → Filming.
+- **Hands-free voice control** (`VoiceControl.swift`, on-device speech recognition). Every command starts with
+  "Ad Camera", so words in a script never trigger one: **action** (start; the countdown still applies), **cut**
+  (stop), then the take is kept unless you say **scrap that** within ~6 s (or **keep** to keep it now; starting
+  the next take keeps it too). Between takes: **next line**, **last line**, **teleprompter on / off**. Several
+  reads of a line in one recording are fine: Ad Factory splits them into separate takes and ranks them.
+  Off in Settings → Filming.
 - **Shoot carousels:** pick several carousel projects (one product each) and how many outfits (2–5); every
   outfit is shot once with every product. Switch product or outfit any time (all outfits for one product, or one
   outfit across the products); it moves to the next combo not done, shows a done grid, and each photo goes to the
