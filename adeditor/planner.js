@@ -271,6 +271,13 @@ $("#paneProducts").addEventListener("click", e => {
 });
 const _renderProducts = renderProducts;  // shop.js re-renders the full list itself (filters, tabs): keep the view switch on top
 renderProducts = async function () { await _renderProducts(); if (LS.get("lineupView", "rotation") !== "rotation") $("#paneProducts").insertAdjacentHTML("afterbegin", lineSeg("all")); };
+// ---------- sidebar: is the Ad Camera app connected? ----------
+async function camStatus() {
+  const s = await api("/api/camera/status").catch(() => null), el = $("#camStat"); if (!s || !el) return;
+  const last = Math.max(s.seen || 0, s.upload || 0), fresh = last && Date.now() / 1000 - last < 600;
+  el.innerHTML = `<i class="sdot ${fresh ? "ok" : ""}"></i>Ad Camera <span class="muted">${last ? (s.upload && s.upload >= s.seen ? "take received " : "synced ") + ago(last) : "not connected yet"}</span>`;
+}
+camStatus(); setInterval(camStatus, 60000);
 PANES.products = renderLineup;
 PANES.planner = renderPlanner;
 PANES.today = renderToday;

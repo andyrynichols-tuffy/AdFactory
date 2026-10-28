@@ -488,6 +488,9 @@ async def inbox_upload(request: Request, name: str, offset: int = 0, total: int 
     (the web link caps a request at 100 MB): each piece is appended at `offset`, and the
     file only gets its real name once all `total` bytes are in, so the inbox never picks
     up half a video. A piece that doesn't line up says where to resume (409)."""
+    if shoot:  # the Ad Camera app sends takes straight into a shoot
+        from . import cameraapi
+        cameraapi.LAST.update(upload=time.time(), shoot=shoot)
     fname, sub = _clean_name(name), _clean_name(folder)
     if Path(fname).suffix.lower() not in VIDEO_EXTS:
         raise HTTPException(400, "only video files go in the inbox")

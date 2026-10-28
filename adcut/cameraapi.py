@@ -7,6 +7,12 @@ from . import layout, shop, store
 
 router = APIRouter(prefix="/api/camera")
 BUSY = lambda: set()  # server.py points this at the shoots with a job running
+LAST = {"seen": 0.0, "upload": 0.0, "shoot": ""}  # when the phone last asked for projects / sent a take (shown in the sidebar)
+
+
+@router.get("/status")
+def status():
+    return LAST
 
 
 def _project(d, sid, s, busy):
@@ -25,6 +31,8 @@ def projects():
     """Everything the camera needs in one go: projects (newest first), and what a new
     one can be made from (products, library scripts, tags, accounts). Also TikTok's UI
     zones, so the viewfinder's guides match adcut/layout.py."""
+    import time
+    LAST["seen"] = time.time()
     d, busy = shop.load(), BUSY()
     return {
         "projects": [_project(d, sid, s, busy) for sid, s, _ in shop._all_shoots()],
