@@ -107,8 +107,9 @@
      "format": "carousel",
      "label": "Flat-lay carousel",
      "setup": "Wood floor, top-down",
-     "tip": "Style one outfit around the item on the floor, 5-7 photos, one line of on-image text. Brings the reach. Keep the outfit and swap only the colourway between carousels.",
+     "tip": "2-5 photos, each a different outfit laid flat around the item for sale (it's the star of every photo), one line of on-image text. Brings the reach.",
      "light": "Key (circle) high above one end of the outfit, angled down at 45°, ~70%. Fill panel 1 low on the opposite side, ~30%, to soften shadows. Fill panel 2 off, or low across the far end if the floor looks uneven. Room lights off, all three at 5600K. Phone straight above; lock exposure and white balance; same spot every carousel.",
+     "example": "https://www.tiktok.com/@sully.finds/photo/7690393439048961311",
      "light_min": 15,
      "channel": "c4a9a3",
      "channel_name": "AndysBestFinds",
@@ -142,7 +143,7 @@
      ],
      "posts": 5,
      "script": "b289a0",
-     "minutes": 75,
+     "minutes": 90,
      "edit_minutes": 15,
      "projects": [
       {
@@ -170,6 +171,29 @@
        "title": "Oct 28 · Flat-lay carousel · H&M Loose-Fit Zip Hoodie - D",
        "product": "5a73a3"
       }
+     ],
+     "outfits": [
+      {
+       "name": "Clean and light",
+       "top": "white tee",
+       "bottom": "light-wash jeans",
+       "shoes": "white sneakers",
+       "layer": ""
+      },
+      {
+       "name": "All dark",
+       "top": "black tee",
+       "bottom": "black jeans",
+       "shoes": "black sneakers",
+       "layer": ""
+      },
+      {
+       "name": "Cozy grey",
+       "top": "grey hoodie",
+       "bottom": "grey sweatpants",
+       "shoes": "white sneakers",
+       "layer": ""
+      }
      ]
     },
     {
@@ -179,6 +203,7 @@
      "setup": "White bed or couch, hand pointing",
      "tip": "One take, ~20 s, read the sale script while pointing at the item.",
      "light": "Key (circle) at 45° to one side of the bed, above it, ~60%. Fill panel 1 on the other side, ~30%. Fill panel 2 above or behind the bed, low, so the white sheets light evenly. Tap to lock, then drop exposure a touch so the whites don't blow out. Don't move anything between takes.",
+     "example": "https://www.tiktok.com/@sully.finds/video/7690604593834757407",
      "light_min": 10,
      "channel": "c4a9a3",
      "channel_name": "AndysBestFinds",
@@ -219,6 +244,7 @@
      "setup": "Bedroom, waist-down",
      "tip": "Wear it, film waist-down, say your height and size.",
      "light": "Key (circle) in front at 45°, center at chest height, tilted down toward the waist, ~70%. Fill panel 1 on the other side, ~35%, so the fabric shows. Fill panel 2 behind and to the side, low, as a rim light that outlines the fit against the background. Never a window behind you. Tape a mark on the floor so every take matches.",
+     "example": "https://www.tiktok.com/@sully.finds/video/7697808464344648991",
      "light_min": 15,
      "channel": "c4a9a3",
      "channel_name": "AndysBestFinds",
@@ -259,6 +285,7 @@
      "setup": "Hand-held close-up (shoes, gadgets, tags)",
      "tip": "\"I think I just found the perfect…\" Good for side products.",
      "light": "Key (circle) close and low to one side, grazing across the item, ~50%, so the knit or waffle texture pops. Fill panel 1 opposite, ~20%. Fill panel 2 off. Keep your hand and phone from shadowing the item; plain background.",
+     "example": "https://www.tiktok.com/@sully.finds/video/7700700082219339039",
      "light_min": 8,
      "channel": "c4a9a3",
      "channel_name": "AndysBestFinds",
@@ -289,6 +316,7 @@
      "setup": "Outside or by the car, both of you",
      "tip": "\"Wait, where'd you get those?\" The same exchange for each product.",
      "light": "Outside: no lights; open shade (the shady side of the house or car) or golden hour, both of you facing the light. Inside: key (circle) in front between you, ~70%; one fill panel at 45° on each side, ~35%, so both of you are lit the same.",
+     "example": "https://www.tiktok.com/@sully.finds/video/7699977637917183263",
      "light_min": 10,
      "channel": "c4a9a3",
      "channel_name": "AndysBestFinds",
@@ -319,6 +347,7 @@
      "setup": "Anything",
      "tip": "A brand deal or a non-product post that can go wide.",
      "light": "Match the setup it borrows: key (circle) at 45°, fill panel opposite at about half power, second panel as rim or off. All at 5600K, room lights off.",
+     "example": "",
      "light_min": 10,
      "channel": "c4a9a3",
      "channel_name": "AndysBestFinds",
@@ -548,42 +577,42 @@
      "kind": "shoot",
      "title": "Shoot: Flat-lay carousel · AndysBestFinds",
      "start": "09:40",
-     "end": "10:55",
+     "end": "11:10",
      "set": "carousel-0"
     },
     {
      "kind": "shoot",
      "title": "Shoot: Flat-lay voiceover video · AndysBestFinds",
-     "start": "10:55",
-     "end": "11:11",
+     "start": "11:10",
+     "end": "11:26",
      "set": "flatlay_vo-0"
     },
     {
      "kind": "shoot",
      "title": "Shoot: Worn, faceless · AndysBestFinds",
-     "start": "11:11",
-     "end": "11:34",
+     "start": "11:26",
+     "end": "11:49",
      "set": "worn-0"
     },
     {
      "kind": "shoot",
      "title": "Shoot: Holding the item · AndysBestFinds",
-     "start": "11:34",
-     "end": "11:44",
+     "start": "11:49",
+     "end": "11:59",
      "set": "held-0"
     },
     {
      "kind": "shoot",
      "title": "Shoot: Two-person skit / POV · AndysBestFinds",
-     "start": "11:44",
-     "end": "11:59",
+     "start": "11:59",
+     "end": "12:14",
      "set": "skit-0"
     },
     {
      "kind": "shoot",
      "title": "Shoot: Brand deal / trend / no-product · AndysBestFinds",
-     "start": "11:59",
-     "end": "12:14",
+     "start": "12:14",
+     "end": "12:29",
      "set": "other-0"
     },
     {
@@ -623,7 +652,7 @@
      "end": "19:10"
     }
    ],
-   "generated": "2026-10-27T19:02",
+   "generated": "2026-10-27T19:28",
    "blocks_done": []
   },
   "2026-10-29": {
@@ -637,8 +666,9 @@
      "format": "carousel",
      "label": "Flat-lay carousel",
      "setup": "Wood floor, top-down",
-     "tip": "Style one outfit around the item on the floor, 5-7 photos, one line of on-image text. Brings the reach. Keep the outfit and swap only the colourway between carousels.",
+     "tip": "2-5 photos, each a different outfit laid flat around the item for sale (it's the star of every photo), one line of on-image text. Brings the reach.",
      "light": "Key (circle) high above one end of the outfit, angled down at 45°, ~70%. Fill panel 1 low on the opposite side, ~30%, to soften shadows. Fill panel 2 off, or low across the far end if the floor looks uneven. Room lights off, all three at 5600K. Phone straight above; lock exposure and white balance; same spot every carousel.",
+     "example": "https://www.tiktok.com/@sully.finds/photo/7690393439048961311",
      "light_min": 15,
      "channel": "c4a9a3",
      "channel_name": "AndysBestFinds",
@@ -672,7 +702,7 @@
      ],
      "posts": 5,
      "script": "b289a0",
-     "minutes": 75,
+     "minutes": 90,
      "edit_minutes": 15,
      "projects": [
       {
@@ -709,6 +739,7 @@
      "setup": "White bed or couch, hand pointing",
      "tip": "One take, ~20 s, read the sale script while pointing at the item.",
      "light": "Key (circle) at 45° to one side of the bed, above it, ~60%. Fill panel 1 on the other side, ~30%. Fill panel 2 above or behind the bed, low, so the white sheets light evenly. Tap to lock, then drop exposure a touch so the whites don't blow out. Don't move anything between takes.",
+     "example": "https://www.tiktok.com/@sully.finds/video/7690604593834757407",
      "light_min": 10,
      "channel": "c4a9a3",
      "channel_name": "AndysBestFinds",
@@ -749,6 +780,7 @@
      "setup": "Bedroom, waist-down",
      "tip": "Wear it, film waist-down, say your height and size.",
      "light": "Key (circle) in front at 45°, center at chest height, tilted down toward the waist, ~70%. Fill panel 1 on the other side, ~35%, so the fabric shows. Fill panel 2 behind and to the side, low, as a rim light that outlines the fit against the background. Never a window behind you. Tape a mark on the floor so every take matches.",
+     "example": "https://www.tiktok.com/@sully.finds/video/7697808464344648991",
      "light_min": 15,
      "channel": "c4a9a3",
      "channel_name": "AndysBestFinds",
@@ -789,6 +821,7 @@
      "setup": "Hand-held close-up (shoes, gadgets, tags)",
      "tip": "\"I think I just found the perfect…\" Good for side products.",
      "light": "Key (circle) close and low to one side, grazing across the item, ~50%, so the knit or waffle texture pops. Fill panel 1 opposite, ~20%. Fill panel 2 off. Keep your hand and phone from shadowing the item; plain background.",
+     "example": "https://www.tiktok.com/@sully.finds/video/7700700082219339039",
      "light_min": 8,
      "channel": "c4a9a3",
      "channel_name": "AndysBestFinds",
@@ -819,6 +852,7 @@
      "setup": "Outside or by the car, both of you",
      "tip": "\"Wait, where'd you get those?\" The same exchange for each product.",
      "light": "Outside: no lights; open shade (the shady side of the house or car) or golden hour, both of you facing the light. Inside: key (circle) in front between you, ~70%; one fill panel at 45° on each side, ~35%, so both of you are lit the same.",
+     "example": "https://www.tiktok.com/@sully.finds/video/7699977637917183263",
      "light_min": 10,
      "channel": "c4a9a3",
      "channel_name": "AndysBestFinds",
@@ -849,6 +883,7 @@
      "setup": "Anything",
      "tip": "A brand deal or a non-product post that can go wide.",
      "light": "Match the setup it borrows: key (circle) at 45°, fill panel opposite at about half power, second panel as rim or off. All at 5600K, room lights off.",
+     "example": "",
      "light_min": 10,
      "channel": "c4a9a3",
      "channel_name": "AndysBestFinds",
@@ -1078,42 +1113,42 @@
      "kind": "shoot",
      "title": "Shoot: Flat-lay carousel · AndysBestFinds",
      "start": "09:40",
-     "end": "10:55",
+     "end": "11:10",
      "set": "carousel-0"
     },
     {
      "kind": "shoot",
      "title": "Shoot: Flat-lay voiceover video · AndysBestFinds",
-     "start": "10:55",
-     "end": "11:11",
+     "start": "11:10",
+     "end": "11:26",
      "set": "flatlay_vo-0"
     },
     {
      "kind": "shoot",
      "title": "Shoot: Worn, faceless · AndysBestFinds",
-     "start": "11:11",
-     "end": "11:34",
+     "start": "11:26",
+     "end": "11:49",
      "set": "worn-0"
     },
     {
      "kind": "shoot",
      "title": "Shoot: Holding the item · AndysBestFinds",
-     "start": "11:34",
-     "end": "11:44",
+     "start": "11:49",
+     "end": "11:59",
      "set": "held-0"
     },
     {
      "kind": "shoot",
      "title": "Shoot: Two-person skit / POV · AndysBestFinds",
-     "start": "11:44",
-     "end": "11:59",
+     "start": "11:59",
+     "end": "12:14",
      "set": "skit-0"
     },
     {
      "kind": "shoot",
      "title": "Shoot: Brand deal / trend / no-product · AndysBestFinds",
-     "start": "11:59",
-     "end": "12:14",
+     "start": "12:14",
+     "end": "12:29",
      "set": "other-0"
     },
     {
@@ -1153,7 +1188,7 @@
      "end": "19:10"
     }
    ],
-   "generated": "2026-10-27T19:02",
+   "generated": "2026-10-27T19:28",
    "blocks_done": []
   },
   "2026-10-30": {
@@ -1167,8 +1202,9 @@
      "format": "carousel",
      "label": "Flat-lay carousel",
      "setup": "Wood floor, top-down",
-     "tip": "Style one outfit around the item on the floor, 5-7 photos, one line of on-image text. Brings the reach. Keep the outfit and swap only the colourway between carousels.",
+     "tip": "2-5 photos, each a different outfit laid flat around the item for sale (it's the star of every photo), one line of on-image text. Brings the reach.",
      "light": "Key (circle) high above one end of the outfit, angled down at 45°, ~70%. Fill panel 1 low on the opposite side, ~30%, to soften shadows. Fill panel 2 off, or low across the far end if the floor looks uneven. Room lights off, all three at 5600K. Phone straight above; lock exposure and white balance; same spot every carousel.",
+     "example": "https://www.tiktok.com/@sully.finds/photo/7690393439048961311",
      "light_min": 15,
      "channel": "c4a9a3",
      "channel_name": "AndysBestFinds",
@@ -1202,7 +1238,7 @@
      ],
      "posts": 5,
      "script": "b289a0",
-     "minutes": 75,
+     "minutes": 90,
      "edit_minutes": 15,
      "projects": [
       {
@@ -1239,6 +1275,7 @@
      "setup": "White bed or couch, hand pointing",
      "tip": "One take, ~20 s, read the sale script while pointing at the item.",
      "light": "Key (circle) at 45° to one side of the bed, above it, ~60%. Fill panel 1 on the other side, ~30%. Fill panel 2 above or behind the bed, low, so the white sheets light evenly. Tap to lock, then drop exposure a touch so the whites don't blow out. Don't move anything between takes.",
+     "example": "https://www.tiktok.com/@sully.finds/video/7690604593834757407",
      "light_min": 10,
      "channel": "c4a9a3",
      "channel_name": "AndysBestFinds",
@@ -1279,6 +1316,7 @@
      "setup": "Bedroom, waist-down",
      "tip": "Wear it, film waist-down, say your height and size.",
      "light": "Key (circle) in front at 45°, center at chest height, tilted down toward the waist, ~70%. Fill panel 1 on the other side, ~35%, so the fabric shows. Fill panel 2 behind and to the side, low, as a rim light that outlines the fit against the background. Never a window behind you. Tape a mark on the floor so every take matches.",
+     "example": "https://www.tiktok.com/@sully.finds/video/7697808464344648991",
      "light_min": 15,
      "channel": "c4a9a3",
      "channel_name": "AndysBestFinds",
@@ -1319,6 +1357,7 @@
      "setup": "Hand-held close-up (shoes, gadgets, tags)",
      "tip": "\"I think I just found the perfect…\" Good for side products.",
      "light": "Key (circle) close and low to one side, grazing across the item, ~50%, so the knit or waffle texture pops. Fill panel 1 opposite, ~20%. Fill panel 2 off. Keep your hand and phone from shadowing the item; plain background.",
+     "example": "https://www.tiktok.com/@sully.finds/video/7700700082219339039",
      "light_min": 8,
      "channel": "c4a9a3",
      "channel_name": "AndysBestFinds",
@@ -1349,6 +1388,7 @@
      "setup": "Outside or by the car, both of you",
      "tip": "\"Wait, where'd you get those?\" The same exchange for each product.",
      "light": "Outside: no lights; open shade (the shady side of the house or car) or golden hour, both of you facing the light. Inside: key (circle) in front between you, ~70%; one fill panel at 45° on each side, ~35%, so both of you are lit the same.",
+     "example": "https://www.tiktok.com/@sully.finds/video/7699977637917183263",
      "light_min": 10,
      "channel": "c4a9a3",
      "channel_name": "AndysBestFinds",
@@ -1379,6 +1419,7 @@
      "setup": "Anything",
      "tip": "A brand deal or a non-product post that can go wide.",
      "light": "Match the setup it borrows: key (circle) at 45°, fill panel opposite at about half power, second panel as rim or off. All at 5600K, room lights off.",
+     "example": "",
      "light_min": 10,
      "channel": "c4a9a3",
      "channel_name": "AndysBestFinds",
@@ -1608,42 +1649,42 @@
      "kind": "shoot",
      "title": "Shoot: Flat-lay carousel · AndysBestFinds",
      "start": "09:40",
-     "end": "10:55",
+     "end": "11:10",
      "set": "carousel-0"
     },
     {
      "kind": "shoot",
      "title": "Shoot: Flat-lay voiceover video · AndysBestFinds",
-     "start": "10:55",
-     "end": "11:11",
+     "start": "11:10",
+     "end": "11:26",
      "set": "flatlay_vo-0"
     },
     {
      "kind": "shoot",
      "title": "Shoot: Worn, faceless · AndysBestFinds",
-     "start": "11:11",
-     "end": "11:34",
+     "start": "11:26",
+     "end": "11:49",
      "set": "worn-0"
     },
     {
      "kind": "shoot",
      "title": "Shoot: Holding the item · AndysBestFinds",
-     "start": "11:34",
-     "end": "11:44",
+     "start": "11:49",
+     "end": "11:59",
      "set": "held-0"
     },
     {
      "kind": "shoot",
      "title": "Shoot: Two-person skit / POV · AndysBestFinds",
-     "start": "11:44",
-     "end": "11:59",
+     "start": "11:59",
+     "end": "12:14",
      "set": "skit-0"
     },
     {
      "kind": "shoot",
      "title": "Shoot: Brand deal / trend / no-product · AndysBestFinds",
-     "start": "11:59",
-     "end": "12:14",
+     "start": "12:14",
+     "end": "12:29",
      "set": "other-0"
     },
     {
@@ -1683,7 +1724,7 @@
      "end": "19:10"
     }
    ],
-   "generated": "2026-10-27T19:02",
+   "generated": "2026-10-27T19:28",
    "blocks_done": []
   }
  }
