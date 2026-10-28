@@ -60,6 +60,8 @@ DEFAULTS = {
     "channels": [],   # [{account, pov: "me" | "partner", height, size_top, size_bottom}]
     "lineup": [],     # product ids in rotation (blank = every product with a TikTok Shop link)
     "scripts": {},    # format -> library script id
+    "mode": "batch",  # "batch": one format per shoot day, its posts scheduled over the next week; "daily": each day shoots its own posts
+    "batch_week": None,  # weekday -> formats shot that day (None = BATCH_WEEK)
 }
 
 
@@ -141,6 +143,8 @@ def generate(day_iso: str) -> dict:
     d, sh = load(), shop.load()
     st = d["settings"]
     day = date.fromisoformat(day_iso)
+    if st.get("mode", "batch") == "batch":
+        return _finish(d, st, day_iso, day, *_batch(st, sh, day, d["days"].get(day_iso) or {}))
     n = int(st["posts"].get(WEEKDAYS[day.weekday()], 0))
     lineup, chans = _lineup(st, sh), _channels(st, sh)
     fmt = {f["key"]: f for f in FORMATS}
@@ -215,12 +219,22 @@ def generate(day_iso: str) -> dict:
         for k, p in enumerate(lst):
             p["time"] = _s(a + gap * k + gap / 2)
     posts = sorted(posts, key=lambda p: (p["time"], p["channel"] or ""))
+    for p in posts:
+        p["date"] = day_iso
+    return _finish(d, st, day_iso, day, sets, posts, (day_iso, day_iso), [s["format"] for s in sets])
+
+
+def _finish(d, st, day_iso, day, sets, posts, window, fmts):
+    """Shared by daily and batch days: keep ticks, projects, examples and carousel plans across a rebuild."""
     old = d["days"].get(day_iso) or {}
-    done = {(p["set"], p["product"], k) for k, p in enumerate(old.get("posts") or []) if p.get("done")}
-    for k, p in enumerate(posts):
-        p["done"] = (p["set"], p["product"], k) in done
-    plan = {"date": day_iso, "season": season(day), "posts_per_channel": n, "channels": len(chans),
-            "sets": sets, "posts": posts, "blocks": _blocks(st, sets, len(posts)), "generated": datetime.now().isoformat(timespec="minutes")}
+    done = {(p["set"], p["product"], p.get("date"), p["time"]) for p in old.get("posts") or [] if p.get("done")}
+    for p in posts:
+        p["done"] = (p["set"], p["product"], p.get("date"), p["time"]) in done
+    batch = st.get("mode", "batch") == "batch"
+    plan = {"date": day_iso, "season": season(day), "mode": "batch" if batch else "daily", "window": list(window), "formats": fmts,
+            "posts_per_channel": int(st["posts"].get(WEEKDAYS[day.weekday()], 0)), "channels": len(_channels(st, shop.load())),
+            "sets": sets, "posts": posts, "blocks": _blocks(st, sets, len(posts), batch=batch, window=window),
+            "generated": datetime.now().isoformat(timespec="minutes")}
     plan["blocks_done"] = [k for k in old.get("blocks_done") or [] if any(block_key(b) == k for b in plan["blocks"])]
     for s in sets:  # projects made earlier for this set stay linked, and an example picked for this day
         prev = next((x for x in old.get("sets") or [] if x["id"] == s["id"]), {})
@@ -236,7 +250,7 @@ def generate(day_iso: str) -> dict:
     return plan
 
 
-def _blocks(st, sets, n_posts):
+def _blocks(st, sets, n_posts, batch=False, window=None):
     """The day as blocks: fixed ones (gym, meals), then shoots, edit, research, around them; posting window."""
     day = st["day"]
     fixed = [{"kind": "gym", "title": "Gym", "start": _t(day["gym"]["at"]), "end": _t(day["gym"]["at"]) + day["gym"]["min"]}] \
@@ -250,7 +264,8 @@ def _blocks(st, sets, n_posts):
     work.append({"kind": "edit", "title": f"Edit + review ({n_posts} posts: carousels assembled, videos checked)", "min": edit})
     sched = day.get("schedule", True)
     if sched:  # posts go out on their own at their times: one sitting instead of an evening of posting
-        work.append({"kind": "post", "title": f"Schedule {n_posts} posts in TikTok Studio (times in the posting schedule)",
+        span = f", {_short(window[0])} to {_short(window[1])}" if batch and window else ""
+        work.append({"kind": "post", "title": f"Schedule this batch: {n_posts} posts in TikTok Studio{span} (dates and times in the posting kit)",
                      "min": math.ceil(n_posts * float(day.get("schedule_min", 1.5)))})
     work.append({"kind": "research", "title": "Research: Analytics, competitor tracker, next lineup", "min": day["research_min"]})
     busy = sorted(fixed, key=lambda x: x["start"])
@@ -269,7 +284,9 @@ def _blocks(st, sets, n_posts):
             out.append({"kind": w["kind"], "title": w["title"], "start": t, "end": stop, **({"set": w["set"]} if w.get("set") else {})})
             need -= stop - t
             t = stop
-    if sched:
+    if batch:
+        pass  # a batch is scheduled for the coming days; what goes live today came from earlier batches
+    elif sched:
         out.append({"kind": "live", "title": f"Scheduled posts go live: {n_posts}, nothing to do", "start": post_from, "end": post_to})
     else:
         out.append({"kind": "post", "title": f"Posting window: {n_posts} posts, one every ~{max(1, round((post_to - post_from) / max(1, n_posts / max(1, len({s['channel'] for s in sets})))))} min per channel",
@@ -278,6 +295,10 @@ def _blocks(st, sets, n_posts):
     for x in out:
         x["start"], x["end"] = _s(x["start"]), _s(x["end"])
     return out
+
+
+def _short(iso: str) -> str:
+    return date.fromisoformat(iso).strftime("%a %b %d").replace(" 0", " ")
 
 
 def block_key(b: dict) -> str:
@@ -493,3 +514,130 @@ def seed_templates():
         d["settings"]["scripts"][key] = sid  # the planner's formats always use their current template
     save(d)
     return d["settings"]["scripts"]
+
+
+# ---------------------------------------------------------------- batch days (user, 2026-10-27)
+# One format per shoot day, scheduled right after the batch: a batch fills its format's posting slots for the
+# next WINDOW days (until the same weekday comes round again). Carousels: one photo pool per product (3 cover poses
+# + the session's outfits), remixed into several carousels over the week, each with a fresh cover and its own text,
+# the way @sully.finds stretches photos (~1.5 uses per photo, reused within about 8 days).
+
+WINDOW = 7
+BATCH_WEEK = {"mon": ["skit", "other"], "tue": [], "wed": ["carousel"], "thu": ["flatlay_vo"], "fri": ["worn", "held"],
+              "sat": [], "sun": []}
+COVERS = [("c1", "Cover: folded, leg to the left"), ("c2", "Cover: folded, leg to the right"), ("c3", "Cover: laid flat")]
+CAROUSEL_SIZES = [6, 2, 5, 6, 7, 6, 2, 5]   # his mix: a quarter are quick 2-photo ones, the rest 5-7
+COVER_MIN, OUTFIT_MIN = 1.0, 3.0            # a cover pose is quick; restyling an outfit isn't
+
+
+def day_slots(st, day: date, chan: dict) -> list:
+    """[(time, format)] for one channel on one date: the day's posts per channel split by the mix, dealt out
+    across the posting window so the formats alternate (the same dealing the daily plan uses)."""
+    n = int(st["posts"].get(WEEKDAYS[day.weekday()], 0))
+    counts = _split(n, st["mix"])
+    groups = {k: [k] * c for k, c in counts.items() if c}
+    dealt = []
+    while any(groups.values()):
+        for g in list(groups.values()):
+            if g:
+                dealt.append(g.pop(0))
+    a, b = _t(st["day"]["post_from"]), _t(st["day"]["post_to"])
+    gap = (b - a) / max(1, len(dealt))
+    return [(_s(a + gap * k + gap / 2), f) for k, f in enumerate(dealt)]
+
+
+def carousel_combo(i: int, n_outfits: int) -> list:
+    """The photos of a product's i-th carousel: a cover pose, then outfits rotated so no two are alike."""
+    size = min(CAROUSEL_SIZES[i % len(CAROUSEL_SIZES)], 1 + n_outfits)
+    k = max(1, size - 1)
+    start = i % max(1, n_outfits)
+    return [COVERS[i % len(COVERS)][0]] + [f"o{(start + j) % n_outfits + 1}" for j in range(k)]
+
+
+def _batch(st, sh, day: date, old: dict):
+    """Sets and dated posts for a batch shoot day."""
+    from . import carouselplan
+    week = st.get("batch_week") or BATCH_WEEK
+    fmts = [f for f in week.get(WEEKDAYS[day.weekday()], []) if f in {x["key"] for x in FORMATS}]
+    lineup, chans = _lineup(st, sh), _channels(st, sh)
+    fmt = {f["key"]: f for f in FORMATS}
+    window = [day + timedelta(i) for i in range(1, WINDOW + 1)]
+    sets, posts = [], []
+    oldsets = {x["id"]: x for x in old.get("sets") or []}
+    for ci, ch in enumerate(chans):
+        acc = shop.by_id(sh, "accounts", ch.get("account"))
+        skip = set(ch.get("cant_wear") or [])
+        wearable = [p for p in lineup if p["id"] not in skip] or lineup
+        offset = (day.toordinal() * 5 + ci * 3) % max(1, len(lineup))
+        for key in fmts:
+            slots = [(dd, t) for dd in window for t, fk in day_slots(st, dd, ch) if fk == key]
+            if not slots or not lineup:
+                continue
+            f = fmt[key]
+            base = {"format": key, "setup": f["setup"], "tip": f["tip"], "light": f["light"], "light_min": round(_mins(st, key, "light_min")),
+                    "example": (st.get("examples") or {}).get(key) or f.get("example", ""), "channel": ch.get("account"),
+                    "channel_name": (acc or {}).get("name") or f"Channel {ci + 1}", "pov": ch.get("pov", "me"),
+                    "script": st["scripts"].get(key), "projects": []}
+            if key == "carousel":  # one set per clothing type (same extra pieces all session), every product in it
+                kinds = []
+                for p in lineup:
+                    k0 = carouselplan.kind(p)
+                    if k0 not in kinds:
+                        kinds.append(k0)
+                rot = lineup[offset:] + lineup[:offset]
+                order = [p for k0 in kinds for p in rot if carouselplan.kind(p) == k0]
+                per = {p["id"]: 0 for p in order}
+                for i in range(len(slots)):
+                    per[order[i % len(order)]["id"]] += 1
+                for k0 in kinds:
+                    ps = [p for p in order if carouselplan.kind(p) == k0 and per[p["id"]]]
+                    if not ps:
+                        continue
+                    sid = f"carousel-{k0}-{ci}"
+                    prev = oldsets.get(sid) or {}
+                    n_out = len(prev.get("outfits") or []) or 3
+                    items = [{"product": p["id"], "name": p["name"], "takes": per[p["id"]]} for p in ps]
+                    photos = len(ps) * (len(COVERS) + n_out)
+                    sets.append({**base, "id": sid, "label": f"{f['label']} · {'tops' if k0 == 'top' else 'bottoms'}", "kind": k0,
+                                 "items": items, "posts": sum(i["takes"] for i in items), "photos": photos,
+                                 "minutes": round(_mins(st, key, "light_min") + len(ps) * (len(COVERS) * COVER_MIN + n_out * OUTFIT_MIN)),
+                                 "edit_minutes": round(sum(i["takes"] for i in items) * _mins(st, key, "edit_min"))})
+                carousel_sets = [s for s in sets if s["format"] == "carousel" and s["channel"] == ch.get("account")]
+                entries = []
+                for r in range(max(per.values() or [0])):  # round-robin, so one product's carousels land on different days
+                    for p in order:
+                        if r < per[p["id"]]:
+                            s = next(x for x in carousel_sets if any(i["product"] == p["id"] for i in x["items"]))
+                            n_out = len((oldsets.get(s["id"]) or {}).get("outfits") or []) or 3
+                            entries.append((s, p, r, carousel_combo(r, n_out)))
+                for (dd, t), (s, p, r, combo) in zip(slots, entries):
+                    posts.append({"set": s["id"], "format": key, "channel": ch.get("account"), "product": p["id"], "name": p["name"],
+                                  "date": dd.isoformat(), "time": t, "take": r + 1, "photos": combo, "done": False})
+                continue
+            pool = wearable if key in WORN else lineup
+            pool = pool[offset % len(pool):] + pool[:offset % len(pool)]
+            takes = max(1, int(st["takes"].get(key, f["takes"])))
+            k_products = min(len(pool), max(1, math.ceil(len(slots) / takes)))
+            cnt = len(slots)
+            items = [{"product": pool[j]["id"], "name": pool[j]["name"], "takes": cnt // k_products + (1 if j < cnt % k_products else 0)}
+                     for j in range(k_products)]
+            sid = f"{key}-{ci}"
+            sets.append({**base, "id": sid, "label": f["label"], "items": items, "posts": cnt,
+                         "minutes": round(_mins(st, key, "light_min") + cnt * _mins(st, key, "take_min")),
+                         "edit_minutes": round(cnt * _mins(st, key, "edit_min"))})
+            entries = [(it, r) for r in range(max(i["takes"] for i in items)) for it in items if r < it["takes"]]
+            for (dd, t), (it, r) in zip(slots, entries):
+                posts.append({"set": sid, "format": key, "channel": ch.get("account"), "product": it["product"], "name": it["name"],
+                              "date": dd.isoformat(), "time": t, "take": r + 1, "done": False})
+    posts.sort(key=lambda p: (p["date"], p["time"], p["channel"] or ""))
+    return sets, posts, (window[0].isoformat(), window[-1].isoformat()), fmts
+
+
+def going_live(day_iso: str) -> list:
+    """Posts scheduled from any batch that go live on this date (what to expect on TikTok today)."""
+    out = []
+    for k, p in load()["days"].items():
+        for i, x in enumerate(p.get("posts") or []):
+            if x.get("date") == day_iso:
+                out.append({**x, "batch": k, "k": i})
+    return sorted(out, key=lambda x: x["time"])
