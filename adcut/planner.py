@@ -42,9 +42,10 @@ FORMATS = [  # lighting notes are for the kit: one large round key light + two r
      "take_min": 2.5, "edit_min": 1.0, "light_min": 10, "light": "Outside: no lights; open shade (the shady side of the house or car) or golden hour, both of you facing the light. Inside: key (circle) in front between you, ~70%; one fill panel at 45° on each side, ~35%, so both of you are lit the same.",
      "example": "https://www.tiktok.com/@sully.finds/video/7699977637917183263",
      "tip": "\"Wait, where'd you get those?\" The same exchange for each product."},
-    {"key": "other", "label": "Brand deal / trend / no-product", "setup": "Anything", "share": 5, "takes": 1,
+    {"key": "other", "label": "My new favorite (extra)", "setup": "Anything", "share": 5, "takes": 1,
      "take_min": 5.0, "edit_min": 3.0, "light_min": 10, "light": "Match the setup it borrows: key (circle) at 45°, fill panel opposite at about half power, second panel as rim or off. All at 5600K, room lights off.",
-     "tip": "A brand deal or a non-product post that can go wide."},
+     "example": "https://www.tiktok.com/@sully.finds/video/7700043209048739103",
+     "tip": "His 'new favorite' script on one product, the fifth kind of post in the mix."},
 ]
 DEFAULTS = {
     "posts": {"mon": 20, "tue": 20, "wed": 20, "thu": 20, "fri": 20, "sat": 5, "sun": 20},
@@ -353,10 +354,15 @@ def _vars(plan, s, chan, p) -> dict:
     brand = p.get("brand") or ""
     spoken = base[len(brand):].strip() if brand and base.startswith(brand) else base  # the brand is said on its own
     feature = f.get("feature 1") or f.get("material") or f.get("fit") or f.get("style") or "fit"
+    second = next((c for c in (f.get("feature 2"), f.get("fit"), f.get("material"), f.get("style"))
+                   if c and c.lower() not in feature.lower() and feature.lower() not in c.lower()), "easy fit")
     return {**shop.product_fills(p), "season": plan["season"], "who": "I'm" if s["pov"] == "me" else "He's",
             "product": (f"{spoken} in {color.lower()}" if color else spoken), "item": (f.get("style") or p.get("category") or "piece").lower(),
             "height": chan.get("height") or "", "size": size, "fit note": fit_note, "feature 1": feature,
-            "feature 2": f.get("feature 2") or f.get("fit") or feature, "brand": brand or "this brand",
+            "feature 2": second, "the feature": f"that {feature}", "brand": brand or "this brand",
+            "color": (color or f.get("color") or "").lower() or "new", "deal": f.get("deal") or "", "store price": f.get("store price") or "way more",
+            "these": "these" if plural else "this one", "These are": "These are" if plural else "This one is", "those": "those" if plural else "that",
+            "Those": "Those" if plural else "That", "this pair": "this pair" if plural else "this one", "they're": "they're" if plural else "it's",
             "price": p.get("price") or "a great price",
             "it": "them" if plural else "it", "it fits": "they fit" if plural else "it fits", "It is": "They're" if plural else "It's",
             "It has": "They've got" if plural else "It's got", "This is": "These are" if plural else "This is"}
@@ -381,8 +387,14 @@ def script_for(day_iso: str, s: dict, product_id: str, plan=None) -> list:
         return [row["text"]] if row else []
     chan = next((c for c in _channels(d["settings"], sh) if c.get("account") == s["channel"]), {})
     sc = shop.by_id(sh, "scripts", s.get("script"))
-    text = shop.fill(sc["text"] if sc else "", _vars(plan, s, chan, p))
-    lines = [ln.strip() for ln in text.splitlines() if ln.strip() and not ln.strip().startswith("[or]")]
+    v = _vars(plan, s, chan, p)
+    deal = bool(v.get("deal"))
+    lines = []
+    for ln in (sc["text"] if sc else "").splitlines():
+        ln = ln.strip()
+        if not ln or ln.startswith("[or]") or (ln.startswith("[deal]") and not deal) or (ln.startswith("[nodeal]") and deal):
+            continue
+        lines.append(shop.fill(re.sub(r"^\[(no)?deal\]\s*", "", ln), v))
     return [_tidy(ln) for ln in lines if _tidy(ln)]
 
 
@@ -412,32 +424,48 @@ def make_projects(day_iso: str, set_id: str) -> list:
 
 # ---------------------------------------------------------------- script templates (our own wording)
 
-TEMPLATES = [  # {it}/{It is}/{This is}… follow the item: "it" for a top, "they" for pants (see make_projects).
-    # No "on sale" / "free shipping" claims: TikTok prices often sit above the tag. Add them per video when true.
-    ("flatlay_vo", "Sale news (flat-lay voiceover)",
-     "{brand} finally has their {product} on TikTok Shop.\n"
-     "{It has} that {feature 1} that goes with literally any fit.\n"
-     "You can grab {it} for {price} right now.\n"
-     "I'll leave the link right here before your size sells out."),
-    ("worn", "Height + size (worn, faceless)",
-     "Just in time for this {season}: the {brand} {product}.\n"
-     "{who} {height}, wearing a size {size} {fit note}, and this is exactly how {it fits}.\n"
-     "The {feature 1} goes with everything.\n"
-     "{It is} on TikTok Shop right now, link's right here."),
-    ("held", "I just found the perfect one (held item)",
-     "I think I just found the perfect {item} for this {season}.\n"
-     "{This is} the {brand} {product}, and the {feature 1} is honestly so good.\n"
-     "{It is} on TikTok Shop, link's right here."),
-    ("skit", "Where'd you get those? (two-person skit)",
-     "A: Wait, I love your {item}, where'd you get {it}?\n"
-     "B: {brand}, I got {it} on TikTok Shop.\n"
-     "A: For real, how much?\n"
-     "B: {price}, the link's right there.\n"
-     "A: Okay, send it to me."),
-    ("other", "Fit check (extra slot)",
-     "Fit check: the {brand} {product}.\n"
-     "{It has} that {feature 1}, and {it fits} exactly how I wanted.\n"
-     "Would you wear this? The link's right here."),
+TEMPLATES = [  # @sully.finds' own scripts, copied from the example each format links (study transcripts), with
+    # only the product swapped in. Lines starting [deal] are used only when the product has a real deal
+    # (product fill "deal", e.g. "over half off with free shipping"), [nodeal] lines only when it doesn't:
+    # no made-up sale claims (TikTok Shop pulls misleading ones).
+    ("flatlay_vo", "Sale news (flat-lay voiceover)",  # example 7690604593834757407, 387K views
+     "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n"
+     "[nodeal] {brand} finally put their {item} on their TikTok shop.\n"
+     "You're gonna get that super nice {feature 1} as well as {feature 2}, and I just love this {color} colorway, it's gonna be perfect for this {season} season.\n"
+     "{who} {height}, rocking a size {size}.\n"
+     "[deal] {These are} selling out quick since {they're} {deal}, so if you wanna see if your size is still available, I'll leave a link down below.\n"
+     "[nodeal] {These are} selling out quick, so if you wanna see if your size is still available, I'll leave a link down below."),
+    ("worn", "Height + size (worn, faceless)",  # example 7697808464344648991, 79K views
+     "[deal] {brand} is finally dumping their {item} on their TikTok shop.\n"
+     "[nodeal] {brand} finally put their {item} on their TikTok shop.\n"
+     "[deal] Just don't drop {store price} in store when you can pick {them} up for {deal} on TikTok.\n"
+     "{This is} their {product}, so you're definitely going to get {feature 1} with {these}.\n"
+     "{who} {height}, rocking a size {size} in {this pair} {fit note}.\n"
+     "So I'd definitely recommend going true to size, but their most popular sizes are going quick.\n"
+     "So if you're seeing this in time and your size is still available, I definitely wouldn't miss out on {this pair}."),
+    ("held", "Official shop is on TikTok (held item)",  # example 7700700082219339039
+     "[deal] {brand}'s official shop is finally on TikTok and they're dumping all of their {item} just in time for this {season} season.\n"
+     "[nodeal] {brand}'s official shop is finally on TikTok and they just put their {item} on there, just in time for this {season} season.\n"
+     "[deal] Just don't drop {store price} in store when you can pick {them} up for way cheaper on here.\n"
+     "You get that super nice {feature 1} as well as that {feature 2}.\n"
+     "There are multiple different colors to choose from.\n"
+     "So if you want to see if your size is still available in {these}, I'll leave a link down below."),
+    ("skit", "Where'd you get those? (two-person skit)",  # example 7699977637917183263
+     "A: Wait, I love {those}, where'd you get {them} from?\n"
+     "B: Oh, I just got {these} from {brand}, why?\n"
+     "A: {brand}? {Those} must have been so expensive, though.\n"
+     "[deal] B: No, no, no, I got {them} on their TikTok shop, {they're} {deal} right now.\n"
+     "[nodeal] B: No, no, no, I got {them} on their TikTok shop for {price}.\n"
+     "A: Wait, that's actually such a good deal.\n"
+     "B: Just check out {the feature} and that {feature 2}.\n"
+     "A: Yeah, I actually love {those}. You gotta drop the link.\n"
+     "B: If you guys want to get yours, I'll leave a link down below.\n"
+     "A: Bet, thank you."),
+    ("other", "My new favorite (extra slot)",  # example 7700043209048739103
+     "{These are} definitely my new favorite {item} from {brand}.\n"
+     "You get that super nice {feature 1} you can pair with any outfit, as well as that {feature 2}.\n"
+     "[deal] {These are} selling out quick, though, so if you want to get yours {deal}, I'll leave a link down below.\n"
+     "[nodeal] {These are} selling out quick, though, so if you want to get yours, I'll leave a link down below."),
     ("carousel", "On-image text (carousel)",
      "{season} essential: {item}\n"
      "[or] POV: you found the perfect {item} for any fit\n"
@@ -457,6 +485,6 @@ def seed_templates():
             shop.upsert("scripts", {"id": sid, "text": text})  # keep the library copy in step with the template
         sid = sid or shop.upsert("scripts", {"title": title, "text": text, "tags": [tag[n] for n in tags.get(key, []) if n in tag],
                                                           "notes": "Planner template, modelled on @sully.finds (docs/sully-finds-study.md)"})["id"]
-        d["settings"]["scripts"].setdefault(key, sid)
+        d["settings"]["scripts"][key] = sid  # the planner's formats always use their current template
     save(d)
     return d["settings"]["scripts"]
