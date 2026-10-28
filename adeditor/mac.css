@@ -317,3 +317,5 @@ label.linkish { color: var(--mx-accent-hi); cursor: pointer; }
 .mxOutfitN { width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; background: var(--mx-accent-soft); color: var(--mx-accent-hi); font-weight: 600; font-size: 12px; }
 .mxOutfit .muted { font-size: 12px; }
 html button.linkish { display: inline; min-height: 0; padding: 0 !important; font-size: inherit; }
+.mxSteps, .mxStep, .mxStepBody, .mxStepBody > *, .mxSplit > *, .mxCarousels, .mxCar, .shopPane { min-width: 0; }
+.mxSplit { grid-template-columns: minmax(0, 1fr); }
