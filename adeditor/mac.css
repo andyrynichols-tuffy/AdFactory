@@ -30,11 +30,11 @@ button, input, select, textarea { font-family: var(--mx-font); }
 .brand { font-weight: 600; font-size: 13px; letter-spacing: 0; color: var(--mx-text); }
 
 /* ---- controls ---- */
-html button:not(.tag):not(.seg) { height: auto; min-height: 24px; padding: 3px 11px; border-radius: var(--mx-r) !important; font-size: 13px; font-weight: 500;
+html button:where(:not(.tag):not(.seg)) { height: auto; min-height: 24px; padding: 3px 11px; border-radius: var(--mx-r) !important; font-size: 13px; font-weight: 500;
   background: var(--mx-control) !important; border: 0 !important; color: var(--mx-text) !important;
   box-shadow: 0 0 0 .5px rgba(0, 0, 0, .55), 0 .5px 0 rgba(255, 255, 255, .08) inset, 0 1px 1.5px rgba(0, 0, 0, .25) !important; transform: none !important; }
-html button:not(.tag):not(.seg):hover:not(:disabled) { background: var(--mx-control-hi) !important; }
-html button:not(.tag):not(.seg):active:not(:disabled) { filter: brightness(1.15); }
+html button:where(:not(.tag):not(.seg)):hover:not(:disabled) { background: var(--mx-control-hi) !important; }
+html button:where(:not(.tag):not(.seg)):active:not(:disabled) { filter: brightness(1.15); }
 html button.primary, html .primary { background: var(--mx-accent) !important; color: #fff !important;
   box-shadow: 0 0 0 .5px rgba(0, 0, 0, .4), 0 .5px 0 rgba(255, 255, 255, .25) inset, 0 1px 1.5px rgba(0, 0, 0, .25) !important; }
 html button.primary:hover:not(:disabled) { background: var(--mx-accent-hi) !important; box-shadow: 0 0 0 .5px rgba(0, 0, 0, .4) !important; }

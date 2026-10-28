@@ -12,6 +12,11 @@ const toMin = s => { const [h, m] = String(s || "0:0").split(":").map(Number); r
 const span = b => toMin(b.end) - toMin(b.start);
 const KIND_LABEL = { gym: "Gym", meal: "Meal", shoot: "Shoot", edit: "Edit", research: "Research", post: "Schedule", live: "Live", prep: "Prep" };
 const bkey = b => `${b.kind}|${b.set || b.title}|${b.start}`;
+function shortTitle(b, p) {  // the agenda line: what it is, without the plan's long description
+  if (b.kind === "shoot") return p.sets.find(s => s.id === b.set)?.label || b.title;
+  return { prep: "Prep", edit: "Edit and review", research: "Research", live: "Posts go live" }[b.kind]
+    || (b.kind === "post" ? `Schedule ${p.posts.length} posts` : b.title);
+}
 const colorOf = name => (name || "").split(" - ")[1] || "";
 const baseOf = name => (name || "").split(" - ")[0];
 
@@ -75,7 +80,7 @@ async function renderPlanner() {
       <div class="mxSide">
         <div class="mxLabel">Schedule</div>
         <ol class="mxAgenda">${p.blocks.map(b => `<li class="k-${b.kind}" ${b.set ? `data-goto="${b.set}"` : ""}>
-          <span class="t">${b.start}</span><span class="w">${esc(b.title)}</span><span class="d muted">${mins(span(b))}</span></li>`).join("")}</ol>
+          <span class="t">${b.start}</span><span class="w">${esc(shortTitle(b, p))}</span><span class="d muted">${mins(span(b))}</span></li>`).join("")}</ol>
         <details class="mxPosts"><summary>Posting times <span class="muted">${p.posts.length} posts, ${set.day.post_from}–${set.day.post_to}</span></summary>
           <table class="mxList"><tbody>${p.posts.map((x, k) => `<tr class="${x.done ? "closed" : ""}"><td><input type="checkbox" data-mark="${k}" ${x.done ? "checked" : ""} title="${set.day.schedule !== false ? "Scheduled" : "Posted"}"></td>
             <td class="num">${x.time}</td><td>${esc((PL.cfg.formats.find(f => f.key === x.format) || {}).label || x.format)}</td><td translate="no" class="muted">${esc(x.name)}</td></tr>`).join("")}</tbody></table></details>
@@ -137,14 +142,14 @@ async function renderToday() {
         <ol class="mxAgenda tick">${work.map(b => { const k = bkey(b), t = !["gym", "meal"].includes(b.kind);
           return `<li class="k-${b.kind} ${done.has(k) ? "done" : ""} ${b === current ? "now" : ""} ${b === sel ? "sel" : ""}" data-sel="${esc(k)}">
             ${t ? `<input type="checkbox" data-block="${esc(k)}" ${done.has(k) ? "checked" : ""} aria-label="Done">` : `<span class="nob"></span>`}
-            <span class="t">${b.start}</span><span class="w">${esc(b.title)}</span><span class="d muted">${mins(span(b))}</span></li>`; }).join("")}</ol>
+            <span class="t">${b.start}</span><span class="w">${esc(shortTitle(b, p))}</span><span class="d muted">${mins(span(b))}</span></li>`; }).join("")}</ol>
         ${alertBox}
       </div>
       <div class="mxMain">${sel ? blockDetail(sel, p) : ""}</div>
     </div>`;
 }
 function blockDetail(b, p) {
-  const head = `<div class="mxDetailHead"><span class="mxKind k-${b.kind}">${KIND_LABEL[b.kind] || b.kind}</span><h3>${esc(b.title)}</h3><span class="muted">${b.start}–${b.end}</span></div>`;
+  const head = `<div class="mxDetailHead"><span class="mxKind k-${b.kind}">${KIND_LABEL[b.kind] || b.kind}</span><h3>${esc(b.kind === "shoot" ? shortTitle(b, p) : b.title)}</h3><span class="muted">${b.start}–${b.end}</span></div>`;
   if (b.kind === "shoot") { const s = p.sets.find(x => x.id === b.set); return head + (s ? setCard(s) : ""); }
   if (b.kind === "prep") {  // every piece the day uses, grouped by item, with its size
     const seen = new Map();
